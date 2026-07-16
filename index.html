@@ -2130,27 +2130,55 @@ Non promettere mai guadagni garantiti n\u00e9 automazioni senza controllo umano:
           return { text: clean.trim(), ready, summary };
         }
 
-        // Incolla qui l'URL "Catch Hook" di Zapier (Webhooks by Zapier) o un altro
-        // endpoint che riceve JSON via POST. Senza URL, il sito apre un'email
-        // precompilata come ripiego: funziona comunque, solo meno automatico.
-        const ANALYSIS_WEBHOOK_URL = '';
+        // Estrae i campi strutturati dal riepilogo generato dal maggiordomo
+        // (sia percorso Claude che fallback usano le stesse etichette).
+        function parseSummaryFields(summary) {
+          const fields = { attivita: '', esigenza: '', strumenti_attuali: '', volume_frequenza: '', pacchetto_suggerito: '' };
+          if (!summary) return fields;
+          const map = {
+            'attivit\u00e0': 'attivita',
+            'esigenza': 'esigenza',
+            'strumenti attuali': 'strumenti_attuali',
+            'volume/frequenza': 'volume_frequenza',
+            'pacchetto suggerito': 'pacchetto_suggerito'
+          };
+          summary.split('\n').forEach(line => {
+            const idx = line.indexOf(':');
+            if (idx === -1) return;
+            const label = line.slice(0, idx).trim().toLowerCase();
+            const value = line.slice(idx + 1).trim();
+            if (map[label]) fields[map[label]] = value;
+          });
+          return fields;
+        }
+
+        // Endpoint Vercel che fa da proxy sicuro verso il gestionale Base44
+        // (la chiave Base44 resta lato server, mai nel browser). Senza URL,
+        // il sito apre un'email precompilata come ripiego.
+        const LEAD_API_URL = 'https://ovia-ten.vercel.app/api/lead';
 
         async function sendAnalysisToTeam({ nome, cognome, email, summary, transcript }) {
+          const fields = parseSummaryFields(summary);
           const payload = {
             nome, cognome, email,
-            riepilogo: summary || '',
-            trascrizione: transcript.map(m => (m.role === 'user' ? 'Cliente' : 'Ovia') + ': ' + m.content).join('\n'),
-            inviato_il: new Date().toISOString(),
-            fonte: 'Maggiordomo sito Ovia'
+            attivita: fields.attivita,
+            esigenza: fields.esigenza,
+            strumenti_attuali: fields.strumenti_attuali,
+            volume_frequenza: fields.volume_frequenza,
+            pacchetto_suggerito: fields.pacchetto_suggerito,
+            trascrizione_conversazione: transcript.map(m => (m.role === 'user' ? 'Cliente' : 'Ovia') + ': ' + m.content).join('\n'),
+            fonte: 'Sito \u2014 Maggiordomo',
+            stato: 'Nuovo',
+            data_ricezione: new Date().toISOString()
           };
 
-          if (ANALYSIS_WEBHOOK_URL) {
-            const res = await fetch(ANALYSIS_WEBHOOK_URL, {
+          if (LEAD_API_URL) {
+            const res = await fetch(LEAD_API_URL, {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify(payload)
             });
-            if (!res.ok) throw new Error('Webhook fallito');
+            if (!res.ok) throw new Error('Invio al gestionale fallito');
             return;
           }
 
@@ -2380,7 +2408,7 @@ Non promettere mai guadagni garantiti n\u00e9 automazioni senza controllo umano:
         overlay.querySelectorAll('[data-close-booking]').forEach(el => el.addEventListener('click', close));
         document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
 
-        document.getElementById('bk-confirm').addEventListener('click', () => {
+        document.getElementById('bk-confirm').addEventListener('click', async () => {
           const nome = document.getElementById('bk-nome').value.trim();
           const cognome = document.getElementById('bk-cognome').value.trim();
           const email = document.getElementById('bk-email').value.trim();
@@ -2389,6 +2417,29 @@ Non promettere mai guadagni garantiti n\u00e9 automazioni senza controllo umano:
             summaryEl.textContent = 'Completa nome, cognome e una email valida';
             return;
           }
+
+          const confirmBtn = document.getElementById('bk-confirm');
+          confirmBtn.disabled = true;
+
+          // Manda la prenotazione al gestionale come Lead con stato dedicato.
+          // Se l'invio fallisce non blocchiamo la conferma a schermo: l'appuntamento
+          // resta comunque valido, va solo verificato manualmente in quel caso.
+          try {
+            await fetch('https://ovia-ten.vercel.app/api/lead', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                nome, cognome, email,
+                fonte: 'Process Check',
+                stato: 'Process Check prenotato',
+                data_ricezione: new Date().toISOString(),
+                data_appuntamento: days[selDay].toISOString().slice(0, 10),
+                ora_appuntamento: selSlot,
+                esigenza: 'Prenotazione diretta del Process Check dal sito'
+              })
+            });
+          } catch (e) {}
+
           document.getElementById('bk-done-text').textContent =
             `${nome}, il tuo Process Check è richiesto per ${labelFor(selDay, selSlot)}. Ti confermiamo l'appuntamento via email a ${email} entro 24 ore.`;
           flowEl.style.display = 'none';
