@@ -778,131 +778,6 @@
       }
       button.av-nav-cta { cursor: pointer; font-family: var(--font-stack); }
 
-      /* ============ PRENOTAZIONE PROCESS CHECK ============ */
-      .booking-overlay {
-        position: fixed;
-        inset: 0;
-        z-index: 320;
-        display: none;
-        align-items: center;
-        justify-content: center;
-        padding: 24px;
-      }
-      .booking-overlay.open { display: flex; }
-
-      .booking-glow {
-        position: fixed;
-        width: 24px; height: 24px;
-        border-radius: 50%;
-        background: radial-gradient(circle, rgba(156, 194, 255, 0.95) 0%, rgba(76, 141, 255, 0.55) 40%, rgba(76, 141, 255, 0) 70%);
-        pointer-events: none;
-        z-index: 315;
-        transform: translate(-50%, -50%) scale(1);
-        opacity: 1;
-      }
-      .booking-glow.grow {
-        transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.55s ease;
-        transform: translate(-50%, -50%) scale(90);
-        opacity: 0;
-      }
-
-      .booking-card {
-        position: relative;
-        width: min(680px, 96vw);
-        max-height: 88vh;
-        overflow-y: auto;
-        background: rgba(5, 9, 20, 0.96);
-        border: 1px solid rgba(76, 141, 255, 0.35);
-        border-radius: 24px;
-        padding: 36px 36px 32px;
-        box-shadow: 0 40px 120px rgba(0, 0, 0, 0.7), 0 0 90px rgba(76, 141, 255, 0.3);
-        transform: scale(0.88);
-        opacity: 0;
-        transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.4s ease;
-        scrollbar-width: thin;
-        scrollbar-color: rgba(76,141,255,0.3) transparent;
-      }
-      .booking-overlay.open .booking-card.show { transform: scale(1); opacity: 1; }
-
-      .bk-close {
-        position: absolute;
-        top: 18px; right: 20px;
-        background: none; border: none;
-        color: var(--color-demoted-text);
-        font-size: 24px; line-height: 1;
-        cursor: pointer;
-        padding: 4px 8px;
-      }
-      .bk-close:hover { color: var(--color-primary-text); }
-
-      .bk-eyebrow {
-        font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
-        color: var(--color-accent); font-weight: 700; margin-bottom: 10px;
-      }
-      .bk-title {
-        font-family: var(--font-display);
-        font-size: clamp(24px, 3vw, 32px);
-        font-weight: 700; letter-spacing: -0.02em;
-        color: var(--color-primary-text);
-        margin-bottom: 6px;
-      }
-      .bk-sub { font-size: 14.5px; color: var(--color-demoted-text); margin-bottom: 26px; }
-
-      .bk-label {
-        font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase;
-        color: var(--color-demoted-text); font-weight: 600;
-        margin: 22px 0 12px;
-      }
-
-      .bk-days {
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        gap: 10px;
-      }
-      .bk-day {
-        background: rgba(148, 170, 220, 0.06);
-        border: 1px solid rgba(148, 170, 220, 0.18);
-        border-radius: 14px;
-        padding: 12px 6px;
-        text-align: center;
-        cursor: pointer;
-        transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
-        font-family: var(--font-stack);
-        color: var(--color-primary-text);
-      }
-      .bk-day:hover { border-color: rgba(76, 141, 255, 0.5); }
-      .bk-day.sel {
-        background: var(--color-accent-soft);
-        border-color: var(--color-accent);
-        box-shadow: 0 0 18px rgba(76, 141, 255, 0.35);
-      }
-      .bk-day .d-dow { display: block; font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-demoted-text); margin-bottom: 4px; }
-      .bk-day .d-num { display: block; font-size: 21px; font-weight: 700; }
-      .bk-day .d-mon { display: block; font-size: 11px; color: var(--color-demoted-text); margin-top: 2px; }
-
-      .bk-slots { display: flex; flex-wrap: wrap; gap: 10px; }
-      .bk-slot {
-        background: rgba(148, 170, 220, 0.06);
-        border: 1px solid rgba(148, 170, 220, 0.18);
-        border-radius: 100px;
-        padding: 9px 18px;
-        font-size: 14px;
-        font-weight: 600;
-        color: var(--color-primary-text);
-        cursor: pointer;
-        transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
-        font-family: var(--font-stack);
-      }
-      .bk-slot:hover { border-color: rgba(76, 141, 255, 0.5); }
-      .bk-slot.sel {
-        background: var(--color-accent);
-        border-color: var(--color-accent);
-        color: #04070f;
-        box-shadow: 0 0 18px rgba(76, 141, 255, 0.5);
-      }
-
-      .bk-form { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-      .bk-form .bk-full { grid-column: 1 / -1; }
       .bk-input {
         width: 100%;
         background: rgba(148, 170, 220, 0.08);
@@ -916,27 +791,6 @@
       }
       .bk-input:focus { border-color: rgba(76, 141, 255, 0.5); }
       .bk-input::placeholder { color: rgba(151, 163, 189, 0.6); }
-
-      .bk-footer {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 16px;
-        margin-top: 26px;
-        flex-wrap: wrap;
-      }
-      .bk-summary { font-size: 13.5px; color: var(--color-demoted-text); }
-      .bk-summary strong { color: #9cc2ff; font-weight: 600; }
-
-      .bk-success { text-align: center; padding: 30px 10px 16px; }
-      .bk-success .agent-orb { margin: 0 auto 22px; width: 56px; height: 56px; }
-      .bk-success h3 {
-        font-family: var(--font-display);
-        font-size: 26px; font-weight: 700; letter-spacing: -0.02em;
-        margin-bottom: 12px;
-      }
-      .bk-success p { font-size: 15px; line-height: 1.6; color: var(--color-demoted-text); max-width: 420px; margin: 0 auto; }
-
 
       /* HERO CTA row + trust (ripristino) */
       .hero-cta-row { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
@@ -1137,6 +991,7 @@
         font-size: 12px; color: var(--color-demoted-text); margin-top: 10px; min-height: 14px;
       }
 
+
       /* ============ RESPONSIVE ============ */
       @media (max-width: 767px) {
         .av-header { left: 20px; right: 20px; top: 20px; }
@@ -1165,10 +1020,6 @@
 
         .ovia-agent-btn { right: 16px; bottom: 16px; padding: 10px 16px 10px 12px; font-size: 13px; }
         .ovia-agent-panel { height: 92vh; border-radius: 20px; }
-        .bk-days { grid-template-columns: repeat(5, 1fr); gap: 6px; }
-        .bk-day .d-num { font-size: 17px; }
-        .booking-card { padding: 26px 20px; }
-        .bk-form { grid-template-columns: 1fr; }
       }
     </style>
   </head>
@@ -1180,7 +1031,7 @@
       <nav class="av-header-nav">
         <a href="#soluzioni" class="av-nav-link">Soluzioni</a>
         <a href="#metodo" class="av-nav-link">Metodo</a>
-        <button type="button" class="av-nav-cta js-book">Prenota il Process Check</button>
+        <button type="button" class="av-nav-cta js-book" data-cal-link="luca-lorenzo-oodqpt/process-check-ovia" data-cal-namespace="process-check-ovia" data-cal-config='{"layout":"month_view"}'>Prenota il Process Check</button>
       </nav>
     </header>
 
@@ -1205,7 +1056,7 @@
           <p class="hero-subtitle" id="hero-sub">Sistemi di intelligenza artificiale progettati sul tuo modo di lavorare: gestiscono email, documenti, chiamate e scadenze, sotto il tuo controllo. Tu ti occupi dei clienti. Il sistema, del resto.</p>
           <div id="hero-cta-block">
             <div class="hero-cta-row">
-              <button type="button" class="av-btn-wrapper js-book">
+              <button type="button" class="av-btn-wrapper js-book" data-cal-link="luca-lorenzo-oodqpt/process-check-ovia" data-cal-namespace="process-check-ovia" data-cal-config='{"layout":"month_view"}'>
                 <span class="av-btn-text">Prenota il Process Check</span>
                 <div class="av-btn-circle">→</div>
               </button>
@@ -1339,7 +1190,7 @@
             <span class="sb-feature">Collega tutto al cliente giusto</span>
             <span class="sb-feature">Risponde a una semplice domanda</span>
           </div>
-          <button type="button" class="av-btn-wrapper js-book">
+          <button type="button" class="av-btn-wrapper js-book" data-cal-link="luca-lorenzo-oodqpt/process-check-ovia" data-cal-namespace="process-check-ovia" data-cal-config='{"layout":"month_view"}'>
             <span class="av-btn-text">Costruisci il tuo Second Brain</span>
             <div class="av-btn-circle">→</div>
           </button>
@@ -1455,7 +1306,7 @@
           <p>Costruiamo la prima parte del sistema e la misuriamo insieme. Solo quando funziona, il sistema cresce su nuove aree.</p>
         </div>
       </div>
-      <button type="button" class="av-btn-wrapper js-book">
+      <button type="button" class="av-btn-wrapper js-book" data-cal-link="luca-lorenzo-oodqpt/process-check-ovia" data-cal-namespace="process-check-ovia" data-cal-config='{"layout":"month_view"}'>
         <span class="av-btn-text">Prenota il Process Check</span>
         <div class="av-btn-circle">→</div>
       </button>
@@ -1544,44 +1395,9 @@
       </div>
     </div>
 
-    <!-- PRENOTAZIONE PROCESS CHECK -->
-    <div class="booking-overlay" id="booking-overlay" role="dialog" aria-modal="true" aria-label="Prenota il Process Check">
-      <div class="modal-backdrop" data-close-booking></div>
-      <div class="booking-card" id="booking-card">
-        <button class="bk-close" data-close-booking aria-label="Chiudi">×</button>
-        <div id="bk-flow">
-          <p class="bk-eyebrow">Ovia Process Check</p>
-          <h3 class="bk-title">Scegli il tuo momento.</h3>
-          <p class="bk-sub">Trenta minuti sul tuo flusso di lavoro reale, in videochiamata. Seleziona giorno e ora.</p>
-
-          <p class="bk-label">Giorno</p>
-          <div class="bk-days" id="bk-days"></div>
-
-          <p class="bk-label">Ora</p>
-          <div class="bk-slots" id="bk-slots"></div>
-
-          <p class="bk-label">I tuoi dati</p>
-          <div class="bk-form">
-            <input type="text" class="bk-input" id="bk-nome" placeholder="Nome" autocomplete="given-name" />
-            <input type="text" class="bk-input" id="bk-cognome" placeholder="Cognome" autocomplete="family-name" />
-            <input type="email" class="bk-input bk-full" id="bk-email" placeholder="Email di lavoro" autocomplete="email" />
-          </div>
-
-          <div class="bk-footer">
-            <p class="bk-summary" id="bk-summary">Seleziona giorno e ora</p>
-            <button type="button" class="av-btn-wrapper" id="bk-confirm">
-              <span class="av-btn-text">Conferma la prenotazione</span>
-              <div class="av-btn-circle">→</div>
-            </button>
-          </div>
-        </div>
-        <div id="bk-done" class="bk-success" style="display:none;">
-          <div class="agent-orb"></div>
-          <h3>Richiesta ricevuta.</h3>
-          <p id="bk-done-text">Ti confermiamo l'appuntamento via email entro 24 ore.</p>
-        </div>
-      </div>
-    </div>
+    <!-- La prenotazione del Process Check è gestita dal popup Cal.com,
+         agganciato via attributi data-cal-link sui pulsanti .js-book.
+         Nessun markup custom necessario: Cal.com crea il proprio overlay. -->
 
     <!-- GSAP -->
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
@@ -2287,7 +2103,7 @@ Non promettere mai guadagni garantiti n\u00e9 automazioni senza controllo umano:
         input.addEventListener('keydown', e => { if (e.key === 'Enter') send(); });
         chipsEl.querySelectorAll('.agent-chip').forEach(chip => {
           if (chip.hasAttribute('data-book')) {
-            chip.addEventListener('click', e => { close(); window.OviaBooking.open(e); });
+            chip.addEventListener('click', () => { close(); const bookBtn = document.querySelector('.js-book'); if (bookBtn) bookBtn.click(); });
           } else {
             chip.addEventListener('click', () => { open(); send(chip.textContent); });
           }
@@ -2297,162 +2113,10 @@ Non promettere mai guadagni garantiti n\u00e9 automazioni senza controllo umano:
       })();
 
       /* =============================================================
-         PRENOTAZIONE PROCESS CHECK — bagliore + calendario
+         PRENOTAZIONE PROCESS CHECK — delegata interamente a Cal.com.
+         I pulsanti .js-book hanno gli attributi data-cal-link/data-cal-namespace
+         (vedi HTML): l'embed script di Cal.com li intercetta da solo.
          ============================================================= */
-      window.OviaBooking = (() => {
-        const overlay = document.getElementById('booking-overlay');
-        const card = document.getElementById('booking-card');
-        const daysEl = document.getElementById('bk-days');
-        const slotsEl = document.getElementById('bk-slots');
-        const summaryEl = document.getElementById('bk-summary');
-        const flowEl = document.getElementById('bk-flow');
-        const doneEl = document.getElementById('bk-done');
-
-        const SLOTS = ['09:00', '10:30', '12:00', '15:00', '16:30', '18:00'];
-        const DOW = ['dom', 'lun', 'mar', 'mer', 'gio', 'ven', 'sab'];
-        const MON = ['gen', 'feb', 'mar', 'apr', 'mag', 'giu', 'lug', 'ago', 'set', 'ott', 'nov', 'dic'];
-
-        let days = [];
-        let selDay = null, selSlot = null;
-
-        function nextWorkdays(count) {
-          const out = [];
-          const d = new Date();
-          d.setDate(d.getDate() + 1);
-          while (out.length < count) {
-            const dow = d.getDay();
-            if (dow !== 0 && dow !== 6) out.push(new Date(d));
-            d.setDate(d.getDate() + 1);
-          }
-          return out;
-        }
-
-        // Disponibilità simulate finché non colleghi il calendario reale:
-        // ogni giorno "perde" 1-2 slot in modo deterministico.
-        function slotsFor(date) {
-          const seed = date.getDate() * 7 + date.getMonth() * 3;
-          return SLOTS.filter((s, i) => (seed + i) % 5 !== 0);
-        }
-
-        function renderDays() {
-          daysEl.innerHTML = '';
-          days.forEach((d, i) => {
-            const b = document.createElement('button');
-            b.type = 'button';
-            b.className = 'bk-day' + (selDay === i ? ' sel' : '');
-            b.innerHTML = `<span class="d-dow">${DOW[d.getDay()]}</span><span class="d-num">${d.getDate()}</span><span class="d-mon">${MON[d.getMonth()]}</span>`;
-            b.addEventListener('click', () => { selDay = i; selSlot = null; renderDays(); renderSlots(); updateSummary(); });
-            daysEl.appendChild(b);
-          });
-        }
-
-        function renderSlots() {
-          slotsEl.innerHTML = '';
-          if (selDay === null) {
-            slotsEl.innerHTML = '<span class="bk-summary">Scegli prima un giorno</span>';
-            return;
-          }
-          slotsFor(days[selDay]).forEach(s => {
-            const b = document.createElement('button');
-            b.type = 'button';
-            b.className = 'bk-slot' + (selSlot === s ? ' sel' : '');
-            b.textContent = s;
-            b.addEventListener('click', () => { selSlot = s; renderSlots(); updateSummary(); });
-            slotsEl.appendChild(b);
-          });
-        }
-
-        function labelFor(i, slot) {
-          const d = days[i];
-          return `${DOW[d.getDay()]} ${d.getDate()} ${MON[d.getMonth()]} alle ${slot}`;
-        }
-
-        function updateSummary() {
-          if (selDay !== null && selSlot) {
-            summaryEl.innerHTML = 'Process Check: <strong>' + labelFor(selDay, selSlot) + '</strong>';
-          } else if (selDay !== null) {
-            summaryEl.textContent = 'Ora scegli un orario';
-          } else {
-            summaryEl.textContent = 'Seleziona giorno e ora';
-          }
-        }
-
-        function open(e) {
-          // Bagliore dal punto del click verso il centro
-          const x = e && e.clientX ? e.clientX : window.innerWidth / 2;
-          const y = e && e.clientY ? e.clientY : window.innerHeight / 2;
-          const glow = document.createElement('div');
-          glow.className = 'booking-glow';
-          glow.style.left = x + 'px';
-          glow.style.top = y + 'px';
-          document.body.appendChild(glow);
-          requestAnimationFrame(() => requestAnimationFrame(() => glow.classList.add('grow')));
-          setTimeout(() => glow.remove(), 650);
-
-          // Reset stato
-          selDay = null; selSlot = null;
-          days = nextWorkdays(10);
-          flowEl.style.display = '';
-          doneEl.style.display = 'none';
-          card.classList.remove('show');
-          renderDays(); renderSlots(); updateSummary();
-
-          setTimeout(() => {
-            overlay.classList.add('open');
-            requestAnimationFrame(() => card.classList.add('show'));
-          }, 260);
-        }
-
-        function close() { overlay.classList.remove('open'); card.classList.remove('show'); }
-
-        overlay.querySelectorAll('[data-close-booking]').forEach(el => el.addEventListener('click', close));
-        document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
-
-        document.getElementById('bk-confirm').addEventListener('click', async () => {
-          const nome = document.getElementById('bk-nome').value.trim();
-          const cognome = document.getElementById('bk-cognome').value.trim();
-          const email = document.getElementById('bk-email').value.trim();
-          if (selDay === null || !selSlot) { updateSummary(); summaryEl.textContent = 'Seleziona giorno e ora per continuare'; return; }
-          if (!nome || !cognome || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
-            summaryEl.textContent = 'Completa nome, cognome e una email valida';
-            return;
-          }
-
-          const confirmBtn = document.getElementById('bk-confirm');
-          confirmBtn.disabled = true;
-
-          // Manda la prenotazione al gestionale come Lead con stato dedicato.
-          // Se l'invio fallisce non blocchiamo la conferma a schermo: l'appuntamento
-          // resta comunque valido, va solo verificato manualmente in quel caso.
-          try {
-            await fetch('https://ovia-ten.vercel.app/api/lead', {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({
-                nome, cognome, email,
-                fonte: 'Process Check',
-                stato: 'Process Check prenotato',
-                data_ricezione: new Date().toISOString(),
-                data_appuntamento: days[selDay].toISOString().slice(0, 10),
-                ora_appuntamento: selSlot,
-                esigenza: 'Prenotazione diretta del Process Check dal sito'
-              })
-            });
-          } catch (e) {}
-
-          document.getElementById('bk-done-text').textContent =
-            `${nome}, il tuo Process Check è richiesto per ${labelFor(selDay, selSlot)}. Ti confermiamo l'appuntamento via email a ${email} entro 24 ore.`;
-          flowEl.style.display = 'none';
-          doneEl.style.display = '';
-        });
-
-        // Tutti i CTA "Prenota il Process Check"
-        document.querySelectorAll('.js-book').forEach(el => {
-          el.addEventListener('click', e => open(e));
-        });
-
-        return { open, close };
-      })();
 
       /* =============================================================
          GSAP: carosello, pannello, stomp cards, fade-in, footer
@@ -2590,6 +2254,44 @@ Non promettere mai guadagni garantiti n\u00e9 automazioni senza controllo umano:
           if (w !== lastWidth) { lastWidth = w; initAnimations(); }
           else ScrollTrigger.refresh();
         }, 200);
+      });
+    </script>
+    <!-- Cal.com embed: intercetta da solo il click su ogni elemento con
+         data-cal-link e apre il popup di prenotazione con Meet + calendario. -->
+    <script type="text/javascript">
+      (function (C, A, L) {
+        let p = function (a, ar) { a.q.push(ar); };
+        let d = C.document;
+        C.Cal = C.Cal || function () {
+          let cal = C.Cal;
+          let ar = arguments;
+          if (!cal.loaded) {
+            cal.ns = {};
+            cal.q = cal.q || [];
+            d.head.appendChild(d.createElement('script')).src = A;
+            cal.loaded = true;
+          }
+          if (ar[0] === L) {
+            const api = function () { p(api, arguments); };
+            const namespace = ar[1];
+            api.q = api.q || [];
+            if (typeof namespace === 'string') {
+              cal.ns[namespace] = cal.ns[namespace] || api;
+              p(cal.ns[namespace], ar);
+              p(cal, ['initNamespace', namespace]);
+            } else p(cal, ar);
+            return;
+          }
+          p(cal, ar);
+        };
+      })(window, 'https://app.cal.com/embed/embed.js', 'init');
+
+      Cal('init', 'process-check-ovia', { origin: 'https://cal.com' });
+      Cal.ns['process-check-ovia']('ui', {
+        theme: 'dark',
+        styles: { branding: { brandColor: '#4c8dff' } },
+        hideEventTypeDetails: false,
+        layout: 'month_view'
       });
     </script>
   </body>
