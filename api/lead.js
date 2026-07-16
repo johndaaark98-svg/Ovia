@@ -74,7 +74,7 @@ export default async function handler(req, res) {
 
   try {
     const upstream = await fetch(
-      'https://6a58ab9b7da671857cfef024.base44.app/functions/createLeadWebhook',
+      'https://ovia-flow-core.base44.app/functions/createLeadWebhook',
       {
         method: 'POST',
         headers: {
