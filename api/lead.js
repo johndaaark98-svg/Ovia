@@ -1,6 +1,5 @@
-// OVIA - Proxy sicuro verso il webhook Lead di Base44.
-// La chiave WEBHOOK_API_KEY non e' mai nel codice del sito: sta nelle
-// Environment Variables di Vercel (nome: BASE44_WEBHOOK_KEY).
+// OVIA - Proxy sicuro verso il webhook Lead di Base44 (Ovia Manager).
+// La chiave BASE44_WEBHOOK_KEY resta lato server (Environment Variables Vercel).
 
 const ALLOWED_ORIGINS = [
   'https://oviaitalia.it',
@@ -9,6 +8,7 @@ const ALLOWED_ORIGINS = [
 ];
 
 const PACKAGE_NAMES = [
+  'Ovia Siti Web',
   'Ovia Second Brain',
   'Ovia Inbox',
   'Ovia Documenti',
@@ -26,6 +26,8 @@ function normalizePackage(text) {
   }
   return 'Su misura';
 }
+
+const CATEGORIE = ['Siti web', 'Servizi AI', 'Chiamata Plaud', 'Altro'];
 
 export default async function handler(req, res) {
   const origin = req.headers.origin || '';
@@ -47,7 +49,10 @@ export default async function handler(req, res) {
 
   const body = req.body || {};
 
+  const categoria = CATEGORIE.includes(body.categoria) ? body.categoria : 'Servizi AI';
+
   const payload = {
+    azienda: body.azienda || '',
     nome: body.nome || '',
     cognome: body.cognome || '',
     email: body.email || '',
@@ -58,17 +63,17 @@ export default async function handler(req, res) {
     volume_frequenza: body.volume_frequenza || '',
     pacchetto_suggerito: normalizePackage(body.pacchetto_suggerito),
     trascrizione_conversazione: body.trascrizione_conversazione || '',
-    fonte: body.fonte || 'Sito - Maggiordomo',
+    categoria: categoria,
+    fonte: body.fonte || 'Manuale',
     stato: body.stato || 'Nuovo',
+    priorita: body.priorita || 'Media',
     data_ricezione: body.data_ricezione || new Date().toISOString(),
     note_interne: body.note_interne || '',
   };
 
-  if (body.data_appuntamento) payload.data_appuntamento = body.data_appuntamento;
-  if (body.ora_appuntamento) payload.ora_appuntamento = body.ora_appuntamento;
-
-  if (!payload.nome || !payload.cognome || !payload.email) {
-    res.status(400).json({ error: 'Nome, cognome ed email sono obbligatori' });
+  // Ora Base44 richiede solo l'email come campo obbligatorio.
+  if (!payload.email) {
+    res.status(400).json({ error: 'Email obbligatoria' });
     return;
   }
 

@@ -996,6 +996,8 @@
       @media (max-width: 767px) {
         .av-header { left: 20px; right: 20px; top: 20px; }
         .av-nav-link { display: none; }
+        /* Su mobile teniamo visibile SOLO la voce Siti web */
+        .av-header-nav a[href="#siti-web"].av-nav-link { display: inline-flex; font-size: 13px; }
         .brain-hero-sticky { padding: 24px; }
         .scroll-indicator { bottom: 20px; }
         .hero-subtitle { font-size: 15px; }
@@ -1034,7 +1036,21 @@
       .sw-card h3 { font-family: var(--font-display); font-size: 24px; font-weight: 700; margin-bottom: 12px; line-height: 1.15; }
       .sw-card p { font-size: 15.5px; line-height: 1.55; color: var(--color-demoted-text); margin-bottom: 26px; flex-grow: 1; }
       .sw-card-link { font-family: var(--font-display); font-size: 15px; font-weight: 600; color: var(--color-primary-text); display: inline-flex; align-items: center; gap: 8px; }
-      @media (max-width: 760px) { .siti-web-section { padding: 72px 24px; } .sw-grid { grid-template-columns: 1fr; gap: 18px; } .sw-card { padding: 30px 24px; } }
+      @media (max-width: 760px) {
+        .siti-web-section { padding: 72px 24px; display: block !important; opacity: 1 !important; visibility: visible !important; height: auto !important; overflow: visible !important; transform: none !important; }
+        .sw-grid { grid-template-columns: 1fr; gap: 18px; }
+        .sw-card { padding: 30px 24px; opacity: 1 !important; transform: none !important; }
+      }
+
+      /* ==== BANNER COOKIE ==== */
+      .cookie-banner { position: fixed; left: 20px; right: 20px; bottom: 20px; max-width: 560px; margin: 0 auto; z-index: 9999; background: var(--color-panel, #060b18); border: 1px solid var(--color-divider, rgba(148,170,220,0.16)); border-radius: 16px; padding: 22px 24px; box-shadow: 0 20px 60px -20px rgba(0,0,0,0.7); font-family: var(--font-stack); }
+      .cookie-banner p { color: var(--color-demoted-text, #97a3bd); font-size: 14px; line-height: 1.5; margin: 0 0 16px; }
+      .cookie-banner a { color: var(--color-accent, #4c8dff); }
+      .cookie-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+      .cookie-btn { font-family: var(--font-display); font-size: 14px; font-weight: 600; padding: 10px 20px; border-radius: 100px; cursor: pointer; border: 1px solid transparent; }
+      .cookie-accept { background: var(--color-accent, #4c8dff); color: #fff; }
+      .cookie-reject { background: transparent; color: var(--color-primary-text, #eaf0fb); border-color: var(--color-divider, rgba(148,170,220,0.16)); }
+      .cookie-hidden { display: none !important; }
     </style>
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <link rel="canonical" href="https://oviaitalia.it/" />
@@ -1363,7 +1379,7 @@
         <!-- SITI WEB CON AI -->
     <section class="siti-web-section" id="siti-web">
       <p class="sw-eyebrow">Nuovo</p>
-      <h2 class="sw-title">Siti web con AI</h2>
+      <h2 class="sw-title" id="sw-decrypt" data-text="Siti web con AI">Siti web con AI</h2>
       <p class="sw-subtitle">La stessa intelligenza artificiale che automatizza gli studi professionali, applicata ai siti web: belli, veloci, e che portano clienti.</p>
       <div class="sw-grid">
         <a href="siti-studi-professionali.html" class="sw-card">
@@ -1472,7 +1488,7 @@
           <div class="agent-orb"></div>
           <div class="agent-header-info">
             <div class="agent-name">Ovia</div>
-            <div class="agent-role">Il tuo maggiordomo · descrivi la tua esigenza, ti propongo la soluzione</div>
+            <div class="agent-role">Assistente virtuale AI · descrivi la tua esigenza, ti propongo la soluzione</div>
           </div>
           <button class="agent-close" id="agent-close" aria-label="Chiudi">×</button>
         </div>
@@ -1964,7 +1980,7 @@ Non promettere mai guadagni garantiti n\u00e9 automazioni senza controllo umano:
         function open(greeting) {
           overlay.classList.add('open');
           if (!messagesEl.children.length) {
-            addMsg('bot', greeting || 'Benvenuto, sono il maggiordomo di Ovia. Descrivimi la tua esigenza — il problema che ti ruba più tempo — e ti propongo il pacchetto giusto per il tuo modo di lavorare.');
+            addMsg('bot', greeting || 'Ciao! Sono l’assistente virtuale di Ovia, basato su intelligenza artificiale (AI). Descrivimi la tua esigenza — il problema che ti ruba più tempo — e ti propongo il pacchetto giusto per il tuo modo di lavorare.');
           }
           input.focus();
         }
@@ -2390,5 +2406,58 @@ Non promettere mai guadagni garantiti n\u00e9 automazioni senza controllo umano:
         layout: 'month_view'
       });
     </script>
-  </body>
+
+    <div class="cookie-banner cookie-hidden" id="cookie-banner" role="dialog" aria-label="Preferenze cookie">
+      <p>Utilizziamo cookie tecnici necessari al funzionamento del sito. Con il tuo consenso potremmo usare in futuro cookie statistici. Consulta la <a href="cookie.html">Cookie Policy</a> e la <a href="privacy.html">Privacy Policy</a>.</p>
+      <div class="cookie-actions">
+        <button class="cookie-btn cookie-accept" id="cookie-accept">Accetta</button>
+        <button class="cookie-btn cookie-reject" id="cookie-reject">Rifiuta non necessari</button>
+      </div>
+    </div>
+    <script>
+      (function(){
+        try {
+          var KEY = 'ovia_cookie_consent';
+          var banner = document.getElementById('cookie-banner');
+          if (!banner) return;
+          if (!localStorage.getItem(KEY)) { banner.classList.remove('cookie-hidden'); }
+          function choose(v){ try{ localStorage.setItem(KEY, v); }catch(e){} banner.classList.add('cookie-hidden'); }
+          document.getElementById('cookie-accept').addEventListener('click', function(){ choose('accepted'); });
+          document.getElementById('cookie-reject').addEventListener('click', function(){ choose('rejected'); });
+        } catch(e){}
+      })();
+    </script>
+      <script>
+      (function(){
+        var el = document.getElementById('sw-decrypt');
+        if (!el) return;
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        var target = el.getAttribute('data-text') || el.textContent;
+        var chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789#%&<>/*';
+        var done = false;
+        function scramble(progress){
+          var out = '';
+          for (var i = 0; i < target.length; i++){
+            if (target[i] === ' ') { out += ' '; continue; }
+            if (i < progress) { out += target[i]; }
+            else { out += chars[Math.floor(Math.random()*chars.length)]; }
+          }
+          return out;
+        }
+        function run(){
+          if (done) return; done = true;
+          var progress = 0;
+          var iv = setInterval(function(){
+            el.textContent = scramble(Math.floor(progress));
+            progress += 0.5;
+            if (progress >= target.length){ clearInterval(iv); el.textContent = target; }
+          }, 45);
+        }
+        var obs = new IntersectionObserver(function(entries){
+          entries.forEach(function(e){ if (e.isIntersecting) { run(); obs.disconnect(); } });
+        }, { threshold: 0.6 });
+        obs.observe(el);
+      })();
+    </script>
+</body>
 </html>

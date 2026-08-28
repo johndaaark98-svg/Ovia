@@ -18,6 +18,66 @@
   <meta name="twitter:description" content="Siti ad alta conversione con prenotazione in 30 secondi, assistente virtuale e SEO locale." />
 
   <link rel="stylesheet" href="landing.css" />
+  <style>
+    .why-now { max-width: 1100px; margin: 0 auto; padding: 80px 40px; }
+    .why-now-title { font-family: var(--font-display); font-size: clamp(28px,4.5vw,44px); font-weight: 700; text-align: center; letter-spacing: -0.02em; margin-bottom: 48px; line-height: 1.1; }
+    .why-now-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 48px; align-items: center; }
+    .why-now-story p { font-size: 17px; line-height: 1.6; color: var(--color-demoted-text); margin-bottom: 18px; }
+    .why-now-story p strong { color: var(--color-primary-text); font-weight: 600; }
+    .why-now-story .kicker { color: var(--color-primary-text); font-family: var(--font-display); font-size: 19px; font-weight: 700; }
+    .stat-cards { display: flex; flex-direction: column; gap: 18px; }
+    .stat-card { padding: 26px 28px; border-radius: 18px; background: linear-gradient(160deg, rgba(76,141,255,0.1), rgba(139,92,246,0.06)); border: 1px solid var(--color-divider); }
+    .stat-card .big { font-family: var(--font-display); font-size: 34px; font-weight: 700; color: var(--color-accent); line-height: 1; margin-bottom: 8px; }
+    .stat-card .desc { font-size: 14.5px; line-height: 1.45; color: var(--color-demoted-text); }
+    .vs-section { max-width: 1000px; margin: 0 auto; padding: 40px 40px 80px; }
+    .vs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .vs-col { padding: 34px 30px; border-radius: 20px; border: 1px solid var(--color-divider); }
+    .vs-col.ieri { background: rgba(148,170,220,0.04); }
+    .vs-col.oggi { background: linear-gradient(160deg, rgba(76,141,255,0.12), rgba(139,92,246,0.07)); border-color: rgba(76,141,255,0.4); }
+    .vs-col h3 { font-family: var(--font-display); font-size: 15px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 22px; }
+    .vs-col.ieri h3 { color: var(--color-demoted-text); }
+    .vs-col.oggi h3 { color: var(--color-accent); }
+    .vs-col ul { list-style: none; }
+    .vs-col li { font-size: 16px; line-height: 1.5; padding: 12px 0 12px 28px; position: relative; color: var(--color-demoted-text); border-bottom: 1px solid var(--color-divider); }
+    .vs-col li:last-child { border-bottom: none; }
+    .vs-col.oggi li { color: var(--color-primary-text); }
+    .vs-col li::before { position: absolute; left: 0; top: 12px; }
+    .vs-col.ieri li::before { content: '—'; color: var(--color-demoted-text); }
+    .vs-col.oggi li::before { content: '✦'; color: var(--color-accent); }
+    .urgency-band { max-width: 900px; margin: 40px auto 0; padding: 56px 40px; text-align: center; background: linear-gradient(160deg, rgba(139,92,246,0.14), rgba(76,141,255,0.1)); border: 1px solid rgba(76,141,255,0.35); border-radius: 26px; }
+    .urgency-band h2 { font-family: var(--font-display); font-size: clamp(24px,3.5vw,34px); font-weight: 700; margin-bottom: 24px; letter-spacing: -0.02em; line-height: 1.15; }
+    .includes-list { max-width: 720px; margin: 0 auto; }
+    .includes-list li { list-style: none; font-size: 16.5px; line-height: 1.5; padding: 16px 0 16px 34px; position: relative; border-bottom: 1px solid var(--color-divider); color: var(--color-primary-text); }
+    .includes-list li:last-child { border-bottom: none; }
+    .includes-list li::before { content: '✓'; position: absolute; left: 0; top: 16px; color: var(--color-accent); font-weight: 700; }
+    @media (max-width: 860px) {
+      .why-now-grid, .vs-grid { grid-template-columns: 1fr; gap: 28px; }
+      .why-now, .vs-section { padding-left: 24px; padding-right: 24px; }
+    }
+    .demo-form { max-width: 520px; margin: 28px auto 0; text-align: left; }
+    .demo-form .row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .demo-form input, .demo-form select, .demo-form textarea {
+      width: 100%; padding: 14px 16px; margin-bottom: 14px; border-radius: 12px;
+      background: rgba(4,7,15,0.5); border: 1px solid var(--color-divider);
+      color: var(--color-primary-text); font-family: var(--font-stack); font-size: 15px;
+      transition: border-color .2s ease;
+    }
+    .demo-form input::placeholder, .demo-form textarea::placeholder { color: var(--color-demoted-text); }
+    .demo-form input:focus, .demo-form select:focus, .demo-form textarea:focus { outline: none; border-color: var(--color-accent); }
+    .demo-form select { appearance: none; cursor: pointer; }
+    .demo-form textarea { resize: vertical; min-height: 72px; }
+    .demo-consent { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 20px; font-size: 13.5px; line-height: 1.45; color: var(--color-demoted-text); text-align: left; }
+    .demo-consent input { width: auto; margin: 3px 0 0; flex-shrink: 0; }
+    .demo-consent a { color: var(--color-accent); }
+    .demo-form .lp-btn { width: 100%; justify-content: center; }
+    .demo-msg { margin-top: 16px; font-size: 14px; min-height: 20px; }
+    .demo-msg.err { color: #ff8a8a; }
+    .demo-success { text-align: center; padding: 20px 0; }
+    .demo-success .check { width: 54px; height: 54px; border-radius: 50%; background: var(--color-accent-soft); color: var(--color-accent); display: flex; align-items: center; justify-content: center; font-size: 26px; margin: 0 auto 18px; }
+    .demo-success h3 { font-family: var(--font-display); font-size: 22px; margin-bottom: 10px; }
+    .demo-success p { color: var(--color-demoted-text); font-size: 15.5px; line-height: 1.5; }
+    @media (max-width: 560px) { .demo-form .row { grid-template-columns: 1fr; } }
+  </style>
 </head>
 <body>
   <header class="lp-header">
@@ -45,6 +105,58 @@
 
   <!-- TODO: inserire qui uno screenshot/mockup reale del sito di un ristorante o attività locale -->
 
+  <!-- PERCHE ORA -->
+  <section class="why-now">
+    <h2 class="why-now-title">Ieri Google. Oggi l'intelligenza artificiale.</h2>
+    <div class="why-now-grid">
+      <div class="why-now-story">
+        <p>Fino a ieri un cliente ti cercava su Google e scorreva una lista di 10 risultati. <strong>Bastava esserci.</strong></p>
+        <p>Oggi lo chiede a ChatGPT, Gemini o Google AI: "consigliami una pizzeria a Treviso". L'AI non mostra una lista: <strong>consiglia uno o due nomi.</strong> Se non sei tra quei due, non esisti.</p>
+        <p>E chi non c'e deve comprarsi la visibilita: piu advertising, piu commissioni ai portali di prenotazione.</p>
+        <p class="kicker">Le persone si fidano dell'assistente con cui parlano. La domanda non e se adeguarti, ma quando.</p>
+      </div>
+      <div class="stat-cards">
+        <div class="stat-card">
+          <div class="big">1&ndash;2</div>
+          <div class="desc">i locali che l'AI consiglia davvero. O ci sei, o non esisti.</div>
+        </div>
+        <div class="stat-card">
+          <div class="big">8x</div>
+          <div class="desc">fino a 8 volte in piu la conversione di un cliente consigliato dall'AI rispetto a una ricerca Google.</div>
+        </div>
+        <div class="stat-card">
+          <div class="big">3 giorni</div>
+          <div class="desc">il tempo medio di decisione con l'AI, contro gli 8 giorni di una ricerca su Google.</div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:48px;">
+      <a href="#contatti" class="lp-btn lp-btn-primary">Cambio rotta: vedi la demo gratuita &rarr;</a>
+    </div>
+  </section>
+
+  <!-- IERI VS OGGI -->
+  <section class="vs-section">
+    <div class="vs-grid">
+      <div class="vs-col ieri">
+        <h3>Ieri &middot; Google</h3>
+        <ul>
+          <li>10 link blu da scorrere</li>
+          <li>L'utente confronta per giorni</li>
+          <li>Vince chi e primo o chi paga piu ads</li>
+        </ul>
+      </div>
+      <div class="vs-col oggi">
+        <h3>Oggi &middot; AI search</h3>
+        <ul>
+          <li>1-2 nomi consigliati</li>
+          <li>Decisione molto piu rapida</li>
+          <li>Vince chi e costruito per essere scelto dall'AI</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
   <section class="lp-section">
     <h2 class="lp-section-title">Cosa fa per la tua attività</h2>
     <p class="lp-section-sub">Un sito che non aspetta di essere visitato: porta clienti veri, che prenotano.</p>
@@ -65,6 +177,20 @@
         <p>SEO locale e contenuti strutturati: compari quando qualcuno cerca "pizzeria nella tua città" su Google o lo chiede a ChatGPT.</p>
       </div>
     </div>
+  </section>
+
+  <section class="lp-section">
+    <h2 class="lp-section-title">Cosa include</h2>
+    <p class="lp-section-sub">Tutto quello che serve per riempire i tavoli &mdash; e far scegliere il tuo locale, non quello accanto.</p>
+    <ul class="includes-list">
+      <li>Sito high-converting con design moderno e animazioni</li>
+      <li>Prenotazione integrata in 30 secondi: niente portali esterni, niente commissioni</li>
+      <li>Assistente virtuale addestrato sul tuo menu e sui tuoi servizi: risponde e prenota al posto tuo</li>
+      <li>Recensioni Google integrate nel sito</li>
+      <li>Struttura leggibile dalle AI: dati strutturati, contenuti fattuali, informazioni coerenti ovunque</li>
+      <li>SEO locale + configurazione Google Search Console</li>
+      <li>Care Kit mensile: aggiornamenti, modifiche e monitoraggio</li>
+    </ul>
   </section>
 
   <section class="lp-section">
@@ -108,14 +234,48 @@
         <button class="lp-faq-q">Ho già un sito vecchio: lo rifate o lo sistemate? <span class="plus">+</span></button>
         <div class="lp-faq-a">Dipende da com'è messo. Nella demo gratuita ti diciamo con onestà se conviene ripartire da zero o recuperare quello che c'è — senza farti spendere più del necessario.</div>
       </div>
+      <div class="lp-faq-item">
+        <button class="lp-faq-q">Perche non basta piu essere su Google? <span class="plus">+</span></button>
+        <div class="lp-faq-a">Perche sempre piu persone non scorrono piu dieci link: chiedono direttamente all'AI "dove mi consigli di mangiare stasera?". E l'AI risponde con uno o due locali, non con una lista. Se non sei tra quei nomi, il cliente non ti vede nemmeno. Essere su Google resta utile, ma non basta piu: bisogna essere costruiti per farsi scegliere anche dall'intelligenza artificiale.</div>
+      </div>
+      <div class="lp-faq-item">
+        <button class="lp-faq-q">Cosa fate per farmi trovare dalle intelligenze artificiali? <span class="plus">+</span></button>
+        <div class="lp-faq-a">Rendiamo il tuo locale leggibile e affidabile per le AI: menu, orari e servizi descritti in modo chiaro e coerente ovunque, contenuti fattuali che dicono con precisione cosa offri, dati strutturati che le AI sanno interpretare, e recensioni Google reali che rafforzano la tua reputazione. Cosi, quando qualcuno chiede un consiglio all'assistente, il tuo locale e tra le risposte possibili.</div>
+      </div>
     </div>
   </section>
 
   <section class="lp-section" id="contatti">
     <div class="lp-final-cta">
-      <h2>Vedi la demo del tuo sito, prima di decidere</h2>
-      <p>Costruiamo gratis un'anteprima reale della tua attività. La guardi con calma, poi scegli.</p>
-      <a href="index.html#soluzioni" class="lp-btn lp-btn-primary">Vedi la demo gratuita →</a>
+      <h2>Ogni mese che passa, l'AI consiglia i tuoi competitor. Inizia ora.</h2>
+      <p>Ti prepariamo una demo gratuita, su misura della tua attività, in 48 ore. Senza impegno.</p>
+      <div class="demo-form" id="demo-form-wrap">
+        <input type="text" id="df-azienda" placeholder="Nome dell'attività / azienda *" autocomplete="organization" />
+        <div class="row">
+          <input type="email" id="df-email" placeholder="Email *" autocomplete="email" />
+          <input type="tel" id="df-telefono" placeholder="Telefono *" autocomplete="tel" />
+        </div>
+        <select id="df-attivita">
+          <option value="" disabled selected>Tipo di attività *</option>
+          <option value="Ristorante / Pizzeria">Ristorante / Pizzeria</option>
+          <option value="Bar / Caffetteria">Bar / Caffetteria</option>
+          <option value="Club / Locale notturno">Club / Locale notturno</option>
+          <option value="Negozio / Attività commerciale">Negozio / Attività commerciale</option>
+          <option value="Altro">Altro</option>
+        </select>
+        <textarea id="df-note" placeholder="Note (facoltativo): raccontaci in due righe cosa ti serve"></textarea>
+        <label class="demo-consent">
+          <input type="checkbox" id="df-privacy" />
+          <span>Acconsento al trattamento dei miei dati per essere ricontattato riguardo alla demo, secondo l'informativa sulla privacy.</span>
+        </label>
+        <button type="button" class="lp-btn lp-btn-primary" id="df-submit">Vedi la demo gratuita</button>
+        <div class="demo-msg" id="df-msg"></div>
+      </div>
+      <div class="demo-success" id="demo-success" style="display:none;">
+        <div class="check">✓</div>
+        <h3>Richiesta ricevuta!</h3>
+        <p>Ti prepariamo la demo e ti contattiamo entro 48 ore via email e telefono.</p>
+      </div>
     </div>
   </section>
 
@@ -138,6 +298,49 @@
         btn.parentElement.classList.toggle('open');
       });
     });
+  </script>
+
+  <script>
+    (function(){
+      var btn = document.getElementById('df-submit');
+      if (!btn) return;
+      var msg = document.getElementById('df-msg');
+      var LEAD_URL = 'https://ovia-ten.vercel.app/api/lead';
+      var FONTE = 'Sito — Siti web attività locali';
+      btn.addEventListener('click', async function(){
+        var azienda = document.getElementById('df-azienda').value.trim();
+        var email = document.getElementById('df-email').value.trim();
+        var tel = document.getElementById('df-telefono').value.trim();
+        var att = document.getElementById('df-attivita').value;
+        var note = document.getElementById('df-note').value.trim();
+        var privacy = document.getElementById('df-privacy').checked;
+        msg.className = 'demo-msg err';
+        if (!azienda) { msg.textContent = 'Inserisci il nome della tua attività.'; return; }
+        if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) { msg.textContent = 'Inserisci una email valida.'; return; }
+        if (tel.replace(/[^0-9]/g,'').length < 6) { msg.textContent = 'Inserisci un numero di telefono valido.'; return; }
+        if (!att) { msg.textContent = 'Seleziona il tipo di attività.'; return; }
+        if (!privacy) { msg.textContent = 'Devi accettare il trattamento dei dati per procedere.'; return; }
+        btn.disabled = true; msg.className = 'demo-msg'; msg.textContent = 'Invio in corso...';
+        try {
+          var res = await fetch(LEAD_URL, {
+            method: 'POST', headers: {'Content-Type':'application/json'},
+            body: JSON.stringify({
+              azienda: azienda, nome: azienda, email: email, telefono: tel,
+              attivita: att, esigenza: note, note_interne: note,
+              categoria: 'Siti web', fonte: FONTE, stato: 'Nuovo',
+              data_ricezione: new Date().toISOString()
+            })
+          });
+          if (!res.ok) throw new Error('bad status');
+          document.getElementById('demo-form-wrap').style.display = 'none';
+          document.getElementById('demo-success').style.display = 'block';
+        } catch(e) {
+          btn.disabled = false;
+          msg.className = 'demo-msg err';
+          msg.textContent = 'Invio non riuscito. Riprova o scrivici a info@oviaitalia.it';
+        }
+      });
+    })();
   </script>
 </body>
 </html>
