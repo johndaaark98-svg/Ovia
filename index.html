@@ -1021,6 +1021,20 @@
         .ovia-agent-btn { right: 16px; bottom: 16px; padding: 10px 16px 10px 12px; font-size: 13px; }
         .ovia-agent-panel { height: 92vh; border-radius: 20px; }
       }
+
+      /* ==== SITI WEB CON AI ==== */
+      .siti-web-section { padding: 110px 40px; max-width: 1180px; margin: 0 auto; text-align: center; }
+      .sw-eyebrow { font-family: var(--font-display); font-size: 13px; font-weight: 600; letter-spacing: 0.28em; text-transform: uppercase; color: var(--color-accent); margin-bottom: 18px; }
+      .sw-title { font-family: var(--font-display); font-size: clamp(30px,5vw,50px); font-weight: 700; line-height: 1.08; letter-spacing: -0.02em; margin-bottom: 18px; }
+      .sw-subtitle { font-size: clamp(15px,2vw,18px); line-height: 1.55; color: var(--color-demoted-text); max-width: 660px; margin: 0 auto 56px; }
+      .sw-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 26px; }
+      .sw-card { position: relative; text-align: left; padding: 38px 34px; border-radius: 22px; background: linear-gradient(160deg, rgba(76,141,255,0.08), rgba(139,92,246,0.05)); border: 1px solid var(--color-divider); text-decoration: none; display: flex; flex-direction: column; transition: transform .35s ease, border-color .35s ease, box-shadow .35s ease; }
+      .sw-card:hover { transform: translateY(-6px); border-color: rgba(76,141,255,0.5); box-shadow: 0 24px 60px -24px rgba(76,141,255,0.5); }
+      .sw-card-tag { font-family: var(--font-display); font-size: 12px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent); margin-bottom: 14px; }
+      .sw-card h3 { font-family: var(--font-display); font-size: 24px; font-weight: 700; margin-bottom: 12px; line-height: 1.15; }
+      .sw-card p { font-size: 15.5px; line-height: 1.55; color: var(--color-demoted-text); margin-bottom: 26px; flex-grow: 1; }
+      .sw-card-link { font-family: var(--font-display); font-size: 15px; font-weight: 600; color: var(--color-primary-text); display: inline-flex; align-items: center; gap: 8px; }
+      @media (max-width: 760px) { .siti-web-section { padding: 72px 24px; } .sw-grid { grid-template-columns: 1fr; gap: 18px; } .sw-card { padding: 30px 24px; } }
     </style>
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <link rel="canonical" href="https://oviaitalia.it/" />
@@ -1050,6 +1064,7 @@
         <a href="#sicurezza" class="av-nav-link">Sicurezza</a>
         <a href="#soluzioni" class="av-nav-link">Soluzioni</a>
         <a href="#metodo" class="av-nav-link">Metodo</a>
+        <a href="#siti-web" class="av-nav-link">Siti web</a>
         <button type="button" class="av-nav-cta js-book" data-cal-link="ovia-jpa3s2/ovia-check-process" data-cal-namespace="ovia-check-process" data-cal-config='{"layout":"month_view"}'>Prenota il Process Check</button>
       </nav>
     </header>
@@ -1345,6 +1360,27 @@
     </section>
 
     <!-- PROSSIMO PASSO -->
+        <!-- SITI WEB CON AI -->
+    <section class="siti-web-section" id="siti-web">
+      <p class="sw-eyebrow">Nuovo</p>
+      <h2 class="sw-title">Siti web con AI</h2>
+      <p class="sw-subtitle">La stessa intelligenza artificiale che automatizza gli studi professionali, applicata ai siti web: belli, veloci, e che portano clienti.</p>
+      <div class="sw-grid">
+        <a href="siti-studi-professionali.html" class="sw-card">
+          <span class="sw-card-tag">Per studi professionali</span>
+          <h3>Il sito che ti porta clienti mentre lavori</h3>
+          <p>Il sito con assistente AI che prenota consulenze e ti posiziona su Google.</p>
+          <span class="sw-card-link">Scopri di piu &rarr;</span>
+        </a>
+        <a href="siti-attivita-locali.html" class="sw-card">
+          <span class="sw-card-tag">Per attivita locali</span>
+          <h3>Il sito che porta tavoli e prenotazioni</h3>
+          <p>Prenotazione in 30 secondi e assistente virtuale, per ristoranti e attivita locali.</p>
+          <span class="sw-card-link">Scopri di piu &rarr;</span>
+        </a>
+      </div>
+    </section>
+
     <section class="next-step" id="prossimo-passo">
       <p class="ns-eyebrow">Il prossimo passo</p>
       <h2 class="ns-title">Da qui al tuo primo risultato, in tre passaggi.</h2>
