@@ -996,8 +996,6 @@
       @media (max-width: 767px) {
         .av-header { left: 20px; right: 20px; top: 20px; }
         .av-nav-link { display: none; }
-        /* Su mobile teniamo visibile SOLO la voce Siti web */
-        .av-header-nav a[href="#siti-web"].av-nav-link { display: inline-flex; font-size: 13px; }
         .brain-hero-sticky { padding: 24px; }
         .scroll-indicator { bottom: 20px; }
         .hero-subtitle { font-size: 15px; }
@@ -1037,9 +1035,11 @@
       .sw-card p { font-size: 15.5px; line-height: 1.55; color: var(--color-demoted-text); margin-bottom: 26px; flex-grow: 1; }
       .sw-card-link { font-family: var(--font-display); font-size: 15px; font-weight: 600; color: var(--color-primary-text); display: inline-flex; align-items: center; gap: 8px; }
       @media (max-width: 760px) {
-        .siti-web-section { padding: 72px 24px; display: block !important; opacity: 1 !important; visibility: visible !important; height: auto !important; overflow: visible !important; transform: none !important; }
+        .siti-web-section { padding: 60px 24px; display: block !important; opacity: 1 !important; visibility: visible !important; height: auto !important; min-height: auto !important; overflow: visible !important; transform: none !important; position: relative !important; z-index: 5; clear: both; }
         .sw-grid { grid-template-columns: 1fr; gap: 18px; }
         .sw-card { padding: 30px 24px; opacity: 1 !important; transform: none !important; }
+        /* Lo spacer del footer non deve spingere via la sezione su mobile */
+        .footer-spacer { height: 0 !important; }
       }
 
       /* ==== BANNER COOKIE ==== */
@@ -2317,7 +2317,9 @@ Non promettere mai guadagni garantiti n\u00e9 automazioni senza controllo umano:
 
         const footer = document.querySelector('.replica-footer');
         const spacer = document.querySelector('.footer-spacer');
-        if (footer && spacer) spacer.style.height = footer.offsetHeight + 'px';
+        if (footer && spacer) {
+          spacer.style.height = (window.innerWidth >= 768) ? (footer.offsetHeight + 'px') : '0px';
+        }
       }
 
       function initTextSplits() {
