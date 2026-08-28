@@ -78,6 +78,29 @@
     .demo-success p { color: var(--color-demoted-text); font-size: 15.5px; line-height: 1.5; }
     @media (max-width: 560px) { .demo-form .row { grid-template-columns: 1fr; } }
   </style>
+  <style>
+    /* Striscia partner landing */
+    .partners-strip { padding: 42px 0 38px; border-top: 1px solid var(--color-divider); border-bottom: 1px solid var(--color-divider); overflow: hidden; }
+    .partners-label { text-align: center; font-family: var(--font-display); font-size: 12px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--color-demoted-text); margin-bottom: 26px; }
+    .partners-track-wrap { position: relative; width: 100%; overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); }
+    .partners-track { display: flex; align-items: center; gap: 60px; width: max-content; animation: partners-scroll 22s linear infinite; }
+    .partners-track img { height: 34px; width: auto; object-fit: contain; opacity: 0.9; transition: opacity .3s ease; }
+    .partners-track img.logo-white { filter: brightness(0) invert(1); opacity: 0.75; }
+    .partners-track img:hover { opacity: 1; }
+    @keyframes partners-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    @media (max-width: 760px) { .partners-track { gap: 40px; } .partners-track img { height: 28px; } }
+  </style>
+
+  <style>
+    /* Sfondo mesh hero landing (discreto) */
+    .lp-hero { position: relative; overflow: hidden; }
+    .lp-hero-mesh { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+    .lp-hero-mesh .grid { position: absolute; inset: -1px; background-image: linear-gradient(rgba(76,141,255,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(76,141,255,0.06) 1px, transparent 1px); background-size: 44px 44px; -webkit-mask-image: radial-gradient(ellipse 75% 65% at 50% 40%, #000 25%, transparent 75%); mask-image: radial-gradient(ellipse 75% 65% at 50% 40%, #000 25%, transparent 75%); }
+    .lp-hero-node { position: absolute; width: 5px; height: 5px; border-radius: 50%; background: radial-gradient(circle, rgba(120,170,255,0.9), rgba(76,141,255,0.12) 60%, transparent 70%); animation: lp-pulse 3.4s ease-in-out infinite; }
+    @keyframes lp-pulse { 0%,100% { transform: scale(0.7); opacity: 0.3; } 50% { transform: scale(1.2); opacity: 0.85; } }
+    .lp-hero > *:not(.lp-hero-mesh) { position: relative; z-index: 1; }
+    @media (prefers-reduced-motion: reduce) { .lp-hero-node { animation: none; } }
+  </style>
 </head>
 <body>
   <header class="lp-header">
@@ -94,14 +117,47 @@
   </nav>
 
   <section class="lp-hero">
+    <div class="lp-hero-mesh" aria-hidden="true">
+      <div class="grid"></div>
+      <span class="lp-hero-node" style="left:16%;top:28%;animation-delay:0.0s;"></span>
+      <span class="lp-hero-node" style="left:34%;top:66%;animation-delay:0.4s;"></span>
+      <span class="lp-hero-node" style="left:50%;top:24%;animation-delay:0.8s;"></span>
+      <span class="lp-hero-node" style="left:66%;top:70%;animation-delay:1.2s;"></span>
+      <span class="lp-hero-node" style="left:82%;top:34%;animation-delay:1.6s;"></span>
+      <span class="lp-hero-node" style="left:44%;top:48%;animation-delay:2.0s;"></span>
+    </div>
     <p class="lp-eyebrow">Per ristoranti, pizzerie, club e attività locali</p>
     <h1>Il sito che ti porta tavoli, clienti e prenotazioni. Non solo visite.</h1>
     <p class="sub">Siti web ad alta conversione con prenotazione in 30 secondi, assistente virtuale addestrato sulla tua attività e SEO locale per farti trovare su Google e sugli AI search.</p>
     <div class="lp-cta-row">
       <a href="#contatti" class="lp-btn lp-btn-primary">Vedi la demo gratuita →</a>
-      <a href="#contatti" class="lp-btn lp-btn-ghost">Guarda un esempio</a>
     </div>
   </section>
+
+  <section class="partners-strip">
+    <p class="partners-label">Hanno gia scelto Ovia</p>
+    <div class="partners-track-wrap">
+      <div class="partners-track">
+        <img src="loghi/eurofiltri.png" alt="Eurofiltri Group" class="logo-white" />
+        <img src="loghi/rialziamoci.svg" alt="Rialziamoci Italia" />
+        <img src="loghi/l3-innovation.png" alt="L3 Innovation" />
+        <img src="loghi/lucrezia-trabucco.png" alt="Lucrezia Trabucco" class="logo-white" />
+        <img src="loghi/eurofiltri.png" alt="Eurofiltri Group" class="logo-white" />
+        <img src="loghi/rialziamoci.svg" alt="Rialziamoci Italia" />
+        <img src="loghi/l3-innovation.png" alt="L3 Innovation" />
+        <img src="loghi/lucrezia-trabucco.png" alt="Lucrezia Trabucco" class="logo-white" />
+        <img src="loghi/eurofiltri.png" alt="Eurofiltri Group" class="logo-white" />
+        <img src="loghi/rialziamoci.svg" alt="Rialziamoci Italia" />
+        <img src="loghi/l3-innovation.png" alt="L3 Innovation" />
+        <img src="loghi/lucrezia-trabucco.png" alt="Lucrezia Trabucco" class="logo-white" />
+        <img src="loghi/eurofiltri.png" alt="Eurofiltri Group" class="logo-white" />
+        <img src="loghi/rialziamoci.svg" alt="Rialziamoci Italia" />
+        <img src="loghi/l3-innovation.png" alt="L3 Innovation" />
+        <img src="loghi/lucrezia-trabucco.png" alt="Lucrezia Trabucco" class="logo-white" />
+      </div>
+    </div>
+  </section>
+
 
   <!-- TODO: inserire qui uno screenshot/mockup reale del sito di un ristorante o attività locale -->
 
@@ -131,7 +187,7 @@
       </div>
     </div>
     <div style="text-align:center; margin-top:48px;">
-      <a href="#contatti" class="lp-btn lp-btn-primary">Cambio rotta: vedi la demo gratuita &rarr;</a>
+      <a href="#contatti" class="lp-btn lp-btn-primary">Richiedi la tua demo gratuita &rarr;</a>
     </div>
   </section>
 
