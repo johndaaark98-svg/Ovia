@@ -1059,8 +1059,9 @@
       .partners-strip { padding: 46px 0 40px; border-top: 1px solid var(--color-divider); border-bottom: 1px solid var(--color-divider); overflow: hidden; }
       .partners-label { text-align: center; font-family: var(--font-display); font-size: 12px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--color-demoted-text); margin-bottom: 30px; }
       .partners-track-wrap { position: relative; width: 100%; overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); }
-      .partners-track { display: flex; align-items: center; gap: 64px; width: max-content; animation: partners-scroll 30s linear infinite; }
-      .partners-track img { height: 40px; width: auto; object-fit: contain; opacity: 0.72; filter: grayscale(100%) brightness(0) invert(1); transition: opacity .3s ease; }
+      .partners-track { display: flex; align-items: center; gap: 64px; width: max-content; animation: partners-scroll 22s linear infinite; }
+      .partners-track img { height: 40px; width: auto; object-fit: contain; opacity: 0.9; transition: opacity .3s ease; }
+      .partners-track img.logo-white { filter: brightness(0) invert(1); opacity: 0.75; }
       .partners-track img:hover { opacity: 1; }
       @keyframes partners-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
       @media (max-width: 760px) { .partners-track { gap: 46px; } .partners-track img { height: 32px; } .partners-strip { padding: 36px 0; } }
@@ -1144,14 +1145,24 @@
       <p class="partners-label">Hanno gia scelto Ovia</p>
       <div class="partners-track-wrap">
         <div class="partners-track">
-        <img src="loghi/eurofiltri.png" alt="Eurofiltri Group" />
+        
+        <img src="loghi/eurofiltri.png" alt="Eurofiltri Group" class="logo-white" />
         <img src="loghi/rialziamoci.svg" alt="Rialziamoci Italia" />
         <img src="loghi/l3-innovation.png" alt="L3 Innovation" />
-        <img src="loghi/lucrezia-trabucco.png" alt="Lucrezia Trabucco" />
-        <img src="loghi/eurofiltri.png" alt="Eurofiltri Group" />
+        <img src="loghi/lucrezia-trabucco.png" alt="Lucrezia Trabucco" class="logo-white" />
+        <img src="loghi/eurofiltri.png" alt="Eurofiltri Group" class="logo-white" />
         <img src="loghi/rialziamoci.svg" alt="Rialziamoci Italia" />
         <img src="loghi/l3-innovation.png" alt="L3 Innovation" />
-        <img src="loghi/lucrezia-trabucco.png" alt="Lucrezia Trabucco" />
+        <img src="loghi/lucrezia-trabucco.png" alt="Lucrezia Trabucco" class="logo-white" />
+        <img src="loghi/eurofiltri.png" alt="Eurofiltri Group" class="logo-white" />
+        <img src="loghi/rialziamoci.svg" alt="Rialziamoci Italia" />
+        <img src="loghi/l3-innovation.png" alt="L3 Innovation" />
+        <img src="loghi/lucrezia-trabucco.png" alt="Lucrezia Trabucco" class="logo-white" />
+        <img src="loghi/eurofiltri.png" alt="Eurofiltri Group" class="logo-white" />
+        <img src="loghi/rialziamoci.svg" alt="Rialziamoci Italia" />
+        <img src="loghi/l3-innovation.png" alt="L3 Innovation" />
+        <img src="loghi/lucrezia-trabucco.png" alt="Lucrezia Trabucco" class="logo-white" />
+
       </div>
       </div>
     </section>
@@ -1836,8 +1847,15 @@
       }
       NeuroVerse.init();
 
+      var __isMobileHero = window.innerWidth < 768;
+      var __frameSkip = 0;
       function scrubHero() {
         const rect = brainContainer.getBoundingClientRect();
+        // Se l'hero e' completamente fuori vista, non ridisegnare la scena 3D (risparmio su mobile)
+        var __outOfView = (rect.bottom <= 0 || rect.top >= window.innerHeight);
+        if (__isMobileHero && __outOfView) { requestAnimationFrame(scrubHero); return; }
+        // Su mobile aggiorno la scena 3D a frame alternati (dimezza il carico)
+        if (__isMobileHero) { __frameSkip = (__frameSkip + 1) % 2; }
         const totalHeight = brainContainer.offsetHeight - window.innerHeight;
         let p = Math.max(0, Math.min(1, -rect.top / totalHeight));
 
@@ -1849,7 +1867,7 @@
             heroVideo.currentTime = videoCurrent;
           }
         } else {
-          NeuroVerse.setProgress(p);
+          if (!__isMobileHero || __frameSkip === 0) { NeuroVerse.setProgress(p); }
         }
 
         if (brainIndicator) {
