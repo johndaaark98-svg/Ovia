@@ -128,7 +128,10 @@
         width: 100%; height: 100%;
         z-index: 1;
       }
-      #hero-video { object-fit: cover; display: none; }
+      /* v9 fix flash-vecchio-frame: video visibile di default, canvas 3D
+         nascosto. Il canvas riappare solo come fallback se il video fallisce. */
+      #hero-video { object-fit: cover; display: block; background: #04070f; }
+      #neuro-canvas { display: none; }
 
       .hero-vignette {
         position: absolute;
@@ -1829,21 +1832,35 @@
       let useVideo = false;
       let videoTarget = 0, videoCurrent = 0;
 
+      /* v9: video visibile di default (via CSS). Il canvas 3D è nascosto
+         di partenza e riappare solo se il video fallisce/timeout.
+         Evita il flash della vecchia animazione prima del video. */
       if (HERO_VIDEO_URL) {
         heroVideo.src = HERO_VIDEO_URL;
         heroVideo.load();
         heroVideo.pause();
-        heroVideo.addEventListener('loadedmetadata', () => {
-          useVideo = true;
-          heroVideo.style.display = 'block';
-          neuroCanvas.style.display = 'none';
-        });
-        heroVideo.addEventListener('error', () => {
-          console.warn('Ovia: video hero non caricato, uso il motore canvas.');
+        let __fallbackFired = false;
+        const __fallbackToCanvas = (reason) => {
+          if (__fallbackFired) return;
+          __fallbackFired = true;
+          console.warn('Ovia: video hero non caricato (' + reason + '), fallback al motore canvas.');
           useVideo = false;
           heroVideo.style.display = 'none';
           neuroCanvas.style.display = 'block';
+        };
+        heroVideo.addEventListener('loadedmetadata', () => {
+          if (__fallbackFired) return;
+          useVideo = true;
+          // display gestito da CSS: video già visibile, canvas già nascosto.
         });
+        heroVideo.addEventListener('error', () => __fallbackToCanvas('error'));
+        // Timeout di sicurezza: se dopo 4s il video non ha caricato metadata,
+        // attiva la vecchia animazione come fallback per non lasciare l'hero vuoto.
+        setTimeout(() => {
+          if (!useVideo) __fallbackToCanvas('timeout');
+        }, 4000);
+      } else {
+        neuroCanvas.style.display = 'block';
       }
       NeuroVerse.init();
 
