@@ -1068,8 +1068,12 @@
       .partners-track img { height: 40px; width: auto; object-fit: contain; opacity: 0.9; transition: opacity .3s ease; }
       .partners-track img.logo-white { filter: brightness(0) invert(1); opacity: 0.75; }
       .partners-track img:hover { opacity: 1; }
+      /* Il PNG di Lucrezia Trabucco ha molto whitespace intorno al testo,
+         quindi a 40px il logotipo effettivo risulta molto piu piccolo degli
+         altri. Compenso con un override dedicato. */
+      .partners-track img[alt="Lucrezia Trabucco"] { height: 68px; }
       @keyframes partners-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-      @media (max-width: 760px) { .partners-track { gap: 46px; } .partners-track img { height: 32px; } .partners-strip { padding: 36px 0; } }
+      @media (max-width: 760px) { .partners-track { gap: 46px; } .partners-track img { height: 32px; } .partners-track img[alt="Lucrezia Trabucco"] { height: 54px; } .partners-strip { padding: 36px 0; } }
     </style>
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <link rel="canonical" href="https://oviaitalia.it/" />
