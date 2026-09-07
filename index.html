@@ -496,8 +496,11 @@
         margin-top: 12px;
       }
 
-      /* ============ FOOTER ============ */
-      .footer-spacer { pointer-events: none; background: transparent; width: 100%; }
+      /* ============ FOOTER ============
+         Footer statico (fix "footer che compare a metà pagina"):
+         non più position:fixed con reveal, ora scorre normalmente
+         in fondo al flusso. Lo spacer non serve più. */
+      .footer-spacer { display: none !important; height: 0 !important; }
 
       .replica-footer {
         background-color: #02040a;
@@ -507,9 +510,8 @@
         grid-template-columns: 1.2fr 1fr 1.5fr;
         gap: 48px;
         width: 100%;
-        position: fixed;
-        bottom: 0; left: 0;
-        z-index: 1;
+        position: relative;
+        z-index: 3;
       }
 
       .footer-col { display: flex; flex-direction: column; }
