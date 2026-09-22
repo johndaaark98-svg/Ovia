@@ -22,7 +22,7 @@ jobs:
       - uses: actions/setup-node@v4
         with: { node-version: 22, cache: npm }
       - run: npm ci
-      - run: npm run build
+      - run: npm run sito
       - name: Pubblica le pagine rigenerate
         run: |
           if git diff --quiet && [ -z "$(git ls-files --others --exclude-standard)" ]; then echo "Già aggiornato."; exit 0; fi
