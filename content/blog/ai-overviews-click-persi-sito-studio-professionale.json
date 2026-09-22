@@ -1,0 +1,222 @@
+{
+  "title": "AI Overviews: −58% di click. Cosa cambia per il sito dello studio",
+  "slug": "ai-overviews-click-persi-sito-studio-professionale",
+  "meta_description": "Con le AI Overviews di Google il primo risultato perde il 58% dei click. Cosa significa per il sito di uno studio o di una PMI e come farsi citare dall’AI.",
+  "lead": "Essere primi su Google vale molto meno di un anno fa. Vale di più essere la fonte che l’intelligenza artificiale sceglie di citare. Ecco i dati e cosa fare, passo per passo.",
+  "tags": [
+    "AI Overviews",
+    "GEO",
+    "SEO studi professionali",
+    "ricerca AI"
+  ],
+  "categoria": "ai-search-marketing",
+  "keyword": "AI Overviews click",
+  "intro": [
+    "Quando su Google compare un riassunto generato dall’intelligenza artificiale, le **AI Overviews**, il primo risultato organico perde in media il 58% dei click. È il dato dell’ultimo aggiornamento dello studio di [Ahrefs](https://ahrefs.com/blog/ai-overviews-reduce-clicks-update), condotto su 300.000 parole chiave con dati di dicembre 2025. Nell’aprile 2025 la perdita misurata era del 34,5%: in pochi mesi l’effetto è quasi raddoppiato.",
+    "Per uno studio professionale o una PMI che conta sul sito per ricevere richieste, è un cambiamento strutturale. La domanda non è più solo “come arrivo primo?”, ma “come divento la risposta che l’AI dà al mio potenziale cliente?”."
+  ],
+  "punti_chiave": [
+    "Con una AI Overview presente, la prima posizione su Google perde in media il 58% dei click (Ahrefs, dati dicembre 2025).",
+    "L’effetto colpisce anche le posizioni successive: la seconda perde circa il 50,8%.",
+    "La ricerca accademica sulla Generative Engine Optimization mostra che i contenuti ottimizzati possono aumentare la visibilità nelle risposte AI fino al 40%.",
+    "Pubblicare pagine generate in serie con l’AI è la strada sbagliata: Google la classifica come scaled content abuse.",
+    "La strategia vincente è rispondere in modo chiaro, verificabile e strutturato alle domande reali dei clienti."
+  ],
+  "sezioni": [
+    {
+      "h2": "Quanti click fanno perdere le AI Overviews?",
+      "paragrafi": [
+        "Secondo [Ahrefs](https://ahrefs.com/blog/ai-overviews-reduce-clicks-update), su un campione di 150.000 ricerche con AI Overview confrontate con 150.000 senza, il clickthrough rate medio della prima posizione cala del 58%. In altre parole: per ogni 100 click che un risultato in cima avrebbe ottenuto, Google ne “trattiene” 58. La seconda posizione perde il 50,8%, e l’effetto si attenua solo scendendo fino alla nona e decima posizione, dove resta comunque intorno al 19%.",
+        "Non tutte le ricerche mostrano una AI Overview: compaiono soprattutto per le domande informative (“come funziona”, “cosa serve per”, “quanto costa”). Sono però proprio le domande con cui un potenziale cliente inizia a informarsi prima di contattare uno studio."
+      ],
+      "blocco": {
+        "tipo": "stats",
+        "voci": [
+          {
+            "valore": "−58%",
+            "testo": "click sulla prima posizione con AI Overview (dic. 2025)"
+          },
+          {
+            "valore": "−50,8%",
+            "testo": "click sulla seconda posizione"
+          },
+          {
+            "valore": "−34,5%",
+            "testo": "la perdita misurata solo ad aprile 2025"
+          }
+        ]
+      }
+    },
+    {
+      "h2": "Dalla SEO alla GEO: farsi citare, non solo trovare",
+      "paragrafi": [
+        "La risposta del mercato ha un nome: **GEO, Generative Engine Optimization**. Il termine nasce da un lavoro di ricercatori di Princeton e IIT Delhi presentato alla conferenza KDD 2024 ([arXiv](https://arxiv.org/abs/2311.09735)), che ha mostrato come l’ottimizzazione dei contenuti possa aumentare la visibilità nelle risposte dei motori generativi fino al 40%.",
+        "La differenza con la SEO classica è di obiettivo. La SEO lavora per comparire nella lista dei risultati; la GEO lavora per essere **scelti come fonte** dentro la risposta dell’AI, su Google come su ChatGPT, Gemini o Perplexity. Le basi restano comuni (un sito tecnicamente solido, contenuti utili), ma la GEO premia in particolare le risposte dirette, i dati verificabili, le citazioni e una struttura che le macchine interpretano senza ambiguità."
+      ],
+      "blocco": {
+        "tipo": "compare",
+        "sinistra": {
+          "titolo": "Sito vetrina tradizionale",
+          "badge": "oggi",
+          "righe": [
+            {
+              "etichetta": "Contenuti",
+              "valore": "Parlano dello studio, non delle domande dei clienti"
+            },
+            {
+              "etichetta": "Struttura",
+              "valore": "Pagine generiche, nessun dato strutturato"
+            },
+            {
+              "etichetta": "Risultato",
+              "valore": "Visibile su Google, invisibile nelle risposte AI"
+            }
+          ]
+        },
+        "destra": {
+          "titolo": "Sito progettato per le AI",
+          "badge": "consigliato",
+          "righe": [
+            {
+              "etichetta": "Contenuti",
+              "valore": "Una risposta chiara per ogni domanda reale"
+            },
+            {
+              "etichetta": "Struttura",
+              "valore": "Pagine servizio, FAQ e dati strutturati schema.org"
+            },
+            {
+              "etichetta": "Risultato",
+              "valore": "Citabile come fonte da Google AI e dagli assistenti"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "h2": "La scorciatoia da evitare: pagine generate in serie",
+      "paragrafi": [
+        "Davanti a questi numeri la tentazione è pubblicare decine di pagine scritte dall’AI per “coprire” ogni parola chiave. È esattamente ciò che le [norme antispam di Google](https://developers.google.com/search/docs/essentials/spam-policies) definiscono **scaled content abuse**: generare molte pagine con lo scopo principale di manipolare il posizionamento, senza aggiungere valore per chi legge. Tra gli esempi citati da Google ci sono proprio l’uso di strumenti di AI generativa per produrre pagine senza valore e lo scraping di contenuti altrui trasformati con sinonimi o traduzioni.",
+        "Google non penalizza i contenuti perché sono scritti con l’AI, ma perché sono inutili. Un articolo che sintetizza più fonti, le cita, aggiunge un’analisi pratica e viene rivisto da una persona è un contenuto legittimo. Una fabbrica di testi no."
+      ],
+      "blocco": {
+        "tipo": "warning",
+        "titolo": "Errori comuni da evitare",
+        "voci": [
+          {
+            "testo": "Riscrivere articoli di altri cambiando le parole: è scraping trasformato, e Google lo tratta come tale."
+          },
+          {
+            "testo": "Creare una pagina per ogni variante di parola chiave con testi quasi identici."
+          },
+          {
+            "testo": "Pubblicare numeri senza fonte: i motori AI premiano i contenuti verificabili."
+          },
+          {
+            "testo": "Dimenticare le pagine servizio: sono quelle che convertono una citazione in un contatto."
+          }
+        ]
+      }
+    },
+    {
+      "h2": "Cosa fare, in pratica, sul sito di uno studio",
+      "paragrafi": [
+        "Il lavoro utile è meno spettacolare di quanto si pensi, e parte dalle domande dei clienti, non dalle parole chiave. Un commercialista viene cercato con domande come “quali spese posso detrarre se lavoro da casa?” o “quanto costa aprire una partita IVA forfettaria?”: ogni domanda ricorrente merita una risposta chiara, firmata, con i riferimenti corretti.",
+        "Poi serve una struttura che le macchine capiscano: una pagina per ogni servizio, FAQ con risposte brevi e autonome, dati strutturati, informazioni di contatto coerenti ovunque. Infine serve chi trasformi una visita in un contatto: un assistente che risponde subito e prenota la consulenza. Il metodo completo è descritto nella pagina [Ovia Siti Web per le AI](/servizi/siti-web-ai.html)."
+      ],
+      "blocco": {
+        "tipo": "steps",
+        "voci": [
+          {
+            "titolo": "Raccogli le domande reali",
+            "meta": "Settimana 1",
+            "testo": "Chiedi al team quali domande fanno i clienti prima di affidarsi allo studio, e verifica cosa si cerca su Google nella tua zona."
+          },
+          {
+            "titolo": "Una risposta per domanda",
+            "meta": "Settimane 2–4",
+            "testo": "Scrivi contenuti che rispondono subito, nella prima frase, e poi approfondiscono con dati e fonti."
+          },
+          {
+            "titolo": "Struttura il sito",
+            "meta": "Settimane 2–4",
+            "testo": "Pagine servizio dedicate, FAQ, dati strutturati schema.org, scheda Google aggiornata."
+          },
+          {
+            "titolo": "Misura",
+            "meta": "Ogni mese",
+            "testo": "Controlla posizionamento, citazioni nelle risposte AI e contatti ricevuti: investi dove rende."
+          }
+        ]
+      }
+    }
+  ],
+  "ovia_view": {
+    "titolo": "Il punto di vista Ovia",
+    "paragrafi": [
+      "Il calo dei click non è una cattiva notizia per chi lavora con metodo: è una selezione. Le AI citano poche fonti, e scelgono quelle chiare, autorevoli e verificabili. Per uno studio professionale questo è un vantaggio, perché la competenza c’è già: va solo resa leggibile.",
+      "Per questo nei nostri progetti la parte AI viene per ultima. Prima la strategia (quali domande, per quale cliente, con quale offerta), poi la sicurezza (moduli conformi, assistente trasparente, nessuna chiave esposta), infine gli strumenti. Quando un visitatore arriva, deve trovare subito una risposta e una strada per contattarti: è il lavoro che facciamo insieme a [Ovia Lead Generation](/servizi/lead-generation.html)."
+    ]
+  },
+  "faq": [
+    {
+      "domanda": "Le AI Overviews fanno perdere traffico a tutti i siti?",
+      "risposta": "In media sì quando compaiono: Ahrefs misura un calo del 58% dei click sulla prima posizione. Ma compaiono soprattutto sulle ricerche informative; le ricerche con intenzione diretta, come il nome dello studio, ne sono meno toccate."
+    },
+    {
+      "domanda": "Cos’è la GEO?",
+      "risposta": "La Generative Engine Optimization è l’insieme di pratiche per far scegliere e citare i propri contenuti dalle risposte generate dall’AI. Il termine viene da uno studio presentato a KDD 2024, che ha misurato aumenti di visibilità fino al 40%."
+    },
+    {
+      "domanda": "Posso usare l’AI per scrivere i contenuti del sito?",
+      "risposta": "Sì, se il risultato è utile, originale, verificato e rivisto da una persona. Google penalizza le pagine generate in serie senza valore, non l’uso dell’AI in sé."
+    },
+    {
+      "domanda": "Quanto tempo serve per essere citati dall’AI?",
+      "risposta": "Non esistono garanzie né tempi fissi: nessuno controlla i motori AI. Con contenuti costanti e ben strutturati i primi segnali arrivano di solito nell’arco di alcuni mesi, e vanno misurati."
+    },
+    {
+      "domanda": "Il mio sito attuale va rifatto?",
+      "risposta": "Non sempre. Spesso basta aggiungere pagine servizio, FAQ e dati strutturati a un sito tecnicamente sano. Se il sito è lento, datato o non modificabile, rifarlo costa meno che adattarlo."
+    }
+  ],
+  "conclusione": [
+    "Le AI Overviews hanno cambiato il valore della prima posizione su Google: oggi conta essere la fonte, non solo il link. La buona notizia è che la visibilità nelle risposte AI si può costruire, con metodi documentati dalla ricerca.",
+    "La cattiva notizia è per chi cerca scorciatoie: le pagine generate in serie sono la via più rapida per perdere ciò che si ha. Domande reali, risposte chiare, fonti verificabili e un sito che trasforma una citazione in un contatto: è una strategia, non uno strumento."
+  ],
+  "prodotti": [
+    {
+      "id": "siti-web-ai",
+      "perche": "Progettiamo il sito intorno alle domande reali dei tuoi clienti, con struttura e dati che ChatGPT, Gemini e le AI Overviews possono citare."
+    },
+    {
+      "id": "lead-generation",
+      "perche": "Quando la citazione porta una visita, l’assistente risponde in minuti e prenota la consulenza: il traffico che resta vale di più."
+    }
+  ],
+  "fonti": [
+    {
+      "titolo": "AI Overviews reduce clicks — aggiornamento dicembre 2025",
+      "fonte": "Ahrefs",
+      "url": "https://ahrefs.com/blog/ai-overviews-reduce-clicks-update"
+    },
+    {
+      "titolo": "GEO: Generative Engine Optimization (KDD 2024)",
+      "fonte": "arXiv / Princeton, IIT Delhi",
+      "url": "https://arxiv.org/abs/2311.09735"
+    },
+    {
+      "titolo": "Norme antispam per la Ricerca Google",
+      "fonte": "Google Search Central",
+      "url": "https://developers.google.com/search/docs/essentials/spam-policies"
+    }
+  ],
+  "data": "2026-09-22T07:00:00.000Z",
+  "autore": "Redazione Ovia",
+  "minuti": 5,
+  "parole": 816,
+  "generato": {
+    "da": "redazione",
+    "il": "2026-09-22"
+  }
+}

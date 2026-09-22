@@ -286,6 +286,10 @@
         flex-shrink: 0;
       }
       .solution-card:last-child { border-right: none; }
+      a.solution-card { text-decoration: none; color: inherit; transition: background-color .3s; }
+      a.solution-card:hover { background-color: #070d1d; }
+      .solution-more { font-size: 14px; color: var(--color-primary-text); opacity: .75; transition: opacity .2s, transform .2s; }
+      a.solution-card:hover .solution-more { opacity: 1; transform: translateX(4px); }
 
       .solution-index {
         font-size: 11px;
@@ -1103,7 +1107,8 @@
         <a href="#sicurezza" class="av-nav-link">Sicurezza</a>
         <a href="#soluzioni" class="av-nav-link">Soluzioni</a>
         <a href="#metodo" class="av-nav-link">Metodo</a>
-        <a href="#siti-web" class="av-nav-link">Siti web</a>
+        <a href="servizi/" class="av-nav-link">Servizi</a>
+        <a href="blog/" class="av-nav-link">Blog</a>
         <button type="button" class="av-nav-cta js-book" data-cal-link="ovia-jpa3s2/ovia-check-process" data-cal-namespace="ovia-check-process" data-cal-config='{"layout":"month_view"}'>Prenota il Process Check</button>
       </nav>
     </header>
@@ -1231,76 +1236,77 @@
     <section class="solutions-section" id="soluzioni">
       <div class="solutions-grid">
 
+
         <div class="solution-card solution-intro">
           <span class="solution-index">Le soluzioni Ovia</span>
-          <h3 class="solution-title">Cosa togliamo dalla tua giornata.</h3>
-          <p class="solution-desc">Ogni sistema è costruito su misura, ma i problemi che risolviamo negli studi si assomigliano. Si parte dal nostro servizio di punta, Ovia Second Brain. Poi i sette problemi che risolviamo più spesso: scorri e riconosci il tuo.</p>
+          <h3 class="solution-title">Strategia e sicurezza fanno guadagnare. L’AI è lo strumento.</h3>
+          <p class="solution-desc">Chiunque può comprare un tool di intelligenza artificiale. Il valore sta nel decidere cosa automatizzare, come proteggere i dati dei tuoi clienti e come misurare il risultato. Si parte dal nostro servizio di punta, Ovia Second Brain. Poi i sei sistemi che costruiamo più spesso: scorri e riconosci il tuo.</p>
           <span class="solution-tag">Scorri →</span>
         </div>
 
-        <div class="solution-card solution-flagship">
+        <a href="servizi/second-brain.html" class="solution-card solution-flagship">
           <span class="solution-index">★ Il servizio di punta</span>
           <div class="solution-glyph"><svg viewBox="0 0 88 88"><path class="g-line" d="M44 14 L20 34 L28 62 L60 62 L68 34 Z M44 14 L44 44 M20 34 L44 44 M68 34 L44 44 M28 62 L44 44 M60 62 L44 44"/><circle class="g-node" cx="44" cy="14" r="3"/><circle class="g-node" cx="20" cy="34" r="3"/><circle class="g-node" cx="68" cy="34" r="3"/><circle class="g-node" cx="28" cy="62" r="3"/><circle class="g-node" cx="60" cy="62" r="3"/><circle class="g-core" cx="44" cy="44" r="5"/></svg></div>
           <h3 class="solution-title">Ovia Second Brain</h3>
           <p class="solution-desc">La tua memoria professionale, sempre interrogabile. Chiamate, decisioni, note, idee e impegni vengono catturati, collegati al cliente giusto e ritrovati quando servono, con una semplice domanda. Non decide al posto tuo: ti restituisce ciò che sai, ciò che hai detto e ciò che devi fare.</p>
           <span class="solution-tag">La memoria del tuo studio</span>
-        </div>
+          <span class="solution-more">Scopri Second Brain →</span>
+        </a>
 
-        <div class="solution-card">
+        <a href="servizi/inbox.html" class="solution-card">
           <span class="solution-index">01 — Email</span>
           <div class="solution-glyph"><svg viewBox="0 0 88 88"><path class="g-line" d="M12 44 L36 24 L60 40 L78 18 M36 24 L44 56 L60 40 M12 44 L44 56 L70 70"/><circle class="g-node" cx="12" cy="44" r="3"/><circle class="g-node" cx="60" cy="40" r="3"/><circle class="g-node" cx="78" cy="18" r="3"/><circle class="g-node" cx="70" cy="70" r="3"/><circle class="g-core" cx="36" cy="24" r="4.5"/><circle class="g-core" cx="44" cy="56" r="4.5"/></svg></div>
           <h3 class="solution-title">Ovia Inbox</h3>
-          <p class="solution-desc">La tua casella, letta e capita. Ogni email in arrivo viene riconosciuta: da quale cliente arriva, di cosa parla, quanto è urgente. Viene assegnata alla persona giusta con una bozza di risposta già scritta nel tono del tuo studio. Tu approvi e invii. Le urgenze ti raggiungono subito; il resto si organizza da solo.</p>
+          <p class="solution-desc">La tua casella, letta e capita. Ogni email in arrivo viene riconosciuta: da quale cliente arriva, di cosa parla, quanto è urgente. Viene assegnata alla persona giusta con una bozza di risposta già scritta nel tono del tuo studio. Tu approvi e invii.</p>
           <span class="solution-tag">Zero email perse</span>
-        </div>
+          <span class="solution-more">Scopri Inbox →</span>
+        </a>
 
-        <div class="solution-card">
-          <span class="solution-index">02 — Documenti</span>
-          <div class="solution-glyph"><svg viewBox="0 0 88 88"><path class="g-line" d="M14 70 L30 30 L54 50 L74 14 M30 30 L58 22 M54 50 L74 60"/><circle class="g-node" cx="14" cy="70" r="3"/><circle class="g-node" cx="58" cy="22" r="3"/><circle class="g-node" cx="74" cy="60" r="3"/><circle class="g-node" cx="74" cy="14" r="3"/><circle class="g-core" cx="30" cy="30" r="4.5"/><circle class="g-core" cx="54" cy="50" r="4.5"/></svg></div>
-          <h3 class="solution-title">Ovia Documenti</h3>
-          <p class="solution-desc">Il sistema conosce i documenti necessari per ogni cliente e ogni pratica. Invia le richieste, controlla cosa arriva, riconosce cosa manca e sollecita solo quello, con tono progressivo e storico tracciato di ogni invio. Il tuo staff smette di rincorrere i clienti e i documenti arrivano prima.</p>
-          <span class="solution-tag">Zero solleciti manuali</span>
-        </div>
+        <a href="servizi/lead-generation.html" class="solution-card">
+          <span class="solution-index">02 — Nuovi clienti</span>
+          <div class="solution-glyph"><svg viewBox="0 0 88 88"><path class="g-line" d="M12 72 L30 52 L48 60 L66 32 L78 14 M30 52 L38 30 M48 60 L70 66"/><circle class="g-node" cx="12" cy="72" r="3"/><circle class="g-node" cx="38" cy="30" r="3"/><circle class="g-node" cx="70" cy="66" r="3"/><circle class="g-node" cx="78" cy="14" r="3"/><circle class="g-core" cx="30" cy="52" r="4.5"/><circle class="g-core" cx="66" cy="32" r="4.5"/></svg></div>
+          <h3 class="solution-title">Ovia Lead Generation</h3>
+          <p class="solution-desc">Nessun contatto resta senza risposta. I nuovi contatti ricevono risposta in pochi minuti e vengono qualificati, i preventivi seguiti con metodo fino a una decisione, i contatti freddi riattivati. Nel rispetto del GDPR, senza liste comprate.</p>
+          <span class="solution-tag">Zero opportunità perse</span>
+          <span class="solution-more">Scopri Lead Generation →</span>
+        </a>
 
-        <div class="solution-card">
-          <span class="solution-index">03 — Chiamate</span>
+        <a href="servizi/chiamate.html" class="solution-card">
+          <span class="solution-index">03 — Voce</span>
           <div class="solution-glyph"><svg viewBox="0 0 88 88"><path class="g-line" d="M10 50 Q30 10 50 40 T80 30 M50 40 L44 72 M44 72 L18 66"/><circle class="g-node" cx="10" cy="50" r="3"/><circle class="g-node" cx="80" cy="30" r="3"/><circle class="g-node" cx="18" cy="66" r="3"/><circle class="g-core" cx="50" cy="40" r="4.5"/><circle class="g-core" cx="44" cy="72" r="4.5"/></svg></div>
           <h3 class="solution-title">Ovia Chiamate</h3>
-          <p class="solution-desc">Registra la chiamata e dimenticati il resto. La conversazione viene trascritta e riassunta, poi trasformata: attività assegnate ai collaboratori, scadenze create, scheda cliente aggiornata, email di riepilogo pronta per la tua approvazione. Ciò che dici a voce diventa lavoro organizzato, senza passaggi a mano.</p>
+          <p class="solution-desc">Registra la chiamata e dimenticati il resto. La conversazione viene trascritta e riassunta, poi trasformata: attività assegnate, scadenze create, scheda cliente aggiornata, email di riepilogo pronta per la tua approvazione.</p>
           <span class="solution-tag">Dalla voce all'azione</span>
-        </div>
+          <span class="solution-more">Scopri Chiamate →</span>
+        </a>
 
-        <div class="solution-card">
-          <span class="solution-index">04 — Team</span>
-          <div class="solution-glyph"><svg viewBox="0 0 88 88"><path class="g-line" d="M44 20 L18 44 L44 68 L70 44 Z M18 44 L70 44 M44 20 L44 68"/><circle class="g-node" cx="44" cy="20" r="3"/><circle class="g-node" cx="18" cy="44" r="3"/><circle class="g-node" cx="70" cy="44" r="3"/><circle class="g-node" cx="44" cy="68" r="3"/><circle class="g-core" cx="44" cy="44" r="4.5"/></svg></div>
-          <h3 class="solution-title">Ovia Workflow</h3>
-          <p class="solution-desc">Il lavoro del team, visibile e sotto controllo. Ogni pratica genera le sue attività, assegnate alla persona giusta con la sua scadenza. Una dashboard mostra carichi, ritardi e pratiche a rischio prima che diventino problemi. Deleghi davvero, senza dover ricordare tutto tu.</p>
-          <span class="solution-tag">Controllo senza inseguimenti</span>
-        </div>
+        <a href="servizi/documenti.html" class="solution-card">
+          <span class="solution-index">04 — Documenti</span>
+          <div class="solution-glyph"><svg viewBox="0 0 88 88"><path class="g-line" d="M14 70 L30 30 L54 50 L74 14 M30 30 L58 22 M54 50 L74 60"/><circle class="g-node" cx="14" cy="70" r="3"/><circle class="g-node" cx="58" cy="22" r="3"/><circle class="g-node" cx="74" cy="60" r="3"/><circle class="g-node" cx="74" cy="14" r="3"/><circle class="g-core" cx="30" cy="30" r="4.5"/><circle class="g-core" cx="54" cy="50" r="4.5"/></svg></div>
+          <h3 class="solution-title">Ovia Documenti</h3>
+          <p class="solution-desc">Il sistema conosce i documenti necessari per ogni cliente e ogni pratica. Invia le richieste, controlla cosa arriva, sollecita solo ciò che manca, con storico tracciato. E compila i documenti ricorrenti dai tuoi modelli.</p>
+          <span class="solution-tag">Zero solleciti manuali</span>
+          <span class="solution-more">Scopri Documenti →</span>
+        </a>
 
-        <div class="solution-card">
-          <span class="solution-index">05 — Conoscenza</span>
-          <div class="solution-glyph"><svg viewBox="0 0 88 88"><path class="g-line" d="M16 24 L44 16 L72 24 M16 24 L24 64 L44 72 L64 64 L72 24 M44 16 L44 72 M24 64 L44 40 L64 64"/><circle class="g-node" cx="16" cy="24" r="3"/><circle class="g-node" cx="72" cy="24" r="3"/><circle class="g-node" cx="24" cy="64" r="3"/><circle class="g-node" cx="64" cy="64" r="3"/><circle class="g-core" cx="44" cy="40" r="4.5"/></svg></div>
-          <h3 class="solution-title">Ovia Conoscenza</h3>
-          <p class="solution-desc">Tutta la conoscenza del tuo studio, in una domanda. Procedure, modelli, circolari e documentazione interna diventano un assistente che risponde ai collaboratori usando esclusivamente materiale approvato da te. Le domande operative smettono di interrompere il titolare, e le risposte sono sempre quelle giuste.</p>
-          <span class="solution-tag">Risposte, non interruzioni</span>
-        </div>
+        <a href="servizi/siti-web-ai.html" class="solution-card">
+          <span class="solution-index">05 — AI search</span>
+          <div class="solution-glyph"><svg viewBox="0 0 88 88"><path class="g-line" d="M44 12 A32 32 0 1 1 43.9 12 M12 44 L76 44 M44 12 Q24 44 44 76 M44 12 Q64 44 44 76"/><circle class="g-node" cx="12" cy="44" r="3"/><circle class="g-node" cx="76" cy="44" r="3"/><circle class="g-node" cx="44" cy="12" r="3"/><circle class="g-node" cx="44" cy="76" r="3"/><circle class="g-core" cx="44" cy="44" r="5"/></svg></div>
+          <h3 class="solution-title">Ovia Siti Web per le AI</h3>
+          <p class="solution-desc">I clienti non cercano più solo su Google: chiedono all’AI. Progettiamo siti che ChatGPT, Gemini e le AI Overviews di Google capiscono e citano, con un assistente che risponde e prenota al posto tuo.</p>
+          <span class="solution-tag">Citati dalle AI</span>
+          <span class="solution-more">Scopri Siti Web per le AI →</span>
+        </a>
 
-        <div class="solution-card">
-          <span class="solution-index">06 — Clienti</span>
+        <a href="servizi/crm.html" class="solution-card">
+          <span class="solution-index">06 — Controllo</span>
           <div class="solution-glyph"><svg viewBox="0 0 88 88"><path class="g-line" d="M44 44 L20 20 M44 44 L68 20 M44 44 L20 68 M44 44 L68 68 M44 44 L44 12 M44 44 L44 76"/><circle class="g-node" cx="20" cy="20" r="3"/><circle class="g-node" cx="68" cy="20" r="3"/><circle class="g-node" cx="20" cy="68" r="3"/><circle class="g-node" cx="68" cy="68" r="3"/><circle class="g-node" cx="44" cy="12" r="3"/><circle class="g-node" cx="44" cy="76" r="3"/><circle class="g-core" cx="44" cy="44" r="5"/></svg></div>
-          <h3 class="solution-title">Ovia Clienti</h3>
-          <p class="solution-desc">Il cliente giusto riceve il messaggio giusto al momento giusto. Promemoria di scadenze, richieste periodiche, aggiornamenti sullo stato della pratica: tutto parte da solo, personalizzato sul singolo cliente, con storico tracciato di ogni comunicazione. Nessuno potrà dire di non essere stato avvisato.</p>
-          <span class="solution-tag">Zero avvisi dimenticati</span>
-        </div>
+          <h3 class="solution-title">Ovia CRM</h3>
+          <p class="solution-desc">Clienti, pratiche e scadenze in un’unica dashboard costruita sul tuo modo di lavorare. Si aggiorna da sola da email, chiamate e documenti. Scadenze ricorrenti, solleciti automatici, anche on-premise.</p>
+          <span class="solution-tag">Tutto sotto controllo</span>
+          <span class="solution-more">Scopri CRM →</span>
+        </a>
 
-        <div class="solution-card">
-          <span class="solution-index">07 — Crescita</span>
-          <div class="solution-glyph"><svg viewBox="0 0 88 88"><path class="g-line" d="M12 72 L30 52 L48 60 L66 32 L78 14 M30 52 L38 30 M48 60 L70 66"/><circle class="g-node" cx="12" cy="72" r="3"/><circle class="g-node" cx="38" cy="30" r="3"/><circle class="g-node" cx="70" cy="66" r="3"/><circle class="g-node" cx="78" cy="14" r="3"/><circle class="g-core" cx="30" cy="52" r="4.5"/><circle class="g-core" cx="66" cy="32" r="4.5"/></svg></div>
-          <h3 class="solution-title">Ovia Crescita</h3>
-          <p class="solution-desc">Nessuna opportunità resta ferma. I nuovi contatti ricevono risposta in pochi minuti, i preventivi inviati vengono seguiti con metodo finché non arriva una decisione, i clienti inattivi vengono riattivati con proposte su misura. Il valore che hai già nel tuo database, finalmente messo al lavoro.</p>
-          <span class="solution-tag">Zero opportunità perse</span>
-        </div>
 
       </div>
 
@@ -1427,9 +1433,9 @@
     <!-- PROSSIMO PASSO -->
         <!-- SITI WEB CON AI -->
     <section class="siti-web-section" id="siti-web">
-      <p class="sw-eyebrow">Nuovo</p>
-      <h2 class="sw-title" id="sw-decrypt" data-text="Siti web con AI">Siti web con AI</h2>
-      <p class="sw-subtitle">La stessa intelligenza artificiale che automatizza gli studi professionali, applicata ai siti web: belli, veloci, e che portano clienti.</p>
+      <p class="sw-eyebrow">Ovia Siti Web per le AI</p>
+      <h2 class="sw-title" id="sw-decrypt" data-text="Siti web per le AI">Siti web per le AI</h2>
+      <p class="sw-subtitle">I clienti non cercano più solo su Google: chiedono a ChatGPT e Gemini. Siti progettati per essere trovati e citati dalle AI, belli, veloci e che portano clienti. <a href="servizi/siti-web-ai.html" style="color:#9dbbff;text-decoration:underline;text-underline-offset:3px">Scopri il servizio →</a></p>
       <div class="sw-grid">
         <a href="siti-studi-professionali.html" class="sw-card">
           <span class="sw-card-tag">Per studi professionali</span>
@@ -1502,8 +1508,10 @@
             <a href="#sicurezza" class="footer-link">Sicurezza</a>
             <a href="#soluzioni" class="footer-link">Soluzioni</a>
             <a href="#metodo" class="footer-link">Metodo</a>
-            <a href="#" class="footer-link">Privacy Policy</a>
-            <a href="#" class="footer-link">Termini di servizio</a>
+            <a href="servizi/" class="footer-link">Servizi</a>
+            <a href="blog/" class="footer-link">Blog</a>
+            <a href="privacy.html" class="footer-link">Privacy Policy</a>
+            <a href="termini.html" class="footer-link">Termini di servizio</a>
           </div>
         </div>
       </div>
@@ -2009,19 +2017,18 @@
         const chipsEl = document.getElementById('agent-chips');
 
         const PACKAGES = [
-          { name: 'Ovia Inbox', kw: ['email', 'mail', 'posta', 'pec', 'casella', 'messaggi'], desc: 'ogni email viene riconosciuta (cliente, argomento, urgenza), assegnata alla persona giusta e accompagnata da una bozza di risposta nel tono del tuo studio. Tu approvi e invii; le urgenze ti raggiungono subito.' },
-          { name: 'Ovia Documenti', kw: ['document', 'fattur', 'sollecit', 'rincor', 'mandano', 'allegat', 'raccolta'], desc: 'il sistema sa quali documenti servono per ogni cliente e pratica: invia le richieste, controlla cosa arriva, sollecita solo ciò che manca con storico tracciato. Il tuo staff smette di rincorrere i clienti.' },
-          { name: 'Ovia Chiamate', kw: ['chiamat', 'telefon', 'riunion', 'meeting', 'vocal', 'plaud', 'registr'], desc: 'ogni chiamata viene trascritta e riassunta, poi trasformata in attività assegnate, scadenze, scheda cliente aggiornata ed email di riepilogo pronta per la tua approvazione. Dalla voce all\u2019azione, senza passaggi a mano.' },
-          { name: 'Ovia Second Brain', kw: ['memoria', 'ricord', 'dimentic', 'appunt', 'note', 'second brain', 'informazioni', 'perd'], desc: 'chiamate, decisioni, note e impegni vengono catturati, collegati al cliente giusto e ritrovati con una semplice domanda. La tua memoria professionale, sempre interrogabile.' },
-          { name: 'Ovia Workflow', kw: ['team', 'dipendent', 'collaborator', 'attivit', 'task', 'scadenz', 'controllo', 'assegn', 'delegh'], desc: 'ogni pratica genera le sue attività assegnate alla persona giusta con la sua scadenza; una dashboard mostra carichi, ritardi e pratiche a rischio prima che diventino problemi.' },
-          { name: 'Ovia Conoscenza', kw: ['procedur', 'conoscenz', 'archiv', 'cercare', 'trovare', 'circolar', 'modelli', 'domand'], desc: 'procedure, modelli e documentazione interna diventano un assistente che risponde ai collaboratori usando solo materiale approvato da te. Le domande operative smettono di interrompere il titolare.' },
-          { name: 'Ovia Clienti', kw: ['client', 'promemoria', 'avvis', 'comunicazion', 'aggiorna', 'appuntament'], desc: 'promemoria di scadenze, richieste periodiche e aggiornamenti partono da soli, personalizzati sul singolo cliente, con storico tracciato di ogni invio. Nessuno potrà dire di non essere stato avvisato.' },
-          { name: 'Ovia Crescita', kw: ['lead', 'preventiv', 'vendite', 'crescita', 'follow', 'nuovi client', 'contatt', 'marketing'], desc: 'i nuovi contatti ricevono risposta in pochi minuti, i preventivi vengono seguiti con metodo, i clienti inattivi vengono riattivati con proposte su misura. Il valore che hai già, messo al lavoro.' }
+          { name: 'Ovia Second Brain', url: 'servizi/second-brain.html', kw: ['memoria', 'ricord', 'dimentic', 'appunt', 'note', 'second brain', 'informazioni', 'perd', 'procedur', 'conoscenz', 'circolar', 'cercare', 'trovare'], desc: 'chiamate, decisioni, note e impegni vengono catturati, collegati al cliente giusto e ritrovati con una semplice domanda. La tua memoria professionale, sempre interrogabile, con permessi per persona.' },
+          { name: 'Ovia Inbox', url: 'servizi/inbox.html', kw: ['email', 'mail', 'posta', 'pec', 'casella', 'messaggi'], desc: 'ogni email viene riconosciuta (cliente, argomento, urgenza), assegnata alla persona giusta e accompagnata da una bozza di risposta nel tono del tuo studio. Tu approvi e invii; le urgenze ti raggiungono subito.' },
+          { name: 'Ovia Lead Generation', url: 'servizi/lead-generation.html', kw: ['lead', 'preventiv', 'vendite', 'crescita', 'follow', 'nuovi client', 'contatt', 'marketing', 'acquisi', 'riattiv'], desc: 'i nuovi contatti ricevono risposta in pochi minuti e vengono qualificati, i preventivi vengono seguiti con metodo fino a una decisione, i contatti freddi riattivati. Nel rispetto del GDPR.' },
+          { name: 'Ovia Chiamate', url: 'servizi/chiamate.html', kw: ['chiamat', 'telefon', 'riunion', 'meeting', 'vocal', 'plaud', 'registr'], desc: 'ogni chiamata viene trascritta e riassunta, poi trasformata in attività assegnate, scadenze, scheda cliente aggiornata ed email di riepilogo pronta per la tua approvazione.' },
+          { name: 'Ovia Documenti', url: 'servizi/documenti.html', kw: ['document', 'fattur', 'sollecit', 'rincor', 'mandano', 'allegat', 'raccolta', 'modelli', 'contratt', 'delegh'], desc: 'il sistema sa quali documenti servono per ogni cliente e pratica: invia le richieste, controlla cosa arriva, sollecita solo ciò che manca con storico tracciato e compila i documenti ricorrenti.' },
+          { name: 'Ovia Siti Web per le AI', url: 'servizi/siti-web-ai.html', kw: ['sito', 'web', 'seo', 'google', 'chatgpt', 'posizion', 'online', 'prenotazion', 'visibil'], desc: 'siti progettati per essere trovati e citati da ChatGPT, Gemini e dalle risposte AI di Google, con un assistente che risponde e prenota al posto tuo.' },
+          { name: 'Ovia CRM', url: 'servizi/crm.html', kw: ['crm', 'gestional', 'excel', 'scadenz', 'dashboard', 'team', 'dipendent', 'collaborator', 'attivit', 'task', 'controllo', 'assegn', 'client', 'promemoria'], desc: 'un CRM su misura con clienti, pratiche, scadenze ricorrenti, carichi del team e solleciti automatici, che si aggiorna da solo da email, chiamate e documenti. Anche on-premise.' }
         ];
 
         const SYSTEM_PROMPT = `Sei Ovia, il maggiordomo del sito di Ovia (L3 Innovation Srl, Olbia): un consulente cortese, piacevole e chiaro che accompagna chi visita il sito verso la soluzione pi\u00f9 adatta alla sua esigenza di automazione. Non vendiamo software standard: osserviamo come lavora il cliente e costruiamo il sistema intorno a lui.
 
-Il tuo compito non \u00e8 vendere in fretta un pacchetto: \u00e8 capire a fondo, con calore e curiosit\u00e0 genuina, cosa la persona vuole automatizzare \u2014 anche quando ci\u00f2 che descrive non sembra corrispondere a nessuno degli otto pacchetti pubblicati sul sito. Se l\u2019esigenza non rientra tra quelli, non trattarla mai come un limite (non dire mai \u201cnon abbiamo questo\u201d): trattala con lo stesso interesse, perch\u00e9 \u00e8 probabilmente il tipo di caso per cui costruiamo qualcosa su misura. Continua a fare domande con la stessa cura.
+Il tuo compito non \u00e8 vendere in fretta un pacchetto: \u00e8 capire a fondo, con calore e curiosit\u00e0 genuina, cosa la persona vuole automatizzare \u2014 anche quando ci\u00f2 che descrive non sembra corrispondere a nessuno dei sette servizi pubblicati sul sito. Se l\u2019esigenza non rientra tra quelli, non trattarla mai come un limite (non dire mai \u201cnon abbiamo questo\u201d): trattala con lo stesso interesse, perch\u00e9 \u00e8 probabilmente il tipo di caso per cui costruiamo qualcosa su misura. Continua a fare domande con la stessa cura.
 
 Tono: cortese, piacevole, mai freddo \u2014 ma anche mai vago o generico. Ogni risposta deve dimostrare che hai ascoltato davvero ci\u00f2 che la persona ha appena detto, riprendendo le sue parole; evita frasi jolly buone per chiunque.
 

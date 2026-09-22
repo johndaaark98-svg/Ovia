@@ -1,5 +1,33 @@
 # Ovia — sito ufficiale (oviaitalia.it)
 
+## Struttura (settembre 2026)
+- `index.html` — homepage (un solo file HTML + CSS + JS)
+- `servizi/` — 7 pagine servizio + hub, **generate** da `data/` (non modificarle a mano)
+- `blog/` — blog, **generato** da `content/blog/*.json` (non modificarlo a mano)
+- `data/prodotti.mjs` — catalogo dei 7 servizi: unica fonte di verità (pagine, blog, sitemap, llms.txt)
+- `data/servizi.mjs` — testi delle pagine servizio · `data/fonti.mjs` — fonti citate
+- `scripts/` — build e motore del blog · `assets/` — CSS/JS di pagine servizio e blog
+- `.github/workflows/` — `blog-giornaliero.yml` (1 articolo al giorno) e `build.yml` (rigenera quando modifichi i dati)
+
+Servizi pubblicati: Second Brain, Inbox, Lead Generation, Chiamate, Documenti, Siti Web per le AI, CRM.
+Per cambiarli: modifica `data/prodotti.mjs` + `data/servizi.mjs`, poi `npm run build` (o fai push: lo fa GitHub).
+
+## Blog automatico — attivazione (una volta sola)
+1. GitHub → repo → Settings → Secrets and variables → Actions → **New repository secret**
+   Nome `ANTHROPIC_API_KEY`, valore: una chiave API Anthropic **dedicata al blog** (non quella del maggiordomo).
+2. (Facoltativo) Nella stessa pagina, tab *Variables*: `BLOG_MODEL` (default `claude-sonnet-4-6`), `BLOG_AUTHOR` (default `Redazione Ovia`).
+3. Tab **Actions** → abilita i workflow se richiesto → *Blog giornaliero* → **Run workflow** per il primo test.
+Da lì parte da solo ogni mattina (~07:17 ora italiana). Costo indicativo: pochi centesimi ad articolo.
+
+Cosa fa ogni giorno: legge le fonti RSS del settore AI (`scripts/blog/config.mjs`), sceglie il tema più rilevante per studi/PMI
+coperto da più fonti, legge i testi, scrive una sintesi originale con angolo Ovia (strategia + sicurezza) e i prodotti Ovia pertinenti
+in fondo, poi la **controlla**: lunghezza, meta SEO, sovrapposizione con le fonti (anti-copia), numeri non presenti nelle fonti
+(anti-invenzione), link alle fonti. Se non passa, riscrive fino a 3 volte; se ancora non passa **non pubblica** e GitHub ti avvisa via email.
+
+Comandi locali: `npm ci` · `npm run build` · `npm run blog:fonti` (verifica fonti) · `npm run blog:prova` (genera senza pubblicare, serve la chiave).
+Per togliere un articolo: cancella il suo JSON in `content/blog/` e il suo HTML in `blog/`, poi push.
+
+
 ## Cosa c'è in questa cartella
 - `index.html` — il sito, un solo file (HTML + CSS + JS)
 - `ovia-hero.mp4` — il video delle sinapsi nell'hero

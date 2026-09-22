@@ -1,0 +1,246 @@
+{
+  "title": "Legge 132/2025: l’AI negli studi e l’informativa ai clienti",
+  "slug": "legge-132-2025-ai-professionisti-informativa-clienti",
+  "meta_description": "Legge 132/2025, art. 13: cosa devono fare commercialisti, avvocati e consulenti che usano l’AI, come informare i clienti e come restare conformi.",
+  "lead": "Dal 10 ottobre 2025 chi esercita una professione intellettuale e usa l’intelligenza artificiale deve dirlo al cliente e mantenere il proprio lavoro prevalente. Ecco cosa significa in pratica, senza allarmismi.",
+  "tags": [
+    "legge 132/2025",
+    "AI professionisti",
+    "informativa AI clienti",
+    "art. 13"
+  ],
+  "categoria": "normativa-sicurezza",
+  "keyword": "legge 132/2025 professionisti",
+  "intro": [
+    "La **Legge 132/2025** è la prima legge italiana organica sull’intelligenza artificiale, e il suo articolo 13 riguarda direttamente commercialisti, avvocati, consulenti del lavoro, ingegneri, architetti e tutte le professioni intellettuali. Il messaggio è semplice: l’AI si può usare, ma come supporto, e il cliente deve saperlo.",
+    "Molti studi stanno reagendo in due modi opposti: c’è chi ignora la norma perché “tanto uso solo ChatGPT per scrivere le email”, e chi blocca tutto per paura di sbagliare. Entrambe le reazioni costano. La prima espone a contestazioni del cliente e a rischi deontologici; la seconda lascia il tempo risparmiato ai concorrenti. Vediamo cosa chiede davvero la legge e come metterla in pratica in uno studio reale."
+  ],
+  "punti_chiave": [
+    "L’art. 13 della Legge 132/2025 è in vigore dal 10 ottobre 2025 e si applica alle professioni intellettuali.",
+    "L’AI è ammessa solo per attività strumentali e di supporto: il lavoro intellettuale del professionista deve restare prevalente.",
+    "Il cliente va informato sui sistemi di AI utilizzati con un linguaggio chiaro, semplice ed esaustivo.",
+    "La norma non vieta gli strumenti: chiede metodo, trasparenza e controllo umano sulle decisioni.",
+    "Il rischio più concreto oggi è l’uso non governato dell’AI (dati dei clienti incollati in chatbot pubblici), non l’AI in sé."
+  ],
+  "sezioni": [
+    {
+      "h2": "Cosa dice l’articolo 13 della Legge 132/2025",
+      "paragrafi": [
+        "In sintesi, l’articolo 13 stabilisce tre principi. Primo: l’utilizzo di sistemi di intelligenza artificiale nelle professioni intellettuali è consentito solo per **attività strumentali e di supporto** all’attività professionale. Secondo: deve restare **prevalente il lavoro intellettuale** oggetto della prestazione, cioè il pensiero critico umano. Terzo: per garantire il rapporto fiduciario, il professionista deve **informare il cliente** sui sistemi di AI utilizzati, con linguaggio chiaro, semplice ed esaustivo.",
+        "La norma è in vigore dal 10 ottobre 2025, come ricostruito da [Finanza & Fisco](https://www.finanzaefisco.com/legge-132-2025-ia-professioni-dal-10-ottobre/). Non introduce sanzioni specifiche nuove, ma si innesta sugli obblighi deontologici e contrattuali già esistenti: se il cliente contesta una prestazione, la trasparenza sull’uso dell’AI e la prova del controllo umano diventano elementi centrali.",
+        "Va letta insieme al Regolamento europeo sull’AI (AI Act), che per la maggior parte degli usi degli studi professionali non impone obblighi pesanti, ma chiede trasparenza quando una persona interagisce con un sistema AI. La direzione è coerente: usare l’AI va bene, nasconderla no."
+      ],
+      "blocco": {
+        "tipo": "compare",
+        "sinistra": {
+          "titolo": "Uso non governato",
+          "badge": "rischioso",
+          "righe": [
+            {
+              "etichetta": "Strumenti",
+              "valore": "Chatbot pubblici scelti dal singolo collaboratore"
+            },
+            {
+              "etichetta": "Dati dei clienti",
+              "valore": "Incollati senza sapere dove finiscono"
+            },
+            {
+              "etichetta": "Informativa",
+              "valore": "Assente o generica"
+            },
+            {
+              "etichetta": "Controllo umano",
+              "valore": "Non documentato"
+            }
+          ]
+        },
+        "destra": {
+          "titolo": "Uso governato",
+          "badge": "conforme",
+          "righe": [
+            {
+              "etichetta": "Strumenti",
+              "valore": "Elenco di sistemi autorizzati dallo studio"
+            },
+            {
+              "etichetta": "Dati dei clienti",
+              "valore": "Trattati in un perimetro sicuro, senza addestramento esterno"
+            },
+            {
+              "etichetta": "Informativa",
+              "valore": "Clausola chiara nella lettera d’incarico"
+            },
+            {
+              "etichetta": "Controllo umano",
+              "valore": "Revisione e approvazione tracciate"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "h2": "Quali usi dell’AI sono “strumentali e di supporto”?",
+      "paragrafi": [
+        "La legge non fornisce un elenco, e su questo punto il dibattito è aperto: [Altalex](https://www.altalex.com/documents/2025/10/29/professionisti-uso-ai-tanti-dubbi-poche-certezze-luce-art-13-legge-132-2025) parla apertamente di “tanti dubbi, poche certezze”. Un criterio pratico però esiste: è supporto tutto ciò che prepara, organizza o velocizza il lavoro, mentre resta del professionista tutto ciò che valuta, decide e si assume la responsabilità.",
+        "Smistare le email, trascrivere una chiamata, estrarre dati da un documento, preparare una bozza di risposta, ricordare una scadenza: sono attività di supporto. Decidere la strategia fiscale, valutare un rischio legale, firmare un parere: sono prestazione intellettuale, e lì l’AI può al massimo suggerire.",
+        "È esattamente il confine su cui conviene progettare i sistemi: **il sistema propone, il professionista decide**. Se ogni output dell’AI passa da una revisione umana tracciata, la prevalenza del lavoro intellettuale non è una dichiarazione di principio, ma un fatto documentabile."
+      ],
+      "blocco": {
+        "tipo": "checklist",
+        "voci": [
+          {
+            "titolo": "Trascrivere e riassumere una telefonata con il cliente",
+            "testo": "Supporto: il riepilogo va riletto prima di essere inviato.",
+            "ok": true
+          },
+          {
+            "titolo": "Classificare le email in arrivo e preparare bozze",
+            "testo": "Supporto: l’invio resta un atto umano.",
+            "ok": true
+          },
+          {
+            "titolo": "Raccogliere e sollecitare documenti",
+            "testo": "Supporto: automatizza un’attività organizzativa.",
+            "ok": true
+          },
+          {
+            "titolo": "Far scrivere all’AI un parere e firmarlo senza verifica",
+            "testo": "Non è supporto: il pensiero critico umano non sarebbe prevalente.",
+            "ok": false
+          }
+        ]
+      }
+    },
+    {
+      "h2": "Come informare il cliente in modo chiaro",
+      "paragrafi": [
+        "L’obbligo informativo è la parte più concreta della norma, e anche la più semplice da gestire se la si affronta una volta per tutte. L’informazione deve essere comprensibile per un cliente non tecnico: niente formule vaghe come “lo studio può avvalersi di strumenti tecnologici”.",
+        "Una buona informativa dice quali tipi di sistemi AI usa lo studio e per cosa (per esempio trascrizione delle chiamate, organizzazione della posta, estrazione di dati dai documenti), chiarisce che le valutazioni professionali restano del professionista, spiega come sono protetti i dati e indica a chi rivolgersi per domande. Il posto naturale è la lettera d’incarico o il mandato professionale, con un richiamo nell’informativa privacy."
+      ],
+      "blocco": {
+        "tipo": "steps",
+        "voci": [
+          {
+            "titolo": "Fai l’inventario degli strumenti",
+            "meta": "Settimana 1",
+            "testo": "Chiedi a ogni collaboratore quali strumenti AI usa davvero, anche quelli gratuiti. Spesso la sorpresa è qui."
+          },
+          {
+            "titolo": "Decidi cosa è autorizzato",
+            "meta": "Settimana 1",
+            "testo": "Tieni solo i sistemi che garantiscono che i dati non vengano usati per addestramento e che puoi controllare."
+          },
+          {
+            "titolo": "Scrivi l’informativa",
+            "meta": "Settimana 2",
+            "testo": "Aggiorna la lettera d’incarico con una clausola in linguaggio semplice: quali sistemi, per cosa, con quale controllo umano."
+          },
+          {
+            "titolo": "Documenta la revisione",
+            "meta": "Sempre",
+            "testo": "Fai in modo che ogni output dell’AI abbia una traccia di chi lo ha rivisto e approvato."
+          }
+        ]
+      }
+    },
+    {
+      "h2": "Il vero rischio: la shadow AI nello studio",
+      "paragrafi": [
+        "Il problema più diffuso non è l’AI “ufficiale” dello studio, ma quella non dichiarata: il collaboratore che incolla un bilancio in un chatbot gratuito per farsi fare un riassunto, o la segretaria che traduce una email del cliente con uno strumento qualsiasi. È quella che gli esperti di sicurezza chiamano **shadow AI**.",
+        "In quel caso lo studio non può informare correttamente il cliente, perché non sa nemmeno quali sistemi vengono usati. E non può garantire dove finiscono dati coperti da segreto professionale. Vietare tutto raramente funziona: la risposta efficace è dare al team strumenti autorizzati, comodi quanto quelli gratuiti, dentro un perimetro controllato. Ne parliamo nel dettaglio nella pagina su [Ovia Inbox](/servizi/inbox.html), che nasce proprio per togliere le email dei clienti dai chatbot pubblici."
+      ],
+      "blocco": {
+        "tipo": "warning",
+        "titolo": "Errori comuni da evitare",
+        "voci": [
+          {
+            "testo": "Pensare che la norma non si applichi perché “uso l’AI solo per le email”: anche quello è un sistema da dichiarare."
+          },
+          {
+            "testo": "Scrivere un’informativa generica e incomprensibile: la legge chiede linguaggio chiaro, semplice ed esaustivo."
+          },
+          {
+            "testo": "Lasciare che ogni collaboratore scelga il proprio strumento: così lo studio perde il controllo sui dati."
+          },
+          {
+            "testo": "Bloccare ogni uso dell’AI per paura: la norma consente il supporto, e il tempo risparmiato è reale."
+          }
+        ]
+      }
+    },
+    {
+      "h2": "Da obbligo a vantaggio competitivo",
+      "paragrafi": [
+        "C’è un modo diverso di leggere l’articolo 13: come un’occasione per distinguersi. Un cliente che riceve un’informativa chiara, sa che i suoi dati sono protetti e vede che lo studio risponde più velocemente perché ha organizzato bene il lavoro, si fida di più, non di meno.",
+        "Gli studi che trarranno vantaggio da questa fase non saranno quelli con lo strumento più nuovo, ma quelli con un metodo: pochi sistemi scelti, regole scritte, controllo umano dimostrabile e un risultato misurato. È un lavoro di strategia e sicurezza prima ancora che di tecnologia."
+      ]
+    }
+  ],
+  "ovia_view": {
+    "titolo": "Il punto di vista Ovia",
+    "paragrafi": [
+      "Per noi la Legge 132/2025 conferma un principio con cui lavoriamo da sempre: **strategia e sicurezza fanno guadagnare, l’AI è lo strumento**. Ogni sistema Ovia è progettato perché il professionista resti al centro: il sistema prepara, organizza e ricorda, ma nessuna comunicazione sensibile parte senza approvazione e ogni risposta del [Second Brain](/servizi/second-brain.html) cita la fonte interna da cui proviene.",
+      "Nel Process Check partiamo proprio da qui: mappiamo quali strumenti AI sono già in uso nello studio, anche quelli non dichiarati, definiamo cosa è autorizzato e impostiamo informativa e controlli prima di automatizzare qualsiasi cosa."
+    ]
+  },
+  "faq": [
+    {
+      "domanda": "La Legge 132/2025 vieta ai professionisti di usare ChatGPT?",
+      "risposta": "No. L’art. 13 consente l’uso dell’intelligenza artificiale per attività strumentali e di supporto, a condizione che il lavoro intellettuale del professionista resti prevalente e che il cliente venga informato. Il punto critico, con i chatbot pubblici, è piuttosto dove finiscono i dati dei clienti."
+    },
+    {
+      "domanda": "Da quando è in vigore l’obbligo di informare il cliente sull’uso dell’AI?",
+      "risposta": "Dal 10 ottobre 2025, data di entrata in vigore della Legge 132/2025. Gli incarichi in corso vanno quindi allineati, per esempio con un’integrazione alla lettera d’incarico."
+    },
+    {
+      "domanda": "Dove va inserita l’informativa sull’AI?",
+      "risposta": "Il luogo più naturale è la lettera d’incarico o il mandato professionale, con un richiamo nell’informativa privacy. Deve indicare in modo comprensibile quali sistemi si usano, per quali attività e come resta garantito il controllo del professionista."
+    },
+    {
+      "domanda": "Quali professioni riguarda l’articolo 13?",
+      "risposta": "Le professioni intellettuali: tra le altre commercialisti, avvocati, consulenti del lavoro, ingegneri, architetti e consulenti. Si applica ai contratti di prestazione d’opera intellettuale."
+    },
+    {
+      "domanda": "Cosa rischia uno studio che non informa il cliente?",
+      "risposta": "La norma non introduce sanzioni specifiche nuove, ma la mancata informazione può pesare sul piano deontologico e contrattuale, soprattutto in caso di contestazione della prestazione. Per i dettagli sul proprio ordine è bene confrontarsi con il consiglio di appartenenza."
+    }
+  ],
+  "conclusione": [
+    "L’articolo 13 della Legge 132/2025 non chiede ai professionisti di rinunciare all’intelligenza artificiale: chiede di usarla con metodo. Supporto sì, sostituzione del giudizio professionale no, trasparenza sempre.",
+    "Il modo più semplice per essere conformi è anche quello che rende di più: pochi strumenti autorizzati, regole scritte, controllo umano documentato e un’informativa chiara. Chi lo imposta oggi trasforma un obbligo in un argomento di fiducia verso i clienti."
+  ],
+  "prodotti": [
+    {
+      "id": "second-brain",
+      "perche": "Risponde solo con i contenuti del tuo studio e cita sempre la fonte: il controllo umano e la prevalenza del lavoro intellettuale diventano dimostrabili."
+    },
+    {
+      "id": "inbox",
+      "perche": "Toglie le email dei clienti dai chatbot pubblici: bozze preparate in un perimetro sicuro, invio solo dopo la tua approvazione."
+    },
+    {
+      "id": "documenti",
+      "perche": "Automatizza la raccolta documentale, un’attività di puro supporto, lasciando al professionista revisione e firma."
+    }
+  ],
+  "fonti": [
+    {
+      "titolo": "Legge n. 132/2025. Intelligenza artificiale nelle professioni solo di supporto (art. 13)",
+      "fonte": "Finanza & Fisco",
+      "url": "https://www.finanzaefisco.com/legge-132-2025-ia-professioni-dal-10-ottobre/"
+    },
+    {
+      "titolo": "Professionisti e uso dell’AI: tanti dubbi, poche certezze alla luce dell’art. 13 della Legge 132/2025",
+      "fonte": "Altalex",
+      "url": "https://www.altalex.com/documents/2025/10/29/professionisti-uso-ai-tanti-dubbi-poche-certezze-luce-art-13-legge-132-2025"
+    }
+  ],
+  "data": "2026-09-22T08:00:00.000Z",
+  "autore": "Redazione Ovia",
+  "minuti": 6,
+  "parole": 1044,
+  "generato": {
+    "da": "redazione",
+    "il": "2026-09-22"
+  }
+}

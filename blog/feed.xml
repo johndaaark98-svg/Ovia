@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+<title>Blog Ovia</title>
+<link>https://oviaitalia.it/blog/</link>
+<atom:link href="https://oviaitalia.it/blog/feed.xml" rel="self" type="application/rss+xml"/>
+<description>AI, automazione e sicurezza per studi professionali e PMI italiane.</description>
+<language>it-it</language>
+<item><title>Legge 132/2025: l’AI negli studi e l’informativa ai clienti</title><link>https://oviaitalia.it/blog/legge-132-2025-ai-professionisti-informativa-clienti.html</link><guid isPermaLink="true">https://oviaitalia.it/blog/legge-132-2025-ai-professionisti-informativa-clienti.html</guid><pubDate>Tue, 22 Sep 2026 08:00:00 GMT</pubDate><category>Normativa e sicurezza</category><description>Legge 132/2025, art. 13: cosa devono fare commercialisti, avvocati e consulenti che usano l’AI, come informare i clienti e come restare conformi.</description></item>
+<item><title>AI Overviews: −58% di click. Cosa cambia per il sito dello studio</title><link>https://oviaitalia.it/blog/ai-overviews-click-persi-sito-studio-professionale.html</link><guid isPermaLink="true">https://oviaitalia.it/blog/ai-overviews-click-persi-sito-studio-professionale.html</guid><pubDate>Tue, 22 Sep 2026 07:00:00 GMT</pubDate><category>AI search e marketing</category><description>Con le AI Overviews di Google il primo risultato perde il 58% dei click. Cosa significa per il sito di uno studio o di una PMI e come farsi citare dall’AI.</description></item>
+<item><title>Tempo di risposta ai contatti: perché i primi 60 minuti contano</title><link>https://oviaitalia.it/blog/tempo-risposta-lead-studi-professionali.html</link><guid isPermaLink="true">https://oviaitalia.it/blog/tempo-risposta-lead-studi-professionali.html</guid><pubDate>Tue, 22 Sep 2026 06:00:00 GMT</pubDate><category>Strategia</category><description>Rispondere a un nuovo contatto entro un’ora rende la qualifica 7 volte più probabile. Dati HBR e MIT e come applicarli in uno studio senza assumere nessuno.</description></item>
+</channel>
+</rss>

@@ -8,21 +8,33 @@ const ALLOWED_ORIGINS = [
 ];
 
 const PACKAGE_NAMES = [
-  'Ovia Siti Web',
+  // Ordine importante: i nomi più lunghi prima, così "Ovia Siti Web per le AI"
+  // non viene confuso con il vecchio "Ovia Siti Web".
+  'Ovia Siti Web per le AI',
   'Ovia Second Brain',
   'Ovia Inbox',
-  'Ovia Documenti',
+  'Ovia Lead Generation',
   'Ovia Chiamate',
-  'Ovia Workflow',
-  'Ovia Conoscenza',
-  'Ovia Clienti',
-  'Ovia Crescita',
+  'Ovia Documenti',
+  'Ovia CRM',
 ];
+
+// Vecchi nomi ancora presenti in conversazioni/lead storici → nuovo servizio.
+const LEGACY = {
+  'Ovia Siti Web': 'Ovia Siti Web per le AI',
+  'Ovia Crescita': 'Ovia Lead Generation',
+  'Ovia Clienti': 'Ovia CRM',
+  'Ovia Workflow': 'Ovia CRM',
+  'Ovia Conoscenza': 'Ovia Second Brain',
+};
 
 function normalizePackage(text) {
   if (!text) return 'Su misura';
   for (const name of PACKAGE_NAMES) {
     if (text.includes(name)) return name;
+  }
+  for (const [old, now] of Object.entries(LEGACY)) {
+    if (text.includes(old)) return now;
   }
   return 'Su misura';
 }

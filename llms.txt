@@ -1,0 +1,21 @@
+# Ovia
+
+> Ovia (L3 Innovation Srl) costruisce sistemi di automazione e intelligenza artificiale su misura per studi professionali (commercialisti, avvocati, consulenti del lavoro) e PMI italiane. La strategia e la sicurezza fanno guadagnare. L’AI è lo strumento. Primo passo: il Process Check, un'analisi di 30 minuti del flusso di lavoro reale.
+
+## Servizi
+- [Ovia Second Brain](https://oviaitalia.it/servizi/second-brain.html): Chiamate, decisioni, note e impegni catturati, collegati al cliente giusto e ritrovati con una domanda.
+- [Ovia Inbox](https://oviaitalia.it/servizi/inbox.html): Ogni email riconosciuta per cliente, argomento e urgenza, assegnata e con bozza di risposta pronta da approvare.
+- [Ovia Lead Generation](https://oviaitalia.it/servizi/lead-generation.html): Risposta immediata ai nuovi contatti, qualifica, follow-up dei preventivi e riattivazione dei contatti freddi.
+- [Ovia Chiamate](https://oviaitalia.it/servizi/chiamate.html): Trascrizione e sintesi di chiamate e riunioni, trasformate in attività, scadenze e scheda cliente aggiornata.
+- [Ovia Documenti](https://oviaitalia.it/servizi/documenti.html): Richieste, controllo di ciò che arriva, solleciti mirati solo su ciò che manca, con storico di ogni invio.
+- [Ovia Siti Web per le AI](https://oviaitalia.it/servizi/siti-web-ai.html): Siti progettati per essere trovati e citati dai motori AI, con assistente che risponde e prenota.
+- [Ovia CRM](https://oviaitalia.it/servizi/crm.html): CRM operativo su misura: scadenze ricorrenti, solleciti automatici, email categorizzate e documenti generati.
+
+## Blog (ultimi articoli)
+- [Legge 132/2025: l’AI negli studi e l’informativa ai clienti](https://oviaitalia.it/blog/legge-132-2025-ai-professionisti-informativa-clienti.html): Legge 132/2025, art. 13: cosa devono fare commercialisti, avvocati e consulenti che usano l’AI, come informare i clienti e come restare conformi.
+- [AI Overviews: −58% di click. Cosa cambia per il sito dello studio](https://oviaitalia.it/blog/ai-overviews-click-persi-sito-studio-professionale.html): Con le AI Overviews di Google il primo risultato perde il 58% dei click. Cosa significa per il sito di uno studio o di una PMI e come farsi citare dall’AI.
+- [Tempo di risposta ai contatti: perché i primi 60 minuti contano](https://oviaitalia.it/blog/tempo-risposta-lead-studi-professionali.html): Rispondere a un nuovo contatto entro un’ora rende la qualifica 7 volte più probabile. Dati HBR e MIT e come applicarli in uno studio senza assumere nessuno.
+
+## Contatti
+- Email: oviaitalia@gmail.com
+- Sito: https://oviaitalia.it
