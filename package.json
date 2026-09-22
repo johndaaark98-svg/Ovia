@@ -5,7 +5,7 @@
   "description": "Sito Ovia (oviaitalia.it): pagine servizio generate + blog AI giornaliero",
   "engines": { "node": ">=20" },
   "scripts": {
-    "build": "node scripts/build.mjs",
+           "sito": "node scripts/build.mjs",
     "blog:genera": "node scripts/blog/genera.mjs",
     "blog:prova": "node scripts/blog/genera.mjs --dry-run",
     "blog:fonti": "node scripts/blog/genera.mjs --check-feeds"
