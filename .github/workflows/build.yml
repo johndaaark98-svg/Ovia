@@ -1,0 +1,33 @@
+# OVIA — rigenera pagine servizio, blog, sitemap e llms.txt quando modifichi dati o articoli.
+name: Build sito
+
+on:
+  push:
+    branches: [main]
+    paths: ['data/**', 'content/**', 'scripts/**', 'assets/**', 'package.json']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: blog-giornaliero
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22, cache: npm }
+      - run: npm ci
+      - run: npm run build
+      - name: Pubblica le pagine rigenerate
+        run: |
+          if git diff --quiet && [ -z "$(git ls-files --others --exclude-standard)" ]; then echo "Già aggiornato."; exit 0; fi
+          git config user.name "Ovia Blog Bot"
+          git config user.email "oviaitalia@gmail.com"
+          git add -A blog servizi sitemap.xml llms.txt
+          git commit -m "build: rigenera pagine"
+          git pull --rebase && git push
