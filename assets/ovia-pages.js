@@ -102,39 +102,42 @@
     });
   });
 
-  /* ---------- Calcolatori ---------- */
-  var eur = function (n) { return new Intl.NumberFormat('it-IT', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 }).format(Math.round(n)); };
-  var num = function (n, d) { return new Intl.NumberFormat('it-IT', { maximumFractionDigits: d || 0 }).format(n); };
+  /* ---------- Calcolatori (IT/EN) ---------- */
+  var EN = (document.documentElement.lang || 'it').slice(0, 2) === 'en';
+  var LOC = EN ? 'en-GB' : 'it-IT';
+  var eur = function (n) { return new Intl.NumberFormat(LOC, { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 }).format(Math.round(n)); };
+  var num = function (n, d) { return new Intl.NumberFormat(LOC, { maximumFractionDigits: d || 0 }).format(n); };
+  var L = function (it, en) { return EN ? en : it; };
   var GIORNI = 220; // giorni lavorativi/anno
   var CALCS = {
     'second-brain': function (v) {
       var ore = v.persone * v.minuti / 60 * GIORNI, costo = ore * v.costo;
-      return [['Ore/anno spese a cercare e ricostruire informazioni', num(ore) + ' h'], ['Costo annuo di quelle ore', eur(costo)], ['Recuperabile (stima prudente 40%)', eur(costo * .4), 1]];
+      return [[L('Ore/anno spese a cercare e ricostruire informazioni', 'Hours/year spent searching for and reconstructing information'), num(ore) + ' h'], [L('Costo annuo di quelle ore', 'Annual cost of those hours'), eur(costo)], [L('Recuperabile (stima prudente 40%)', 'Recoverable (conservative estimate 40%)'), eur(costo * .4), 1]];
     },
     'inbox': function (v) {
       var ore = v.persone * v.email * v.minuti / 60 * GIORNI, costo = ore * v.costo;
-      return [['Ore/anno dedicate a leggere, smistare e rispondere', num(ore) + ' h'], ['Costo annuo della casella', eur(costo)], ['Recuperabile (stima prudente 35%)', eur(costo * .35), 1]];
+      return [[L('Ore/anno dedicate a leggere, smistare e rispondere', 'Hours/year spent reading, sorting and replying'), num(ore) + ' h'], [L('Costo annuo della casella', 'Annual cost of your inbox'), eur(costo)], [L('Recuperabile (stima prudente 35%)', 'Recoverable (conservative estimate 35%)'), eur(costo * .35), 1]];
     },
     'lead-generation': function (v) {
       var lead = v.lead * 12, oggi = lead * v.conv / 100, uplift = v.ore > 1 ? .3 : (v.ore > .25 ? .12 : .05);
       var extra = oggi * uplift;
-      return [['Clienti acquisiti oggi in un anno', num(oggi, 1)], ['Clienti in più con risposta in minuti (stima prudente +' + Math.round(uplift * 100) + '%)', '+' + num(extra, 1)], ['Fatturato aggiuntivo stimato/anno', eur(extra * v.valore), 1]];
+      return [[L('Clienti acquisiti oggi in un anno', 'Clients won per year today'), num(oggi, 1)], [L('Clienti in più con risposta in minuti (stima prudente +', 'Extra clients with replies in minutes (conservative estimate +') + Math.round(uplift * 100) + '%)', '+' + num(extra, 1)], [L('Fatturato aggiuntivo stimato/anno', 'Estimated extra revenue/year'), eur(extra * v.valore), 1]];
     },
     'chiamate': function (v) {
       var ore = v.persone * v.chiamate * v.minuti / 60 * GIORNI, costo = ore * v.costo;
-      return [['Ore/anno di note, riepiloghi e aggiornamenti post-chiamata', num(ore) + ' h'], ['Costo annuo del lavoro post-chiamata', eur(costo)], ['Recuperabile (stima prudente 60%)', eur(costo * .6), 1]];
+      return [[L('Ore/anno di note, riepiloghi e aggiornamenti post-chiamata', 'Hours/year of notes, summaries and post-call updates'), num(ore) + ' h'], [L('Costo annuo del lavoro post-chiamata', 'Annual cost of post-call work'), eur(costo)], [L('Recuperabile (stima prudente 60%)', 'Recoverable (conservative estimate 60%)'), eur(costo * .6), 1]];
     },
     'documenti': function (v) {
       var ore = v.clienti * v.solleciti * v.minuti / 60, costo = ore * v.costo;
-      return [['Ore/anno spese a sollecitare e controllare documenti', num(ore) + ' h'], ['Costo annuo dei solleciti manuali', eur(costo)], ['Recuperabile (stima prudente 65%)', eur(costo * .65), 1]];
+      return [[L('Ore/anno spese a sollecitare e controllare documenti', 'Hours/year spent chasing and checking documents'), num(ore) + ' h'], [L('Costo annuo dei solleciti manuali', 'Annual cost of manual reminders'), eur(costo)], [L('Recuperabile (stima prudente 65%)', 'Recoverable (conservative estimate 65%)'), eur(costo * .65), 1]];
     },
     'siti-web-ai': function (v) {
       var persi = v.visite * v.quota / 100 * .58, contatti = persi * v.conv / 100 * 12;
-      return [['Visite/mese a rischio per le risposte AI (−58% CTR, Ahrefs)', num(persi)], ['Contatti/anno che rischi di non vedere', num(contatti, 1)], ['Valore potenziale in gioco/anno', eur(contatti * v.chiusura / 100 * v.valore), 1]];
+      return [[L('Visite/mese a rischio per le risposte AI (−58% CTR, Ahrefs)', 'Visits/month at risk from AI answers (−58% CTR, Ahrefs)'), num(persi)], [L('Contatti/anno che rischi di non vedere', 'Contacts/year you risk never seeing'), num(contatti, 1)], [L('Valore potenziale in gioco/anno', 'Potential value at stake/year'), eur(contatti * v.chiusura / 100 * v.valore), 1]];
     },
     'crm': function (v) {
       var ore = v.persone * v.ore * 46, costo = ore * v.costo, persi = v.opp * 12 * v.valore * .1;
-      return [['Ore/anno tra inserimento dati, fogli e aggiornamenti', num(ore) + ' h'], ['Costo annuo di quelle ore', eur(costo)], ['+ valore opportunità dimenticate (10%)', eur(persi)], ['Totale in gioco/anno', eur(costo * .4 + persi), 1]];
+      return [[L('Ore/anno tra inserimento dati, fogli e aggiornamenti', 'Hours/year on data entry, spreadsheets and updates'), num(ore) + ' h'], [L('Costo annuo di quelle ore', 'Annual cost of those hours'), eur(costo)], [L('+ valore opportunità dimenticate (10%)', '+ value of forgotten opportunities (10%)'), eur(persi)], [L('Totale in gioco/anno', 'Total at stake/year'), eur(costo * .4 + persi), 1]];
     }
   };
   document.querySelectorAll('[data-calc]').forEach(function (root) {
@@ -209,7 +212,7 @@
   }
   document.querySelectorAll('[data-copy]').forEach(function (b) {
     b.addEventListener('click', function () {
-      if (navigator.clipboard) navigator.clipboard.writeText(location.href).then(function () { b.textContent = 'Link copiato ✓'; });
+      if (navigator.clipboard) navigator.clipboard.writeText(location.href).then(function () { b.textContent = EN ? 'Link copied ✓' : 'Link copiato ✓'; });
     });
   });
 })();

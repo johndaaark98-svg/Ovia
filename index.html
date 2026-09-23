@@ -193,7 +193,7 @@
         transform: translateX(-50%);
         bottom: 40px;
         z-index: 3;
-        font-size: 11px;
+        font-size: 12px;
         letter-spacing: 0.24em;
         text-transform: uppercase;
         color: var(--color-demoted-text);
@@ -292,7 +292,7 @@
       a.solution-card:hover .solution-more { opacity: 1; transform: translateX(4px); }
 
       .solution-index {
-        font-size: 11px;
+        font-size: 12px;
         letter-spacing: 0.2em;
         color: var(--color-accent);
         font-weight: 600;
@@ -321,7 +321,7 @@
       }
 
       .solution-tag {
-        font-size: 11px;
+        font-size: 12px;
         letter-spacing: 0.12em;
         text-transform: uppercase;
         font-weight: 600;
@@ -937,7 +937,7 @@
         display: inline-flex;
         align-items: center;
         gap: 8px;
-        font-size: 11px;
+        font-size: 12px;
         letter-spacing: 0.18em;
         text-transform: uppercase;
         font-weight: 700;
@@ -983,7 +983,7 @@
         margin-top: 2px;
       }
       .ready-card .rc-label {
-        font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+        font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase;
         color: var(--color-accent); font-weight: 700; margin-bottom: 10px;
       }
       .ready-card .rc-summary {
@@ -1029,11 +1029,12 @@
 
         .solution-card { width: 85vw; padding: 40px 28px; }
 
-        .grid-container { grid-template-columns: 1fr; }
+        .grid-container { grid-template-columns: minmax(0, 1fr); } .grid-container > * { min-width: 0; }
         .left-column { position: relative; height: auto; padding: 56px 28px 24px 28px; }
         .right-column { border-left: none; border-top: 1px solid var(--color-divider); }
         .right-card { padding: 40px 28px; min-height: 38vh; }
         .heading-style-h1 { font-size: clamp(34px, 9.5vw, 50px); }
+        .stack-b .heading-style-h1 { white-space: normal; font-size: clamp(30px, 8.6vw, 44px); line-height: 1.06; }
         .detail-paragraph, .left-p { font-size: 17px; }
 
         .replica-footer { grid-template-columns: 1fr; gap: 40px; padding: 56px 28px; }
@@ -1099,6 +1100,7 @@
     </style>
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <link rel="canonical" href="https://oviaitalia.it/" />
+    <!-- HREFLANG:INIZIO --><link rel="alternate" hreflang="it" href="https://oviaitalia.it/" /><link rel="alternate" hreflang="en" href="https://oviaitalia.it/en/" /><link rel="alternate" hreflang="x-default" href="https://oviaitalia.it/" /><!-- HREFLANG:FINE -->
 
     <!-- Open Graph: come appare il link quando viene condiviso su WhatsApp, LinkedIn, ecc. -->
     <meta property="og:type" content="website" />
@@ -1115,13 +1117,30 @@
     <!-- Fa partire il download del video hero il prima possibile, invece di
          aspettare che il browser arrivi allo script quasi in fondo alla pagina. -->
     <link rel="preload" as="video" href="ovia-hero.mp4" type="video/mp4">
-  </head>
+  <style id="lang-css">
+.av-lang,.lp-lang{display:inline-flex;padding:3px;border-radius:999px;border:1px solid rgba(148,170,220,.28);background:rgba(10,16,32,.7);flex-shrink:0}
+.av-lang a,.lp-lang a{font-size:12.5px;font-weight:600;letter-spacing:.08em;padding:7px 11px;min-width:40px;min-height:36px;display:inline-flex;align-items:center;justify-content:center;border-radius:999px;color:#97a3bd;line-height:1;text-decoration:none}
+.av-lang a[aria-current="true"],.lp-lang a[aria-current="true"]{background:#4c8dff;color:#fff}
+.av-header-nav{gap:28px}
+.av-nav-cta{white-space:nowrap}
+@media (max-width:1100px){.av-nav-link{display:none}}
+@media (max-width:767px){.av-header{gap:10px}.av-header-nav{gap:8px}.av-lang a,.lp-lang a{padding:9px 10px;min-width:38px;min-height:40px}.av-nav-cta{font-size:12.5px;letter-spacing:.02em;text-transform:none;padding:11px 14px}}
+@media (max-width:420px){.av-header{left:14px!important;right:14px!important}.av-logo{font-size:20px;letter-spacing:.14em;gap:5px}.av-lang a{min-width:34px;padding:9px 8px}.av-nav-cta{padding:11px 11px;font-size:12px}}
+@media (max-width:360px){.av-nav-cta{padding:10px 9px}.av-logo::after{display:none}}
+.av-logo{min-height:40px;align-items:center}
+@media (max-width:640px){.lp-nav{gap:12px}.lp-nav a:not(.lp-btn){display:none}.lp-nav .lp-lang a{display:inline-flex}}
+.lp-nav a{min-height:40px;display:inline-flex;align-items:center}
+.lp-breadcrumb a{display:inline-block;padding:12px 4px;margin:-12px -4px}
+@media (max-width:480px){.legal-table th,.legal-table td{padding:10px 8px;font-size:14px;overflow-wrap:anywhere;hyphens:auto}}
+</style>
+</head>
 
   <body>
     <!-- HEADER -->
     <header class="av-header">
       <a href="#" class="av-logo" aria-label="OVIA">OVIA</a>
       <nav class="av-header-nav">
+        <!-- LANG:INIZIO --><div class="av-lang" role="group" aria-label="Lingua"><a href="/" hreflang="it" lang="it" aria-current="true">IT</a><a href="/en/" hreflang="en" lang="en">EN</a></div><!-- LANG:FINE -->
         <a href="#sicurezza" class="av-nav-link">Sicurezza</a>
         <a href="#soluzioni" class="av-nav-link">Soluzioni</a>
         <a href="#metodo" class="av-nav-link">Metodo</a>

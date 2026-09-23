@@ -28,6 +28,15 @@
 - [AI Overviews: −58% di click. Cosa cambia per il sito dello studio](https://oviaitalia.it/blog/ai-overviews-click-persi-sito-studio-professionale.html): Con le AI Overviews di Google il primo risultato perde il 58% dei click. Cosa significa per il sito di uno studio o di una PMI e come farsi citare dall’AI.
 - [Tempo di risposta ai contatti: perché i primi 60 minuti contano](https://oviaitalia.it/blog/tempo-risposta-lead-studi-professionali.html): Rispondere a un nuovo contatto entro un’ora rende la qualifica 7 volte più probabile. Dati HBR e MIT e come applicarli in uno studio senza assumere nessuno.
 
+## English version
+- [Home (EN)](https://oviaitalia.it/en/): Ovia in English.
+- [Services (EN)](https://oviaitalia.it/en/services/)
+- [FAQ (EN)](https://oviaitalia.it/en/faq.html)
+- [Verifying AI output in professional firms: who signs off?](https://oviaitalia.it/en/blog/verifying-ai-output-professional-firms.html): AI produces documents in seconds, but who checks them? The real risk for a professional firm isn’t the tool: it’s delegating judgement and responsibility.
+- [Italian Law 132/2025: AI in professional firms and client disclosure](https://oviaitalia.it/en/blog/italian-law-132-2025-ai-professionals-client-disclosure.html): Italian Law 132/2025, art. 13: what accountants, lawyers and consultants using AI must do, how to inform clients and how to stay compliant.
+- [AI Overviews: −58% clicks. What changes for your firm’s website](https://oviaitalia.it/en/blog/ai-overviews-lost-clicks-professional-firm-website.html): With Google’s AI Overviews the top result loses 58% of its clicks. What it means for a professional firm or SME website and how to get cited by AI.
+- [Lead response time: why the first 60 minutes matter](https://oviaitalia.it/en/blog/lead-response-time-professional-firms.html): Replying to a new enquiry within an hour makes qualification 7 times more likely. HBR and MIT data, and how to apply them in a firm without hiring anyone.
+
 ## Contatti
 - Email: oviaitalia@gmail.com
 - Sito: https://oviaitalia.it

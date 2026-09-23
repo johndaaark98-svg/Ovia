@@ -16,7 +16,9 @@ import { writeFileSync, mkdirSync, appendFileSync } from 'node:fs';
 import { CONFIG } from './config.mjs';
 import { raccogli, testoArticolo } from './feeds.mjs';
 import { chiamaStrutturato } from './llm.mjs';
-import { SYSTEM_EDITOR, promptScelta, SCHEMA_SCELTA, promptArticolo, SCHEMA_ARTICOLO } from './prompts.mjs';
+import { SYSTEM_EDITOR, promptScelta, SCHEMA_SCELTA, promptArticolo, SCHEMA_ARTICOLO, SYSTEM_TRADUTTORE, promptTraduzione } from './prompts.mjs';
+import { prodottiIn } from '../../data/prodotti.mjs';
+import { readFileSync } from 'node:fs';
 import { controlla } from './qualita.mjs';
 import { caricaArticoli, buildTutto } from '../build.mjs';
 
@@ -25,6 +27,34 @@ const args = new Set(process.argv.slice(2));
 const log = (...m) => console.log(...m);
 const oggiRoma = () => new Intl.DateTimeFormat('en-CA', { timeZone: 'Europe/Rome' }).format(new Date());
 const summary = t => { if (process.env.GITHUB_STEP_SUMMARY) appendFileSync(process.env.GITHUB_STEP_SUMMARY, t + '\n'); };
+
+// ---- Traduzione inglese: non blocca mai la pubblicazione italiana ----
+function mappaLink(esistenti) {
+  const m = prodottiIn('it').map(p => [`/servizi/${p.id}.html`, `/en/services/${p.id}.html`]);
+  m.push(['/servizi/', '/en/services/'], ['/faq.html', '/en/faq.html'], ['/blog/', '/en/blog/']);
+  for (const a of esistenti) if (a.en?.slug) m.push([`/blog/${a.slug}.html`, `/en/blog/${a.en.slug}.html`]);
+  return m;
+}
+async function traduci(articolo, esistenti) {
+  const nomi = prodottiIn('en').map(p => `${p.id} = ${p.name}`).join(', ');
+  const en = await chiamaStrutturato({ system: SYSTEM_TRADUTTORE, prompt: promptTraduzione(articolo, mappaLink(esistenti), nomi), nomeTool: 'articolo_en', schema: SCHEMA_ARTICOLO, maxTokens: 16000 });
+  if ((en.sezioni || []).length !== articolo.sezioni.length) throw new Error('struttura della traduzione diversa dall’originale');
+  en.slug = (en.slug || en.title).toLowerCase().normalize('NFKD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 70);
+  if (esistenti.some(a => a.en?.slug === en.slug)) en.slug += '-' + articolo.data.slice(0, 10);
+  const parole = [...en.intro, ...en.sezioni.flatMap(s => s.paragrafi), ...en.conclusione].join(' ').split(/\s+/).length;
+  return { ...en, parole, minuti: Math.max(3, Math.round(parole / 200) + 1), tradotto: { da: 'ai', modello: CONFIG.model, il: new Date().toISOString() } };
+}
+// Recupera eventuali articoli rimasti senza versione inglese (max 2 per esecuzione)
+async function traduciMancanti(esistenti) {
+  const mancanti = esistenti.filter(a => !a.en).slice(0, 2);
+  for (const a of mancanti) {
+    try {
+      a.en = await traduci(a, esistenti);
+      writeFileSync(`${ROOT}content/blog/${a.slug}.json`, JSON.stringify(a, null, 2) + '\n');
+      log(`   ✓ Tradotto in inglese: ${a.en.slug}`);
+    } catch (e) { log(`   ⚠ Traduzione non riuscita per ${a.slug}: ${e.message}`); }
+  }
+}
 
 async function main() {
   const esistenti = caricaArticoli();
@@ -37,6 +67,8 @@ async function main() {
     log(`\n${c.length} notizie utilizzabili nelle ultime ${CONFIG.windowHours} ore.`);
     return;
   }
+
+  if (!args.has('--dry-run') && process.env.ANTHROPIC_API_KEY) await traduciMancanti(esistenti);
 
   const oggi = oggiRoma();
   if (!args.has('--force') && !args.has('--dry-run') && esistenti.some(a => a.data.slice(0, 10) === oggi)) {
@@ -89,6 +121,10 @@ async function main() {
     generato: { da: 'ai', modello: CONFIG.model, il: new Date().toISOString() },
   };
 
+  log('   Traduzione inglese…');
+  try { record.en = await traduci(record, esistenti); log(`   ✓ EN: ${record.en.slug}`); }
+  catch (e) { log(`   ⚠ Traduzione inglese non riuscita (pubblico solo in italiano, riprovo domani): ${e.message}`); }
+
   if (args.has('--dry-run')) {
     const out = ROOT + 'anteprima-articolo.json';
     writeFileSync(out, JSON.stringify(record, null, 2));
@@ -101,7 +137,7 @@ async function main() {
   writeFileSync(`${ROOT}content/blog/${record.slug}.json`, JSON.stringify(record, null, 2));
   await buildTutto({ log });
   log(`✓ Pubblicato: https://oviaitalia.it/blog/${record.slug}.html`);
-  summary(`### ✓ Articolo di oggi\n**${record.title}**\n\nhttps://oviaitalia.it/blog/${record.slug}.html\n\nFonti: ${record.fonti.map(f => f.fonte).join(', ')} · ${record.parole} parole`);
+  summary(`### ✓ Articolo di oggi\n**${record.title}**\n\nhttps://oviaitalia.it/blog/${record.slug}.html${record.en ? `\nhttps://oviaitalia.it/en/blog/${record.en.slug}.html` : ''}\n\nFonti: ${record.fonti.map(f => f.fonte).join(', ')} · ${record.parole} parole`);
 }
 
 main().catch(e => { console.error('✗ ' + e.message); summary('### ✗ Nessun articolo pubblicato\n' + e.message); process.exit(1); });

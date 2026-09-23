@@ -1,10 +1,12 @@
 // Rendering HTML del blog: articolo, indice, feed RSS, copertina SVG.
-import { SITE, PRODOTTI, byId, urlOf } from '../../data/prodotti.mjs';
+import { SITE, PRODOTTI, byId, byIdIn } from '../../data/prodotti.mjs';
 import { CATEGORIE } from './config.mjs';
-import { head, header, footer, esc, calBtn, svgGlyph } from '../lib/layout.mjs';
+import { head, header, footer, esc, calBtn, svgGlyph, urlIn } from '../lib/layout.mjs';
+import { UI } from '../lib/i18n.mjs';
 
-export const catLabel = id => CATEGORIE.find(c => c.id === id)?.label || 'Strategia';
-const dataIt = iso => new Intl.DateTimeFormat('it-IT', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'Europe/Rome' }).format(new Date(iso));
+const CAT_EN = { 'normativa-sicurezza': 'Regulation and security', 'automazione': 'Automation', 'ai-search-marketing': 'AI search and marketing', 'strumenti-ai': 'AI tools', 'strategia': 'Strategy' };
+export const catLabel = (id, lang = 'it') => lang === 'en' ? (CAT_EN[id] || 'Strategy') : (CATEGORIE.find(c => c.id === id)?.label || 'Strategia');
+const dataIt = (iso, lang = 'it') => new Intl.DateTimeFormat(UI[lang].dateLocale, { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'Europe/Rome' }).format(new Date(iso));
 
 // Testo con **grassetto** e [link](url). I link sono ammessi solo verso fonti
 // dichiarate o pagine interne: tutto il resto diventa testo semplice.
@@ -12,7 +14,7 @@ export function inline(text, allowed) {
   let s = esc(text);
   s = s.replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, (m, label, rawUrl) => {
     const url = rawUrl.replace(/&amp;/g, '&');
-    const interno = /^\/(servizi|blog)\/[a-z0-9\-/]*(\.html)?(#[a-z0-9-]+)?$/.test(url);
+    const interno = /^\/(en\/)?(servizi|services|blog)\/[a-z0-9\-/]*(\.html)?(#[a-z0-9-]+)?$/.test(url);
     if (interno) return `<a href="${esc(url)}">${label}</a>`;
     if (/^https?:\/\//.test(url) && allowed.has(url)) return `<a href="${esc(url)}" target="_blank" rel="noopener">${label}</a>`;
     return label;
@@ -39,7 +41,7 @@ export function cover(slug, prodottoId, variant = 'wide') {
   return `<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Illustrazione" xmlns="http://www.w3.org/2000/svg"><defs><radialGradient id="${id}" cx="50%" cy="50%" r="60%"><stop offset="0" stop-color="${hue}" stop-opacity=".45"/><stop offset=".55" stop-color="#1a1f5c" stop-opacity=".35"/><stop offset="1" stop-color="#070b1c" stop-opacity="1"/></radialGradient></defs><rect width="${W}" height="${H}" fill="#070b1c"/><rect width="${W}" height="${H}" fill="url(#${id})"/>${grid}${lines}${dots}<g transform="translate(${W / 2 - 110} ${H / 2 - 110}) scale(2.5)">${g}</g></svg>`;
 }
 
-function blocco(b, allowed) {
+function blocco(b, allowed, lang = 'it') {
   if (!b) return '';
   const I = t => inline(t || '', allowed);
   if (b.tipo === 'compare') {
@@ -48,112 +50,141 @@ function blocco(b, allowed) {
   }
   if (b.tipo === 'steps') return `<div class="ar-steps">${(b.voci || []).map((v, i) => `<div class="ar-step"><div class="n">${i + 1}</div><div><h3>${esc(v.titolo || '')}${v.meta ? `<small>${esc(v.meta)}</small>` : ''}</h3><p>${I(v.testo)}</p></div></div>`).join('')}</div>`;
   if (b.tipo === 'checklist') return `${b.titolo ? `<p><strong>${esc(b.titolo)}</strong></p>` : ''}<ul class="ar-check">${(b.voci || []).map(v => `<li><span class="ic ${v.ok === false ? 'no' : 'ok'}">${v.ok === false ? '✕' : '✓'}</span><div>${esc(v.titolo || '')}${v.testo ? `<small>${I(v.testo)}</small>` : ''}</div></li>`).join('')}</ul>`;
-  if (b.tipo === 'warning') return `<div class="ar-box warn"><div class="t">⚠ ${esc(b.titolo || 'Errori comuni da evitare')}</div><ul>${(b.voci || []).map(v => `<li>${I(v.testo || v.titolo)}</li>`).join('')}</ul></div>`;
+  if (b.tipo === 'warning') return `<div class="ar-box warn"><div class="t">⚠ ${esc(b.titolo || (lang === 'en' ? 'Common mistakes to avoid' : 'Errori comuni da evitare'))}</div><ul>${(b.voci || []).map(v => `<li>${I(v.testo || v.titolo)}</li>`).join('')}</ul></div>`;
   if (b.tipo === 'stats') return `<div class="ar-stats">${(b.voci || []).map(v => `<div><b>${esc(v.valore || '')}</b><span>${I(v.testo)}</span></div>`).join('')}</div>`;
   return '';
 }
 
 const slugify = s => s.toLowerCase().normalize('NFKD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 60);
 
-export function renderArticolo(a, tutti) {
+const T = {
+  it: { crumb: 'Blog', read: m => `${m} min di lettura`, key: 'Punti chiave', toc: 'In questo articolo', view: 'Il punto di vista Ovia', viewBox: 'Il punto di vista Ovia: strategia e sicurezza prima dello strumento', faq: 'Domande frequenti', concl: 'Conclusione', prodH: 'I sistemi Ovia per questo tema', prodP: 'Soluzioni costruite su misura che risolvono esattamente il problema di questo articolo.', discover: s => `Scopri ${s} →`, share: 'Condividi su LinkedIn', copy: 'Copia link', sources: 'Fonti',
+    disclosure: e => `Articolo della redazione Ovia, redatto con il supporto di strumenti di intelligenza artificiale a partire dalle fonti citate, che restano di proprietà dei rispettivi autori. Le informazioni hanno scopo divulgativo e non costituiscono consulenza legale o fiscale. Segnalazioni: <a href="mailto:${e}">${e}</a>.`,
+    related: 'Articoli correlati', ctaH: 'Trasforma questo articolo in un risultato misurabile.', ctaP: 'Trenta minuti sul tuo flusso di lavoro reale: dove va il tempo, cosa si può automatizzare in sicurezza e da dove conviene partire.', ctaS: 'Nessun impegno. Lavoriamo con pochi clienti alla volta.',
+    idxTitle: 'Blog Ovia — AI, automazione e sicurezza per studi professionali e PMI', idxDesc: 'Ogni giorno una guida pratica su intelligenza artificiale, automazione, normativa e sicurezza per studi professionali e PMI italiane. Strategia prima dello strumento.', idxEy: 'Il blog Ovia · un articolo al giorno', idxH1: 'L’AI spiegata a chi deve usarla davvero.', idxLead: 'Ogni giorno analizziamo le novità del mondo AI e le traduciamo in cosa cambia per uno studio professionale o una PMI italiana: opportunità, rischi, obblighi e passi concreti.', all: 'Tutti', filterL: 'Filtra per categoria', search: 'Cerca un argomento…', searchL: 'Cerca negli articoli', empty: 'Nessun articolo trovato. Prova con un’altra parola.', idxCtaH: 'Leggere è il primo passo. Il secondo è misurare.', idxCtaP: 'Scopri in trenta minuti dove il tuo studio perde tempo e cosa si può automatizzare in sicurezza.', feedDesc: 'AI, automazione e sicurezza per studi professionali e PMI italiane.', inLang: 'it-IT', feedLang: 'it-it', author: 'Redazione Ovia' },
+  en: { crumb: 'Blog', read: m => `${m} min read`, key: 'Key takeaways', toc: 'In this article', view: 'The Ovia view', viewBox: 'The Ovia view: strategy and security before the tool', faq: 'Frequently asked questions', concl: 'Conclusion', prodH: 'Ovia systems for this topic', prodP: 'Tailor-made solutions that solve exactly the problem discussed in this article.', discover: s => `Discover ${s} →`, share: 'Share on LinkedIn', copy: 'Copy link', sources: 'Sources',
+    disclosure: e => `An article by the Ovia editorial team, written with the support of artificial intelligence tools from the sources cited, which remain the property of their respective authors. Translated from the Italian original. This information is for general guidance and does not constitute legal or tax advice. Corrections: <a href="mailto:${e}">${e}</a>.`,
+    related: 'Related articles', ctaH: 'Turn this article into a measurable result.', ctaP: 'Thirty minutes on your real workflow: where the time goes, what can be safely automated and where it’s best to start.', ctaS: 'No obligation. We work with a few clients at a time.',
+    idxTitle: 'Ovia Blog — AI, automation and security for professional firms and SMEs', idxDesc: 'A practical guide every day on artificial intelligence, automation, regulation and security for professional firms and SMEs in Italy. Strategy before the tool.', idxEy: 'The Ovia blog · one article a day', idxH1: 'AI explained for people who actually have to use it.', idxLead: 'Every day we analyse what’s new in AI and translate it into what changes for a professional firm or SME in Italy: opportunities, risks, obligations and concrete steps.', all: 'All', filterL: 'Filter by category', search: 'Search a topic…', searchL: 'Search articles', empty: 'No articles found. Try another word.', idxCtaH: 'Reading is the first step. The second is measuring.', idxCtaP: 'Find out in thirty minutes where your firm loses time and what can be safely automated.', feedDesc: 'AI, automation and security for professional firms and SMEs in Italy.', inLang: 'en', feedLang: 'en', author: 'Ovia editorial team' },
+};
+
+// Vista di un articolo nella lingua richiesta (EN = campi di a.en sopra l'originale)
+export function loc(a, lang) {
+  if (lang !== 'en') return { ...a, _it: a.slug, _en: a.en?.slug || null };
+  if (!a.en) return null;
+  return { ...a, ...a.en, _it: a.slug, _en: a.en.slug, fonti: a.fonti, data: a.data, categoria: a.categoria, minuti: a.en.minuti || a.minuti, parole: a.en.parole || a.parole };
+}
+const artPath = (a, lang) => lang === 'en' ? `/en/blog/${a._en}.html` : `/blog/${a._it}.html`;
+const altOf = a => ({ it: `/blog/${a._it}.html`, en: a._en ? `/en/blog/${a._en}.html` : null });
+
+// a = articolo già localizzato con loc(); tutti = articoli localizzati nella stessa lingua
+export function renderArticolo(a, tutti, lang = 'it') {
+  const t = T[lang], u = UI[lang], byL = byIdIn(lang);
   const allowed = new Set((a.fonti || []).map(f => f.url));
-  const I = t => inline(t, allowed);
-  const path = `/blog/${a.slug}.html`;
+  const I = x => inline(x, allowed);
+  const path = artPath(a, lang), alt = altOf(a);
+  const blogHome = lang === 'en' ? '/en/blog/' : '/blog/', home = lang === 'en' ? '/en/' : '/';
   const prodotto0 = a.prodotti?.[0]?.id;
   const minuti = a.minuti || Math.max(3, Math.round((a.parole || 1200) / 200));
   const toc = a.sezioni.map(s => `<li><a href="#${slugify(s.h2)}">${esc(s.h2)}</a></li>`).join('');
-  const sezioni = a.sezioni.map(s => `<section><h2 id="${slugify(s.h2)}">${esc(s.h2)}</h2>${s.paragrafi.map(p => `<p>${I(p)}</p>`).join('')}${blocco(s.blocco, allowed)}</section>`).join('');
+  const sezioni = a.sezioni.map(s => `<section><h2 id="${slugify(s.h2)}">${esc(s.h2)}</h2>${s.paragrafi.map(p => `<p>${I(p)}</p>`).join('')}${blocco(s.blocco, allowed, lang)}</section>`).join('');
   const faq = a.faq.map((f, i) => `<details${i === 0 ? ' open' : ''}><summary>${esc(f.domanda)}</summary><div class="ans"><p>${I(f.risposta)}</p></div></details>`).join('');
-  const prodotti = (a.prodotti || []).filter(p => byId[p.id]).map(p => { const P = byId[p.id]; return `<a class="ar-prod" href="${urlOf(P.id)}">${svgGlyph(P.glyph, '')}<span class="k">${esc(P.kicker)}</span><h3>${esc(P.name)}</h3><p>${esc(p.perche)}</p><span class="go">Scopri ${esc(P.short)} →</span></a>`; }).join('');
-  const correlati = tutti.filter(x => x.slug !== a.slug)
+  const prods = (a.prodotti || []).filter(p => byL[p.id]);
+  const prodotti = prods.map(p => { const P = byL[p.id]; return `<a class="ar-prod" href="${urlIn(lang, P.id)}">${svgGlyph(P.glyph, '')}<span class="k">${esc(P.kicker)}</span><h3>${esc(P.name)}</h3><p>${esc(p.perche)}</p><span class="go">${esc(t.discover(P.short))}</span></a>`; }).join('');
+  const correlati = tutti.filter(x => x._it !== a._it)
     .sort((x, y) => (y.categoria === a.categoria) - (x.categoria === a.categoria) || y.data.localeCompare(x.data)).slice(0, 3);
   const fonti = (a.fonti || []).map(f => `<li><a href="${esc(f.url)}" target="_blank" rel="noopener">${esc(f.titolo)}</a> — ${esc(f.fonte)}</li>`).join('');
+  const author = lang === 'en' ? t.author : (a.autore || t.author);
   const jsonld = [
-    { '@context': 'https://schema.org', '@type': 'BlogPosting', headline: a.title, description: a.meta_description, datePublished: a.data, dateModified: a.aggiornato || a.data, inLanguage: 'it-IT', mainEntityOfPage: SITE.url + path, keywords: a.tags.join(', '), articleSection: catLabel(a.categoria), wordCount: a.parole, author: { '@type': 'Organization', name: a.autore || 'Redazione Ovia', url: SITE.url }, publisher: { '@type': 'Organization', name: 'Ovia', url: SITE.url }, citation: (a.fonti || []).map(f => f.url) },
-    { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: SITE.url + '/' }, { '@type': 'ListItem', position: 2, name: 'Blog', item: SITE.url + '/blog/' }, { '@type': 'ListItem', position: 3, name: a.title, item: SITE.url + path }] },
+    { '@context': 'https://schema.org', '@type': 'BlogPosting', headline: a.title, description: a.meta_description, datePublished: a.data, dateModified: a.aggiornato || a.data, inLanguage: t.inLang, mainEntityOfPage: SITE.url + path, keywords: a.tags.join(', '), articleSection: catLabel(a.categoria, lang), wordCount: a.parole, author: { '@type': 'Organization', name: author, url: SITE.url }, publisher: { '@type': 'Organization', name: 'Ovia', url: SITE.url }, citation: (a.fonti || []).map(f => f.url) },
+    { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: u.home, item: SITE.url + home }, { '@type': 'ListItem', position: 2, name: 'Blog', item: SITE.url + blogHome }, { '@type': 'ListItem', position: 3, name: a.title, item: SITE.url + path }] },
     { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: a.faq.map(f => ({ '@type': 'Question', name: f.domanda, acceptedAnswer: { '@type': 'Answer', text: f.risposta.replace(/\[([^\]]+)\]\([^)]+\)/g, '$1').replace(/\*\*/g, '') } })) },
   ];
   const share = encodeURIComponent(SITE.url + path);
-  return head({ title: `${a.title} | Blog Ovia`, description: a.meta_description, path, type: 'article', jsonld, extra: `<meta property="article:published_time" content="${a.data}">${a.tags.map(t => `<meta property="article:tag" content="${esc(t)}">`).join('')}` }) + header('blog') + `
+  return head({ title: `${a.title} | Blog Ovia`, description: a.meta_description, path: alt.it, lang, alt, type: 'article', jsonld, extra: `<meta property="article:published_time" content="${a.data}">${a.tags.map(x => `<meta property="article:tag" content="${esc(x)}">`).join('')}` }) + header('blog', lang, alt.en ? alt : { it: alt.it, en: '/en/blog/' }) + `
 <div class="ar-progress" aria-hidden="true"></div>
 <main class="ar">
-  <nav class="ov-breadcrumb" aria-label="Percorso"><a href="/">Home</a><span>/</span><a href="/blog/">Blog</a><span>/</span>${esc(a.title)}</nav>
-  <div class="ar-cover">${cover(a.slug, prodotto0)}</div>
-  <div class="ov-pills">${a.tags.map(t => `<span class="ov-pill">${esc(t)}</span>`).join('')}</div>
+  <nav class="ov-breadcrumb" aria-label="${u.breadcrumb}"><a href="${home}">${u.home}</a><span>/</span><a href="${blogHome}">Blog</a><span>/</span>${esc(a.title)}</nav>
+  <div class="ar-cover">${cover(a._it, prodotto0)}</div>
+  <div class="ov-pills">${a.tags.map(x => `<span class="ov-pill">${esc(x)}</span>`).join('')}</div>
   <h1>${esc(a.title)}</h1>
   <p class="ar-lead">${esc(a.lead)}</p>
-  <div class="ar-meta"><strong>${esc(a.autore || 'Redazione Ovia')}</strong><span class="dot">·</span><time datetime="${a.data}">${dataIt(a.data)}</time><span class="dot">·</span><span>${minuti} min di lettura</span><span class="dot">·</span><a href="/blog/?c=${a.categoria}" style="color:var(--accent)">${esc(catLabel(a.categoria))}</a></div>
+  <div class="ar-meta"><strong>${esc(author)}</strong><span class="dot">·</span><time datetime="${a.data}">${dataIt(a.data, lang)}</time><span class="dot">·</span><span>${t.read(minuti)}</span><span class="dot">·</span><a href="${blogHome}?c=${a.categoria}" style="color:var(--accent)">${esc(catLabel(a.categoria, lang))}</a></div>
   <article class="ar-body">
     ${a.intro.map(p => `<p>${I(p)}</p>`).join('')}
-    <div class="ar-box"><div class="t">ⓘ Punti chiave</div><ul>${a.punti_chiave.map(p => `<li>${I(p)}</li>`).join('')}</ul></div>
-    <details class="ar-toc"><summary>In questo articolo</summary><ol>${toc}<li><a href="#punto-di-vista-ovia">Il punto di vista Ovia</a></li><li><a href="#domande-frequenti">Domande frequenti</a></li></ol></details>
+    <div class="ar-box"><div class="t">ⓘ ${t.key}</div><ul>${a.punti_chiave.map(p => `<li>${I(p)}</li>`).join('')}</ul></div>
+    <details class="ar-toc"><summary>${t.toc}</summary><ol>${toc}<li><a href="#punto-di-vista-ovia">${t.view}</a></li><li><a href="#domande-frequenti">${t.faq}</a></li></ol></details>
     ${sezioni}
     <h2 id="punto-di-vista-ovia">${esc(a.ovia_view.titolo)}</h2>
-    <div class="ar-box ovia"><div class="t">✦ Il punto di vista Ovia: strategia e sicurezza prima dello strumento</div>${a.ovia_view.paragrafi.map(p => `<p>${I(p)}</p>`).join('')}</div>
-    <h2 id="domande-frequenti">Domande frequenti</h2>
+    <div class="ar-box ovia"><div class="t">✦ ${t.viewBox}</div>${a.ovia_view.paragrafi.map(p => `<p>${I(p)}</p>`).join('')}</div>
+    <h2 id="domande-frequenti">${t.faq}</h2>
     <div class="ov-faq">${faq}</div>
-    <h2>Conclusione</h2>
+    <h2>${t.concl}</h2>
     ${a.conclusione.map(p => `<p>${I(p)}</p>`).join('')}
     <div class="ar-products">
-      <h2>I sistemi Ovia per questo tema</h2>
-      <p>Soluzioni costruite su misura che risolvono esattamente il problema di questo articolo.</p>
+      <h2>${t.prodH}</h2>
+      <p>${t.prodP}</p>
       <div class="grid">${prodotti}</div>
-      <div class="ov-pills">${(a.prodotti || []).filter(p => byId[p.id]).map(p => `<a class="ov-pill" href="${urlOf(p.id)}">#${esc(byId[p.id].name)}</a>`).join('')}</div>
+      <div class="ov-pills">${prods.map(p => `<a class="ov-pill" href="${urlIn(lang, p.id)}">#${esc(byL[p.id].name)}</a>`).join('')}</div>
     </div>
-    <div class="ar-share"><a href="https://www.linkedin.com/sharing/share-offsite/?url=${share}" target="_blank" rel="noopener">Condividi su LinkedIn</a><a href="https://wa.me/?text=${share}" target="_blank" rel="noopener">WhatsApp</a><button type="button" data-copy>Copia link</button></div>
-    ${fonti ? `<div class="ov-sources"><h4>Fonti</h4><ol>${fonti}</ol></div>` : ''}
-    <p class="ar-disclosure">Articolo della redazione Ovia, redatto con il supporto di strumenti di intelligenza artificiale a partire dalle fonti citate, che restano di proprietà dei rispettivi autori. Le informazioni hanno scopo divulgativo e non costituiscono consulenza legale o fiscale. Segnalazioni: <a href="mailto:${SITE.email}">${SITE.email}</a>.</p>
+    <div class="ar-share"><a href="https://www.linkedin.com/sharing/share-offsite/?url=${share}" target="_blank" rel="noopener">${t.share}</a><a href="https://wa.me/?text=${share}" target="_blank" rel="noopener">WhatsApp</a><button type="button" data-copy>${t.copy}</button></div>
+    ${fonti ? `<div class="ov-sources"><h4>${t.sources}</h4><ol>${fonti}</ol></div>` : ''}
+    <p class="ar-disclosure">${t.disclosure(SITE.email)}</p>
   </article>
-  ${correlati.length ? `<section class="ar-related"><h2>Articoli correlati</h2><div class="bl-grid">${correlati.map(c => card(c)).join('')}</div></section>` : ''}
+  ${correlati.length ? `<section class="ar-related"><h2>${t.related}</h2><div class="bl-grid">${correlati.map(c => card(c, false, lang)).join('')}</div></section>` : ''}
   <section class="ov-section"><div class="ov-cta-band">
     <p class="ov-eyebrow">Ovia Process Check</p>
-    <h2>Trasforma questo articolo in un risultato misurabile.</h2>
-    <p>Trenta minuti sul tuo flusso di lavoro reale: dove va il tempo, cosa si può automatizzare in sicurezza e da dove conviene partire.</p>
-    ${calBtn()}
-    <p class="small">Nessun impegno. Lavoriamo con pochi clienti alla volta.</p>
+    <h2>${t.ctaH}</h2>
+    <p>${t.ctaP}</p>
+    ${calBtn(u.cta)}
+    <p class="small">${t.ctaS}</p>
   </div></section>
-</main>` + footer();
+</main>` + footer(lang);
 }
 
-export function card(a, featured = false) {
+export function card(a, featured = false, lang = 'it') {
   const search = esc([a.title, a.lead, ...(a.tags || [])].join(' ').toLowerCase());
   const Tag = featured ? 'h2' : 'h3';
-  return `<a class="ov-card bl-card${featured ? ' featured' : ''}" href="/blog/${a.slug}.html" data-cat="${a.categoria}" data-search="${search}"><div class="cover">${cover(a.slug, a.prodotti?.[0]?.id, featured ? 'wide' : 'card')}</div><div class="body"><div class="ov-pills">${(a.tags || []).slice(0, 2).map(t => `<span class="ov-pill">${esc(t)}</span>`).join('')}</div><${Tag}>${esc(a.title)}</${Tag}><p>${esc(a.lead)}</p><span class="meta">${dataIt(a.data)} · ${a.minuti || 6} min · ${esc(catLabel(a.categoria))}</span></div></a>`;
+  return `<a class="ov-card bl-card${featured ? ' featured' : ''}" href="${artPath(a, lang)}" data-cat="${a.categoria}" data-search="${search}"><div class="cover">${cover(a._it, a.prodotti?.[0]?.id, featured ? 'wide' : 'card')}</div><div class="body"><div class="ov-pills">${(a.tags || []).slice(0, 2).map(x => `<span class="ov-pill">${esc(x)}</span>`).join('')}</div><${Tag}>${esc(a.title)}</${Tag}><p>${esc(a.lead)}</p><span class="meta">${dataIt(a.data, lang)} · ${a.minuti || 6} min · ${esc(catLabel(a.categoria, lang))}</span></div></a>`;
 }
 
-export function renderIndice(tutti) {
+export function renderIndice(tutti, lang = 'it') {
+  const t = T[lang], u = UI[lang];
   const ord = [...tutti].sort((x, y) => y.data.localeCompare(x.data));
   const usate = new Set(ord.map(a => a.categoria));
-  const filtri = `<button data-f="tutti" aria-pressed="true">Tutti</button>` + CATEGORIE.filter(c => usate.has(c.id)).map(c => `<button data-f="${c.id}" aria-pressed="false">${esc(c.label)}</button>`).join('');
-  const jsonld = [{ '@context': 'https://schema.org', '@type': 'Blog', name: 'Blog Ovia', url: SITE.url + '/blog/', inLanguage: 'it-IT', publisher: { '@type': 'Organization', name: 'Ovia', url: SITE.url }, blogPost: ord.slice(0, 20).map(a => ({ '@type': 'BlogPosting', headline: a.title, url: `${SITE.url}/blog/${a.slug}.html`, datePublished: a.data })) }];
-  return head({ title: 'Blog Ovia — AI, automazione e sicurezza per studi professionali e PMI', description: 'Ogni giorno una guida pratica su intelligenza artificiale, automazione, normativa e sicurezza per studi professionali e PMI italiane. Strategia prima dello strumento.', path: '/blog/', jsonld }) + header('blog') + `
+  const blogHome = lang === 'en' ? '/en/blog/' : '/blog/', home = lang === 'en' ? '/en/' : '/';
+  const filtri = `<button data-f="tutti" aria-pressed="true">${t.all}</button>` + CATEGORIE.filter(c => usate.has(c.id)).map(c => `<button data-f="${c.id}" aria-pressed="false">${esc(catLabel(c.id, lang))}</button>`).join('');
+  const jsonld = [{ '@context': 'https://schema.org', '@type': 'Blog', name: 'Blog Ovia', url: SITE.url + blogHome, inLanguage: t.inLang, publisher: { '@type': 'Organization', name: 'Ovia', url: SITE.url }, blogPost: ord.slice(0, 20).map(a => ({ '@type': 'BlogPosting', headline: a.title, url: SITE.url + artPath(a, lang), datePublished: a.data })) }];
+  const alt = { it: '/blog/', en: '/en/blog/' };
+  return head({ title: t.idxTitle, description: t.idxDesc, path: '/blog/', lang, alt, jsonld }) + header('blog', lang, alt) + `
 <main><div class="ov-wrap">
-  <nav class="ov-breadcrumb" aria-label="Percorso"><a href="/">Home</a><span>/</span>Blog</nav>
+  <nav class="ov-breadcrumb" aria-label="${u.breadcrumb}"><a href="${home}">${u.home}</a><span>/</span>Blog</nav>
   <section class="bl-hero">
-    <p class="ov-eyebrow">Il blog Ovia · un articolo al giorno</p>
-    <h1>L’AI spiegata a chi deve usarla davvero.</h1>
-    <p class="ov-lead">Ogni giorno analizziamo le novità del mondo AI e le traduciamo in cosa cambia per uno studio professionale o una PMI italiana: opportunità, rischi, obblighi e passi concreti. ${esc(SITE.positioning)}</p>
+    <p class="ov-eyebrow">${t.idxEy}</p>
+    <h1>${t.idxH1}</h1>
+    <p class="ov-lead">${t.idxLead} ${esc(u.positioning)}</p>
   </section>
-  <div class="bl-tools"><div class="bl-filters" role="group" aria-label="Filtra per categoria">${filtri}</div><input class="bl-search" type="search" placeholder="Cerca un argomento…" aria-label="Cerca negli articoli"></div>
-  <div class="bl-grid" data-blog-list>${ord.map((a, i) => card(a, i === 0)).join('')}</div>
-  <p class="bl-empty">Nessun articolo trovato. Prova con un’altra parola.</p>
-  <section class="ov-section"><div class="ov-cta-band"><p class="ov-eyebrow">Ovia Process Check</p><h2>Leggere è il primo passo. Il secondo è misurare.</h2><p>Scopri in trenta minuti dove il tuo studio perde tempo e cosa si può automatizzare in sicurezza.</p>${calBtn()}</div></section>
+  <div class="bl-tools"><div class="bl-filters" role="group" aria-label="${t.filterL}">${filtri}</div><input class="bl-search" type="search" placeholder="${t.search}" aria-label="${t.searchL}"></div>
+  <div class="bl-grid" data-blog-list>${ord.map((a, i) => card(a, i === 0, lang)).join('')}</div>
+  <p class="bl-empty">${t.empty}</p>
+  <section class="ov-section"><div class="ov-cta-band"><p class="ov-eyebrow">Ovia Process Check</p><h2>${t.idxCtaH}</h2><p>${t.idxCtaP}</p>${calBtn(u.cta)}</div></section>
 </div></main>
-` + footer();
+` + footer(lang);
 }
 
-export function renderFeed(tutti) {
+export function renderFeed(tutti, lang = 'it') {
+  const t = T[lang], blogHome = lang === 'en' ? '/en/blog/' : '/blog/';
   const ord = [...tutti].sort((x, y) => y.data.localeCompare(x.data)).slice(0, 30);
   const x = s => esc(s);
   return `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 <channel>
 <title>Blog Ovia</title>
-<link>${SITE.url}/blog/</link>
-<atom:link href="${SITE.url}/blog/feed.xml" rel="self" type="application/rss+xml"/>
-<description>AI, automazione e sicurezza per studi professionali e PMI italiane.</description>
-<language>it-it</language>
-${ord.map(a => `<item><title>${x(a.title)}</title><link>${SITE.url}/blog/${a.slug}.html</link><guid isPermaLink="true">${SITE.url}/blog/${a.slug}.html</guid><pubDate>${new Date(a.data).toUTCString()}</pubDate><category>${x(catLabel(a.categoria))}</category><description>${x(a.meta_description)}</description></item>`).join('\n')}
+<link>${SITE.url}${blogHome}</link>
+<atom:link href="${SITE.url}${blogHome}feed.xml" rel="self" type="application/rss+xml"/>
+<description>${t.feedDesc}</description>
+<language>${t.feedLang}</language>
+${ord.map(a => `<item><title>${x(a.title)}</title><link>${SITE.url}${artPath(a, lang)}</link><guid isPermaLink="true">${SITE.url}${artPath(a, lang)}</guid><pubDate>${new Date(a.data).toUTCString()}</pubDate><category>${x(catLabel(a.categoria, lang))}</category><description>${x(a.meta_description)}</description></item>`).join('\n')}
 </channel>
 </rss>`;
 }

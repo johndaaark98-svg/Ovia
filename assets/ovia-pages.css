@@ -393,13 +393,6 @@ input[type=range].sv-range::-moz-range-thumb { width: 16px; height: 16px; border
   .ov-footer .cols { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 760px) {
-  .ov-nav { display: none; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; align-items: stretch; gap: 0; padding: 12px 16px 20px; background: rgba(4,7,15,.97); border-bottom: 1px solid var(--line); }
-  .ov-nav.open { display: flex; }
-  .ov-nav > a, .ov-dd > button { padding: 14px 4px; text-align: left; border-bottom: 1px solid var(--line); }
-  .ov-dd-menu { position: static; transform: none; opacity: 1; visibility: visible; box-shadow: none; border: 0; background: none; padding: 0 0 8px; min-width: 0; display: none; }
-  .ov-dd.open .ov-dd-menu { display: block; transform: none; }
-  .ov-nav .ov-btn { margin-top: 14px; justify-content: space-between; }
-  .ov-burger { display: block; }
   .sv-stats, .sv-pillars, .sv-sec, .sv-ba-list, .ov-grid-3, .bl-grid, .ar-compare { grid-template-columns: 1fr; }
   .bl-card.featured { grid-column: span 1; }
   .sv-timeline { grid-template-columns: 1fr; }
@@ -429,3 +422,29 @@ input[type=range].sv-range::-moz-range-thumb { width: 16px; height: 16px; border
 .ov-faq .ans a { color: #9dbbff; text-decoration: underline; text-underline-offset: 3px; }
 .ov-faq .ans strong { color: var(--text); }
 .ov-faq details { scroll-margin-top: 90px; }
+
+/* ---------- Selettore lingua ---------- */
+.ov-header-right { display: flex; align-items: center; gap: 10px; order: 3; }
+.ov-nav { order: 2; margin-left: auto; }
+.ov-lang { display: inline-flex; padding: 3px; border-radius: 999px; border: 1px solid var(--line-strong); background: rgba(10,16,32,.7); }
+.ov-lang a { font-size: 12.5px; font-weight: 600; letter-spacing: .08em; padding: 7px 11px; min-width: 40px; text-align: center; border-radius: 999px; color: var(--muted); line-height: 1; }
+.ov-lang a[aria-current="true"] { background: var(--accent); color: #fff; }
+.ov-lang a:not([aria-current="true"]):hover { color: var(--text); }
+
+
+/* Menu a burger fino ai tablet: evita overflow a 768px */
+@media (max-width: 1024px) {
+  .ov-nav { display: none; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; align-items: stretch; gap: 0; padding: 12px 16px 20px; background: rgba(4,7,15,.97); border-bottom: 1px solid var(--line); }
+  .ov-nav.open { display: flex; }
+  .ov-nav > a, .ov-dd > button { padding: 14px 4px; text-align: left; border-bottom: 1px solid var(--line); }
+  .ov-dd-menu { position: static; transform: none; opacity: 1; visibility: visible; box-shadow: none; border: 0; background: none; padding: 0 0 8px; min-width: 0; display: none; }
+  .ov-dd.open .ov-dd-menu { display: block; transform: none; }
+  .ov-nav .ov-btn { margin-top: 14px; justify-content: space-between; }
+  .ov-burger { display: block; }
+  .ov-header-right { margin-left: auto; }
+}
+/* Leggibilità e aree di tocco */
+.ov-lang a { padding: 12px 12px; min-height: 40px; display: inline-flex; align-items: center; justify-content: center; }
+sup.ov-ref a { font-size: 12px; display: inline-block; padding: 2px 3px; }
+.ar-compare .row .l, .ar-prod .k { font-size: 12px; }
+.ov-breadcrumb a { display: inline-block; padding: 10px 4px; margin: -10px -4px; }

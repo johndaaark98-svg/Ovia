@@ -218,5 +218,206 @@
   "generato": {
     "da": "redazione",
     "il": "2026-09-22"
+  },
+  "en": {
+    "slug": "ai-overviews-lost-clicks-professional-firm-website",
+    "title": "AI Overviews: −58% clicks. What changes for your firm’s website",
+    "meta_description": "With Google’s AI Overviews the top result loses 58% of its clicks. What it means for a professional firm or SME website and how to get cited by AI.",
+    "lead": "Ranking first on Google is worth far less than a year ago. What’s worth more is being the source AI chooses to cite. Here are the numbers and what to do, step by step.",
+    "tags": [
+      "AI Overviews",
+      "GEO",
+      "SEO for professional firms",
+      "AI search"
+    ],
+    "intro": [
+      "When an AI-generated summary appears on Google — the **AI Overviews** — the top organic result loses on average 58% of its clicks. That’s the finding of the latest update of the [Ahrefs](https://ahrefs.com/blog/ai-overviews-reduce-clicks-update) study, run on 300,000 keywords with December 2025 data. In April 2025 the measured loss was 34.5%: in a few months the effect almost doubled.",
+      "For a professional firm or SME that relies on its website for enquiries, this is a structural change. The question is no longer just “how do I rank first?”, but “how do I become the answer AI gives my prospective client?”."
+    ],
+    "punti_chiave": [
+      "With an AI Overview present, the top Google position loses on average 58% of its clicks (Ahrefs, December 2025 data).",
+      "The effect hits lower positions too: the second position loses about 50.8%.",
+      "Academic research on Generative Engine Optimization shows optimised content can increase visibility in AI answers by up to 40%.",
+      "Publishing mass-produced AI pages is the wrong path: Google classifies it as scaled content abuse.",
+      "The winning strategy is to answer clients’ real questions clearly, verifiably and in a structured way."
+    ],
+    "sezioni": [
+      {
+        "h2": "How many clicks do AI Overviews cost?",
+        "paragrafi": [
+          "According to [Ahrefs](https://ahrefs.com/blog/ai-overviews-reduce-clicks-update), on a sample of 150,000 searches with an AI Overview compared with 150,000 without, the average clickthrough rate of the top position falls by 58%. In other words: for every 100 clicks a top result would have earned, Google “keeps” 58. The second position loses 50.8%, and the effect only fades further down, to the ninth and tenth positions, where it still stands at around 19%.",
+          "Not every search shows an AI Overview: they appear mostly for informational questions (“how does it work”, “what do I need to”, “how much does it cost”). But those are exactly the questions a prospective client starts with before contacting a firm."
+        ],
+        "blocco": {
+          "tipo": "stats",
+          "voci": [
+            {
+              "valore": "−58%",
+              "testo": "clicks on the top position with an AI Overview (Dec. 2025)"
+            },
+            {
+              "valore": "−50.8%",
+              "testo": "clicks on the second position"
+            },
+            {
+              "valore": "−34.5%",
+              "testo": "the loss measured only in April 2025"
+            }
+          ]
+        }
+      },
+      {
+        "h2": "From SEO to GEO: being cited, not just found",
+        "paragrafi": [
+          "The market’s answer has a name: **GEO, Generative Engine Optimization**. The term comes from work by researchers at Princeton and IIT Delhi presented at KDD 2024 ([arXiv](https://arxiv.org/abs/2311.09735)), which showed that optimising content can increase visibility in generative engines’ answers by up to 40%.",
+          "The difference from classic SEO is the goal. SEO works to appear in the list of results; GEO works to be **chosen as a source** inside the AI’s answer, on Google as well as ChatGPT, Gemini or Perplexity. The foundations are shared (a technically sound site, useful content), but GEO especially rewards direct answers, verifiable data, citations and a structure machines can interpret without ambiguity."
+        ],
+        "blocco": {
+          "tipo": "compare",
+          "sinistra": {
+            "titolo": "Traditional brochure site",
+            "badge": "today",
+            "righe": [
+              {
+                "etichetta": "Content",
+                "valore": "Talks about the firm, not clients’ questions"
+              },
+              {
+                "etichetta": "Structure",
+                "valore": "Generic pages, no structured data"
+              },
+              {
+                "etichetta": "Result",
+                "valore": "Visible on Google, invisible in AI answers"
+              }
+            ]
+          },
+          "destra": {
+            "titolo": "Site designed for AI",
+            "badge": "recommended",
+            "righe": [
+              {
+                "etichetta": "Content",
+                "valore": "A clear answer for every real question"
+              },
+              {
+                "etichetta": "Structure",
+                "valore": "Service pages, FAQs and schema.org structured data"
+              },
+              {
+                "etichetta": "Result",
+                "valore": "Citable as a source by Google AI and assistants"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "h2": "The shortcut to avoid: mass-produced pages",
+        "paragrafi": [
+          "Faced with these numbers, the temptation is to publish dozens of AI-written pages to “cover” every keyword. That’s exactly what [Google’s spam policies](https://developers.google.com/search/docs/essentials/spam-policies) call **scaled content abuse**: generating many pages primarily to manipulate rankings, without adding value for readers. Among Google’s examples are using generative AI tools to produce pages with no value, and scraping other people’s content transformed with synonyms or translations.",
+          "Google doesn’t penalise content because it’s written with AI, but because it’s useless. An article that synthesises several sources, cites them, adds practical analysis and is reviewed by a person is legitimate content. A text factory isn’t."
+        ],
+        "blocco": {
+          "tipo": "warning",
+          "titolo": "Common mistakes to avoid",
+          "voci": [
+            {
+              "testo": "Rewriting other people’s articles with different words: it’s transformed scraping, and Google treats it as such."
+            },
+            {
+              "testo": "Creating a page for every keyword variant with near-identical text."
+            },
+            {
+              "testo": "Publishing numbers without sources: AI engines reward verifiable content."
+            },
+            {
+              "testo": "Forgetting service pages: they’re what turns a citation into an enquiry."
+            }
+          ]
+        }
+      },
+      {
+        "h2": "What to do, in practice, on a firm’s website",
+        "paragrafi": [
+          "The useful work is less spectacular than you’d think, and it starts from clients’ questions, not keywords. An accountant is searched for with questions like “what expenses can I deduct if I work from home?” or “how much does it cost to register as self-employed?”: every recurring question deserves a clear, signed answer with the right references.",
+          "Then you need a structure machines understand: a page for each service, FAQs with short self-contained answers, structured data, consistent contact information everywhere. Finally you need something that turns a visit into an enquiry: an assistant that replies immediately and books the consultation. The full method is described on the [Ovia AI-Ready Websites](/en/services/siti-web-ai.html) page."
+        ],
+        "blocco": {
+          "tipo": "steps",
+          "voci": [
+            {
+              "titolo": "Collect the real questions",
+              "meta": "Week 1",
+              "testo": "Ask your team which questions clients ask before hiring the firm, and check what people search for on Google in your area."
+            },
+            {
+              "titolo": "One answer per question",
+              "meta": "Weeks 2–4",
+              "testo": "Write content that answers straight away, in the first sentence, then goes deeper with data and sources."
+            },
+            {
+              "titolo": "Structure the site",
+              "meta": "Weeks 2–4",
+              "testo": "Dedicated service pages, FAQs, schema.org structured data, an up-to-date Google Business profile."
+            },
+            {
+              "titolo": "Measure",
+              "meta": "Every month",
+              "testo": "Track rankings, citations in AI answers and enquiries received: invest where it pays off."
+            }
+          ]
+        }
+      }
+    ],
+    "ovia_view": {
+      "titolo": "The Ovia view",
+      "paragrafi": [
+        "The drop in clicks isn’t bad news for those who work with method: it’s a selection. AI cites few sources, and it chooses clear, authoritative, verifiable ones. For a professional firm that’s an advantage, because the expertise is already there: it just needs to be made readable.",
+        "That’s why in our projects the AI part comes last. First the strategy (which questions, for which client, with which offer), then security (compliant forms, a transparent assistant, no exposed keys), then the tools. When a visitor arrives, they must find an answer immediately and a way to contact you: that’s the work we do together with [Ovia Lead Generation](/en/services/lead-generation.html)."
+      ]
+    },
+    "faq": [
+      {
+        "domanda": "Do AI Overviews make every website lose traffic?",
+        "risposta": "On average yes, when they appear: Ahrefs measures a 58% drop in clicks on the top position. But they appear mostly on informational searches; searches with direct intent, such as the firm’s name, are less affected."
+      },
+      {
+        "domanda": "What is GEO?",
+        "risposta": "Generative Engine Optimization is the set of practices for getting your content chosen and cited in AI-generated answers. The term comes from a study presented at KDD 2024, which measured visibility increases of up to 40%."
+      },
+      {
+        "domanda": "Can I use AI to write my website content?",
+        "risposta": "Yes, if the result is useful, original, checked and reviewed by a person. Google penalises mass-produced pages with no value, not the use of AI itself."
+      },
+      {
+        "domanda": "How long does it take to be cited by AI?",
+        "risposta": "There are no guarantees or fixed timescales: nobody controls AI engines. With consistent, well-structured content the first signs usually appear within a few months, and they need measuring."
+      },
+      {
+        "domanda": "Does my current website need rebuilding?",
+        "risposta": "Not always. Often it’s enough to add service pages, FAQs and structured data to a technically sound site. If the site is slow, dated or can’t be edited, rebuilding costs less than adapting it."
+      }
+    ],
+    "conclusione": [
+      "AI Overviews have changed the value of the top spot on Google: today what matters is being the source, not just the link. The good news is that visibility in AI answers can be built, with methods documented by research.",
+      "The bad news is for anyone looking for shortcuts: mass-produced pages are the fastest way to lose what you have. Real questions, clear answers, verifiable sources and a website that turns a citation into an enquiry: it’s a strategy, not a tool."
+    ],
+    "prodotti": [
+      {
+        "id": "siti-web-ai",
+        "perche": "We design the site around your clients’ real questions, with structure and data that ChatGPT, Gemini and AI Overviews can cite."
+      },
+      {
+        "id": "lead-generation",
+        "perche": "When a citation brings a visit, the assistant replies within minutes and books the consultation: the traffic you keep is worth more."
+      }
+    ],
+    "parole": 611,
+    "minuti": 4,
+    "tradotto": {
+      "da": "redazione",
+      "il": "2026-09-23"
+    }
   }
 }

@@ -111,3 +111,22 @@ export const SCHEMA_ARTICOLO = {
   },
   required: ['title', 'slug', 'meta_description', 'lead', 'tags', 'intro', 'punti_chiave', 'sezioni', 'ovia_view', 'faq', 'conclusione', 'prodotti'],
 };
+
+// ---- Traduzione in inglese (versione /en/ del blog) ----
+export const SYSTEM_TRADUTTORE = `You are the English editor of Ovia's blog (oviaitalia.it/en/). You translate Italian articles for an international audience of professional firms and SMEs operating in Italy (foreign-owned companies, expats, international partners).
+Rules: natural, idiomatic British English, not a literal translation; same meaning, same facts, same numbers, same structure (same number of sections, paragraphs, blocks, FAQ and products, in the same order). Do not add or remove facts.
+Italian laws and institutions: keep the reference and make it clear it is Italian (e.g. "Italian Law 132/2025", "the Italian Data Protection Authority (Garante)"). Keep "Ovia" product names in English as given in the mapping. Keep markdown **bold** and [links](url): external URLs unchanged; internal links rewritten with the mapping provided.`;
+
+export function promptTraduzione(articolo, mappaLink, nomiProdotti) {
+  const { en, fonti, generato, data, ...it } = articolo;
+  return `Translate this Italian article into English. Return the same JSON structure.
+The "slug" must be a new English slug (lowercase-with-hyphens, max 70 characters). "title" max 65 characters, "meta_description" 140-158 characters.
+
+INTERNAL LINK MAPPING (Italian path → English path; use it for every internal link):
+${mappaLink.map(([a, b]) => `${a} → ${b}`).join('\n')}
+
+OVIA PRODUCT NAMES IN ENGLISH: ${nomiProdotti}
+
+ARTICLE (JSON):
+${JSON.stringify(it)}`;
+}

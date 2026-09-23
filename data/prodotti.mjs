@@ -71,3 +71,8 @@ export const PRODOTTI = [
 
 export const byId = Object.fromEntries(PRODOTTI.map(p => [p.id, p]));
 export const urlOf = id => `/servizi/${id}.html`;
+
+// Catalogo nella lingua richiesta (le traduzioni sono in data/en/prodotti.mjs)
+import { PRODOTTI_EN } from './en/prodotti.mjs';
+export const prodottiIn = lang => lang === 'en' ? PRODOTTI.map(p => ({ ...p, ...PRODOTTI_EN[p.id] })) : PRODOTTI;
+export const byIdIn = lang => Object.fromEntries(prodottiIn(lang).map(p => [p.id, p]));

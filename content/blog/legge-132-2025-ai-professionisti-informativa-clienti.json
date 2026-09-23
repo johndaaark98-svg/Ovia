@@ -242,5 +242,235 @@
   "generato": {
     "da": "redazione",
     "il": "2026-09-22"
+  },
+  "en": {
+    "slug": "italian-law-132-2025-ai-professionals-client-disclosure",
+    "title": "Italian Law 132/2025: AI in professional firms and client disclosure",
+    "meta_description": "Italian Law 132/2025, art. 13: what accountants, lawyers and consultants using AI must do, how to inform clients and how to stay compliant.",
+    "lead": "Since 10 October 2025, anyone in Italy practising an intellectual profession who uses artificial intelligence must tell their clients and keep their own work predominant. Here’s what that means in practice, without alarmism.",
+    "tags": [
+      "Italian Law 132/2025",
+      "AI for professionals",
+      "AI client disclosure",
+      "art. 13"
+    ],
+    "intro": [
+      "**Law 132/2025** is Italy’s first comprehensive law on artificial intelligence, and its article 13 directly concerns accountants, lawyers, payroll consultants, engineers, architects and every intellectual profession. The message is simple: AI can be used, but as support, and the client has to know.",
+      "Many firms are reacting in two opposite ways: some ignore the rule because “I only use ChatGPT to write emails”, others block everything for fear of getting it wrong. Both reactions are costly. The first exposes the firm to client disputes and professional-conduct risks; the second hands the time saved to competitors. Let’s look at what the law actually requires and how to apply it in a real firm."
+    ],
+    "punti_chiave": [
+      "Art. 13 of Italian Law 132/2025 has been in force since 10 October 2025 and applies to intellectual professions.",
+      "AI is allowed only for instrumental and support activities: the professional’s intellectual work must remain predominant.",
+      "Clients must be informed about the AI systems used in clear, simple and comprehensive language.",
+      "The law doesn’t ban tools: it asks for method, transparency and human control over decisions.",
+      "The most concrete risk today is ungoverned AI use (client data pasted into public chatbots), not AI itself."
+    ],
+    "sezioni": [
+      {
+        "h2": "What article 13 of Law 132/2025 says",
+        "paragrafi": [
+          "In short, article 13 sets out three principles. First: artificial intelligence systems may be used in intellectual professions only for **instrumental and support activities**. Second: the **intellectual work** that is the subject of the service must remain predominant, meaning human critical thinking. Third: to protect the relationship of trust, the professional must **inform the client** about the AI systems used, in clear, simple and comprehensive language.",
+          "The rule has been in force since 10 October 2025, as summarised by [Finanza & Fisco](https://www.finanzaefisco.com/legge-132-2025-ia-professioni-dal-10-ottobre/). It introduces no new specific penalties, but it builds on existing professional-conduct and contractual obligations: if a client disputes a service, transparency about AI use and proof of human control become central.",
+          "It should be read alongside the European AI Act, which for most uses in professional firms imposes no heavy obligations but does require transparency when a person interacts with an AI system. The direction is consistent: using AI is fine, hiding it isn’t."
+        ],
+        "blocco": {
+          "tipo": "compare",
+          "sinistra": {
+            "titolo": "Ungoverned use",
+            "badge": "risky",
+            "righe": [
+              {
+                "etichetta": "Tools",
+                "valore": "Public chatbots chosen by each staff member"
+              },
+              {
+                "etichetta": "Client data",
+                "valore": "Pasted in without knowing where it ends up"
+              },
+              {
+                "etichetta": "Disclosure",
+                "valore": "Missing or generic"
+              },
+              {
+                "etichetta": "Human control",
+                "valore": "Not documented"
+              }
+            ]
+          },
+          "destra": {
+            "titolo": "Governed use",
+            "badge": "compliant",
+            "righe": [
+              {
+                "etichetta": "Tools",
+                "valore": "A list of systems authorised by the firm"
+              },
+              {
+                "etichetta": "Client data",
+                "valore": "Processed in a secure perimeter, no external training"
+              },
+              {
+                "etichetta": "Disclosure",
+                "valore": "A clear clause in the engagement letter"
+              },
+              {
+                "etichetta": "Human control",
+                "valore": "Review and approval logged"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "h2": "Which uses of AI count as “instrumental and support”?",
+        "paragrafi": [
+          "The law gives no list, and the debate on this point is open: [Altalex](https://www.altalex.com/documents/2025/10/29/professionisti-uso-ai-tanti-dubbi-poche-certezze-luce-art-13-legge-132-2025) speaks openly of “many doubts, few certainties”. A practical criterion does exist, though: support is anything that prepares, organises or speeds up the work, while anything that evaluates, decides and carries responsibility stays with the professional.",
+          "Sorting emails, transcribing a call, extracting data from a document, preparing a draft reply, remembering a deadline: these are support activities. Deciding a tax strategy, assessing a legal risk, signing an opinion: these are intellectual services, and there AI can at most suggest.",
+          "That is exactly the line to design systems around: **the system proposes, the professional decides**. If every AI output goes through logged human review, the predominance of intellectual work isn’t a statement of principle but a documented fact."
+        ],
+        "blocco": {
+          "tipo": "checklist",
+          "voci": [
+            {
+              "titolo": "Transcribing and summarising a client call",
+              "testo": "Support: the summary must be reread before it’s sent.",
+              "ok": true
+            },
+            {
+              "titolo": "Classifying incoming emails and preparing drafts",
+              "testo": "Support: sending remains a human act.",
+              "ok": true
+            },
+            {
+              "titolo": "Collecting and chasing documents",
+              "testo": "Support: it automates an organisational task.",
+              "ok": true
+            },
+            {
+              "titolo": "Having AI write an opinion and signing it without checking",
+              "testo": "Not support: human critical thinking would not be predominant.",
+              "ok": false
+            }
+          ]
+        }
+      },
+      {
+        "h2": "How to inform clients clearly",
+        "paragrafi": [
+          "The disclosure obligation is the most concrete part of the rule, and also the easiest to handle if you deal with it once and for all. The information must be understandable to a non-technical client: no vague wording such as “the firm may use technological tools”.",
+          "A good disclosure says which kinds of AI systems the firm uses and for what (for example call transcription, email organisation, data extraction from documents), makes clear that professional judgements remain the professional’s, explains how data is protected and says whom to contact with questions. The natural place is the engagement letter or professional mandate, with a reference in the privacy notice."
+        ],
+        "blocco": {
+          "tipo": "steps",
+          "voci": [
+            {
+              "titolo": "Take stock of the tools",
+              "meta": "Week 1",
+              "testo": "Ask each staff member which AI tools they actually use, including free ones. This is often where the surprise is."
+            },
+            {
+              "titolo": "Decide what’s authorised",
+              "meta": "Week 1",
+              "testo": "Keep only systems that guarantee data isn’t used for training and that you can control."
+            },
+            {
+              "titolo": "Write the disclosure",
+              "meta": "Week 2",
+              "testo": "Update the engagement letter with a plain-language clause: which systems, for what, with what human control."
+            },
+            {
+              "titolo": "Document the review",
+              "meta": "Always",
+              "testo": "Make sure every AI output has a record of who reviewed and approved it."
+            }
+          ]
+        }
+      },
+      {
+        "h2": "The real risk: shadow AI in the firm",
+        "paragrafi": [
+          "The most widespread problem isn’t the firm’s “official” AI, but the undeclared kind: the staff member who pastes a set of accounts into a free chatbot to get a summary, or the assistant who translates a client’s email with any tool to hand. Security experts call this **shadow AI**.",
+          "In that case the firm can’t inform clients properly, because it doesn’t even know which systems are being used. And it can’t guarantee where data covered by professional secrecy ends up. Banning everything rarely works: the effective answer is to give the team authorised tools, as convenient as the free ones, inside a controlled perimeter. We go into detail on the [Ovia Inbox](/en/services/inbox.html) page, a service built precisely to get client emails out of public chatbots."
+        ],
+        "blocco": {
+          "tipo": "warning",
+          "titolo": "Common mistakes to avoid",
+          "voci": [
+            {
+              "testo": "Thinking the rule doesn’t apply because “I only use AI for emails”: that too is a system to disclose."
+            },
+            {
+              "testo": "Writing a generic, incomprehensible disclosure: the law asks for clear, simple and comprehensive language."
+            },
+            {
+              "testo": "Letting every staff member pick their own tool: the firm loses control over the data."
+            },
+            {
+              "testo": "Blocking all AI use out of fear: the law allows support use, and the time saved is real."
+            }
+          ]
+        }
+      },
+      {
+        "h2": "From obligation to competitive advantage",
+        "paragrafi": [
+          "There’s another way to read article 13: as an opportunity to stand out. A client who receives a clear disclosure, knows their data is protected and sees the firm replying faster because the work is well organised trusts it more, not less.",
+          "The firms that benefit from this phase won’t be those with the newest tool, but those with a method: a few chosen systems, written rules, demonstrable human control and a measured result. It’s a question of strategy and security even before technology."
+        ]
+      }
+    ],
+    "ovia_view": {
+      "titolo": "The Ovia view",
+      "paragrafi": [
+        "For us, Law 132/2025 confirms a principle we have always worked by: **strategy and security make the money, AI is the tool**. Every Ovia system is designed to keep the professional at the centre: the system prepares, organises and reminds, but no sensitive communication goes out without approval, and every answer from [Second Brain](/en/services/second-brain.html) cites the internal source it comes from.",
+        "In the Process Check this is where we start: we map which AI tools are already in use in the firm, including undeclared ones, decide what is authorised and set up disclosures and controls before automating anything."
+      ]
+    },
+    "faq": [
+      {
+        "domanda": "Does Italian Law 132/2025 ban professionals from using ChatGPT?",
+        "risposta": "No. Art. 13 allows artificial intelligence for instrumental and support activities, provided the professional’s intellectual work remains predominant and the client is informed. The critical point with public chatbots is rather where clients’ data ends up."
+      },
+      {
+        "domanda": "Since when must clients be told about the use of AI?",
+        "risposta": "Since 10 October 2025, when Law 132/2025 came into force. Ongoing engagements should therefore be brought into line, for example with an addendum to the engagement letter."
+      },
+      {
+        "domanda": "Where should the AI disclosure go?",
+        "risposta": "The most natural place is the engagement letter or professional mandate, with a reference in the privacy notice. It should explain in understandable terms which systems are used, for which activities and how the professional’s control is guaranteed."
+      },
+      {
+        "domanda": "Which professions does article 13 cover?",
+        "risposta": "Intellectual professions: among others accountants, lawyers, payroll consultants, engineers, architects and consultants. It applies to contracts for intellectual professional services."
+      },
+      {
+        "domanda": "What does a firm risk if it doesn’t inform the client?",
+        "risposta": "The law introduces no new specific penalties, but failing to inform can weigh on professional-conduct and contractual grounds, especially if the service is disputed. For details on your own profession, it’s best to check with your professional body."
+      }
+    ],
+    "conclusione": [
+      "Article 13 of Law 132/2025 doesn’t ask professionals to give up artificial intelligence: it asks them to use it with method. Support yes, replacing professional judgement no, transparency always.",
+      "The simplest way to comply is also the one that pays best: a few authorised tools, written rules, documented human control and a clear disclosure. Firms that set this up today turn an obligation into a reason for clients to trust them."
+    ],
+    "prodotti": [
+      {
+        "id": "second-brain",
+        "perche": "It answers only with your firm’s content and always cites the source: human control and the predominance of intellectual work become demonstrable."
+      },
+      {
+        "id": "inbox",
+        "perche": "It gets client emails out of public chatbots: drafts prepared in a secure perimeter, sent only after your approval."
+      },
+      {
+        "id": "documenti",
+        "perche": "It automates document collection, a pure support activity, leaving review and signature to the professional."
+      }
+    ],
+    "parole": 788,
+    "minuti": 5,
+    "tradotto": {
+      "da": "redazione",
+      "il": "2026-09-23"
+    }
   }
 }

@@ -213,5 +213,206 @@
   "generato": {
     "da": "redazione",
     "il": "2026-09-22"
+  },
+  "en": {
+    "slug": "lead-response-time-professional-firms",
+    "title": "Lead response time: why the first 60 minutes matter",
+    "meta_description": "Replying to a new enquiry within an hour makes qualification 7 times more likely. HBR and MIT data, and how to apply them in a firm without hiring anyone.",
+    "lead": "Clients are rarely lost on price. They’re lost because someone else replied first. The HBR and MIT data, and how to reply in minutes without turning your firm upside down.",
+    "tags": [
+      "lead response time",
+      "lead generation for firms",
+      "client follow-up",
+      "speed to lead"
+    ],
+    "intro": [
+      "A prospective client fills in the form on your website at 6:40 pm. The firm reads it the next day at 10 and calls back at noon. Meanwhile that person has written to two other professionals, and one has already booked them in. It’s a common scene, and the data shows what it costs: **lead response time** is one of the factors that most affect whether an enquiry becomes a client.",
+      "This isn’t only about companies with a sales department. For a professional firm or small business, where the person replying is often the same one working on cases, it’s even more critical: there simply isn’t time to reply straight away. Unless you organise for it."
+    ],
+    "punti_chiave": [
+      "Companies that contact a lead within an hour are almost 7 times more likely to qualify it than those who wait even an hour longer (HBR, 2011).",
+      "The average response time measured across 2,241 companies was 42 hours; 23% never replied at all.",
+      "The MIT/InsideSales study found qualification 21 times more likely when replying in 5 minutes instead of 30.",
+      "Replying immediately doesn’t mean closing immediately: it means giving a relevant first answer and setting the next step.",
+      "Automating the first reply only works inside a strategy: who your ideal client is, what to say, when to stop."
+    ],
+    "sezioni": [
+      {
+        "h2": "What the data says about response time",
+        "paragrafi": [
+          "The most cited study is the one published in **Harvard Business Review** in 2011 by Oldroyd, McElheran and Elkington, “The Short Life of Online Sales Leads” ([HBR](https://hbr.org/2011/03/the-short-life-of-online-sales-leads)). The researchers sent test enquiries to 2,241 US companies and measured how and when they replied. The average response time among those replying within 30 days was 42 hours; 37% replied within an hour, while 23% never replied.",
+          "The most important finding is another: companies that tried to contact the prospect within an hour were almost **7 times** more likely to qualify them than those who did so even an hour later. Earlier work by James Oldroyd with InsideSales (MIT, 2007) had measured an even sharper difference in the first few minutes: replying in 5 minutes instead of 30 made qualification 21 times more likely, as reconstructed in this [review of the original studies](https://ainora.lt/blog/lead-response-time-statistics-every-study-2026)."
+        ],
+        "blocco": {
+          "tipo": "stats",
+          "voci": [
+            {
+              "valore": "7×",
+              "testo": "likelihood of qualifying if you reply within an hour (HBR)"
+            },
+            {
+              "valore": "42 h",
+              "testo": "average response time of the companies studied (HBR)"
+            },
+            {
+              "valore": "21×",
+              "testo": "qualification at 5 minutes compared with 30 minutes (MIT/InsideSales)"
+            }
+          ]
+        }
+      },
+      {
+        "h2": "Why it applies to professional firms too",
+        "paragrafi": [
+          "You might think choosing an accountant or lawyer is more considered than buying a product, so a few hours make no difference. That’s partly true: the client weighs expertise and trust. But the **first reply** is precisely the first sign of how they’ll be treated. People who write to a firm often do so when they have an urgent problem: a deadline, a dispute, a decision to make.",
+          "What’s more, prospective clients today almost always contact several firms at once. The first relevant reply doesn’t guarantee the engagement, but it decides who gets heard first. And whoever is heard first starts with an advantage that’s hard to make up."
+        ],
+        "blocco": {
+          "tipo": "compare",
+          "sinistra": {
+            "titolo": "Replying when there’s time",
+            "badge": "today",
+            "righe": [
+              {
+                "etichetta": "Timing",
+                "valore": "The next day, on a good day"
+              },
+              {
+                "etichetta": "Content",
+                "valore": "“I’ll call you back to book an appointment”"
+              },
+              {
+                "etichetta": "Outcome",
+                "valore": "The client has already spoken to others"
+              }
+            ]
+          },
+          "destra": {
+            "titolo": "Organised reply",
+            "badge": "recommended",
+            "righe": [
+              {
+                "etichetta": "Timing",
+                "valore": "A few minutes, even out of hours"
+              },
+              {
+                "etichetta": "Content",
+                "valore": "A reply relevant to the request plus a booking link"
+              },
+              {
+                "etichetta": "Outcome",
+                "valore": "The first conversation is with your firm"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "h2": "How to reply in minutes without hiring anyone",
+        "paragrafi": [
+          "The solution isn’t being glued to the phone. It’s separating the **first reply**, which can be immediate and largely automated, from the **consultation**, which stays with the professional. The first reply must do three things: show the request was actually read, give useful information and propose a concrete next step, such as a time for a call.",
+          "Here artificial intelligence helps, provided it works within written rules: what to reply to each type of request, which qualifying questions to ask, when to hand over to a person, how to introduce itself (a virtual assistant must say it is one). The full method is described on the [Ovia Lead Generation](/en/services/lead-generation.html) page."
+        ],
+        "blocco": {
+          "tipo": "steps",
+          "voci": [
+            {
+              "titolo": "Unify your channels",
+              "meta": "Day 1",
+              "testo": "Website form, email, WhatsApp and missed calls should arrive in one place, not five different inboxes."
+            },
+            {
+              "titolo": "Write template replies",
+              "meta": "Week 1",
+              "testo": "For the 5–6 most frequent requests, prepare a useful first reply and a qualifying question."
+            },
+            {
+              "titolo": "Make booking instant",
+              "meta": "Week 1",
+              "testo": "A calendar link showing available times ends the back-and-forth of messages."
+            },
+            {
+              "titolo": "Define the follow-up",
+              "meta": "Week 2",
+              "testo": "If the contact doesn’t reply, a short, respectful sequence with an explicit close. Then stop."
+            }
+          ]
+        }
+      },
+      {
+        "h2": "Follow-up: where the rest gets lost",
+        "paragrafi": [
+          "Replying quickly is half the job. The other half is played out on quotes sent and never followed up, and on contacts who went quiet after the first exchange. In most firms there’s no rule: you call back when you remember, or you don’t, so as not to seem pushy.",
+          "Good follow-up isn’t pushiness. It’s a short sequence in which each message adds something (a clarification, an update, an approaching deadline) and the last one explicitly closes the conversation. And anyone who says no must be respected: excluded from sequences for good, for privacy reasons too."
+        ],
+        "blocco": {
+          "tipo": "warning",
+          "titolo": "Common mistakes to avoid",
+          "voci": [
+            {
+              "testo": "Replying immediately with a generic message that doesn’t pick up on the client’s request."
+            },
+            {
+              "testo": "Pretending the virtual assistant is a person: transparency builds trust."
+            },
+            {
+              "testo": "Sending endless reminders: three messages with different angles work better than ten identical ones."
+            },
+            {
+              "testo": "Contacting people who refused consent or asked not to be contacted again."
+            }
+          ]
+        }
+      }
+    ],
+    "ovia_view": {
+      "titolo": "The Ovia view",
+      "paragrafi": [
+        "Response speed is the classic case where AI alone isn’t enough. A chatbot that replies instantly but says generic things, or keeps pushing people who aren’t interested, does more damage than silence. What makes the difference is **strategy**: who you want as a client, what you tell them, when you stop.",
+        "That’s why in lead generation projects we first write the rules with the firm, check the privacy side of the database and only then put the system to work. The result is measured: average time to first reply, qualified contacts, quotes won. And every contact lands in the [CRM](/en/services/crm.html), with its full history."
+      ]
+    },
+    "faq": [
+      {
+        "domanda": "What is the ideal response time for a new enquiry?",
+        "risposta": "As fast as possible, ideally within a few minutes and in any case within an hour. The 2011 HBR study shows that replying within an hour makes qualification almost 7 times more likely than waiting even an hour longer."
+      },
+      {
+        "domanda": "Does an automatic reply count as a reply?",
+        "risposta": "Only if it’s relevant. “We have received your request” isn’t enough: the first reply must pick up on the client’s question, give useful information and propose a concrete step, such as booking a call."
+      },
+      {
+        "domanda": "Is it right to use an AI assistant to reply to prospective clients?",
+        "risposta": "Yes, if it introduces itself as such and works within clear rules, handing the conversation to a person when needed. Transparency is also an EU AI Act requirement for systems that interact with people."
+      },
+      {
+        "domanda": "How many follow-ups should I send after a quote?",
+        "risposta": "A short sequence works better than a long one: usually three spaced-out messages, each with a different angle, the last explicitly closing. Anyone who says no should be excluded from later sequences."
+      }
+    ],
+    "conclusione": [
+      "Response time is one of the most underrated commercial levers in firms and SMEs. The data has been clear for over ten years: those who reply within the first hour are far more likely to turn an enquiry into a client.",
+      "Organising it doesn’t require new hires, but a written strategy and a system that carries it out every day, transparently and respectfully. That’s where automation stops being an experiment and becomes revenue."
+    ],
+    "prodotti": [
+      {
+        "id": "lead-generation",
+        "perche": "It replies to new enquiries within minutes, qualifies them and follows every quote with a precise sequence until there’s a decision."
+      },
+      {
+        "id": "crm",
+        "perche": "Every contact, reply and follow-up ends up in a single record: you always know where each deal stands."
+      },
+      {
+        "id": "inbox",
+        "perche": "Requests arriving by email are recognised and put at the top, with the draft reply already prepared."
+      }
+    ],
+    "parole": 645,
+    "minuti": 4,
+    "tradotto": {
+      "da": "redazione",
+      "il": "2026-09-23"
+    }
   }
 }

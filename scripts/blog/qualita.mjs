@@ -65,6 +65,16 @@ export function controlla(a, { fonti, slugEsistenti }) {
   const tuttoIlTesto = corpo + ' ' + a.punti_chiave.join(' ') + ' ' + a.faq.map(f => f.risposta).join(' ') + ' ' + a.ovia_view.paragrafi.join(' ');
   const sospetti = numeriNonVerificati(tuttoIlTesto, fonti.map(f => f.testo + ' ' + f.titolo).join(' '), '132 2025 1689 2024 2026 679 2016');
   if (sospetti.length) errori.push(`Questi numeri non compaiono nelle fonti: ${sospetti.slice(0, 8).join(', ')}. Rimuovili o usa solo dati presenti nelle fonti.`);
+  // I numeri dei blocchi "stats" devono venire dalle fonti (niente 10x inventati)
+  const testoFonti = fonti.map(f => f.testo + ' ' + f.titolo).join(' ');
+  for (const sez of a.sezioni) {
+    if (sez.blocco?.tipo !== 'stats') continue;
+    for (const v of sez.blocco.voci || []) {
+      const num = (String(v.valore || '').match(/\d+(?:[.,]\d+)?/) || [])[0];
+      if (num && !testoFonti.includes(num) && !testoFonti.includes(num.replace('.', ',')) && !testoFonti.includes(num.replace(',', '.')))
+        errori.push(`Il dato "${v.valore}" nel riquadro statistiche non compare nelle fonti: usa solo numeri presenti nelle fonti o un blocco di tipo diverso.`);
+    }
+  }
   // Almeno un link a una fonte
   const linkFonti = fonti.filter(f => tuttoIlTesto.includes(f.url) || JSON.stringify(a).includes(f.url));
   if (!linkFonti.length) errori.push('Nessuna fonte è citata con un link nel testo: collega i fatti alle fonti con [testo](URL).');
