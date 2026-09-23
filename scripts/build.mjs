@@ -3,6 +3,8 @@
 import { readdirSync, readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
 import { SITE, PRODOTTI, urlOf } from '../data/prodotti.mjs';
 import { renderArticolo, renderIndice, renderFeed } from './blog/render.mjs';
+import { buildFaq } from './build-faq.mjs';
+import { FAQ } from '../data/faq.mjs';
 
 const ROOT = new URL('..', import.meta.url).pathname;
 const DIR = ROOT + 'content/blog/';
@@ -16,6 +18,7 @@ export function caricaArticoli() {
 
 export async function buildTutto({ log = console.log } = {}) {
   await import('./build-servizi.mjs?' + Date.now());
+  buildFaq();
   const articoli = caricaArticoli();
   mkdirSync(ROOT + 'blog', { recursive: true });
   for (const a of articoli) writeFileSync(`${ROOT}blog/${a.slug}.html`, renderArticolo(a, articoli));
@@ -26,6 +29,7 @@ export async function buildTutto({ log = console.log } = {}) {
   const urls = [
     { loc: '/', pr: '1.0', cf: 'weekly' },
     { loc: '/servizi/', pr: '0.9', cf: 'monthly' },
+    { loc: '/faq.html', pr: '0.8', cf: 'monthly' },
     ...PRODOTTI.map(p => ({ loc: urlOf(p.id), pr: '0.9', cf: 'monthly' })),
     { loc: '/siti-studi-professionali.html', pr: '0.7', cf: 'monthly' },
     { loc: '/siti-attivita-locali.html', pr: '0.7', cf: 'monthly' },
@@ -45,6 +49,10 @@ ${urls.map(u => `  <url><loc>${SITE.url}${u.loc}</loc><lastmod>${u.lm || oggi}</
 
 ## Servizi
 ${PRODOTTI.map(p => `- [${p.name}](${SITE.url}${urlOf(p.id)}): ${p.pitch}`).join('\n')}
+
+## Domande frequenti
+- [Tutte le FAQ](${SITE.url}/faq.html): ${FAQ.length} risposte su metodo, sicurezza, normativa, costi e tempi.
+${FAQ.filter(f => f.home).map(f => `- ${f.q}`).join('\n')}
 
 ## Blog (ultimi articoli)
 ${articoli.slice(0, 30).map(a => `- [${a.title}](${SITE.url}/blog/${a.slug}.html): ${a.meta_description}`).join('\n')}

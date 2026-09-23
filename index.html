@@ -1001,6 +1001,24 @@
       }
 
 
+
+      /* ============ FAQ HOMEPAGE ============ */
+      .home-faq { max-width: 880px; margin: 0 auto; padding: 110px 28px 40px; position: relative; z-index: 2; }
+      .hf-eyebrow { font-family: var(--font-display); font-size: 12.5px; font-weight: 600; letter-spacing: .26em; text-transform: uppercase; color: var(--color-accent); text-align: center; margin-bottom: 16px; }
+      .hf-title { font-family: var(--font-display); font-size: clamp(28px, 4.4vw, 44px); font-weight: 700; letter-spacing: -.02em; line-height: 1.1; text-align: center; margin-bottom: 36px; }
+      .hf-list { border: 1px solid var(--color-divider); border-radius: 20px; overflow: hidden; background: rgba(10,16,32,.55); }
+      .hf-list details { border-bottom: 1px solid var(--color-divider); }
+      .hf-list details:last-child { border-bottom: 0; }
+      .hf-list summary { list-style: none; cursor: pointer; padding: 22px 60px 22px 26px; position: relative; font-weight: 600; font-size: 16.5px; color: var(--color-primary-text); }
+      .hf-list summary::-webkit-details-marker { display: none; }
+      .hf-list summary::after { content: ''; position: absolute; right: 26px; top: 50%; width: 9px; height: 9px; border-right: 2px solid var(--color-demoted-text); border-bottom: 2px solid var(--color-demoted-text); transform: translateY(-70%) rotate(45deg); transition: transform .25s; }
+      .hf-list details[open] summary::after { transform: translateY(-30%) rotate(-135deg); }
+      .hf-ans { padding: 0 26px 22px; color: var(--color-demoted-text); font-size: 15.5px; line-height: 1.6; }
+      .hf-ans a, .hf-more a { color: #9dbbff; text-decoration: underline; text-underline-offset: 3px; }
+      .hf-ans strong { color: var(--color-primary-text); }
+      .hf-more { text-align: center; margin-top: 26px; font-size: 16px; }
+      @media (max-width: 767px) { .home-faq { padding: 72px 18px 24px; } .hf-list summary { padding: 18px 50px 18px 18px; font-size: 15.5px; } .hf-ans { padding: 0 18px 18px; } }
+
       /* ============ RESPONSIVE ============ */
       @media (max-width: 767px) {
         .av-header { left: 20px; right: 20px; top: 20px; }
@@ -1109,6 +1127,7 @@
         <a href="#metodo" class="av-nav-link">Metodo</a>
         <a href="servizi/" class="av-nav-link">Servizi</a>
         <a href="blog/" class="av-nav-link">Blog</a>
+        <a href="faq.html" class="av-nav-link">FAQ</a>
         <button type="button" class="av-nav-cta js-book" data-cal-link="ovia-jpa3s2/ovia-check-process" data-cal-namespace="ovia-check-process" data-cal-config='{"layout":"month_view"}'>Prenota il Process Check</button>
       </nav>
     </header>
@@ -1452,6 +1471,16 @@
       </div>
     </section>
 
+    <!-- FAQ:INIZIO (generato da scripts/build-faq.mjs — non modificare a mano) -->
+    <section class="home-faq" id="faq">
+      <p class="hf-eyebrow">Domande frequenti</p>
+      <h2 class="hf-title">Le domande che ci fanno prima di iniziare.</h2>
+      <div class="hf-list"><details open><summary>Cos’è Ovia, in parole semplici?</summary><div class="hf-ans"><p>Ovia costruisce sistemi di intelligenza artificiale su misura per studi professionali e PMI italiane. Gestiscono il lavoro ripetitivo, come email, documenti, chiamate, scadenze e nuovi contatti, mentre tu e il tuo team vi occupate dei clienti. Non vendiamo un software da installare: prima osserviamo come lavori, poi costruiamo il sistema intorno a te.</p></div></details><details><summary>In cosa siete diversi da chi vende un software o un chatbot?</summary><div class="hf-ans"><p>Nel punto di partenza. Chiunque oggi può comprare un abbonamento a uno strumento AI. Il valore sta nel decidere <strong>cosa</strong> automatizzare, <strong>come</strong> proteggere i dati dei tuoi clienti e <strong>come</strong> misurare il risultato. Per noi strategia e sicurezza fanno guadagnare, l’AI è lo strumento. Per questo ogni progetto parte da un’analisi del tuo flusso di lavoro, non da una demo di prodotto.</p></div></details><details><summary>Cos’è il Process Check?</summary><div class="hf-ans"><p>È il primo passo: trenta minuti in videochiamata sul tuo flusso di lavoro reale. Guardiamo dove va il tempo, cosa si ripete e dove si perdono informazioni. Alla fine sai quali attività si possono automatizzare in sicurezza, quanto tempo si può recuperare e da dove conviene partire. Nessun gergo tecnico.</p></div></details><details><summary>I dati dei miei clienti vengono usati per addestrare ChatGPT o altri modelli?</summary><div class="hf-ans"><p>No. Usiamo fornitori e configurazioni che escludono l’uso dei dati per l’addestramento dei modelli, e lo mettiamo per iscritto. Le informazioni dei tuoi clienti restano nel tuo sistema e non vengono lette da chi non fa parte del tuo studio.</p></div></details><details><summary>Posso usare l’AI nel mio studio? Cosa dice la Legge 132/2025?</summary><div class="hf-ans"><p>Sì. L’art. 13 della Legge 132/2025, in vigore dal 10 ottobre 2025, consente ai professionisti di usare l’AI per attività strumentali e di supporto, a condizione che il lavoro intellettuale resti prevalente e che il cliente venga informato con un linguaggio chiaro. I sistemi Ovia sono progettati proprio così: il sistema propone, il professionista decide. Ne parliamo nel dettaglio <a href="blog/legge-132-2025-ai-professionisti-informativa-clienti.html">in questo articolo</a>.</p></div></details><details><summary>Quali servizi offrite?</summary><div class="hf-ans"><p>Sette sistemi, combinabili tra loro: <a href="servizi/second-brain.html">Ovia Second Brain</a> (la memoria dello studio), <a href="servizi/inbox.html">Ovia Inbox</a> (email), <a href="servizi/lead-generation.html">Ovia Lead Generation</a> (nuovi clienti), <a href="servizi/chiamate.html">Ovia Chiamate</a> (dalla telefonata all’azione), <a href="servizi/documenti.html">Ovia Documenti</a> (raccolta e solleciti), <a href="servizi/siti-web-ai.html">Ovia Siti Web per le AI</a> e <a href="servizi/crm.html">Ovia CRM</a>.</p></div></details><details><summary>Quanto costa?</summary><div class="hf-ans"><p>Dipende da cosa costruiamo, perché ogni sistema è su misura. In generale c’è un costo di attivazione e un canone mensile che include manutenzione, aggiornamenti e supporto umano. Ti diamo numeri precisi solo dopo il Process Check, quando sappiamo cosa serve davvero e quanto tempo ti fa recuperare.</p></div></details><details><summary>Quanto tempo serve per vedere i primi risultati?</summary><div class="hf-ans"><p>Di solito il primo nucleo funzionante arriva in 3–4 settimane dal Process Check, su un’area e un gruppo ristretto di clienti. Partiamo piccoli di proposito: prima misuriamo, poi estendiamo.</p></div></details></div>
+      <p class="hf-more"><a href="faq.html">Tutte le 40 domande frequenti →</a></p>
+      <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Cos’è Ovia, in parole semplici?","acceptedAnswer":{"@type":"Answer","text":"Ovia costruisce sistemi di intelligenza artificiale su misura per studi professionali e PMI italiane. Gestiscono il lavoro ripetitivo, come email, documenti, chiamate, scadenze e nuovi contatti, mentre tu e il tuo team vi occupate dei clienti. Non vendiamo un software da installare: prima osserviamo come lavori, poi costruiamo il sistema intorno a te."}},{"@type":"Question","name":"In cosa siete diversi da chi vende un software o un chatbot?","acceptedAnswer":{"@type":"Answer","text":"Nel punto di partenza. Chiunque oggi può comprare un abbonamento a uno strumento AI. Il valore sta nel decidere cosa automatizzare, come proteggere i dati dei tuoi clienti e come misurare il risultato. Per noi strategia e sicurezza fanno guadagnare, l’AI è lo strumento. Per questo ogni progetto parte da un’analisi del tuo flusso di lavoro, non da una demo di prodotto."}},{"@type":"Question","name":"Cos’è il Process Check?","acceptedAnswer":{"@type":"Answer","text":"È il primo passo: trenta minuti in videochiamata sul tuo flusso di lavoro reale. Guardiamo dove va il tempo, cosa si ripete e dove si perdono informazioni. Alla fine sai quali attività si possono automatizzare in sicurezza, quanto tempo si può recuperare e da dove conviene partire. Nessun gergo tecnico."}},{"@type":"Question","name":"I dati dei miei clienti vengono usati per addestrare ChatGPT o altri modelli?","acceptedAnswer":{"@type":"Answer","text":"No. Usiamo fornitori e configurazioni che escludono l’uso dei dati per l’addestramento dei modelli, e lo mettiamo per iscritto. Le informazioni dei tuoi clienti restano nel tuo sistema e non vengono lette da chi non fa parte del tuo studio."}},{"@type":"Question","name":"Posso usare l’AI nel mio studio? Cosa dice la Legge 132/2025?","acceptedAnswer":{"@type":"Answer","text":"Sì. L’art. 13 della Legge 132/2025, in vigore dal 10 ottobre 2025, consente ai professionisti di usare l’AI per attività strumentali e di supporto, a condizione che il lavoro intellettuale resti prevalente e che il cliente venga informato con un linguaggio chiaro. I sistemi Ovia sono progettati proprio così: il sistema propone, il professionista decide. Ne parliamo nel dettaglio in questo articolo."}},{"@type":"Question","name":"Quali servizi offrite?","acceptedAnswer":{"@type":"Answer","text":"Sette sistemi, combinabili tra loro: Ovia Second Brain (la memoria dello studio), Ovia Inbox (email), Ovia Lead Generation (nuovi clienti), Ovia Chiamate (dalla telefonata all’azione), Ovia Documenti (raccolta e solleciti), Ovia Siti Web per le AI e Ovia CRM."}},{"@type":"Question","name":"Quanto costa?","acceptedAnswer":{"@type":"Answer","text":"Dipende da cosa costruiamo, perché ogni sistema è su misura. In generale c’è un costo di attivazione e un canone mensile che include manutenzione, aggiornamenti e supporto umano. Ti diamo numeri precisi solo dopo il Process Check, quando sappiamo cosa serve davvero e quanto tempo ti fa recuperare."}},{"@type":"Question","name":"Quanto tempo serve per vedere i primi risultati?","acceptedAnswer":{"@type":"Answer","text":"Di solito il primo nucleo funzionante arriva in 3–4 settimane dal Process Check, su un’area e un gruppo ristretto di clienti. Partiamo piccoli di proposito: prima misuriamo, poi estendiamo."}}]}</script>
+    </section>
+    <!-- FAQ:FINE -->
+
     <section class="next-step" id="prossimo-passo">
       <p class="ns-eyebrow">Il prossimo passo</p>
       <h2 class="ns-title">Da qui al tuo primo risultato, in tre passaggi.</h2>
@@ -1510,6 +1539,7 @@
             <a href="#metodo" class="footer-link">Metodo</a>
             <a href="servizi/" class="footer-link">Servizi</a>
             <a href="blog/" class="footer-link">Blog</a>
+            <a href="faq.html" class="footer-link">Domande frequenti</a>
             <a href="privacy.html" class="footer-link">Privacy Policy</a>
             <a href="termini.html" class="footer-link">Termini di servizio</a>
           </div>

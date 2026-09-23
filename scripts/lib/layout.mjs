@@ -49,6 +49,7 @@ export function header(current = '') {
     <a href="/#sicurezza">Sicurezza</a>
     <a href="/#metodo">Metodo</a>
     <a href="/blog/"${current === 'blog' ? ' aria-current="page"' : ''}>Blog</a>
+    <a href="/faq.html"${current === 'faq' ? ' aria-current="page"' : ''}>FAQ</a>
     ${calBtn(SITE.cta, '', true)}
   </nav>
 </header>`;
@@ -65,7 +66,7 @@ export function footer() {
         <p style="margin-top:14px"><a href="mailto:${SITE.email}">${SITE.email}</a></p>
       </div>
       <div><h5>Servizi</h5>${svc}</div>
-      <div><h5>Ovia</h5><a href="/#metodo">Il metodo</a><a href="/#sicurezza">Sicurezza</a><a href="/blog/">Blog</a><a href="/servizi/">Tutti i servizi</a><a href="/blog/feed.xml">Feed RSS</a></div>
+      <div><h5>Ovia</h5><a href="/#metodo">Il metodo</a><a href="/#sicurezza">Sicurezza</a><a href="/blog/">Blog</a><a href="/faq.html">Domande frequenti</a><a href="/servizi/">Tutti i servizi</a><a href="/blog/feed.xml">Feed RSS</a></div>
       <div><h5>Legale</h5><a href="/privacy.html">Privacy Policy</a><a href="/cookie.html">Cookie Policy</a><a href="/termini.html">Termini di servizio</a></div>
     </div>
     <p class="legal">${esc(SITE.legal)} · © Ovia ${new Date().getFullYear()}</p>

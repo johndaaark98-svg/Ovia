@@ -175,6 +175,28 @@
     if (pre) { var pb = document.querySelector('.bl-filters [data-f="' + pre + '"]'); if (pb) pb.click(); }
   }
 
+
+  /* ---------- FAQ: ricerca e filtri ---------- */
+  document.querySelectorAll('[data-faq]').forEach(function (root) {
+    var qi = root.querySelector('.fq-search'), btns = root.querySelectorAll('.fq-filters button'), groups = root.querySelectorAll('.fq-group'), empty = root.querySelector('.bl-empty'), cat = 'tutti';
+    var apply = function () {
+      var term = (qi && qi.value || '').trim().toLowerCase(), shown = 0;
+      groups.forEach(function (g) {
+        var inCat = cat === 'tutti' || g.getAttribute('data-cat') === cat, n = 0;
+        g.querySelectorAll('details').forEach(function (d) {
+          var ok = inCat && (!term || d.getAttribute('data-search').indexOf(term) > -1);
+          d.style.display = ok ? '' : 'none'; if (ok) n++;
+          if (term && ok) d.open = true;
+        });
+        g.style.display = n ? '' : 'none'; shown += n;
+      });
+      if (empty) empty.style.display = shown ? 'none' : 'block';
+    };
+    btns.forEach(function (b) { b.addEventListener('click', function () { cat = b.getAttribute('data-f'); btns.forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); }); apply(); }); });
+    if (qi) qi.addEventListener('input', apply);
+    if (location.hash) { var t = document.getElementById(location.hash.slice(1)); if (t && t.tagName === 'DETAILS') t.open = true; }
+  });
+
   /* ---------- Articolo: barra di lettura + copia link ---------- */
   var prog = document.querySelector('.ar-progress');
   if (prog) {

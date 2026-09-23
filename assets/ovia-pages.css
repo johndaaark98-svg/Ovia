@@ -420,3 +420,12 @@ input[type=range].sv-range::-moz-range-thumb { width: 16px; height: 16px; border
 .ar-body a.ar-prod, .ar-body a.ov-pill, .ar-share a { text-decoration: none; color: inherit; }
 .ar-body a.ar-prod p { color: var(--muted); }
 .ar-body a.ov-pill { color: #b9c9ff; }
+
+/* ---------- Pagina FAQ ---------- */
+.fq-search { width: 100%; flex: none; margin-bottom: 16px; padding: 14px 20px; font-size: 15.5px; }
+.fq-filters { margin-bottom: 8px; }
+.fq-group { margin-top: 44px; scroll-margin-top: 90px; }
+.fq-h2 { font-family: var(--font-display); font-size: clamp(22px, 3vw, 28px); letter-spacing: -.01em; margin-bottom: -12px; }
+.ov-faq .ans a { color: #9dbbff; text-decoration: underline; text-underline-offset: 3px; }
+.ov-faq .ans strong { color: var(--text); }
+.ov-faq details { scroll-margin-top: 90px; }

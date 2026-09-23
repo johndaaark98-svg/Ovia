@@ -11,6 +11,17 @@
 - [Ovia Siti Web per le AI](https://oviaitalia.it/servizi/siti-web-ai.html): Siti progettati per essere trovati e citati dai motori AI, con assistente che risponde e prenota.
 - [Ovia CRM](https://oviaitalia.it/servizi/crm.html): CRM operativo su misura: scadenze ricorrenti, solleciti automatici, email categorizzate e documenti generati.
 
+## Domande frequenti
+- [Tutte le FAQ](https://oviaitalia.it/faq.html): 40 risposte su metodo, sicurezza, normativa, costi e tempi.
+- Cos’è Ovia, in parole semplici?
+- In cosa siete diversi da chi vende un software o un chatbot?
+- Cos’è il Process Check?
+- I dati dei miei clienti vengono usati per addestrare ChatGPT o altri modelli?
+- Posso usare l’AI nel mio studio? Cosa dice la Legge 132/2025?
+- Quali servizi offrite?
+- Quanto costa?
+- Quanto tempo serve per vedere i primi risultati?
+
 ## Blog (ultimi articoli)
 - [Verificare l'output AI nello studio professionale: chi firma?](https://oviaitalia.it/blog/verificare-output-ai-studio-professionale.html): L'AI produce documenti in pochi secondi, ma chi li verifica? Il vero rischio per lo studio professionale non è lo strumento: è delegare giudizio e responsabilità.
 - [Legge 132/2025: l’AI negli studi e l’informativa ai clienti](https://oviaitalia.it/blog/legge-132-2025-ai-professionisti-informativa-clienti.html): Legge 132/2025, art. 13: cosa devono fare commercialisti, avvocati e consulenti che usano l’AI, come informare i clienti e come restare conformi.
