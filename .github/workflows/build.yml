@@ -28,6 +28,6 @@ jobs:
           if git diff --quiet && [ -z "$(git ls-files --others --exclude-standard)" ]; then echo "Già aggiornato."; exit 0; fi
           git config user.name "Ovia Blog Bot"
           git config user.email "oviaitalia@gmail.com"
-          git add -A blog servizi sitemap.xml llms.txt
+          git add -A
           git commit -m "build: rigenera pagine"
-          git pull --rebase && git push
+          git pull --rebase --autostash && git push
