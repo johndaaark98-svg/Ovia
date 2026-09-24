@@ -47,7 +47,7 @@ jobs:
           fi
           git config user.name "Ovia Blog Bot"
           git config user.email "oviaitalia@gmail.com"
-          git add -A content blog sitemap.xml llms.txt servizi
+          git add -A
           git commit -m "blog: articolo del $(TZ=Europe/Rome date +%Y-%m-%d)"
-          git pull --rebase
+          git pull --rebase --autostash
           git push
