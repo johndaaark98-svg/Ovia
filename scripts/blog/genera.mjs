@@ -16,10 +16,10 @@ import { writeFileSync, mkdirSync, appendFileSync } from 'node:fs';
 import { CONFIG } from './config.mjs';
 import { raccogli, testoArticolo } from './feeds.mjs';
 import { chiamaStrutturato } from './llm.mjs';
-import { SYSTEM_EDITOR, promptScelta, SCHEMA_SCELTA, promptArticolo, SCHEMA_ARTICOLO, SYSTEM_TRADUTTORE, promptTraduzione } from './prompts.mjs';
+import { SYSTEM_EDITOR, promptScelta, SCHEMA_SCELTA, promptArticolo, promptRevisione, SCHEMA_ARTICOLO, SYSTEM_TRADUTTORE, promptTraduzione } from './prompts.mjs';
 import { prodottiIn } from '../../data/prodotti.mjs';
 import { readFileSync } from 'node:fs';
-import { controlla } from './qualita.mjs';
+import { controlla, ripara, ripulisciNumeri } from './qualita.mjs';
 import { caricaArticoli, buildTutto } from '../build.mjs';
 
 const ROOT = new URL('../..', import.meta.url).pathname;
@@ -47,13 +47,16 @@ async function traduci(articolo, esistenti) {
 // Recupera eventuali articoli rimasti senza versione inglese (max 2 per esecuzione)
 async function traduciMancanti(esistenti) {
   const mancanti = esistenti.filter(a => !a.en).slice(0, 2);
+  let fatti = 0;
   for (const a of mancanti) {
     try {
       a.en = await traduci(a, esistenti);
       writeFileSync(`${ROOT}content/blog/${a.slug}.json`, JSON.stringify(a, null, 2) + '\n');
       log(`   ✓ Tradotto in inglese: ${a.en.slug}`);
+      fatti++;
     } catch (e) { log(`   ⚠ Traduzione non riuscita per ${a.slug}: ${e.message}`); }
   }
+  if (fatti) await buildTutto({ log }); // le pagine inglesi escono subito, anche senza articolo nuovo
 }
 
 async function main() {
@@ -85,29 +88,52 @@ async function main() {
   }
   if (!candidati.length) throw new Error('Nessuna notizia disponibile dalle fonti: controlla scripts/blog/config.mjs');
 
-  log(`2/5 Scelgo il tema tra ${candidati.length} notizie…`);
+  // Fino a 2 temi diversi: se il primo non produce un articolo pubblicabile si passa al secondo.
   const recenti = esistenti.slice(0, 30).map(a => a.title);
-  const scelta = await chiamaStrutturato({ system: SYSTEM_EDITOR, prompt: promptScelta(candidati, recenti), nomeTool: 'scelta_tema', schema: SCHEMA_SCELTA, maxTokens: 2000 });
-  const scelte = [...new Set(scelta.indici)].filter(i => candidati[i]).slice(0, CONFIG.maxSources).map(i => candidati[i]);
-  if (!scelte.length) throw new Error('La scelta del tema non ha restituito fonti valide');
-  log(`   Tema: ${scelta.tema}\n   Keyword: ${scelta.keyword}\n   Fonti: ${scelte.map(s => s.fonte + ' — ' + s.titolo).join(' | ')}`);
-
-  log('3/5 Leggo le fonti…');
-  const fonti = [];
-  for (const s of scelte) fonti.push({ ...s, testo: await testoArticolo(s) });
-
-  log('4/5 Scrivo l’articolo…');
   const interni = esistenti.slice(0, 40).map(a => ({ title: a.title, slug: a.slug }));
-  let articolo, esito, feedback = '';
-  for (let t = 1; t <= CONFIG.maxAttempts; t++) {
-    articolo = await chiamaStrutturato({ system: SYSTEM_EDITOR, prompt: promptArticolo({ scelta, fonti, articoliInterni: interni, oggi, feedback }), nomeTool: 'articolo', schema: SCHEMA_ARTICOLO, maxTokens: 16000 });
-    articolo.slug = (articolo.slug || articolo.title).toLowerCase().normalize('NFKD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 70);
-    esito = controlla(articolo, { fonti, slugEsistenti });
-    log(`   Tentativo ${t}: ${esito.nParole} parole — ${esito.ok ? 'OK' : 'scartato: ' + esito.errori.join(' / ')}`);
-    if (esito.ok) break;
-    feedback = esito.errori.map(e => '- ' + e).join('\n');
+  let risultato = null;
+  for (let tema = 1; tema <= CONFIG.maxTopics && !risultato; tema++) {
+    if (candidati.length < 2) break;
+    log(`2/5 Scelgo il tema ${tema > 1 ? '(alternativo) ' : ''}tra ${candidati.length} notizie…`);
+    const scelta = await chiamaStrutturato({ system: SYSTEM_EDITOR, prompt: promptScelta(candidati, recenti), nomeTool: 'scelta_tema', schema: SCHEMA_SCELTA, maxTokens: 2000 });
+    const idx = [...new Set(scelta.indici)].filter(i => candidati[i]).slice(0, CONFIG.maxSources);
+    const scelte = idx.map(i => candidati[i]);
+    candidati = candidati.filter((_, i) => !idx.includes(i));
+    if (!scelte.length) { log('   Scelta del tema senza fonti valide.'); continue; }
+    recenti.push(scelta.tema);
+    log(`   Tema: ${scelta.tema}\n   Keyword: ${scelta.keyword}\n   Fonti: ${scelte.map(x => x.fonte + ' — ' + x.titolo).join(' | ')}`);
+
+    log('3/5 Leggo le fonti…');
+    const fonti = [];
+    for (const x of scelte) fonti.push({ ...x, testo: await testoArticolo(x) });
+
+    log('4/5 Scrivo l’articolo…');
+    try {
+      let articolo = await chiamaStrutturato({ system: SYSTEM_EDITOR, prompt: promptArticolo({ scelta, fonti, articoliInterni: interni, oggi, feedback: '' }), nomeTool: 'articolo', schema: SCHEMA_ARTICOLO, maxTokens: 16000 });
+      const verifica = (etichetta) => {
+        articolo.slug = (articolo.slug || articolo.title).toLowerCase().normalize('NFKD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 70);
+        const note = ripara(articolo, { fonti, slugEsistenti, oggi });
+        const e = controlla(articolo, { fonti });
+        log(`   ${etichetta}: ${e.nParole} parole${note.length ? ' · corretto in automatico: ' + note.join('; ') : ''} — ${e.ok ? 'OK' : 'da sistemare: ' + e.errori.join(' / ')}`);
+        return e;
+      };
+      let esito = verifica('Bozza');
+      for (let r = 1; r <= CONFIG.maxRevisions && !esito.ok; r++) {
+        articolo = await chiamaStrutturato({ system: SYSTEM_EDITOR, prompt: promptRevisione({ articolo, problemi: esito.errori, fonti }), nomeTool: 'articolo', schema: SCHEMA_ARTICOLO, maxTokens: 16000 });
+        esito = verifica(`Revisione ${r}`);
+      }
+      if (!esito.ok && esito.pubblicabile) {
+        // ultima rete: via le frasi con dati non verificati, il resto si pubblica
+        const n = ripulisciNumeri(articolo, { fonti });
+        esito = verifica(`Pulizia finale (${n} frasi con dati non verificati rimosse)`);
+        if (esito.pubblicabile) esito.ok = true; // restano solo difetti di forma: si pubblica
+      }
+      if (esito.ok) risultato = { articolo, esito, scelta, fonti };
+      else log(`   ✗ Tema scartato: ${esito.bloccanti.join(' / ')}`);
+    } catch (e) { log(`   ✗ Errore su questo tema: ${e.message}`); }
   }
-  if (!esito.ok) throw new Error('Controllo qualità non superato dopo ' + CONFIG.maxAttempts + ' tentativi. Nessun articolo pubblicato oggi.');
+  if (!risultato) throw new Error('Nessun articolo pubblicabile oggi (' + CONFIG.maxTopics + ' temi tentati).');
+  const { articolo, esito, scelta, fonti } = risultato;
 
   const record = {
     ...articolo,
@@ -140,4 +166,11 @@ async function main() {
   summary(`### ✓ Articolo di oggi\n**${record.title}**\n\nhttps://oviaitalia.it/blog/${record.slug}.html${record.en ? `\nhttps://oviaitalia.it/en/blog/${record.en.slug}.html` : ''}\n\nFonti: ${record.fonti.map(f => f.fonte).join(', ')} · ${record.parole} parole`);
 }
 
-main().catch(e => { console.error('✗ ' + e.message); summary('### ✗ Nessun articolo pubblicato\n' + e.message); process.exit(1); });
+// Fallimento: nelle prime esecuzioni del giorno si esce "puliti" (niente email di errore):
+// ci riprova la successiva. Solo l'ultima esecuzione del giorno segnala il problema.
+main().catch(e => {
+  const ultimo = process.env.ULTIMO_TENTATIVO !== '0';
+  console.error((ultimo ? '✗ ' : '⚠ ') + e.message + (ultimo ? '' : ' — riprovo alla prossima esecuzione di oggi.'));
+  summary(`### ${ultimo ? '✗ Nessun articolo pubblicato oggi' : '⚠ Tentativo non riuscito, si riprova più tardi'}\n${e.message}`);
+  process.exit(ultimo ? 1 : 0);
+});

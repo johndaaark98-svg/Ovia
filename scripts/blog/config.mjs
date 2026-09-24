@@ -15,8 +15,10 @@ export const CONFIG = {
   minWords: 1200,
   // Soglia anti-copia: quota massima di sequenze di 8 parole in comune con una singola fonte
   maxOverlap: 0.06,
-  // Tentativi di riscrittura se un controllo di qualità fallisce
-  maxAttempts: 3,
+  // Revisioni mirate dell'articolo se un controllo di qualità fallisce
+  maxRevisions: 2,
+  // Temi diversi da provare nello stesso giorno se il primo non è pubblicabile
+  maxTopics: 2,
 };
 
 export const CATEGORIE = [

@@ -130,3 +130,22 @@ OVIA PRODUCT NAMES IN ENGLISH: ${nomiProdotti}
 ARTICLE (JSON):
 ${JSON.stringify(it)}`;
 }
+
+// Revisione mirata: si corregge l'articolo esistente invece di riscriverlo da zero
+// (una riscrittura completa introduce errori nuovi; una revisione converge).
+export function promptRevisione({ articolo, problemi, fonti }) {
+  return `Il controllo qualità ha trovato questi problemi nell'articolo qui sotto:
+${problemi.map(p => '- ' + p).join('\n')}
+
+Correggi SOLO questi punti e lascia il resto com'è (stesso tema, stessa struttura, stesso slug).
+- Numeri non presenti nelle fonti: togli la frase o riformulala senza cifre (es. "una quota rilevante", "molte aziende"). Non sostituirli con altri numeri inventati.
+- Testo troppo corto: amplia le sezioni esistenti con spiegazioni pratiche, senza nuovi dati.
+- Titolo o meta description: rispetta i limiti di lunghezza indicati.
+Restituisci l'articolo completo corretto.
+
+FONTI (le uniche da cui possono venire numeri e fatti):
+${fonti.map((f, i) => `=== FONTE ${i + 1}: ${f.titolo} — ${f.fonte} — ${f.url}\n${f.testo}`).join('\n\n')}
+
+ARTICOLO DA CORREGGERE (JSON):
+${JSON.stringify(articolo)}`;
+}
