@@ -14,8 +14,8 @@ const SITE = 'https://oviaitalia.it';
 
 const PAGINE = [
   { file: 'index.html', itP: '/', dict: HOME, kind: 'home' },
-  { file: 'siti-studi-professionali.html', itP: '/siti-studi-professionali.html', dict: SITI_STUDI, kind: 'lp' },
-  { file: 'siti-attivita-locali.html', itP: '/siti-attivita-locali.html', dict: SITI_LOCALI, kind: 'lp' },
+  { file: 'siti-studi-professionali.html', itP: '/siti-studi-professionali.html', dict: SITI_STUDI, kind: 'lp', ld: { it: 'Siti web con assistente AI per studi professionali', en: 'AI-ready websites for professional firms', pubblico: { it: 'Studi professionali: commercialisti, avvocati, consulenti', en: 'Professional firms: accountants, lawyers, consultants' } } },
+  { file: 'siti-attivita-locali.html', itP: '/siti-attivita-locali.html', dict: SITI_LOCALI, kind: 'lp', ld: { it: 'Siti web per attività locali con prenotazione e assistente AI', en: 'Websites for local businesses with booking and AI assistant', pubblico: { it: 'Attività locali: ristoranti, negozi, servizi', en: 'Local businesses: restaurants, shops, services' } } },
   { file: 'privacy.html', itP: '/privacy.html', dict: PRIVACY, kind: 'lp' },
   { file: 'cookie.html', itP: '/cookie.html', dict: COOKIE, kind: 'lp' },
   { file: 'termini.html', itP: '/termini.html', dict: TERMINI, kind: 'lp' },
@@ -59,6 +59,30 @@ function conSelettore(html, kind, lang, itP) {
   if (/<!-- HREFLANG:INIZIO -->[\s\S]*?<!-- HREFLANG:FINE -->/.test(html)) html = html.replace(/<!-- HREFLANG:INIZIO -->[\s\S]*?<!-- HREFLANG:FINE -->/, () => hl);
   else html = html.replace(/(<link rel="canonical"[^>]*>)/, (m) => m + '\n    ' + hl);
   return html;
+}
+
+
+// ---- Dati strutturati schema.org per le landing (Service + FAQPage + BreadcrumbList) ----
+const deHtml = t => t.replace(/<[^>]+>/g, '').replace(/&amp;/g, '&').replace(/&quot;/g, '"').replace(/&#39;|&rsquo;/g, '’').replace(/\s+/g, ' ').trim();
+function conJsonLd(html, lang, itP, ld) {
+  const url = SITE + (lang === 'en' ? enPath(itP) : itP);
+  const home = SITE + (lang === 'en' ? '/en/' : '/');
+  const titolo = deHtml((html.match(/<title>([^<]*)<\/title>/) || [])[1] || ld[lang]).replace(/\s*\|\s*Ovia$/, '');
+  const descr = deHtml((html.match(/<meta name="description" content="([^"]*)"/) || [])[1] || '');
+  const faq = [...html.matchAll(/<div class="lp-faq-item">\s*<button class="lp-faq-q">([\s\S]*?)<span class="plus">[\s\S]*?<\/button>\s*<div class="lp-faq-a">([\s\S]*?)<\/div>/g)]
+    .map(m => ({ '@type': 'Question', name: deHtml(m[1]), acceptedAnswer: { '@type': 'Answer', text: deHtml(m[2]) } }));
+  const provider = { '@type': 'Organization', '@id': SITE + '/#organization', name: 'Ovia', legalName: 'L3 Innovation Srl', url: SITE };
+  const grafo = [
+    { '@type': 'WebPage', '@id': url + '#webpage', url, name: titolo, description: descr, inLanguage: lang === 'en' ? 'en' : 'it-IT', isPartOf: { '@type': 'WebSite', url: SITE, name: 'Ovia' } },
+    { '@type': 'Service', '@id': url + '#service', name: ld[lang], serviceType: ld[lang], description: descr, url, provider, areaServed: { '@type': 'Country', name: lang === 'en' ? 'Italy' : 'Italia' }, audience: { '@type': 'BusinessAudience', audienceType: ld.pubblico[lang] } },
+    { '@type': 'BreadcrumbList', itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: home },
+      { '@type': 'ListItem', position: 2, name: titolo, item: url } ] },
+  ];
+  if (faq.length) grafo.push({ '@type': 'FAQPage', '@id': url + '#faq', mainEntity: faq });
+  const blocco = `<!-- JSONLD:INIZIO --><script type="application/ld+json">${JSON.stringify({ '@context': 'https://schema.org', '@graph': grafo }).replace(/</g, '\\u003c')}</script><!-- JSONLD:FINE -->`;
+  if (/<!-- JSONLD:INIZIO -->[\s\S]*?<!-- JSONLD:FINE -->/.test(html)) return html.replace(/<!-- JSONLD:INIZIO -->[\s\S]*?<!-- JSONLD:FINE -->/, () => blocco);
+  return html.replace('</head>', () => blocco + '\n</head>');
 }
 
 // ---- Traduzione ----
@@ -121,6 +145,7 @@ export async function buildEnStatic({ log = console.log } = {}) {
     const src = ROOT + pg.file;
     let it = readFileSync(src, 'utf8');
     it = conSelettore(it, pg.kind, 'it', pg.itP);
+    if (pg.ld) it = conJsonLd(it, 'it', pg.itP, pg.ld);
     writeFileSync(src, it);
 
     let en = it;
@@ -134,6 +159,7 @@ export async function buildEnStatic({ log = console.log } = {}) {
       .replace(/(<link rel="canonical" href=")[^"]+(")/, `$1${SITE}${enP}$2`)
       .replace(/(<meta property="og:url" content=")[^"]+(")/, `$1${SITE}${enP}$2`)
       .replace(/(<meta property="og:locale" content=")it_IT(")/, '$1en_GB$2');
+    if (pg.ld) en = conJsonLd(en, 'en', pg.itP, pg.ld);
     if (pg.dict.note) en = en.replace(/(<a [^>]*class="legal-back"[^>]*>[\s\S]*?<\/a>)/, `$1\n    <p class="legal-box" style="margin:0 0 24px">${pg.dict.note}</p>`);
     writeFileSync(ROOT + (enP.endsWith('/') ? enP.slice(1) + 'index.html' : enP.slice(1)), en);
     const residui = residuiItaliani(en, pg.dict);
