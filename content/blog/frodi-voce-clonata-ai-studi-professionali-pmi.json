@@ -1,0 +1,668 @@
+{
+  "title": "Frodi con voce clonata AI: come proteggersi oggi",
+  "slug": "frodi-voce-clonata-ai-studi-professionali-pmi",
+  "meta_description": "Frodi con voce clonata AI: il caso Fideuram da 36 milioni insegna. Come riconoscere le chiamate false e quali procedure adottare nello studio o in azienda.",
+  "lead": "Un falso WhatsApp e una voce clonata con l'AI sono bastati per sottrarre decine di milioni a Fideuram. Studi professionali e PMI italiane sono bersagli ancora più vulnerabili: ecco perché e cosa fare adesso.",
+  "tags": [
+    "frodi con voce clonata AI",
+    "sicurezza studi professionali",
+    "vishing AI",
+    "GDPR AI Act",
+    "procedure antifrode"
+  ],
+  "intro": [
+    "Il caso Fideuram ha reso concreta una minaccia che molti professionisti italiani consideravano fantascienza: una banda di truffatori ha utilizzato la **voce clonata con l'intelligenza artificiale** di un noto avvocato e un falso messaggio WhatsApp attribuito al CEO di Intesa Sanpaolo per convincere l'allora presidente di Fideuram Paolo Molesini a disporre trasferimenti per circa 95 milioni di euro. Una vicenda reale, risalente al febbraio scorso, che ha già fatto scuola in ambienti di cybersecurity.",
+    "Se una grande istituzione finanziaria può cadere in una truffa del genere, uno studio commercialista, un avvocato, un consulente del lavoro o una PMI italiana — dove i processi decisionali sono spesso informali e le autorizzazioni viaggiano ancora su chiamata o chat — sono esposti almeno allo stesso modo. La differenza è che uno studio non dispone né dei presidi di sicurezza né delle spalle finanziarie di un gruppo bancario. Per questo la risposta non può essere solo tecnologica: deve essere prima di tutto **strategica e procedurale**."
+  ],
+  "punti_chiave": [
+    "La truffa Fideuram ha usato voce clonata con AI e un falso WhatsApp per muovere decine di milioni di euro.",
+    "Studi professionali e PMI sono bersagli ideali: gestiscono denaro e dati sensibili con processi decisionali spesso informali.",
+    "Riconoscere una chiamata clonata è difficile: servono procedure di verifica interna, non solo orecchio.",
+    "La responsabilità del danno può ricadere sul professionista o sul titolare d'azienda se mancano protocolli documentati.",
+    "GDPR e AI Act impongono già oggi obblighi sui sistemi che trattano dati biometrici vocali e sui processi decisionali automatizzati.",
+    "Tracciare le autorizzazioni con strumenti che lasciano log verificabili è la difesa più efficace e dimostrabile."
+  ],
+  "sezioni": [
+    {
+      "h2": "Come funziona una truffa con voce clonata AI",
+      "paragrafi": [
+        "Il meccanismo è più semplice di quanto sembri. Un attaccante raccoglie campioni audio della persona da impersonare — bastano pochi minuti di registrazioni pubbliche, interviste, video su YouTube o sui social — e li usa per addestrare un modello di sintesi vocale. Il risultato è una voce sintetica in grado di pronunciare qualsiasi testo con l'intonazione, il ritmo e i dettagli fonetici dell'originale. La qualità raggiunta oggi rende il riconoscimento a orecchio nudo praticamente impossibile per chiunque.",
+        "Nel [caso Fideuram documentato da FederPrivacy](https://www.federprivacy.org/informazione/flash-news/fideuram-truffa-da-36-milioni-di-euro-con-voce-clonata-e-un-falso-messaggio-whatsapp), l'attacco ha combinato due canali: un messaggio WhatsApp scritto — più facile da falsificare — per abbassare le difese del destinatario, e poi una telefonata con la voce sintetica di un avvocato di fiducia per dare la spinta finale all'autorizzazione del bonifico. Questa combinazione è oggi la firma tipica delle frodi vocali più sofisticate: **un canale testuale prepara il terreno, uno vocale chiude la truffa**.",
+        "Il termine tecnico è *vishing* (voice phishing), ma nella sua versione potenziata dall'AI è un salto qualitativo rispetto alle vecchie telefonate con accento straniero. Non si tratta più di ingannare la distrazione: si tratta di ingannare la fiducia in una voce conosciuta."
+      ],
+      "blocco": {
+        "tipo": "steps",
+        "titolo": "Come si svolge un attacco con voce clonata AI",
+        "voci": [
+          {
+            "titolo": "Raccolta audio",
+            "meta": "Fase 1",
+            "testo": "L'attaccante raccoglie campioni vocali pubblici della persona da clonare: interviste, video, podcast, messaggi vocali."
+          },
+          {
+            "titolo": "Clonazione della voce",
+            "meta": "Fase 2",
+            "testo": "Uno strumento di sintesi vocale AI genera una replica della voce originale in grado di pronunciare qualsiasi testo."
+          },
+          {
+            "titolo": "Preparazione del contesto",
+            "meta": "Fase 3",
+            "testo": "Un messaggio scritto (WhatsApp, email, SMS) stabilisce un pretesto credibile e abbassa le difese del bersaglio."
+          },
+          {
+            "titolo": "La chiamata falsa",
+            "meta": "Fase 4",
+            "testo": "La voce clonata chiama il bersaglio e richiede un'azione urgente: un bonifico, un accesso, una firma."
+          },
+          {
+            "titolo": "Esecuzione e fuga",
+            "meta": "Fase 5",
+            "testo": "Il bersaglio esegue convinto di parlare con una persona fidata. Il denaro o i dati spariscono prima che qualcuno si accorga dell'inganno."
+          }
+        ]
+      }
+    },
+    {
+      "h2": "Perché studi professionali e PMI sono bersagli ideali",
+      "paragrafi": [
+        "Le grandi banche e i gruppi quotati hanno investito anni in sistemi di autenticazione multifattore, protocolli di escalation e audit trail automatici. Uno studio da cinque persone, o una PMI manifatturiera da trenta dipendenti, no. E questa asimmetria è esattamente quello che cercano i truffatori.",
+        "Ci sono tre caratteristiche che rendono uno studio professionale o una PMI italiana particolarmente esposta. Prima: **gestione di flussi finanziari significativi con processi decisionali orali e informali**. La parola del titolare, del socio o del commercialista di riferimento ha un peso enorme — e questo è un vantaggio operativo che diventa una vulnerabilità critica davanti a una voce clonata. Seconda: **accesso a dati di terzi altamente sensibili** — bilanci, dichiarazioni fiscali, buste paga, documenti giudiziari — che rendono la compromissione ancora più redditizia per un attaccante. Terza: **fiducia consolidata tra persone che si conoscono da anni**, che abbassa ulteriormente la soglia di verifica.",
+        "Come evidenzia l'analisi di [Cybersecurity360 sul rischio cyber contemporaneo](https://www.cybersecurity360.it/outlook/ecco-come-ai-e-guerra-cibernetica-ridefiniscono-il-nuovo-rischio-cyber/), il rischio oggi non nasce dall'interno dell'organizzazione ma si propaga attraverso relazioni di fiducia tra soggetti interconnessi. Uno studio professionale è per definizione un nodo di fiducia: è il punto in cui si concentrano le relazioni tra clienti, banche, fornitori, enti pubblici. Chi lo compromette può raggiungere tutti."
+      ],
+      "blocco": {
+        "tipo": "compare",
+        "titolo": "Studio professionale vs. grande istituzione: chi è più esposto?",
+        "sinistra": {
+          "badge": "Studio / PMI tipica",
+          "titolo": "Situazione attuale",
+          "righe": [
+            {
+              "etichetta": "Autorizzazioni bonifici",
+              "valore": "Verbale o via chat/WhatsApp"
+            },
+            {
+              "etichetta": "Verifica identità chiamante",
+              "valore": "Affidata all'orecchio"
+            },
+            {
+              "etichetta": "Log delle decisioni",
+              "valore": "Assente o frammentato"
+            },
+            {
+              "etichetta": "Procedure antifrode scritte",
+              "valore": "Raramente formalizzate"
+            },
+            {
+              "etichetta": "Formazione del team",
+              "valore": "Episodica o nulla"
+            }
+          ]
+        },
+        "destra": {
+          "badge": "Approccio consigliato",
+          "titolo": "Cosa serve fare",
+          "righe": [
+            {
+              "etichetta": "Autorizzazioni bonifici",
+              "valore": "Doppio canale + conferma scritta tracciata"
+            },
+            {
+              "etichetta": "Verifica identità chiamante",
+              "valore": "Codice di verifica o richiamata su numero noto"
+            },
+            {
+              "etichetta": "Log delle decisioni",
+              "valore": "Strumento che registra chi ha autorizzato e quando"
+            },
+            {
+              "etichetta": "Procedure antifrode scritte",
+              "valore": "Protocollo interno firmato e aggiornato"
+            },
+            {
+              "etichetta": "Formazione del team",
+              "valore": "Almeno una sessione annuale con simulazioni"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "h2": "Come si riconosce una chiamata falsa generata dall'AI",
+      "paragrafi": [
+        "La risposta onesta è: spesso non si riconosce, e non bisogna illudersi di farcela a orecchio. Le voci sintetiche di ultima generazione superano i test percettivi anche di ascoltatori allenati. Detto questo, esistono **segnali di contesto** che dovrebbero sempre far scattare un campanello d'allarme, indipendentemente da quanto la voce suoni autentica.",
+        "Il primo segnale è l'**urgenza artificiosa**: la richiesta deve essere eseguita subito, non c'è tempo per verificare, qualcosa di grave accadrà se non si agisce immediatamente. Questo schema è identico in qualsiasi frode, digitale o no, perché il tempo è il principale alleato di chi vuole verificare e il principale nemico di chi vuole ingannare. Il secondo segnale è la **combinazione di canali insolita**: una richiesta che arriva prima su WhatsApp e poi per telefono, o viceversa, su numeri che non coincidono esattamente con quelli in rubrica, è già una anomalia da non ignorare. Il terzo segnale è la **richiesta fuori procedura**: se il tuo socio non ti ha mai chiesto un bonifico via telefono senza un riscontro scritto, e oggi lo fa, la voce — per quanto convincente — non basta.",
+        "Sul piano tecnico, strumenti di rilevamento delle voci sintetiche esistono, ma sono ancora poco diffusi nel contesto degli studi italiani e richiedono integrazione nei sistemi di comunicazione. La difesa più pratica e immediata resta quella **procedurale**: definire in anticipo cosa si fa e cosa non si fa su richiesta verbale, prima che arrivi la chiamata falsa."
+      ],
+      "blocco": {
+        "tipo": "warning",
+        "titolo": "I 4 segnali d'allarme in una chiamata sospetta",
+        "voci": [
+          {
+            "testo": "Urgenza artificiale: 'Devi farlo adesso, non c'è tempo per verificare.' L'urgenza è il principale strumento di pressione delle frodi vocali."
+          },
+          {
+            "testo": "Richiesta fuori procedura ordinaria: un bonifico, una password, un accesso chiesto per la prima volta via telefono da qualcuno che di solito usa altri canali."
+          },
+          {
+            "testo": "Numero chiamante non coincidente con la rubrica, o chiamata preceduta da un messaggio WhatsApp che 'prepara il terreno'."
+          },
+          {
+            "testo": "Impossibilità di richiamare o di avere una conferma scritta: chi ha fretta di non lasciare tracce ha un motivo per farlo."
+          }
+        ]
+      }
+    },
+    {
+      "h2": "Procedure interne per prevenire le frodi vocali con AI",
+      "paragrafi": [
+        "La prevenzione efficace non parte dallo strumento tecnologico: parte dalla **decisione di cosa non si autorizza mai su sola richiesta verbale**. Questa decisione va presa prima che arrivi la chiamata, scritta in un protocollo interno, comunicata a tutto il team e aggiornata almeno una volta l'anno. Non è burocrazia: è la differenza tra dimostrare di aver fatto tutto il possibile e dover rispondere di un danno.",
+        "Un protocollo antifrode minimo per uno studio professionale o una PMI prevede almeno tre livelli. Il primo è la **lista delle azioni mai autorizzabili via sola voce**: bonifici sopra una soglia definita, variazioni di coordinate bancarie dei clienti, accessi a sistemi gestionali, condivisione di credenziali. Il secondo è la **procedura di doppio canale**: per qualsiasi richiesta in quella lista, la conferma deve arrivare su un secondo canale indipendente — non WhatsApp sullo stesso telefono, ma email aziendale o una richiamata su numero verificato. Il terzo è il **log tracciato**: ogni autorizzazione deve essere registrata in un sistema che indica chi ha approvato, quando e su quale base, così da poter dimostrare la diligenza in caso di contestazione.",
+        "Questo terzo punto è anche quello con le implicazioni legali più dirette. Se un dipendente esegue un bonifico su istruzione di una voce clonata, la responsabilità ricade sul titolare dello studio o dell'azienda se non esistono procedure documentate che limitavano quella possibilità. Come ricorda [l'analisi sulla governance della cybersecurity di Cybersecurity360](https://www.cybersecurity360.it/soluzioni-aziendali/compliance-e-cyber-security-perche-la-governance-non-puo-piu-essere-gestita-a-silos/), le principali violazioni normative non derivano dall'assenza di controlli formali, ma dall'**incapacità di dimostrare una gestione continua e consapevole del rischio**. Un'ottima sintesi di cosa serve anche a uno studio che voglia tutelarsi. Per approfondire come l'AI incide sulle responsabilità professionali, è utile anche il nostro articolo su [chi firma la verifica dell'output AI nello studio professionale](/blog/verificare-output-ai-studio-professionale.html)."
+      ],
+      "blocco": {
+        "tipo": "checklist",
+        "titolo": "Protocollo antifrode vocale: checklist minima per studi e PMI",
+        "voci": [
+          {
+            "titolo": "Lista nera delle azioni verbali",
+            "testo": "Definita e scritta: quali operazioni non si eseguono mai su sola richiesta telefonica o via chat.",
+            "ok": true
+          },
+          {
+            "titolo": "Soglia bonifici",
+            "testo": "Importo massimo autorizzabile senza conferma scritta su canale indipendente, firmata dal titolare.",
+            "ok": true
+          },
+          {
+            "titolo": "Procedura doppio canale",
+            "testo": "Per ogni richiesta critica: conferma su email aziendale o richiamata su numero in rubrica verificata.",
+            "ok": true
+          },
+          {
+            "titolo": "Log delle autorizzazioni",
+            "testo": "Strumento o registro che traccia chi ha approvato cosa, con data e ora, conservato e consultabile.",
+            "ok": true
+          },
+          {
+            "titolo": "Formazione annuale del team",
+            "testo": "Almeno una sessione l'anno con esempi aggiornati di frodi vocali e simulazioni pratiche.",
+            "ok": false
+          },
+          {
+            "titolo": "Aggiornamento del protocollo",
+            "testo": "Revisione almeno annuale del protocollo, o dopo ogni incidente o tentativo segnalato.",
+            "ok": false
+          }
+        ]
+      }
+    },
+    {
+      "h2": "GDPR, AI Act e responsabilità: cosa dice la norma sulle frodi vocali",
+      "paragrafi": [
+        "Le frodi con voce clonata toccano il quadro normativo europeo su almeno due fronti. Il primo riguarda il **GDPR**: la voce è un dato biometrico. Quando un attaccante clona la voce di un avvocato o di un commercialista per commettere una frode, sta trattando illecitamente un dato personale di categoria speciale. Ma la responsabilità per il professionista non finisce qui: se il suo studio non ha adottato misure tecniche e organizzative adeguate a proteggere i propri canali di comunicazione e i dati dei clienti, potrebbe essere esposto a contestazioni anche in caso di violazione subita, non commessa.",
+        "Il secondo fronte è l'**AI Act**, entrato progressivamente in vigore nell'Unione Europea. I sistemi di sintesi e clonazione vocale usati per ingannare persone fisiche rientrano tra le pratiche di AI vietate o ad alto rischio, ma questo non protegge automaticamente chi ne è vittima: serve comunque che il professionista abbia fatto la sua parte in termini di misure preventive. Vale anche il tema della **Legge 132/2025**, che introduce obblighi specifici per i professionisti italiani che utilizzano strumenti AI: un contesto normativo che Ovia ha analizzato in dettaglio nell'articolo dedicato alla [Legge 132/2025 e all'informativa ai clienti](/blog/legge-132-2025-ai-professionisti-informativa-clienti.html).",
+        "In sintesi: la legge non basta a proteggerti se non hai procedure documentate. E le procedure documentate non bastano se non sono supportate da **strumenti che lasciano traccia verificabile** di ogni decisione e autorizzazione. Questo è il punto in cui la strategia incontra la tecnologia — e in cui uno studio professionale può passare dall'essere esposto all'essere tutelato."
+      ],
+      "blocco": {
+        "tipo": "warning",
+        "titolo": "Attenzione: tre errori che aumentano la tua esposizione legale",
+        "voci": [
+          {
+            "testo": "Autorizzare bonifici e variazioni di IBAN via sola voce telefonica o messaggio WhatsApp, senza conferma scritta su canale separato e senza log tracciato."
+          },
+          {
+            "testo": "Non aver mai formalizzato un protocollo interno antifrode: in caso di danno, l'assenza di procedure documentate aggrava la posizione del titolare o del responsabile."
+          },
+          {
+            "testo": "Trattare la sicurezza dei canali voce e chat come un problema 'tecnico' delegato all'IT, senza una decisione strategica su cosa si può e non si può autorizzare verbalmente."
+          }
+        ]
+      }
+    },
+    {
+      "h2": "Strumenti per tracciare e verificare le autorizzazioni sulle chiamate",
+      "paragrafi": [
+        "Il mercato offre oggi strumenti in grado di trascrivere, sintetizzare e archiviare automaticamente le chiamate telefoniche e le riunioni, collegando ogni conversazione al cliente o alla pratica giusta. Questo non serve solo per la produttività: serve per costruire un **audit trail verificabile** di ogni interazione, che in caso di contestazione dimostra cosa è stato detto, da chi e quando.",
+        "Un sistema di [gestione e trascrizione delle chiamate](/servizi/chiamate.html) integrato nella routine dello studio trasforma ogni telefonata in un documento ricercabile: chi ha chiamato, quando, cosa è stato deciso, quali attività ne sono scaturite. Se una richiesta di bonifico arriva per telefono, il log esiste. Se non arriva, il log è vuoto — e questo già di per sé è un segnale di anomalia rilevabile.",
+        "Parallelamente, un [CRM operativo con workflow strutturati](/servizi/crm.html) permette di definire quali azioni richiedono un'approvazione formale e di registrare ogni step autorizzativo con data, ora e utente. Non si tratta di burocrazia digitale: si tratta di rendere visibile e dimostrabile la diligenza che la legge richiede e che, in caso di frode, può fare la differenza tra un danno coperto e uno scoperto. È il principio che [Cybersecurity360 sintetizza così](https://www.cybersecurity360.it/outlook/ecco-come-ai-e-guerra-cibernetica-ridefiniscono-il-nuovo-rischio-cyber/): rendere visibile l'invisibile, collegando il rischio tecnico al suo impatto reale sul business."
+      ],
+      "blocco": {
+        "tipo": "steps",
+        "titolo": "Come costruire un audit trail sulle autorizzazioni vocali",
+        "voci": [
+          {
+            "titolo": "Trascrivi ogni chiamata rilevante",
+            "meta": "Passo 1",
+            "testo": "Usa uno strumento di trascrizione automatica collegato al gestionale: ogni conversazione diventa un record con data, ora e contenuto."
+          },
+          {
+            "titolo": "Collega la trascrizione al cliente e alla pratica",
+            "meta": "Passo 2",
+            "testo": "Il sistema deve associare ogni chiamata al soggetto corretto, non lasciarla in un archivio generico irrintracciabile."
+          },
+          {
+            "titolo": "Definisci le azioni che richiedono conferma scritta",
+            "meta": "Passo 3",
+            "testo": "Nel workflow del CRM, le operazioni critiche richiedono un'approvazione su canale scritto prima di poter essere eseguite."
+          },
+          {
+            "titolo": "Archivia e conserva i log",
+            "meta": "Passo 4",
+            "testo": "I log delle autorizzazioni devono essere conservati in modo sicuro e non modificabile, per almeno il periodo previsto dalle normative applicabili."
+          }
+        ]
+      }
+    }
+  ],
+  "ovia_view": {
+    "titolo": "La posizione di Ovia: la procedura vale più dell'orecchio",
+    "paragrafi": [
+      "In Ovia lavoriamo con studi professionali e PMI italiane che gestiscono ogni giorno flussi di informazioni e decisioni ad alto valore. Quello che vediamo con più frequenza non è la mancanza di consapevolezza sul rischio — il caso Fideuram ha fatto scuola — ma la mancanza di una risposta strutturata: si conosce il pericolo, ma non esiste ancora una procedura scritta, un log tracciato, un protocollo di doppio canale.",
+      "Il nostro approccio parte sempre dalla strategia: decidere insieme al cliente quali azioni non si autorizzano mai su sola voce, quale soglia attiva una verifica aggiuntiva, chi è responsabile di cosa. Solo dopo si scelgono gli strumenti — trascrizione delle chiamate, CRM con workflow autorizzativi, archiviazione tracciata — che rendono quella strategia operativa e dimostrabile. La sicurezza non è un prodotto da installare: è una decisione da prendere prima che arrivi la chiamata sbagliata.",
+      "Questo vale anche sul piano normativo. GDPR, AI Act e Legge 132/2025 chiedono ai professionisti di dimostrare una gestione consapevole e documentata del rischio. Non basta dire 'non sapevo': serve mostrare cosa si è fatto per prevenire. Gli strumenti Ovia sono progettati per lasciare quella traccia — in modo nativo, senza passaggi aggiuntivi, nel rispetto delle norme italiane ed europee."
+    ]
+  },
+  "faq": [
+    {
+      "domanda": "Come funziona una truffa con voce clonata dall'AI?",
+      "risposta": "Un attaccante raccoglie campioni audio pubblici della persona da impersonare e li usa per generare una voce sintetica con l'AI. Questa voce può pronunciare qualsiasi testo in modo quasi indistinguibile dall'originale. Di solito l'attacco combina un messaggio scritto (WhatsApp, email) per preparare il contesto e una telefonata con la voce clonata per chiedere un'azione urgente — un bonifico, un accesso, una modifica di dati."
+    },
+    {
+      "domanda": "Il mio studio o la mia azienda può essere colpita da una frode con voce clonata?",
+      "risposta": "Sì, e il rischio è più alto di quanto si pensi. Studi professionali e PMI gestiscono denaro, dati sensibili e hanno processi decisionali spesso informali e basati sulla fiducia personale. Queste caratteristiche li rendono bersagli ideali: i truffatori cercano esattamente i contesti in cui una voce autorevole basta per far eseguire un'operazione senza ulteriori verifiche."
+    },
+    {
+      "domanda": "Come si riconosce una chiamata falsa generata dall'intelligenza artificiale?",
+      "risposta": "A orecchio nudo è molto difficile: le voci sintetiche di ultima generazione superano spesso i test percettivi anche di ascoltatori esperti. I segnali da monitorare sono di contesto: urgenza artificiosa, richiesta fuori dalle procedure abituali, numero non esattamente coincidente con la rubrica, impossibilità di richiamare o avere conferma scritta. La difesa vera è procedurale, non percettiva."
+    },
+    {
+      "domanda": "Quali procedure interne aiutano a prevenire le frodi vocali con AI?",
+      "risposta": "Tre livelli fondamentali: una lista scritta delle azioni mai autorizzabili su sola richiesta verbale (es. bonifici sopra soglia, variazioni IBAN); una procedura di doppio canale per qualsiasi operazione critica (conferma via email aziendale o richiamata su numero verificato); un sistema che registra ogni autorizzazione con data, ora e responsabile. Tutto deve essere scritto, comunicato al team e aggiornato almeno una volta l'anno."
+    },
+    {
+      "domanda": "Chi è responsabile se un dipendente esegue un bonifico su istruzione di una voce clonata?",
+      "risposta": "La responsabilità tende a ricadere sul titolare dello studio o dell'azienda se non esistono procedure documentate che limitavano quella possibilità. L'assenza di un protocollo scritto e di un log tracciato delle autorizzazioni aggrava la posizione del responsabile in caso di contestazione, sia civilistica che davanti al Garante Privacy."
+    },
+    {
+      "domanda": "Cosa c'entra il GDPR con le frodi AI su voce e WhatsApp?",
+      "risposta": "La voce è un dato biometrico: la sua clonazione illecita viola il GDPR. Ma la responsabilità per il professionista riguarda anche le misure che avrebbe dovuto adottare per proteggere i propri canali di comunicazione e i dati dei clienti. Se mancano misure tecniche e organizzative adeguate, il professionista può essere esposto a contestazioni anche come vittima, non solo come responsabile."
+    },
+    {
+      "domanda": "Quali strumenti uso per verificare e tracciare le autorizzazioni sulle chiamate?",
+      "risposta": "Gli strumenti più utili sono quelli di trascrizione automatica delle chiamate collegati al gestionale — che trasformano ogni conversazione in un record ricercabile con data, ora e contenuto — e i CRM con workflow autorizzativi strutturati, che richiedono una conferma scritta prima di eseguire azioni critiche. Insieme costruiscono un audit trail verificabile che dimostra la diligenza del professionista in caso di contestazione."
+    }
+  ],
+  "conclusione": [
+    "Le frodi con voce clonata AI non sono una minaccia futura: sono già avvenute, in Italia, ai danni di soggetti preparati e strutturati. Per uno studio professionale o una PMI, la domanda non è 'possiamo essere colpiti?' ma 'cosa abbiamo fatto per limitare il danno e dimostrarlo?'",
+    "La risposta non parte dalla tecnologia: parte dalla decisione di stabilire, per iscritto, cosa si autorizza e cosa no su sola voce telefonica. Quella decisione, comunicata al team e supportata da strumenti che lasciano traccia, è la difesa più concreta disponibile oggi — e quella che la legge italiana ed europea già richiede.",
+    "Se vuoi capire da dove iniziare per il tuo studio o la tua azienda, Ovia è disponibile per una prima valutazione gratuita. Il momento migliore per farlo è prima della chiamata sbagliata."
+  ],
+  "prodotti": [
+    {
+      "id": "chiamate",
+      "perche": "Trascrive e archivia automaticamente ogni chiamata rilevante collegandola al cliente giusto: costruisce un audit trail verificabile delle interazioni vocali, fondamentale per dimostrare diligenza in caso di contestazione su frodi vocali."
+    },
+    {
+      "id": "crm",
+      "perche": "Permette di definire workflow autorizzativi strutturati in cui le operazioni critiche (es. bonifici, variazioni IBAN) richiedono una conferma tracciata prima dell'esecuzione, eliminando le autorizzazioni puramente verbali."
+    },
+    {
+      "id": "second-brain",
+      "perche": "Centralizza decisioni, procedure e note collegate a ogni cliente in un sistema ricercabile: rende il protocollo antifrode uno strumento vivo, consultabile dal team in pochi secondi, non un documento dimenticato in una cartella."
+    }
+  ],
+  "categoria": "normativa-sicurezza",
+  "keyword": "frodi con voce clonata AI",
+  "data": "2026-09-25T10:13:31.570Z",
+  "autore": "Redazione Ovia",
+  "parole": 2214,
+  "minuti": 11,
+  "fonti": [
+    {
+      "titolo": "Fideuram, truffa da 36 milioni di euro con voce clonata e un falso messaggio WhatsApp",
+      "fonte": "FederPrivacy",
+      "url": "https://www.federprivacy.org/informazione/flash-news/fideuram-truffa-da-36-milioni-di-euro-con-voce-clonata-e-un-falso-messaggio-whatsapp"
+    },
+    {
+      "titolo": "Ecco come AI e guerra cibernetica ridefiniscono il nuovo rischio cyber",
+      "fonte": "Cybersecurity360",
+      "url": "https://www.cybersecurity360.it/outlook/ecco-come-ai-e-guerra-cibernetica-ridefiniscono-il-nuovo-rischio-cyber/"
+    },
+    {
+      "titolo": "Compliance e cyber security: perché la governance non può più essere gestita a silos",
+      "fonte": "Cybersecurity360",
+      "url": "https://www.cybersecurity360.it/soluzioni-aziendali/compliance-e-cyber-security-perche-la-governance-non-puo-piu-essere-gestita-a-silos/"
+    },
+    {
+      "titolo": "L’era degli hacker “Gentlemen”: perché la lotta al ransomware richiede nuove strategie difensive",
+      "fonte": "Cybersecurity360",
+      "url": "https://www.cybersecurity360.it/nuove-minacce/ransomware/lera-degli-hacker-gentlemen-perche-la-lotta-al-ransomware-richiede-nuove-strategie-difensive/"
+    }
+  ],
+  "generato": {
+    "da": "ai",
+    "modello": "claude-sonnet-4-6",
+    "il": "2026-09-25T10:13:31.570Z"
+  },
+  "en": {
+    "title": "AI Voice-Cloning Fraud: How to Protect Your Firm",
+    "slug": "ai-voice-cloning-fraud-professional-firms-smes",
+    "meta_description": "AI voice-cloning fraud: the Fideuram €36 m case is a wake-up call. Learn to spot fake calls and set up the procedures your firm or business needs right now.",
+    "lead": "A fake WhatsApp message and an AI-cloned voice were all it took to steal tens of millions from Fideuram. Italian professional firms and SMEs are even more vulnerable — here is why, and what to do about it today.",
+    "tags": [
+      "AI voice-cloning fraud",
+      "professional firm security",
+      "AI vishing",
+      "GDPR AI Act",
+      "anti-fraud procedures"
+    ],
+    "intro": [
+      "The Fideuram case has turned a threat many Italian professionals dismissed as science fiction into hard reality: a gang of fraudsters used an **AI-cloned voice** of a well-known lawyer and a fake WhatsApp message purportedly from the CEO of Intesa Sanpaolo to persuade Fideuram's then-chairman Paolo Molesini to authorise transfers of roughly €95 million. This is a real incident, dating from last February, and it has already become a landmark reference in cybersecurity circles.",
+      "If a major financial institution can fall for a scam of this kind, an accountancy practice, a law firm, a labour consultant or an Italian SME — where decision-making is often informal and authorisations still travel by phone call or chat — is at least equally exposed. The difference is that a professional firm has neither the security infrastructure nor the financial resilience of a banking group. That is precisely why the response cannot be purely technological: it must be, above all, **strategic and procedural**."
+    ],
+    "punti_chiave": [
+      "The Fideuram fraud used an AI-cloned voice and a fake WhatsApp message to move tens of millions of euros.",
+      "Professional firms and SMEs are ideal targets: they handle money and sensitive data through often informal, trust-based decision-making.",
+      "Recognising a cloned call by ear is extremely difficult — internal verification procedures matter far more than your hearing.",
+      "If documented protocols are missing, liability for any resulting loss can fall directly on the professional or business owner.",
+      "The GDPR and the EU AI Act already impose obligations on systems that process biometric voice data and on automated decision-making processes.",
+      "Logging authorisations in tools that produce verifiable audit trails is the most effective and provable line of defence."
+    ],
+    "sezioni": [
+      {
+        "h2": "How an AI voice-cloning scam works",
+        "paragrafi": [
+          "The mechanism is simpler than it sounds. An attacker collects audio samples of the person they wish to impersonate — a few minutes of public recordings, interviews, YouTube videos or social-media clips are enough — and uses them to train a voice-synthesis model. The result is a synthetic voice capable of delivering any text with the intonation, rhythm and phonetic detail of the original. The quality achievable today makes recognition by the naked ear practically impossible for anyone.",
+          "In the [Fideuram case documented by FederPrivacy](https://www.federprivacy.org/informazione/flash-news/fideuram-truffa-da-36-milioni-di-euro-con-voce-clonata-e-un-falso-messaggio-whatsapp), the attack combined two channels: a written WhatsApp message — easier to fake — to lower the target's guard, followed by a phone call featuring the synthetic voice of a trusted lawyer to deliver the final push towards authorising the wire transfer. This combination is now the hallmark of the most sophisticated voice fraud: **a text channel prepares the ground, a voice channel closes the scam**.",
+          "The technical term is *vishing* (voice phishing), but in its AI-enhanced form it represents a qualitative leap beyond the old phone calls with a foreign accent. This is no longer about exploiting inattention: it is about exploiting trust in a familiar voice."
+        ],
+        "blocco": {
+          "tipo": "steps",
+          "titolo": "How an AI voice-cloning attack unfolds",
+          "voci": [
+            {
+              "titolo": "Audio collection",
+              "meta": "Step 1",
+              "testo": "The attacker gathers public voice samples of the person to be cloned: interviews, videos, podcasts, voice messages."
+            },
+            {
+              "titolo": "Voice cloning",
+              "meta": "Step 2",
+              "testo": "An AI voice-synthesis tool generates a replica of the original voice capable of delivering any text."
+            },
+            {
+              "titolo": "Context setting",
+              "meta": "Step 3",
+              "testo": "A written message (WhatsApp, email, SMS) establishes a credible pretext and lowers the target's defences."
+            },
+            {
+              "titolo": "The fake call",
+              "meta": "Step 4",
+              "testo": "The cloned voice calls the target and requests an urgent action: a wire transfer, a system login, a signature."
+            },
+            {
+              "titolo": "Execution and flight",
+              "meta": "Step 5",
+              "testo": "The target complies, believing they are speaking to a trusted person. Money or data disappear before anyone notices the deception."
+            }
+          ]
+        }
+      },
+      {
+        "h2": "Why professional firms and SMEs are ideal targets",
+        "paragrafi": [
+          "Large banks and listed groups have spent years building multi-factor authentication, escalation protocols and automatic audit trails. A five-person accountancy practice, or a thirty-employee manufacturing SME, has not. And that asymmetry is precisely what fraudsters look for.",
+          "Three characteristics make an Italian professional firm or SME particularly exposed. First: **management of significant financial flows through oral, informal decision-making**. The word of the owner, partner or trusted accountant carries enormous weight — an operational advantage that becomes a critical vulnerability when faced with a cloned voice. Second: **access to highly sensitive third-party data** — balance sheets, tax returns, payslips, court documents — making a successful breach even more valuable to an attacker. Third: **deep, long-standing mutual trust between people who have known each other for years**, which lowers the verification threshold further still.",
+          "As the [Cybersecurity360 analysis on contemporary cyber risk](https://www.cybersecurity360.it/outlook/ecco-come-ai-e-guerra-cibernetica-ridefiniscono-il-nuovo-rischio-cyber/) highlights, today's risk does not originate inside the organisation — it spreads through trust relationships between interconnected parties. A professional firm is by definition a trust hub: the point where relationships between clients, banks, suppliers and public bodies converge. Whoever compromises it can reach all of them."
+        ],
+        "blocco": {
+          "tipo": "compare",
+          "titolo": "Professional firm vs. large institution: who is more exposed?",
+          "sinistra": {
+            "badge": "Typical firm / SME",
+            "titolo": "Current situation",
+            "righe": [
+              {
+                "etichetta": "Wire transfer authorisations",
+                "valore": "Verbal or via chat / WhatsApp"
+              },
+              {
+                "etichetta": "Caller identity verification",
+                "valore": "Relies entirely on the ear"
+              },
+              {
+                "etichetta": "Decision log",
+                "valore": "Absent or fragmented"
+              },
+              {
+                "etichetta": "Written anti-fraud procedures",
+                "valore": "Rarely formalised"
+              },
+              {
+                "etichetta": "Team training",
+                "valore": "Occasional or non-existent"
+              }
+            ]
+          },
+          "destra": {
+            "badge": "Recommended approach",
+            "titolo": "What needs to happen",
+            "righe": [
+              {
+                "etichetta": "Wire transfer authorisations",
+                "valore": "Dual channel + tracked written confirmation"
+              },
+              {
+                "etichetta": "Caller identity verification",
+                "valore": "Verification code or call-back on a known number"
+              },
+              {
+                "etichetta": "Decision log",
+                "valore": "Tool that records who authorised what, and when"
+              },
+              {
+                "etichetta": "Written anti-fraud procedures",
+                "valore": "Signed, up-to-date internal protocol"
+              },
+              {
+                "etichetta": "Team training",
+                "valore": "At least one annual session with simulations"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "h2": "How to spot a fake AI-generated call",
+        "paragrafi": [
+          "The honest answer is: often you cannot — and you should not fool yourself into thinking your ears will save you. The latest generation of synthetic voices passes perceptual tests even with trained listeners. That said, there are **contextual signals** that should always trigger an alarm, regardless of how authentic the voice sounds.",
+          "The first signal is **artificial urgency**: the request must be acted on immediately, there is no time to verify, something terrible will happen if you do not act at once. This pattern is identical in every fraud, digital or otherwise, because time is the greatest ally of anyone who wants to check and the greatest enemy of anyone who wants to deceive. The second signal is an **unusual combination of channels**: a request that arrives first on WhatsApp and then by phone, or vice versa, from numbers that do not match exactly with those stored in your contacts, is already an anomaly that cannot be ignored. The third signal is a **request that falls outside normal procedure**: if your partner has never asked you to authorise a wire transfer by phone without written confirmation, and today they do, the voice — however convincing — is not enough.",
+          "On the technical side, synthetic-voice detection tools exist, but they are still rarely deployed in the context of Italian professional firms and require integration into communications systems. The most practical and immediate defence remains **procedural**: deciding in advance what can and cannot be authorised verbally, before the fake call arrives."
+        ],
+        "blocco": {
+          "tipo": "warning",
+          "titolo": "4 warning signs in a suspicious call",
+          "voci": [
+            {
+              "testo": "Artificial urgency: 'You need to do this now — there's no time to check.' Urgency is the primary pressure tool in voice fraud."
+            },
+            {
+              "testo": "Request outside normal procedure: a wire transfer, a password, an access credential asked for the first time by phone from someone who usually uses other channels."
+            },
+            {
+              "testo": "Caller number that does not exactly match your contacts, or a call preceded by a WhatsApp message that 'sets the scene'."
+            },
+            {
+              "testo": "Inability to call back or obtain written confirmation: anyone in a hurry to leave no trace has a reason for it."
+            }
+          ]
+        }
+      },
+      {
+        "h2": "Internal procedures to prevent AI voice fraud",
+        "paragrafi": [
+          "Effective prevention does not start with a technology tool: it starts with the **decision about what can never be authorised on a verbal request alone**. That decision must be made before the call arrives, written into an internal protocol, communicated to the entire team and reviewed at least once a year. This is not red tape: it is the difference between demonstrating you did everything possible and having to answer for a loss.",
+          "A minimum anti-fraud protocol for a professional firm or SME has at least three levels. The first is a **list of actions that can never be authorised by voice alone**: wire transfers above a defined threshold, changes to client bank details, access to management systems, sharing of credentials. The second is a **dual-channel procedure**: for any request on that list, confirmation must arrive via a second, independent channel — not WhatsApp on the same phone, but a corporate email or a call-back to a verified number. The third is a **tracked log**: every authorisation must be recorded in a system that shows who approved it, when and on what basis, so that due diligence can be demonstrated if the matter is ever challenged.",
+          "This third point also carries the most direct legal implications. If an employee executes a wire transfer on the instruction of a cloned voice, liability falls on the firm or company owner if there are no documented procedures that restricted that possibility. As [Cybersecurity360's analysis on cybersecurity governance](https://www.cybersecurity360.it/soluzioni-aziendali/compliance-e-cyber-security-perche-la-governance-non-puo-piu-essere-gestita-a-silos/) points out, the most significant regulatory violations do not stem from the absence of formal controls, but from the **inability to demonstrate ongoing, informed risk management** — an excellent summary of what any firm seeking to protect itself actually needs. For a deeper look at how AI affects professional liability, see our article on [verifying AI output in professional firms](/en/blog/verifying-ai-output-professional-firms.html)."
+        ],
+        "blocco": {
+          "tipo": "checklist",
+          "titolo": "Voice-fraud prevention protocol: minimum checklist for firms and SMEs",
+          "voci": [
+            {
+              "titolo": "Blacklist of verbal authorisations",
+              "testo": "Written and defined: which operations can never be carried out on a phone or chat request alone.",
+              "ok": true
+            },
+            {
+              "titolo": "Wire transfer threshold",
+              "testo": "Maximum amount authorisable without written confirmation on an independent channel, signed by the owner.",
+              "ok": true
+            },
+            {
+              "titolo": "Dual-channel procedure",
+              "testo": "For every critical request: confirmation by corporate email or call-back to a verified number from your contacts.",
+              "ok": true
+            },
+            {
+              "titolo": "Authorisation log",
+              "testo": "A tool or register that tracks who approved what, with date and time, kept securely and retrievable.",
+              "ok": true
+            },
+            {
+              "titolo": "Annual team training",
+              "testo": "At least one session per year with up-to-date examples of voice fraud and practical simulations.",
+              "ok": false
+            },
+            {
+              "titolo": "Protocol update",
+              "testo": "Annual review of the protocol at a minimum, or following any incident or reported attempt.",
+              "ok": false
+            }
+          ]
+        }
+      },
+      {
+        "h2": "GDPR, AI Act and liability: what the rules say about voice fraud",
+        "paragrafi": [
+          "AI voice-cloning fraud touches the European regulatory framework on at least two fronts. The first concerns the **GDPR**: voice is biometric data. When an attacker clones the voice of a lawyer or an accountant to commit fraud, they are unlawfully processing a special-category personal data. But the professional's own liability does not end there: if their firm has not adopted adequate technical and organisational measures to protect its communication channels and client data, it may face challenges even as a victim of a breach, not merely as a controller.",
+          "The second front is the **EU AI Act**, which has been progressively entering into force across the European Union. Voice-synthesis and voice-cloning systems used to deceive natural persons fall within prohibited or high-risk AI practices, but this does not automatically protect those who fall victim to them: the professional must still have done their part in terms of preventive measures. Also relevant here is **Italian Law 132/2025**, which introduces specific obligations for Italian professionals who use AI tools — a regulatory context that Ovia has examined in detail in the dedicated article on [Italian Law 132/2025 and client disclosure obligations](/en/blog/italian-law-132-2025-ai-professionals-client-disclosure.html).",
+          "In short: the law alone is not enough to protect you if you do not have documented procedures in place. And documented procedures are not enough if they are not backed by **tools that leave a verifiable trail** of every decision and authorisation. This is the point where strategy meets technology — and where a professional firm can move from being exposed to being protected."
+        ],
+        "blocco": {
+          "tipo": "warning",
+          "titolo": "Watch out: three mistakes that increase your legal exposure",
+          "voci": [
+            {
+              "testo": "Authorising wire transfers and IBAN changes by phone call or WhatsApp message alone, without written confirmation on a separate channel and without a tracked log."
+            },
+            {
+              "testo": "Never having formalised a written internal anti-fraud protocol: in the event of a loss, the absence of documented procedures worsens the position of the owner or person responsible."
+            },
+            {
+              "testo": "Treating the security of voice and chat channels as a 'technical' problem delegated to IT, without a strategic decision on what can and cannot be authorised verbally."
+            }
+          ]
+        }
+      },
+      {
+        "h2": "Tools for tracking and verifying call-based authorisations",
+        "paragrafi": [
+          "The market now offers tools capable of automatically transcribing, summarising and archiving phone calls and meetings, linking each conversation to the correct client or matter. This is not only useful for productivity: it is essential for building a **verifiable audit trail** of every interaction — one that, if a dispute arises, demonstrates what was said, by whom and when.",
+          "A [call management and transcription system](/en/services/chiamate.html) integrated into the firm's daily routine turns every phone call into a searchable record: who called, when, what was decided, what actions followed. If a request for a wire transfer comes in by phone, the log exists. If it does not exist in the log, that absence is itself a detectable anomaly.",
+          "In parallel, an [operational CRM with structured authorisation workflows](/en/services/crm.html) makes it possible to define which actions require formal approval, and to record every authorisation step with date, time and user. This is not digital bureaucracy: it is about making visible and provable the due diligence that the law requires and that, in the event of fraud, can make the difference between a covered and an uncovered loss. It is the principle that [Cybersecurity360 summarises as](https://www.cybersecurity360.it/outlook/ecco-come-ai-e-guerra-cibernetica-ridefiniscono-il-nuovo-rischio-cyber/): making the invisible visible, connecting technical risk to its real business impact."
+        ],
+        "blocco": {
+          "tipo": "steps",
+          "titolo": "How to build an audit trail for voice-based authorisations",
+          "voci": [
+            {
+              "titolo": "Transcribe every relevant call",
+              "meta": "Step 1",
+              "testo": "Use an automatic transcription tool linked to your management system: every conversation becomes a record with date, time and content."
+            },
+            {
+              "titolo": "Link the transcript to the client and matter",
+              "meta": "Step 2",
+              "testo": "The system must associate each call with the correct party, not leave it in a generic, untraceable archive."
+            },
+            {
+              "titolo": "Define which actions require written confirmation",
+              "meta": "Step 3",
+              "testo": "In the CRM workflow, critical operations require written-channel approval before they can be executed."
+            },
+            {
+              "titolo": "Archive and retain the logs",
+              "meta": "Step 4",
+              "testo": "Authorisation logs must be stored securely and immutably, for at least the period required by applicable regulations."
+            }
+          ]
+        }
+      }
+    ],
+    "ovia_view": {
+      "titolo": "Ovia's view: procedure beats the ear every time",
+      "paragrafi": [
+        "At Ovia we work with Italian professional firms and SMEs that manage high-value information flows and decisions every day. What we see most often is not a lack of awareness about the risk — the Fideuram case has made its mark — but a lack of a structured response: the danger is known, yet there is still no written procedure, no tracked log, no dual-channel protocol.",
+        "Our approach always starts with strategy: agreeing with the client which actions can never be authorised by voice alone, which threshold triggers an additional check, and who is responsible for what. Only then do we select the tools — call transcription, CRM with authorisation workflows, tracked archiving — that turn that strategy into something operational and provable. Security is not a product you install: it is a decision you make before the wrong call arrives.",
+        "This matters on the regulatory front too. The GDPR, the EU AI Act and Italian Law 132/2025 all require professionals to demonstrate informed, documented risk management. Saying 'I didn't know' is not enough: you need to show what you did to prevent it. Ovia's tools are designed to leave that trail — natively, without extra steps, in full compliance with Italian and European rules."
+      ]
+    },
+    "faq": [
+      {
+        "domanda": "How does an AI voice-cloning scam work?",
+        "risposta": "An attacker collects public audio samples of the person they wish to impersonate and uses them to generate a synthetic voice with AI. That voice can deliver any text in a way that is nearly indistinguishable from the original. The attack typically combines a written message (WhatsApp, email) to set the scene with a phone call using the cloned voice to demand an urgent action — a wire transfer, a system login, a change of data."
+      },
+      {
+        "domanda": "Can my firm or business be hit by a voice-cloning fraud?",
+        "risposta": "Yes, and the risk is higher than most people realise. Professional firms and SMEs handle money and sensitive data, and their decision-making is often informal and built on personal trust. These characteristics make them ideal targets: fraudsters look precisely for environments where an authoritative voice is enough to get something done without further checks."
+      },
+      {
+        "domanda": "How do you spot a fake call generated by artificial intelligence?",
+        "risposta": "By ear alone it is very difficult: the latest synthetic voices often pass perceptual tests even with experienced listeners. The signals to watch for are contextual — artificial urgency, a request that falls outside normal procedures, a number that does not exactly match your contacts, an inability to call back or obtain written confirmation. The real defence is procedural, not perceptual."
+      },
+      {
+        "domanda": "Which internal procedures help prevent AI voice fraud?",
+        "risposta": "Three fundamental levels: a written list of actions that can never be authorised on a verbal request alone (e.g. wire transfers above a set threshold, IBAN changes); a dual-channel procedure for any critical operation (confirmation by corporate email or call-back to a verified number); and a system that records every authorisation with date, time and the person responsible. Everything must be written down, communicated to the team and reviewed at least once a year."
+      },
+      {
+        "domanda": "Who is liable if an employee makes a wire transfer on the instruction of a cloned voice?",
+        "risposta": "Liability tends to fall on the firm or company owner if there are no documented procedures restricting that possibility. The absence of a written protocol and a tracked authorisation log worsens the position of the person responsible in any dispute — whether in civil proceedings or before the Italian Data Protection Authority (Garante Privacy)."
+      },
+      {
+        "domanda": "What does the GDPR have to do with AI voice and WhatsApp fraud?",
+        "risposta": "Voice is biometric data: its unlawful cloning constitutes a GDPR violation. But the professional's own liability also extends to the measures they should have taken to protect their communication channels and their clients' data. If adequate technical and organisational measures are missing, the professional may face regulatory challenge even as a victim — not only as a data controller."
+      },
+      {
+        "domanda": "What tools can I use to verify and track call-based authorisations?",
+        "risposta": "The most useful tools are automatic call-transcription systems linked to your management platform — which turn every conversation into a searchable record with date, time and content — and CRMs with structured authorisation workflows that require written confirmation before critical actions can be executed. Together they build a verifiable audit trail that demonstrates the professional's due diligence if the matter is ever challenged."
+      }
+    ],
+    "conclusione": [
+      "AI voice-cloning fraud is not a future threat: it has already happened, in Italy, targeting well-prepared and well-structured organisations. For a professional firm or an SME, the question is no longer 'can we be targeted?' but 'what have we done to limit the damage and prove it?'",
+      "The answer does not start with technology: it starts with the decision to establish, in writing, what can and cannot be authorised by phone call alone. That decision, communicated to the team and backed by tools that leave a trace, is the most concrete defence available today — and the one that Italian and European law already requires.",
+      "If you want to understand where to start for your firm or business, Ovia is available for a free initial assessment. The best time to do it is before the wrong call arrives."
+    ],
+    "prodotti": [
+      {
+        "id": "chiamate",
+        "perche": "Automatically transcribes and archives every relevant call, linking it to the correct client — building a verifiable audit trail of voice interactions that is essential for demonstrating due diligence in any voice-fraud dispute."
+      },
+      {
+        "id": "crm",
+        "perche": "Enables the definition of structured authorisation workflows in which critical operations (e.g. wire transfers, IBAN changes) require tracked confirmation before execution, eliminating purely verbal authorisations."
+      },
+      {
+        "id": "second-brain",
+        "perche": "Centralises decisions, procedures and notes linked to each client in a searchable system — turning the anti-fraud protocol into a living document the team can consult in seconds, rather than a file forgotten in a folder."
+      }
+    ],
+    "parole": 1689,
+    "minuti": 9,
+    "tradotto": {
+      "da": "ai",
+      "modello": "claude-sonnet-4-6",
+      "il": "2026-09-25T10:15:47.558Z"
+    }
+  }
+}
