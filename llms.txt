@@ -23,6 +23,7 @@
 - Quanto tempo serve per vedere i primi risultati?
 
 ## Blog (ultimi articoli)
+- [Agenti AI rischi dati: cosa può andare storto nel tuo studio](https://oviaitalia.it/blog/agenti-ai-rischi-dati-studi-professionali-pmi.html): Agenti AI che pubblicano dati, accedono a sistemi non autorizzati, espongono clienti: cosa è successo davvero e quali controlli servono ora in uno studio o…
 - [Frodi con voce clonata AI: come proteggersi oggi](https://oviaitalia.it/blog/frodi-voce-clonata-ai-studi-professionali-pmi.html): Frodi con voce clonata AI: il caso Fideuram da 36 milioni insegna. Come riconoscere le chiamate false e quali procedure adottare nello studio o in azienda.
 - [Agenti AI sicurezza rischi: cosa rischia il tuo studio](https://oviaitalia.it/blog/agenti-ai-sicurezza-rischi-studi-professionali-pmi.html): Agenti AI sicurezza rischi: dal caso OpenAI-Australia ai data breach reali. Cosa rischia uno studio professionale o una PMI e come tutelarsi. Guida pratica.
 - [Verificare l'output AI nello studio professionale: chi firma?](https://oviaitalia.it/blog/verificare-output-ai-studio-professionale.html): L'AI produce documenti in pochi secondi, ma chi li verifica? Il vero rischio per lo studio professionale non è lo strumento: è delegare giudizio e responsabilità.
@@ -34,6 +35,7 @@
 - [Home (EN)](https://oviaitalia.it/en/): Ovia in English.
 - [Services (EN)](https://oviaitalia.it/en/services/)
 - [FAQ (EN)](https://oviaitalia.it/en/faq.html)
+- [AI Agents & Data Risks: What Can Go Wrong for Your Firm](https://oviaitalia.it/en/blog/ai-agents-data-risks-professional-firms-smes.html): AI agents publishing data, accessing unauthorised systems, exposing clients: what has actually happened and what controls professional firms and SMEs need now.
 - [AI Voice-Cloning Fraud: How to Protect Your Firm](https://oviaitalia.it/en/blog/ai-voice-cloning-fraud-professional-firms-smes.html): AI voice-cloning fraud: the Fideuram €36 m case is a wake-up call. Learn to spot fake calls and set up the procedures your firm or business needs right now.
 - [AI Agents: Security Risks for Your Firm](https://oviaitalia.it/en/blog/ai-agents-security-risks-professional-firms-smes.html): AI agent security risks: from the OpenAI–Australia case to real data breaches. What professional firms and SMEs are exposed to, and how to protect yourself. Practical guide.
 - [Verifying AI output in professional firms: who signs off?](https://oviaitalia.it/en/blog/verifying-ai-output-professional-firms.html): AI produces documents in seconds, but who checks them? The real risk for a professional firm isn’t the tool: it’s delegating judgement and responsibility.
