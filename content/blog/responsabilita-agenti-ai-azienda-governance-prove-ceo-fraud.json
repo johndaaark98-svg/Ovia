@@ -1,0 +1,712 @@
+{
+  "title": "Responsabilità agenti AI azienda: chi risponde se qualcosa va storto?",
+  "slug": "responsabilita-agenti-ai-azienda-governance-prove-ceo-fraud",
+  "meta_description": "Agenti AI, CEO fraud e Legge 132/2025: chi risponde se un agente commette un errore? Cosa documentare prima di attivarlo nel tuo studio o nella tua PMI.",
+  "lead": "Un agente AI può inviare email, avviare bonifici e accedere a documenti senza che tu prema un singolo tasto. Ma se qualcosa va storto, la responsabilità resta tua. Ecco cosa devi sapere — e documentare — prima che accada.",
+  "tags": [
+    "responsabilità agenti AI azienda",
+    "CEO fraud deepfake",
+    "Legge 132/2025",
+    "governance AI studi professionali",
+    "sicurezza agenti AI"
+  ],
+  "intro": [
+    "Un agente AI non è un software che aspetta i tuoi comandi: è un sistema che decide, agisce e porta a termine compiti in modo autonomo. Invia un'email al cliente, aggiorna una scadenza, prepara una bozza di contratto, smista documenti. Lo fa in sequenza, senza chiederti conferma a ogni passaggio. È esattamente il motivo per cui è utile. Ed è esattamente il motivo per cui la questione della **responsabilità agenti AI azienda** è diventata urgente.",
+    "Fino a poco fa il dibattito giuridico sull'intelligenza artificiale si concentrava sull'output: una risposta sbagliata, una previsione errata, un documento impreciso. L'essere umano riceveva il risultato e decideva cosa farne. Con gli agenti AI il punto di rottura si sposta: il sistema non produce solo un output, **compie un'azione**. E un'azione può avere conseguenze legali, economiche, reputazionali prima ancora che tu ne sia consapevole.",
+    "In questo scenario si innestano tre elementi che rendono il tema ancora più concreto per chi gestisce uno studio professionale o una PMI italiana: i casi reali di CEO fraud potenziata da deepfake vocali — come la [frode da 95 milioni di euro ai danni di Fideuram](https://www.cybersecurity360.it/nuove-minacce/frode-a-fideuram-persi-36-milioni-con-lai-la-voce-non-basta-piu-a-verificare-lidentita/) —, la scarsa consapevolezza degli italiani sulle truffe AI certificata dal National Privacy Test 2026, e le nuove norme sulla tracciabilità introdotte dalla Legge 132/2025. Ignorarli non è un'opzione.",
+    "Questo articolo risponde alle domande che ogni titolare di studio o responsabile d'azienda dovrebbe farsi **prima** di attivare un agente AI: chi risponde in caso di errore, cosa bisogna documentare, come difendersi dalla CEO fraud e come costruire un sistema di controllo che regga anche in sede di contenzioso."
+  ],
+  "punti_chiave": [
+    "La responsabilità per le azioni di un agente AI ricade sull'impresa o sul professionista che lo ha attivato e configurato, non sul fornitore del software.",
+    "La Legge 132/2025 introduce nuovi requisiti di tracciabilità che rendono la documentazione preventiva non solo utile ma necessaria.",
+    "Solo il 43% degli italiani riconosce una truffa generata dall'AI e appena il 25% sa individuare un deepfake: dati che espongono PMI e studi a rischi concreti.",
+    "La CEO fraud potenziata da deepfake vocali ha già colpito grandi aziende italiane: Fideuram (95M€), Massimo Moratti (~1M€), Maire Tecnimont (18M€).",
+    "Un sistema di controllo sugli agenti AI deve essere documentabile prima dell'incidente, non ricostruito dopo.",
+    "La voce non è più un metodo affidabile di autenticazione: servono procedure di verifica alternative e indipendenti dall'AI."
+  ],
+  "sezioni": [
+    {
+      "h2": "Chi è responsabile se un agente AI causa un danno?",
+      "paragrafi": [
+        "La risposta breve è: **tu**. O meglio, l'impresa o il professionista che ha scelto di attivare l'agente, ne ha definito i permessi e lo ha inserito nei propri processi. Come spiega [Agenda Digitale](https://www.agendadigitale.eu/industry-4-0/lagente-ai-agisce-da-solo-ma-il-rischio-resta-allimpresa-chi-risponde/), il passaggio dagli output alle azioni sposta il baricentro della responsabilità: non si tratta più di valutare se un testo era corretto, ma di stabilire se un'azione era autorizzata, proporzionata e tracciabile.",
+        "Nel diritto italiano vigente — e ancor più nell'impianto dell'AI Act europeo — i sistemi di AI ad alto rischio richiedono supervisione umana. Ma \"supervisione\" non significa stare a guardare: significa avere procedure scritte, log delle azioni, limiti espliciti e un responsabile nominato. Se l'agente agisce oltre i limiti che gli avevi assegnato, la domanda del giudice sarà: **come dimostra che quei limiti esistevano e che erano applicati?**",
+        "Per uno studio professionale questa domanda ha un peso aggiuntivo: il commercialista, l'avvocato o il consulente del lavoro risponde anche sul piano deontologico. Un agente AI che invia al cliente sbagliato un documento riservato non è solo un errore tecnico: può configurare una violazione del segreto professionale con conseguenze disciplinari. La governance dell'agente è quindi, a tutti gli effetti, parte della governance dello studio."
+      ],
+      "blocco": {
+        "tipo": "compare",
+        "titolo": "Agente AI: due approcci a confronto",
+        "sinistra": {
+          "badge": "Approccio senza governance",
+          "titolo": "Come molti lo attivano oggi",
+          "righe": [
+            {
+              "etichetta": "Configurazione",
+              "valore": "Affidata al fornitore o fatta in autonomia senza policy scritte"
+            },
+            {
+              "etichetta": "Permessi",
+              "valore": "Ampi per comodità, non documentati"
+            },
+            {
+              "etichetta": "Log delle azioni",
+              "valore": "Assenti o non conservati"
+            },
+            {
+              "etichetta": "Responsabile interno",
+              "valore": "Non nominato"
+            },
+            {
+              "etichetta": "In caso di contenzioso",
+              "valore": "Impossibile dimostrare cosa era autorizzato"
+            }
+          ]
+        },
+        "destra": {
+          "badge": "Approccio consigliato",
+          "titolo": "Come dovrebbe funzionare",
+          "righe": [
+            {
+              "etichetta": "Configurazione",
+              "valore": "Policy scritta con perimetro d'azione dell'agente"
+            },
+            {
+              "etichetta": "Permessi",
+              "valore": "Minimi necessari, rivisti periodicamente"
+            },
+            {
+              "etichetta": "Log delle azioni",
+              "valore": "Conservati e firmati digitalmente"
+            },
+            {
+              "etichetta": "Responsabile interno",
+              "valore": "Nominato e formato"
+            },
+            {
+              "etichetta": "In caso di contenzioso",
+              "valore": "Documentazione pronta, responsabilità definita"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "h2": "CEO fraud e deepfake vocali: il rischio che nessuno si aspetta",
+      "paragrafi": [
+        "Nel febbraio 2026 Fideuram ha subito una frode da circa 95 milioni di euro, di cui [36 milioni ancora da recuperare](https://www.cybersecurity360.it/nuove-minacce/frode-a-fideuram-persi-36-milioni-con-lai-la-voce-non-basta-piu-a-verificare-lidentita/). I truffatori hanno usato messaggi WhatsApp che sembravano provenire dall'Ad di Intesa Sanpaolo Carlo Messina e una voce clonata con l'AI che imitava quella di un avvocato d'affari conosciuto. La combinazione di urgenza, autorità percepita e voce familiare ha convinto chi di dovere ad autorizzare i trasferimenti.",
+        "Non è un caso isolato. Come ricostruisce [Key4biz](https://www.key4biz.it/non-solo-fideuram-tutte-le-truffe-ai-manager-con-lai-i-tentativi-piu-famosi-da-moratti-a-ferrari/589204/), la CEO fraud potenziata dall'AI ha già colpito Massimo Moratti (quasi un milione di euro, poi recuperato), Maire Tecnimont (18 milioni trasferiti verso banche cinesi), Sisal (5,5 milioni), e ha sfiorato Ferrari e il gruppo pubblicitario WPP. Nel caso Arup di Hong Kong, un dipendente ha partecipato a una videoconferenza con avatar deepfake generati in tempo reale di colleghi e del direttore finanziario, trasferendo 25 milioni di dollari.",
+        "Il collegamento con gli agenti AI è diretto: se hai un agente che gestisce email, autorizza pagamenti o accede a sistemi gestionali, **un'istruzione fraudolenta — vocale, testuale o via WhatsApp — può diventare il trigger di un'azione automatica**. L'agente non ha senso critico sulle intenzioni di chi comanda: esegue. Questo significa che la difesa dalla CEO fraud non può più basarsi sul riconoscimento della voce o sulla fiducia nel mittente, ma deve diventare procedurale e indipendente dall'AI stessa."
+      ],
+      "blocco": {
+        "tipo": "stats",
+        "titolo": "CEO fraud AI in Italia e nel mondo: i numeri reali",
+        "voci": [
+          {
+            "valore": "95M€",
+            "testo": "Tentativo di frode a Fideuram con deepfake vocale (febbraio 2026); 36M€ ancora da recuperare"
+          },
+          {
+            "valore": "18M€",
+            "testo": "Sottratti a Maire Tecnimont via email fraudolente di un falso AD (2018)"
+          },
+          {
+            "valore": "25M$",
+            "testo": "Bonifico eseguito da un dipendente Arup dopo videoconferenza con avatar deepfake"
+          },
+          {
+            "valore": "25%",
+            "testo": "La quota di italiani che sa individuare un deepfake (National Privacy Test 2026, NordVPN)"
+          },
+          {
+            "valore": "43%",
+            "testo": "La quota di italiani che riconosce una truffa generata dall'AI (National Privacy Test 2026, NordVPN)"
+          }
+        ]
+      }
+    },
+    {
+      "h2": "Cosa cambia con la Legge 132/2025 sulla tracciabilità e le prove",
+      "paragrafi": [
+        "La Legge 132/2025 introduce requisiti di tracciabilità che hanno un impatto diretto su chi usa agenti AI in contesti professionali o aziendali. Il principio di fondo è che **un sistema automatizzato che produce effetti giuridici deve lasciare tracce verificabili**: chi ha dato l'istruzione, in quale momento, con quali parametri, e quale azione ne è seguita. Senza questa catena documentale, in caso di contenzioso è impossibile separare l'azione legittima dell'agente dall'errore o dalla frode.",
+        "Per gli studi professionali il tema si intreccia con obblighi già esistenti: conservazione dei documenti, obbligo di informativa al cliente sull'uso dell'AI (già previsto da norme deontologiche e rafforzato dalla Legge 132/2025, come abbiamo analizzato nell'articolo sulla [Legge 132/2025 e l'informativa ai clienti](/blog/legge-132-2025-ai-professionisti-informativa-clienti.html)), e GDPR. Un log di attività dell'agente AI non è solo una buona pratica: sta diventando un requisito implicito di compliance.",
+        "La conseguenza pratica è che chi attiva oggi un agente AI senza predisporre un sistema di logging strutturato e conservazione delle prove si espone a un doppio rischio: quello dell'incidente stesso, e quello di non riuscire a difendersi nemmeno quando l'incidente non è colpa sua. **La documentazione preventiva è la prima linea di difesa**, non un adempimento burocratico da fare dopo."
+      ],
+      "blocco": {
+        "tipo": "checklist",
+        "titolo": "Cosa documentare prima di attivare un agente AI",
+        "voci": [
+          {
+            "titolo": "Policy di utilizzo scritta",
+            "testo": "Definisce cosa l'agente può e non può fare, con quali dati e verso quali destinatari.",
+            "ok": true
+          },
+          {
+            "titolo": "Perimetro dei permessi",
+            "testo": "Accessi minimi necessari: nessun permesso in più rispetto a quanto serve per il compito assegnato.",
+            "ok": true
+          },
+          {
+            "titolo": "Log delle azioni conservati",
+            "testo": "Ogni azione dell'agente è registrata con timestamp, parametri e output, e conservata per il periodo previsto dalla normativa.",
+            "ok": true
+          },
+          {
+            "titolo": "Responsabile interno nominato",
+            "testo": "Una persona fisica risponde della supervisione dell'agente e sa come intervenire in caso di anomalia.",
+            "ok": true
+          },
+          {
+            "titolo": "Procedure di verifica umana per azioni ad alto rischio",
+            "testo": "Bonifici, invio di documenti riservati, comunicazioni verso terzi: richiedono conferma umana esplicita, fuori dal canale AI.",
+            "ok": true
+          },
+          {
+            "titolo": "Informativa aggiornata ai clienti",
+            "testo": "I clienti sanno che parte del servizio è erogata con il supporto di sistemi automatizzati, come previsto dalla Legge 132/2025.",
+            "ok": true
+          },
+          {
+            "titolo": "Piano di risposta agli incidenti",
+            "testo": "Cosa fare nelle prime ore se l'agente compie un'azione non autorizzata o diventa vettore di una frode.",
+            "ok": false
+          }
+        ]
+      }
+    },
+    {
+      "h2": "Come costruire un sistema di controllo dimostrabile in caso di contenzioso",
+      "paragrafi": [
+        "Un sistema di controllo per gli agenti AI non è un firewall tecnico: è un insieme di regole, procedure e tracce documentali che permettono di rispondere alla domanda del giudice, del Garante o del cliente: **\"Come dimostra che l'agente ha agito nei limiti che gli aveva assegnato?\"**. La risposta deve esistere prima dell'incidente, non essere costruita dopo.",
+        "Il punto di partenza è il **principio del minimo privilegio**: l'agente riceve solo i permessi strettamente necessari per il compito che deve svolgere. Se gestisce le email in arrivo, non ha bisogno di accedere al gestionale contabile. Se elabora documenti fiscali, non ha bisogno di inviare comunicazioni ai clienti in autonomia. Ogni permesso non necessario è una superficie di rischio.",
+        "Il secondo elemento è la separazione tra il canale AI e il canale di verifica. La CEO fraud funziona perché sfrutta l'urgenza e la fiducia nel canale: una voce familiare, un messaggio che sembra autentico. La difesa non è tecnologica ma procedurale: **per qualsiasi azione che superi una soglia definita (economica, di riservatezza, di impatto), la conferma deve arrivare attraverso un canale diverso e indipendente**, con una parola d'ordine o un codice concordato preventivamente. Il caso Ferrari insegna: il manager che ha chiesto al falso Vigna il titolo di un libro ha bloccato la truffa con una domanda semplice.",
+        "Il terzo elemento è la revisione periodica. I log dell'agente devono essere letti, non solo conservati. Una revisione mensile delle azioni anomale — istruzioni fuori orario, destinatari insoliti, volumi di dati inattesi — è il modo più efficace per intercettare un problema prima che diventi irreversibile. Per chi gestisce un [CRM operativo con workflow automatizzati](/servizi/crm.html), questo tipo di revisione può essere integrata direttamente nei report di sistema."
+      ],
+      "blocco": {
+        "tipo": "steps",
+        "titolo": "4 passi per una governance degli agenti AI dimostrabile",
+        "voci": [
+          {
+            "titolo": "Definisci il perimetro",
+            "meta": "Passo 1",
+            "testo": "Scrivi una policy che descriva cosa l'agente può fare, su quali dati, verso quali soggetti e con quali limiti quantitativi o qualitativi. È il documento che presenterai in caso di contestazione."
+          },
+          {
+            "titolo": "Applica il minimo privilegio",
+            "meta": "Passo 2",
+            "testo": "Configura l'agente con i soli accessi necessari. Rivedi i permessi ogni volta che cambia il suo campo d'azione. Documenta ogni modifica con data e motivazione."
+          },
+          {
+            "titolo": "Separa i canali per le azioni critiche",
+            "meta": "Passo 3",
+            "testo": "Definisci una soglia oltre la quale l'agente non agisce da solo: serve conferma umana su un canale diverso. Per le comunicazioni finanziarie o riservate, usa codici di verifica concordati fuori banda."
+          },
+          {
+            "titolo": "Conserva e leggi i log",
+            "meta": "Passo 4",
+            "testo": "I log dell'agente sono prove. Conservali per il periodo previsto dalla normativa, rendili leggibili e assegna a una persona il compito di revisionarli periodicamente."
+          }
+        ]
+      }
+    },
+    {
+      "h2": "I rischi concreti di una PMI o di uno studio senza governance AI",
+      "paragrafi": [
+        "La tentazione di attivare un agente AI senza strutturare prima la governance è comprensibile: gli strumenti sono accessibili, i risultati immediati, e le procedure sembrano un rallentamento. Ma i dati del [National Privacy Test 2026 di NordVPN](https://www.federprivacy.org/informazione/flash-news/il-national-privacy-test-2026-promuove-gli-utenti-italiani-ma-sulle-truffe-dell-ai-siamo-ancora-in-alto-mare) fotografano una realtà preoccupante: solo il **43% degli italiani riconosce una truffa generata dall'AI** e appena il **25% sa individuare un deepfake**. Questo significa che la maggior parte dei dipendenti, collaboratori e anche titolari di studio non è in grado di riconoscere un'istruzione fraudolenta che sembra autentica.",
+        "Per una PMI o uno studio professionale i rischi concreti si articolano su tre livelli. Il primo è il **rischio operativo**: un agente mal configurato che invia il documento sbagliato al cliente sbagliato, che esegue un'azione fuori contesto, che si blocca in un loop su una scadenza critica. Il secondo è il **rischio di frode**: un'istruzione fraudolenta — vocale, testuale, via email — che l'agente esegue perché rientra nel suo perimetro di azione e non ha strumenti per dubitarne. Il terzo è il **rischio legale e reputazionale**: non riuscire a dimostrare, dopo l'incidente, che l'agente aveva limiti definiti e che questi limiti erano applicati.",
+        "Chi ha già letto il nostro articolo sui [rischi degli agenti AI negli studi professionali](/blog/agenti-ai-rischi-dati-studi-professionali-pmi.html) sa che il problema non è l'AI in sé, ma il modo in cui viene integrata nei processi. Un agente AI ben governato riduce il rischio operativo rispetto ai processi manuali, perché è tracciabile e coerente. Un agente AI senza governance lo amplifica, perché agisce in modo autonomo su basi che nessuno ha mai scritto nero su bianco."
+      ],
+      "blocco": {
+        "tipo": "warning",
+        "titolo": "Attenzione: questi segnali indicano una governance insufficiente",
+        "voci": [
+          {
+            "testo": "L'agente ha accesso a caselle email, gestionali o archivi documentali senza che esista una policy scritta che ne delimiti l'uso."
+          },
+          {
+            "testo": "Non esiste un log conservato delle azioni dell'agente, o esiste ma nessuno lo legge."
+          },
+          {
+            "testo": "Le istruzioni all'agente possono arrivare via voce, WhatsApp o email senza una procedura di verifica indipendente per le azioni ad alto rischio."
+          },
+          {
+            "testo": "Nessun dipendente o collaboratore ha ricevuto formazione specifica su come riconoscere una truffa AI o un deepfake vocale."
+          },
+          {
+            "testo": "Non è stata aggiornata l'informativa ai clienti per includere l'uso di sistemi automatizzati nel servizio."
+          }
+        ]
+      }
+    },
+    {
+      "h2": "Come la gestione delle email e delle comunicazioni diventa il primo punto di controllo",
+      "paragrafi": [
+        "Se c'è un punto in cui la governance degli agenti AI ha un impatto immediato per uno studio professionale o una PMI, è la **gestione delle comunicazioni in entrata**. Email, PEC, messaggi: sono il vettore principale della CEO fraud, il canale attraverso cui arrivano le istruzioni fraudolente, e spesso il primo sistema che viene automatizzato con un agente AI.",
+        "Un agente che gestisce la casella email deve avere regole chiare su cosa può fare da solo e cosa deve portare all'attenzione di un essere umano prima di agire. La bozza di risposta preparata dall'agente e **approvata dal titolare** è un modello di governance sano: l'efficienza dell'automazione con il controllo umano sui contenuti. È diverso da un agente che invia in autonomia, senza che nessuno veda cosa è uscito e a chi.",
+        "Allo stesso modo, la [trascrizione e la sintesi delle chiamate](/servizi/chiamate.html) — con attribuzione al cliente e conservazione strutturata — costruisce automaticamente una parte dei log di cui hai bisogno per la compliance: chi ha chiesto cosa, quando, e quale risposta è stata data. Non è solo efficienza operativa: è tracciabilità documentale che vale anche in sede di contenzioso."
+      ],
+      "blocco": {
+        "tipo": "checklist",
+        "titolo": "Comunicazioni e agenti AI: cosa deve essere sotto controllo umano",
+        "voci": [
+          {
+            "titolo": "Istruzioni che coinvolgono pagamenti o bonifici",
+            "testo": "Qualsiasi istruzione finanziaria deve passare per una verifica su canale indipendente, con codice concordato preventivamente.",
+            "ok": true
+          },
+          {
+            "titolo": "Invio di documenti riservati a terzi",
+            "testo": "L'agente prepara, un essere umano approva prima dell'invio. Nessun documento riservato inviato in autonomia.",
+            "ok": true
+          },
+          {
+            "titolo": "Risposte a nuovi contatti o potenziali clienti",
+            "testo": "L'agente può gestire la prima risposta, ma la qualifica e le informazioni sensibili richiedono supervisione.",
+            "ok": true
+          },
+          {
+            "titolo": "Comunicazioni urgenti che provengono da figure di autorità",
+            "testo": "Più l'istruzione è urgente e autorevole, più deve essere verificata. L'urgenza è il segnale d'allarme, non una ragione per accelerare.",
+            "ok": false
+          },
+          {
+            "titolo": "Aggiornamenti di dati sensibili nel gestionale",
+            "testo": "Modifiche a dati anagrafici, fiscali o bancari dei clienti devono essere confermate da un operatore umano.",
+            "ok": false
+          }
+        ]
+      }
+    }
+  ],
+  "ovia_view": {
+    "titolo": "Il punto di vista di Ovia: la governance non è un freno, è la condizione per usare l'AI in sicurezza",
+    "paragrafi": [
+      "In Ovia lavoriamo ogni giorno con studi professionali e PMI italiane che vogliono usare l'AI per guadagnare tempo e ridurre errori. La domanda che ci poniamo prima di costruire qualsiasi automazione non è \"cosa riesce a fare questo agente?\", ma \"cosa deve fare, su quali dati, con quale supervisione, e come dimostriamo che funziona entro quei limiti?\".",
+      "Questa non è prudenza eccessiva: è il modo in cui si costruisce un sistema che regge nel tempo. Un agente AI che gestisce le email del tuo studio con regole chiare, log conservati e approvazione umana sulle risposte sensibili è più sicuro — e più utile — di uno strumento potente lasciato libero di agire senza confini documentati.",
+      "La strategia viene prima. L'AI è lo strumento. E la sicurezza non è il contrario dell'efficienza: è la condizione per cui l'efficienza sia sostenibile."
+    ]
+  },
+  "faq": [
+    {
+      "domanda": "Chi è responsabile se un agente AI commette un errore o causa un danno?",
+      "risposta": "La responsabilità ricade sull'impresa o sul professionista che ha attivato e configurato l'agente AI, non sul fornitore del software. In base all'AI Act europeo e alle norme italiane vigenti, chi deploy un sistema automatizzato in contesti professionali o aziendali deve garantire supervisione umana, limiti definiti e tracciabilità delle azioni. Se l'agente agisce oltre i limiti assegnati, il punto critico è dimostrare che quei limiti esistevano e che erano applicati."
+    },
+    {
+      "domanda": "Come faccio a dimostrare che l'agente AI ha agito entro i limiti che gli avevo dato?",
+      "risposta": "Con documentazione preventiva: una policy scritta che definisce il perimetro d'azione dell'agente, log conservati di ogni azione con timestamp e parametri, e un responsabile interno nominato. Questa documentazione deve esistere prima dell'incidente, non essere ricostruita dopo. La Legge 132/2025 rafforza questi requisiti sul piano della tracciabilità e delle prove."
+    },
+    {
+      "domanda": "Cosa devo documentare prima di attivare un agente AI nel mio studio o nella mia azienda?",
+      "risposta": "Almeno quattro elementi: una policy scritta con perimetro d'azione e limiti dell'agente, l'elenco dei permessi assegnati (con il principio del minimo privilegio), un sistema di log delle azioni conservato per il periodo previsto dalla normativa, e un responsabile interno nominato. Vanno aggiornate anche l'informativa ai clienti sull'uso di sistemi automatizzati e le procedure di verifica per le azioni ad alto rischio."
+    },
+    {
+      "domanda": "Come mi proteggo dalla CEO fraud e dai deepfake vocali se uso AI nelle comunicazioni?",
+      "risposta": "La difesa è procedurale, non tecnologica. Per qualsiasi azione che superi una soglia definita (pagamenti, invio di documenti riservati, modifiche a dati sensibili), la conferma deve arrivare attraverso un canale diverso e indipendente dall'AI, con una parola d'ordine o un codice concordato preventivamente. La voce non è più un metodo affidabile di autenticazione: il caso Fideuram (95M€ di tentativo) e il caso Ferrari lo dimostrano chiaramente."
+    },
+    {
+      "domanda": "Le nuove norme italiane cambiano qualcosa sulla responsabilità degli agenti AI?",
+      "risposta": "Sì. La Legge 132/2025 introduce requisiti di tracciabilità che rendono la documentazione preventiva non solo una buona pratica ma una necessità. Chi usa agenti AI in contesti professionali deve essere in grado di ricostruire la catena delle istruzioni e delle azioni in caso di contenzioso. Questo si aggiunge agli obblighi già esistenti in materia di GDPR, segreto professionale e informativa ai clienti."
+    },
+    {
+      "domanda": "Quali sono i rischi concreti di una PMI o di uno studio che attiva agenti AI senza governance?",
+      "risposta": "Tre livelli di rischio: operativo (azioni errate, dati inviati ai destinatari sbagliati, scadenze mancate), di frode (istruzioni fraudolente eseguite dall'agente perché rientrano nel suo perimetro), e legale-reputazionale (impossibilità di dimostrare che l'agente aveva limiti definiti in caso di contestazione). Il National Privacy Test 2026 certifica che solo il 25% degli italiani sa individuare un deepfake, il che amplifica il rischio di frode."
+    },
+    {
+      "domanda": "Come si costruisce un sistema di controllo per gli agenti AI che sia dimostrabile in contenzioso?",
+      "risposta": "Quattro elementi fondamentali: perimetro d'azione scritto, permessi minimi necessari, log conservati e revisionati periodicamente, separazione tra canale AI e canale di verifica per le azioni critiche. La revisione periodica dei log è cruciale: non basta conservarli, bisogna leggerli per individuare anomalie prima che diventino incidenti."
+    }
+  ],
+  "conclusione": [
+    "Gli agenti AI sono strumenti potenti e, usati bene, cambiano davvero il modo di lavorare di uno studio o di un'azienda. Ma \"usati bene\" significa con un perimetro definito, log conservati, procedure di verifica per le azioni critiche e un essere umano che mantiene la supervisione. Non è un ostacolo all'innovazione: è la condizione perché l'innovazione sia sostenibile.",
+    "I casi di CEO fraud — da Fideuram a Maire Tecnimont, da Moratti a Arup — dimostrano che il problema non è l'AI in sé, ma la fiducia cieca nel canale e nell'autorità percepita. La stessa fiducia che, se non governata, può trasformare un agente AI utile in un esecutore di istruzioni fraudolente. La voce non basta più. Il mittente non basta più. Servono procedure.",
+    "Se stai valutando di introdurre agenti AI nel tuo studio o nella tua azienda, il primo passo non è scegliere lo strumento: è definire cosa può fare, cosa non può fare, e come dimostrarlo. Ovia può aiutarti a costruire questa struttura prima di attivare qualsiasi automazione."
+  ],
+  "prodotti": [
+    {
+      "id": "inbox",
+      "perche": "Gestisce le email in entrata con riconoscimento del mittente, classificazione per urgenza e bozza di risposta pronta per l'approvazione umana: il modello di governance corretto per chi vuole automazione senza perdere il controllo sulle comunicazioni critiche."
+    },
+    {
+      "id": "chiamate",
+      "perche": "Trascrive e archivia ogni chiamata con attribuzione al cliente e timestamp, costruendo automaticamente una parte della tracciabilità documentale richiesta dalla Legge 132/2025 e utile in caso di contenzioso."
+    },
+    {
+      "id": "crm",
+      "perche": "Offre un CRM operativo con workflow documentati, log delle attività e supervisione sulle scadenze: la base strutturale per una governance degli agenti AI che sia verificabile e dimostrabile."
+    }
+  ],
+  "categoria": "normativa-sicurezza",
+  "keyword": "responsabilità agenti AI azienda",
+  "data": "2026-09-27T10:35:29.918Z",
+  "autore": "Redazione Ovia",
+  "parole": 2474,
+  "minuti": 12,
+  "fonti": [
+    {
+      "titolo": "L’agente AI agisce da solo, ma il rischio resta all’impresa: chi risponde?",
+      "fonte": "Agenda Digitale",
+      "url": "https://www.agendadigitale.eu/industry-4-0/lagente-ai-agisce-da-solo-ma-il-rischio-resta-allimpresa-chi-risponde/"
+    },
+    {
+      "titolo": "Frode a Fideuram, persi 36 milioni: con l’AI la voce non basta più a verificare l’identità",
+      "fonte": "Cybersecurity360",
+      "url": "https://www.cybersecurity360.it/nuove-minacce/frode-a-fideuram-persi-36-milioni-con-lai-la-voce-non-basta-piu-a-verificare-lidentita/"
+    },
+    {
+      "titolo": "Non solo Fideuram, tutte le truffe ai manager con l’Ai: i tentativi più famosi da Moratti a Ferrari",
+      "fonte": "Key4biz",
+      "url": "https://www.key4biz.it/non-solo-fideuram-tutte-le-truffe-ai-manager-con-lai-i-tentativi-piu-famosi-da-moratti-a-ferrari/589204/"
+    },
+    {
+      "titolo": "Il National Privacy Test 2026 promuove gli utenti italiani, ma sulle truffe dell’AI siamo ancora in alto mare",
+      "fonte": "FederPrivacy",
+      "url": "https://www.federprivacy.org/informazione/flash-news/il-national-privacy-test-2026-promuove-gli-utenti-italiani-ma-sulle-truffe-dell-ai-siamo-ancora-in-alto-mare"
+    }
+  ],
+  "generato": {
+    "da": "ai",
+    "modello": "claude-sonnet-4-6",
+    "il": "2026-09-27T10:35:29.918Z"
+  },
+  "en": {
+    "title": "AI Agent Liability: Who Is Responsible When Things Go Wrong?",
+    "slug": "ai-agent-liability-governance-evidence-ceo-fraud",
+    "meta_description": "AI agents, CEO fraud & Italian Law 132/2025: who is liable if an agent makes a mistake? What to document before deploying one in your firm or SME.",
+    "lead": "An AI agent can send emails, initiate bank transfers and access documents without you pressing a single key. But if something goes wrong, the liability is still yours. Here is what you need to know — and document — before that happens.",
+    "tags": [
+      "AI agent liability business",
+      "CEO fraud deepfake",
+      "Italian Law 132/2025",
+      "AI governance professional firms",
+      "AI agent security"
+    ],
+    "intro": [
+      "An AI agent is not software that waits for your commands: it is a system that decides, acts and completes tasks autonomously. It sends an email to a client, updates a deadline, drafts a contract, sorts documents — all in sequence, without asking for your approval at every step. That is precisely what makes it useful. And it is precisely why **AI agent liability** has become an urgent issue for businesses and professional firms.",
+      "Until recently, the legal debate around artificial intelligence focused on output: a wrong answer, an inaccurate forecast, a flawed document. The human received the result and decided what to do with it. With AI agents, the breaking point shifts: the system does not merely produce an output — **it takes an action**. And an action can have legal, financial and reputational consequences before you are even aware of it.",
+      "Three elements make this especially concrete for anyone running a professional firm or an SME in Italy: real-world cases of CEO fraud supercharged by voice deepfakes — such as the [€95 million fraud targeting Fideuram](https://www.cybersecurity360.it/nuove-minacce/frode-a-fideuram-persi-36-milioni-con-lai-la-voce-non-basta-piu-a-verificare-lidentita/) —, the low awareness of AI scams among Italians confirmed by the National Privacy Test 2026, and the new traceability requirements introduced by Italian Law 132/2025. Ignoring them is not an option.",
+      "This article answers the questions every firm owner or business manager should ask **before** deploying an AI agent: who is liable when something goes wrong, what needs to be documented, how to defend against CEO fraud, and how to build a control framework that holds up even in litigation."
+    ],
+    "punti_chiave": [
+      "Liability for an AI agent's actions falls on the firm or professional who deployed and configured it — not on the software provider.",
+      "Italian Law 132/2025 introduces new traceability requirements that make preventive documentation not just good practice but a legal necessity.",
+      "Only 43% of Italians recognise an AI-generated scam and just 25% can identify a deepfake — figures that expose SMEs and professional firms to concrete risk.",
+      "CEO fraud powered by voice deepfakes has already hit major Italian organisations: Fideuram (€95M), Massimo Moratti (~€1M), Maire Tecnimont (€18M).",
+      "A control system for AI agents must be documentable before an incident occurs — not reconstructed afterwards.",
+      "Voice is no longer a reliable authentication method: alternative verification procedures, independent of AI, are essential."
+    ],
+    "sezioni": [
+      {
+        "h2": "Who is liable if an AI agent causes harm?",
+        "paragrafi": [
+          "The short answer is: **you**. Or rather, the firm or professional who chose to deploy the agent, defined its permissions and embedded it in their processes. As [Agenda Digitale](https://www.agendadigitale.eu/industry-4-0/lagente-ai-agisce-da-solo-ma-il-rischio-resta-allimpresa-chi-risponde/) explains, the shift from outputs to actions moves the centre of gravity of liability: it is no longer a matter of assessing whether a piece of text was correct, but of establishing whether an action was authorised, proportionate and traceable.",
+          "Under current Italian law — and even more so under the framework of the EU AI Act — high-risk AI systems require human oversight. But 'oversight' does not mean watching from the sidelines: it means having written procedures, action logs, explicit limits and a named responsible person. If the agent acts beyond the boundaries you set, the judge's question will be: **how do you demonstrate that those limits existed and were being enforced?**",
+          "For a professional firm this question carries additional weight: an accountant, lawyer or employment consultant is also answerable on disciplinary grounds. An AI agent that sends a confidential document to the wrong client is not merely a technical error — it may constitute a breach of professional secrecy with disciplinary consequences. Agent governance is therefore, in every respect, part of the governance of the firm itself."
+        ],
+        "blocco": {
+          "tipo": "compare",
+          "titolo": "AI Agent: two approaches compared",
+          "sinistra": {
+            "badge": "No-governance approach",
+            "titolo": "How most firms deploy today",
+            "righe": [
+              {
+                "etichetta": "Configuration",
+                "valore": "Left to the vendor or done ad hoc, with no written policy"
+              },
+              {
+                "etichetta": "Permissions",
+                "valore": "Broad for convenience, undocumented"
+              },
+              {
+                "etichetta": "Action logs",
+                "valore": "Absent or not retained"
+              },
+              {
+                "etichetta": "Named internal owner",
+                "valore": "Not appointed"
+              },
+              {
+                "etichetta": "In the event of a dispute",
+                "valore": "Impossible to prove what was authorised"
+              }
+            ]
+          },
+          "destra": {
+            "badge": "Recommended approach",
+            "titolo": "How it should work",
+            "righe": [
+              {
+                "etichetta": "Configuration",
+                "valore": "Written policy defining the agent's scope of action"
+              },
+              {
+                "etichetta": "Permissions",
+                "valore": "Minimum necessary, reviewed periodically"
+              },
+              {
+                "etichetta": "Action logs",
+                "valore": "Retained and digitally signed"
+              },
+              {
+                "etichetta": "Named internal owner",
+                "valore": "Appointed and trained"
+              },
+              {
+                "etichetta": "In the event of a dispute",
+                "valore": "Documentation ready, liability clearly defined"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "h2": "CEO fraud and voice deepfakes: the risk nobody sees coming",
+        "paragrafi": [
+          "In February 2026, Fideuram fell victim to a fraud totalling approximately €95 million, with [€36 million still unrecovered](https://www.cybersecurity360.it/nuove-minacce/frode-a-fideuram-persi-36-milioni-con-lai-la-voce-non-basta-piu-a-verificare-lidentita/). The fraudsters used WhatsApp messages that appeared to come from Intesa Sanpaolo CEO Carlo Messina, combined with an AI-cloned voice imitating that of a well-known business lawyer. The combination of urgency, perceived authority and a familiar voice persuaded the right people to authorise the transfers.",
+          "This is not an isolated case. As [Key4biz](https://www.key4biz.it/non-solo-fideuram-tutte-le-truffe-ai-manager-con-lai-i-tentativi-piu-famosi-da-moratti-a-ferrari/589204/) reports, AI-powered CEO fraud has already struck Massimo Moratti (nearly €1 million, later recovered), Maire Tecnimont (€18 million transferred to Chinese banks), Sisal (€5.5 million), and came close to hitting Ferrari and advertising group WPP. In the Arup case in Hong Kong, an employee joined a video call featuring real-time deepfake avatars of colleagues and the CFO, and transferred $25 million as a result.",
+          "The connection to AI agents is direct: if you have an agent managing emails, authorising payments or accessing business systems, **a fraudulent instruction — delivered by voice, text or WhatsApp — can become the trigger for an automated action**. The agent has no critical judgement about the intentions behind a command: it simply executes. This means that defending against CEO fraud can no longer rely on recognising a voice or trusting a sender; it must become procedural and independent of the AI itself."
+        ],
+        "blocco": {
+          "tipo": "stats",
+          "titolo": "AI CEO fraud in Italy and worldwide: the real figures",
+          "voci": [
+            {
+              "valore": "€95M",
+              "testo": "Fraud attempt against Fideuram using a voice deepfake (February 2026); €36M still unrecovered"
+            },
+            {
+              "valore": "€18M",
+              "testo": "Stolen from Maire Tecnimont via fraudulent emails from a fake CEO (2018)"
+            },
+            {
+              "valore": "$25M",
+              "testo": "Transferred by an Arup employee after a video call with real-time deepfake avatars"
+            },
+            {
+              "valore": "25%",
+              "testo": "Share of Italians who can identify a deepfake (National Privacy Test 2026, NordVPN)"
+            },
+            {
+              "valore": "43%",
+              "testo": "Share of Italians who recognise an AI-generated scam (National Privacy Test 2026, NordVPN)"
+            }
+          ]
+        }
+      },
+      {
+        "h2": "What Italian Law 132/2025 changes for traceability and evidence",
+        "paragrafi": [
+          "Italian Law 132/2025 introduces traceability requirements that directly affect anyone using AI agents in a professional or business context. The underlying principle is that **an automated system that produces legal effects must leave verifiable traces**: who gave the instruction, at what moment, with which parameters, and what action followed. Without this documentary chain, it is impossible in any dispute to separate the agent's legitimate action from an error or fraud.",
+          "For professional firms, this intersects with existing obligations — document retention, the duty to inform clients about the use of AI (already required by professional codes of conduct and reinforced by Italian Law 132/2025, as we examined in our article on [Italian Law 132/2025 and client disclosure](/en/blog/italian-law-132-2025-ai-professionals-client-disclosure.html)) — and GDPR compliance. An AI agent activity log is not just good practice: it is becoming an implicit compliance requirement.",
+          "The practical consequence is that anyone who deploys an AI agent today without a structured logging and evidence-retention system faces a double risk: the risk of the incident itself, and the risk of being unable to mount a defence even when the incident is not their fault. **Preventive documentation is the first line of defence** — not a bureaucratic box-ticking exercise to be done after the event."
+        ],
+        "blocco": {
+          "tipo": "checklist",
+          "titolo": "What to document before deploying an AI agent",
+          "voci": [
+            {
+              "titolo": "Written usage policy",
+              "testo": "Defines what the agent can and cannot do, with which data, and to which recipients.",
+              "ok": true
+            },
+            {
+              "titolo": "Permission scope",
+              "testo": "Minimum necessary access: no permissions beyond what is strictly required for the assigned task.",
+              "ok": true
+            },
+            {
+              "titolo": "Retained action logs",
+              "testo": "Every agent action is recorded with a timestamp, parameters and output, and retained for the period required by law.",
+              "ok": true
+            },
+            {
+              "titolo": "Named internal owner",
+              "testo": "A named individual is responsible for supervising the agent and knows how to intervene if an anomaly occurs.",
+              "ok": true
+            },
+            {
+              "titolo": "Human verification procedures for high-risk actions",
+              "testo": "Bank transfers, sending confidential documents, communications to third parties: all require explicit human confirmation via a channel outside the AI system.",
+              "ok": true
+            },
+            {
+              "titolo": "Updated client disclosure",
+              "testo": "Clients are informed that part of the service is delivered with the support of automated systems, as required by Italian Law 132/2025.",
+              "ok": true
+            },
+            {
+              "titolo": "Incident response plan",
+              "testo": "A clear plan covering what to do in the first hours if the agent takes an unauthorised action or becomes a vehicle for fraud.",
+              "ok": false
+            }
+          ]
+        }
+      },
+      {
+        "h2": "How to build a control framework that holds up in litigation",
+        "paragrafi": [
+          "A control framework for AI agents is not a technical firewall: it is a set of rules, procedures and documentary records that allow you to answer the question a judge, the Italian Data Protection Authority (Garante) or a client will ask: **'How do you demonstrate that the agent acted within the limits you had set?'** The answer must exist before the incident — not be constructed after it.",
+          "The starting point is the **principle of least privilege**: the agent receives only the permissions strictly necessary for the task it is performing. If it manages incoming emails, it does not need access to the accounting system. If it processes tax documents, it does not need to send communications to clients on its own initiative. Every unnecessary permission is an additional attack surface.",
+          "The second element is the separation between the AI channel and the verification channel. CEO fraud works because it exploits urgency and trust in the channel: a familiar voice, a message that looks authentic. The defence is not technological but procedural: **for any action that exceeds a defined threshold — financial, confidentiality-related or impact-related — confirmation must arrive through a different, independent channel**, using a passphrase or code agreed in advance. The Ferrari case is instructive: the manager who asked the fake Vigna to name a book title stopped the fraud with a simple question.",
+          "The third element is periodic review. Agent logs must be read, not merely retained. A monthly review of anomalous actions — out-of-hours instructions, unusual recipients, unexpected data volumes — is the most effective way to catch a problem before it becomes irreversible. For anyone managing an [operational CRM with automated workflows](/en/services/crm.html), this kind of review can be integrated directly into system reports."
+        ],
+        "blocco": {
+          "tipo": "steps",
+          "titolo": "4 steps to a demonstrable AI agent governance framework",
+          "voci": [
+            {
+              "titolo": "Define the scope",
+              "meta": "Step 1",
+              "testo": "Write a policy describing what the agent can do, on which data, towards which parties, and with what quantitative or qualitative limits. This is the document you will present in the event of a challenge."
+            },
+            {
+              "titolo": "Apply least privilege",
+              "meta": "Step 2",
+              "testo": "Configure the agent with only the access it needs. Revisit permissions whenever its scope of action changes. Document every change with a date and reason."
+            },
+            {
+              "titolo": "Separate channels for critical actions",
+              "meta": "Step 3",
+              "testo": "Set a threshold beyond which the agent does not act alone: human confirmation on a separate channel is required. For financial or confidential communications, use out-of-band verification codes agreed in advance."
+            },
+            {
+              "titolo": "Retain and review the logs",
+              "meta": "Step 4",
+              "testo": "Agent logs are evidence. Retain them for the period required by law, make them readable, and assign someone the task of reviewing them periodically."
+            }
+          ]
+        }
+      },
+      {
+        "h2": "The concrete risks for an SME or firm with no AI governance",
+        "paragrafi": [
+          "The temptation to deploy an AI agent without first structuring governance is understandable: the tools are accessible, results are immediate, and procedures feel like a slowdown. But the data from the [NordVPN National Privacy Test 2026](https://www.federprivacy.org/informazione/flash-news/il-national-privacy-test-2026-promuove-gli-utenti-italiani-ma-sulle-truffe-dell-ai-siamo-ancora-in-alto-mare) paint a worrying picture: only **43% of Italians recognise an AI-generated scam** and just **25% can identify a deepfake**. This means that the majority of employees, collaborators and even firm owners are unable to recognise a fraudulent instruction that looks authentic.",
+          "For an SME or professional firm, the concrete risks operate at three levels. The first is **operational risk**: a poorly configured agent that sends the wrong document to the wrong client, executes an out-of-context action, or gets stuck in a loop on a critical deadline. The second is **fraud risk**: a fraudulent instruction — delivered by voice, text or email — that the agent carries out because it falls within its defined scope and it has no means to question it. The third is **legal and reputational risk**: the inability to demonstrate, after the incident, that the agent had defined limits and that those limits were being enforced.",
+          "Anyone who has already read our article on [AI agent risks in professional firms](/en/blog/ai-agents-data-risks-professional-firms-smes.html) knows that the problem is not AI itself, but the way in which it is integrated into processes. A well-governed AI agent reduces operational risk compared with manual processes, because it is traceable and consistent. An AI agent without governance amplifies it, because it acts autonomously on foundations that nobody has ever committed to writing."
+        ],
+        "blocco": {
+          "tipo": "warning",
+          "titolo": "Warning: these signs indicate insufficient AI governance",
+          "voci": [
+            {
+              "testo": "The agent has access to email inboxes, business systems or document archives without a written policy delimiting its use."
+            },
+            {
+              "testo": "There is no retained log of the agent's actions — or one exists but nobody reads it."
+            },
+            {
+              "testo": "Instructions to the agent can arrive via voice, WhatsApp or email without an independent verification procedure for high-risk actions."
+            },
+            {
+              "testo": "No employee or collaborator has received specific training on how to recognise an AI scam or a voice deepfake."
+            },
+            {
+              "testo": "The client disclosure notice has not been updated to include the use of automated systems in the delivery of services."
+            }
+          ]
+        }
+      },
+      {
+        "h2": "Why email and communications management is the first control point",
+        "paragrafi": [
+          "If there is one area where AI agent governance has an immediate impact for a professional firm or SME, it is **inbound communications management**. Emails, certified electronic mail (PEC), messages: these are the primary vector for CEO fraud, the channel through which fraudulent instructions arrive, and often the first system to be automated with an AI agent.",
+          "An agent managing an email inbox must have clear rules about what it can do on its own and what it must bring to a human's attention before acting. A draft response prepared by the agent and **approved by the principal** is a sound governance model: the efficiency of automation combined with human control over sensitive content. This is very different from an agent that sends independently, with nobody seeing what has gone out and to whom.",
+          "Equally, [call transcription and summarisation](/en/services/chiamate.html) — with client attribution and structured retention — automatically builds part of the audit trail you need for compliance: who asked what, when, and what response was given. This is not just operational efficiency: it is documentary traceability that counts in litigation too."
+        ],
+        "blocco": {
+          "tipo": "checklist",
+          "titolo": "Communications and AI agents: what must remain under human control",
+          "voci": [
+            {
+              "titolo": "Instructions involving payments or bank transfers",
+              "testo": "Any financial instruction must go through verification on an independent channel, using a pre-agreed code.",
+              "ok": true
+            },
+            {
+              "titolo": "Sending confidential documents to third parties",
+              "testo": "The agent prepares; a human approves before sending. No confidential document sent autonomously.",
+              "ok": true
+            },
+            {
+              "titolo": "Responses to new contacts or prospective clients",
+              "testo": "The agent can handle the first response, but qualification and sensitive information require human oversight.",
+              "ok": true
+            },
+            {
+              "titolo": "Urgent communications from authority figures",
+              "testo": "The more urgent and authoritative the instruction, the more it must be verified. Urgency is a warning sign, not a reason to act faster.",
+              "ok": false
+            },
+            {
+              "titolo": "Updates to sensitive data in business systems",
+              "testo": "Changes to client personal, tax or bank details must be confirmed by a human operator.",
+              "ok": false
+            }
+          ]
+        }
+      }
+    ],
+    "ovia_view": {
+      "titolo": "Ovia's perspective: governance is not a brake — it is the condition for using AI safely",
+      "paragrafi": [
+        "At Ovia we work every day with Italian professional firms and SMEs that want to use AI to save time and reduce errors. Before building any automation, the question we ask is not 'what can this agent do?' but 'what should it do, on which data, with what oversight, and how do we demonstrate that it operates within those limits?'",
+        "This is not excessive caution: it is how you build a system that stands the test of time. An AI agent that manages your firm's emails with clear rules, retained logs and human approval for sensitive responses is more secure — and more useful — than a powerful tool left free to act without documented boundaries.",
+        "Strategy comes first. AI is the instrument. And security is not the opposite of efficiency: it is the condition that makes efficiency sustainable."
+      ]
+    },
+    "faq": [
+      {
+        "domanda": "Who is liable if an AI agent makes a mistake or causes harm?",
+        "risposta": "Liability falls on the firm or professional who deployed and configured the AI agent, not on the software provider. Under the EU AI Act and current Italian law, anyone deploying an automated system in a professional or business context must ensure human oversight, defined limits and traceability of actions. If the agent acts beyond the boundaries set for it, the critical point is being able to demonstrate that those limits existed and were being enforced."
+      },
+      {
+        "domanda": "How do I prove that an AI agent acted within the limits I set?",
+        "risposta": "Through preventive documentation: a written policy defining the agent's scope of action, retained logs of every action with timestamps and parameters, and a named internal responsible person. This documentation must exist before any incident — it cannot be reconstructed after the fact. Italian Law 132/2025 reinforces these requirements in terms of traceability and evidence."
+      },
+      {
+        "domanda": "What do I need to document before deploying an AI agent in my firm or company?",
+        "risposta": "At minimum, four elements: a written policy covering the agent's scope and limits, a list of assigned permissions (applying the principle of least privilege), an action log system retained for the period required by law, and a named internal owner. You should also update your client disclosure to cover the use of automated systems, and put in place human verification procedures for high-risk actions."
+      },
+      {
+        "domanda": "How do I protect my firm against CEO fraud and voice deepfakes when using AI in communications?",
+        "risposta": "The defence is procedural, not technological. For any action exceeding a defined threshold — payments, sending confidential documents, changes to sensitive data — confirmation must come through a different channel, independent of the AI system, using a passphrase or code agreed in advance. Voice is no longer a reliable authentication method: the Fideuram case (€95M attempt) and the Ferrari case make this abundantly clear."
+      },
+      {
+        "domanda": "Do the new Italian rules change anything about AI agent liability?",
+        "risposta": "Yes. Italian Law 132/2025 introduces traceability requirements that make preventive documentation not just good practice but a necessity. Anyone using AI agents in a professional context must be able to reconstruct the chain of instructions and actions in the event of a dispute. This is in addition to existing obligations under GDPR, professional secrecy rules and client disclosure requirements."
+      },
+      {
+        "domanda": "What are the concrete risks for an SME or firm that deploys AI agents without governance?",
+        "risposta": "Three levels of risk: operational (wrong actions, data sent to the wrong recipients, missed deadlines), fraud (fraudulent instructions executed by the agent because they fall within its defined scope), and legal-reputational (inability to demonstrate that the agent had defined limits in the event of a challenge). The National Privacy Test 2026 confirms that only 25% of Italians can identify a deepfake, which amplifies the fraud risk considerably."
+      },
+      {
+        "domanda": "How do you build an AI agent control framework that is defensible in litigation?",
+        "risposta": "Four essential elements: a written scope of action, minimum necessary permissions, logs that are retained and reviewed periodically, and separation between the AI channel and the verification channel for critical actions. Periodic log review is crucial: retaining logs is not enough — they must be read in order to spot anomalies before they become incidents."
+      }
+    ],
+    "conclusione": [
+      "AI agents are powerful tools and, when used well, they genuinely transform the way a firm or business operates. But 'used well' means with a defined scope, retained logs, verification procedures for critical actions and a human maintaining oversight. This is not an obstacle to innovation: it is the condition that makes innovation sustainable.",
+      "The CEO fraud cases — from Fideuram to Maire Tecnimont, from Moratti to Arup — demonstrate that the problem is not AI itself, but blind trust in the channel and in perceived authority. The same trust that, left ungoverned, can turn a useful AI agent into an executor of fraudulent instructions. Voice is no longer enough. The sender's identity is no longer enough. Procedures are essential.",
+      "If you are considering introducing AI agents into your firm or business, the first step is not choosing the tool: it is defining what it can do, what it cannot do, and how you will demonstrate it. Ovia can help you build this framework before activating any automation."
+    ],
+    "prodotti": [
+      {
+        "id": "inbox",
+        "perche": "Manages inbound emails with sender recognition, urgency classification and a draft response ready for human approval — the right governance model for firms that want automation without losing control over critical communications."
+      },
+      {
+        "id": "chiamate",
+        "perche": "Transcribes and archives every call with client attribution and timestamps, automatically building part of the documentary audit trail required by Italian Law 132/2025 and valuable in the event of a dispute."
+      },
+      {
+        "id": "crm",
+        "perche": "Provides an operational CRM with documented workflows, activity logs and deadline oversight — the structural foundation for AI agent governance that is verifiable and demonstrable."
+      }
+    ],
+    "parole": 1782,
+    "minuti": 10,
+    "tradotto": {
+      "da": "ai",
+      "modello": "claude-sonnet-4-6",
+      "il": "2026-09-27T10:37:48.439Z"
+    }
+  }
+}
