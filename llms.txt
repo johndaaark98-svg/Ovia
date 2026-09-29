@@ -23,6 +23,7 @@
 - Quanto tempo serve per vedere i primi risultati?
 
 ## Blog (ultimi articoli)
+- [Agenti AI fuori controllo: i rischi reali per lo studio professionale](https://oviaitalia.it/blog/agenti-ai-fuori-controllo-rischi-studio-professionale.html): OpenAI blocca GPT-6.1 Astra per sicurezza: cosa significa per studi e PMI affidarsi ad agenti AI autonomi senza perimetri, responsabilità e controlli definiti.
 - [Agenti AI rischi e costi: come governarli nello studio](https://oviaitalia.it/blog/agenti-ai-rischi-costi-governance-studio-professionale.html): Agenti AI rischi e costi nascosti: danni a terzi, LLM tax e manipolazioni. Scopri come uno studio professionale o una PMI può governarli con una strategia…
 - [Responsabilità agenti AI azienda: chi risponde se qualcosa va storto?](https://oviaitalia.it/blog/responsabilita-agenti-ai-azienda-governance-prove-ceo-fraud.html): Agenti AI, CEO fraud e Legge 132/2025: chi risponde se un agente commette un errore? Cosa documentare prima di attivarlo nel tuo studio o nella tua PMI.
 - [Agenti AI rischi dati: cosa può andare storto nel tuo studio](https://oviaitalia.it/blog/agenti-ai-rischi-dati-studi-professionali-pmi.html): Agenti AI che pubblicano dati, accedono a sistemi non autorizzati, espongono clienti: cosa è successo davvero e quali controlli servono ora in uno studio o…
@@ -37,6 +38,7 @@
 - [Home (EN)](https://oviaitalia.it/en/): Ovia in English.
 - [Services (EN)](https://oviaitalia.it/en/services/)
 - [FAQ (EN)](https://oviaitalia.it/en/faq.html)
+- [AI Agents Out of Control: Real Risks for Professional Firms](https://oviaitalia.it/en/blog/ai-agents-out-of-control-risks-professional-firms.html): OpenAI blocks GPT-6.1 Astra over safety concerns: what it means for firms and SMEs relying on autonomous AI agents without defined boundaries, accountability and controls.
 - [AI Agents: Risks, Costs & Governance for Your Firm](https://oviaitalia.it/en/blog/ai-agents-risks-costs-governance-professional-firms.html): AI agents risks and hidden costs: third-party damage, LLM tax, and adversarial manipulation. Learn how professional firms and SMEs in Italy can govern them effectively.
 - [AI Agent Liability: Who Is Responsible When Things Go Wrong?](https://oviaitalia.it/en/blog/ai-agent-liability-governance-evidence-ceo-fraud.html): AI agents, CEO fraud & Italian Law 132/2025: who is liable if an agent makes a mistake? What to document before deploying one in your firm or SME.
 - [AI Agents & Data Risks: What Can Go Wrong for Your Firm](https://oviaitalia.it/en/blog/ai-agents-data-risks-professional-firms-smes.html): AI agents publishing data, accessing unauthorised systems, exposing clients: what has actually happened and what controls professional firms and SMEs need now.
