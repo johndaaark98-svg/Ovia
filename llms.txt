@@ -23,6 +23,7 @@
 - Quanto tempo serve per vedere i primi risultati?
 
 ## Blog (ultimi articoli)
+- [ROI dell'intelligenza artificiale: come misurarlo davvero](https://oviaitalia.it/blog/roi-intelligenza-artificiale-studi-professionali-pmi.html): Come calcolare il ROI dell'intelligenza artificiale nello studio professionale o nella PMI: metriche concrete, costo per risultato e governance degli agenti AI.
 - [Dipendenza fornitori AI: i rischi per studi e PMI italiane](https://oviaitalia.it/blog/dipendenza-fornitori-ai-rischi-studi-professionali-pmi.html): Cosa succede al tuo studio se l'API AI che usi va offline o cambia condizioni? Rischi GDPR, AI Act e continuità operativa: la guida pratica di Ovia.
 - [Agenti AI fuori controllo: i rischi reali per lo studio professionale](https://oviaitalia.it/blog/agenti-ai-fuori-controllo-rischi-studio-professionale.html): OpenAI blocca GPT-6.1 Astra per sicurezza: cosa significa per studi e PMI affidarsi ad agenti AI autonomi senza perimetri, responsabilità e controlli definiti.
 - [Agenti AI rischi e costi: come governarli nello studio](https://oviaitalia.it/blog/agenti-ai-rischi-costi-governance-studio-professionale.html): Agenti AI rischi e costi nascosti: danni a terzi, LLM tax e manipolazioni. Scopri come uno studio professionale o una PMI può governarli con una strategia…
@@ -39,6 +40,7 @@
 - [Home (EN)](https://oviaitalia.it/en/): Ovia in English.
 - [Services (EN)](https://oviaitalia.it/en/services/)
 - [FAQ (EN)](https://oviaitalia.it/en/faq.html)
+- [AI Return on Investment: How to Measure It Properly](https://oviaitalia.it/en/blog/ai-roi-how-to-measure-professional-firms-smes.html): How to calculate the ROI of AI in your professional firm or SME: concrete metrics, cost per result, and AI agent governance to protect your bottom line.
 - [AI Vendor Lock-In: Risks for Firms and SMEs in Italy](https://oviaitalia.it/en/blog/ai-vendor-lock-in-risks-professional-firms-smes-italy.html): What happens to your firm if the AI API you rely on goes offline or changes its terms? GDPR, AI Act and operational continuity risks: Ovia's practical guide.
 - [AI Agents Out of Control: Real Risks for Professional Firms](https://oviaitalia.it/en/blog/ai-agents-out-of-control-risks-professional-firms.html): OpenAI blocks GPT-6.1 Astra over safety concerns: what it means for firms and SMEs relying on autonomous AI agents without defined boundaries, accountability and controls.
 - [AI Agents: Risks, Costs & Governance for Your Firm](https://oviaitalia.it/en/blog/ai-agents-risks-costs-governance-professional-firms.html): AI agents risks and hidden costs: third-party damage, LLM tax, and adversarial manipulation. Learn how professional firms and SMEs in Italy can govern them effectively.
