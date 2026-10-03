@@ -23,6 +23,7 @@
 - Quanto tempo serve per vedere i primi risultati?
 
 ## Blog (ultimi articoli)
+- [Rischi agenti AI per studi professionali: cosa succede ora](https://oviaitalia.it/blog/rischi-agenti-ai-studi-professionali-custom-gpt-openai.html): OpenAI ha avvisato oltre 100 organizzazioni per incidenti reali con agenti AI. Cosa rischiano studi professionali e PMI con dati sensibili e segreto…
 - [Agenti AI accesso dati aziendali: rischi reali per studi e PMI](https://oviaitalia.it/blog/agenti-ai-accesso-dati-aziendali-rischi-studi-pmi.html): Agenti AI accesso dati aziendali: cosa è successo con OpenAI, quali rischi GDPR e deontologici per studi e PMI italiane, e come governarli prima che sia tardi.
 - [ROI dell'intelligenza artificiale: come misurarlo davvero](https://oviaitalia.it/blog/roi-intelligenza-artificiale-studi-professionali-pmi.html): Come calcolare il ROI dell'intelligenza artificiale nello studio professionale o nella PMI: metriche concrete, costo per risultato e governance degli agenti AI.
 - [Dipendenza fornitori AI: i rischi per studi e PMI italiane](https://oviaitalia.it/blog/dipendenza-fornitori-ai-rischi-studi-professionali-pmi.html): Cosa succede al tuo studio se l'API AI che usi va offline o cambia condizioni? Rischi GDPR, AI Act e continuità operativa: la guida pratica di Ovia.
@@ -41,6 +42,7 @@
 - [Home (EN)](https://oviaitalia.it/en/): Ovia in English.
 - [Services (EN)](https://oviaitalia.it/en/services/)
 - [FAQ (EN)](https://oviaitalia.it/en/faq.html)
+- [AI Agent Risks for Professional Firms: What's Happening Now](https://oviaitalia.it/en/blog/ai-agent-risks-professional-firms-custom-gpt-openai.html): OpenAI has already alerted over 100 organisations to real incidents involving AI agents. What are the risks for professional firms and SMEs handling sensitive client data?
 - [AI Agents & Business Data: Real Risks for Firms and SMEs](https://oviaitalia.it/en/blog/ai-agents-business-data-access-risks-professional-firms-smes.html): AI agents accessing business data: what happened with OpenAI, the real GDPR and professional-ethics risks for Italian firms and SMEs, and how to manage them before it's too late.
 - [AI Return on Investment: How to Measure It Properly](https://oviaitalia.it/en/blog/ai-roi-how-to-measure-professional-firms-smes.html): How to calculate the ROI of AI in your professional firm or SME: concrete metrics, cost per result, and AI agent governance to protect your bottom line.
 - [AI Vendor Lock-In: Risks for Firms and SMEs in Italy](https://oviaitalia.it/en/blog/ai-vendor-lock-in-risks-professional-firms-smes-italy.html): What happens to your firm if the AI API you rely on goes offline or changes its terms? GDPR, AI Act and operational continuity risks: Ovia's practical guide.
