@@ -1,0 +1,760 @@
+{
+  "title": "Ragionamento agenti AI: affidabilità e rischi reali",
+  "slug": "ragionamento-agenti-ai-affidabilita-rischi-studi-professionali",
+  "meta_description": "Il ragionamento degli agenti AI sembra trasparente ma può essere opaco o distorto. Ecco i rischi per studi e PMI italiane e come governarli davvero.",
+  "lead": "Un agente AI può mostrarti una spiegazione convincente della sua risposta — e averla costruita su basi che non puoi verificare. Per uno studio professionale, questo non è un problema tecnico: è un rischio di responsabilità.",
+  "tags": [
+    "ragionamento agenti AI affidabilità",
+    "AI Act trasparenza",
+    "rischi AI studi professionali",
+    "spiegabilità AI",
+    "governance AI"
+  ],
+  "intro": [
+    "Immagina di ricevere da un agente AI un'analisi di un contratto: la risposta è articolata, cita clausole, indica rischi, propone una raccomandazione. Sembra professionale. Ma come sai se il ragionamento che ti viene mostrato corrisponde davvero a quello che l'AI ha eseguito internamente?",
+    "Questa è la domanda che sempre più studi professionali e PMI italiane devono porsi oggi. Gli agenti AI — sistemi capaci di compiere più passi in autonomia, accedere a documenti, eseguire ricerche e produrre output strutturati — stanno entrando nei flussi di lavoro reali. Ma portano con sé un problema strutturale: il loro **ragionamento interno è opaco**, e la spiegazione che mostrano all'utente può essere parziale, semplificata o addirittura costruita a posteriori per sembrare coerente. Per uno studio professionale, fidarsi di quella spiegazione senza un processo di controllo è un errore con conseguenze concrete: dalla firma di un documento fondato su premesse non verificabili, fino alla responsabilità professionale verso il cliente.",
+    "In questo articolo analizziamo perché il ragionamento degli agenti AI non è sempre quello che sembra, cosa prescrive l'AI Act europeo in materia di trasparenza, e quali controlli concreti uno studio o una PMI italiana deve mettere in piedi prima di portare questi strumenti in produzione."
+  ],
+  "punti_chiave": [
+    "Gli agenti AI possono produrre spiegazioni del loro ragionamento che non riflettono il processo decisionale reale interno.",
+    "L'AI Act classifica i sistemi AI per rischio in base a ciò che fanno, non a come 'pensano': la trasparenza verso l'utente è un obbligo per i sistemi ad alto rischio.",
+    "Per uno studio professionale, usare un output AI non verificabile come base per un parere firmato espone a responsabilità professionali dirette.",
+    "La sicurezza non sta nell'AI, ma nel processo che la circonda: log di audit, revisione umana obbligatoria e soglie di escalation definite prima dell'uso.",
+    "Distinguere un agente AI affidabile da uno che produce output plausibili ma errati richiede test strutturati, non fiducia nell'interfaccia.",
+    "La Legge 132/2025 impone ai professionisti italiani obblighi informativi sull'uso dell'AI verso i propri clienti, rendendo la governance un requisito e non un'opzione."
+  ],
+  "sezioni": [
+    {
+      "h2": "Cosa significa davvero 'ragionamento opaco' in un agente AI",
+      "paragrafi": [
+        "Quando un agente AI ti mostra una risposta articolata — con passaggi logici, riferimenti normativi, conclusioni graduate — stai vedendo l'**output testuale** del sistema, non il suo processo computazionale reale. I modelli linguistici di grandi dimensioni (i cosiddetti LLM, Large Language Models) generano testo che assomiglia a un ragionamento, ma la catena causale che ha portato a quella risposta non è la stessa cosa che leggi sullo schermo.",
+        "Questo fenomeno — noto nella letteratura tecnica come 'post-hoc rationalization', cioè razionalizzazione a posteriori — significa che il modello può costruire una giustificazione coerente per un output che in realtà è stato generato per motivi statistici diversi. Non è un'intenzione malevola: è una caratteristica strutturale del modo in cui questi sistemi funzionano. Come nota [Agenda Digitale](https://www.agendadigitale.eu/sicurezza/agenti-ai-fuori-controllo-la-nuova-minaccia-alle-infrastrutture-critiche/), gli agenti AI che operano in autonomia su più passi amplificano questo rischio: ogni passaggio porta con sé incertezza, e l'incertezza si accumula.",
+        "Per uno studio commercialista, un avvocato o un consulente del lavoro, questo crea un problema pratico immediato: non puoi sapere, guardando l'output, se l'agente ha davvero analizzato tutti i documenti che doveva, se ha ponderato correttamente i fattori rilevanti, o se ha semplicemente prodotto un testo plausibile omettendo informazioni cruciali. L'output appare corretto — il rischio è nel processo che non vedi. Puoi approfondire questo tema nel nostro articolo sui [controllo degli output AI nello studio professionale](/blog/controllo-output-ai-studio-professionale-errori-silenziosi.html)."
+      ],
+      "blocco": {
+        "tipo": "compare",
+        "titolo": "Come appare vs. come funziona un agente AI",
+        "sinistra": {
+          "badge": "Cosa vede l'utente",
+          "titolo": "La spiegazione visibile",
+          "righe": [
+            {
+              "etichetta": "Passaggi logici",
+              "valore": "Strutturati e leggibili"
+            },
+            {
+              "etichetta": "Riferimenti citati",
+              "valore": "Sembrano verificati"
+            },
+            {
+              "etichetta": "Conclusione",
+              "valore": "Motivata e coerente"
+            },
+            {
+              "etichetta": "Tono",
+              "valore": "Autorevole e preciso"
+            }
+          ]
+        },
+        "destra": {
+          "badge": "Cosa accade internamente",
+          "titolo": "Il processo reale",
+          "righe": [
+            {
+              "etichetta": "Processo decisionale",
+              "valore": "Statistico, non logico-deduttivo"
+            },
+            {
+              "etichetta": "Fonti consultate",
+              "valore": "Non sempre tracciabili"
+            },
+            {
+              "etichetta": "Omissioni",
+              "valore": "Non segnalate all'utente"
+            },
+            {
+              "etichetta": "Spiegazione",
+              "valore": "Può essere costruita a posteriori"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "h2": "Cosa rischi come professionista se non verifichi l'output AI",
+      "paragrafi": [
+        "La domanda che ogni titolare di studio deve porsi non è 'l'AI ha sbagliato?' ma 'posso dimostrare che ho controllato?'. La responsabilità professionale in Italia non si trasferisce all'AI: rimane interamente in capo al professionista che firma il documento, il parere, la dichiarazione.",
+        "Questo significa che firmare un contratto, un parere legale o una nota di analisi fiscale basandosi su un'elaborazione AI non verificata espone il professionista a due ordini di rischio. **Il primo è tecnico**: l'agente AI può aver omesso un'eccezione normativa, frainteso una data, o ignorato un documento perché non correttamente indicizzato nel suo contesto. **Il secondo è ordinistico e civile**: in caso di contestazione da parte del cliente, l'assenza di un processo documentato di revisione dell'output AI indebolisce significativamente la posizione del professionista.",
+        "Come segnala [AI4Business](https://www.ai4business.it/intelligenza-artificiale/fidarsi-o-no-del-ragionamento-dellai-cosa-bisogna-sapere-prima-di-portare-gli-agenti-in-produzione/), portare un agente AI 'in produzione' — cioè usarlo su casi reali con impatto su clienti — richiede una fase di validazione strutturata che molti studi saltano perché l'interfaccia del sistema ispira fiducia. L'aspetto grafico curato, i testi ben formattati, il tono professionale dell'output sono elementi di design, non garanzie di correttezza. La nostra analisi sulla [responsabilità degli agenti AI](/blog/responsabilita-agenti-ai-azienda-governance-prove-ceo-fraud.html) approfondisce chi risponde quando qualcosa va storto."
+      ],
+      "blocco": {
+        "tipo": "warning",
+        "titolo": "Attenzione: l'output plausibile non è output verificato",
+        "voci": [
+          {
+            "testo": "Un agente AI può produrre un'analisi contrattuale ben strutturata omettendo clausole rilevanti senza segnalarlo. Se il documento viene firmato e il cliente subisce un danno, la responsabilità è del professionista, non del sistema AI."
+          },
+          {
+            "testo": "La Legge 132/2025 impone ai professionisti italiani obblighi informativi sull'uso dell'AI: usare uno strumento AI senza processo di controllo documentato può configurare una violazione degli obblighi di trasparenza verso il cliente."
+          },
+          {
+            "testo": "Un agente AI che opera su più passi (ricerca, sintesi, redazione) accumula incertezza a ogni passaggio: l'errore nel primo passo può propagarsi e amplificarsi nell'output finale, restando invisibile all'utente."
+          }
+        ]
+      }
+    },
+    {
+      "h2": "Cosa dice l'AI Act sulla trasparenza e spiegabilità delle decisioni AI",
+      "paragrafi": [
+        "L'AI Act europeo — il regolamento già in vigore con applicazione progressiva — non classifica i sistemi AI in base a quanto 'intelligentemente' ragionano, ma in base a **cosa possono fare e con quali conseguenze**. Come sottolinea [Cybersecurity360](https://www.cybersecurity360.it/cultura-cyber/ai-i-motivi-di-una-decisione-sono-sempre-piu-oscuri-ecco-i-rischi-per-pa-e-cittadini/), ciò che conta non è se la macchina 'pensa', ma cosa può fare concretamente alle persone o alle organizzazioni che ne subiscono gli effetti.",
+        "Per i sistemi classificati ad **alto rischio** — tra cui rientrano quelli usati in ambiti legali, fiscali, di valutazione creditizia o di accesso a servizi essenziali — l'AI Act prescrive obblighi precisi: documentazione tecnica, log di funzionamento, supervisione umana, e soprattutto **spiegabilità** delle decisioni nei confronti degli utenti finali. Un agente AI usato da uno studio professionale per produrre pareri o analisi con impatto diretto sul cliente può rientrare in questa categoria.",
+        "La spiegabilità richiesta dall'AI Act non significa che il modello debba rivelare il suo codice sorgente: significa che l'**utente deve poter capire i fattori principali che hanno determinato un output** e deve poter contestarlo. Se il tuo agente AI non tiene log consultabili, non distingue le fonti usate dall'output prodotto e non permette una revisione umana tracciata, potrebbe già essere in una zona di non conformità. Come segnala [Agenda Digitale](https://www.agendadigitale.eu/cittadinanza-digitale/ai-i-motivi-di-una-decisione-sono-sempre-piu-oscuri-ecco-i-rischi-per-pa-e-cittadini/), la tendenza attuale dei sistemi AI è verso un'opacità crescente, non verso una maggiore trasparenza: le architetture più complesse (agenti multi-step, ragionamento a catena) rendono più difficile, non più facile, spiegare una decisione."
+      ],
+      "blocco": {
+        "tipo": "checklist",
+        "titolo": "Il tuo agente AI soddisfa i requisiti di trasparenza dell'AI Act?",
+        "voci": [
+          {
+            "titolo": "Log di funzionamento",
+            "testo": "Il sistema registra i passaggi eseguiti, i documenti consultati e le decisioni intermedie?",
+            "ok": false
+          },
+          {
+            "titolo": "Indicazione delle fonti",
+            "testo": "L'output distingue chiaramente le informazioni recuperate dalle elaborazioni generate?",
+            "ok": false
+          },
+          {
+            "titolo": "Supervisione umana attiva",
+            "testo": "Esiste un passaggio di revisione umana obbligatorio prima che l'output venga usato in un documento firmato?",
+            "ok": false
+          },
+          {
+            "titolo": "Possibilità di contestazione",
+            "testo": "L'utente finale (o il cliente del professionista) può sapere che una decisione è stata assistita da AI e richiedere chiarimenti?",
+            "ok": false
+          },
+          {
+            "titolo": "Classificazione del rischio",
+            "testo": "Hai valutato se il caso d'uso specifico rientra nella categoria ad alto rischio dell'AI Act?",
+            "ok": false
+          },
+          {
+            "titolo": "Documentazione tecnica",
+            "testo": "Il fornitore del sistema AI mette a disposizione la documentazione richiesta dall'AI Act per i sistemi ad alto rischio?",
+            "ok": false
+          }
+        ]
+      }
+    },
+    {
+      "h2": "Come distinguere un agente AI affidabile da uno che produce output plausibili ma sbagliati",
+      "paragrafi": [
+        "La distinzione non si vede dall'interfaccia. Un agente AI che produce output errati in modo sistematico può avere esattamente la stessa apparenza di uno che funziona correttamente. Questo è forse il punto più controintuitivo: **la qualità grafica e narrativa dell'output non è un indicatore di affidabilità**.",
+        "Per valutare un agente AI prima di portarlo in produzione nello studio, servono test strutturati su casi con risposta nota. Significa prendere 20-30 situazioni reali — contratti già analizzati, dichiarazioni già controllate, quesiti già risolti — e verificare se l'agente arriva alle stesse conclusioni corrette. Se l'agente sbaglia su casi noti, non è pronto. Se l'agente non sa indicare cosa non sa — cioè non segnala i propri limiti di contesto — è particolarmente pericoloso, perché produce output confidenti anche in condizioni di incertezza.",
+        "Un secondo criterio è la **tracciabilità dei passaggi**: un agente affidabile deve permetterti di seguire, almeno a grandi linee, quale documento ha letto, quale sezione ha usato, quale regola ha applicato. Senza questa tracciabilità, non stai usando uno strumento professionale: stai usando un oracolo. E gli oracoli, nella pratica legale e fiscale, non sono ammessi come fonte probatoria. Considera anche di integrare la gestione degli output AI con un sistema strutturato come [Ovia Second Brain](/servizi/second-brain.html), che collega ogni informazione al cliente e al contesto giusto, rendendo le decisioni rintracciabili nel tempo."
+      ],
+      "blocco": {
+        "tipo": "steps",
+        "titolo": "Come testare un agente AI prima di portarlo in produzione nello studio",
+        "voci": [
+          {
+            "titolo": "Definisci i casi di test",
+            "meta": "Passo 1",
+            "testo": "Seleziona 20-30 situazioni reali già risolte correttamente: contratti, quesiti normativi, analisi documentali. Questi sono il tuo banco di prova."
+          },
+          {
+            "titolo": "Esegui il test in cieco",
+            "meta": "Passo 2",
+            "testo": "Sottoponi i casi all'agente senza rivelare le risposte corrette. Registra ogni output, compresi i passaggi intermedi se il sistema li mostra."
+          },
+          {
+            "titolo": "Misura errori e omissioni",
+            "meta": "Passo 3",
+            "testo": "Confronta gli output con le risposte note. Conta non solo gli errori diretti, ma anche le omissioni: informazioni rilevanti che l'agente non ha segnalato."
+          },
+          {
+            "titolo": "Verifica il comportamento in condizioni limite",
+            "meta": "Passo 4",
+            "testo": "Sottoponi casi ambigui o con dati mancanti. Un agente affidabile segnala l'incertezza; uno non affidabile produce comunque un output confidenziale."
+          },
+          {
+            "titolo": "Definisci le soglie di accettabilità",
+            "meta": "Passo 5",
+            "testo": "Stabilisci prima del test quale tasso di errore è tollerabile per il tuo caso d'uso. Se il sistema non raggiunge la soglia, non va in produzione."
+          },
+          {
+            "titolo": "Documenta i risultati",
+            "meta": "Passo 6",
+            "testo": "Tieni traccia scritta di ogni test. Questa documentazione è parte del tuo presidio di conformità all'AI Act e dimostra che hai esercitato supervisione umana."
+          }
+        ]
+      }
+    },
+    {
+      "h2": "I controlli da mettere in piedi nello studio prima di usare agenti AI su casi reali",
+      "paragrafi": [
+        "La governance degli agenti AI non è una questione tecnologica: è una questione di processo. La tecnologia può essere più o meno affidabile, ma il processo che la circonda determina se il suo utilizzo è professionale o rischioso. Questo è il principio che guida l'approccio di Ovia: **la sicurezza non è nell'AI, è nel processo**.",
+        "Concretamente, prima di usare un agente AI su pratiche reali con impatto su clienti, uno studio professionale deve definire almeno tre elementi. **Il primo è il perimetro d'uso**: quali attività l'agente può svolgere in autonomia e quali richiedono obbligatoriamente revisione umana. Non tutte le attività hanno lo stesso profilo di rischio: rispondere a una domanda generale su una scadenza fiscale è diverso dal redigere una bozza di contratto. **Il secondo è il sistema di log**: ogni interazione con l'agente deve essere registrata, con indicazione di chi l'ha avviata, su quale pratica, con quali input e con quale output. Senza log, in caso di contestazione non hai nulla da mostrare. **Il terzo è la procedura di escalation**: quando l'agente segnala incertezza, o quando l'output riguarda un caso ad alto valore o alto rischio, chi decide? Deve esserci una persona nominata, non un'assunzione implicita.",
+        "Sul piano normativo, la [Legge 132/2025](/blog/legge-132-2025-ai-professionisti-informativa-clienti.html) ha introdotto per i professionisti italiani obblighi specifici di informativa ai clienti sull'uso dell'AI: non si tratta solo di buona pratica, ma di un adempimento. Questo rende la governance AI un requisito ordinistico, non una scelta opzionale. Integrare un sistema come [Ovia CRM](/servizi/crm.html) — con scadenze, log di attività e documenti generati tracciati per cliente — consente di tenere tutto sotto controllo senza aggiungere lavoro manuale."
+      ],
+      "blocco": {
+        "tipo": "checklist",
+        "titolo": "Controlli minimi prima di usare agenti AI in produzione nello studio",
+        "voci": [
+          {
+            "titolo": "Perimetro d'uso scritto",
+            "testo": "Elenco delle attività che l'agente può svolgere in autonomia e di quelle che richiedono revisione umana obbligatoria.",
+            "ok": true
+          },
+          {
+            "titolo": "Sistema di log attivo",
+            "testo": "Ogni interazione con l'agente viene registrata con data, utente, pratica, input e output.",
+            "ok": true
+          },
+          {
+            "titolo": "Revisione umana su output ad alto rischio",
+            "testo": "Per pareri firmati, bozze contrattuali e analisi fiscali, la revisione umana è un passaggio obbligatorio documentato.",
+            "ok": true
+          },
+          {
+            "titolo": "Procedura di escalation definita",
+            "testo": "Esiste una persona nominata che decide quando l'output AI non è utilizzabile o richiede verifica approfondita.",
+            "ok": false
+          },
+          {
+            "titolo": "Informativa clienti aggiornata",
+            "testo": "I clienti sono informati dell'uso di strumenti AI nei processi dello studio, come previsto dalla Legge 132/2025.",
+            "ok": false
+          },
+          {
+            "titolo": "Test periodici di qualità",
+            "testo": "L'agente viene testato regolarmente su casi noti per verificare che il livello di affidabilità si mantenga nel tempo.",
+            "ok": false
+          }
+        ]
+      }
+    },
+    {
+      "h2": "Ragionamento agenti AI e affidabilità: perché la strategia viene prima dello strumento",
+      "paragrafi": [
+        "Il dibattito pubblico sugli agenti AI si concentra spesso sulla capacità dei modelli — quanto sono veloci, quanto sembrano intelligenti, quanti token elaborano. Ma per uno studio professionale o una PMI italiana, queste caratteristiche sono secondarie rispetto a una domanda più semplice: **questo strumento, in questo processo, con questi controlli, produce output che posso usare con cognizione di causa?**",
+        "La risposta non dipende dal modello AI scelto. Dipende dal modo in cui lo si integra nel flusso di lavoro, dai controlli che si attivano prima e dopo ogni output, e dalla capacità di chi guida lo studio di distinguere la comodità di uno strumento dall'affidabilità di un processo. Un agente AI che sembra spiegare il proprio ragionamento ma in realtà lo semplifica o lo omette non è uno strumento professionale: è uno strumento che richiede un professionista ancora più attento per essere usato senza rischi.",
+        "La direzione giusta non è diffidare degli agenti AI a priori, né fidarsi di loro in modo acritico. È costruire il processo che li rende governabili: con test strutturati, log tracciabili, revisione umana definita e un perimetro d'uso chiaro. Questo è ciò che separa un'adozione AI che crea valore da una che crea rischi. Per approfondire come impostare questo percorso nello studio, puoi leggere anche il nostro articolo su [come governare rischi e costi degli agenti AI](/blog/agenti-ai-rischi-costi-governance-studio-professionale.html)."
+      ],
+      "blocco": {
+        "tipo": "compare",
+        "titolo": "Adozione AI senza strategia vs. adozione AI governata",
+        "sinistra": {
+          "badge": "Approccio non strutturato",
+          "titolo": "Come si fa spesso",
+          "righe": [
+            {
+              "etichetta": "Valutazione",
+              "valore": "Si prova lo strumento e sembra funzionare"
+            },
+            {
+              "etichetta": "Test",
+              "valore": "Nessuno strutturato su casi noti"
+            },
+            {
+              "etichetta": "Log",
+              "valore": "Assenti o non consultabili"
+            },
+            {
+              "etichetta": "Revisione umana",
+              "valore": "Occasionale, non documentata"
+            },
+            {
+              "etichetta": "In caso di errore",
+              "valore": "Nessuna traccia del processo seguito"
+            }
+          ]
+        },
+        "destra": {
+          "badge": "Approccio consigliato",
+          "titolo": "Come lo imposta Ovia",
+          "righe": [
+            {
+              "etichetta": "Valutazione",
+              "valore": "Test su casi reali con risposta nota prima del go-live"
+            },
+            {
+              "etichetta": "Test",
+              "valore": "Strutturati, ripetuti periodicamente"
+            },
+            {
+              "etichetta": "Log",
+              "valore": "Ogni interazione registrata per cliente e pratica"
+            },
+            {
+              "etichetta": "Revisione umana",
+              "valore": "Obbligatoria su output ad alto rischio, documentata"
+            },
+            {
+              "etichetta": "In caso di errore",
+              "valore": "Processo tracciato che dimostra supervisione esercitata"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "ovia_view": {
+    "titolo": "Il punto di Ovia: la sicurezza non è nell'AI, è nel processo che la circonda",
+    "paragrafi": [
+      "Ovia non vende agenti AI che 'ragionano meglio'. Costruisce i processi che rendono gli agenti AI utilizzabili in modo professionale: con perimetri d'uso definiti, log tracciabili, revisione umana obbligatoria sui casi ad alto rischio e test strutturati prima del go-live. Per uno studio professionale, questo è ciò che trasforma uno strumento rischioso in un vantaggio operativo reale.",
+      "Ogni sistema che Ovia progetta include una fase di mappatura preventiva: cosa automatizzare, con quali controlli, come misurare l'affidabilità nel tempo. Non partiamo dallo strumento disponibile — partiamo dal rischio che il professionista non può permettersi di correre e costruiamo il processo che lo elimina.",
+      "Se stai valutando di usare agenti AI nello studio o stai già usando strumenti AI senza un sistema di controllo strutturato, il primo passo è capire esattamente dove si trovano i tuoi punti di esposizione. Ovia può aiutarti a mapparlo."
+    ]
+  },
+  "faq": [
+    {
+      "domanda": "Posso fidarmi di quello che un agente AI mi mostra come spiegazione della sua risposta?",
+      "risposta": "Non completamente. I modelli AI possono costruire spiegazioni coerenti a posteriori, che non riflettono il processo computazionale reale che ha generato l'output. Questo fenomeno — chiamato razionalizzazione a posteriori — è una caratteristica strutturale di questi sistemi, non un'eccezione. Per questo la spiegazione visibile di un agente AI non è sufficiente per validare la correttezza di un output: serve un processo di revisione indipendente."
+    },
+    {
+      "domanda": "Come faccio a sapere se un agente AI ha preso una decisione corretta o ha omesso informazioni importanti?",
+      "risposta": "Non puoi saperlo guardando solo l'output. Devi verificarlo attraverso test su casi con risposta nota, controllo delle fonti citate, e revisione umana da parte di un esperto del dominio. Un agente AI affidabile mostra i passaggi intermedi e segnala quando l'incertezza è alta; uno non affidabile produce output confidenti anche quando non ha informazioni sufficienti per rispondere correttamente."
+    },
+    {
+      "domanda": "Cosa rischio come professionista se firmo un documento basato su un'analisi AI che non riesco a verificare?",
+      "risposta": "Rischi la responsabilità professionale piena verso il cliente, perché la firma resta in capo a te indipendentemente dallo strumento usato per produrre l'analisi. In caso di contestazione, l'assenza di un processo documentato di revisione dell'output AI indebolisce significativamente la tua posizione davanti all'ordine professionale o in sede civile. La Legge 132/2025 aggiunge obblighi informativi specifici sull'uso dell'AI verso i clienti."
+    },
+    {
+      "domanda": "Cosa dice l'AI Act sulla trasparenza e spiegabilità delle decisioni automatizzate?",
+      "risposta": "L'AI Act classifica i sistemi AI per livello di rischio in base agli effetti che possono avere. Per i sistemi ad alto rischio — tra cui possono rientrare strumenti usati in ambiti legali, fiscali o di valutazione — impone obblighi di documentazione tecnica, log di funzionamento, supervisione umana e spiegabilità verso l'utente finale. La spiegabilità non richiede di aprire il codice sorgente, ma di rendere comprensibili i fattori principali che hanno determinato un output."
+    },
+    {
+      "domanda": "Quali controlli devo mettere in piedi prima di usare agenti AI in produzione nello studio?",
+      "risposta": "I controlli minimi sono tre: un perimetro d'uso scritto che distingua le attività autonome da quelle che richiedono revisione umana, un sistema di log che registri ogni interazione con indicazione di chi ha avviato il processo e su quale pratica, e una procedura di escalation che nomini chi decide quando l'output non è utilizzabile. A questi si aggiungono test strutturati su casi noti prima del go-live e un'informativa aggiornata ai clienti sull'uso dell'AI."
+    },
+    {
+      "domanda": "Come si distingue un agente AI affidabile da uno che produce output apparentemente corretti ma sbagliati?",
+      "risposta": "La distinzione non si vede dall'interfaccia. Si misura attraverso test strutturati su casi con risposta nota: se l'agente sbaglia o omette informazioni rilevanti su situazioni già risolte correttamente, non è pronto per l'uso professionale. Un secondo indicatore è il comportamento in condizioni di incertezza: un agente affidabile segnala quando non ha dati sufficienti, mentre uno non affidabile produce comunque un output confidenziale."
+    },
+    {
+      "domanda": "Esistono casi in cui gli agenti AI hanno nascosto i fattori decisivi delle loro scelte?",
+      "risposta": "Il problema non è tanto che gli agenti 'nascondano' intenzionalmente, quanto che il loro processo decisionale interno non è trasparente nemmeno per chi li ha costruiti. Le architetture più complesse — agenti multi-step con catene di ragionamento lunghe — rendono più difficile, non più facile, ricostruire perché un output è stato prodotto in un certo modo. Questo è strutturale nei modelli attuali e non dipende dal fornitore: per questo il controllo di processo è imprescindibile."
+    }
+  ],
+  "conclusione": [
+    "Il ragionamento di un agente AI può sembrare trasparente, strutturato, professionale — e allo stesso tempo essere parziale, costruito a posteriori o fondato su presupposti che non puoi verificare. Per uno studio professionale o una PMI italiana, questa non è un'astrazione filosofica: è un rischio concreto, con implicazioni di responsabilità dirette.",
+    "La risposta non è rinunciare agli agenti AI, né fidarsi della loro interfaccia. È costruire il processo che li rende governabili: test prima del go-live, log tracciabili, revisione umana sui casi ad alto rischio, perimetri d'uso chiari e informativa ai clienti aggiornata. Questo è ciò che trasforma uno strumento potenzialmente rischioso in un vantaggio operativo reale.",
+    "Se vuoi capire dove si trovano i tuoi punti di esposizione reali nell'uso attuale o pianificato degli agenti AI, Ovia può aiutarti a mapparlo — prima che il problema si manifesti su un caso cliente reale."
+  ],
+  "prodotti": [
+    {
+      "id": "second-brain",
+      "perche": "Ogni output prodotto da un agente AI viene collegato al cliente e alla pratica giusta, con uno storico consultabile: così ogni decisione assistita dall'AI è rintracciabile nel tempo e verificabile in caso di contestazione."
+    },
+    {
+      "id": "crm",
+      "perche": "Il CRM Ovia registra log di attività, scadenze e documenti generati per ogni cliente: fornisce la tracciabilità operativa che l'AI Act e la Legge 132/2025 richiedono quando si usano strumenti AI nei processi dello studio."
+    },
+    {
+      "id": "documenti",
+      "perche": "Gestisce la raccolta e il controllo documentale con storico di ogni invio e sollecito: riduce i casi in cui un agente AI opera su dati incompleti, che sono la principale causa di output plausibili ma errati."
+    }
+  ],
+  "categoria": "normativa-sicurezza",
+  "keyword": "ragionamento agenti AI affidabilità",
+  "data": "2026-10-05T12:17:41.976Z",
+  "autore": "Redazione Ovia",
+  "parole": 2329,
+  "minuti": 12,
+  "fonti": [
+    {
+      "titolo": "Agenti AI fuori controllo, la nuova minaccia alle infrastrutture critiche",
+      "fonte": "Agenda Digitale",
+      "url": "https://www.agendadigitale.eu/sicurezza/agenti-ai-fuori-controllo-la-nuova-minaccia-alle-infrastrutture-critiche/"
+    },
+    {
+      "titolo": "Fidarsi o no del ragionamento dell’AI? Cosa bisogna sapere prima di portare gli agenti in produzione",
+      "fonte": "AI4Business",
+      "url": "https://www.ai4business.it/intelligenza-artificiale/fidarsi-o-no-del-ragionamento-dellai-cosa-bisogna-sapere-prima-di-portare-gli-agenti-in-produzione/"
+    },
+    {
+      "titolo": "AI, i motivi di una decisione sono sempre più oscuri: ecco i rischi per PA e cittadini",
+      "fonte": "Agenda Digitale",
+      "url": "https://www.agendadigitale.eu/cittadinanza-digitale/ai-i-motivi-di-una-decisione-sono-sempre-piu-oscuri-ecco-i-rischi-per-pa-e-cittadini/"
+    },
+    {
+      "titolo": "AI Act: non conta se la macchina pensa, ma cosa può fare",
+      "fonte": "Cybersecurity360",
+      "url": "https://www.cybersecurity360.it/cultura-cyber/ai-act-non-conta-se-la-macchina-pensa-ma-cosa-puo-fare/"
+    }
+  ],
+  "generato": {
+    "da": "ai",
+    "modello": "claude-sonnet-4-6",
+    "il": "2026-10-05T12:17:41.976Z"
+  },
+  "en": {
+    "title": "AI Agent Reasoning: Reliability and Real Risks",
+    "slug": "ai-agent-reasoning-reliability-risks-professional-firms",
+    "meta_description": "AI agent reasoning can look transparent but may be opaque or distorted. Here are the real risks for Italian firms and SMEs — and how to govern them properly.",
+    "lead": "An AI agent can show you a convincing explanation of its answer — and have built it on foundations you cannot verify. For a professional firm, this is not a technical problem: it is a liability risk.",
+    "tags": [
+      "AI agent reasoning reliability",
+      "AI Act transparency",
+      "AI risks professional firms",
+      "AI explainability",
+      "AI governance"
+    ],
+    "intro": [
+      "Imagine receiving a contract analysis from an AI agent: the response is well-structured, it cites clauses, identifies risks, and puts forward a recommendation. It looks professional. But how do you know whether the reasoning shown to you actually reflects what the AI carried out internally?",
+      "This is the question that more and more Italian professional firms and SMEs must ask themselves today. AI agents — systems capable of taking multiple steps autonomously, accessing documents, running searches and producing structured outputs — are entering real workflows. But they bring with them a structural problem: their **internal reasoning is opaque**, and the explanation they present to the user may be partial, simplified, or even constructed after the fact to appear coherent. For a professional firm, trusting that explanation without a verification process is a mistake with concrete consequences: from signing a document built on unverifiable premises, to direct professional liability towards the client.",
+      "In this article we examine why AI agent reasoning is not always what it seems, what the European AI Act requires on transparency, and what concrete controls an Italian firm or SME must put in place before bringing these tools into production."
+    ],
+    "punti_chiave": [
+      "AI agents can produce explanations of their reasoning that do not reflect the actual internal decision-making process.",
+      "The AI Act classifies AI systems by risk based on what they do, not on how they 'think': transparency towards the user is a mandatory requirement for high-risk systems.",
+      "For a professional firm, using an unverified AI output as the basis for a signed opinion creates direct professional liability.",
+      "Safety does not lie in the AI itself, but in the process surrounding it: audit logs, mandatory human review, and escalation thresholds defined before use.",
+      "Distinguishing a reliable AI agent from one that produces plausible but incorrect outputs requires structured testing, not trust in the interface.",
+      "Italian Law 132/2025 imposes disclosure obligations on Italian professionals regarding their use of AI with clients, making governance a requirement rather than an option."
+    ],
+    "sezioni": [
+      {
+        "h2": "What 'opaque reasoning' in an AI agent really means",
+        "paragrafi": [
+          "When an AI agent presents you with a well-structured response — complete with logical steps, regulatory references and graduated conclusions — what you are seeing is the system's **textual output**, not its actual computational process. Large language models (LLMs) generate text that resembles reasoning, but the causal chain that produced that response is not the same thing you read on screen.",
+          "This phenomenon — known in the technical literature as 'post-hoc rationalisation' — means that a model can construct a coherent justification for an output that was actually generated for entirely different statistical reasons. This is not a malicious intention: it is a structural feature of how these systems work. As [Agenda Digitale](https://www.agendadigitale.eu/sicurezza/agenti-ai-fuori-controllo-la-nuova-minaccia-alle-infrastrutture-critiche/) notes, AI agents that operate autonomously across multiple steps amplify this risk: each step carries its own uncertainty, and uncertainty compounds.",
+          "For an accountant, a lawyer or an employment consultant, this creates an immediate practical problem: looking at the output alone, you cannot tell whether the agent genuinely analysed all the documents it was supposed to, whether it correctly weighed the relevant factors, or whether it simply produced a plausible piece of text while omitting crucial information. The output looks correct — the risk lies in the process you cannot see. You can explore this further in our article on [AI output control in professional firms](/en/blog/ai-output-control-silent-errors-professional-firms.html)."
+        ],
+        "blocco": {
+          "tipo": "compare",
+          "titolo": "What an AI agent appears to do vs. how it actually works",
+          "sinistra": {
+            "badge": "What the user sees",
+            "titolo": "The visible explanation",
+            "righe": [
+              {
+                "etichetta": "Logical steps",
+                "valore": "Structured and readable"
+              },
+              {
+                "etichetta": "Cited references",
+                "valore": "Appear verified"
+              },
+              {
+                "etichetta": "Conclusion",
+                "valore": "Reasoned and coherent"
+              },
+              {
+                "etichetta": "Tone",
+                "valore": "Authoritative and precise"
+              }
+            ]
+          },
+          "destra": {
+            "badge": "What happens internally",
+            "titolo": "The actual process",
+            "righe": [
+              {
+                "etichetta": "Decision-making",
+                "valore": "Statistical, not logical-deductive"
+              },
+              {
+                "etichetta": "Sources consulted",
+                "valore": "Not always traceable"
+              },
+              {
+                "etichetta": "Omissions",
+                "valore": "Not flagged to the user"
+              },
+              {
+                "etichetta": "Explanation",
+                "valore": "May be constructed after the fact"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "h2": "What you risk as a professional if you do not verify AI output",
+        "paragrafi": [
+          "The question every firm principal must ask is not 'did the AI get it wrong?' but 'can I demonstrate that I checked?' Professional liability in Italy does not transfer to the AI: it rests entirely with the professional who signs the document, the opinion, the declaration.",
+          "This means that signing a contract, a legal opinion or a tax analysis note based on unverified AI processing exposes the professional to two categories of risk. **The first is technical**: the AI agent may have missed a regulatory exception, misread a date, or overlooked a document because it was not correctly indexed in its context. **The second is disciplinary and civil**: if the client raises a dispute, the absence of a documented process for reviewing AI output significantly weakens the professional's position.",
+          "As [AI4Business](https://www.ai4business.it/intelligenza-artificiale/fidarsi-o-no-del-ragionamento-dellai-cosa-bisogna-sapere-prima-di-portare-gli-agenti-in-produzione/) points out, taking an AI agent 'into production' — meaning using it on real cases with direct impact on clients — requires a structured validation phase that many firms skip because the system's interface inspires confidence. A polished visual design, well-formatted text and a professional tone in the output are design choices, not guarantees of accuracy. Our analysis on [AI agent liability](/en/blog/ai-agent-liability-governance-evidence-ceo-fraud.html) explores in depth who is accountable when something goes wrong."
+        ],
+        "blocco": {
+          "tipo": "warning",
+          "titolo": "Caution: plausible output is not verified output",
+          "voci": [
+            {
+              "testo": "An AI agent can produce a well-structured contractual analysis while omitting relevant clauses without flagging the omission. If the document is signed and the client suffers a loss, liability lies with the professional, not the AI system."
+            },
+            {
+              "testo": "Italian Law 132/2025 imposes disclosure obligations on Italian professionals regarding the use of AI: using an AI tool without a documented control process may constitute a breach of transparency obligations towards the client."
+            },
+            {
+              "testo": "An AI agent operating across multiple steps (research, synthesis, drafting) accumulates uncertainty at every stage: an error in the first step can propagate and amplify through the final output, remaining invisible to the user."
+            }
+          ]
+        }
+      },
+      {
+        "h2": "What the AI Act says on transparency and explainability of AI decisions",
+        "paragrafi": [
+          "The European AI Act — the regulation already in force with phased application — does not classify AI systems according to how 'intelligently' they reason, but according to **what they can do and with what consequences**. As [Cybersecurity360](https://www.cybersecurity360.it/cultura-cyber/ai-i-motivi-di-una-decisione-sono-sempre-piu-oscuri-ecco-i-rischi-per-pa-e-cittadini/) emphasises, what matters is not whether the machine 'thinks', but what it can concretely do to the people or organisations affected by its outputs.",
+          "For systems classified as **high-risk** — which include those used in legal, tax, credit-assessment or essential-services contexts — the AI Act sets out precise obligations: technical documentation, operational logs, human oversight, and above all **explainability** of decisions to end users. An AI agent used by a professional firm to produce opinions or analyses with a direct impact on clients may well fall into this category.",
+          "The explainability required by the AI Act does not mean the model must disclose its source code: it means that the **user must be able to understand the main factors that determined an output** and must be able to challenge it. If your AI agent keeps no accessible logs, does not distinguish the sources it used from the output it produced, and does not allow for tracked human review, it may already be in a non-compliance zone. As [Agenda Digitale](https://www.agendadigitale.eu/cittadinanza-digitale/ai-i-motivi-di-una-decisione-sono-sempre-piu-oscuri-ecco-i-rischi-per-pa-e-cittadini/) notes, the current trend in AI systems is towards greater opacity, not greater transparency: more complex architectures (multi-step agents, chain-of-thought reasoning) make it harder, not easier, to explain a decision."
+        ],
+        "blocco": {
+          "tipo": "checklist",
+          "titolo": "Does your AI agent meet the AI Act's transparency requirements?",
+          "voci": [
+            {
+              "titolo": "Operational logs",
+              "testo": "Does the system record the steps taken, the documents consulted and the intermediate decisions made?",
+              "ok": false
+            },
+            {
+              "titolo": "Source attribution",
+              "testo": "Does the output clearly distinguish retrieved information from generated elaborations?",
+              "ok": false
+            },
+            {
+              "titolo": "Active human oversight",
+              "testo": "Is there a mandatory human review step before the output is used in a signed document?",
+              "ok": false
+            },
+            {
+              "titolo": "Right to challenge",
+              "testo": "Can the end user (or the professional's client) be informed that a decision was AI-assisted and request clarification?",
+              "ok": false
+            },
+            {
+              "titolo": "Risk classification",
+              "testo": "Have you assessed whether your specific use case falls into the AI Act's high-risk category?",
+              "ok": false
+            },
+            {
+              "titolo": "Technical documentation",
+              "testo": "Does the AI system provider make available the documentation required by the AI Act for high-risk systems?",
+              "ok": false
+            }
+          ]
+        }
+      },
+      {
+        "h2": "How to tell a reliable AI agent from one that produces plausible but wrong outputs",
+        "paragrafi": [
+          "The difference is not visible from the interface. An AI agent that systematically produces incorrect outputs can look exactly the same as one that works correctly. This is perhaps the most counter-intuitive point: **the visual and narrative quality of the output is not an indicator of reliability**.",
+          "To evaluate an AI agent before taking it into production in your firm, you need structured testing on cases with known answers. That means taking 20–30 real situations — contracts already analysed, declarations already checked, questions already resolved — and verifying whether the agent reaches the same correct conclusions. If the agent gets known cases wrong, it is not ready. If the agent cannot indicate what it does not know — in other words, if it does not flag its own contextual limitations — it is particularly dangerous, because it produces confident outputs even under conditions of uncertainty.",
+          "A second criterion is **traceability of steps**: a reliable agent must allow you to follow, at least in broad terms, which document it read, which section it used, and which rule it applied. Without this traceability, you are not using a professional tool: you are consulting an oracle. And oracles, in legal and tax practice, are not admissible as an evidential source. You should also consider integrating AI output management with a structured system such as [Ovia Second Brain](/en/services/second-brain.html), which links every piece of information to the right client and context, keeping decisions traceable over time."
+        ],
+        "blocco": {
+          "tipo": "steps",
+          "titolo": "How to test an AI agent before taking it into production in your firm",
+          "voci": [
+            {
+              "titolo": "Define your test cases",
+              "meta": "Step 1",
+              "testo": "Select 20–30 real situations already resolved correctly: contracts, regulatory questions, document analyses. These are your benchmark."
+            },
+            {
+              "titolo": "Run a blind test",
+              "meta": "Step 2",
+              "testo": "Submit the cases to the agent without revealing the correct answers. Record every output, including intermediate steps if the system displays them."
+            },
+            {
+              "titolo": "Measure errors and omissions",
+              "meta": "Step 3",
+              "testo": "Compare the outputs against the known answers. Count not only direct errors but also omissions: relevant information the agent failed to flag."
+            },
+            {
+              "titolo": "Check behaviour under edge conditions",
+              "meta": "Step 4",
+              "testo": "Submit ambiguous cases or cases with missing data. A reliable agent flags uncertainty; an unreliable one produces a confident output regardless."
+            },
+            {
+              "titolo": "Set acceptance thresholds",
+              "meta": "Step 5",
+              "testo": "Decide before the test what error rate is tolerable for your use case. If the system does not meet the threshold, it does not go into production."
+            },
+            {
+              "titolo": "Document the results",
+              "meta": "Step 6",
+              "testo": "Keep a written record of every test. This documentation forms part of your AI Act compliance framework and demonstrates that you have exercised human oversight."
+            }
+          ]
+        }
+      },
+      {
+        "h2": "The controls your firm must put in place before using AI agents on real cases",
+        "paragrafi": [
+          "AI agent governance is not a technological matter: it is a process matter. The technology may be more or less reliable, but the process surrounding it determines whether its use is professional or risky. This is the principle that guides Ovia's approach: **safety does not lie in the AI — it lies in the process**.",
+          "Concretely, before using an AI agent on real client matters, a professional firm must define at least three elements. **The first is the scope of use**: which activities the agent may carry out autonomously and which ones require mandatory human review. Not all activities carry the same risk profile: answering a general question about a tax deadline is very different from drafting a contract. **The second is the logging system**: every interaction with the agent must be recorded, with details of who initiated it, on which matter, with what inputs and what output. Without logs, if a dispute arises you have nothing to show. **The third is the escalation procedure**: when the agent flags uncertainty, or when the output concerns a high-value or high-risk case, who decides? There must be a named individual — not an implicit assumption.",
+          "On the regulatory side, [Italian Law 132/2025](/en/blog/italian-law-132-2025-ai-professionals-client-disclosure.html) has introduced specific disclosure obligations for Italian professionals regarding their use of AI with clients: this is not merely best practice, but a compliance requirement. This makes AI governance a professional-order obligation, not an optional choice. Integrating a system such as [Ovia CRM](/en/services/crm.html) — with deadlines, activity logs and generated documents all tracked by client — allows you to keep everything under control without adding manual work."
+        ],
+        "blocco": {
+          "tipo": "checklist",
+          "titolo": "Minimum controls before using AI agents in production in your firm",
+          "voci": [
+            {
+              "titolo": "Written scope of use",
+              "testo": "A list of activities the agent may perform autonomously and those requiring mandatory human review.",
+              "ok": true
+            },
+            {
+              "titolo": "Active logging system",
+              "testo": "Every interaction with the agent is recorded with date, user, matter, input and output.",
+              "ok": true
+            },
+            {
+              "titolo": "Human review on high-risk outputs",
+              "testo": "For signed opinions, contract drafts and tax analyses, human review is a mandatory documented step.",
+              "ok": true
+            },
+            {
+              "titolo": "Defined escalation procedure",
+              "testo": "A named individual exists who decides when AI output is unusable or requires in-depth verification.",
+              "ok": false
+            },
+            {
+              "titolo": "Updated client disclosure",
+              "testo": "Clients are informed of the use of AI tools in the firm's processes, as required by Italian Law 132/2025.",
+              "ok": false
+            },
+            {
+              "titolo": "Periodic quality testing",
+              "testo": "The agent is tested regularly on known cases to verify that its reliability is maintained over time.",
+              "ok": false
+            }
+          ]
+        }
+      },
+      {
+        "h2": "AI agent reasoning and reliability: why strategy comes before the tool",
+        "paragrafi": [
+          "The public debate on AI agents tends to focus on model capabilities — how fast they are, how intelligent they seem, how many tokens they process. But for an Italian professional firm or SME, these characteristics are secondary to a simpler question: **does this tool, in this process, with these controls, produce outputs I can use with full understanding of what I am relying on?**",
+          "The answer does not depend on which AI model you choose. It depends on how you integrate it into the workflow, on the controls you activate before and after every output, and on the ability of those running the firm to distinguish the convenience of a tool from the reliability of a process. An AI agent that appears to explain its reasoning but actually simplifies or omits it is not a professional tool: it is a tool that demands an even more attentive professional in order to be used without risk.",
+          "The right direction is neither to distrust AI agents outright nor to trust them uncritically. It is to build the process that makes them governable: structured testing, traceable logs, defined human review and a clear scope of use. This is what separates an AI adoption that creates value from one that creates risk. To explore how to set up this approach in your firm, you can also read our article on [how to govern AI agent risks and costs](/en/blog/ai-agents-risks-costs-governance-professional-firms.html)."
+        ],
+        "blocco": {
+          "tipo": "compare",
+          "titolo": "Unstructured AI adoption vs. governed AI adoption",
+          "sinistra": {
+            "badge": "Unstructured approach",
+            "titolo": "How it is often done",
+            "righe": [
+              {
+                "etichetta": "Evaluation",
+                "valore": "The tool is tried out and seems to work"
+              },
+              {
+                "etichetta": "Testing",
+                "valore": "None structured on known cases"
+              },
+              {
+                "etichetta": "Logs",
+                "valore": "Absent or inaccessible"
+              },
+              {
+                "etichetta": "Human review",
+                "valore": "Occasional, undocumented"
+              },
+              {
+                "etichetta": "If an error occurs",
+                "valore": "No trace of the process followed"
+              }
+            ]
+          },
+          "destra": {
+            "badge": "Recommended approach",
+            "titolo": "How Ovia sets it up",
+            "righe": [
+              {
+                "etichetta": "Evaluation",
+                "valore": "Testing on real cases with known answers before go-live"
+              },
+              {
+                "etichetta": "Testing",
+                "valore": "Structured, repeated periodically"
+              },
+              {
+                "etichetta": "Logs",
+                "valore": "Every interaction recorded by client and matter"
+              },
+              {
+                "etichetta": "Human review",
+                "valore": "Mandatory on high-risk outputs, documented"
+              },
+              {
+                "etichetta": "If an error occurs",
+                "valore": "Tracked process that demonstrates oversight was exercised"
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "ovia_view": {
+      "titolo": "Ovia's view: safety does not lie in the AI — it lies in the process surrounding it",
+      "paragrafi": [
+        "Ovia does not sell AI agents that 'reason better'. It builds the processes that make AI agents usable in a professional context: with defined scopes of use, traceable logs, mandatory human review on high-risk cases, and structured testing before go-live. For a professional firm, this is what turns a risky tool into a genuine operational advantage.",
+        "Every system Ovia designs includes a preventive mapping phase: what to automate, with what controls, and how to measure reliability over time. We do not start from the available tool — we start from the risk the professional cannot afford to take, and build the process that eliminates it.",
+        "If you are considering using AI agents in your firm, or are already using AI tools without a structured control system, the first step is to understand exactly where your exposure points lie. Ovia can help you map them."
+      ]
+    },
+    "faq": [
+      {
+        "domanda": "Can I trust the explanation an AI agent shows me of its own response?",
+        "risposta": "Not entirely. AI models can construct coherent explanations after the fact that do not reflect the actual computational process that generated the output. This phenomenon — known as post-hoc rationalisation — is a structural feature of these systems, not an exception. This is why the visible explanation of an AI agent is not sufficient to validate the correctness of an output: an independent review process is required."
+      },
+      {
+        "domanda": "How can I tell whether an AI agent has reached the right decision or has omitted important information?",
+        "risposta": "You cannot tell by looking at the output alone. You need to verify it through testing on cases with known answers, checking the sources cited, and human expert review of the domain in question. A reliable AI agent shows its intermediate steps and flags when uncertainty is high; an unreliable one produces confident outputs even when it lacks sufficient information to answer correctly."
+      },
+      {
+        "domanda": "What do I risk as a professional if I sign a document based on an AI analysis I cannot verify?",
+        "risposta": "You face full professional liability towards the client, because the signature remains yours regardless of the tool used to produce the analysis. In the event of a dispute, the absence of a documented process for reviewing AI output significantly weakens your position before the relevant professional body or in civil proceedings. Italian Law 132/2025 adds specific disclosure obligations regarding the use of AI with clients."
+      },
+      {
+        "domanda": "What does the AI Act say about transparency and explainability of automated decisions?",
+        "risposta": "The AI Act classifies AI systems by risk level based on the effects they may produce. For high-risk systems — which may include tools used in legal, tax or assessment contexts — it imposes obligations around technical documentation, operational logs, human oversight and explainability towards the end user. Explainability does not require opening the source code, but making the main factors that determined an output understandable."
+      },
+      {
+        "domanda": "What controls must I put in place before using AI agents in production in my firm?",
+        "risposta": "The minimum controls are three: a written scope of use that distinguishes autonomous activities from those requiring human review; a logging system that records every interaction with details of who initiated the process and on which matter; and an escalation procedure that names who decides when the output cannot be used. These must be supplemented by structured testing on known cases before go-live and an updated disclosure to clients regarding the use of AI."
+      },
+      {
+        "domanda": "How do you tell a reliable AI agent from one that produces apparently correct but actually wrong outputs?",
+        "risposta": "The difference is not visible from the interface. It is measured through structured testing on cases with known answers: if the agent gets things wrong or omits relevant information on situations already resolved correctly, it is not ready for professional use. A second indicator is its behaviour under uncertainty: a reliable agent flags when it lacks sufficient data, while an unreliable one produces a confident output regardless."
+      },
+      {
+        "domanda": "Are there cases where AI agents have concealed the decisive factors behind their choices?",
+        "risposta": "The issue is less that agents 'conceal' things intentionally, and more that their internal decision-making process is not transparent even to those who built them. More complex architectures — multi-step agents with long chains of reasoning — make it harder, not easier, to reconstruct why an output was produced in a particular way. This is structural in current models and does not depend on the provider: which is precisely why process control is non-negotiable."
+      }
+    ],
+    "conclusione": [
+      "An AI agent's reasoning can appear transparent, structured and professional — and at the same time be partial, constructed after the fact, or founded on premises you cannot verify. For an Italian professional firm or SME, this is not a philosophical abstraction: it is a concrete risk with direct liability implications.",
+      "The answer is not to abandon AI agents, nor to trust their interface uncritically. It is to build the process that makes them governable: testing before go-live, traceable logs, human review on high-risk cases, clear scopes of use, and an updated client disclosure. This is what turns a potentially risky tool into a genuine operational advantage.",
+      "If you want to understand exactly where your real exposure points lie in your current or planned use of AI agents, Ovia can help you map them — before the problem surfaces on a real client case."
+    ],
+    "prodotti": [
+      {
+        "id": "second-brain",
+        "perche": "Every output produced by an AI agent is linked to the right client and matter, with a searchable history: every AI-assisted decision is traceable over time and verifiable if a dispute arises."
+      },
+      {
+        "id": "crm",
+        "perche": "Ovia CRM records activity logs, deadlines and documents generated for each client, providing the operational traceability that the AI Act and Italian Law 132/2025 require when AI tools are used in the firm's processes."
+      },
+      {
+        "id": "documenti",
+        "perche": "It manages document collection and control with a complete history of every submission and follow-up, reducing the cases where an AI agent operates on incomplete data — the primary cause of plausible but incorrect outputs."
+      }
+    ],
+    "parole": 1739,
+    "minuti": 10,
+    "tradotto": {
+      "da": "ai",
+      "modello": "claude-sonnet-4-6",
+      "il": "2026-10-05T12:19:57.056Z"
+    }
+  }
+}
