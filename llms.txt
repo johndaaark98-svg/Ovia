@@ -23,6 +23,7 @@
 - Quanto tempo serve per vedere i primi risultati?
 
 ## Blog (ultimi articoli)
+- [AI Act per studi professionali e PMI: dalla compliance alla governance](https://oviaitalia.it/blog/ai-act-studi-professionali-pmi-italiane-governance.html): AI Act dal 2 agosto 2026: cosa cambia per studi professionali e PMI italiane, come costruire una governance AI reale oltre la compliance formale.
 - [Ragionamento agenti AI: affidabilità e rischi reali](https://oviaitalia.it/blog/ragionamento-agenti-ai-affidabilita-rischi-studi-professionali.html): Il ragionamento degli agenti AI sembra trasparente ma può essere opaco o distorto. Ecco i rischi per studi e PMI italiane e come governarli davvero.
 - [Controllo output AI: gli errori silenziosi nello studio](https://oviaitalia.it/blog/controllo-output-ai-studio-professionale-errori-silenziosi.html): L'AI produce documenti, risposte e analisi in quantità, ma chi li controlla davvero? Guida pratica al controllo output AI nello studio professionale.
 - [Rischi agenti AI per studi professionali: cosa succede ora](https://oviaitalia.it/blog/rischi-agenti-ai-studi-professionali-custom-gpt-openai.html): OpenAI ha avvisato oltre 100 organizzazioni per incidenti reali con agenti AI. Cosa rischiano studi professionali e PMI con dati sensibili e segreto…
@@ -44,6 +45,7 @@
 - [Home (EN)](https://oviaitalia.it/en/): Ovia in English.
 - [Services (EN)](https://oviaitalia.it/en/services/)
 - [FAQ (EN)](https://oviaitalia.it/en/faq.html)
+- [AI Act for Professional Firms and SMEs: Beyond Compliance](https://oviaitalia.it/en/blog/ai-act-professional-firms-smes-italy-governance.html): AI Act fully applies from 2 August 2026: what changes for Italian professional firms and SMEs, and how to build real AI governance beyond formal compliance.
 - [AI Agent Reasoning: Reliability and Real Risks](https://oviaitalia.it/en/blog/ai-agent-reasoning-reliability-risks-professional-firms.html): AI agent reasoning can look transparent but may be opaque or distorted. Here are the real risks for Italian firms and SMEs — and how to govern them properly.
 - [AI Output Control: Silent Errors in Professional Firms](https://oviaitalia.it/en/blog/ai-output-control-silent-errors-professional-firms.html): AI produces documents, responses and analyses at scale — but who actually checks them? A practical guide to AI output control in professional firms and SMEs.
 - [AI Agent Risks for Professional Firms: What's Happening Now](https://oviaitalia.it/en/blog/ai-agent-risks-professional-firms-custom-gpt-openai.html): OpenAI has already alerted over 100 organisations to real incidents involving AI agents. What are the risks for professional firms and SMEs handling sensitive client data?
