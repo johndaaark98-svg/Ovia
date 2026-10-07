@@ -1,0 +1,632 @@
+{
+  "title": "Attacchi informatici e blocco operativo: il rischio per PMI e studi",
+  "slug": "attacchi-informatici-blocco-operativo-pmi-studi-professionali",
+  "meta_description": "Il 56% delle aziende italiane subisce attacchi cyber che bloccano le operazioni. Cosa rischia uno studio professionale o una PMI? Dati, responsabilità e…",
+  "lead": "Un attacco informatico oggi non ruba solo i dati: ferma il lavoro, manda a monte le scadenze fiscali e può generare responsabilità professionali dirette. Ecco cosa succede davvero quando i sistemi si bloccano.",
+  "tags": [
+    "attacchi informatici blocco operativo PMI",
+    "ransomware studi professionali",
+    "sicurezza informatica PMI",
+    "resilienza operativa",
+    "NIS2 studi professionali"
+  ],
+  "intro": [
+    "Un mercoledì mattina qualsiasi: il titolare di uno studio professionale accende il computer e trova un messaggio che chiede un riscatto. I file sono cifrati, il gestionale è irraggiungibile, la casella PEC non risponde. Nel giro di poche ore scade una dichiarazione fiscale. Questo non è uno scenario catastrofista: è la conseguenza concreta di un attacco ransomware, e la probabilità che accada è più alta di quanto si pensi.",
+    "Secondo la [ricerca globale di Claroty su 2.000 responsabili aziendali](https://www.innovationpost.it/tecnologie/industrial-security/fabbriche-connesse-e-minacce-informatiche-oltre-meta-delle-aziende-subisce-blocchi-operativi/), **il 56% dei responsabili italiani intervistati dichiara che la propria organizzazione ha subito negli ultimi 12 mesi un attacco cyber con impatto operativo diretto**. Non stiamo parlando di grandi industrie manifatturiere: il perimetro di rischio si è allargato a qualunque realtà che dipenda dai propri sistemi digitali per lavorare. E uno studio di commercialisti, avvocati o consulenti del lavoro dipende da quei sistemi ogni giorno, per ogni cliente.",
+    "Il punto cruciale — e spesso sottovalutato — è che la sicurezza informatica non è più una questione del reparto IT. È una condizione per poter esercitare la professione. Questo articolo spiega cosa succede realmente quando un attacco blocca uno studio, quali responsabilità ne derivano e come ridurre il rischio senza stravolgere i processi quotidiani."
+  ],
+  "punti_chiave": [
+    "Il 56% delle aziende italiane ha subito un attacco cyber con impatto operativo nell'ultimo anno (fonte: Claroty 2026)",
+    "In Italia, un incidente cyber legato ai sistemi fisici provoca in media 2,3 ore di interruzione operativa; nel 10% dei casi dura tre giorni o più",
+    "Il ransomware non ruba solo dati: cifra i file e blocca l'accesso ai sistemi, rendendo impossibile lavorare fino al ripristino",
+    "Per uno studio professionale, il blocco operativo significa scadenze mancate e potenziali responsabilità verso i clienti",
+    "Ridurre la superficie di attacco passa da controllo degli accessi, backup verificati e processi documentati — non da tecnologie esotiche",
+    "NIS2 e AI Act introducono obblighi di gestione del rischio cyber anche per soggetti che finora si sentivano esclusi"
+  ],
+  "sezioni": [
+    {
+      "h2": "Il 56% delle aziende italiane colpite: siamo davvero così esposti?",
+      "paragrafi": [
+        "La risposta è sì, e i dati lo confermano senza margini di dubbio. La ricerca \"The Global State of Operational Security 2026\" di Claroty — condotta su 2.000 responsabili a livello internazionale, di cui **150 in Italia** — certifica che [più della metà delle organizzazioni italiane ha già subito un attacco con conseguenze operative dirette](https://www.innovationpost.it/tecnologie/industrial-security/fabbriche-connesse-e-minacce-informatiche-oltre-meta-delle-aziende-subisce-blocchi-operativi/) nell'arco di dodici mesi.",
+        "Il problema non è solo la frequenza: è la natura degli attacchi. Il 33% degli intervistati italiani indica il **ransomware** come uno dei rischi principali, e alla stessa percentuale si attestano gli **accessi di terze parti non sicuri o non monitorati**. Quest'ultimo dato merita attenzione particolare: fornitori di software gestionale, consulenti IT esterni, manutentori di sistemi — tutte figure che uno studio professionale coinvolge regolarmente — rappresentano un vettore di ingresso che spesso non viene considerato nella valutazione del rischio.",
+        "In media, le aziende italiane rappresentate nella ricerca hanno registrato **3,11 incidenti originati da accessi di terze parti** nell'ultimo anno. Non è un problema astratto: è il fornitore del software di contabilità che si collega da remoto, o il consulente esterno che accede alla rete dello studio senza autenticazione a due fattori."
+      ],
+      "blocco": {
+        "tipo": "stats",
+        "titolo": "Il rischio cyber in Italia: i numeri del 2026",
+        "voci": [
+          {
+            "valore": "56%",
+            "testo": "delle aziende italiane ha subito un attacco cyber con impatto operativo negli ultimi 12 mesi (Claroty 2026)"
+          },
+          {
+            "valore": "2,3 ore",
+            "testo": "è la durata media dell'interruzione operativa causata da un incidente cyber in Italia"
+          },
+          {
+            "valore": "10%",
+            "testo": "dei casi ha comportato interruzioni di tre giorni o più"
+          },
+          {
+            "valore": "3,11",
+            "testo": "incidenti in media originati da accessi di terze parti nell'ultimo anno per azienda italiana"
+          }
+        ]
+      }
+    },
+    {
+      "h2": "Come un ransomware blocca lo studio, non solo i dati",
+      "paragrafi": [
+        "Il ransomware (letteralmente: software che chiede un riscatto) viene spesso descritto come uno strumento per \"rubare dati\". Questa definizione è parziale e fuorviante. Il meccanismo reale è diverso: il malware entra nei sistemi — attraverso una email di phishing, un accesso remoto compromesso o una vulnerabilità non aggiornata — e **cifra i file presenti sui dispositivi e sui server collegati alla rete**. Non li copia all'esterno: li rende inaccessibili dall'interno.",
+        "Per uno studio professionale, questo significa che il gestionale dei clienti è bloccato, le cartelle condivise sono illeggibili, i documenti in lavorazione sono irrecuperabili senza la chiave di decifratura. Il lavoro si ferma. Non parzialmente: completamente. E i sistemi rimangono fermi finché non si paga il riscatto — senza garanzia di ricevere la chiave — oppure finché non si ripristina tutto da un backup pulito, operazione che richiede ore o giorni.",
+        "La ricerca Claroty conferma questa dinamica: **in Italia, gli incidenti cyber hanno comportato in media 2,3 ore di interruzione operativa**, ma il 10% dei casi ha registrato blocchi di tre giorni o più. Per uno studio con scadenze fiscali settimanali, tre giorni di fermo non sono un inconveniente: sono un'emergenza professionale con conseguenze concrete per i clienti.",
+        "Un ulteriore fattore di rischio emerge dall'adozione crescente dell'intelligenza artificiale negli ambienti operativi: circa **due aziende italiane su tre** dichiarano di usare tecnologie AI nei propri sistemi, e il 27% degli intervistati considera gli attacchi cyber basati sull'AI una minaccia significativa. L'AI non è solo uno strumento di difesa: può essere usata anche per rendere gli attacchi più veloci, personalizzati e difficili da intercettare."
+      ],
+      "blocco": {
+        "tipo": "steps",
+        "titolo": "Come un attacco ransomware blocca uno studio in 4 fasi",
+        "voci": [
+          {
+            "titolo": "Ingresso",
+            "meta": "Ore 0",
+            "testo": "Un'email di phishing, un accesso remoto non protetto o un software non aggiornato aprono la porta al malware, spesso senza che nessuno se ne accorga nell'immediato."
+          },
+          {
+            "titolo": "Propagazione",
+            "meta": "Ore 0-4",
+            "testo": "Il malware si muove silenziosamente nella rete interna, raggiungendo server, backup collegati in rete e dispositivi condivisi prima di attivarsi."
+          },
+          {
+            "titolo": "Cifratura",
+            "meta": "Ore 4-8",
+            "testo": "I file vengono resi inaccessibili. Il gestionale, le cartelle clienti, le email locali: tutto ciò che è raggiungibile dalla rete viene bloccato."
+          },
+          {
+            "titolo": "Blocco operativo",
+            "meta": "Ore 8+",
+            "testo": "Lo studio non può lavorare. Le scadenze incombono, i clienti chiamano, ma i sistemi sono fermi fino al ripristino o al pagamento del riscatto — che non garantisce il recupero dei dati."
+          }
+        ]
+      }
+    },
+    {
+      "h2": "Responsabilità del professionista quando i dati dei clienti sono compromessi",
+      "paragrafi": [
+        "Questo è il punto che molti titolari di studio sottovalutano: un attacco informatico non è solo un problema tecnico, è un problema di responsabilità professionale. Uno studio di commercialisti o avvocati tratta dati sensibili dei clienti — situazioni patrimoniali, contenziosi, dati fiscali, informazioni riservate — e ha obblighi precisi in materia di protezione.",
+        "Il **GDPR** impone di notificare le violazioni dei dati personali all'Autorità Garante entro 72 ore dalla scoperta, e ai clienti coinvolti quando il rischio per i loro diritti è elevato. Un ransomware che cifra i file di uno studio rientra quasi certamente in questa casistica. La mancata notifica è una violazione autonoma, indipendente dall'attacco stesso.",
+        "A questo si aggiungono le implicazioni del **segreto professionale**: l'accesso non autorizzato a dati coperti da riservatezza — anche se non intenzionalmente divulgati — può configurare una violazione degli obblighi deontologici. Non serve che i dati vengano pubblicati online: basta che siano stati accessibili a soggetti non autorizzati.",
+        "Sul fronte normativo, la direttiva **NIS2** — recepita in Italia — estende gli obblighi di gestione del rischio cyber a un perimetro più ampio di soggetti, inclusi molti che finora si consideravano esclusi. Parallelamente, l'**AI Act** introduce requisiti di trasparenza e controllo per i sistemi AI usati in contesti professionali. Chi automatizza processi con strumenti AI senza una governance adeguata accumula rischio normativo, non solo tecnico. L'articolo Ovia su [AI Act per studi professionali e PMI](/blog/ai-act-studi-professionali-pmi-italiane-governance.html) approfondisce questo punto."
+      ],
+      "blocco": {
+        "tipo": "warning",
+        "titolo": "Le responsabilità che un attacco attiva automaticamente",
+        "voci": [
+          {
+            "testo": "Obbligo di notifica al Garante Privacy entro 72 ore dalla scoperta della violazione (GDPR art. 33): la mancata notifica è una violazione separata, sanzionabile indipendentemente dall'attacco."
+          },
+          {
+            "testo": "Possibile violazione del segreto professionale se dati riservati dei clienti sono stati accessibili a terzi non autorizzati, anche senza esfiltrazione comprovata."
+          },
+          {
+            "testo": "Responsabilità contrattuale verso i clienti per i danni derivanti da scadenze mancate o da compromissione delle loro informazioni."
+          },
+          {
+            "testo": "Obblighi NIS2 di gestione del rischio e di segnalazione degli incidenti significativi, con sanzioni per i soggetti inclusi nel perimetro."
+          }
+        ]
+      }
+    },
+    {
+      "h2": "Resilienza operativa per uno studio da 5 a 20 persone: cosa significa davvero",
+      "paragrafi": [
+        "\"Resilienza operativa\" è un termine che suona da grande azienda. In realtà, per uno studio professionale con 5-20 persone, significa una cosa sola: **la capacità di continuare a lavorare — o di riprendere il prima possibile — anche dopo un incidente**. Non è un progetto da centinaia di migliaia di euro: è un insieme di scelte di processo e di configurazione che possono fare la differenza tra 2 ore di fermo e 3 giorni.",
+        "Il primo pilastro è il **backup verificato e isolato**. Verificato significa testato periodicamente: un backup che non è mai stato ripristinato in test non è un backup affidabile. Isolato significa fisicamente o logicamente separato dalla rete principale, così che un ransomware che cifra i server non raggiunga anche le copie di sicurezza.",
+        "Il secondo pilastro è il **controllo degli accessi**. Sapere chi può accedere a cosa — e revocare rapidamente gli accessi quando cambiano i collaboratori o i fornitori — riduce drasticamente la superficie di attacco. La ricerca Claroty evidenzia che in Italia il 47% degli intervistati indica una governance della sicurezza IT e OT prevalentemente o completamente integrata, mentre per oltre la metà questa integrazione non è ancora completa. In uno studio, la governance degli accessi non richiede sistemi complessi: richiede una politica chiara e strumenti configurati correttamente.",
+        "Il terzo pilastro è la **documentazione dei processi critici**. Se i sistemi si bloccano, è fondamentale sapere immediatamente quali sono le scadenze nelle prossime 48-72 ore, come contattare i clienti in modo alternativo e chi è responsabile di ogni azione di ripristino. Uno studio che dipende interamente dai propri software per sapere cosa fare è più vulnerabile di uno che ha anche un piano B documentato. Strumenti come [Ovia Second Brain](/servizi/second-brain.html) permettono di mantenere una memoria operativa accessibile anche in scenari di emergenza."
+      ],
+      "blocco": {
+        "tipo": "compare",
+        "titolo": "Resilienza operativa: studio esposto vs studio preparato",
+        "sinistra": {
+          "badge": "Studio esposto",
+          "titolo": "Come si lavora oggi (senza un piano)",
+          "righe": [
+            {
+              "etichetta": "Backup",
+              "valore": "Automatico ma mai testato, spesso sulla stessa rete"
+            },
+            {
+              "etichetta": "Accessi esterni",
+              "valore": "Fornitori e consulenti con credenziali non monitorate"
+            },
+            {
+              "etichetta": "Scadenze",
+              "valore": "Solo nel gestionale: se si blocca, nessuno sa da dove ripartire"
+            },
+            {
+              "etichetta": "Piano di risposta",
+              "valore": "Assente: si improvvisa al momento dell'incidente"
+            },
+            {
+              "etichetta": "Formazione",
+              "valore": "Zero: phishing e social engineering non sono argomenti di studio"
+            }
+          ]
+        },
+        "destra": {
+          "badge": "Studio preparato",
+          "titolo": "Approccio consigliato",
+          "righe": [
+            {
+              "etichetta": "Backup",
+              "valore": "3-2-1: tre copie, due supporti diversi, una off-site o offline, testata ogni mese"
+            },
+            {
+              "etichetta": "Accessi esterni",
+              "valore": "Autenticazione a due fattori, accessi a termine, log monitorati"
+            },
+            {
+              "etichetta": "Scadenze",
+              "valore": "Registro delle scadenze critiche esportabile e aggiornato indipendentemente dal gestionale"
+            },
+            {
+              "etichetta": "Piano di risposta",
+              "valore": "Checklist scritta: chi chiama chi, cosa isolare, chi notifica il Garante"
+            },
+            {
+              "etichetta": "Formazione",
+              "valore": "Sessione annuale minima su phishing, password e comportamenti sicuri"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "h2": "Come ridurre la superficie di attacco senza stravolgere i processi dello studio",
+      "paragrafi": [
+        "La buona notizia è che le misure più efficaci non richiedono investimenti tecnologici straordinari. Richiedono **scelte strategiche su cosa proteggere e come misurare il risultato** — esattamente la differenza tra comprare uno strumento e costruire un sistema.",
+        "Il punto di partenza è mappare i processi critici: quali attività, se bloccate, causano danni immediati ai clienti? Gestione delle scadenze fiscali, accesso ai documenti in lavorazione, comunicazione via PEC, firma digitale. Una volta identificati questi processi, si valuta per ciascuno: qual è il punto di ingresso più vulnerabile? Qual è il tempo massimo tollerabile di interruzione? C'è un'alternativa manuale o analogica per le prime ore?",
+        "Il secondo passo è ridurre il numero di porte aperte. Ogni software installato che non si usa più, ogni accesso remoto mai revocato, ogni account con password debole è una porta potenzialmente aperta. Non serve una scansione sofisticata: basta una revisione sistematica semestrale degli accessi attivi e dei software installati sui dispositivi dello studio.",
+        "Il terzo passo riguarda l'automazione: i processi automatizzati, se progettati con attenzione alla sicurezza, **riducono la superficie di attacco perché diminuiscono le azioni manuali soggette a errore umano** — che è la principale causa di incidenti cyber. Un sistema che gestisce automaticamente la raccolta documenti, come [Ovia Documenti](/servizi/documenti.html), riduce il numero di email manuali con allegati non verificati. Un sistema che categorizza e assegna le email in entrata, come [Ovia Inbox](/servizi/inbox.html), riduce il rischio che una email di phishing venga aperta distrattamente da un collaboratore. L'automazione, in questo senso, non è solo efficienza: è anche presidio di sicurezza."
+      ],
+      "blocco": {
+        "tipo": "checklist",
+        "titolo": "Check: il tuo studio è pronto a resistere a un attacco?",
+        "voci": [
+          {
+            "titolo": "Backup 3-2-1 testato",
+            "testo": "Hai almeno una copia dei dati critici su un supporto non collegato alla rete e la ripristini in test almeno ogni trimestre.",
+            "ok": true
+          },
+          {
+            "titolo": "Autenticazione a due fattori attiva",
+            "testo": "Tutti gli accessi ai sistemi dello studio — gestionale, email, cloud — richiedono un secondo fattore di verifica.",
+            "ok": true
+          },
+          {
+            "titolo": "Registro degli accessi di terze parti",
+            "testo": "Sai chi ha accesso remoto ai tuoi sistemi, per quale scopo e con quale scadenza.",
+            "ok": true
+          },
+          {
+            "titolo": "Piano di risposta scritto",
+            "testo": "Esiste un documento (anche di una pagina) che indica cosa fare nelle prime 2 ore di un incidente: chi isola i sistemi, chi notifica il Garante, chi avvisa i clienti.",
+            "ok": false
+          },
+          {
+            "titolo": "Scadenze critiche esportate",
+            "testo": "Le scadenze dei prossimi 7 giorni sono visibili in un formato accessibile anche senza il gestionale principale.",
+            "ok": false
+          },
+          {
+            "titolo": "Formazione annuale al phishing",
+            "testo": "Ogni collaboratore ha ricevuto almeno una volta indicazioni su come riconoscere email sospette e cosa fare se ne riceve una.",
+            "ok": false
+          }
+        ]
+      }
+    },
+    {
+      "h2": "NIS2 e AI Act: cosa cambia concretamente per gli studi professionali",
+      "paragrafi": [
+        "Molti titolari di studio si sentono esclusi dal perimetro normativo della cybersecurity: \"quelle regole sono per le grandi aziende\". È una percezione sempre meno accurata. La direttiva NIS2 — che ha ampliato significativamente il perimetro rispetto alla NIS1 — e l'AI Act europeo introducono obblighi che riguardano anche soggetti di medie e piccole dimensioni, specialmente se trattano dati di terzi o se usano sistemi AI in contesti professionali.",
+        "La NIS2 richiede ai soggetti inclusi nel suo perimetro di adottare misure di gestione del rischio cyber, di notificare gli incidenti significativi entro tempi definiti e di dimostrare di avere politiche di sicurezza attive. Il fatto che uno studio professionale non sia un operatore di infrastrutture critiche non lo esclude automaticamente: dipende dalla sua classificazione come soggetto essenziale o importante nella filiera.",
+        "L'AI Act introduce invece obblighi di trasparenza e controllo umano per i sistemi AI classificati ad alto rischio — tra cui alcuni sistemi usati in ambito legale e fiscale. Chi usa agenti AI per elaborare documenti dei clienti o prendere decisioni deve essere in grado di dimostrare che il sistema è controllato, auditabile e conforme. Su questo tema, l'articolo Ovia su [Legge 132/2025 e informativa ai clienti](/blog/legge-132-2025-ai-professionisti-informativa-clienti.html) fornisce un quadro aggiornato per i professionisti italiani.",
+        "La convergenza tra sicurezza operativa e compliance normativa è il punto chiave: non si tratta più di adempimenti separati da gestire in compartimenti stagni, ma di un sistema unico in cui le scelte di sicurezza informano la compliance e viceversa. Chi costruisce questa integrazione oggi ha un vantaggio competitivo — e chi la rimanda accumula rischio."
+      ]
+    }
+  ],
+  "ovia_view": {
+    "titolo": "Il punto di vista Ovia: sicurezza e automazione non sono due progetti separati",
+    "paragrafi": [
+      "In Ovia lavoriamo con studi professionali e PMI italiane che vogliono automatizzare i processi operativi. Una delle prime domande che ci poniamo con ogni cliente non è «cosa automatizziamo?» ma «come ci assicuriamo che l'automazione non apra nuove vulnerabilità?». Perché un processo automatizzato male — con accessi non controllati, dati non isolati, flussi non documentati — può essere più rischioso del processo manuale che sostituisce.",
+      "Il nostro approccio collega la scelta di cosa automatizzare alla valutazione del rischio che quella automazione introduce. Un sistema di raccolta documenti che riduce le email manuali riduce anche la superficie di phishing. Un CRM che centralizza le scadenze diventa al tempo stesso un piano di continuità operativa, perché le informazioni critiche non dipendono da un solo dispositivo o da un solo software. Non vendiamo sicurezza come prodotto a sé: la incorporiamo nelle scelte di processo.",
+      "Questo è il senso del nostro posizionamento: la strategia e la sicurezza fanno guadagnare. L'AI è lo strumento. Automatizzare senza una strategia di rischio è costruire su sabbia — e un attacco informatico, prima o poi, lo rivela."
+    ]
+  },
+  "faq": [
+    {
+      "domanda": "Cosa succede a uno studio professionale se un attacco blocca i sistemi per più giorni?",
+      "risposta": "Lo studio non può accedere ai dati dei clienti, al gestionale, alle email e ai documenti in lavorazione. Le scadenze fiscali o legali vengono mancate, con possibili responsabilità contrattuali verso i clienti. Secondo la ricerca Claroty 2026, il 10% degli incidenti cyber in Italia causa interruzioni di tre giorni o più. Senza un backup isolato e un piano di risposta scritto, il ripristino può richiedere tempi molto più lunghi del necessario."
+    },
+    {
+      "domanda": "Il 56% delle aziende italiane subisce attacchi: gli studi professionali sono davvero a rischio?",
+      "risposta": "Sì. La ricerca Claroty su 150 responsabili italiani certifica che il 56% delle organizzazioni ha subito un attacco con impatto operativo nell'ultimo anno. Gli studi professionali sono bersagli attraenti perché trattano dati sensibili di molti clienti, spesso con sistemi meno protetti rispetto alle grandi aziende. Non essere un'industria manifatturiera non riduce l'esposizione."
+    },
+    {
+      "domanda": "Come fa un ransomware a bloccare la produzione e non solo a rubare dati?",
+      "risposta": "Il ransomware non esfiltra necessariamente i dati: cifra i file presenti sui sistemi e li rende inaccessibili dall'interno. Il lavoro si ferma perché nessuno può aprire i documenti, accedere al gestionale o usare i server condivisi. Il ripristino richiede o il pagamento del riscatto — senza garanzie — o il ripristino da un backup pulito e isolato, che nei casi più gravi può durare giorni."
+    },
+    {
+      "domanda": "Quali responsabilità ha il professionista se i dati dei clienti sono compromessi da un attacco?",
+      "risposta": "Il GDPR impone la notifica al Garante Privacy entro 72 ore dalla scoperta della violazione, e ai clienti interessati se il rischio è elevato. La mancata notifica è una violazione autonoma e sanzionabile. Sul piano deontologico, l'accesso non autorizzato a dati coperti da segreto professionale può configurare una violazione degli obblighi di riservatezza, anche senza che i dati siano stati pubblicati."
+    },
+    {
+      "domanda": "Cosa significa 'resilienza operativa' per uno studio con 5-20 persone?",
+      "risposta": "Significa poter continuare a lavorare — o riprendere rapidamente — anche dopo un incidente. Concretamente: un backup verificato e isolato dalla rete, un registro delle scadenze critiche accessibile senza il gestionale principale, un piano di risposta scritto di una pagina con le azioni delle prime due ore, e la conoscenza di chi ha accesso ai sistemi dello studio. Non è un progetto complesso: è un insieme di scelte di processo documentate."
+    },
+    {
+      "domanda": "Come riduco la superficie di attacco senza stravolgere i processi dello studio?",
+      "risposta": "Le misure più efficaci non richiedono grandi investimenti: revisione semestrale degli accessi attivi (revocare quelli inutilizzati), attivazione dell'autenticazione a due fattori su tutti gli accessi, test periodico del backup, formazione minima al riconoscimento del phishing. L'automazione dei processi operativi, se progettata correttamente, riduce ulteriormente le azioni manuali che rappresentano il principale vettore di ingresso degli attacchi."
+    },
+    {
+      "domanda": "NIS2 e AI Act cambiano qualcosa per gli studi professionali in materia di sicurezza?",
+      "risposta": "Sì. La NIS2 ha ampliato il perimetro dei soggetti obbligati e introduce requisiti di gestione del rischio cyber, notifica degli incidenti e politiche di sicurezza documentate. L'AI Act aggiunge obblighi di trasparenza e controllo per i sistemi AI usati in contesti professionali ad alto rischio, inclusi alcuni ambiti legali e fiscali. Chi tratta dati di terzi e usa strumenti AI deve verificare la propria posizione rispetto a entrambe le normative."
+    }
+  ],
+  "conclusione": [
+    "Il rischio cyber per uno studio professionale o una PMI italiana non è più un problema astratto delegabile al reparto IT o al consulente informatico. È una condizione operativa: se i sistemi si bloccano, il lavoro si ferma, le scadenze vengono mancate e le responsabilità si attivano automaticamente. I dati italiani della ricerca Claroty 2026 lo confermano con numeri precisi.",
+    "La buona notizia è che la resilienza operativa non richiede budget straordinari: richiede scelte strategiche consapevoli. Sapere cosa proteggere, testare i backup, controllare gli accessi, documentare i processi critici. E, quando si introduce l'automazione, farlo con una valutazione del rischio integrata — non come un progetto separato.",
+    "La sicurezza non è un costo IT. È la condizione per poter lavorare, servire i clienti e rispettare le normative. Chi la tratta come tale ha già un vantaggio competitivo concreto."
+  ],
+  "prodotti": [
+    {
+      "id": "documenti",
+      "perche": "Automatizzando la raccolta documentale con Ovia Documenti si elimina uno dei principali vettori di phishing: le email manuali con allegati non verificati, riducendo la superficie di attacco senza cambiare il flusso di lavoro dello studio."
+    },
+    {
+      "id": "crm",
+      "perche": "Ovia CRM centralizza scadenze e attività critiche in un sistema controllato e on-premise configurabile: in caso di incidente, le informazioni essenziali restano accessibili e lo studio sa esattamente da dove ripartire."
+    },
+    {
+      "id": "second-brain",
+      "perche": "Ovia Second Brain mantiene una memoria operativa strutturata dei processi, delle decisioni e dei clienti: un presidio di continuità operativa che funziona anche quando il gestionale principale è irraggiungibile."
+    }
+  ],
+  "categoria": "normativa-sicurezza",
+  "keyword": "attacchi informatici blocco operativo PMI",
+  "data": "2026-10-07T11:51:17.593Z",
+  "autore": "Redazione Ovia",
+  "parole": 2304,
+  "minuti": 12,
+  "fonti": [
+    {
+      "titolo": "Fabbriche connesse e minacce informatiche: oltre metà delle aziende subisce blocchi operativi",
+      "fonte": "Innovation Post",
+      "url": "https://www.innovationpost.it/tecnologie/industrial-security/fabbriche-connesse-e-minacce-informatiche-oltre-meta-delle-aziende-subisce-blocchi-operativi/"
+    },
+    {
+      "titolo": "La cyber security esce dallo schermo: cresce il rischio dei robot in azienda",
+      "fonte": "Cybersecurity360",
+      "url": "https://www.cybersecurity360.it/outlook/la-cybersecurity-esce-dallo-schermo-cresce-il-rischio-dei-robot-in-azienda/"
+    },
+    {
+      "titolo": "L’evoluzione del ransomware: come l’AI potenzia le negoziazioni",
+      "fonte": "Cybersecurity360",
+      "url": "https://www.cybersecurity360.it/nuove-minacce/ransomware/levoluzione-del-ransomware-come-lai-potenzia-le-negoziazioni/"
+    },
+    {
+      "titolo": "Cybertech Europe 2026: AI e resilienza ridisegnano la cyber security europea",
+      "fonte": "Cybersecurity360",
+      "url": "https://www.cybersecurity360.it/cultura-cyber/cybertech-europe-2026-ai-e-resilienza-ridisegnano-la-cyber-security-europea/"
+    }
+  ],
+  "generato": {
+    "da": "ai",
+    "modello": "claude-sonnet-4-6",
+    "il": "2026-10-07T11:51:17.593Z"
+  },
+  "en": {
+    "title": "Cyber Attacks & Operational Shutdown: the Risk for SMEs",
+    "slug": "cyber-attacks-operational-shutdown-smes-professional-firms",
+    "meta_description": "56% of Italian organisations have suffered a cyber attack that disrupted operations. What's at stake for a professional firm or SME? Data, liability and practical steps.",
+    "lead": "A cyber attack today does not just steal data: it halts work, wrecks tax deadlines and can trigger direct professional liability. Here is what really happens when systems go down.",
+    "tags": [
+      "cyber attacks operational shutdown SMEs",
+      "ransomware professional firms",
+      "IT security SMEs",
+      "operational resilience",
+      "NIS2 professional firms"
+    ],
+    "intro": [
+      "An ordinary Wednesday morning: the owner of a professional firm switches on their computer and finds a ransom message. Files are encrypted, the practice management software is unreachable, the certified email inbox is not responding. In a few hours, a tax filing deadline expires. This is not a doomsday scenario: it is the concrete consequence of a ransomware attack, and the probability of it happening is higher than most people think.",
+      "According to [Claroty's global research involving 2,000 senior executives](https://www.innovationpost.it/tecnologie/industrial-security/fabbriche-connesse-e-minacce-informatiche-oltre-meta-delle-aziende-subisce-blocchi-operativi/), **56% of Italian respondents report that their organisation suffered a cyber attack with direct operational impact in the past twelve months**. We are not talking about large manufacturing plants: the risk perimeter has expanded to cover any organisation that relies on its digital systems to operate. And an accountancy practice, law firm or labour consultancy relies on those systems every day, for every client.",
+      "The crucial point — and one that is often underestimated — is that cybersecurity is no longer an IT department issue. It is a prerequisite for practising a profession. This article explains what really happens when an attack shuts down a firm, what liabilities arise and how to reduce the risk without overhauling day-to-day processes."
+    ],
+    "punti_chiave": [
+      "56% of Italian organisations suffered a cyber attack with operational impact in the past year (source: Claroty 2026)",
+      "In Italy, a cyber incident involving physical systems causes an average of 2.3 hours of operational downtime; in 10% of cases it lasts three days or more",
+      "Ransomware does not just steal data: it encrypts files and blocks access to systems, making work impossible until restoration is complete",
+      "For a professional firm, operational shutdown means missed deadlines and potential liability to clients",
+      "Reducing the attack surface comes down to access controls, verified backups and documented processes — not exotic technology",
+      "NIS2 and the AI Act introduce cyber risk management obligations for entities that until now considered themselves exempt"
+    ],
+    "sezioni": [
+      {
+        "h2": "56% of Italian organisations hit: are we really this exposed?",
+        "paragrafi": [
+          "The answer is yes, and the data leaves no room for doubt. Claroty's \"The Global State of Operational Security 2026\" report — based on interviews with 2,000 senior executives worldwide, including **150 in Italy** — confirms that [more than half of Italian organisations have already suffered an attack with direct operational consequences](https://www.innovationpost.it/tecnologie/industrial-security/fabbriche-connesse-e-minacce-informatiche-oltre-meta-delle-aziende-subisce-blocchi-operativi/) within a twelve-month period.",
+          "The problem is not just frequency: it is the nature of the attacks. 33% of Italian respondents identify **ransomware** as one of the main risks, and the same proportion cite **unsecured or unmonitored third-party access**. This second figure deserves particular attention: practice management software vendors, external IT consultants, system maintenance providers — all figures that a professional firm regularly works with — represent an entry vector that is often overlooked in risk assessments.",
+          "On average, Italian organisations in the research recorded **3.11 incidents originating from third-party access** in the past year. This is not an abstract problem: it is the accounting software supplier who connects remotely, or the external consultant who accesses the firm's network without two-factor authentication."
+        ],
+        "blocco": {
+          "tipo": "stats",
+          "titolo": "Cyber risk in Italy: the 2026 figures",
+          "voci": [
+            {
+              "valore": "56%",
+              "testo": "of Italian organisations suffered a cyber attack with operational impact in the past 12 months (Claroty 2026)"
+            },
+            {
+              "valore": "2.3 hrs",
+              "testo": "average duration of operational downtime caused by a cyber incident in Italy"
+            },
+            {
+              "valore": "10%",
+              "testo": "of cases involved disruptions lasting three days or more"
+            },
+            {
+              "valore": "3.11",
+              "testo": "incidents on average originating from third-party access per Italian organisation in the past year"
+            }
+          ]
+        }
+      },
+      {
+        "h2": "How ransomware shuts down the firm, not just the data",
+        "paragrafi": [
+          "Ransomware is often described as a tool for \"stealing data\". That definition is partial and misleading. The actual mechanism works differently: the malware gains entry to systems — via a phishing email, a compromised remote connection or an unpatched vulnerability — and **encrypts the files on the affected devices and any servers connected to the network**. It does not copy them externally: it makes them inaccessible from within.",
+          "For a professional firm, this means the client management system is locked, shared folders are unreadable, and documents in progress are unrecoverable without the decryption key. Work stops. Not partially: completely. Systems remain down until the ransom is paid — with no guarantee of receiving the key — or until everything is restored from a clean backup, an operation that takes hours or days.",
+          "The Claroty research confirms this dynamic: **in Italy, cyber incidents caused an average of 2.3 hours of operational downtime**, but 10% of cases recorded outages of three days or more. For a firm with weekly tax deadlines, three days of downtime is not an inconvenience: it is a professional emergency with real consequences for clients.",
+          "A further risk factor stems from the growing adoption of artificial intelligence in operational environments: approximately **two in three Italian organisations** report using AI technologies in their systems, and 27% of respondents consider AI-driven cyber attacks a significant threat. AI is not only a defensive tool: it can also be used to make attacks faster, more targeted and harder to detect."
+        ],
+        "blocco": {
+          "tipo": "steps",
+          "titolo": "How a ransomware attack shuts down a firm in 4 phases",
+          "voci": [
+            {
+              "titolo": "Entry",
+              "meta": "Hour 0",
+              "testo": "A phishing email, an unprotected remote connection or unpatched software opens the door to malware, often without anyone noticing immediately."
+            },
+            {
+              "titolo": "Propagation",
+              "meta": "Hours 0–4",
+              "testo": "The malware moves silently through the internal network, reaching servers, network-connected backups and shared devices before activating."
+            },
+            {
+              "titolo": "Encryption",
+              "meta": "Hours 4–8",
+              "testo": "Files are rendered inaccessible. The practice management system, client folders, local emails: everything reachable over the network is locked."
+            },
+            {
+              "titolo": "Operational shutdown",
+              "meta": "Hour 8+",
+              "testo": "The firm cannot work. Deadlines loom, clients call, but systems remain down until restoration or ransom payment — which does not guarantee data recovery."
+            }
+          ]
+        }
+      },
+      {
+        "h2": "Professional liability when client data is compromised",
+        "paragrafi": [
+          "This is the point that many firm owners underestimate: a cyber attack is not just a technical problem — it is a professional liability problem. An accountancy practice or law firm handles sensitive client data — financial positions, disputes, tax records, confidential information — and has precise obligations regarding data protection.",
+          "The **GDPR** requires personal data breaches to be notified to the supervisory authority (the Italian Data Protection Authority, **Garante**) within 72 hours of discovery, and to the affected clients when the risk to their rights is high. A ransomware attack that encrypts a firm's files almost certainly falls within this category. Failure to notify is a separate infringement, independent of the attack itself.",
+          "Added to this are the implications of **professional secrecy**: unauthorised access to data covered by confidentiality — even if not intentionally disclosed — may constitute a breach of professional conduct obligations. It is not necessary for the data to be published online: it is sufficient that it has been accessible to unauthorised parties.",
+          "On the regulatory front, the **NIS2 Directive** — transposed into Italian law — extends cyber risk management obligations to a broader range of entities, including many that until now considered themselves exempt. In parallel, the **AI Act** introduces transparency and human oversight requirements for AI systems used in professional contexts. Those who automate processes with AI tools without adequate governance are accumulating regulatory risk, not just technical risk. The Ovia article on the [AI Act for professional firms and SMEs](/en/blog/ai-act-professional-firms-smes-italy-governance.html) examines this point in depth."
+        ],
+        "blocco": {
+          "tipo": "warning",
+          "titolo": "Liabilities that an attack triggers automatically",
+          "voci": [
+            {
+              "testo": "Obligation to notify the Italian Data Protection Authority (Garante) within 72 hours of discovering the breach (GDPR Art. 33): failure to notify is a separate infringement, sanctionable independently of the attack."
+            },
+            {
+              "testo": "Potential breach of professional secrecy if confidential client data was accessible to unauthorised third parties, even without proven exfiltration."
+            },
+            {
+              "testo": "Contractual liability to clients for damages arising from missed deadlines or the compromise of their information."
+            },
+            {
+              "testo": "NIS2 obligations to manage cyber risk and report significant incidents, with sanctions for entities within the directive's scope."
+            }
+          ]
+        }
+      },
+      {
+        "h2": "Operational resilience for a 5-to-20-person firm: what it really means",
+        "paragrafi": [
+          "\"Operational resilience\" sounds like a term for large corporations. In reality, for a professional firm of 5–20 people, it means one thing: **the ability to keep working — or to resume as quickly as possible — even after an incident**. It is not a project costing hundreds of thousands of pounds: it is a set of process and configuration choices that can make the difference between 2 hours of downtime and 3 days.",
+          "The first pillar is a **verified, isolated backup**. Verified means periodically tested: a backup that has never been restored in a test is not a reliable backup. Isolated means physically or logically separated from the main network, so that ransomware encrypting the servers cannot also reach the backup copies.",
+          "The second pillar is **access control**. Knowing who can access what — and quickly revoking access when staff or suppliers change — drastically reduces the attack surface. Claroty's research highlights that in Italy 47% of respondents report IT and OT security governance that is predominantly or fully integrated, while for more than half this integration is not yet complete. In a professional firm, access governance does not require complex systems: it requires a clear policy and correctly configured tools.",
+          "The third pillar is **documentation of critical processes**. If systems go down, it is essential to know immediately which deadlines fall within the next 48–72 hours, how to contact clients through alternative channels and who is responsible for each recovery action. A firm that depends entirely on its software to know what to do is more vulnerable than one that also has a documented Plan B. Tools such as [Ovia Second Brain](/en/services/second-brain.html) allow firms to maintain an operational memory that remains accessible even in emergency scenarios."
+        ],
+        "blocco": {
+          "tipo": "compare",
+          "titolo": "Operational resilience: exposed firm vs prepared firm",
+          "sinistra": {
+            "badge": "Exposed firm",
+            "titolo": "How things work today (without a plan)",
+            "righe": [
+              {
+                "etichetta": "Backup",
+                "valore": "Automatic but never tested, often on the same network"
+              },
+              {
+                "etichetta": "External access",
+                "valore": "Suppliers and consultants with unmonitored credentials"
+              },
+              {
+                "etichetta": "Deadlines",
+                "valore": "Only in the management system: if it goes down, nobody knows where to start"
+              },
+              {
+                "etichetta": "Response plan",
+                "valore": "None: improvised when the incident happens"
+              },
+              {
+                "etichetta": "Training",
+                "valore": "Zero: phishing and social engineering are never discussed"
+              }
+            ]
+          },
+          "destra": {
+            "badge": "Prepared firm",
+            "titolo": "Recommended approach",
+            "righe": [
+              {
+                "etichetta": "Backup",
+                "valore": "3-2-1: three copies, two different media, one off-site or offline, tested every month"
+              },
+              {
+                "etichetta": "External access",
+                "valore": "Two-factor authentication, time-limited access, monitored logs"
+              },
+              {
+                "etichetta": "Deadlines",
+                "valore": "Critical deadlines register, exportable and updated independently of the management system"
+              },
+              {
+                "etichetta": "Response plan",
+                "valore": "Written checklist: who calls whom, what to isolate, who notifies the Garante"
+              },
+              {
+                "etichetta": "Training",
+                "valore": "Annual minimum session on phishing, passwords and safe behaviours"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "h2": "How to reduce the attack surface without overhauling the firm's processes",
+        "paragrafi": [
+          "The good news is that the most effective measures do not require extraordinary technology investments. They require **strategic choices about what to protect and how to measure the outcome** — precisely the difference between buying a tool and building a system.",
+          "The starting point is mapping critical processes: which activities, if disrupted, cause immediate harm to clients? Managing tax deadlines, accessing documents in progress, communicating via certified email (PEC), electronic signing. Once these processes are identified, assess each one: where is the most vulnerable entry point? What is the maximum tolerable downtime? Is there a manual or analogue fallback for the first few hours?",
+          "The second step is reducing the number of open doors. Every piece of software that is installed but no longer used, every remote access that was never revoked, every account with a weak password is a potentially open door. No sophisticated scanning is needed: a systematic biannual review of active access rights and software installed on the firm's devices is sufficient.",
+          "The third step concerns automation: automated processes, if designed with security in mind, **reduce the attack surface by decreasing the manual actions susceptible to human error** — the leading cause of cyber incidents. A system that automatically manages document collection, such as [Ovia Documents](/en/services/documenti.html), reduces the number of manual emails with unverified attachments. A system that categorises and assigns incoming emails, such as [Ovia Inbox](/en/services/inbox.html), reduces the risk of a phishing email being opened absent-mindedly by a member of staff. Automation, in this sense, is not just about efficiency: it is also a security control."
+        ],
+        "blocco": {
+          "tipo": "checklist",
+          "titolo": "Check: is your firm ready to withstand an attack?",
+          "voci": [
+            {
+              "titolo": "Tested 3-2-1 backup",
+              "testo": "You have at least one copy of critical data on a medium not connected to the network, and you restore it in a test at least every quarter.",
+              "ok": true
+            },
+            {
+              "titolo": "Two-factor authentication enabled",
+              "testo": "All access to the firm's systems — management software, email, cloud — requires a second verification factor.",
+              "ok": true
+            },
+            {
+              "titolo": "Third-party access register",
+              "testo": "You know who has remote access to your systems, for what purpose and with what expiry date.",
+              "ok": true
+            },
+            {
+              "titolo": "Written response plan",
+              "testo": "A document exists (even one page) setting out what to do in the first 2 hours of an incident: who isolates the systems, who notifies the Garante, who informs clients.",
+              "ok": false
+            },
+            {
+              "titolo": "Critical deadlines exported",
+              "testo": "The deadlines for the next 7 days are visible in a format accessible without the main management system.",
+              "ok": false
+            },
+            {
+              "titolo": "Annual phishing training",
+              "testo": "Every member of staff has received at least one briefing on how to recognise suspicious emails and what to do if they receive one.",
+              "ok": false
+            }
+          ]
+        }
+      },
+      {
+        "h2": "NIS2 and the AI Act: what changes in practice for professional firms",
+        "paragrafi": [
+          "Many firm owners feel they fall outside the regulatory scope of cybersecurity: \"those rules are for large companies\". That perception is becoming increasingly inaccurate. The NIS2 Directive — which significantly extended the scope compared with NIS1 — and the European AI Act introduce obligations that also apply to medium and small entities, especially those that process third-party data or use AI systems in professional contexts.",
+          "NIS2 requires entities within its scope to adopt cyber risk management measures, notify significant incidents within defined timeframes and demonstrate that active security policies are in place. The fact that a professional firm is not a critical infrastructure operator does not automatically exclude it: this depends on its classification as an essential or important entity within the supply chain.",
+          "The AI Act introduces transparency and human oversight obligations for AI systems classified as high-risk — including some systems used in legal and tax contexts. Those who use AI agents to process client documents or support decision-making must be able to demonstrate that the system is controlled, auditable and compliant. On this topic, the Ovia article on [Italian Law 132/2025 and client disclosure](/en/blog/italian-law-132-2025-ai-professionals-client-disclosure.html) provides an up-to-date overview for professionals operating in Italy.",
+          "The convergence of operational security and regulatory compliance is the key point: these are no longer separate compliance streams to be managed in silos, but a single system in which security choices inform compliance and vice versa. Those who build this integration today gain a competitive advantage — and those who defer it accumulate risk."
+        ]
+      }
+    ],
+    "ovia_view": {
+      "titolo": "Ovia's perspective: security and automation are not two separate projects",
+      "paragrafi": [
+        "At Ovia we work with Italian professional firms and SMEs that want to automate their operational processes. One of the first questions we ask with every client is not \"what do we automate?\" but \"how do we make sure that automation does not open new vulnerabilities?\". Because a poorly designed automated process — with uncontrolled access, non-isolated data, undocumented flows — can be riskier than the manual process it replaces.",
+        "Our approach links the choice of what to automate to an assessment of the risk that automation introduces. A document collection system that reduces manual emails also reduces the phishing surface. A CRM that centralises deadlines simultaneously becomes an operational continuity plan, because critical information does not depend on a single device or a single piece of software. We do not sell security as a standalone product: we embed it in process decisions.",
+        "This is the essence of our positioning: strategy and security drive results. AI is the tool. Automating without a risk strategy is building on sand — and a cyber attack, sooner or later, will make that plain."
+      ]
+    },
+    "faq": [
+      {
+        "domanda": "What happens to a professional firm if an attack shuts down its systems for several days?",
+        "risposta": "The firm cannot access client data, the management system, emails or documents in progress. Tax or legal deadlines are missed, potentially triggering contractual liability to clients. According to Claroty's 2026 research, 10% of cyber incidents in Italy cause disruptions lasting three days or more. Without an isolated backup and a written response plan, restoration can take far longer than necessary."
+      },
+      {
+        "domanda": "56% of Italian organisations are being attacked: are professional firms really at risk?",
+        "risposta": "Yes. Claroty's research among 150 Italian senior executives confirms that 56% of organisations suffered an attack with operational impact in the past year. Professional firms are attractive targets because they handle sensitive data belonging to many clients, often with less robust systems than large corporations. Not being a manufacturing business does not reduce the exposure."
+      },
+      {
+        "domanda": "How does ransomware halt operations rather than simply stealing data?",
+        "risposta": "Ransomware does not necessarily exfiltrate data: it encrypts files on the systems and makes them inaccessible from within. Work stops because nobody can open documents, access the management system or use shared servers. Recovery requires either paying the ransom — with no guarantees — or restoring from a clean, isolated backup, which in serious cases can take days."
+      },
+      {
+        "domanda": "What liability does a professional have if client data is compromised by an attack?",
+        "risposta": "The GDPR requires notification to the Italian Data Protection Authority (Garante) within 72 hours of discovering the breach, and to affected clients if the risk is high. Failure to notify is a separate, sanctionable infringement. On the professional conduct side, unauthorised access to data covered by professional secrecy may constitute a breach of confidentiality obligations, even if the data was never published."
+      },
+      {
+        "domanda": "What does 'operational resilience' mean for a firm with 5–20 people?",
+        "risposta": "It means being able to keep working — or resume quickly — even after an incident. In practice: a verified backup isolated from the network, a critical deadlines register accessible without the main management system, a one-page written response plan covering the first two hours, and clarity on who has access to the firm's systems. It is not a complex project: it is a set of documented process choices."
+      },
+      {
+        "domanda": "How do I reduce the attack surface without overhauling the firm's processes?",
+        "risposta": "The most effective measures require no major investment: a biannual review of active access rights (revoking unused ones), enabling two-factor authentication on all access points, periodic backup testing, and basic phishing awareness training. Automating operational processes, if designed correctly, further reduces the manual actions that represent the main attack entry vector."
+      },
+      {
+        "domanda": "Do NIS2 and the AI Act change anything for professional firms on cybersecurity?",
+        "risposta": "Yes. NIS2 has expanded the scope of obligated entities and introduces requirements for cyber risk management, incident notification and documented security policies. The AI Act adds transparency and oversight obligations for AI systems used in high-risk professional contexts, including certain legal and tax applications. Those who process third-party data and use AI tools should verify their position under both frameworks."
+      }
+    ],
+    "conclusione": [
+      "Cyber risk for an Italian professional firm or SME is no longer an abstract problem that can be delegated to the IT department or an outside IT consultant. It is an operational condition: if systems go down, work stops, deadlines are missed and liabilities activate automatically. The Italian figures from Claroty's 2026 research confirm this with precise numbers.",
+      "The good news is that operational resilience does not require an extraordinary budget: it requires informed strategic choices. Knowing what to protect, testing backups, controlling access, documenting critical processes. And, when introducing automation, doing so with an integrated risk assessment — not as a separate project.",
+      "Security is not an IT cost. It is the condition for being able to work, serve clients and comply with regulations. Those who treat it as such already hold a concrete competitive advantage."
+    ],
+    "prodotti": [
+      {
+        "id": "documenti",
+        "perche": "Automating document collection with Ovia Documents eliminates one of the main phishing vectors — manual emails with unverified attachments — reducing the attack surface without changing the firm's workflow."
+      },
+      {
+        "id": "crm",
+        "perche": "Ovia CRM centralises critical deadlines and activities in a controlled, on-premise-configurable system: in the event of an incident, essential information remains accessible and the firm knows exactly where to resume."
+      },
+      {
+        "id": "second-brain",
+        "perche": "Ovia Second Brain maintains a structured operational memory of processes, decisions and clients: an operational continuity safeguard that works even when the main management system is unreachable."
+      }
+    ],
+    "parole": 1808,
+    "minuti": 10,
+    "tradotto": {
+      "da": "ai",
+      "modello": "claude-sonnet-4-6",
+      "il": "2026-10-07T11:53:28.893Z"
+    }
+  }
+}
