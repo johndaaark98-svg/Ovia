@@ -23,6 +23,7 @@
 - Quanto tempo serve per vedere i primi risultati?
 
 ## Blog (ultimi articoli)
+- [Sovranità digitale: cosa devono sapere PMI e studi](https://oviaitalia.it/blog/sovranita-digitale-dati-studio-professionale-pmi.html): Dove finiscono i dati dei tuoi clienti? Sovranità digitale per PMI e studi professionali: controllo, continuità e GDPR prima di adottare strumenti AI.
 - [Attacchi informatici e blocco operativo: il rischio per PMI e studi](https://oviaitalia.it/blog/attacchi-informatici-blocco-operativo-pmi-studi-professionali.html): Il 56% delle aziende italiane subisce attacchi cyber che bloccano le operazioni. Cosa rischia uno studio professionale o una PMI? Dati, responsabilità e…
 - [AI Act per studi professionali e PMI: dalla compliance alla governance](https://oviaitalia.it/blog/ai-act-studi-professionali-pmi-italiane-governance.html): AI Act dal 2 agosto 2026: cosa cambia per studi professionali e PMI italiane, come costruire una governance AI reale oltre la compliance formale.
 - [Ragionamento agenti AI: affidabilità e rischi reali](https://oviaitalia.it/blog/ragionamento-agenti-ai-affidabilita-rischi-studi-professionali.html): Il ragionamento degli agenti AI sembra trasparente ma può essere opaco o distorto. Ecco i rischi per studi e PMI italiane e come governarli davvero.
@@ -46,6 +47,7 @@
 - [Home (EN)](https://oviaitalia.it/en/): Ovia in English.
 - [Services (EN)](https://oviaitalia.it/en/services/)
 - [FAQ (EN)](https://oviaitalia.it/en/faq.html)
+- [Digital Sovereignty: What SMEs and Firms Must Know](https://oviaitalia.it/en/blog/digital-sovereignty-data-professional-firms-smes.html): Where does your clients' data actually end up? Digital sovereignty for SMEs and professional firms: control, continuity and GDPR compliance before adopting any AI tool.
 - [Cyber Attacks & Operational Shutdown: the Risk for SMEs](https://oviaitalia.it/en/blog/cyber-attacks-operational-shutdown-smes-professional-firms.html): 56% of Italian organisations have suffered a cyber attack that disrupted operations. What's at stake for a professional firm or SME? Data, liability and practical steps.
 - [AI Act for Professional Firms and SMEs: Beyond Compliance](https://oviaitalia.it/en/blog/ai-act-professional-firms-smes-italy-governance.html): AI Act fully applies from 2 August 2026: what changes for Italian professional firms and SMEs, and how to build real AI governance beyond formal compliance.
 - [AI Agent Reasoning: Reliability and Real Risks](https://oviaitalia.it/en/blog/ai-agent-reasoning-reliability-risks-professional-firms.html): AI agent reasoning can look transparent but may be opaque or distorted. Here are the real risks for Italian firms and SMEs — and how to govern them properly.
