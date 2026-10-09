@@ -113,14 +113,19 @@ const CSS = `<style id="cs-css">
 .cs-steps li:last-child::before{background:var(--violet);box-shadow:0 0 0 4px var(--violet-soft)}
 .cs-steps h3{font-family:var(--font-display);font-size:17px;margin:0 0 6px;color:var(--text)}
 .cs-steps p{font-size:15px;color:var(--muted);margin:0;line-height:1.55}
-.cs-founder{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(28px,5vw,64px);align-items:center}
+.cs-hero{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:clamp(28px,5vw,64px);align-items:center;padding:clamp(28px,5vw,56px) 0 clamp(36px,5vw,56px)}
+.cs-hero .bl-hero{padding:0}
+.cs-founder{max-width:820px}
 .cs-photo{position:relative;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);background:var(--panel);box-shadow:0 30px 80px -40px rgba(76,141,255,.45)}
 .cs-photo img{display:block;width:100%;height:auto}
+.cs-hero .cs-photo{max-width:420px;justify-self:end;width:100%}
+.cs-photo figcaption{position:absolute;left:0;right:0;bottom:0;padding:48px 20px 16px;background:linear-gradient(transparent,rgba(4,7,15,.92));color:var(--text);font-family:var(--font-display);font-weight:700;font-size:17px;line-height:1.25}
+.cs-photo figcaption span{display:block;font-weight:600;font-size:13px;color:var(--accent);letter-spacing:.04em;margin-top:2px}
 .cs-name{font-family:var(--font-display);font-size:clamp(30px,4vw,44px);font-weight:700;letter-spacing:-.02em;line-height:1.05;margin:6px 0 6px}
 .cs-role{color:var(--accent);font-weight:600;font-size:15px;letter-spacing:.04em;margin-bottom:22px}
 .cs-founder p.bio{color:var(--muted);font-size:17px;line-height:1.7;margin-bottom:22px}
 .cs-quote{margin:0;padding:18px 0 18px 22px;border-left:3px solid var(--violet);font-family:var(--font-display);font-size:clamp(18px,2.2vw,22px);line-height:1.4;color:var(--text)}
-@media (max-width:860px){.cs-story,.cs-founder{grid-template-columns:1fr}.cs-photo{max-width:380px}}
+@media (max-width:860px){.cs-story,.cs-hero{grid-template-columns:1fr}.cs-hero .cs-photo{justify-self:start;max-width:340px}}
 </style>`;
 
 function pagina(lang) {
@@ -155,11 +160,20 @@ function pagina(lang) {
 <main>
   <div class="ov-wrap">
     <nav class="ov-breadcrumb" aria-label="${u.breadcrumb}"><a href="${P('/')}">${u.home}</a><span>/</span>${t.crumb}</nav>
-    <section class="bl-hero">
-      <p class="ov-eyebrow">${t.ey}</p>
-      <h1>${esc(t.h1)}</h1>
-      <p class="ov-lead">${esc(t.lead)}</p>
-    </section>
+    <div class="cs-hero">
+      <section class="bl-hero">
+        <p class="ov-eyebrow">${t.ey}</p>
+        <h1>${esc(t.h1)}</h1>
+        <p class="ov-lead">${esc(t.lead)}</p>
+      </section>
+      <figure class="cs-photo" style="margin:0">
+        <picture>
+          <source srcset="${FOTO.webp}" type="image/webp">
+          <img src="${FOTO.jpg}" alt="${esc(t.fotoAlt)}" width="${FOTO.w}" height="${FOTO.h}" fetchpriority="high" decoding="async">
+        </picture>
+        <figcaption>${esc(t.fondNome)}<span>${esc(t.fondRuolo)}</span></figcaption>
+      </figure>
+    </div>
     <div class="sv-stats">${stats}</div>
   </div>
 
@@ -178,12 +192,6 @@ function pagina(lang) {
 
   <section class="ov-section" id="fondatore" style="padding-top:0"><div class="ov-wrap">
     <div class="cs-founder">
-      <figure class="cs-photo rv" style="margin:0">
-        <picture>
-          <source srcset="${FOTO.webp}" type="image/webp">
-          <img src="${FOTO.jpg}" alt="${esc(t.fotoAlt)}" width="${FOTO.w}" height="${FOTO.h}" loading="lazy" decoding="async">
-        </picture>
-      </figure>
       <div class="rv">
         <p class="ov-eyebrow">${t.fondEy}</p>
         <h2 class="cs-name">${esc(t.fondNome)}</h2>
