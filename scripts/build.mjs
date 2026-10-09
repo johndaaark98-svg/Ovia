@@ -34,9 +34,8 @@ export async function buildTutto({ log = console.log } = {}) {
   writeFileSync(ROOT + 'en/blog/index.html', renderIndice(en, 'en'));
   writeFileSync(ROOT + 'en/blog/feed.xml', renderFeed(en, 'en'));
 
-  const oggi = new Date().toISOString().slice(0, 10);
-  const statiche = ['/', '/servizi/', '/faq.html', ...PRODOTTI.map(p => urlOf(p.id)), '/siti-studi-professionali.html', '/siti-attivita-locali.html', '/blog/', '/privacy.html', '/cookie.html', '/termini.html'];
-  const pr = p => p === '/' ? '1.0' : p.startsWith('/servizi') ? '0.9' : ['/privacy.html', '/cookie.html', '/termini.html'].includes(p) ? '0.3' : '0.8';
+  const statiche = ['/', '/servizi/', '/faq.html', ...PRODOTTI.map(p => urlOf(p.id)), '/siti-studi-professionali.html', '/siti-attivita-locali.html', '/blog/']; // le pagine legali sono noindex: fuori dalla sitemap
+  const pr = p => p === '/' ? '1.0' : p.startsWith('/servizi') ? '0.9' : '0.8';
   const urls = [
     ...statiche.flatMap(p => [
       { loc: p, pr: pr(p), cf: p === '/blog/' ? 'daily' : 'monthly', alt: { it: p, en: pathFor('en', p) } },
@@ -48,7 +47,7 @@ export async function buildTutto({ log = console.log } = {}) {
   const altXml = u => u.alt ? `<xhtml:link rel="alternate" hreflang="it" href="${SITE.url}${u.alt.it}"/><xhtml:link rel="alternate" hreflang="en" href="${SITE.url}${u.alt.en}"/>` : '';
   writeFileSync(ROOT + 'sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-${urls.map(u => `  <url><loc>${SITE.url}${u.loc}</loc><lastmod>${u.lm || oggi}</lastmod><changefreq>${u.cf}</changefreq><priority>${u.pr}</priority>${altXml(u)}</url>`).join('\n')}
+${urls.map(u => `  <url><loc>${SITE.url}${u.loc}</loc>${u.lm ? `<lastmod>${u.lm}</lastmod>` : ''}<changefreq>${u.cf}</changefreq><priority>${u.pr}</priority>${altXml(u)}</url>`).join('\n')}
 </urlset>
 `);
 
