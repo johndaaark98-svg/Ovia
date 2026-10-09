@@ -11,6 +11,9 @@
 - [Ovia Siti Web per le AI](https://oviaitalia.it/servizi/siti-web-ai.html): Siti progettati per essere trovati e citati dai motori AI, con assistente che risponde e prenota.
 - [Ovia CRM](https://oviaitalia.it/servizi/crm.html): CRM operativo su misura: scadenze ricorrenti, solleciti automatici, email categorizzate e documenti generati.
 
+## Chi siamo
+- [Chi siamo](https://oviaitalia.it/chi-siamo.html): Ovia nasce a Olbia come braccio operativo di L3 Innovation Srl. Dai software per il sovraindebitamento (oltre 15.000 pratiche gestite) ai sistemi automatizzati per studi e imprese. Fondatore e CEO: Luca Lorenzo.
+
 ## Domande frequenti
 - [Tutte le FAQ](https://oviaitalia.it/faq.html): 40 risposte su metodo, sicurezza, normativa, costi e tempi.
 - Cos’è Ovia, in parole semplici?
@@ -47,6 +50,7 @@
 - [Home (EN)](https://oviaitalia.it/en/): Ovia in English.
 - [Services (EN)](https://oviaitalia.it/en/services/)
 - [FAQ (EN)](https://oviaitalia.it/en/faq.html)
+- [About us (EN)](https://oviaitalia.it/en/about.html)
 - [Digital Sovereignty: What SMEs and Firms Must Know](https://oviaitalia.it/en/blog/digital-sovereignty-data-professional-firms-smes.html): Where does your clients' data actually end up? Digital sovereignty for SMEs and professional firms: control, continuity and GDPR compliance before adopting any AI tool.
 - [Cyber Attacks & Operational Shutdown: the Risk for SMEs](https://oviaitalia.it/en/blog/cyber-attacks-operational-shutdown-smes-professional-firms.html): 56% of Italian organisations have suffered a cyber attack that disrupted operations. What's at stake for a professional firm or SME? Data, liability and practical steps.
 - [AI Act for Professional Firms and SMEs: Beyond Compliance](https://oviaitalia.it/en/blog/ai-act-professional-firms-smes-italy-governance.html): AI Act fully applies from 2 August 2026: what changes for Italian professional firms and SMEs, and how to build real AI governance beyond formal compliance.

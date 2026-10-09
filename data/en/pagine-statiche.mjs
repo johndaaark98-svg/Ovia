@@ -23,6 +23,7 @@ export const HOME = {
     ['Sicurezza', 'Security'],
     ['Soluzioni', 'Solutions'],
     ['Metodo', 'Method'],
+    ['Chi siamo', 'About us'],
     ['Servizi', 'Services'],
     ['Prenota il Process Check', 'Book your Process Check'],
     ['Prenota il Process Check →', 'Book your Process Check →'],

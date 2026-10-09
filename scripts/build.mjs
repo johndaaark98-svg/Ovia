@@ -6,6 +6,7 @@ import { renderArticolo, renderIndice, renderFeed, loc } from './blog/render.mjs
 import { pathFor } from './lib/i18n.mjs';
 import { buildEnStatic } from './build-en-static.mjs';
 import { buildFaq } from './build-faq.mjs';
+import { buildChiSiamo } from './build-chi-siamo.mjs';
 import { FAQ } from '../data/faq.mjs';
 
 const ROOT = new URL('..', import.meta.url).pathname;
@@ -21,6 +22,7 @@ export function caricaArticoli() {
 export async function buildTutto({ log = console.log } = {}) {
   await import('./build-servizi.mjs?' + Date.now());
   buildFaq();
+  buildChiSiamo();
   await buildEnStatic(); // homepage, landing e pagine legali in inglese (da index.html & co.)
   const articoli = caricaArticoli();
   const it = articoli.map(a => loc(a, 'it'));
@@ -34,7 +36,7 @@ export async function buildTutto({ log = console.log } = {}) {
   writeFileSync(ROOT + 'en/blog/index.html', renderIndice(en, 'en'));
   writeFileSync(ROOT + 'en/blog/feed.xml', renderFeed(en, 'en'));
 
-  const statiche = ['/', '/servizi/', '/faq.html', ...PRODOTTI.map(p => urlOf(p.id)), '/siti-studi-professionali.html', '/siti-attivita-locali.html', '/blog/']; // le pagine legali sono noindex: fuori dalla sitemap
+  const statiche = ['/', '/servizi/', '/chi-siamo.html', '/faq.html', ...PRODOTTI.map(p => urlOf(p.id)), '/siti-studi-professionali.html', '/siti-attivita-locali.html', '/blog/']; // le pagine legali sono noindex: fuori dalla sitemap
   const pr = p => p === '/' ? '1.0' : p.startsWith('/servizi') ? '0.9' : '0.8';
   const urls = [
     ...statiche.flatMap(p => [
@@ -59,6 +61,9 @@ ${urls.map(u => `  <url><loc>${SITE.url}${u.loc}</loc>${u.lm ? `<lastmod>${u.lm}
 ## Servizi
 ${PRODOTTI.map(p => `- [${p.name}](${SITE.url}${urlOf(p.id)}): ${p.pitch}`).join('\n')}
 
+## Chi siamo
+- [Chi siamo](${SITE.url}/chi-siamo.html): Ovia nasce a Olbia come braccio operativo di L3 Innovation Srl. Dai software per il sovraindebitamento (oltre 15.000 pratiche gestite) ai sistemi automatizzati per studi e imprese. Fondatore e CEO: Luca Lorenzo.
+
 ## Domande frequenti
 - [Tutte le FAQ](${SITE.url}/faq.html): ${FAQ.length} risposte su metodo, sicurezza, normativa, costi e tempi.
 ${FAQ.filter(f => f.home).map(f => `- ${f.q}`).join('\n')}
@@ -70,6 +75,7 @@ ${articoli.slice(0, 30).map(a => `- [${a.title}](${SITE.url}/blog/${a.slug}.html
 - [Home (EN)](${SITE.url}/en/): Ovia in English.
 - [Services (EN)](${SITE.url}/en/services/)
 - [FAQ (EN)](${SITE.url}/en/faq.html)
+- [About us (EN)](${SITE.url}/en/about.html)
 ${en.slice(0, 20).map(a => `- [${a.title}](${SITE.url}/en/blog/${a._en}.html): ${a.meta_description}`).join('\n')}
 
 ## Contatti
