@@ -237,10 +237,10 @@ export const SERVIZI_EN = {
     },
     flow: [
       { t: 'Record', h: 'Calls or meetings, in person too', p: 'By phone, with a dedicated recorder or on a video call: recording starts with the proper notice.' },
-      { t: 'Transcribe', h: 'Transcript and summary', p: 'The conversation becomes text and then a structured summary: what was discussed, what was decided, what’s still open.' },
-      { t: 'Recognise', h: 'It links the call to the right client', p: 'The system matches the call to the client and case, so the history stays complete even months later.' },
-      { t: 'Organise', h: 'Tasks, deadlines and an updated record', p: '“Send me the tax return documents by the 15th” becomes an assigned task with a deadline and an update to the client record.' },
-      { t: 'Summarise', h: 'A summary email ready to approve', p: 'The client gets a clear summary of what was agreed. You review it and send it with one click.', human: 'No summary goes out without your OK' },
+      { t: 'Understand', h: 'From conversation to a structured record', p: 'Client, case, amounts, commitments and documents to request. Anything not stated for certain stays “not quantified”: no invented figures.' },
+      { t: 'Recognise', h: 'It links the call to the right client, with no duplicates', p: 'The system finds client and case from the phone number or name. If the case doesn’t exist yet it creates it, then links it rather than duplicating it.' },
+      { t: 'Add up', h: 'Many calls, one record', p: 'A new call completes the previous one instead of replacing it. If two calls say different things, the system doesn’t choose: it shows both values, with dates.' },
+      { t: 'Approve', h: 'A proposal waiting for your approval', p: 'Correct, choose between conflicting values and approve: only then is the record updated and tasks, documents and the client summary go out.', human: 'Nothing enters the record without your OK' },
     ],
     calc: {
       title: 'What the work after every call is worth',
@@ -310,7 +310,7 @@ export const SERVIZI_EN = {
       { t: 'Request', h: 'The request goes to the client', p: 'The client receives a clear request, with the exact list and a secure channel to upload files.' },
       { t: 'Check', h: 'It recognises what has arrived', p: 'Each file received is recognised, checked (is it the right document? is it legible? is it complete?) and ticked off the list.' },
       { t: 'Remind', h: 'It reminds only about what’s missing', p: 'Clients get reminders only for missing documents, with a tone that escalates over time. No pointless reminders to anyone who’s already sent everything.' },
-      { t: 'Generate', h: 'It fills in recurring documents', p: 'Powers of attorney, contracts, letters: the extracted data fills your templates, ready for review.', human: 'Every generated document goes through your review' },
+      { t: 'Generate', h: 'Documents ready after your signature', p: 'Powers of attorney, contracts, letters: after approval the case data fills your templates, in PDF and Word in the client’s folder, always at the latest valid version.', human: 'Every document starts from your approval' },
     ],
     calc: {
       title: 'What chasing documents costs',

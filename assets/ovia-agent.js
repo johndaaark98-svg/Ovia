@@ -265,7 +265,7 @@
   (function () {
     var launch = document.querySelector('.oa-launch');
     if (!launch) return;
-    var SEL = '[data-hx-dot], [data-pipe-hold]:not([hidden]), .sx-hold, [data-hx-cta], .sx-btn2, .kit-hold, .kit-in, .kit-out-row';
+    var SEL = '[data-hx-dot], [data-pipe-hold]:not([hidden]), .sx-hold, [data-hx-cta], .sx-btn2, .kit-hold, .kit-play, .kit-picks, .kit-light, .kit-out-row';
     var raf = 0, base = null;
     var check = function () {
       raf = 0;

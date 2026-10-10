@@ -247,10 +247,10 @@ export const SERVIZI = {
     },
     flow: [
       { t: 'Registra', h: 'Chiamata o riunione, anche in presenza', p: 'Con il telefono, un registratore dedicato o la videochiamata: la registrazione parte con l’informativa corretta.' },
-      { t: 'Trascrive', h: 'Trascrizione e sintesi in italiano', p: 'La conversazione diventa testo e poi sintesi strutturata: di cosa si è parlato, cosa si è deciso, cosa resta aperto.' },
-      { t: 'Riconosce', h: 'Collega la chiamata al cliente giusto', p: 'Il sistema abbina la chiamata al cliente e alla pratica, così lo storico resta completo anche dopo mesi.' },
-      { t: 'Organizza', h: 'Attività, scadenze e scheda aggiornata', p: '“Mi mandi il 730 entro il 15”: diventa un’attività assegnata con scadenza e un aggiornamento della scheda cliente.' },
-      { t: 'Riepiloga', h: 'Email di riepilogo pronta da approvare', p: 'Il cliente riceve un riepilogo chiaro di quanto concordato. Tu lo rileggi e lo invii con un clic.', human: 'Nessun riepilogo parte senza il tuo ok' },
+      { t: 'Capisce', h: 'Dalla conversazione a una scheda strutturata', p: 'Cliente, pratica, importi, impegni e documenti da chiedere. Quello che non è stato detto con certezza resta «non quantificato»: nessuna cifra inventata.' },
+      { t: 'Riconosce', h: 'Collega la chiamata al cliente giusto, senza doppioni', p: 'Il sistema ritrova cliente e pratica dal telefono o dal nome. Se la pratica non esiste ancora la crea, e poi la ricollega invece di duplicarla.' },
+      { t: 'Somma', h: 'Più chiamate, una sola scheda', p: 'Una nuova chiamata completa la precedente invece di sostituirla. Se due chiamate dicono cose diverse, il sistema non sceglie: mostra entrambi i valori, con la data.' },
+      { t: 'Approvi', h: 'Proposta in attesa della tua approvazione', p: 'Correggi, scegli tra i valori discordanti e approva: solo allora la scheda si aggiorna e partono attività, documenti e riepilogo al cliente.', human: 'Niente entra nella scheda senza il tuo ok' },
     ],
     calc: {
       title: 'Quanto vale il lavoro che fai dopo ogni chiamata',
@@ -321,7 +321,7 @@ export const SERVIZI = {
       { t: 'Richiesta', h: 'Parte la richiesta al cliente', p: 'Il cliente riceve una richiesta chiara, con l’elenco esatto e un canale sicuro per caricare i file.' },
       { t: 'Controllo', h: 'Riconosce cosa è arrivato', p: 'Ogni file ricevuto viene riconosciuto, verificato (è il documento giusto? è leggibile? è completo?) e spuntato dalla lista.' },
       { t: 'Sollecito', h: 'Sollecita solo ciò che manca', p: 'Il cliente riceve promemoria solo per i documenti mancanti, con un tono che cresce con il tempo. Nessuno sollecito inutile a chi ha già mandato tutto.' },
-      { t: 'Genera', h: 'Compila i documenti ricorrenti', p: 'Deleghe, contratti, lettere: i dati estratti riempiono i tuoi modelli, pronti per la revisione.', human: 'Ogni documento generato passa dalla tua revisione' },
+      { t: 'Genera', h: 'Documenti pronti dopo la tua firma', p: 'Deleghe, contratti, lettere: dopo l’approvazione i dati della pratica compilano i tuoi modelli, in PDF e Word nella cartella del cliente, sempre all’ultima versione valida.', human: 'Ogni documento nasce dalla tua approvazione' },
     ],
     calc: {
       title: 'Quanto costa rincorrere i documenti',
