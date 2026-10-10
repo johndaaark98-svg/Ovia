@@ -3,7 +3,7 @@
    Il pallino blu del logo significa "in attesa": ogni sistema Ovia prepara
    il lavoro e poi si ferma finché una persona non approva.
    1. Coda di approvazione (hero): tieni premuto il pallino per approvare.
-   2. Simulatore: arriva qualcosa → Ovia legge → prepara → tu decidi → fatto.
+   2. Monta il tuo sistema: percorso guidato in cinque pezzi, il pallino indica cosa fare.
    Pallino di chiusura e manifesto sono in ovia-pages.js (condivisi).
    Testi e scenari arrivano dal JSON #hx-data (generato da scripts/build-home.mjs).
    ===================================================================== */
@@ -357,162 +357,293 @@ const ovHome = () => {
     }
   }
 
-  /* ---------- 3. Simulatore ---------- */
-  const sx = document.querySelector('[data-sx]');
-  if (sx) {
-    const S = D.sim;
-    const tabs = [...sx.querySelectorAll('[data-sx-tab]')];
-    const track = sx.querySelector('[data-sx-track]');
-    const stations = [...track.querySelectorAll('li:not(.sx-fill)')];
-    const fill = track.querySelector('.sx-fill');
-    const panel = sx.querySelector('[data-sx-panel]');
-    const say = sx.querySelector('[data-sx-live]');
-    let run = 0, cur = 0;
+  /* ---------- 2. Monta il tuo sistema (percorso guidato) ----------
+     Cinque pezzi, montati dal visitatore uno alla volta: studio, arriva, legge,
+     prepara, decidi tu. Il pallino blu (la "guida") si posa sempre su ciò che
+     tocca fare adesso: è lo stesso significato del logo, "in attesa di te".
+     Ogni pezzo montato si incastra nella barra in alto, come in un modellino. */
+  const kit = document.querySelector('[data-kit]');
+  if (kit && D.kit) {
+    const K = D.kit;
+    const parts = [...kit.querySelectorAll('.kit-parts > li:not(.kit-line)')];
+    const gN = kit.querySelector('[data-kit-n]'), gH = kit.querySelector('[data-kit-h]'), gP = kit.querySelector('[data-kit-p]');
+    const reset = kit.querySelector('[data-kit-reset]');
+    const bench = kit.querySelector('[data-kit-bench]');
+    const HOVER = matchMedia('(hover: hover) and (pointer: fine)').matches;
+    bench.textContent = '';
+    const stage = el('div', 'kit-stage'), cue = el('span', 'kit-cue');
+    cue.setAttribute('aria-hidden', 'true'); cue.hidden = true;
+    bench.append(stage, cue);
+    let run = 0, st = null, t0 = 0, kb = false, cueOn = null, demoOn = null;
+    addEventListener('keydown', e => { if (e.key === 'Tab' || e.key === 'Enter' || e.key === ' ') kb = true; }, true);
+    addEventListener('pointerdown', () => { kb = false; }, true);
 
-    const setStage = (k, done = false) => {
-      stations.forEach((s, i) => {
-        s.classList.toggle('on', i < k || (done && i === k));
-        s.classList.toggle('cur', i === k && !done);
-      });
-      fill.style.setProperty('--f', k / (stations.length - 1));
-      if (say) say.textContent = S.stages[k];
+    const guide = (i, h, p) => {
+      gN.textContent = i < 5 ? K.piece.replace('{n}', i + 1) : K.doneTag;
+      gH.textContent = h; gP.textContent = p;
+      reset.hidden = i === 0;
+      parts.forEach((li, j) => li.classList.toggle('is-cur', j === i));
     };
-    const block = (title, cls) => {
-      const b = el('div', 'sx-block is-new ' + (cls || ''));
-      b.append(el('p', 'sx-h', title));
-      return b;
+    const mount = i => {
+      parts[i].classList.remove('is-cur');
+      parts[i].classList.add('is-on');
+      kit.style.setProperty('--kf', (i / 4).toFixed(3));
     };
+    // la guida: un pallino che si posa sull'angolo di ciò che tocca fare
+    const place = () => {
+      if (demoOn) return demo(...demoOn);
+      if (!cueOn || !cueOn.isConnected) { cue.hidden = true; return; }
+      const B = bench.getBoundingClientRect(), r = cueOn.getBoundingClientRect();
+      cue.hidden = false;
+      cue.style.transform = `translate(${Math.round(r.right - B.left - 9)}px, ${Math.round(r.top - B.top - 5)}px)`;
+    };
+    const point = target => { demoOn = null; cue.classList.remove('is-drag'); cueOn = target; place(); };
+    const hideCue = () => { cueOn = null; demoOn = null; cue.classList.remove('is-drag'); cue.hidden = true; };
+    // mostra il gesto da fare: il pallino va dall'email fino a Ovia, e ricomincia
+    const demo = (a, b) => {
+      demoOn = [a, b]; cueOn = null;
+      if (!a.isConnected) { hideCue(); return; }
+      const B = bench.getBoundingClientRect(), r1 = a.getBoundingClientRect(), r2 = b.getBoundingClientRect();
+      cue.hidden = false;
+      if (RM) { cue.style.transform = `translate(${Math.round(r1.right - B.left - 9)}px, ${Math.round(r1.top - B.top - 5)}px)`; return; }
+      cue.style.setProperty('--x0', Math.round(r1.left + r1.width / 2 - B.left - 7) + 'px');
+      cue.style.setProperty('--y0', Math.round(r1.top + r1.height / 2 - B.top - 7) + 'px');
+      cue.style.setProperty('--x1', Math.round(r2.left + r2.width / 2 - B.left - 7) + 'px');
+      cue.style.setProperty('--y1', Math.round(r2.top + r2.height / 2 - B.top - 7) + 'px');
+      if (!cue.classList.contains('is-drag')) cue.classList.add('is-drag');
+    };
+    addEventListener('resize', () => requestAnimationFrame(place));
+    const clear = () => { stage.textContent = ''; hideCue(); };
+    // Dopo ogni gesto il passo successivo deve essere sotto gli occhi: sul telefono
+    // la guida va in cima allo schermo, altrimenti si scorre solo quanto serve.
+    const NARROW = matchMedia('(max-width: 900px)');
+    const show = target => {
+      if (!target || !target.isConnected) return;
+      const head = innerWidth <= 760 ? 64 : 72, r = target.getBoundingClientRect();
+      if (r.top >= head + 8 && r.bottom <= innerHeight - 16) return;
+      const g = kit.querySelector('.kit-guide').getBoundingClientRect();
+      let dy = NARROW.matches ? g.top - head - 8 : r.bottom - innerHeight + 32;
+      if (r.top - dy < head + 8) dy = r.top - head - 16;
+      scrollBy({ top: dy, behavior: RM ? 'auto' : 'smooth' });
+      setTimeout(place, RM ? 0 : 520);
+    };
+    const focusFirst = () => { if (!kb) return; const f = stage.querySelector('button:not([disabled])'); if (f) f.focus({ preventScroll: true }); };
     const typeWords = async (node, text, alive) => {
-      if (RM) { node.textContent = text; return; }
+      node.classList.add('is-typing');
+      if (RM) { node.textContent = text; node.classList.remove('is-typing'); return; }
       const words = text.split(' ');
       node.textContent = '';
-      node.classList.add('is-typing');
       for (let k = 0; k < words.length; k++) {
         if (!alive()) return;
         node.textContent += (k ? ' ' : '') + words[k];
-        await wait(22 + Math.random() * 26);
+        await wait(18 + Math.random() * 22);
       }
       node.classList.remove('is-typing');
     };
 
-    async function play(i, focusTab = false) {
-      const id = ++run, alive = () => id === run, sc = S.scen[i];
-      cur = i;
-      tabs.forEach((t, j) => { t.setAttribute('aria-selected', String(j === i)); t.tabIndex = j === i ? 0 : -1; });
-      if (focusTab) tabs[i].focus();
-      sx.classList.remove('is-wait', 'is-stopped', 'is-done');
-      panel.innerHTML = '';
-      const left = el('div', 'sx-in'), right = el('div', 'sx-work');
-      panel.append(left, right);
+    // Pezzo 1: che studio hai?
+    function s0() {
+      const id = ++run; st = null;
+      parts.forEach(li => li.classList.remove('is-on', 'is-cur'));
+      kit.classList.remove('is-wait', 'is-done'); kit.style.setProperty('--kf', 0);
+      clear(); guide(0, K.s0.h, K.s0.p);
+      const box = el('div', 'kit-choices');
+      K.studios.forEach(sd => {
+        const b = el('button', 'kit-choice'); b.type = 'button';
+        b.append(el('strong', '', sd.name), el('span', '', sd.sub));
+        b.addEventListener('click', () => {
+          if (id !== run || st) return;
+          st = sd; t0 = performance.now();
+          b.classList.add('is-pick'); box.classList.add('is-picked'); hideCue();
+          mount(0);
+          setTimeout(() => s1(id), RM ? 0 : 450);
+        });
+        box.append(b);
+      });
+      stage.append(box);
+      point(box.firstChild); focusFirst();
+    }
 
-      // Arriva
-      setStage(0);
-      const b0 = el('div', 'sx-block');
-      b0.append(el('p', 'sx-h', S.arrived), el('p', 'sx-src', sc.src), el('p', 'sx-msg is-new', sc.input));
-      left.append(b0);
-      await wait(900); if (!alive()) return;
+    // Pezzo 2: arriva. Trascina l'email dentro Ovia (o toccala).
+    function s1(id) {
+      if (id !== run) return;
+      clear(); guide(1, HOVER ? K.s1.h : K.s1.hTouch, K.s1.p);
+      const m = st.mail;
+      const wrap = el('div', 'kit-drop');
+      const card = el('button', 'kit-mail'); card.type = 'button'; card.setAttribute('aria-label', K.s1.sr);
+      const top = el('span', 'kit-mail-top'); top.append(el('b', '', m.ch), el('span', '', m.time));
+      card.append(top, el('strong', '', m.from), el('span', 'kit-mail-t', m.text.map(x => typeof x === 'string' ? x : x[0]).join('')));
+      const drop = el('div', 'kit-in');
+      drop.append(el('span', 'kit-in-o', 'ovia'), el('span', 'kit-in-t', K.s1.drop));
+      wrap.append(card, drop); stage.append(wrap);
+      show(drop);
+      requestAnimationFrame(() => { if (id === run) demo(card, drop); });
+      if (kb) card.focus({ preventScroll: true });
 
-      // Ovia legge
-      setStage(1);
-      const b1 = block(S.understood);
-      const dl = el('dl', 'sx-fields');
-      b1.append(dl); left.append(b1);
-      for (const [k, v] of sc.fields) {
-        await wait(320); if (!alive()) return;
-        const row = el('div', 'is-new');
-        row.append(el('dt', '', k), el('dd', '', v));
-        dl.append(row);
-      }
-      await wait(600); if (!alive()) return;
+      let done = false, drag = false, dx = 0, dy = 0, x0 = 0, y0 = 0, moved = 0;
+      const over = e => { const r = drop.getBoundingClientRect(); return e.clientX > r.left - 24 && e.clientX < r.right + 24 && e.clientY > r.top - 24 && e.clientY < r.bottom + 24; };
+      const accept = () => {
+        if (done || id !== run) return;
+        done = true; hideCue();
+        const a = card.getBoundingClientRect(), b = drop.getBoundingClientRect();
+        const tx = dx + (b.left + b.width / 2) - (a.left + a.width / 2), ty = dy + (b.top + b.height / 2) - (a.top + a.height / 2);
+        card.classList.add('is-in');
+        card.style.transition = RM ? 'none' : 'transform .5s cubic-bezier(.4,0,.2,1), opacity .45s .1s';
+        card.style.transform = `translate(${tx}px, ${ty}px) scale(.18)`;
+        card.style.opacity = '0';
+        drop.classList.add('is-got');
+        drop.querySelector('.kit-in-t').textContent = K.s1.got;
+        setTimeout(() => { if (id !== run) return; mount(1); setTimeout(() => s2(id), RM ? 0 : 520); }, RM ? 0 : 420);
+      };
+      card.addEventListener('pointerdown', e => {
+        if (done || e.button > 0) return;
+        drag = true; moved = 0; x0 = e.clientX; y0 = e.clientY;
+        try { card.setPointerCapture(e.pointerId); } catch (x) {}
+        card.style.transition = 'none'; card.classList.add('is-drag'); hideCue();
+      });
+      card.addEventListener('pointermove', e => {
+        if (!drag) return;
+        dx = e.clientX - x0; dy = e.clientY - y0; moved = Math.max(moved, Math.hypot(dx, dy));
+        card.style.transform = `translate(${dx}px, ${dy}px) rotate(${Math.max(-3, Math.min(3, dx / 50)).toFixed(2)}deg) scale(.86)`;
+        drop.classList.toggle('is-over', over(e));
+      });
+      const up = e => {
+        if (!drag) return;
+        drag = false; card.classList.remove('is-drag'); drop.classList.remove('is-over');
+        if (moved < 8 || over(e)) return accept();
+        card.style.transition = 'transform .45s cubic-bezier(.2,.7,.2,1)'; card.style.transform = ''; dx = dy = 0;
+        setTimeout(() => { if (!done && id === run) demo(card, drop); }, 480);
+      };
+      card.addEventListener('pointerup', up);
+      card.addEventListener('pointercancel', () => { drag = false; card.classList.remove('is-drag'); card.style.transform = ''; dx = dy = 0; });
+      card.addEventListener('click', e => { if (e.detail === 0) accept(); });
+    }
 
-      // Ovia prepara
-      setStage(2);
-      const b2 = block(S.drafted);
-      const draft = el('p', 'sx-draft');
-      b2.append(draft); right.append(b2);
-      await typeWords(draft, sc.draft, alive); if (!alive()) return;
-      await wait(350); if (!alive()) return;
+    // Pezzo 3: legge. Le parole sottolineate rivelano cosa capisce Ovia.
+    function s2(id) {
+      if (id !== run) return;
+      clear(); guide(2, HOVER ? K.s2.h : K.s2.hTouch, K.s2.p);
+      const g = el('div', 'kit-read'), left = el('div', 'kit-read-l'), msg = el('p', 'kit-text'), words = [];
+      const head = el('p', 'kit-mhead'); head.append(el('b', '', st.mail.ch), el('span', '', `${st.mail.from} · ${st.mail.time}`));
+      st.mail.text.forEach(x => {
+        if (typeof x === 'string') { msg.append(x); return; }
+        const w = el('button', 'kit-w', x[0]); w.type = 'button'; w.dataset.f = x[1];
+        words.push(w); msg.append(w);
+      });
+      const dl = el('dl', 'kit-fields');
+      const rows = st.fields.map(([k]) => { const r = el('div'); r.append(el('dt', '', k), el('dd')); dl.append(r); return r; });
+      left.append(head, msg); g.append(left, dl); stage.append(g);
+      let finished = false;
+      const hit = w => {
+        if (id !== run || finished || w.classList.contains('is-hit')) return;
+        const f = +w.dataset.f, r = rows[f];
+        w.classList.add('is-hit'); r.classList.add('is-hit');
+        r.querySelector('dd').textContent = st.fields[f][1];
+        const next = words.find(x => !x.classList.contains('is-hit'));
+        if (next) { point(next); if (kb && document.activeElement === w) next.focus({ preventScroll: true }); return; }
+        finished = true; hideCue();
+        left.append(el('p', 'kit-ok is-new', K.s2.linked));
+        mount(2);
+        setTimeout(() => s3(id), RM ? 0 : 1200);
+      };
+      words.forEach(w => {
+        w.addEventListener('pointerenter', e => { if (e.pointerType === 'mouse') hit(w); });
+        w.addEventListener('click', () => hit(w));
+      });
+      show(dl); point(words[0]); if (kb) words[0].focus({ preventScroll: true });
+    }
 
-      // Tu decidi: il sistema si ferma e aspetta.
-      setStage(3);
-      sx.classList.add('is-wait');
-      const act = el('div', 'sx-actions is-new');
-      const hb = el('button', 'sx-hold'); hb.type = 'button';
-      hb.append(el('i'), el('span', '', S.approve));
-      const eb = el('button', 'sx-btn2', S.edit); eb.type = 'button';
-      const rb = el('button', 'sx-btn2', S.reject); rb.type = 'button';
-      act.append(hb, eb, rb);
-      b2.append(act);
+    // Pezzo 4: prepara. Il visitatore sceglie il tono, Ovia scrive.
+    function s3(id) {
+      if (id !== run) return;
+      clear(); guide(3, K.s3.h, K.s3.p);
+      const w = el('div', 'kit-write');
+      const tone = el('div', 'kit-tone'); tone.setAttribute('role', 'radiogroup'); tone.setAttribute('aria-label', K.s3.toneLabel);
+      const draft = el('p', 'kit-draft'); draft.dataset.empty = K.s3.empty;
+      let typing = 0, ready = false;
+      const btns = K.s3.tones.map((t, j) => {
+        const b = el('button', '', t); b.type = 'button'; b.setAttribute('role', 'radio'); b.setAttribute('aria-checked', 'false');
+        b.addEventListener('click', () => pick(j));
+        tone.append(b); return b;
+      });
+      w.append(el('p', 'kit-ctx', st.ctx), tone, draft); stage.append(w);
+      const pick = async j => {
+        if (id !== run || kit.classList.contains('is-done')) return;
+        btns.forEach((b, k) => b.setAttribute('aria-checked', String(k === j)));
+        draft.setAttribute('contenteditable', 'false');
+        if (!ready) hideCue();
+        const my = ++typing;
+        await typeWords(draft, st.drafts[j], () => my === typing && id === run);
+        if (my !== typing || id !== run || ready) return;
+        ready = true; mount(3);
+        await wait(450); if (id === run) s4(id, w, draft);
+      };
+      show(draft); point(btns[0]); focusFirst();
+    }
 
+    // Pezzo 5: decidi tu. Il sistema si ferma e aspetta il pallino.
+    function s4(id, w, draft) {
+      guide(4, K.s4.h, K.s4.p);
+      kit.classList.add('is-wait');
+      const act = el('div', 'kit-act is-new');
+      const hb = el('button', 'kit-hold'); hb.type = 'button';
+      hb.innerHTML = '<span class="kit-hold-dot"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22.5"/></svg></span>';
+      hb.append(el('span', 'kit-hold-t', K.s4.hold));
+      const eb = el('button', 'kit-link', K.s4.edit); eb.type = 'button';
+      act.append(hb, eb); w.append(act);
+      const ring = hb.querySelector('circle'), C = 2 * Math.PI * 22.5;
+      ring.style.strokeDasharray = C; ring.style.strokeDashoffset = C;
       eb.addEventListener('click', () => {
         const on = draft.getAttribute('contenteditable') !== 'true';
         draft.setAttribute('contenteditable', on ? 'true' : 'false');
-        eb.textContent = on ? S.editDone : S.edit;
-        if (on) {
-          draft.focus();
-          const r = document.createRange(); r.selectNodeContents(draft); r.collapse(false);
-          const s = getSelection(); s.removeAllRanges(); s.addRange(r);
-        }
-      });
-      rb.addEventListener('click', () => {
-        if (!alive()) return;
-        run++;
-        sx.classList.remove('is-wait'); sx.classList.add('is-stopped');
-        draft.setAttribute('contenteditable', 'false');
-        act.remove();
-        const stop = el('div', 'sx-stop is-new');
-        const again = el('button', 'sx-btn2', S.restart); again.type = 'button';
-        again.addEventListener('click', () => play(i));
-        stop.append(el('p', '', S.rejected), again);
-        b2.append(stop);
-        again.focus({ preventScroll: true });
-        if (say) say.textContent = S.rejected;
+        eb.textContent = on ? K.s4.editDone : K.s4.edit;
+        if (on) { draft.focus(); const r = document.createRange(); r.selectNodeContents(draft); r.collapse(false); const s = getSelection(); s.removeAllRanges(); s.addRange(r); }
       });
       holdToApprove(hb, {
         ms: 800,
-        onProgress: p => hb.style.setProperty('--p', p),
-        onDone: async () => {
-          if (!alive()) return;
-          const hadFocus = act.contains(document.activeElement);
-          draft.setAttribute('contenteditable', 'false');
-          act.remove();
-          sx.classList.remove('is-wait'); sx.classList.add('is-done');
-          setStage(4, true);
-          const b3 = block(S.result, 'sx-result');
-          const log = el('ul', 'sx-log');
-          b3.append(log); right.append(b3);
-          for (const line of sc.done) {
-            await wait(260); if (!alive()) return;
-            log.append(el('li', 'is-new', line));
-          }
-          await wait(300); if (!alive()) return;
-          const out = el('div', 'sx-out is-new');
-          const link = el('a', 'hm-link', `${S.discover} ${sc.name}`); link.href = sc.href;
-          const nx = el('button', 'sx-btn2', S.again); nx.type = 'button';
-          nx.addEventListener('click', () => play((i + 1) % S.scen.length));
-          out.append(el('p', '', S.yourPart), link, nx);
-          b3.append(out);
-          if (hadFocus) nx.focus({ preventScroll: true });
+        onProgress: p => { ring.style.strokeDashoffset = C * (1 - p); },
+        onDone: () => {
+          ring.style.strokeDashoffset = C;
+          if (id !== run || draft.classList.contains('is-typing')) return;
+          s5(id, w, draft, act, act.contains(document.activeElement));
         },
       });
+      show(act);
+      if (kb) hb.focus({ preventScroll: true });
     }
 
-    tabs.forEach((t, j) => {
-      t.addEventListener('click', () => play(j));
-      t.addEventListener('keydown', e => {
-        const d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
-        if (!d) return;
-        e.preventDefault();
-        play((cur + d + tabs.length) % tabs.length, true);
-      });
-    });
+    // Fatto: il sistema lavora, il visitatore vede cosa è successo e quanto ci ha messo.
+    async function s5(id, w, draft, act, hadFocus) {
+      act.remove();
+      draft.setAttribute('contenteditable', 'false');
+      w.querySelectorAll('.kit-tone button').forEach(b => { b.disabled = true; });
+      draft.classList.add('is-ok');
+      draft.before(el('p', 'kit-okpill is-new', K.s4.approved));
+      kit.classList.remove('is-wait');
+      mount(4); kit.classList.add('is-done');
+      const secs = Math.max(1, Math.round((performance.now() - t0) / 1000));
+      guide(5, K.s5.h, K.s5.p);
+      const log = el('ul', 'kit-log');
+      w.append(log);
+      show(log);
+      for (const line of st.done) { await wait(300); if (id !== run) return; log.append(el('li', 'is-new', line)); }
+      await wait(320); if (id !== run) return;
+      const out = el('div', 'kit-out is-new');
+      out.append(el('p', '', K.s5.you.replace('{s}', secs)));
+      const row = el('div', 'kit-out-row');
+      const tmp = document.createElement('div'); tmp.innerHTML = K.cal;
+      const cb = tmp.firstElementChild;
+      try { const cfg = JSON.parse(cb.getAttribute('data-cal-config') || '{}'); cfg.notes = K.s5.calNote.replace('{studio}', st.kind); cb.setAttribute('data-cal-config', JSON.stringify(cfg)); } catch (x) {}
+      const again = el('button', 'sx-btn2', K.s5.again); again.type = 'button';
+      again.addEventListener('click', () => { s0(); show(stage.firstChild); });
+      const link = el('a', 'hm-link', `${K.s5.discover} ${st.svcName}`); link.href = st.svcHref;
+      row.append(cb, again, link); out.append(row); w.append(out);
+      show(row);
+      if (hadFocus || kb) cb.focus({ preventScroll: true });
+    }
 
-    if ('IntersectionObserver' in window) {
-      const io = new IntersectionObserver(es => {
-        if (es.some(e => e.isIntersecting)) { io.disconnect(); play(0); }
-      }, { threshold: .3 });
-      io.observe(sx);
-    } else play(0);
+    reset.addEventListener('click', () => { s0(); show(stage); if (kb) { const f = stage.querySelector('button'); if (f) f.focus({ preventScroll: true }); } });
+    s0();
   }
 };
 // ovia-pages.js (che definisce window.ovHold) viene eseguito dopo questo file: si parte al DOMContentLoaded.

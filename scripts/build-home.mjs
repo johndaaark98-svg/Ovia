@@ -13,6 +13,14 @@ import { bloccoHome } from './build-faq.mjs';
 
 const ROOT = new URL('..', import.meta.url).pathname;
 const ALT = { it: '/', en: '/en/' };
+// I cinque pezzi del sistema: studio, arriva, legge, prepara, decidi tu (il pallino).
+const KIT_GLYPH = [
+  '<path d="M3 19.5h16M5 19.5V9l6-4 6 4v10.5M9 19.5v-5h4v5"/>',
+  '<rect x="3" y="5.5" width="16" height="11.5" rx="1.6"/><path d="M3.6 6.6l7.4 5.4 7.4-5.4"/>',
+  '<circle cx="9.8" cy="9.8" r="5.4"/><path d="M13.8 13.8l4.7 4.7"/>',
+  '<path d="M4 6.5h14M4 11h14M4 15.5h8.5"/>',
+  '<circle cx="11" cy="11" r="5" fill="currentColor" stroke="none"/>',
+];
 const LOGHI = [
   { src: '/loghi/eurofiltri-trim.png', alt: 'Eurofiltri Group', h: 26, w: 105, mono: true },
   { src: '/loghi/rialziamoci.svg', alt: 'Rialziamoci Italia', h: 34, w: 111 },
@@ -63,38 +71,44 @@ const T = {
       cards: ['Risposta sulla dichiarazione', 'Riepilogo della chiamata', 'Sollecito busta paga', 'Risposta al preventivo'],
       wait: 'In attesa', ok: 'Approvato', count: '{n} di 4 approvate da te', next: 'Provalo qui sotto',
     },
-    // simulatore
-    simH: 'Guarda un sistema Ovia al lavoro.',
-    simP: 'Scegli cosa arriva. Ovia lo legge e prepara il lavoro, poi si ferma: la decisione è tua.',
-    simNote: 'Esempio dimostrativo con nomi e dati inventati.',
-    stages: ['Arriva', 'Ovia legge', 'Ovia prepara', 'Tu decidi', 'Fatto'],
-    arrived: 'Cosa è arrivato', understood: 'Cosa ha capito', drafted: 'Cosa ha preparato', result: 'Risultato',
-    approveBtn: 'Tieni premuto per approvare', edit: 'Modifica', editDone: 'Fine modifica', reject: 'Rifiuta',
-    rejected: 'Fermato da te. Nessun messaggio è partito e il caso resta aperto in coda.',
-    yourPart: 'Il tuo contributo: una decisione. Il resto l’ha fatto il sistema.',
-    again: 'Prova un altro caso', restart: 'Ricomincia', discover: 'Scopri',
-    scen: [
-      { id: 'lead-generation', tab: 'Nuovo contatto', src: 'Modulo del sito · 21:47',
-        input: 'Buonasera, ho aperto una srl a gennaio e cerco uno studio che segua contabilità e paghe di 4 dipendenti. Potete darmi un’idea dei costi? Grazie, Marco Serra',
-        fields: [['Contatto', 'Marco Serra'], ['Cliente', 'Srl nuova, 4 dipendenti'], ['Richiesta', 'Contabilità e paghe'], ['Priorità', 'Alta, in linea con il cliente ideale dello studio']],
-        draft: 'Buonasera Marco, grazie per averci scritto. Seguiamo diverse srl appena costituite, sia nella contabilità sia nelle paghe. Per darle un preventivo preciso le propongo una prima chiamata di quindici minuti: qui sotto trova il link per scegliere l’orario.',
-        done: ['Risposta inviata alle 21:49', 'Contatto registrato nel CRM', 'Promemoria se non prenota entro 3 giorni'] },
-      { id: 'inbox', tab: 'Email di un cliente', src: 'Email in arrivo · 08:12',
-        input: 'Buongiorno, mi servirebbe sapere entro venerdì se avete ricevuto tutti i documenti per la dichiarazione. Cordiali saluti, Giulia Fadda',
-        fields: [['Cliente', 'Giulia Fadda · dichiarazione 2026'], ['Argomento', 'Stato dei documenti'], ['Scadenza', 'Venerdì'], ['Assegnata a', 'Chi segue la pratica']],
-        draft: 'Gentile Giulia, abbiamo ricevuto tutti i documenti tranne la certificazione degli interessi del mutuo. Appena ce la invia completiamo la dichiarazione, in tempo per venerdì.',
-        done: ['Risposta inviata alle 08:14', 'Email archiviata nella scheda cliente', 'Documento mancante segnato in sospeso'] },
-      { id: 'documenti', tab: 'Documento', src: 'Caricato dal cliente · 15:03',
-        input: 'busta_paga_marzo.pdf · 2 pagine',
-        fields: [['Tipo', 'Busta paga'], ['Intestatario', 'Andrea Spano, corrisponde alla pratica'], ['Periodo', 'Marzo 2026'], ['Manca ancora', 'Busta paga di febbraio']],
-        draft: 'Gentile Andrea, abbiamo ricevuto la busta paga di marzo, grazie. Per completare la pratica ci manca solo quella di febbraio: può caricarla dallo stesso link.',
-        done: ['Documento archiviato nella pratica 214', 'Richiesta inviata al cliente', 'Checklist aggiornata: 11 documenti su 12'] },
-      { id: 'chiamate', tab: 'Chiamata', src: 'Chiamata registrata · 11 minuti',
-        input: '«…quindi ci risentiamo dopo il 15 per la firma. La bozza del contratto me la manda lei entro giovedì?»',
-        fields: [['Cliente', 'Fratelli Deiana Srl'], ['Impegno', 'Bozza del contratto, a nostro carico'], ['Scadenza', 'Giovedì'], ['Prossimo contatto', 'Dopo il 15, per la firma']],
-        draft: 'Buongiorno, come concordato al telefono vi invieremo la bozza del contratto entro giovedì e ci risentiremo dopo il 15 per la firma. Restiamo a disposizione per qualsiasi dubbio.',
-        done: ['Riepilogo inviato al cliente', 'Attività assegnata: bozza del contratto, giovedì', 'Promemoria in calendario dopo il 15'] },
-    ],
+    // Monta il tuo sistema: percorso guidato, un pezzo alla volta.
+    // Nei testi dei messaggi [[parola|n]] è la parola che Ovia riconosce e collega al campo n.
+    kit: {
+      h: 'Monta il tuo sistema. Cinque pezzi, un minuto.',
+      p: 'Ti guidiamo noi, un gesto alla volta. Dove vedi il pallino blu, tocca a te.',
+      parts: ['Studio', 'Arriva', 'Legge', 'Prepara', 'Decidi tu'],
+      label: 'Il tuo sistema', piece: 'Pezzo {n} di 5', doneTag: 'Sistema montato', restart: 'Ricomincia',
+      note: 'Esempio dimostrativo con nomi e dati inventati.',
+      s0: { h: 'Che studio hai?', p: 'Il sistema si costruisce sul tuo lavoro, non su un modello generico.' },
+      s1: { h: 'Arriva un’email. Trascinala dentro Ovia.', hTouch: 'Arriva un’email. Trascinala dentro Ovia, o toccala.', p: 'Email, PEC, documenti e chiamate entrano tutti da un solo punto.', drop: 'Trascina qui', got: 'Ricevuta', sr: 'Porta l’email dentro Ovia' },
+      s2: { h: 'Passa sopra le parole sottolineate.', hTouch: 'Tocca le parole sottolineate.', p: 'Così vedi cosa capisce Ovia da sola: cliente, pratica, richiesta e scadenza.', linked: 'Collegata alla pratica giusta.' },
+      s3: { h: 'Scegli il tono del tuo studio.', p: 'Ovia scrive la risposta con i dati della pratica. Non parti mai da un foglio bianco.', tones: ['Formale', 'Cordiale'], toneLabel: 'Tono della risposta', empty: 'La risposta comparirà qui.' },
+      s4: { h: 'Ora si ferma. Tieni premuto il pallino.', p: 'Niente parte senza il tuo via libera. Se vuoi, prima modifica il testo.', hold: 'Tieni premuto per approvare', edit: 'Modifica', editDone: 'Fine modifica', approved: 'Approvata da te' },
+      s5: { h: 'Il tuo sistema è montato.', p: 'È lo stesso che costruiamo per il tuo studio, sugli strumenti che usi già.', you: 'Il tuo contributo: una scelta, un tono, una decisione. Il resto l’ha fatto il sistema, in {s} secondi.', again: 'Monta per un altro studio', discover: 'Scopri', calNote: 'Arrivo dal sito: ho montato il sistema per uno {studio}.' },
+      studios: [
+        { id: 'commercialista', name: 'Commercialista', sub: 'Dichiarazioni, contabilità, scadenze fiscali', kind: 'studio commercialista', svc: 'inbox',
+          mail: { ch: 'Email', time: '08:12', from: 'Giulia Fadda', text: 'Buongiorno, mi servirebbe sapere [[entro venerdì|3]] se avete [[ricevuto tutti i documenti|2]] per la [[dichiarazione|1]]. Grazie, [[Giulia Fadda|0]]' },
+          fields: [['Cliente', 'Giulia Fadda, cliente dal 2019'], ['Pratica', 'Dichiarazione 2026'], ['Richiesta', 'Stato dei documenti'], ['Scadenza', 'Venerdì']],
+          ctx: 'Dalla pratica: manca la certificazione degli interessi del mutuo.',
+          drafts: ['Gentile signora Fadda, abbiamo ricevuto tutti i documenti per la dichiarazione, tranne la certificazione degli interessi del mutuo. Appena ce la invia completiamo la pratica, in tempo per venerdì. Cordiali saluti.',
+            'Buongiorno Giulia, ci siamo quasi: abbiamo tutto tranne la certificazione degli interessi del mutuo. Appena ce la manda chiudiamo la dichiarazione entro venerdì. A presto!'],
+          done: ['Risposta inviata alle 08:14', 'Email archiviata nella scheda di Giulia Fadda', 'Promemoria: certificazione del mutuo, mercoledì'] },
+        { id: 'avvocato', name: 'Avvocato', sub: 'Pratiche, termini, appuntamenti con i clienti', kind: 'studio legale', svc: 'inbox',
+          mail: { ch: 'Email', time: '09:05', from: 'Paolo Murgia', text: 'Buongiorno avvocato, ho ricevuto un [[decreto ingiuntivo|1]] dal mio fornitore. Ho letto che ci sono [[40 giorni|3]] per opporsi: [[possiamo vederci questa settimana?|2]] [[Paolo Murgia|0]]' },
+          fields: [['Cliente', 'Paolo Murgia, nuovo cliente'], ['Pratica', 'Opposizione a decreto ingiuntivo'], ['Richiesta', 'Appuntamento in studio'], ['Termine', '40 giorni dalla notifica, da verificare']],
+          ctx: 'Dall’agenda dello studio: libero giovedì alle 10 e venerdì alle 15.',
+          drafts: ['Gentile signor Murgia, ho preso nota del decreto ingiuntivo. Per valutare l’opposizione nei termini le propongo un appuntamento in studio giovedì alle 10 o venerdì alle 15. Porti con sé l’atto e la busta con la data di notifica. Cordiali saluti.',
+            'Buongiorno Paolo, ricevuto. Vediamoci in studio giovedì alle 10 o venerdì alle 15, così valutiamo subito l’opposizione. Porti l’atto e la busta con la data di notifica: il termine parte da lì.'],
+          done: ['Risposta inviata alle 09:07', 'Pratica aperta: decreto ingiuntivo, Paolo Murgia', 'Termine in calendario, da confermare sulla notifica'] },
+        { id: 'consulente', name: 'Consulente del lavoro', sub: 'Paghe, assunzioni, adempimenti', kind: 'studio di consulenza del lavoro', svc: 'documenti',
+          mail: { ch: 'Email', time: '15:20', from: 'Fratelli Deiana Srl', text: 'Buongiorno, [[da lunedì|3]] assumiamo un’[[impiegata part-time|1]]. [[Cosa vi serve per l’assunzione?|2]] Ufficio amministrazione, [[Fratelli Deiana Srl|0]]' },
+          fields: [['Cliente', 'Fratelli Deiana Srl, 12 dipendenti'], ['Pratica', 'Nuova assunzione, part-time'], ['Richiesta', 'Documenti necessari'], ['Scadenza', 'Comunicazione obbligatoria prima di lunedì']],
+          ctx: 'Dalla checklist assunzioni dello studio: servono 4 documenti.',
+          drafts: ['Buongiorno, per procedere con l’assunzione ci servono entro giovedì il documento d’identità e il codice fiscale della lavoratrice, l’IBAN, l’orario part-time concordato e la mansione. Alla comunicazione obbligatoria provvediamo noi prima di lunedì. Cordiali saluti.',
+            'Buongiorno! Ci mandate entro giovedì documento e codice fiscale della nuova collega, IBAN, orario part-time e mansione? Al resto, comunicazione obbligatoria compresa, pensiamo noi prima di lunedì.'],
+          done: ['Risposta inviata alle 15:22', 'Pratica aperta: assunzione, Fratelli Deiana Srl', 'Promemoria: comunicazione obbligatoria entro domenica'] },
+      ],
+    },
     facts: [['15.000+', 'pratiche gestite con i software che abbiamo costruito'], ['30 minuti', 'per il Process Check, senza impegno'], ['Olbia', 'sede, braccio operativo di L3 Innovation Srl']],
     clients: 'Hanno scelto Ovia',
     sysH: 'Due sistemi che lavorano insieme.',
@@ -165,37 +179,42 @@ const T = {
       cards: ['Reply on the tax return', 'Call summary', 'Payslip reminder', 'Reply to the quote request'],
       wait: 'Waiting', ok: 'Approved', count: '{n} of 4 approved by you', next: 'Try it below',
     },
-    simH: 'Watch an Ovia system at work.',
-    simP: 'Choose what comes in. Ovia reads it and prepares the work, then stops: the decision is yours.',
-    simNote: 'Demo example with made-up names and data.',
-    stages: ['In', 'Ovia reads', 'Ovia drafts', 'You decide', 'Done'],
-    arrived: 'What came in', understood: 'What it understood', drafted: 'What it prepared', result: 'Result',
-    approveBtn: 'Press and hold to approve', edit: 'Edit', editDone: 'Done editing', reject: 'Reject',
-    rejected: 'Stopped by you. Nothing was sent and the case stays open in the queue.',
-    yourPart: 'Your part: one decision. The system did the rest.',
-    again: 'Try another case', restart: 'Start again', discover: 'Explore',
-    scen: [
-      { id: 'lead-generation', tab: 'New enquiry', src: 'Website form · 9:47 pm',
-        input: 'Good evening, I set up a limited company in January and I’m looking for a firm to handle the bookkeeping and payroll for 4 employees. Could you give me an idea of the cost? Thanks, Marco Serra',
-        fields: [['Contact', 'Marco Serra'], ['Client', 'New company, 4 staff'], ['Request', 'Bookkeeping and payroll'], ['Priority', 'High, matches the firm’s ideal client']],
-        draft: 'Good evening Marco, thank you for getting in touch. We look after several newly formed companies, for both bookkeeping and payroll. To give you an accurate quote I suggest a first fifteen-minute call: you’ll find the link below to pick a time.',
-        done: ['Reply sent at 9:49 pm', 'Contact saved in the CRM', 'Reminder if no booking within 3 days'] },
-      { id: 'inbox', tab: 'Client email', src: 'Incoming email · 8:12 am',
-        input: 'Good morning, could you let me know by Friday whether you have received all the documents for my tax return? Kind regards, Giulia Fadda',
-        fields: [['Client', 'Giulia Fadda · 2026 tax return'], ['Topic', 'Document status'], ['Deadline', 'Friday'], ['Assigned to', 'Whoever handles the case']],
-        draft: 'Dear Giulia, we have received all the documents except the mortgage interest statement. As soon as you send it we will complete your return, in time for Friday.',
-        done: ['Reply sent at 8:14 am', 'Email filed in the client record', 'Missing document flagged as pending'] },
-      { id: 'documenti', tab: 'Document', src: 'Uploaded by the client · 3:03 pm',
-        input: 'payslip_march.pdf · 2 pages',
-        fields: [['Type', 'Payslip'], ['Holder', 'Andrea Spano, matches the case'], ['Period', 'March 2026'], ['Still missing', 'February payslip']],
-        draft: 'Dear Andrea, we have received your March payslip, thank you. To complete the case we only need February’s: you can upload it from the same link.',
-        done: ['Document filed in case 214', 'Request sent to the client', 'Checklist updated: 11 of 12 documents'] },
-      { id: 'chiamate', tab: 'Phone call', src: 'Recorded call · 11 minutes',
-        input: '“…so we’ll speak again after the 15th to sign. Will you send me the draft contract by Thursday?”',
-        fields: [['Client', 'Deiana Brothers Ltd'], ['Commitment', 'Draft contract, on us'], ['Deadline', 'Thursday'], ['Next contact', 'After the 15th, to sign']],
-        draft: 'Good morning, as agreed on the phone we will send you the draft contract by Thursday and speak again after the 15th to sign. Do get in touch with any questions.',
-        done: ['Summary sent to the client', 'Task assigned: draft contract, Thursday', 'Calendar reminder after the 15th'] },
-    ],
+    kit: {
+      h: 'Build your system. Five pieces, one minute.',
+      p: 'We guide you, one gesture at a time. Wherever you see the blue dot, it’s your turn.',
+      parts: ['Firm', 'In', 'Reads', 'Drafts', 'You decide'],
+      label: 'Your system', piece: 'Piece {n} of 5', doneTag: 'System built', restart: 'Start again',
+      note: 'Demo example with made-up names and data.',
+      s0: { h: 'What kind of firm are you?', p: 'The system is built on your work, not on a generic template.' },
+      s1: { h: 'An email comes in. Drag it into Ovia.', hTouch: 'An email comes in. Drag it into Ovia, or tap it.', p: 'Emails, certified mail, documents and calls all come in through one place.', drop: 'Drop it here', got: 'Received', sr: 'Bring the email into Ovia' },
+      s2: { h: 'Hover over the underlined words.', hTouch: 'Tap the underlined words.', p: 'See what Ovia understands on its own: client, case, request and deadline.', linked: 'Linked to the right case.' },
+      s3: { h: 'Choose your firm’s tone.', p: 'Ovia writes the reply using the case data. You never start from a blank page.', tones: ['Formal', 'Friendly'], toneLabel: 'Tone of the reply', empty: 'The reply will appear here.' },
+      s4: { h: 'Now it stops. Press and hold the dot.', p: 'Nothing goes out without your go-ahead. Edit the text first if you like.', hold: 'Press and hold to approve', edit: 'Edit', editDone: 'Done editing', approved: 'Approved by you' },
+      s5: { h: 'Your system is built.', p: 'It’s the same one we build for your firm, on the tools you already use.', you: 'Your part: one choice, one tone, one decision. The system did the rest, in {s} seconds.', again: 'Build it for another firm', discover: 'Explore', calNote: 'Coming from the website: I built the system for a {studio}.' },
+      studios: [
+        { id: 'commercialista', name: 'Accountant', sub: 'Tax returns, bookkeeping, tax deadlines', kind: 'accounting firm', svc: 'inbox',
+          mail: { ch: 'Email', time: '8:12 am', from: 'Giulia Fadda', text: 'Good morning, could you let me know [[by Friday|3]] whether you have [[received all the documents|2]] for my [[tax return|1]]? Thanks, [[Giulia Fadda|0]]' },
+          fields: [['Client', 'Giulia Fadda, client since 2019'], ['Case', '2026 tax return'], ['Request', 'Document status'], ['Deadline', 'Friday']],
+          ctx: 'From the case file: the mortgage interest statement is still missing.',
+          drafts: ['Dear Ms Fadda, we have received all the documents for your tax return except the mortgage interest statement. As soon as you send it we will complete the return, in time for Friday. Kind regards.',
+            'Hi Giulia, nearly there: we have everything except the mortgage interest statement. Send it over and we’ll wrap up your return by Friday. Speak soon!'],
+          done: ['Reply sent at 8:14 am', 'Email filed in Giulia Fadda’s record', 'Reminder: mortgage statement, Wednesday'] },
+        { id: 'avvocato', name: 'Lawyer', sub: 'Cases, time limits, client meetings', kind: 'law firm', svc: 'inbox',
+          mail: { ch: 'Email', time: '9:05 am', from: 'Paolo Murgia', text: 'Good morning, I have received a [[payment order|1]] from my supplier. I read there are [[40 days|3]] to challenge it: [[could we meet this week?|2]] [[Paolo Murgia|0]]' },
+          fields: [['Client', 'Paolo Murgia, new client'], ['Case', 'Challenge to a payment order'], ['Request', 'Meeting at the office'], ['Time limit', '40 days from service, to be checked']],
+          ctx: 'From the firm’s calendar: free Thursday at 10 am and Friday at 3 pm.',
+          drafts: ['Dear Mr Murgia, I have noted the payment order. To assess a challenge within the time limit, I suggest a meeting at the office on Thursday at 10 am or Friday at 3 pm. Please bring the order and the envelope showing the date of service. Kind regards.',
+            'Hi Paolo, got it. Let’s meet at the office on Thursday at 10 or Friday at 3 so we can look at the challenge straight away. Bring the order and the envelope with the service date: the time limit runs from there.'],
+          done: ['Reply sent at 9:07 am', 'Case opened: payment order, Paolo Murgia', 'Time limit in the calendar, to confirm on service date'] },
+        { id: 'consulente', name: 'Payroll consultant', sub: 'Payroll, hiring, compliance', kind: 'payroll consultancy', svc: 'documenti',
+          mail: { ch: 'Email', time: '3:20 pm', from: 'Deiana Brothers Ltd', text: 'Good afternoon, [[from Monday|3]] we are hiring a [[part-time clerk|1]]. [[What do you need for the hiring?|2]] Admin office, [[Deiana Brothers Ltd|0]]' },
+          fields: [['Client', 'Deiana Brothers Ltd, 12 staff'], ['Case', 'New hire, part-time'], ['Request', 'Documents needed'], ['Deadline', 'Mandatory notice before Monday']],
+          ctx: 'From the firm’s hiring checklist: 4 documents are needed.',
+          drafts: ['Good afternoon, to proceed with the hiring we need by Thursday the employee’s ID and tax code, her IBAN, the agreed part-time hours and the job role. We will file the mandatory notice before Monday. Kind regards.',
+            'Hi! Could you send us by Thursday the new colleague’s ID and tax code, IBAN, part-time hours and role? We’ll handle the rest, mandatory notice included, before Monday.'],
+          done: ['Reply sent at 3:22 pm', 'Case opened: new hire, Deiana Brothers Ltd', 'Reminder: mandatory notice by Sunday'] },
+      ],
+    },
     facts: [['15,000+', 'cases handled with the software we built'], ['30 minutes', 'for the Process Check, no obligation'], ['Olbia, Italy', 'home base, operating arm of L3 Innovation Srl']],
     clients: 'They chose Ovia',
     sysH: 'Two systems working together.',
@@ -248,10 +267,10 @@ function pagina(lang) {
   const data = {
     q: { by: t.qBy, pending: t.qPending, ok: t.qOk, sent: t.qSent, waiting: t.qWaiting, count1: t.count1, countN: t.countN, empty: t.empty, pool: t.pool },
     story: t.tale,
-    sim: { stages: t.stages, arrived: t.arrived, understood: t.understood, drafted: t.drafted, result: t.result,
-      approve: t.approveBtn, edit: t.edit, editDone: t.editDone, reject: t.reject, rejected: t.rejected, yourPart: t.yourPart,
-      again: t.again, restart: t.restart, discover: t.discover,
-      scen: t.scen.map(s => ({ ...s, href: urlIn(lang, s.id), name: byId[s.id].name })) },
+    kit: { ...t.kit, cal: calBtn(u.cta),
+      studios: t.kit.studios.map(st => ({ ...st, svcHref: urlIn(lang, st.svc), svcName: byId[st.svc].name,
+        // "testo [[parola|n]] testo" → ['testo ', ['parola', n], ' testo']
+        mail: { ...st.mail, text: st.mail.text.split(/(\[\[[^\]]+\]\])/).filter(Boolean).map(x => { const m = x.match(/^\[\[(.+)\|(\d)\]\]$/); return m ? [m[1], +m[2]] : x; }) } })) },
   };
 
   const card = ([k, title, m], i) => `<li class="hx-card${i === 0 ? ' is-top' : ''}" style="--i:${i}"${i ? ' aria-hidden="true"' : ''}><span class="k">${esc(t.qBy)} · ${esc(k)}</span><strong>${esc(title)}</strong><span class="m">${esc(m)}</span><em class="st">${esc(t.qPending)}</em></li>`;
@@ -299,19 +318,22 @@ function pagina(lang) {
     </div>
   </section>
 
-  <section class="ov-section sx-sec" id="sistema"><div class="ov-wrap">
-    <h2 class="ov-h2">${esc(t.simH)}</h2>
-    <p class="ov-lead">${esc(t.simP)}</p>
-    <div class="sx" data-sx>
-      <div class="sx-tabs" role="tablist" aria-label="${esc(t.simH)}">${t.scen.map((s, i) => `<button type="button" role="tab" aria-selected="${i === 0}" data-sx-tab="${i}">${esc(s.tab)}</button>`).join('')}</div>
-      <ol class="sx-track" data-sx-track>${t.stages.map((s, i) => `<li${i === 3 ? ' class="me"' : ''}><i></i><span>${esc(s)}</span></li>`).join('')}<li class="sx-fill" aria-hidden="true"></li></ol>
-      <p class="ov-sr" aria-live="polite" data-sx-live></p>
-      <div class="sx-panel" data-sx-panel>
-        <div class="sx-in"><p class="sx-h">${esc(t.arrived)}</p><p class="sx-src">${esc(t.scen[0].src)}</p><p class="sx-msg">${esc(t.scen[0].input)}</p></div>
-        <div class="sx-work"><p class="sx-h">${esc(t.drafted)}</p><p class="sx-draft">${esc(t.scen[0].draft)}</p></div>
+  <section class="ov-section kit-sec" id="sistema"><div class="ov-wrap">
+    <h2 class="ov-h2">${esc(t.kit.h)}</h2>
+    <p class="ov-lead">${esc(t.kit.p)}</p>
+    <div class="kit" data-kit>
+      <ol class="kit-parts" aria-label="${esc(t.kit.label)}">${t.kit.parts.map((n, i) => `<li${i === 4 ? ' class="me"' : ''}><span class="kit-slot"><svg viewBox="0 0 22 22" aria-hidden="true">${KIT_GLYPH[i]}</svg></span><span class="kit-lab">${esc(n)}</span></li>`).join('')}<li class="kit-line" aria-hidden="true"></li></ol>
+      <div class="kit-body">
+        <div class="kit-guide">
+          <p class="kit-n" data-kit-n>${esc(t.kit.piece.replace('{n}', 1))}</p>
+          <h3 class="kit-h" data-kit-h aria-live="polite">${esc(t.kit.s0.h)}</h3>
+          <p class="kit-p" data-kit-p>${esc(t.kit.s0.p)}</p>
+          <button type="button" class="kit-reset" data-kit-reset hidden>${esc(t.kit.restart)}</button>
+        </div>
+        <div class="kit-bench" data-kit-bench><div class="kit-stage"><div class="kit-choices">${t.kit.studios.map(st => `<button type="button" class="kit-choice"><strong>${esc(st.name)}</strong><span>${esc(st.sub)}</span></button>`).join('')}</div></div></div>
       </div>
     </div>
-    <p class="sx-note">${esc(t.simNote)}</p>
+    <p class="sx-note">${esc(t.kit.note)}</p>
   </div></section>
 
   <section class="hm-clients" aria-label="${esc(t.clients)}"><div class="ov-wrap">
