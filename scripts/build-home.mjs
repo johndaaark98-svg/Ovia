@@ -294,7 +294,7 @@ function pagina(lang) {
       <p class="ov-lead">${esc(t.originP)}</p>
     </div>
     <div class="hm-founder">
-      <picture><source srcset="/assets/luca-lorenzo-240.webp 240w, /assets/luca-lorenzo-480.webp 480w" sizes="120px" type="image/webp"><img src="/assets/luca-lorenzo.jpg" alt="${esc(t.founderAlt)}" width="120" height="150" loading="lazy" decoding="async"></picture>
+      <picture><source srcset="/assets/luca-lorenzo-viso-240.webp 240w, /assets/luca-lorenzo-viso-480.webp 480w" sizes="120px" type="image/webp"><img src="/assets/luca-lorenzo.jpg" alt="${esc(t.founderAlt)}" width="120" height="150" loading="lazy" decoding="async"></picture>
       <div><strong>${esc(t.founder)}</strong><span>${esc(t.founderRole)}</span><a class="hm-link" href="${P('/chi-siamo.html')}">${esc(t.story)}</a></div>
     </div>
   </div></section>
