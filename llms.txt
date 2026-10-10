@@ -26,6 +26,7 @@
 - Quanto tempo serve per vedere i primi risultati?
 
 ## Blog (ultimi articoli)
+- [Allucinazioni AI e responsabilità professionale: chi firma?](https://oviaitalia.it/blog/allucinazioni-ai-responsabilita-professionale-studi.html): L'AI che genera dati falsi mette a rischio la firma del professionista. Come gestire le allucinazioni AI tra responsabilità, sanzioni e processi di verifica.
 - [Controllo agenti AI in azienda: come governarli davvero](https://oviaitalia.it/blog/controllo-agenti-ai-azienda-governance-studi-pmi.html): Il 23% delle imprese europee testa agenti AI. La vera sfida è governarli dopo: log, supervisione umana, soglie di intervento. Guida pratica per studi e PMI.
 - [Sovranità digitale: cosa devono sapere PMI e studi](https://oviaitalia.it/blog/sovranita-digitale-dati-studio-professionale-pmi.html): Dove finiscono i dati dei tuoi clienti? Sovranità digitale per PMI e studi professionali: controllo, continuità e GDPR prima di adottare strumenti AI.
 - [Attacchi informatici e blocco operativo: il rischio per PMI e studi](https://oviaitalia.it/blog/attacchi-informatici-blocco-operativo-pmi-studi-professionali.html): Il 56% delle aziende italiane subisce attacchi cyber che bloccano le operazioni. Cosa rischia uno studio professionale o una PMI? Dati, responsabilità e…
@@ -52,6 +53,7 @@
 - [Services (EN)](https://oviaitalia.it/en/services/)
 - [FAQ (EN)](https://oviaitalia.it/en/faq.html)
 - [About us (EN)](https://oviaitalia.it/en/about.html)
+- [AI Hallucinations and Professional Liability: Who Signs?](https://oviaitalia.it/en/blog/ai-hallucinations-professional-liability-who-signs.html): AI-generated false data puts the professional's signature at risk. How to manage AI hallucinations amid liability, sanctions and output verification processes.
 - [AI Agent Control in Business: How to Really Govern Them](https://oviaitalia.it/en/blog/ai-agent-control-governance-professional-firms-smes.html): 23% of European firms are piloting AI agents. The real challenge is governing them afterwards: logs, human oversight, escalation thresholds. A practical guide for firms and SMEs.
 - [Digital Sovereignty: What SMEs and Firms Must Know](https://oviaitalia.it/en/blog/digital-sovereignty-data-professional-firms-smes.html): Where does your clients' data actually end up? Digital sovereignty for SMEs and professional firms: control, continuity and GDPR compliance before adopting any AI tool.
 - [Cyber Attacks & Operational Shutdown: the Risk for SMEs](https://oviaitalia.it/en/blog/cyber-attacks-operational-shutdown-smes-professional-firms.html): 56% of Italian organisations have suffered a cyber attack that disrupted operations. What's at stake for a professional firm or SME? Data, liability and practical steps.
@@ -71,7 +73,6 @@
 - [Verifying AI output in professional firms: who signs off?](https://oviaitalia.it/en/blog/verifying-ai-output-professional-firms.html): AI produces documents in seconds, but who checks them? The real risk for a professional firm isn’t the tool: it’s delegating judgement and responsibility.
 - [Italian Law 132/2025: AI in professional firms and client disclosure](https://oviaitalia.it/en/blog/italian-law-132-2025-ai-professionals-client-disclosure.html): Italian Law 132/2025, art. 13: what accountants, lawyers and consultants using AI must do, how to inform clients and how to stay compliant.
 - [AI Overviews: −58% clicks. What changes for your firm’s website](https://oviaitalia.it/en/blog/ai-overviews-lost-clicks-professional-firm-website.html): With Google’s AI Overviews the top result loses 58% of its clicks. What it means for a professional firm or SME website and how to get cited by AI.
-- [Lead response time: why the first 60 minutes matter](https://oviaitalia.it/en/blog/lead-response-time-professional-firms.html): Replying to a new enquiry within an hour makes qualification 7 times more likely. HBR and MIT data, and how to apply them in a firm without hiring anyone.
 
 ## Contatti
 - Email: oviaitalia@gmail.com
