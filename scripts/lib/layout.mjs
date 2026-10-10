@@ -3,6 +3,7 @@
 // il percorso inglese e i link hreflang vengono calcolati da scripts/lib/i18n.mjs.
 import { SITE, prodottiIn, urlOf } from '../../data/prodotti.mjs';
 import { UI, pathFor, enPath } from './i18n.mjs';
+import { LOGO_SVG } from './logo.mjs';
 
 export const esc = s => String(s ?? '')
   .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
@@ -62,7 +63,7 @@ export function header(current = '', lang = 'it', alt) {
   const items = prodottiIn(lang).map(p => `<a href="${urlIn(lang, p.id)}"${current === p.id ? ' aria-current="page"' : ''}>${esc(p.name)}<small>${esc(p.tagline)}</small></a>`).join('');
   const home = P('/');
   return `<header class="ov-header">
-  <div class="ov-brand"><a href="${home}" class="ov-logo" aria-label="Ovia, ${u.home}">OVIA</a><span class="ov-sign">${esc(u.sign)}</span></div>
+  <div class="ov-brand"><a href="${home}" class="ov-logo" aria-label="Ovia, ${u.home}">${LOGO_SVG}</a><span class="ov-sign">${esc(u.sign)}</span></div>
   <div class="ov-header-right">
   ${langSwitch(lang, alt)}
   <button class="ov-burger" aria-label="${u.nav.menu}" aria-expanded="false">Menu</button>
@@ -85,7 +86,7 @@ export function footer(lang = 'it') {
   <div class="ov-wrap">
     <div class="cols">
       <div>
-        <a href="${home}" class="ov-logo" aria-label="Ovia">OVIA</a>
+        <a href="${home}" class="ov-logo" aria-label="Ovia">${LOGO_SVG}</a>
         <p class="sign">${esc(u.sign)}</p>
         <p style="margin-top:12px">${esc(u.positioning)} ${esc(f.about)}</p>
         <p style="margin-top:14px"><a href="mailto:${SITE.email}">${SITE.email}</a><a href="https://www.linkedin.com/company/oviaitalia" target="_blank" rel="noopener">LinkedIn</a></p>

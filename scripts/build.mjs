@@ -9,6 +9,17 @@ import { buildFaq } from './build-faq.mjs';
 import { buildChiSiamo } from './build-chi-siamo.mjs';
 import { buildHome } from './build-home.mjs';
 import { FAQ } from '../data/faq.mjs';
+import { LOGO_SVG } from './lib/logo.mjs';
+
+// Le pagine scritte a mano (landing e legali) ricevono sempre il logo attuale da scripts/lib/logo.mjs.
+function allineaLogo() {
+  for (const f of ['siti-studi-professionali.html', 'siti-attivita-locali.html', 'privacy.html', 'cookie.html', 'termini.html']) {
+    const p = ROOT_LOGO + f, s = readFileSync(p, 'utf8');
+    const t = s.replace(/<svg class="ov-mark"[\s\S]*?<\/svg>/g, LOGO_SVG);
+    if (t !== s) writeFileSync(p, t);
+  }
+}
+const ROOT_LOGO = new URL('..', import.meta.url).pathname;
 
 const ROOT = new URL('..', import.meta.url).pathname;
 const DIR = ROOT + 'content/blog/';
@@ -25,6 +36,7 @@ export async function buildTutto({ log = console.log } = {}) {
   buildFaq();
   buildChiSiamo();
   buildHome();
+  allineaLogo();
   await buildEnStatic(); // homepage, landing e pagine legali in inglese (da index.html & co.)
   const articoli = caricaArticoli();
   const it = articoli.map(a => loc(a, 'it'));

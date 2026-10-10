@@ -65,11 +65,11 @@ img, svg { max-width: 100%; }
   border-bottom: 1px solid var(--line);
 }
 .ov-brand { display: flex; align-items: center; gap: 16px; min-width: 0; }
-.ov-logo {
-  font-family: var(--font); font-size: 19px; font-weight: 700; letter-spacing: .2em; color: var(--ink);
-  display: inline-flex; align-items: baseline; gap: 4px; line-height: 1;
-}
-.ov-logo::after { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); margin-left: -.12em; animation: ov-ping 2.8s ease-out infinite; }
+.ov-logo { display: inline-flex; align-items: center; color: var(--ink); line-height: 0; padding: 6px 0; }
+.ov-mark { display: block; height: 15px; width: auto; overflow: visible; }
+.ov-mark-dot { fill: var(--logo-dot, var(--accent)); }
+.ov-mark-ring { fill: none; stroke: var(--logo-dot, var(--accent)); stroke-width: 60; transform-box: fill-box; transform-origin: center; opacity: 0; animation: ov-mark-ping 2.8s ease-out infinite; }
+@keyframes ov-mark-ping { 0% { transform: scale(1); opacity: .5; } 70%, 100% { transform: scale(2.4); opacity: 0; } }
 .ov-sign { font-size: 13.5px; line-height: 1.25; color: var(--muted); padding-left: 16px; border-left: 1px solid var(--line-strong); white-space: nowrap; }
 .ov-nav { display: flex; align-items: center; gap: 28px; }
 .ov-nav > a, .ov-dd > button {
@@ -277,8 +277,9 @@ input[type=range].sv-range::-moz-range-thumb { width: 16px; height: 16px; border
 .ov-footer .ft-h { color: #fff; font-size: 15px; margin-bottom: 14px; }
 .ov-footer a { display: block; padding: 4px 0; color: var(--night-text); }
 .ov-footer a:hover { color: #fff; }
-.ov-footer a.ov-logo { display: inline-flex; color: #fff; padding: 0; }
-.ov-footer .ov-logo::after { background: #6f93f0; animation: none; }
+.ov-footer a.ov-logo { display: inline-flex; color: #fff; padding: 0; --logo-dot: #6f93f0; }
+.ov-footer .ov-mark { height: 17px; }
+.ov-footer .ov-mark-ring { display: none; }
 .ov-footer .sign { color: #fff; font-size: 15px; margin-top: 14px; }
 .ov-footer p { max-width: 36ch; }
 .ov-footer .legal { margin-top: 48px; padding-top: 20px; border-top: 1px solid rgba(196, 204, 216, .18); font-size: 13.5px; color: #8d98aa; max-width: none; }

@@ -17,8 +17,8 @@
   height: 72px; padding: 0 clamp(16px, 4vw, 40px); background: rgba(255, 255, 255, .96);
   backdrop-filter: saturate(160%) blur(10px); -webkit-backdrop-filter: saturate(160%) blur(10px); border-bottom: 1px solid var(--line);
 }
-.lp-logo { font-size: 19px; font-weight: 700; letter-spacing: .2em; color: var(--ink); display: inline-flex; align-items: baseline; gap: 4px; line-height: 1; }
-.lp-logo::after { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); margin-left: -.12em; animation: ov-ping 2.8s ease-out infinite; }
+.lp-logo { display: inline-flex; align-items: center; color: var(--ink); line-height: 0; padding: 6px 0; }
+
 .lp-nav { display: flex; align-items: center; gap: 24px; }
 .lp-nav > a:not(.lp-btn) { font-size: 15px; font-weight: 500; color: var(--body); min-height: 40px; display: inline-flex; align-items: center; }
 .lp-nav > a:not(.lp-btn):hover { color: var(--ink); }
