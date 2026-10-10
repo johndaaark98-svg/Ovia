@@ -33,11 +33,17 @@ export function ctaBand(lang, { h, p, small = '', tag = '', ghost = true, id = '
 // Manifesto: frase grande che si "accende" parola per parola con lo scroll.
 // {dot} = il pallino del logo; _parola_ = parola in blu.
 export function manifesto(text, sub = '', label = '') {
-  const words = text.split(' ').map(w => w === '{dot}'
+  // parole _così_ consecutive diventano un'unica etichetta ("in attesa")
+  const toks = [];
+  for (const w of text.split(' ')) {
+    const em = /^_.+_$/.test(w), last = toks[toks.length - 1];
+    if (em && last && last.em) last.t += ' ' + w.slice(1, -1);
+    else toks.push({ t: em ? w.slice(1, -1) : w, em });
+  }
+  const words = toks.map(({ t, em }) => t === '{dot}'
     ? '<span class="mf-dot" aria-hidden="true"></span>'
-    : /^_.+_$/.test(w) ? `<span class="mf-w mf-em">${esc(w.slice(1, -1))}</span>`
-    : `<span class="mf-w">${esc(w)}</span>`).join(' ');
-  return `<section class="mf" data-mf${label ? ` aria-label="${esc(label)}"` : ''}><div class="ov-wrap">
+    : `<span class="mf-w${em ? ' mf-em' : ''}">${esc(t)}</span>`).join(' ');
+  return `<section class="mf is-blue" data-mf${label ? ` aria-label="${esc(label)}"` : ''}><div class="ov-wrap">
     <p class="mf-text">${words}</p>
     ${sub ? `<p class="mf-sub">${esc(sub)}</p>` : ''}
   </div></section>`;

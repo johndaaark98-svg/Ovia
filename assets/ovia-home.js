@@ -36,6 +36,9 @@ const ovHome = () => {
     if (!cv || !origin || !cv.getContext) return { pulse() {} };
     const ctx = cv.getContext('2d');
     const GAP = 26, SPEED = 300, SIGMA = 44, PERIOD = 3200, HALO = 120;
+    const css = getComputedStyle(sec);
+    const FIELD = (css.getPropertyValue('--field-rgb') || '11,12,16').trim(), WAVE = (css.getPropertyValue('--wave-rgb') || '0,51,255').trim();
+    const onBlue = FIELD.startsWith('255');
     let W = 0, H = 0, pts = new Float32Array(0), ox = 0, oy = 0, maxR = 1;
     let mx = -1e4, my = -1e4, mI = 0, mTarget = 0, waves = [], raf = 0, onScreen = true, lastAmbient = 0;
     const size = () => {
@@ -71,9 +74,9 @@ const ovHome = () => {
         if (I > 1) I = 1;
         const rad = 0.85 + 1.15 * I;
         if (B > 0.04) {
-          ctx.fillStyle = 'rgba(0,51,255,' + Math.min(0.85, 0.15 + B).toFixed(3) + ')';
+          ctx.fillStyle = 'rgba(' + WAVE + ',' + Math.min(0.95, 0.25 + B).toFixed(3) + ')';
         } else {
-          ctx.fillStyle = 'rgba(11,12,16,' + (0.08 + 0.34 * I).toFixed(3) + ')';
+          ctx.fillStyle = 'rgba(' + FIELD + ',' + ((onBlue ? 0.16 : 0.08) + (onBlue ? 0.5 : 0.34) * I).toFixed(3) + ')';
         }
         ctx.beginPath(); ctx.arc(x, y, rad, 0, 6.2832); ctx.fill();
       }
