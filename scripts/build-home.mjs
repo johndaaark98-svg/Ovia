@@ -237,7 +237,7 @@ function pagina(lang) {
         <h1 id="hx-h1">${esc(t.h1)}</h1>
         <p class="ov-lead">${esc(t.lead)}</p>
       </div>
-      <div class="hm-ctas hx-ctas">${calBtn(u.cta)}<button type="button" class="ov-btn-ghost js-concierge">${esc(t.talk)}</button></div>
+      <div class="hm-ctas hx-ctas">${calBtn(u.cta)}<button type="button" class="ov-btn-ghost js-concierge">${esc(t.talk)}</button>${lang === 'it' ? `<button type="button" class="hx-film" data-film aria-haspopup="dialog"><span class="hx-film-i" aria-hidden="true"></span>Guarda come funziona <span class="hx-film-t">54 s</span></button>` : ''}</div>
       <div class="hx-stage" data-hx-stage>
         <div class="hx-bar"><span>${esc(t.qTitle)}</span><span class="hx-n"><b data-hx-n>3</b> ${esc(t.qWaiting)}</span></div>
         <ol class="hx-queue" data-hx-queue>${t.pool.slice(0, 3).map(card).join('')}</ol>
@@ -308,6 +308,13 @@ function pagina(lang) {
   ${bloccoHome(lang)}
 
   <section class="ov-wrap" id="prossimo-passo">${ctaBand(lang, { h: esc(t.ctaH), p: esc(t.ctaP), small: esc(t.ctaS), tag: t.ctaTag })}</section>
+${lang === 'it' ? `<dialog class="ov-film" id="ov-film" aria-label="Video: come funziona il sito Ovia">
+  <button type="button" class="ov-film-x" data-film-close aria-label="Chiudi il video">Chiudi</button>
+  <video preload="none" poster="/assets/video/ovia-sito-poster.webp" controls playsinline muted width="1440" height="810">
+    <source src="/assets/video/ovia-sito.mp4" type="video/mp4">
+    <source src="/assets/video/ovia-sito.webm" type="video/webm">
+  </video>
+</dialog>` : ''}
 </main>
 <script type="application/json" id="hx-data">${JSON.stringify(data).replace(/</g, '\\u003c')}</script>
 <script src="/assets/ovia-home.js" defer></script>` + footer(lang);

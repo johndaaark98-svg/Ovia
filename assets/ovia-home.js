@@ -107,6 +107,18 @@ const ovHome = () => {
     return { pulse() { if (RM) return; waves.push({ t0: performance.now(), a: 1, blue: true }); start(); } };
   })();
 
+
+  /* ---------- Video "come funziona" (finestra modale) ---------- */
+  const film = document.getElementById('ov-film'), filmBtn = document.querySelector('[data-film]');
+  if (film && filmBtn && film.showModal) {
+    const v = film.querySelector('video');
+    filmBtn.addEventListener('click', () => { film.showModal(); v.currentTime = 0; const pr = v.play(); if (pr) pr.catch(() => {}); });
+    film.addEventListener('close', () => { v.pause(); filmBtn.focus({ preventScroll: true }); });
+    film.querySelector('[data-film-close]').addEventListener('click', () => film.close());
+    film.addEventListener('click', e => { if (e.target === film) film.close(); });
+    v.addEventListener('ended', () => setTimeout(() => film.open && film.close(), 600));
+  } else if (filmBtn) filmBtn.hidden = true;
+
   /* ---------- 1. Coda di approvazione ---------- */
   const stage = document.querySelector('[data-hx-stage]');
   if (stage) {
