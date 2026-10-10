@@ -90,9 +90,9 @@ export function footer(lang = 'it') {
         <p style="margin-top:12px">${esc(u.positioning)} ${esc(f.about)}</p>
         <p style="margin-top:14px"><a href="mailto:${SITE.email}">${SITE.email}</a><a href="https://www.linkedin.com/company/oviaitalia" target="_blank" rel="noopener">LinkedIn</a></p>
       </div>
-      <div><h5>${f.services}</h5>${svc}</div>
-      <div><h5>${f.ovia}</h5><a href="${P('/chi-siamo.html')}">${f.aboutUs}</a><a href="${home}#metodo">${f.method}</a><a href="${home}#sicurezza">${f.security}</a><a href="${P('/blog/')}">${f.blog}</a><a href="${P('/faq.html')}">${f.faq}</a><a href="${P('/servizi/')}">${f.all}</a><a href="${P('/blog/feed.xml')}">${f.rss}</a></div>
-      <div><h5>${f.legal}</h5><a href="${P('/privacy.html')}">${f.privacy}</a><a href="${P('/cookie.html')}">${f.cookie}</a><a href="${P('/termini.html')}">${f.terms}</a></div>
+      <div><p class="ft-h">${f.services}</p>${svc}</div>
+      <div><p class="ft-h">${f.ovia}</p><a href="${P('/chi-siamo.html')}">${f.aboutUs}</a><a href="${home}#metodo">${f.method}</a><a href="${home}#sicurezza">${f.security}</a><a href="${P('/blog/')}">${f.blog}</a><a href="${P('/faq.html')}">${f.faq}</a><a href="${P('/servizi/')}">${f.all}</a><a href="${P('/blog/feed.xml')}">${f.rss}</a></div>
+      <div><p class="ft-h">${f.legal}</p><a href="${P('/privacy.html')}">${f.privacy}</a><a href="${P('/cookie.html')}">${f.cookie}</a><a href="${P('/termini.html')}">${f.terms}</a></div>
     </div>
     <p class="legal">${esc(SITE.legal)} · © Ovia ${new Date().getFullYear()}</p>
   </div>

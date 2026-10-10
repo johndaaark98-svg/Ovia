@@ -181,6 +181,7 @@ export const HOME = {
 
 export const SITI_STUDI = {
   text: [
+    ['Tipo di attività', 'Type of business'],
     ...COMUNI,
     ['Siti web con AI per studi professionali | Ovia', 'AI-powered websites for professional firms | Ovia'],
     ['Siti per commercialisti e studi professionali con SEO locale e assistente AI che prenota consulenze. Demo gratuita in 48 ore.', 'Websites for accountants and professional firms with local SEO and an AI assistant that books consultations. Free demo in 48 hours.'],
@@ -281,6 +282,7 @@ export const SITI_STUDI = {
 
 export const SITI_LOCALI = {
   text: [
+    ['Tipo di attività', 'Type of business'],
     ['Qui decidi tu', 'This is where you decide'],
     ['In attesa della tua richiesta', 'Waiting for your request'],
     ...SITI_STUDI.text.filter(([it]) => [

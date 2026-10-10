@@ -260,5 +260,34 @@
     }
   });
 
+  /* Il pulsante dell'assistente si sposta quando sotto c'è un pallino da tenere premuto,
+     così non copre mai un'approvazione (soprattutto sul telefono). */
+  (function () {
+    var launch = document.querySelector('.oa-launch');
+    if (!launch) return;
+    var SEL = '[data-hx-dot], [data-pipe-hold]:not([hidden]), .sx-hold, [data-hx-cta], .sx-btn2';
+    var raf = 0, base = null;
+    var check = function () {
+      raf = 0;
+      // posizione "di casa" del pulsante (quando è spostato il suo rettangolo non vale)
+      if (!launch.classList.contains('oa-away') || !base) base = launch.getBoundingClientRect();
+      var away = false, L = base;
+      var pad = 14;
+      document.querySelectorAll(SEL).forEach(function (el) {
+        if (away) return;
+        var r = el.getBoundingClientRect();
+        if (!r.width) return;
+        if (r.left < L.right + pad && r.right > L.left - pad && r.top < L.bottom + pad && r.bottom > L.top - pad) away = true;
+      });
+      launch.classList.toggle('oa-away', away);
+      launch.tabIndex = away ? -1 : 0;
+    };
+    var later = function () { if (!raf) raf = requestAnimationFrame(check); };
+    window.addEventListener('scroll', later, { passive: true });
+    window.addEventListener('resize', later);
+    if ('MutationObserver' in window) new MutationObserver(later).observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['hidden'] });
+    later();
+  })();
+
   window.OviaAgent = { open: open, close: close };
 })();

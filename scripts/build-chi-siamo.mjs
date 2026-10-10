@@ -175,7 +175,7 @@ function pagina(lang) {
       </section>
       <figure class="cs-photo" style="margin:0">
         <picture>
-          <source srcset="${FOTO.webp}" type="image/webp">
+          <source srcset="/assets/luca-lorenzo-480.webp 480w, /assets/luca-lorenzo-680.webp 680w, ${FOTO.webp} 900w" sizes="(max-width: 860px) 340px, 420px" type="image/webp">
           <img src="${FOTO.jpg}" alt="${esc(t.fotoAlt)}" width="${FOTO.w}" height="${FOTO.h}" fetchpriority="high" decoding="async">
         </picture>
         <figcaption>${esc(t.fondNome)}<span>${esc(t.fondRuolo)}</span></figcaption>

@@ -315,19 +315,53 @@
   });
 })();
 
-/* ---------- Cal.com: popup "Prenota il tuo Process Check" ---------- */
-(function (C, A, L) {
-  var p = function (a, ar) { a.q.push(ar); }; var d = C.document;
-  C.Cal = C.Cal || function () {
-    var cal = C.Cal; var ar = arguments;
-    if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement('script')).src = A; cal.loaded = true; }
-    if (ar[0] === L) { var api = function () { p(api, arguments); }; var namespace = ar[1]; api.q = api.q || [];
-      if (typeof namespace === 'string') { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ['initNamespace', namespace]); } else p(cal, ar); return; }
-    p(cal, ar);
-  };
-})(window, 'https://app.cal.com/embed/embed.js', 'init');
-Cal('init', 'ovia-check-process', { origin: 'https://cal.com' });
-Cal.ns['ovia-check-process']('ui', { theme: 'light', cssVarsPerTheme: { light: { 'cal-brand': '#0d1b2e' } }, hideEventTypeDetails: false, layout: 'month_view' });
+/* ---------- Cal.com: popup "Prenota il tuo Process Check" ----------
+   Lo script di Cal.com (pesante) non si carica all'apertura della pagina:
+   parte quando il browser è libero, oppure appena il visitatore si avvicina
+   a un pulsante di prenotazione. Un clic arrivato prima viene ripetuto. */
+(function (C) {
+  var A = 'https://app.cal.com/embed/embed.js', NS = 'ovia-check-process', started = false, ready = false, pending = null;
+  function load() {
+    if (started) return; started = true;
+    (function (L) {
+      var p = function (a, ar) { a.q.push(ar); }; var d = C.document;
+      C.Cal = C.Cal || function () {
+        var cal = C.Cal; var ar = arguments;
+        if (!cal.loaded) {
+          cal.ns = {}; cal.q = cal.q || [];
+          var sc = d.createElement('script'); sc.src = A; sc.async = true;
+          sc.onload = function () {
+            setTimeout(function () {
+              ready = true;
+              if (!pending) return;
+              var el = pending; pending = null; el.click();
+              // se il popup non si è aperto (embed non ancora pronto), un secondo tentativo
+              setTimeout(function () { if (!d.querySelector('cal-modal-box')) el.click(); }, 1500);
+            }, 400);
+          };
+          d.head.appendChild(sc); cal.loaded = true;
+        }
+        if (ar[0] === L) { var api = function () { p(api, arguments); }; var namespace = ar[1]; api.q = api.q || [];
+          if (typeof namespace === 'string') { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ['initNamespace', namespace]); } else p(cal, ar); return; }
+        p(cal, ar);
+      };
+    })('init');
+    C.Cal('init', NS, { origin: 'https://cal.com' });
+    C.Cal.ns[NS]('ui', { theme: 'light', cssVarsPerTheme: { light: { 'cal-brand': '#0d1b2e' } }, hideEventTypeDetails: false, layout: 'month_view' });
+  }
+  var near = function (e) { if (e.target.closest && e.target.closest('[data-cal-link], [data-hx-cta]')) load(); };
+  document.addEventListener('pointerover', near, { passive: true });
+  document.addEventListener('touchstart', near, { passive: true });
+  document.addEventListener('focusin', near);
+  document.addEventListener('click', function (e) {
+    var el = e.target.closest && e.target.closest('[data-cal-link]');
+    if (!el || ready) return;
+    e.preventDefault(); e.stopPropagation();
+    pending = el; load();
+  }, true);
+  var idle = function () { (C.requestIdleCallback || function (f) { setTimeout(f, 2500); })(load, { timeout: 6000 }); };
+  if (document.readyState === 'complete') idle(); else C.addEventListener('load', idle);
+})(window);
 
 /* ---------- Banner cookie (solo cookie tecnici; scelta ricordata nel browser) ---------- */
 (function () {

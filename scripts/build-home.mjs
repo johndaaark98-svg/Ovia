@@ -14,10 +14,10 @@ import { bloccoHome } from './build-faq.mjs';
 const ROOT = new URL('..', import.meta.url).pathname;
 const ALT = { it: '/', en: '/en/' };
 const LOGHI = [
-  { src: '/loghi/eurofiltri-trim.png', alt: 'Eurofiltri Group', h: 26, mono: true },
-  { src: '/loghi/rialziamoci.svg', alt: 'Rialziamoci Italia', h: 34 },
-  { src: '/loghi/l3-innovation-trim.png', alt: 'L3 Innovation', h: 26 },
-  { src: '/loghi/lucrezia-trabucco-trim.png', alt: 'Lucrezia Trabucco, biologa nutrizionista', h: 15, mono: true },
+  { src: '/loghi/eurofiltri-trim.png', alt: 'Eurofiltri Group', h: 26, w: 105, mono: true },
+  { src: '/loghi/rialziamoci.svg', alt: 'Rialziamoci Italia', h: 34, w: 111 },
+  { src: '/loghi/l3-innovation-trim.png', alt: 'L3 Innovation', h: 26, w: 103 },
+  { src: '/loghi/lucrezia-trabucco-trim.png', alt: 'Lucrezia Trabucco, biologa nutrizionista', h: 15, w: 209, mono: true },
 ];
 
 const T = {
@@ -235,8 +235,8 @@ function pagina(lang) {
       <div class="hx-copy">
         <h1 id="hx-h1">${esc(t.h1)}</h1>
         <p class="ov-lead">${esc(t.lead)}</p>
-        <div class="hm-ctas">${calBtn(u.cta)}<button type="button" class="ov-btn-ghost js-concierge">${esc(t.talk)}</button></div>
       </div>
+      <div class="hm-ctas hx-ctas">${calBtn(u.cta)}<button type="button" class="ov-btn-ghost js-concierge">${esc(t.talk)}</button></div>
       <div class="hx-stage" data-hx-stage>
         <div class="hx-bar"><span>${esc(t.qTitle)}</span><span class="hx-n"><b data-hx-n>3</b> ${esc(t.qWaiting)}</span></div>
         <ol class="hx-queue" data-hx-queue>${t.pool.slice(0, 3).map(card).join('')}</ol>
@@ -272,7 +272,7 @@ function pagina(lang) {
   <section class="hm-clients" aria-label="${esc(t.clients)}"><div class="ov-wrap">
     <dl class="hm-facts">${t.facts.map(([a, b]) => `<div><dt>${esc(a)}</dt><dd>${esc(b)}</dd></div>`).join('')}</dl>
     <div class="hm-cl"><p>${esc(t.clients)}</p>
-    <ul class="hm-logos">${LOGHI.map(l => `<li><img src="${l.src}" alt="${esc(l.alt)}"${l.mono ? ' class="mono"' : ''} style="height:${l.h}px" loading="lazy" decoding="async"></li>`).join('')}</ul></div>
+    <ul class="hm-logos">${LOGHI.map(l => `<li><img src="${l.src}" alt="${esc(l.alt)}"${l.mono ? ' class="mono"' : ''} width="${l.w}" height="${l.h}" style="height:${l.h}px" loading="lazy" decoding="async"></li>`).join('')}</ul></div>
   </div></section>
 
   <section class="ov-section" id="soluzioni"><div class="ov-wrap">
@@ -293,7 +293,7 @@ function pagina(lang) {
       <p class="ov-lead">${esc(t.originP)}</p>
     </div>
     <div class="hm-founder">
-      <picture><source srcset="/assets/luca-lorenzo.webp" type="image/webp"><img src="/assets/luca-lorenzo.jpg" alt="${esc(t.founderAlt)}" width="120" height="150" loading="lazy" decoding="async"></picture>
+      <picture><source srcset="/assets/luca-lorenzo-240.webp 240w, /assets/luca-lorenzo-480.webp 480w" sizes="120px" type="image/webp"><img src="/assets/luca-lorenzo.jpg" alt="${esc(t.founderAlt)}" width="120" height="150" loading="lazy" decoding="async"></picture>
       <div><strong>${esc(t.founder)}</strong><span>${esc(t.founderRole)}</span><a class="hm-link" href="${P('/chi-siamo.html')}">${esc(t.story)}</a></div>
     </div>
   </div></section>

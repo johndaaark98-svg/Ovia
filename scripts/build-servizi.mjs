@@ -66,10 +66,10 @@ function page(p, s, lang) {
     return `<div class="sv-field"><label for="${id}">${esc(inp.label)} <output for="${id}"></output></label><input class="sv-range" type="range" id="${id}" name="${inp.name}" min="${inp.min}" max="${inp.max}" step="${inp.step}" value="${inp.value}"${inp.prefix ? ` data-prefix="${esc(inp.prefix)}"` : ''}${inp.suffix ? ` data-suffix="${esc(inp.suffix)}"` : ''}>${inp.hint ? `<div class="hint">${esc(inp.hint)}</div>` : ''}</div>`;
   }).join('');
   const ba = s.before.map((b, i) => `<li data-prima="${esc(b)}" data-dopo="${esc(s.after[i])}">${esc(b)}</li>`).join('');
-  const sec = s.security.map(x => `<div class="sv-sec-item rv"><span class="ic">✓</span><div><h4>${esc(x.h)}</h4><p>${R(x.p)}</p></div></div>`).join('');
+  const sec = s.security.map(x => `<div class="sv-sec-item rv"><span class="ic">✓</span><div><h3>${esc(x.h)}</h3><p>${R(x.p)}</p></div></div>`).join('');
   const tabs = s.audiences.map((a, i) => `<button role="tab" aria-selected="${i === 0}" aria-controls="tp-${i}" id="tt-${i}">${esc(a.tab)}</button>`).join('');
   const tabPanels = s.audiences.map((a, i) => `<div class="ov-card sv-tabpanel" role="tabpanel" id="tp-${i}" aria-labelledby="tt-${i}"${i ? ' hidden' : ''}><h3>${esc(a.h)}</h3><p>${esc(a.p)}</p><ul>${a.items.map(x => `<li>${esc(x)}</li>`).join('')}</ul>${a.link ? `<p style="margin:18px 0 0"><a class="ov-btn-ghost" href="${a.link.href}">${esc(a.link.label)}</a></p>` : ''}</div>`).join('');
-  const tl = s.timeline.map(x => `<div class="sv-tl rv"><div class="when">${esc(x.when)}</div><h4>${esc(x.h)}</h4><p>${esc(x.p)}</p></div>`).join('');
+  const tl = s.timeline.map(x => `<div class="sv-tl rv"><div class="when">${esc(x.when)}</div><h3>${esc(x.h)}</h3><p>${esc(x.p)}</p></div>`).join('');
   const faq = s.faq.map((f, i) => `<details${i === 0 ? ' open' : ''}><summary>${esc(f.q)}</summary><div class="ans"><p>${esc(f.a)}</p></div></details>`).join('');
   (s.sources || []).forEach(k => { if (!refs.includes(k)) refs.push(k); });
   const sources = refs.map((k, i) => `<li id="fonte-${i + 1}"><a href="${esc(FONTI[k].u)}" target="_blank" rel="noopener">${esc(fontiT(k))}</a></li>`).join('');
