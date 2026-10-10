@@ -30,7 +30,7 @@
 .cs-steps li{position:relative;padding:0 0 26px 26px}
 .cs-steps li:last-child{padding-bottom:0}
 .cs-steps li::before{content:"";position:absolute;left:-5px;top:7px;width:9px;height:9px;border-radius:50%;background:var(--ink)}
-.cs-steps li:last-child::before{background:var(--accent)}
+.cs-steps li:last-child::before{background:var(--accent);left:-8px;top:4px;width:15px;height:15px;animation:ov-ping 2.4s ease-out infinite}
 .cs-steps h3{font-family:var(--font-display);font-size:17px;margin:0 0 6px;color:var(--text)}
 .cs-steps p{font-size:15px;color:var(--muted);margin:0;line-height:1.55}
 .cs-hero{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:clamp(28px,5vw,64px);align-items:center;padding:clamp(28px,5vw,56px) 0 clamp(36px,5vw,56px)}
@@ -56,7 +56,7 @@
   <button class="ov-burger" aria-label="Open menu" aria-expanded="false">Menu</button>
   </div>
   <nav class="ov-nav" aria-label="Main">
-    <div class="ov-dd"><button aria-expanded="false" aria-haspopup="true">Services ▾</button><div class="ov-dd-menu"><a href="/en/services/second-brain.html">Ovia Second Brain<small>Your firm’s memory, always searchable.</small></a><a href="/en/services/inbox.html">Ovia Inbox<small>Your inbox, read and understood.</small></a><a href="/en/services/lead-generation.html">Ovia Lead Generation<small>Every enquiry answered in minutes, not days.</small></a><a href="/en/services/chiamate.html">Ovia Calls<small>Record the call. Everything else organises itself.</small></a><a href="/en/services/documenti.html">Ovia Documents<small>Documents arrive. Nobody has to chase them.</small></a><a href="/en/services/siti-web-ai.html">Ovia AI-Ready Websites<small>The website ChatGPT, Gemini and Google AI cite as the answer.</small></a><a href="/en/services/crm.html">Ovia CRM<small>Clients, cases and deadlines in one dashboard that updates itself.</small></a><a href="/en/services/"><strong>All services →</strong></a></div></div>
+    <div class="ov-dd"><button aria-expanded="false" aria-haspopup="true">Services ▾</button><div class="ov-dd-menu"><a href="/en/services/second-brain.html">Ovia Second Brain<small>Your firm’s memory, always searchable.</small></a><a href="/en/services/inbox.html">Ovia Inbox<small>Your inbox, read and understood.</small></a><a href="/en/services/lead-generation.html">Ovia Lead Generation<small>Every enquiry answered in minutes, not days.</small></a><a href="/en/services/chiamate.html">Ovia Calls<small>Record the call. Everything else organises itself.</small></a><a href="/en/services/documenti.html">Ovia Documents<small>Documents arrive. Nobody has to chase them.</small></a><a href="/en/services/siti-web-ai.html">Ovia AI-Ready Websites<small>The website ChatGPT, Gemini and Google AI cite as the answer.</small></a><a href="/en/services/crm.html">Ovia CRM<small>Clients, cases and deadlines in one dashboard that updates itself.</small></a><a href="/en/services/"><strong>All services</strong></a></div></div>
     <a href="/en/#metodo">Method</a>
     <a href="/en/about.html" aria-current="page">About us</a>
     <a href="/en/blog/">Blog</a>
@@ -92,6 +92,11 @@
     </div>
   </div></section>
 
+  <section class="mf" data-mf aria-label="The meaning of the dot"><div class="ov-wrap">
+    <p class="mf-text"><span class="mf-w">The</span> <span class="mf-w">dot</span> <span class="mf-dot" aria-hidden="true"></span> <span class="mf-w">in</span> <span class="mf-w">our</span> <span class="mf-w">logo</span> <span class="mf-w">is</span> <span class="mf-w">a</span> <span class="mf-w">promise:</span> <span class="mf-w">every</span> <span class="mf-w">system</span> <span class="mf-w">we</span> <span class="mf-w">build</span> <span class="mf-w">stops</span> <span class="mf-w">and</span> <span class="mf-w">waits</span> <span class="mf-w">for</span> <span class="mf-w mf-em">a</span> <span class="mf-w mf-em">person.</span></p>
+    <p class="mf-sub">We learned it handling debt-relief cases: where a mistake costs dearly, the last word belongs to whoever has the experience and the responsibility.</p>
+  </div></section>
+
   <section class="ov-section" style="padding-top:0"><div class="ov-wrap">
     <div class="rv"><p class="ov-eyebrow">What never changes</p><h2 class="ov-h2">We automate the work, not the people.</h2><p class="ov-lead">AI prepares, organises and flags. Decisions stay with the people who have the experience and the responsibility. That is the condition for working with sensitive data such as a firm’s client records.</p></div>
     <div class="sv-pillars"><div class="ov-card sv-pillar rv"><span class="num">01</span><h3>Strategy</h3><p>First we understand how you work, where time is lost and what is worth automating. The tool comes after.</p><div class="weight"><i data-weight="100"></i></div><div class="weight-label">Where we start</div></div><div class="ov-card sv-pillar rv"><span class="num">02</span><h3>Security</h3><p>Protected data, clear permissions, every step traceable. Not a final add-on: the starting point.</p><div class="weight"><i data-weight="100"></i></div><div class="weight-label">Non-negotiable</div></div><div class="ov-card sv-pillar rv"><span class="num">03</span><h3>Human value</h3><p>The system removes repetitive steps and gives time back to people, who stay at the centre of every decision.</p><div class="weight"><i data-weight="100"></i></div><div class="weight-label">The most important factor</div></div></div>
@@ -109,12 +114,15 @@
     </div>
   </div></section>
 
-  <section class="ov-section" style="padding-top:0"><div class="ov-narrow"><div class="ov-cta-band rv">
-    <p class="ov-eyebrow">Ovia Process Check</p>
-    <h2>Let’s start from your real work.</h2>
-    <p>Thirty minutes on your workflow: where the time goes, what can be safely automated and where it makes sense to begin.</p>
-    <button type="button" class="ov-btn" data-cal-link="ovia-jpa3s2/ovia-check-process" data-cal-namespace="ovia-check-process" data-cal-config='{"layout":"month_view","theme":"light"}'>Book the Process Check</button>
-    <p class="small">No obligation. We work with a few clients at a time.</p>
+  <section class="ov-section" style="padding-top:0"><div class="ov-wrap"><div class="ov-cta-band hx-cta">
+    <div class="hx-cta-side"><button type="button" class="hx-cta-dot" data-hx-cta aria-label="Book the Process Check"></button><p>Press and hold to book</p></div>
+    <div>
+      <p class="hx-cta-tag">Waiting for you</p>
+      <h2>Let’s start from your real work.</h2>
+      <p>Thirty minutes on your workflow: where the time goes, what can be safely automated and where it makes sense to begin.</p>
+      <div class="hm-ctas"><button type="button" class="ov-btn" data-cal-link="ovia-jpa3s2/ovia-check-process" data-cal-namespace="ovia-check-process" data-cal-config='{"layout":"month_view","theme":"light"}'>Book the Process Check</button><button type="button" class="ov-btn-ghost js-concierge">Talk to the assistant</button></div>
+      <p class="small">No obligation. We work with a few clients at a time.</p>
+    </div>
   </div></div></section>
 </main><footer class="ov-footer">
   <div class="ov-wrap">

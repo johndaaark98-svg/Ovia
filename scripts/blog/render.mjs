@@ -3,6 +3,7 @@ import { SITE, PRODOTTI, byId, byIdIn } from '../../data/prodotti.mjs';
 import { CATEGORIE } from './config.mjs';
 import { head, header, footer, esc, calBtn, svgGlyph, urlIn } from '../lib/layout.mjs';
 import { UI } from '../lib/i18n.mjs';
+import { ctaBand } from '../lib/blocchi.mjs';
 
 const CAT_EN = { 'normativa-sicurezza': 'Regulation and security', 'automazione': 'Automation', 'ai-search-marketing': 'AI search and marketing', 'strumenti-ai': 'AI tools', 'strategia': 'Strategy' };
 export const catLabel = (id, lang = 'it') => lang === 'en' ? (CAT_EN[id] || 'Strategy') : (CATEGORIE.find(c => c.id === id)?.label || 'Strategia');
@@ -145,13 +146,7 @@ export function renderArticolo(a, tutti, lang = 'it') {
     <p class="ar-disclosure">${t.disclosure(SITE.email)}</p>
   </article>
   ${correlati.length ? `<section class="ar-related"><h2>${t.related}</h2><div class="bl-grid">${correlati.map(c => card(c, false, lang)).join('')}</div></section>` : ''}
-  <section class="ov-section"><div class="ov-cta-band">
-    <p class="ov-eyebrow">Ovia Process Check</p>
-    <h2>${t.ctaH}</h2>
-    <p>${t.ctaP}</p>
-    ${calBtn(u.cta)}
-    <p class="small">${t.ctaS}</p>
-  </div></section>
+  <section class="ov-section">${ctaBand(lang, { h: t.ctaH, p: t.ctaP, small: t.ctaS })}</section>
 </main>` + footer(lang);
 }
 
@@ -180,7 +175,7 @@ export function renderIndice(tutti, lang = 'it') {
   <div class="bl-tools"><div class="bl-filters" role="group" aria-label="${t.filterL}">${filtri}</div><input class="bl-search" type="search" placeholder="${t.search}" aria-label="${t.searchL}"></div>
   <div class="bl-grid" data-blog-list>${ord.map((a, i) => card(a, i === 0, lang)).join('')}</div>
   <p class="bl-empty">${t.empty}</p>
-  <section class="ov-section"><div class="ov-cta-band"><p class="ov-eyebrow">Ovia Process Check</p><h2>${t.idxCtaH}</h2><p>${t.idxCtaP}</p>${calBtn(u.cta)}</div></section>
+  <section class="ov-section">${ctaBand(lang, { h: t.idxCtaH, p: t.idxCtaP })}</section>
 </div></main>
 ` + footer(lang);
 }

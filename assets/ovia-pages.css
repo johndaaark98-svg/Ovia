@@ -488,7 +488,7 @@ input[type=range].sv-range::-moz-range-thumb { width: 16px; height: 16px; border
 @media (hover: none) { .hx-hint span { display: none; } }
 
 /* Manifesto */
-.mf { padding: clamp(96px, 13vw, 184px) 0; }
+.mf { padding: clamp(80px, 11vw, 160px) 0; }
 .mf-text { font-size: clamp(30px, 4.3vw, 58px); font-weight: 600; line-height: 1.12; letter-spacing: -.028em; color: var(--ink); max-width: 21ch; }
 .mf.is-live .mf-w { color: #c9d0db; transition: color .4s; }
 .mf.is-live .mf-w.on { color: var(--ink); }
@@ -779,3 +779,79 @@ html.oa-open { overflow: hidden; }
   .oa-panel { width: 100%; height: 100%; border-radius: 0; border: 0; }
   .ov-cookie { right: 14px; max-width: none; }
 }
+
+/* =====================================================================
+   IL PALLINO SU TUTTO IL SITO
+   ===================================================================== */
+/* Pipeline del servizio (hero delle pagine servizio) */
+.sv-hero { grid-template-columns: minmax(0, 1fr) minmax(0, 460px); }
+.pp { align-items: stretch; padding-bottom: 22px; }
+.pp-list { list-style: none; padding: 22px 24px 6px; }
+.pp-list li { position: relative; display: grid; grid-template-columns: 22px minmax(0, 1fr); gap: 14px; padding: 9px 0; }
+.pp-list li::before { content: ''; position: absolute; left: 10.5px; top: 30px; bottom: -12px; width: 1px; background: var(--line-strong); }
+.pp-list li:last-child::before { display: none; }
+.pp-list li i { position: relative; z-index: 1; width: 14px; height: 14px; margin: 4px 0 0 4px; border-radius: 50%; background: #fff; border: 1.5px solid var(--ink); transition: background .3s, border-color .3s; }
+.pp-list strong { display: block; font-size: 15px; font-weight: 600; color: var(--ink); line-height: 1.35; transition: color .3s; }
+.pp-list span { display: block; font-size: 14px; color: var(--body); line-height: 1.4; transition: color .3s; }
+.pp-list li.me i { width: 22px; height: 22px; margin: 0; border: 2px solid var(--accent); background: var(--accent); }
+.pp-list li.me strong { color: var(--accent-ink); }
+.pp.is-live .pp-list li i { border-color: var(--line-strong); background: #fff; }
+.pp.is-live .pp-list li strong { color: var(--faint); }
+.pp.is-live .pp-list li span { color: var(--faint); }
+.pp.is-live .pp-list li.on i, .pp.is-live .pp-list li.cur i { background: var(--ink); border-color: var(--ink); }
+.pp.is-live .pp-list li.on strong, .pp.is-live .pp-list li.cur strong { color: var(--ink); }
+.pp.is-live .pp-list li.on span, .pp.is-live .pp-list li.cur span { color: var(--body); }
+.pp.is-live .pp-list li.me i { border-color: var(--accent); background: #fff; }
+.pp.is-live .pp-list li.me strong { color: var(--accent-ink); }
+.pp.is-live .pp-list li.me.cur i { background: var(--accent); animation: ov-ping 2.4s ease-out infinite; }
+.pp.is-live .pp-list li.me.on i { background: var(--ink); border-color: var(--ink); }
+.pp.is-live .pp-list li.me.on strong { color: var(--ink); }
+.pp-foot { display: flex; flex-direction: column; align-items: flex-start; gap: 14px; padding: 8px 24px 0 60px; min-height: 96px; }
+.pp-foot .hx-check { margin: 0; }
+.pp[data-state="wait"] .hx-n b, .pp[data-state="wait"] .hx-n { color: var(--accent-ink); }
+.pp[data-state="done"] .hx-n::before { background: var(--ok); animation: none; }
+.pp:focus { outline: none; }
+
+/* "Cosa ci distingue": manifesto + pilastri */
+.sv-pill-sec { padding-top: 0; }
+.sv-pill-sec .sv-pillars { margin-top: 0; }
+
+/* Come funziona: traccia orizzontale, il pallino blu sul passaggio umano */
+.sv-flow { grid-template-columns: 1fr; gap: 0; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; background: #fff; }
+.sv-flow-steps {
+  position: relative; display: grid; grid-template-columns: repeat(5, 1fr); flex-direction: row; gap: 0; border-top: 0; border-bottom: 1px solid var(--line); padding: 30px 0 22px; overflow: visible;
+  background-image: radial-gradient(circle at 1px 1px, var(--line) 1px, transparent 0); background-size: 22px 22px;
+}
+.sv-flow-steps::before { content: ''; position: absolute; left: 10%; right: 10%; top: 44px; height: 1px; background: var(--line-strong); }
+.sv-flow-step {
+  position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; gap: 10px; width: auto;
+  padding: 0 4px; border: 0; background: none; text-align: center; font: 600 14.5px var(--font); color: var(--faint); cursor: pointer;
+}
+.sv-flow-step .n { flex: 0 0 auto; width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center; background: #fff; border: 1.5px solid var(--line-strong); font-size: 12.5px; font-weight: 600; color: var(--muted); font-variant-numeric: tabular-nums; transition: background .2s, border-color .2s, color .2s; }
+.sv-flow-step:hover { color: var(--ink); }
+.sv-flow-step:hover .n { border-color: var(--ink); }
+.sv-flow-step[aria-selected="true"] { color: var(--ink); }
+.sv-flow-step[aria-selected="true"] .n { background: var(--ink); border-color: var(--ink); color: #fff; }
+.sv-flow-step.me { color: var(--accent-ink); }
+.sv-flow-step.me .n { border: 2px solid var(--accent); color: var(--accent-ink); }
+.sv-flow-step.me[aria-selected="true"] .n { background: var(--accent); border-color: var(--accent); color: #fff; animation: ov-ping 2.4s ease-out infinite; }
+.sv-flow-panel { min-height: 240px; border: 0; border-radius: 0; background: #fff; padding: clamp(24px, 3.4vw, 40px); }
+.sv-flow-panel .tag { color: var(--muted); }
+.sv-flow-panel .hx-check { margin-top: 2px; font-size: 15px; }
+
+/* Lettura articolo: la barra avanza sotto la testata, il pallino ne è la punta */
+.ar-progress { top: 72px; height: 2px; background: var(--ink); z-index: 49; }
+.ar-progress::after { content: ''; position: absolute; right: -5px; top: -4px; width: 10px; height: 10px; border-radius: 50%; background: var(--accent); }
+
+@media (max-width: 980px) {
+  .sv-hero { grid-template-columns: 1fr; }
+  .sv-hero .pp { max-width: 560px; width: 100%; }
+  .sv-flow-steps { flex-direction: row; overflow: visible; border-top: 0; gap: 0; }
+  .sv-flow-step { flex: initial; width: auto; border: 0; border-radius: 0; padding: 0 2px; }
+}
+@media (max-width: 760px) {
+  .ar-progress { top: 64px; }
+  .sv-flow-step { font-size: 12px; }
+  .pp-foot { padding-left: 24px; }
+}
+.sx-hold[hidden], [data-pipe-hold][hidden] { display: none; }

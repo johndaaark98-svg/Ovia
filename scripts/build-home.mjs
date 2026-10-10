@@ -6,29 +6,19 @@
 // Modifica qui e rilancia `npm run sito`.
 import { writeFileSync, mkdirSync } from 'node:fs';
 import { SITE, prodottiIn } from '../data/prodotti.mjs';
-import { SERVIZI } from '../data/servizi.mjs';
-import { SERVIZI_EN } from '../data/en/servizi.mjs';
 import { head, header, footer, esc, calBtn, urlIn } from './lib/layout.mjs';
+import { ctaBand, manifesto, sistemi } from './lib/blocchi.mjs';
 import { UI, pathFor } from './lib/i18n.mjs';
 import { bloccoHome } from './build-faq.mjs';
 
 const ROOT = new URL('..', import.meta.url).pathname;
 const ALT = { it: '/', en: '/en/' };
-const MARKETING = ['siti-web-ai', 'lead-generation'];
-const AUTOMAZIONE = ['second-brain', 'inbox', 'chiamate', 'documenti', 'crm'];
 const LOGHI = [
   { src: '/loghi/eurofiltri-trim.png', alt: 'Eurofiltri Group', h: 26, mono: true },
   { src: '/loghi/rialziamoci.svg', alt: 'Rialziamoci Italia', h: 34 },
   { src: '/loghi/l3-innovation-trim.png', alt: 'L3 Innovation', h: 26 },
   { src: '/loghi/lucrezia-trabucco-trim.png', alt: 'Lucrezia Trabucco, biologa nutrizionista', h: 15, mono: true },
 ];
-
-// Primo "human" trovato nei contenuti del servizio: dove interviene la persona.
-const humanOf = (lang, id) => {
-  const d = (lang === 'en' ? SERVIZI_EN : SERVIZI)[id];
-  const m = d && JSON.stringify(d).match(/"human":"((?:[^"\\]|\\.)*)"/);
-  return m ? JSON.parse(`"${m[1]}"`) : '';
-};
 
 const T = {
   it: {
@@ -94,10 +84,6 @@ const T = {
     clients: 'Hanno scelto Ovia',
     sysH: 'Due sistemi che lavorano insieme.',
     sysP: 'Il marketing porta le richieste, l’automazione le gestisce senza perdite di tempo. In ogni servizio il pallino indica dove decide una persona.',
-    mkH: 'Marketing', mkGoal: 'Portare nuovi clienti, in modo misurabile.',
-    auH: 'Automazione', auGoal: 'Togliere il lavoro ripetitivo e riprendere il controllo.',
-    landings: [['/siti-studi-professionali.html', 'Siti per studi professionali', 'Il sito che porta consulenze e prenota al posto tuo.'], ['/siti-attivita-locali.html', 'Siti per attività locali', 'Il sito che porta tavoli, clienti e prenotazioni.']],
-    open: 'Scopri',
     methodH: 'Un metodo, quattro passaggi.',
     methodP: 'Nessuna trasformazione improvvisa: partiamo dal problema che ti costa di più e lo risolviamo con un risultato che si può misurare.',
     steps: [
@@ -184,10 +170,6 @@ const T = {
     clients: 'They chose Ovia',
     sysH: 'Two systems working together.',
     sysP: 'Marketing brings the enquiries in, automation handles them without wasted time. In every service the dot marks where a person decides.',
-    mkH: 'Marketing', mkGoal: 'Bring in new clients, measurably.',
-    auH: 'Automation', auGoal: 'Remove repetitive work and take back control.',
-    landings: [['/siti-studi-professionali.html', 'Websites for professional firms', 'The website that brings in consultations and books them for you.'], ['/siti-attivita-locali.html', 'Websites for local businesses', 'The website that brings in tables, clients and bookings.']],
-    open: 'Explore',
     methodH: 'One method, four steps.',
     methodP: 'No sudden transformation: we start from the problem that costs you most and solve it with a result you can measure.',
     steps: [
@@ -216,12 +198,6 @@ const T = {
   },
 };
 
-// Manifesto: parola per parola (il JS le "accende" con lo scroll), {dot} = pallino del logo, _parola_ = in blu.
-const manifesto = s => s.split(' ').map(w => w === '{dot}'
-  ? '<span class="mf-dot" aria-hidden="true"></span>'
-  : /^_.+_$/.test(w) ? `<span class="mf-w mf-em">${esc(w.slice(1, -1))}</span>`
-  : `<span class="mf-w">${esc(w)}</span>`).join(' ');
-
 function pagina(lang) {
   const t = T[lang], u = UI[lang], P = x => pathFor(lang, x);
   const prods = prodottiIn(lang), byId = Object.fromEntries(prods.map(p => [p.id, p]));
@@ -237,10 +213,6 @@ function pagina(lang) {
       sameAs: ['https://www.linkedin.com/company/oviaitalia'] },
     { '@type': 'WebPage', '@id': url + '#webpage', url, name: t.title, description: t.desc, inLanguage: lang === 'en' ? 'en' : 'it-IT', isPartOf: { '@id': SITE.url + '/#website' }, about: { '@id': SITE.url + '/#organization' } },
   ] }];
-
-  const check = id => { const h = humanOf(lang, id); return h ? `<small class="hx-check">${esc(h)}</small>` : ''; };
-  const svc = ids => ids.map(id => byId[id]).map(p => `<li><a href="${urlIn(lang, p.id)}"><strong>${esc(p.name)}</strong><span>${esc(p.tagline)}</span>${check(p.id)}<em>${t.open}</em></a></li>`).join('');
-  const land = t.landings.map(([path, n, d]) => `<li><a href="${P(path)}"><strong>${esc(n)}</strong><span>${esc(d)}</span><em>${t.open}</em></a></li>`).join('');
 
   // Dati per ovia-home.js (testi e scenari): nessun testo cablato nel JS.
   const data = {
@@ -280,10 +252,7 @@ function pagina(lang) {
     </div>
   </section>
 
-  <section class="mf" data-mf aria-label="${lang === 'en' ? 'The meaning of the dot' : 'Il significato del pallino'}"><div class="ov-wrap">
-    <p class="mf-text">${manifesto(t.manifesto)}</p>
-    <p class="mf-sub">${esc(t.manifestoSub)}</p>
-  </div></section>
+  ${manifesto(t.manifesto, t.manifestoSub, lang === 'en' ? 'The meaning of the dot' : 'Il significato del pallino')}
 
   <section class="ov-section sx-sec" id="sistema"><div class="ov-wrap">
     <h2 class="ov-h2">${esc(t.simH)}</h2>
@@ -309,10 +278,7 @@ function pagina(lang) {
   <section class="ov-section" id="soluzioni"><div class="ov-wrap">
     <h2 class="ov-h2">${esc(t.sysH)}</h2>
     <p class="ov-lead">${esc(t.sysP)}</p>
-    <div class="hm-sys">
-      <div id="siti-web"><h3>${esc(t.mkH)}</h3><p class="goal">${esc(t.mkGoal)}</p><ul class="hm-svc">${svc(MARKETING)}${land}</ul></div>
-      <div><h3>${esc(t.auH)}</h3><p class="goal">${esc(t.auGoal)}</p><ul class="hm-svc">${svc(AUTOMAZIONE)}</ul></div>
-    </div>
+    ${sistemi(lang)}
   </div></section>
 
   <section class="ov-section" id="metodo" style="padding-top:0"><div class="ov-wrap">
@@ -340,16 +306,7 @@ function pagina(lang) {
 
   ${bloccoHome(lang)}
 
-  <section class="ov-wrap" id="prossimo-passo"><div class="ov-cta-band hx-cta">
-    <div class="hx-cta-side"><button type="button" class="hx-cta-dot" data-hx-cta aria-label="${esc(u.cta)}"></button><p>${esc(t.ctaHold)}</p></div>
-    <div>
-      <p class="hx-cta-tag">${esc(t.ctaTag)}</p>
-      <h2>${esc(t.ctaH)}</h2>
-      <p>${esc(t.ctaP)}</p>
-      <div class="hm-ctas">${calBtn(u.cta)}<button type="button" class="ov-btn-ghost js-concierge">${esc(t.talk)}</button></div>
-      <p class="small">${esc(t.ctaS)}</p>
-    </div>
-  </div></section>
+  <section class="ov-wrap" id="prossimo-passo">${ctaBand(lang, { h: esc(t.ctaH), p: esc(t.ctaP), small: esc(t.ctaS), tag: t.ctaTag })}</section>
 </main>
 <script type="application/json" id="hx-data">${JSON.stringify(data).replace(/</g, '\\u003c')}</script>
 <script src="/assets/ovia-home.js" defer></script>` + footer(lang);

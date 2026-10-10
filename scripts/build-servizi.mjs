@@ -5,8 +5,9 @@ import { SERVIZI, PILASTRI_BASE } from '../data/servizi.mjs';
 import { SERVIZI_EN } from '../data/en/servizi.mjs';
 import { FONTI } from '../data/fonti.mjs';
 import { FONTI_EN } from '../data/en/fonti.mjs';
-import { head, header, footer, esc, rich, calBtn, svgGlyph, urlIn } from './lib/layout.mjs';
+import { head, header, footer, esc, rich, calBtn, urlIn } from './lib/layout.mjs';
 import { UI, pathFor } from './lib/i18n.mjs';
+import { ctaBand, manifesto, sistemi, pipeline } from './lib/blocchi.mjs';
 
 const ROOT = new URL('..', import.meta.url).pathname;
 
@@ -14,6 +15,7 @@ const T = {
   it: {
     services: 'Servizi', flagship: '★ ', pillars: [['Strategia', 'Da dove partiamo'], ['Sicurezza', 'Non negoziabile'], ['Intelligenza artificiale', 'Lo strumento, non il fine']],
     how: 'Come funziona', problem: 'Il problema', distinct: 'Cosa ci distingue', distinctH: 'Strategia e sicurezza fanno guadagnare.<br>L’AI è lo strumento.',
+    mfText: 'Strategia e sicurezza fanno guadagnare. L’AI è lo strumento. Il pallino {dot} segna dove decidi _tu._',
     distinctP: 'Chiunque oggi può comprare un abbonamento a un tool AI. Il valore sta nel decidere cosa automatizzare, come proteggere i dati dei tuoi clienti e come misurare il risultato. È da lì che partiamo, sempre.',
     howEy: 'Come funziona', howP: 'Clicca ogni passaggio per vedere cosa succede. Il sistema propone, tu decidi.', step: (i, n) => `Passo ${i} di ${n}`, steps: 'Passaggi',
     calcEy: 'Calcolatore', calcNote: 'Stima indicativa basata su 220 giorni lavorativi e ipotesi prudenti. Nel Process Check la sostituiamo con i numeri reali del tuo flusso.', calcBtn: 'Verifica i tuoi numeri nel Process Check',
@@ -24,11 +26,12 @@ const T = {
     faqEy: 'Domande frequenti', faqH: 'Le domande che ci fanno davvero.',
     ctaH: 'Trenta minuti sul tuo flusso reale.<br>Poi decidi tu.', ctaP: n => `Ti mostriamo dove va il tempo, cosa si può automatizzare in sicurezza e da dove conviene partire con ${n}. Nessun impegno, nessun gergo tecnico.`, ctaSmall: 'Lavoriamo con pochi clienti alla volta. Rispondiamo entro 24 ore.',
     othersEy: 'Gli altri sistemi Ovia', othersH: 'Ogni sistema ne alimenta un altro.', discover: 'Scopri', discoverN: s => `Scopri ${s}`, sources: 'Fonti',
-    hub: { title: 'Servizi Ovia — sistemi AI su misura, progettati su strategia e sicurezza', desc: 'Second Brain, Inbox, Lead Generation, Chiamate, Documenti, Siti Web per le AI e CRM: sette sistemi su misura per studi professionali e PMI.', ey: 'I servizi Ovia', h1: 'Sette sistemi. Un solo principio.', lead: 'Ogni sistema Ovia nasce da una strategia scritta con te e da regole di sicurezza chiare. Poi, e solo poi, l’intelligenza artificiale lo mette al lavoro.', startEy: 'Da dove partire', startH: 'Non sai quale sistema ti serve? È normale.', startP: 'Il Process Check serve proprio a questo: capire qual è il problema che ti costa di più e se possiamo darti un risultato misurabile.', list: 'Servizi Ovia' },
+    hub: { title: 'Servizi Ovia — sistemi AI su misura, progettati su strategia e sicurezza', desc: 'Second Brain, Inbox, Lead Generation, Chiamate, Documenti, Siti Web per le AI e CRM: sette sistemi su misura per studi professionali e PMI.', ey: 'I servizi Ovia', h1: 'Sette sistemi. Un solo principio.', lead: 'Ogni sistema Ovia nasce da una strategia scritta con te e da regole di sicurezza chiare. Poi, e solo poi, l’intelligenza artificiale lo mette al lavoro.', startEy: 'Da dove partire', startH: 'Non sai quale sistema ti serve? È normale.', startP: 'Il Process Check serve proprio a questo: capire qual è il problema che ti costa di più e se possiamo darti un risultato misurabile.', list: 'Servizi Ovia', mf: 'Ogni sistema prepara il lavoro, poi si ferma sul pallino {dot} e aspetta _te._ È il principio che li tiene tutti insieme.' },
   },
   en: {
     services: 'Services', flagship: '★ ', pillars: [['Strategy', 'Where we start'], ['Security', 'Non-negotiable'], ['Artificial intelligence', 'The tool, not the goal']],
     how: 'How it works', problem: 'The problem', distinct: 'What sets us apart', distinctH: 'Strategy and security make the money.<br>AI is the tool.',
+    mfText: 'Strategy and security make the money. AI is the tool. The dot {dot} marks where _you_ _decide._',
     distinctP: 'Anyone today can buy a subscription to an AI tool. The value lies in deciding what to automate, how to protect your clients’ data and how to measure the result. That’s where we always start.',
     howEy: 'How it works', howP: 'Click each step to see what happens. The system proposes, you decide.', step: (i, n) => `Step ${i} of ${n}`, steps: 'Steps',
     calcEy: 'Calculator', calcNote: 'Indicative estimate based on 220 working days and conservative assumptions. In the Process Check we replace it with your real numbers.', calcBtn: 'Check your numbers in the Process Check',
@@ -39,7 +42,7 @@ const T = {
     faqEy: 'FAQ', faqH: 'The questions people really ask us.',
     ctaH: 'Thirty minutes on your real workflow.<br>Then you decide.', ctaP: n => `We show you where the time goes, what can be safely automated and where it’s best to start with ${n}. No obligation, no jargon.`, ctaSmall: 'We work with a few clients at a time. We reply within 24 hours.',
     othersEy: 'The other Ovia systems', othersH: 'Each system feeds another.', discover: 'Learn more', discoverN: s => `Discover ${s}`, sources: 'Sources',
-    hub: { title: 'Ovia services — tailor-made AI systems built on strategy and security', desc: 'Second Brain, Inbox, Lead Generation, Calls, Documents, AI-Ready Websites and CRM: seven tailor-made systems for professional firms and SMEs.', ey: 'Ovia services', h1: 'Seven systems. One principle.', lead: 'Every Ovia system starts from a strategy written with you and clear security rules. Then, and only then, artificial intelligence puts it to work.', startEy: 'Where to start', startH: 'Not sure which system you need? That’s normal.', startP: 'That’s exactly what the Process Check is for: finding out which problem costs you most and whether we can deliver a measurable result.', list: 'Ovia services' },
+    hub: { title: 'Ovia services — tailor-made AI systems built on strategy and security', desc: 'Second Brain, Inbox, Lead Generation, Calls, Documents, AI-Ready Websites and CRM: seven tailor-made systems for professional firms and SMEs.', ey: 'Ovia services', h1: 'Seven systems. One principle.', lead: 'Every Ovia system starts from a strategy written with you and clear security rules. Then, and only then, artificial intelligence puts it to work.', startEy: 'Where to start', startH: 'Not sure which system you need? That’s normal.', startP: 'That’s exactly what the Process Check is for: finding out which problem costs you most and whether we can deliver a measurable result.', list: 'Ovia services', mf: 'Every system prepares the work, then stops at the dot {dot} and waits for _you._ It is the principle that holds them all together.' },
   },
 };
 
@@ -56,8 +59,8 @@ function page(p, s, lang) {
   const problem = s.problem.paras.map(x => `<p class="ov-lead" style="margin-bottom:18px;max-width:none">${R(x)}</p>`).join('');
   const pillars = [[s.pillars.strategia, PILASTRI_BASE.strategia], [s.pillars.sicurezza, PILASTRI_BASE.sicurezza], [s.pillars.ai, PILASTRI_BASE.ai]]
     .map(([txt, w], i) => `<div class="ov-card sv-pillar rv${i === 2 ? ' is-tool' : ''}"><span class="num">0${i + 1}</span><h3>${t.pillars[i][0]}</h3><p>${R(txt)}</p><div class="weight"><i data-weight="${w}"></i></div><div class="weight-label">${t.pillars[i][1]}</div></div>`).join('');
-  const flowSteps = s.flow.map((f, i) => `<button class="sv-flow-step" role="tab" id="fs-${i}" aria-controls="fp-${i}" aria-selected="${i === 0}"><span class="n">${i + 1}</span>${esc(f.t)}</button>`).join('');
-  const flowPanels = s.flow.map((f, i) => `<div data-flow-panel id="fp-${i}" role="tabpanel" aria-labelledby="fs-${i}"${i ? ' hidden' : ''}><div class="tag">${t.step(i + 1, s.flow.length)} · ${esc(f.t)}</div><h3>${esc(f.h)}</h3><p>${R(f.p)}</p>${f.human ? `<span class="human">✓ ${esc(f.human)}</span>` : ''}</div>`).join('');
+  const flowSteps = s.flow.map((f, i) => `<button class="sv-flow-step${f.human ? ' me' : ''}" role="tab" id="fs-${i}" aria-controls="fp-${i}" aria-selected="${i === 0}"><span class="n">${i + 1}</span>${esc(f.t)}</button>`).join('');
+  const flowPanels = s.flow.map((f, i) => `<div data-flow-panel id="fp-${i}" role="tabpanel" aria-labelledby="fs-${i}"${i ? ' hidden' : ''}><div class="tag">${t.step(i + 1, s.flow.length)} · ${esc(f.t)}</div><h3>${esc(f.h)}</h3><p>${R(f.p)}</p>${f.human ? `<small class="hx-check">${esc(f.human)}</small>` : ''}</div>`).join('');
   const inputs = s.calc.inputs.map(inp => {
     const id = `c-${p.id}-${inp.name}`;
     return `<div class="sv-field"><label for="${id}">${esc(inp.label)} <output for="${id}"></output></label><input class="sv-range" type="range" id="${id}" name="${inp.name}" min="${inp.min}" max="${inp.max}" step="${inp.step}" value="${inp.value}"${inp.prefix ? ` data-prefix="${esc(inp.prefix)}"` : ''}${inp.suffix ? ` data-suffix="${esc(inp.suffix)}"` : ''}>${inp.hint ? `<div class="hint">${esc(inp.hint)}</div>` : ''}</div>`;
@@ -68,7 +71,6 @@ function page(p, s, lang) {
   const tabPanels = s.audiences.map((a, i) => `<div class="ov-card sv-tabpanel" role="tabpanel" id="tp-${i}" aria-labelledby="tt-${i}"${i ? ' hidden' : ''}><h3>${esc(a.h)}</h3><p>${esc(a.p)}</p><ul>${a.items.map(x => `<li>${esc(x)}</li>`).join('')}</ul>${a.link ? `<p style="margin:18px 0 0"><a class="ov-btn-ghost" href="${a.link.href}">${esc(a.link.label)}</a></p>` : ''}</div>`).join('');
   const tl = s.timeline.map(x => `<div class="sv-tl rv"><div class="when">${esc(x.when)}</div><h4>${esc(x.h)}</h4><p>${esc(x.p)}</p></div>`).join('');
   const faq = s.faq.map((f, i) => `<details${i === 0 ? ' open' : ''}><summary>${esc(f.q)}</summary><div class="ans"><p>${esc(f.a)}</p></div></details>`).join('');
-  const others = prods.filter(o => o.id !== p.id).map(o => `<a class="ov-card ov-svc-card rv" href="${urlIn(lang, o.id)}">${svgGlyph(o.glyph)}<span class="k">${esc(o.kicker)}</span><h3>${esc(o.name)}</h3><p>${esc(o.pitch)}</p><span class="go">${t.discover}</span></a>`).join('');
   (s.sources || []).forEach(k => { if (!refs.includes(k)) refs.push(k); });
   const sources = refs.map((k, i) => `<li id="fonte-${i + 1}"><a href="${esc(FONTI[k].u)}" target="_blank" rel="noopener">${esc(fontiT(k))}</a></li>`).join('');
   const self = SITE.url + P(itP);
@@ -93,7 +95,7 @@ function page(p, s, lang) {
         <p class="sub">${esc(s.sub)}</p>
         <div class="sv-hero-ctas">${calBtn(u.cta)}<a class="ov-btn-ghost" href="#come-funziona">${t.how}</a></div>
       </div>
-      <div class="sv-hero-visual" aria-hidden="true"><div class="halo"></div>${svgGlyph(p.glyph)}</div>
+      ${pipeline(lang, p.name, s.flow)}
     </section>
     <div class="sv-stats">${stats}</div>
   </div>
@@ -104,10 +106,8 @@ function page(p, s, lang) {
     ${problem}
   </div></section>
 
-  <section class="ov-section" style="padding-top:0"><div class="ov-wrap">
-    <div class="ov-center rv"><p class="ov-eyebrow">${t.distinct}</p>
-    <h2 class="ov-h2">${t.distinctH}</h2>
-    <p class="ov-lead">${t.distinctP}</p></div>
+  ${manifesto(t.mfText, t.distinctP, t.distinct)}
+  <section class="ov-section sv-pill-sec"><div class="ov-wrap">
     <div class="sv-pillars">${pillars}</div>
   </div></section>
 
@@ -155,18 +155,12 @@ function page(p, s, lang) {
   </div></section>
 
   <section class="ov-section" style="padding-top:0"><div class="ov-wrap">
-    <div class="ov-cta-band rv">
-      <p class="ov-eyebrow">Ovia Process Check</p>
-      <h2>${t.ctaH}</h2>
-      <p>${esc(t.ctaP(p.name))}</p>
-      ${calBtn(u.cta)}
-      <p class="small">${t.ctaSmall}</p>
-    </div>
+    ${ctaBand(lang, { h: t.ctaH, p: esc(t.ctaP(p.name)), small: t.ctaSmall, tag: 'Ovia Process Check' })}
   </div></section>
 
   <section class="ov-section" style="padding-top:0"><div class="ov-wrap">
     <div class="rv"><p class="ov-eyebrow">${t.othersEy}</p><h2 class="ov-h2">${t.othersH}</h2></div>
-    <div class="ov-grid-3" style="margin-top:28px">${others}</div>
+    ${sistemi(lang, { exclude: p.id, landings: false })}
     <div class="ov-sources"><h4>${t.sources}</h4><ol>${sources}</ol></div>
   </div></section>
 </main>` + footer(lang);
@@ -175,7 +169,6 @@ function page(p, s, lang) {
 function hub(lang) {
   const t = T[lang], h = t.hub, u = UI[lang], P = x => pathFor(lang, x), prods = prodottiIn(lang);
   const alt = { it: '/servizi/', en: pathFor('en', '/servizi/') };
-  const cards = prods.map((p, i) => `<a class="ov-card ov-svc-card rv" href="${urlIn(lang, p.id)}">${svgGlyph(p.glyph)}<span class="k">${esc(p.kicker)}</span><h3>${esc(p.name)}</h3><p>${esc(p.pitch)}</p><span class="go">${esc(t.discoverN(p.short))}</span></a>`).join('');
   const jsonld = [{ '@context': 'https://schema.org', '@type': 'ItemList', name: h.list, itemListElement: prods.map((p, i) => ({ '@type': 'ListItem', position: i + 1, url: SITE.url + urlIn(lang, p.id), name: p.name })) }];
   return head({ title: h.title, description: h.desc, path: '/servizi/', lang, alt, jsonld }) + header('servizi', lang, alt) + `
 <main><div class="ov-wrap">
@@ -186,8 +179,11 @@ function hub(lang) {
     <p class="ov-lead">${esc(u.positioning)} ${h.lead}</p>
     <div style="margin-top:28px">${calBtn(u.cta)}</div>
   </section>
-  <div class="ov-grid-3">${cards}</div>
-  <section class="ov-section"><div class="ov-cta-band rv"><p class="ov-eyebrow">${h.startEy}</p><h2>${h.startH}</h2><p>${h.startP}</p>${calBtn(u.cta)}</div></section>
+</div>
+  ${manifesto(h.mf, '', h.h1)}
+  <div class="ov-wrap">
+  ${sistemi(lang)}
+  <section class="ov-section">${ctaBand(lang, { h: h.startH, p: h.startP, tag: h.startEy })}</section>
 </div></main>` + footer(lang);
 }
 

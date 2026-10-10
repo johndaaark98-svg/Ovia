@@ -3,11 +3,11 @@
    Il pallino blu del logo significa "in attesa": ogni sistema Ovia prepara
    il lavoro e poi si ferma finché una persona non approva.
    1. Coda di approvazione (hero): tieni premuto il pallino per approvare.
-   2. Manifesto: le parole si accendono con lo scroll.
-   3. Simulatore: arriva qualcosa → Ovia legge → prepara → tu decidi → fatto.
+   2. Simulatore: arriva qualcosa → Ovia legge → prepara → tu decidi → fatto.
+   Pallino di chiusura e manifesto sono in ovia-pages.js (condivisi).
    Testi e scenari arrivano dal JSON #hx-data (generato da scripts/build-home.mjs).
    ===================================================================== */
-(() => {
+const ovHome = () => {
   const src = document.getElementById('hx-data');
   if (!src) return;
   let D;
@@ -22,44 +22,8 @@
     return e;
   };
 
-  /* ---------- Tieni premuto per approvare (mouse, touch, tastiera) ---------- */
-  function holdToApprove(btn, { ms = 850, onProgress, onDone }) {
-    let p = 0, dir = 0, raf = 0, last = 0, active = false, kb = false;
-    const blocked = () => btn.getAttribute('aria-disabled') === 'true';
-    const tick = now => {
-      const dt = now - last; last = now;
-      p = Math.min(1, Math.max(0, p + dir * dt / (dir > 0 ? ms : ms / 2)));
-      onProgress(p);
-      if (dir > 0 && p >= 1) { raf = 0; finish(); return; }
-      if (dir < 0 && p <= 0) { raf = 0; return; }
-      raf = requestAnimationFrame(tick);
-    };
-    const go = d => { dir = d; if (!raf) { last = performance.now(); raf = requestAnimationFrame(tick); } };
-    const start = () => { if (blocked() || active) return; active = true; btn.classList.add('is-holding'); go(1); };
-    const stop = () => { if (!active) return; active = false; btn.classList.remove('is-holding'); if (p < 1) go(-1); };
-    const finish = () => { active = false; btn.classList.remove('is-holding'); p = 0; onDone(); };
-
-    btn.addEventListener('pointerdown', e => {
-      if (e.button > 0) return;
-      e.preventDefault();
-      try { btn.setPointerCapture(e.pointerId); } catch {}
-      start();
-    });
-    ['pointerup', 'pointercancel', 'lostpointercapture'].forEach(t => btn.addEventListener(t, stop));
-    btn.addEventListener('keydown', e => {
-      if (e.key !== 'Enter' && e.key !== ' ') return;
-      e.preventDefault(); kb = true;
-      if (!e.repeat) start();
-    });
-    btn.addEventListener('keyup', e => {
-      if (e.key !== 'Enter' && e.key !== ' ') return;
-      e.preventDefault(); stop();
-      setTimeout(() => { kb = false; }, 0);
-    });
-    // Lettori di schermo che inviano un clic "virtuale": approvazione diretta.
-    btn.addEventListener('click', e => { if (e.detail === 0 && !kb && !active && !blocked()) finish(); });
-    btn.addEventListener('contextmenu', e => e.preventDefault());
-  }
+  const holdToApprove = window.ovHold;
+  if (!holdToApprove) return;
 
   /* ---------- 1. Coda di approvazione ---------- */
   const stage = document.querySelector('[data-hx-stage]');
@@ -145,36 +109,6 @@
       });
       stage.addEventListener('pointerleave', () => { dot.style.setProperty('--mx', '0px'); dot.style.setProperty('--my', '0px'); });
     }
-  }
-
-  /* ---------- Chiusura: tieni premuto il pallino per prenotare ---------- */
-  const ctaDot = document.querySelector('[data-hx-cta]');
-  if (ctaDot) {
-    const book = ctaDot.closest('.hx-cta').querySelector('[data-cal-link]');
-    holdToApprove(ctaDot, {
-      ms: 850,
-      onProgress: p => ctaDot.style.setProperty('--p', p),
-      onDone: () => { ctaDot.style.setProperty('--p', 0); if (book) book.click(); },
-    });
-  }
-
-  /* ---------- 2. Manifesto ---------- */
-  const mf = document.querySelector('[data-mf]');
-  if (mf && !RM) {
-    const text = mf.querySelector('.mf-text');
-    const ws = [...mf.querySelectorAll('.mf-w')];
-    let ticking = false;
-    const upd = () => {
-      ticking = false;
-      const r = text.getBoundingClientRect(), vh = innerHeight;
-      const p = (vh * .85 - r.top) / (r.height + vh * .35);
-      const n = Math.round(Math.max(0, Math.min(1, p)) * ws.length);
-      ws.forEach((w, i) => w.classList.toggle('on', i < n));
-    };
-    mf.classList.add('is-live');
-    addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(upd); } }, { passive: true });
-    addEventListener('resize', upd);
-    upd();
   }
 
   /* ---------- 3. Simulatore ---------- */
@@ -334,4 +268,6 @@
       io.observe(sx);
     } else play(0);
   }
-})();
+};
+// ovia-pages.js (che definisce window.ovHold) viene eseguito dopo questo file: si parte al DOMContentLoaded.
+if (window.ovHold) ovHome(); else document.addEventListener('DOMContentLoaded', ovHome);

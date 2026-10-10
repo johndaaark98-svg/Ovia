@@ -4,6 +4,7 @@ import { SITE } from '../data/prodotti.mjs';
 import { FAQ, FAQ_CATEGORIE } from '../data/faq.mjs';
 import { FAQ_EN, FAQ_CATEGORIE_EN } from '../data/en/faq.mjs';
 import { head, header, footer, esc, calBtn } from './lib/layout.mjs';
+import { ctaBand } from './lib/blocchi.mjs';
 import { UI, pathFor } from './lib/i18n.mjs';
 
 const ROOT = new URL('..', import.meta.url).pathname;
@@ -53,13 +54,7 @@ function pagina(lang) {
     ${gruppi}
     <p class="bl-empty">${t.empty}</p>
   </div>
-  <section class="ov-section"><div class="ov-cta-band">
-    <p class="ov-eyebrow">Ovia Process Check</p>
-    <h2>${t.ctaH}</h2>
-    <p>${t.ctaP}</p>
-    ${calBtn(u.cta)}
-    <p class="small">${t.ctaS}</p>
-  </div></section>
+  <section class="ov-section">${ctaBand(lang, { h: t.ctaH, p: t.ctaP, small: t.ctaS })}</section>
 </div></main>` + footer(lang);
 }
 

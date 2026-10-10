@@ -8,6 +8,8 @@
 // =====================================================================
 
 const COMUNI = [
+  ['Qui decidi tu', 'This is where you decide'],
+  ['In attesa della tua richiesta', 'Waiting for your request'],
   ['Hanno gia scelto Ovia', 'They already chose Ovia'],
   ['Privacy Policy', 'Privacy Policy'],
   ['Cookie Policy', 'Cookie Policy'],
@@ -279,6 +281,8 @@ export const SITI_STUDI = {
 
 export const SITI_LOCALI = {
   text: [
+    ['Qui decidi tu', 'This is where you decide'],
+    ['In attesa della tua richiesta', 'Waiting for your request'],
     ...SITI_STUDI.text.filter(([it]) => [
       'Hanno gia scelto Ovia', 'Privacy Policy', 'Cookie Policy', 'Siti web', 'Ieri Google. Oggi l\'intelligenza artificiale.', 'Fino a ieri un cliente ti cercava su Google e scorreva una lista di 10 risultati.', 'Bastava esserci.', 'consiglia uno o due nomi.', 'Se non sei tra quei due, non esisti.', 'Le persone si fidano dell\'assistente con cui parlano. La domanda non e se adeguarti, ma quando.', 'fino a 8 volte in piu la conversione di un cliente consigliato dall\'AI rispetto a una ricerca Google.', '3 giorni', 'il tempo medio di decisione con l\'AI, contro gli 8 giorni di una ricerca su Google.', 'Richiedi la tua demo gratuita &rarr;', 'Ieri &middot; Google', '10 link blu da scorrere', 'L\'utente confronta per giorni', 'Vince chi e primo o chi paga piu ads', 'Oggi &middot; AI search', '1-2 nomi consigliati', 'Decisione molto piu rapida', 'Vince chi e costruito per essere scelto dall\'AI', 'Cosa include', 'SEO locale + configurazione Google Search Console', 'Care Kit mensile: aggiornamenti, modifiche e monitoraggio', 'Come funziona', 'Domande frequenti', 'Quanto costa?', 'Perche non basta piu essere su Google?', 'Cosa fate per farmi trovare dalle intelligenze artificiali?', 'Ogni mese che passa, l\'AI consiglia i tuoi competitor. Inizia ora.', 'Tipo di attività *', 'Acconsento al trattamento dei miei dati per essere ricontattato riguardo alla demo, secondo l\'informativa sulla privacy.', 'Richiesta ricevuta!', 'Ti prepariamo la demo e ti contattiamo entro 48 ore via email e telefono.', 'Soluzioni AI', 'Nome dell\'attività / azienda *', 'Telefono *', 'Note (facoltativo): raccontaci in due righe cosa ti serve', 'Studi professionali', 'Attività locali',
     ].includes(it)),

@@ -189,6 +189,132 @@
   });
 })();
 
+/* =====================================================================
+   Il pallino "in attesa" — interazioni condivise da tutte le pagine.
+   Il pallino blu segna il punto in cui decide una persona.
+   - window.ovHold(btn, {ms, onProgress, onDone}): tieni premuto per approvare
+     (mouse, touch, tastiera; clic diretto per i lettori di schermo)
+   - [data-hx-cta]: pallino di chiusura, tienilo premuto per prenotare
+   - [data-mf]: manifesto che si accende con lo scroll
+   - [data-pipe]: flusso di un servizio che si ferma sul pallino e aspetta
+   ===================================================================== */
+(function () {
+  'use strict';
+  var RM = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var wait = function (ms) { return new Promise(function (r) { setTimeout(r, RM ? Math.min(ms, 40) : ms); }); };
+
+  function hold(btn, o) {
+    var ms = o.ms || 850, p = 0, dir = 0, raf = 0, last = 0, active = false, kb = false;
+    var blocked = function () { return btn.getAttribute('aria-disabled') === 'true' || btn.hidden; };
+    var finish = function () { active = false; btn.classList.remove('is-holding'); p = 0; o.onDone(); };
+    var tick = function (now) {
+      var dt = now - last; last = now;
+      p = Math.min(1, Math.max(0, p + dir * dt / (dir > 0 ? ms : ms / 2)));
+      o.onProgress(p);
+      if (dir > 0 && p >= 1) { raf = 0; finish(); return; }
+      if (dir < 0 && p <= 0) { raf = 0; return; }
+      raf = requestAnimationFrame(tick);
+    };
+    var go = function (d) { dir = d; if (!raf) { last = performance.now(); raf = requestAnimationFrame(tick); } };
+    var start = function () { if (blocked() || active) return; active = true; btn.classList.add('is-holding'); go(1); };
+    var stop = function () { if (!active) return; active = false; btn.classList.remove('is-holding'); if (p < 1) go(-1); };
+    btn.addEventListener('pointerdown', function (e) {
+      if (e.button > 0) return;
+      e.preventDefault();
+      try { btn.setPointerCapture(e.pointerId); } catch (x) {}
+      start();
+    });
+    ['pointerup', 'pointercancel', 'lostpointercapture'].forEach(function (t) { btn.addEventListener(t, stop); });
+    btn.addEventListener('keydown', function (e) {
+      if (e.key !== 'Enter' && e.key !== ' ') return;
+      e.preventDefault(); kb = true;
+      if (!e.repeat) start();
+    });
+    btn.addEventListener('keyup', function (e) {
+      if (e.key !== 'Enter' && e.key !== ' ') return;
+      e.preventDefault(); stop();
+      setTimeout(function () { kb = false; }, 0);
+    });
+    btn.addEventListener('click', function (e) { if (e.detail === 0 && !kb && !active && !blocked()) finish(); });
+    btn.addEventListener('contextmenu', function (e) { e.preventDefault(); });
+  }
+  window.ovHold = hold;
+
+  /* Chiusura: tieni premuto il pallino per prenotare */
+  document.querySelectorAll('[data-hx-cta]').forEach(function (dot) {
+    var band = dot.closest('.hx-cta'), book = band && band.querySelector('[data-cal-link]');
+    hold(dot, {
+      onProgress: function (p) { dot.style.setProperty('--p', p); },
+      onDone: function () { dot.style.setProperty('--p', 0); if (book) book.click(); }
+    });
+  });
+
+  /* Manifesto */
+  var mfs = document.querySelectorAll('[data-mf]');
+  if (mfs.length && !RM) {
+    var items = [].map.call(mfs, function (mf) { mf.classList.add('is-live'); return { text: mf.querySelector('.mf-text'), ws: [].slice.call(mf.querySelectorAll('.mf-w')) }; });
+    var ticking = false;
+    var upd = function () {
+      ticking = false;
+      var vh = window.innerHeight;
+      items.forEach(function (it) {
+        var r = it.text.getBoundingClientRect();
+        var p = (vh * .85 - r.top) / (r.height + vh * .35);
+        var n = Math.round(Math.max(0, Math.min(1, p)) * it.ws.length);
+        it.ws.forEach(function (w, i) { w.classList.toggle('on', i < n); });
+      });
+    };
+    window.addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(upd); } }, { passive: true });
+    window.addEventListener('resize', upd);
+    upd();
+  }
+
+  /* Pipeline di un servizio: scorre, si ferma sul pallino, aspetta l'approvazione */
+  document.querySelectorAll('[data-pipe]').forEach(function (root) {
+    var st = root.querySelector('[data-pipe-st]'), btn = root.querySelector('[data-pipe-hold]');
+    var lis = [].slice.call(root.querySelectorAll('.pp-list li'));
+    var approved = null, started = false;
+    root.classList.add('is-live');
+    hold(btn, {
+      ms: 800,
+      onProgress: function (p) { btn.style.setProperty('--p', p); },
+      onDone: function () { btn.style.setProperty('--p', 0); if (approved) { var f = approved; approved = null; f(); } }
+    });
+    var set = function (k) {
+      lis.forEach(function (li, i) { li.classList.toggle('on', i < k); li.classList.toggle('cur', i === k); });
+    };
+    var status = function (key) { st.textContent = st.getAttribute('data-' + key); root.setAttribute('data-state', key); };
+    var loop = async function () {
+      for (;;) {
+        status('run'); set(-1);
+        await wait(500);
+        for (var i = 0; i < lis.length; i++) {
+          set(i);
+          if (lis[i].classList.contains('me')) {
+            status('wait');
+            btn.hidden = false;
+            await new Promise(function (r) { approved = r; });
+            var hadFocus = document.activeElement === btn;
+            btn.hidden = true;
+            if (hadFocus) root.focus({ preventScroll: true });
+            status('run');
+            await wait(350);
+          } else await wait(950);
+        }
+        set(lis.length); status('done');
+        await wait(4200);
+      }
+    };
+    root.tabIndex = -1;
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (es) {
+        if (!started && es.some(function (e) { return e.isIntersecting; })) { started = true; io.disconnect(); loop(); }
+      }, { threshold: .4 });
+      io.observe(root);
+    } else loop();
+  });
+})();
+
 /* ---------- Cal.com: popup "Prenota il tuo Process Check" ---------- */
 (function (C, A, L) {
   var p = function (a, ar) { a.q.push(ar); }; var d = C.document;

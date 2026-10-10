@@ -3,6 +3,7 @@
 import { writeFileSync, mkdirSync } from 'node:fs';
 import { SITE } from '../data/prodotti.mjs';
 import { head, header, footer, esc, calBtn } from './lib/layout.mjs';
+import { ctaBand, manifesto } from './lib/blocchi.mjs';
 import { UI, pathFor } from './lib/i18n.mjs';
 
 const ROOT = new URL('..', import.meta.url).pathname;
@@ -48,6 +49,9 @@ const T = {
     fondBio: [
       'Luca ha fondato L3 Innovation e ha seguito da vicino lo sviluppo dei software per il sovraindebitamento. Oggi guida Ovia con un’idea semplice: partire dal processo reale di chi lavora, mettere la sicurezza dei dati al primo posto e usare l’intelligenza artificiale solo dove produce un risultato misurabile.',
     ],
+    mf: 'Il pallino {dot} del nostro logo è una promessa: ogni sistema che costruiamo si ferma e aspetta _una_ _persona._',
+    mfSub: 'Lo abbiamo imparato con le pratiche di sovraindebitamento: dove un errore costa caro, l’ultima parola spetta a chi ha esperienza e responsabilità.',
+    mfLabel: 'Il significato del pallino',
     citazione: 'Non vendiamo intelligenza artificiale. Togliamo dal lavoro delle persone tutto ciò che non richiede una persona.',
     fotoAlt: 'Luca Lorenzo, fondatore e CEO di Ovia',
     ctaH: 'Partiamo dal tuo lavoro reale.',
@@ -92,6 +96,9 @@ const T = {
     fondBio: [
       'Luca founded L3 Innovation and closely followed the development of its debt-relief software. Today he leads Ovia with a simple idea: start from the real process of the people doing the work, put data security first, and use artificial intelligence only where it produces a measurable result.',
     ],
+    mf: 'The dot {dot} in our logo is a promise: every system we build stops and waits for _a_ _person._',
+    mfSub: 'We learned it handling debt-relief cases: where a mistake costs dearly, the last word belongs to whoever has the experience and the responsibility.',
+    mfLabel: 'The meaning of the dot',
     citazione: 'We don’t sell artificial intelligence. We take out of people’s work everything that doesn’t need a person.',
     fotoAlt: 'Luca Lorenzo, founder and CEO of Ovia',
     ctaH: 'Let’s start from your real work.',
@@ -110,7 +117,7 @@ const CSS = `<style id="cs-css">
 .cs-steps li{position:relative;padding:0 0 26px 26px}
 .cs-steps li:last-child{padding-bottom:0}
 .cs-steps li::before{content:"";position:absolute;left:-5px;top:7px;width:9px;height:9px;border-radius:50%;background:var(--ink)}
-.cs-steps li:last-child::before{background:var(--accent)}
+.cs-steps li:last-child::before{background:var(--accent);left:-8px;top:4px;width:15px;height:15px;animation:ov-ping 2.4s ease-out infinite}
 .cs-steps h3{font-family:var(--font-display);font-size:17px;margin:0 0 6px;color:var(--text)}
 .cs-steps p{font-size:15px;color:var(--muted);margin:0;line-height:1.55}
 .cs-hero{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:clamp(28px,5vw,64px);align-items:center;padding:clamp(28px,5vw,56px) 0 clamp(36px,5vw,56px)}
@@ -185,6 +192,8 @@ function pagina(lang) {
     </div>
   </div></section>
 
+  ${manifesto(t.mf, t.mfSub, t.mfLabel)}
+
   <section class="ov-section" style="padding-top:0"><div class="ov-wrap">
     <div class="rv"><p class="ov-eyebrow">${t.valoriEy}</p><h2 class="ov-h2">${esc(t.valoriH)}</h2><p class="ov-lead">${esc(t.valoriLead)}</p></div>
     <div class="sv-pillars">${valori}</div>
@@ -202,13 +211,7 @@ function pagina(lang) {
     </div>
   </div></section>
 
-  <section class="ov-section" style="padding-top:0"><div class="ov-narrow"><div class="ov-cta-band rv">
-    <p class="ov-eyebrow">Ovia Process Check</p>
-    <h2>${esc(t.ctaH)}</h2>
-    <p>${esc(t.ctaP)}</p>
-    ${calBtn(u.cta)}
-    <p class="small">${esc(t.ctaS)}</p>
-  </div></div></section>
+  <section class="ov-section" style="padding-top:0"><div class="ov-wrap">${ctaBand(lang, { h: esc(t.ctaH), p: esc(t.ctaP), small: esc(t.ctaS) })}</div></section>
 </main>` + footer(lang);
 }
 
