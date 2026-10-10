@@ -1165,3 +1165,19 @@ html.oa-open { overflow: hidden; }
 .st-sec.is-started .st-hint { opacity: 0; transform: translateY(6px); }
 @media (max-width: 860px) { .st-hint { margin-top: 14px; } }
 @media (prefers-reduced-motion: reduce) { .st-hint { display: none; } }
+
+/* Caso reale: il fondatore scontornato, appoggiato sul bordo della sezione */
+.hm-case { padding-bottom: 0; }
+.case-foot { align-items: flex-end; margin-top: 56px; }
+.case-bridge { padding-bottom: clamp(56px, 7vw, 96px); }
+.case-founder { display: flex; align-items: flex-end; gap: 22px; margin: 0; }
+.case-founder img { display: block; width: 260px; height: auto; }
+.case-founder figcaption { padding-bottom: clamp(56px, 7vw, 96px); }
+.case-founder strong { display: block; font-size: 18px; color: var(--ink); }
+.case-founder span { display: block; font-size: 15px; color: var(--muted); margin-bottom: 12px; }
+@media (max-width: 600px) {
+  .case-foot { flex-direction: column; align-items: stretch; gap: 8px; margin-top: 40px; }
+  .case-bridge { padding-bottom: 8px; }
+  .case-founder img { width: 190px; }
+  .case-founder figcaption { padding-bottom: 32px; }
+}

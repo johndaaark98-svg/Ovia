@@ -408,10 +408,10 @@ function pagina(lang) {
     <div class="hm-trust case-rules">${t.caseRules.map(([h, p]) => `<div><h4>${esc(h)}</h4><p>${esc(p)}</p></div>`).join('')}</div>
     <div class="case-foot">
       <p class="case-bridge">${esc(t.caseBridge)}</p>
-      <div class="hm-founder">
-        <picture><source srcset="/assets/luca-lorenzo-viso-240.webp 240w, /assets/luca-lorenzo-viso-480.webp 480w" sizes="120px" type="image/webp"><img src="/assets/luca-lorenzo.jpg" alt="${esc(t.founderAlt)}" width="120" height="150" loading="lazy" decoding="async"></picture>
-        <div><strong>${esc(t.founder)}</strong><span>${esc(t.founderRole)}</span><a class="hm-link" href="${P('/chi-siamo.html')}">${esc(t.story)}</a></div>
-      </div>
+      <figure class="case-founder">
+        <img src="/assets/luca-lorenzo-busto-260.webp" srcset="/assets/luca-lorenzo-busto-260.webp 260w, /assets/luca-lorenzo-busto-520.webp 520w" sizes="(max-width: 600px) 190px, 260px" alt="${esc(t.founderAlt)}" width="260" height="304" loading="lazy" decoding="async">
+        <figcaption><strong>${esc(t.founder)}</strong><span>${esc(t.founderRole)}</span><a class="hm-link" href="${P('/chi-siamo.html')}">${esc(t.story)}</a></figcaption>
+      </figure>
     </div>
   </div></section>
 
