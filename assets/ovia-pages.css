@@ -892,7 +892,7 @@ html.oa-open { overflow: hidden; }
    La sezione resta ferma mentre si scorre; lo sfondo (canvas) mostra il lavoro
    che arriva, viene collegato ai clienti, preparato e messo in attesa del pallino.
    ===================================================================== */
-.st-sec { position: relative; height: 480vh; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.st-sec { position: relative; height: 340vh; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .st-pin { position: sticky; top: 72px; height: calc(100vh - 72px); height: calc(100svh - 72px); overflow: hidden; background: #fff; }
 .st-cv { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
 .st-grid { position: relative; height: 100%; display: grid; grid-template-columns: minmax(0, 400px) 1fr; align-items: center; pointer-events: none; }
@@ -915,7 +915,7 @@ html.oa-open { overflow: hidden; }
 .st-legend .lg-call::before { width: 0; height: 0; background: none; border-left: 4.5px solid transparent; border-right: 4.5px solid transparent; border-bottom: 8px solid var(--ink); }
 .st-legend .lg-pec::before { transform: rotate(45deg) scale(.85); }
 @media (max-width: 860px) {
-  .st-sec { height: 520vh; }
+  .st-sec { height: 380vh; }
   .st-grid { grid-template-columns: 1fr; align-items: start; padding-top: 26px; }
   .st-steps { min-height: 210px; }
   .st-steps h2 { font-size: 30px; }
@@ -1157,3 +1157,11 @@ html.oa-open { overflow: hidden; }
   .case-flow li.me::before { left: -8px; top: 1px; }
   .case-rules-h { margin-top: 44px; }
 }
+
+/* Racconto: un invito a scorrere, che sparisce appena si comincia */
+.st-hint { display: inline-flex; align-items: center; gap: 10px; margin-top: 26px; font-size: 14px; font-weight: 600; color: var(--ink); transition: opacity .4s, transform .4s; }
+.st-hint::before { content: ''; width: 1.5px; height: 22px; background: linear-gradient(var(--ink) 50%, var(--line-strong) 0) 0 0 / 100% 200%; animation: st-hint 1.6s cubic-bezier(.6, 0, .3, 1) infinite; }
+@keyframes st-hint { from { background-position: 0 100%; } to { background-position: 0 -100%; } }
+.st-sec.is-started .st-hint { opacity: 0; transform: translateY(6px); }
+@media (max-width: 860px) { .st-hint { margin-top: 14px; } }
+@media (prefers-reduced-motion: reduce) { .st-hint { display: none; } }

@@ -175,7 +175,10 @@ const ovHome = () => {
       const head = mobile ? 64 : 72, total = sec.offsetHeight - pin.offsetHeight;
       return clamp((head - r.top) / Math.max(1, total), 0, 1);
     };
-    const seg = (p, s) => ease(clamp((p - (s + .55) / 5) / (.45 / 5), 0, 1));
+    // Nessuna zona morta: le fasi si sovrappongono, così ogni scatto della rotella muove qualcosa.
+    const span = (p, a, b) => ease(clamp((p - a) / (b - a), 0, 1));
+    const STEP_AT = [0, .17, .38, .58, .72];       // quando cambia il testo a sinistra
+    let shown = 0;                                  // progresso mostrato, insegue quello reale (movimento fluido)
     const fit = (t, mw) => { if (ctx.measureText(t).width <= mw) return t; while (t.length > 1 && ctx.measureText(t + '…').width > mw) t = t.slice(0, -1); return t.trimEnd() + '…'; };
     const roundRect = (x, y, w, h, r) => { ctx.beginPath(); ctx.moveTo(x + r, y); ctx.arcTo(x + w, y, x + w, y + h, r); ctx.arcTo(x + w, y + h, x, y + h, r); ctx.arcTo(x, y + h, x, y, r); ctx.arcTo(x, y, x + w, y, r); ctx.closePath(); };
     const shape = (type, x, y, s) => {
@@ -188,12 +191,15 @@ const ovHome = () => {
     };
     let lastStep = -1;
     const draw = now => {
-      const p = RM ? .9 : progress(), tm = now / 1000;
-      const step = Math.min(4, Math.floor(p * 5));
+      const target = RM ? .9 : progress(), tm = now / 1000;
+      shown += (target - shown) * (Math.abs(target - shown) < .0005 ? 1 : .14);
+      const p = shown;
+      let step = 0; for (let k = 0; k < 5; k++) if (p >= STEP_AT[k]) step = k;
+      sec.classList.toggle('is-started', p > .03);
       if (step !== lastStep) { lis.forEach((li, i) => li.classList.toggle('is-on', i === step)); lastStep = step; }
-      bars.forEach((b, i) => b.style.setProperty('--f', clamp(p * 5 - i, 0, 1).toFixed(3)));
-      const a1 = seg(p, 0), a2 = seg(p, 1), a3 = seg(p, 2);
-      const appr = clamp((p - .82) / .15, 0, 1) * 4; // bozze approvate (0..4)
+      bars.forEach((b, i) => b.style.setProperty('--f', clamp((p - STEP_AT[i]) / ((STEP_AT[i + 1] || 1) - STEP_AT[i]), 0, 1).toFixed(3)));
+      const a1 = span(p, .02, .3), a2 = span(p, .26, .5), a3 = span(p, .46, .7);
+      const appr = clamp((p - .72) / .24, 0, 1) * 4; // bozze approvate (0..4)
       ctx.clearRect(0, 0, W, H);
       // carte (bozze), poi coda
       const cardAlpha = a2 * (1 - 0) ;
@@ -206,7 +212,10 @@ const ovHome = () => {
           roundRect(x, y, w, h, 8); ctx.fillStyle = '#fff'; ctx.fill();
           ctx.lineWidth = 1; ctx.strokeStyle = 'rgba(' + INK + ',' + (done ? .1 : .16) + ')'; ctx.stroke();
           ctx.fillStyle = 'rgba(' + INK + ',.92)'; ctx.font = (mobile ? '600 12px' : '600 13px') + ' "Instrument Sans", sans-serif'; ctx.textBaseline = 'alphabetic';
-          ctx.fillText(fit(S.cards[i], w - 28 - (mobile ? 78 : 96) * a3), x + 14, y + 24);
+          const done0 = appr > i + .5; ctx.font = '600 11.5px "Instrument Sans", sans-serif';
+          const pillW = ctx.measureText(done0 ? S.ok : S.wait).width + 26 + 14;
+          ctx.font = (mobile ? '600 12px' : '600 13px') + ' "Instrument Sans", sans-serif';
+          ctx.fillText(fit(S.cards[i], w - 24 - (a3 > .02 ? pillW : 0)), x + 14, y + 24);
           if (a3 > .02) {
             const lab = done ? S.ok : S.wait; ctx.font = '600 11.5px "Instrument Sans", sans-serif';
             const tw = ctx.measureText(lab).width + 26, px = x + w - tw - 10, py = y + 10;

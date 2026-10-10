@@ -70,6 +70,7 @@ const T = {
       clients: ['Giulia Fadda', 'Fratelli Deiana Srl', 'Pratica 214', 'Nuovo contatto'],
       cards: ['Analisi della chiamata', 'Documenti da firmare', 'Sollecito busta paga', 'Risposta al preventivo'],
       wait: 'In attesa', ok: 'Approvato', count: '{n} di 4 approvate da te', next: 'Provalo qui sotto',
+      hint: 'Scorri: il lavoro si mette in ordine da solo',
     },
     // Monta il tuo sistema: il flusso reale di Ovia (nato sulle pratiche di sovraindebitamento),
     // applicato al processo di uno studio. Un pezzo alla volta, guidato dal pallino.
@@ -210,6 +211,7 @@ const T = {
       clients: ['Giulia Fadda', 'Deiana Brothers Ltd', 'Case 214', 'New enquiry'],
       cards: ['Call analysis', 'Documents to sign', 'Payslip reminder', 'Reply to the quote request'],
       wait: 'Waiting', ok: 'Approved', count: '{n} of 4 approved by you', next: 'Try it below',
+      hint: 'Scroll: the work sorts itself out',
     },
     kit: {
       h: 'Build your system. Five pieces, one minute.',
@@ -373,6 +375,7 @@ function pagina(lang) {
           <ol class="st-steps">${t.tale.steps.map(([k, h, p], i) => `<li${i === 0 ? ' class="is-on"' : ''}><p class="st-k">${esc(k)}</p><h2>${esc(h)}</h2><p class="st-p">${esc(p)}</p>${i === 4 ? `<a class="hm-link" href="#sistema">${esc(t.tale.next)}</a>` : ''}</li>`).join('')}</ol>
           <div class="st-bar" aria-hidden="true">${t.tale.steps.map(() => '<i></i>').join('')}</div>
           <ul class="st-legend">${t.tale.legend.map(([k, l]) => `<li class="lg-${k}">${esc(l)}</li>`).join('')}</ul>
+          <p class="st-hint" aria-hidden="true">${esc(t.tale.hint)}</p>
         </div>
       </div>
     </div>
