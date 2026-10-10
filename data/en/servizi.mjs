@@ -402,8 +402,8 @@ export const SERVIZI_EN = {
       { h: 'Content that meets Google’s rules', p: 'No mass-produced pages: useful, reviewed content, as Google’s guidance on AI content requires [[gai]].' },
     ],
     audiences: [
-      { tab: 'Professional firms', h: 'Be chosen before the first phone call', p: 'Accountants, lawyers and consultants who want to be the answer to the questions asked in their area.', items: ['Pages for every service and specialism', 'FAQs that AI engines can cite', 'Integrated consultation booking'], link: { href: '/en/websites-professional-firms.html', label: 'See the offer for professional firms →' } },
-      { tab: 'Local businesses', h: 'Tables, appointments and bookings', p: 'Restaurants, studios and shops that want to appear when someone asks AI “where…”.', items: ['Local SEO and a well-kept Google profile', 'Booking in 30 seconds', 'An assistant that answers on hours, menu and availability'], link: { href: '/en/websites-local-businesses.html', label: 'See the offer for local businesses →' } },
+      { tab: 'Professional firms', h: 'Be chosen before the first phone call', p: 'Accountants, lawyers and consultants who want to be the answer to the questions asked in their area.', items: ['Pages for every service and specialism', 'FAQs that AI engines can cite', 'Integrated consultation booking'], link: { href: '/en/websites-professional-firms.html', label: 'See the offer for professional firms' } },
+      { tab: 'Local businesses', h: 'Tables, appointments and bookings', p: 'Restaurants, studios and shops that want to appear when someone asks AI “where…”.', items: ['Local SEO and a well-kept Google profile', 'Booking in 30 seconds', 'An assistant that answers on hours, menu and availability'], link: { href: '/en/websites-local-businesses.html', label: 'See the offer for local businesses' } },
       { tab: 'SMEs and B2B', h: 'Become the source in your sector', p: 'Companies that sell expertise and need to be found by buyers researching with AI.', items: ['Authoritative technical content', 'Structured product pages', 'Leads qualified by the assistant'] },
     ],
     timeline: [

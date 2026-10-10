@@ -18,112 +18,15 @@
   <meta name="twitter:title" content="Siti web con AI per studi professionali | Ovia" />
   <meta name="twitter:description" content="Sito web con AI per studi professionali: posizionato su Google, con un assistente che prenota consulenze al posto tuo." />
 
-  <link rel="stylesheet" href="landing.css" />
-  <style>
-    /* Sezioni AI-search aggiunte */
-    .why-now { max-width: 1100px; margin: 0 auto; padding: 80px 40px; }
-    .why-now-title { font-family: var(--font-display); font-size: clamp(28px,4.5vw,44px); font-weight: 700; text-align: center; letter-spacing: -0.02em; margin-bottom: 48px; line-height: 1.1; }
-    .why-now-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 48px; align-items: center; }
-    .why-now-story p { font-size: 17px; line-height: 1.6; color: var(--color-demoted-text); margin-bottom: 18px; }
-    .why-now-story p strong { color: var(--color-primary-text); font-weight: 600; }
-    .why-now-story .kicker { color: var(--color-primary-text); font-family: var(--font-display); font-size: 19px; font-weight: 700; }
-    .stat-cards { display: flex; flex-direction: column; gap: 18px; }
-    .stat-card { padding: 26px 28px; border-radius: 18px; background: linear-gradient(160deg, rgba(76,141,255,0.1), rgba(139,92,246,0.06)); border: 1px solid var(--color-divider); }
-    .stat-card .big { font-family: var(--font-display); font-size: 34px; font-weight: 700; color: var(--color-accent); line-height: 1; margin-bottom: 8px; }
-    .stat-card .desc { font-size: 14.5px; line-height: 1.45; color: var(--color-demoted-text); }
-    .vs-section { max-width: 1000px; margin: 0 auto; padding: 40px 40px 80px; }
-    .vs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-    .vs-col { padding: 34px 30px; border-radius: 20px; border: 1px solid var(--color-divider); }
-    .vs-col.ieri { background: rgba(148,170,220,0.04); }
-    .vs-col.oggi { background: linear-gradient(160deg, rgba(76,141,255,0.12), rgba(139,92,246,0.07)); border-color: rgba(76,141,255,0.4); }
-    .vs-col h3 { font-family: var(--font-display); font-size: 15px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 22px; }
-    .vs-col.ieri h3 { color: var(--color-demoted-text); }
-    .vs-col.oggi h3 { color: var(--color-accent); }
-    .vs-col ul { list-style: none; }
-    .vs-col li { font-size: 16px; line-height: 1.5; padding: 12px 0 12px 28px; position: relative; color: var(--color-demoted-text); border-bottom: 1px solid var(--color-divider); }
-    .vs-col li:last-child { border-bottom: none; }
-    .vs-col.oggi li { color: var(--color-primary-text); }
-    .vs-col li::before { position: absolute; left: 0; top: 12px; }
-    .vs-col.ieri li::before { content: '—'; color: var(--color-demoted-text); }
-    .vs-col.oggi li::before { content: '✦'; color: var(--color-accent); }
-    .urgency-band { max-width: 900px; margin: 40px auto 0; padding: 56px 40px; text-align: center; background: linear-gradient(160deg, rgba(139,92,246,0.14), rgba(76,141,255,0.1)); border: 1px solid rgba(76,141,255,0.35); border-radius: 26px; }
-    .urgency-band h2 { font-family: var(--font-display); font-size: clamp(24px,3.5vw,34px); font-weight: 700; margin-bottom: 24px; letter-spacing: -0.02em; line-height: 1.15; }
-    .includes-list { max-width: 720px; margin: 0 auto; }
-    .includes-list li { list-style: none; font-size: 16.5px; line-height: 1.5; padding: 16px 0 16px 34px; position: relative; border-bottom: 1px solid var(--color-divider); color: var(--color-primary-text); }
-    .includes-list li:last-child { border-bottom: none; }
-    .includes-list li::before { content: '✓'; position: absolute; left: 0; top: 16px; color: var(--color-accent); font-weight: 700; }
-    @media (max-width: 860px) {
-      .why-now-grid, .vs-grid { grid-template-columns: 1fr; gap: 28px; }
-      .why-now, .vs-section { padding-left: 24px; padding-right: 24px; }
-    }
-    .demo-form { max-width: 520px; margin: 28px auto 0; text-align: left; }
-    .demo-form .row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-    .demo-form input, .demo-form select, .demo-form textarea {
-      width: 100%; padding: 14px 16px; margin-bottom: 14px; border-radius: 12px;
-      background: rgba(4,7,15,0.5); border: 1px solid var(--color-divider);
-      color: var(--color-primary-text); font-family: var(--font-stack); font-size: 15px;
-      transition: border-color .2s ease;
-    }
-    .demo-form input::placeholder, .demo-form textarea::placeholder { color: var(--color-demoted-text); }
-    .demo-form input:focus, .demo-form select:focus, .demo-form textarea:focus { outline: none; border-color: var(--color-accent); }
-    .demo-form select { appearance: none; cursor: pointer; }
-    .demo-form textarea { resize: vertical; min-height: 72px; }
-    .demo-consent { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 20px; font-size: 13.5px; line-height: 1.45; color: var(--color-demoted-text); text-align: left; }
-    .demo-consent input { width: auto; margin: 3px 0 0; flex-shrink: 0; }
-    .demo-consent a { color: var(--color-accent); }
-    .demo-form .lp-btn { width: 100%; justify-content: center; }
-    .demo-msg { margin-top: 16px; font-size: 14px; min-height: 20px; }
-    .demo-msg.err { color: #ff8a8a; }
-    .demo-success { text-align: center; padding: 20px 0; }
-    .demo-success .check { width: 54px; height: 54px; border-radius: 50%; background: var(--color-accent-soft); color: var(--color-accent); display: flex; align-items: center; justify-content: center; font-size: 26px; margin: 0 auto 18px; }
-    .demo-success h3 { font-family: var(--font-display); font-size: 22px; margin-bottom: 10px; }
-    .demo-success p { color: var(--color-demoted-text); font-size: 15.5px; line-height: 1.5; }
-    @media (max-width: 560px) { .demo-form .row { grid-template-columns: 1fr; } }
-  </style>
-  <style>
-    /* Striscia partner landing */
-    .partners-strip { padding: 42px 0 38px; border-top: 1px solid var(--color-divider); border-bottom: 1px solid var(--color-divider); overflow: hidden; }
-    .partners-label { text-align: center; font-family: var(--font-display); font-size: 12px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--color-demoted-text); margin-bottom: 26px; }
-    .partners-track-wrap { position: relative; width: 100%; overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); }
-    .partners-track { display: flex; align-items: center; gap: 60px; width: max-content; animation: partners-scroll 22s linear infinite; }
-    .partners-track img { height: 34px; width: auto; object-fit: contain; opacity: 0.9; transition: opacity .3s ease; }
-    .partners-track img.logo-white { filter: brightness(0) invert(1); opacity: 0.75; }
-    .partners-track img:hover { opacity: 1; }
-    @keyframes partners-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-    @media (max-width: 760px) { .partners-track { gap: 40px; } .partners-track img { height: 28px; } }
-  </style>
-
-  <style>
-    /* Sfondo mesh hero landing (discreto) */
-    .lp-hero { position: relative; overflow: hidden; }
-    .lp-hero-mesh { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
-    .lp-hero-mesh .grid { position: absolute; inset: -1px; background-image: linear-gradient(rgba(76,141,255,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(76,141,255,0.06) 1px, transparent 1px); background-size: 44px 44px; -webkit-mask-image: radial-gradient(ellipse 75% 65% at 50% 40%, #000 25%, transparent 75%); mask-image: radial-gradient(ellipse 75% 65% at 50% 40%, #000 25%, transparent 75%); }
-    .lp-hero-node { position: absolute; width: 5px; height: 5px; border-radius: 50%; background: radial-gradient(circle, rgba(120,170,255,0.9), rgba(76,141,255,0.12) 60%, transparent 70%); animation: lp-pulse 3.4s ease-in-out infinite; }
-    @keyframes lp-pulse { 0%,100% { transform: scale(0.7); opacity: 0.3; } 50% { transform: scale(1.2); opacity: 0.85; } }
-    .lp-hero > *:not(.lp-hero-mesh) { position: relative; z-index: 1; }
-    @media (prefers-reduced-motion: reduce) { .lp-hero-node { animation: none; } }
-  </style>
-<style id="lang-css">
-.av-lang,.lp-lang{display:inline-flex;padding:3px;border-radius:999px;border:1px solid rgba(148,170,220,.28);background:rgba(10,16,32,.7);flex-shrink:0}
-.av-lang a,.lp-lang a{font-size:12.5px;font-weight:600;letter-spacing:.08em;padding:7px 11px;min-width:40px;min-height:36px;display:inline-flex;align-items:center;justify-content:center;border-radius:999px;color:#97a3bd;line-height:1;text-decoration:none}
-.av-lang a[aria-current="true"],.lp-lang a[aria-current="true"]{background:#4c8dff;color:#fff}
-.av-header-nav{gap:28px}
-.av-nav-cta{white-space:nowrap}
-@media (max-width:1100px){.av-nav-link{display:none}}
-@media (max-width:767px){.av-header{gap:10px}.av-header-nav{gap:8px}.av-lang a,.lp-lang a{padding:9px 10px;min-width:38px;min-height:40px}.av-nav-cta{font-size:12.5px;letter-spacing:.02em;text-transform:none;padding:11px 14px}}
-@media (max-width:420px){.av-header{left:14px!important;right:14px!important}.av-logo{font-size:20px;letter-spacing:.14em;gap:5px}.av-lang a{min-width:34px;padding:9px 8px}.av-nav-cta{padding:11px 11px;font-size:12px}}
-@media (max-width:360px){.av-nav-cta{padding:10px 9px}.av-logo::after{display:none}}
-.av-logo{min-height:40px;align-items:center}
-@media (max-width:640px){.lp-nav{gap:12px}.lp-nav a:not(.lp-btn){display:none}.lp-nav .lp-lang a{display:inline-flex}}
-.lp-nav a{min-height:40px;display:inline-flex;align-items:center}
-.lp-breadcrumb a{display:inline-block;padding:12px 4px;margin:-12px -4px}
-@media (max-width:480px){.legal-table th,.legal-table td{padding:10px 8px;font-size:14px;overflow-wrap:anywhere;hyphens:auto}}
-</style>
-<!-- JSONLD:INIZIO --><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://oviaitalia.it/siti-studi-professionali.html#webpage","url":"https://oviaitalia.it/siti-studi-professionali.html","name":"Siti web con AI per studi professionali","description":"Siti per commercialisti e studi professionali con SEO locale e assistente AI che prenota consulenze. Demo gratuita in 48 ore.","inLanguage":"it-IT","isPartOf":{"@type":"WebSite","url":"https://oviaitalia.it","name":"Ovia"}},{"@type":"Service","@id":"https://oviaitalia.it/siti-studi-professionali.html#service","name":"Siti web con assistente AI per studi professionali","serviceType":"Siti web con assistente AI per studi professionali","description":"Siti per commercialisti e studi professionali con SEO locale e assistente AI che prenota consulenze. Demo gratuita in 48 ore.","url":"https://oviaitalia.it/siti-studi-professionali.html","provider":{"@type":"Organization","@id":"https://oviaitalia.it/#organization","name":"Ovia","legalName":"L3 Innovation Srl","url":"https://oviaitalia.it"},"areaServed":{"@type":"Country","name":"Italia"},"audience":{"@type":"BusinessAudience","audienceType":"Studi professionali: commercialisti, avvocati, consulenti"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://oviaitalia.it/"},{"@type":"ListItem","position":2,"name":"Siti web con AI per studi professionali","item":"https://oviaitalia.it/siti-studi-professionali.html"}]},{"@type":"FAQPage","@id":"https://oviaitalia.it/siti-studi-professionali.html#faq","mainEntity":[{"@type":"Question","name":"Quanto costa?","acceptedAnswer":{"@type":"Answer","text":"Dipende da cosa serve al tuo studio. Partiamo sempre da una demo gratuita: la guardi, capisci il valore, e solo dopo parliamo di numeri — con una proposta chiara, senza sorprese e senza costi nascosti."}},{"@type":"Question","name":"Devo cambiare i miei gestionali?","acceptedAnswer":{"@type":"Answer","text":"No. Il sito e l'assistente convivono con gli strumenti che già usi. Non ti chiediamo di stravolgere il modo in cui lavori: aggiungiamo un pezzo che lavora per te, non uno in più da imparare."}},{"@type":"Question","name":"Quanto tempo richiede?","acceptedAnswer":{"@type":"Answer","text":"La demo è pronta in 48 ore. Se decidi di procedere, il sito completo va online in circa 2 settimane. Il tuo impegno si limita a fornirci qualche informazione e ad approvare il risultato."}},{"@type":"Question","name":"I dati dei miei clienti sono al sicuro?","acceptedAnswer":{"@type":"Answer","text":"Sì. I dati sono gestiti su infrastrutture professionali e protette, nel rispetto delle normative sulla privacy. La relazione con i tuoi clienti resta sempre tua: l'assistente raccoglie le richieste e te le consegna, nient'altro."}},{"@type":"Question","name":"Perche non basta piu essere su Google?","acceptedAnswer":{"@type":"Answer","text":"Perche sempre piu persone non cercano piu tra dieci link: chiedono direttamente all'AI \"chi mi consigli?\". E l'AI risponde con uno o due nomi, non con una lista. Se non sei tra quei nomi, il cliente non ti vede nemmeno. Essere su Google resta utile, ma non basta piu: bisogna essere costruiti per farsi scegliere anche dall'intelligenza artificiale."}},{"@type":"Question","name":"Cosa fate per farmi trovare dalle intelligenze artificiali?","acceptedAnswer":{"@type":"Answer","text":"Rendiamo il tuo sito leggibile e affidabile per le AI: informazioni chiare e coerenti ovunque, contenuti fattuali che descrivono con precisione cosa fai e per chi, dati strutturati che le AI sanno interpretare, e recensioni reali che rafforzano la tua reputazione. Cosi, quando qualcuno chiede un consiglio all'assistente, il tuo studio e tra le risposte possibili."}}]}]}</script><!-- JSONLD:FINE -->
+  <link rel="preload" href="/assets/fonts/instrument-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/ovia-pages.css" />
+  <link rel="stylesheet" href="/landing.css" />
+<style id="lang-css"></style>
+<!-- JSONLD:INIZIO --><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://oviaitalia.it/siti-studi-professionali.html#webpage","url":"https://oviaitalia.it/siti-studi-professionali.html","name":"Siti web con AI per studi professionali","description":"Siti per commercialisti e studi professionali con SEO locale e assistente AI che prenota consulenze. Demo gratuita in 48 ore.","inLanguage":"it-IT","isPartOf":{"@type":"WebSite","url":"https://oviaitalia.it","name":"Ovia"}},{"@type":"Service","@id":"https://oviaitalia.it/siti-studi-professionali.html#service","name":"Siti web con assistente AI per studi professionali","serviceType":"Siti web con assistente AI per studi professionali","description":"Siti per commercialisti e studi professionali con SEO locale e assistente AI che prenota consulenze. Demo gratuita in 48 ore.","url":"https://oviaitalia.it/siti-studi-professionali.html","provider":{"@type":"Organization","@id":"https://oviaitalia.it/#organization","name":"Ovia","legalName":"L3 Innovation Srl","url":"https://oviaitalia.it"},"areaServed":{"@type":"Country","name":"Italia"},"audience":{"@type":"BusinessAudience","audienceType":"Studi professionali: commercialisti, avvocati, consulenti"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://oviaitalia.it/"},{"@type":"ListItem","position":2,"name":"Siti web con AI per studi professionali","item":"https://oviaitalia.it/siti-studi-professionali.html"}]},{"@type":"FAQPage","@id":"https://oviaitalia.it/siti-studi-professionali.html#faq","mainEntity":[{"@type":"Question","name":"Quanto costa?","acceptedAnswer":{"@type":"Answer","text":"Dipende da cosa serve al tuo studio. Partiamo sempre da una demo gratuita: la guardi, capisci il valore, e solo dopo parliamo di numeri — con una proposta chiara, senza sorprese e senza costi nascosti."}},{"@type":"Question","name":"Devo cambiare i miei gestionali?","acceptedAnswer":{"@type":"Answer","text":"No. Il sito e l'assistente convivono con gli strumenti che già usi. Non ti chiediamo di stravolgere il modo in cui lavori: aggiungiamo un pezzo che lavora per te, non uno in più da imparare."}},{"@type":"Question","name":"Quanto tempo richiede?","acceptedAnswer":{"@type":"Answer","text":"La demo è pronta in 48 ore. Se decidi di procedere, il sito completo va online in circa 2 settimane. Il tuo impegno si limita a fornirci qualche informazione e ad approvare il risultato."}},{"@type":"Question","name":"I dati dei miei clienti sono al sicuro?","acceptedAnswer":{"@type":"Answer","text":"Sì. I dati sono gestiti su infrastrutture professionali e protette, nel rispetto delle normative sulla privacy. La relazione con i tuoi clienti resta sempre tua: l'assistente raccoglie le richieste e te le consegna, nient'altro."}},{"@type":"Question","name":"Perché non basta più essere su Google?","acceptedAnswer":{"@type":"Answer","text":"Perché sempre più persone non cercano più tra dieci link: chiedono direttamente all'AI \"chi mi consigli?\". E l'AI risponde con uno o due nomi, non con una lista. Se non sei tra quei nomi, il cliente non ti vede nemmeno. Essere su Google resta utile, ma non basta più: bisogna essere costruiti per farsi scegliere anche dall'intelligenza artificiale."}},{"@type":"Question","name":"Cosa fate per farmi trovare dalle intelligenze artificiali?","acceptedAnswer":{"@type":"Answer","text":"Rendiamo il tuo sito leggibile e affidabile per le AI: informazioni chiare e coerenti ovunque, contenuti fattuali che descrivono con precisione cosa fai e per chi, dati strutturati che le AI sanno interpretare, e recensioni reali che rafforzano la tua reputazione. Cosi, quando qualcuno chiede un consiglio all'assistente, il tuo studio e tra le risposte possibili."}}]}]}</script><!-- JSONLD:FINE -->
 </head>
 <body>
   <header class="lp-header">
-    <a href="/" class="lp-logo" aria-label="OVIA">OVIA</a>
+    <div class="ov-brand"><a href="/" class="lp-logo" aria-label="OVIA">OVIA</a><span class="ov-sign">Marketing &amp; automation systems for business</span></div>
     <nav class="lp-nav"><!-- LANG:INIZIO --><div class="lp-lang" role="group" aria-label="Lingua"><a href="/siti-studi-professionali.html" hreflang="it" lang="it" aria-current="true">IT</a><a href="/en/websites-professional-firms.html" hreflang="en" lang="en">EN</a></div><!-- LANG:FINE -->
       <a href="/">Home</a>
       <a href="siti-attivita-locali.html">Attività locali</a>
@@ -136,46 +39,18 @@
   </nav>
 
   <section class="lp-hero">
-    <div class="lp-hero-mesh" aria-hidden="true">
-      <div class="grid"></div>
-      <span class="lp-hero-node" style="left:16%;top:28%;animation-delay:0.0s;"></span>
-      <span class="lp-hero-node" style="left:34%;top:66%;animation-delay:0.4s;"></span>
-      <span class="lp-hero-node" style="left:50%;top:24%;animation-delay:0.8s;"></span>
-      <span class="lp-hero-node" style="left:66%;top:70%;animation-delay:1.2s;"></span>
-      <span class="lp-hero-node" style="left:82%;top:34%;animation-delay:1.6s;"></span>
-      <span class="lp-hero-node" style="left:44%;top:48%;animation-delay:2.0s;"></span>
-    </div>
     <p class="lp-eyebrow">Per commercialisti, avvocati e consulenti</p>
     <h1>Il sito del tuo studio dovrebbe portarti clienti. Questo lo fa davvero.</h1>
     <p class="sub">Sito web con AI per studi professionali: posizionato su Google, con un assistente che risponde ai clienti e prenota consulenze al posto tuo.</p>
     <div class="lp-cta-row">
-      <a href="#contatti" class="lp-btn lp-btn-primary">Richiedi la demo gratuita →</a>
+      <a href="#contatti" class="lp-btn lp-btn-primary">Richiedi la demo gratuita</a>
     </div>
   </section>
 
-  <section class="partners-strip">
-    <p class="partners-label">Hanno gia scelto Ovia</p>
-    <div class="partners-track-wrap">
-      <div class="partners-track">
-        <img src="loghi/eurofiltri.png" alt="Eurofiltri Group" class="logo-white" />
-        <img src="loghi/rialziamoci.svg" alt="Rialziamoci Italia" />
-        <img src="loghi/l3-innovation.png" alt="L3 Innovation" />
-        <img src="loghi/lucrezia-trabucco.png" alt="Lucrezia Trabucco" class="logo-white" />
-        <img src="loghi/eurofiltri.png" alt="Eurofiltri Group" class="logo-white" />
-        <img src="loghi/rialziamoci.svg" alt="Rialziamoci Italia" />
-        <img src="loghi/l3-innovation.png" alt="L3 Innovation" />
-        <img src="loghi/lucrezia-trabucco.png" alt="Lucrezia Trabucco" class="logo-white" />
-        <img src="loghi/eurofiltri.png" alt="Eurofiltri Group" class="logo-white" />
-        <img src="loghi/rialziamoci.svg" alt="Rialziamoci Italia" />
-        <img src="loghi/l3-innovation.png" alt="L3 Innovation" />
-        <img src="loghi/lucrezia-trabucco.png" alt="Lucrezia Trabucco" class="logo-white" />
-        <img src="loghi/eurofiltri.png" alt="Eurofiltri Group" class="logo-white" />
-        <img src="loghi/rialziamoci.svg" alt="Rialziamoci Italia" />
-        <img src="loghi/l3-innovation.png" alt="L3 Innovation" />
-        <img src="loghi/lucrezia-trabucco.png" alt="Lucrezia Trabucco" class="logo-white" />
-      </div>
-    </div>
-  </section>
+  <section class="hm-clients" aria-label="Hanno già scelto Ovia"><div class="ov-wrap">
+    <p>Hanno già scelto Ovia</p>
+    <ul class="hm-logos"><li><img src="/loghi/eurofiltri-trim.png" alt="Eurofiltri Group" class="mono" style="height:26px" loading="lazy"></li><li><img src="/loghi/rialziamoci.svg" alt="Rialziamoci Italia" style="height:34px" loading="lazy"></li><li><img src="/loghi/l3-innovation-trim.png" alt="L3 Innovation" style="height:26px" loading="lazy"></li><li><img src="/loghi/lucrezia-trabucco-trim.png" alt="Lucrezia Trabucco, biologa nutrizionista" class="mono" style="height:15px" loading="lazy"></li></ul>
+  </div></section>
 
 
   <!-- TODO: inserire qui uno screenshot/mockup reale del sito di uno studio professionale -->
@@ -186,9 +61,9 @@
     <div class="why-now-grid">
       <div class="why-now-story">
         <p>Fino a ieri un cliente ti cercava su Google e scorreva una lista di 10 risultati. <strong>Bastava esserci.</strong></p>
-        <p>Oggi lo chiede a ChatGPT, Gemini o Google AI: "qual e il commercialista giusto per me?". L'AI non mostra una lista: <strong>consiglia uno o due nomi.</strong> Se non sei tra quei due, non esisti.</p>
-        <p>E chi non c'e deve comprarsi la visibilita: piu advertising, piu commissioni ai portali.</p>
-        <p class="kicker">Le persone si fidano dell'assistente con cui parlano. La domanda non e se adeguarti, ma quando.</p>
+        <p>Oggi lo chiede a ChatGPT, Gemini o Google AI: "qual è il commercialista giusto per me?". L'AI non mostra una lista: <strong>consiglia uno o due nomi.</strong> Se non sei tra quei due, non esisti.</p>
+        <p>E chi non c'è deve comprarsi la visibilità: più advertising, più commissioni ai portali.</p>
+        <p class="kicker">Le persone si fidano dell'assistente con cui parlano. La domanda non è se adeguarti, ma quando.</p>
       </div>
       <div class="stat-cards">
         <div class="stat-card">
@@ -197,7 +72,7 @@
         </div>
         <div class="stat-card">
           <div class="big">8x</div>
-          <div class="desc">fino a 8 volte in piu la conversione di un cliente consigliato dall'AI rispetto a una ricerca Google.</div>
+          <div class="desc">fino a 8 volte in più la conversione di un cliente consigliato dall'AI rispetto a una ricerca Google.</div>
         </div>
         <div class="stat-card">
           <div class="big">3 giorni</div>
@@ -206,7 +81,7 @@
       </div>
     </div>
     <div style="text-align:center; margin-top:48px;">
-      <a href="#contatti" class="lp-btn lp-btn-primary">Richiedi la tua demo gratuita &rarr;</a>
+      <a href="#contatti" class="lp-btn lp-btn-primary">Richiedi la tua demo gratuita</a>
     </div>
   </section>
 
@@ -218,15 +93,15 @@
         <ul>
           <li>10 link blu da scorrere</li>
           <li>L'utente confronta per giorni</li>
-          <li>Vince chi e primo o chi paga piu ads</li>
+          <li>Vince chi è primo o chi paga più ads</li>
         </ul>
       </div>
       <div class="vs-col oggi">
         <h3>Oggi &middot; AI search</h3>
         <ul>
           <li>1-2 nomi consigliati</li>
-          <li>Decisione molto piu rapida</li>
-          <li>Vince chi e costruito per essere scelto dall'AI</li>
+          <li>Decisione molto più rapida</li>
+          <li>Vince chi è costruito per essere scelto dall'AI</li>
         </ul>
       </div>
     </div>
@@ -237,17 +112,14 @@
     <p class="lp-section-sub">Non un sito vetrina. Uno strumento che lavora per portarti clienti, ogni giorno.</p>
     <div class="lp-benefits">
       <div class="lp-benefit">
-        <div class="lp-benefit-icon">🔍</div>
         <h3>Ti trovano prima dei colleghi</h3>
         <p>Ti posizioniamo su Google per la tua città e rendiamo i contenuti leggibili anche dalle AI come ChatGPT, Gemini e Claude: chi cerca un professionista nella tua zona trova prima te.</p>
       </div>
       <div class="lp-benefit">
-        <div class="lp-benefit-icon">💬</div>
         <h3>L'assistente che non dorme mai</h3>
         <p>Risponde alle domande dei clienti su orari, documenti e prestazioni, e prenota le consulenze direttamente nella tua agenda — anche di notte e nei weekend.</p>
       </div>
       <div class="lp-benefit">
-        <div class="lp-benefit-icon">✦</div>
         <h3>Un'immagine all'altezza delle tue competenze</h3>
         <p>Uno studio con un sito moderno è percepito come più strutturato e affidabile: è la premessa per difendere il tuo valore e i tuoi compensi.</p>
       </div>
@@ -256,12 +128,12 @@
 
   <section class="lp-section">
     <h2 class="lp-section-title">Cosa include</h2>
-    <p class="lp-section-sub">Tutto quello che serve perche il tuo studio venga trovato, scelto e contattato &mdash; senza che tu debba pensarci.</p>
+    <p class="lp-section-sub">Tutto quello che serve perché il tuo studio venga trovato, scelto e contattato &mdash; senza che tu debba pensarci.</p>
     <ul class="includes-list">
       <li>Sito autorevole con design professionale</li>
       <li>Prenotazione consulenze integrata nella tua agenda</li>
       <li>Assistente AI che risponde a domande su orari, documenti e prestazioni</li>
-      <li>Ottimizzazione per essere consigliato dalle AI quando qualcuno cerca "commercialista, avvocato o consulente a [citta]"</li>
+      <li>Ottimizzazione per essere consigliato dalle AI quando qualcuno cerca "commercialista, avvocato o consulente a [città]"</li>
       <li>SEO locale + configurazione Google Search Console</li>
       <li>Care Kit mensile: aggiornamenti, modifiche e monitoraggio</li>
     </ul>
@@ -309,8 +181,8 @@
         <div class="lp-faq-a">Sì. I dati sono gestiti su infrastrutture professionali e protette, nel rispetto delle normative sulla privacy. La relazione con i tuoi clienti resta sempre tua: l'assistente raccoglie le richieste e te le consegna, nient'altro.</div>
       </div>
       <div class="lp-faq-item">
-        <button class="lp-faq-q">Perche non basta piu essere su Google? <span class="plus">+</span></button>
-        <div class="lp-faq-a">Perche sempre piu persone non cercano piu tra dieci link: chiedono direttamente all'AI "chi mi consigli?". E l'AI risponde con uno o due nomi, non con una lista. Se non sei tra quei nomi, il cliente non ti vede nemmeno. Essere su Google resta utile, ma non basta piu: bisogna essere costruiti per farsi scegliere anche dall'intelligenza artificiale.</div>
+        <button class="lp-faq-q">Perché non basta più essere su Google? <span class="plus">+</span></button>
+        <div class="lp-faq-a">Perché sempre più persone non cercano più tra dieci link: chiedono direttamente all'AI "chi mi consigli?". E l'AI risponde con uno o due nomi, non con una lista. Se non sei tra quei nomi, il cliente non ti vede nemmeno. Essere su Google resta utile, ma non basta più: bisogna essere costruiti per farsi scegliere anche dall'intelligenza artificiale.</div>
       </div>
       <div class="lp-faq-item">
         <button class="lp-faq-q">Cosa fate per farmi trovare dalle intelligenze artificiali? <span class="plus">+</span></button>

@@ -7,6 +7,7 @@ import { pathFor } from './lib/i18n.mjs';
 import { buildEnStatic } from './build-en-static.mjs';
 import { buildFaq } from './build-faq.mjs';
 import { buildChiSiamo } from './build-chi-siamo.mjs';
+import { buildHome } from './build-home.mjs';
 import { FAQ } from '../data/faq.mjs';
 
 const ROOT = new URL('..', import.meta.url).pathname;
@@ -23,6 +24,7 @@ export async function buildTutto({ log = console.log } = {}) {
   await import('./build-servizi.mjs?' + Date.now());
   buildFaq();
   buildChiSiamo();
+  buildHome();
   await buildEnStatic(); // homepage, landing e pagine legali in inglese (da index.html & co.)
   const articoli = caricaArticoli();
   const it = articoli.map(a => loc(a, 'it'));

@@ -109,22 +109,22 @@ const CSS = `<style id="cs-css">
 .cs-steps{list-style:none;margin:0;padding:0;border-left:1px solid var(--line-strong)}
 .cs-steps li{position:relative;padding:0 0 26px 26px}
 .cs-steps li:last-child{padding-bottom:0}
-.cs-steps li::before{content:"";position:absolute;left:-6px;top:6px;width:11px;height:11px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px var(--accent-soft)}
-.cs-steps li:last-child::before{background:var(--violet);box-shadow:0 0 0 4px var(--violet-soft)}
+.cs-steps li::before{content:"";position:absolute;left:-5px;top:7px;width:9px;height:9px;border-radius:50%;background:var(--ink)}
+.cs-steps li:last-child::before{background:var(--accent)}
 .cs-steps h3{font-family:var(--font-display);font-size:17px;margin:0 0 6px;color:var(--text)}
 .cs-steps p{font-size:15px;color:var(--muted);margin:0;line-height:1.55}
 .cs-hero{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:clamp(28px,5vw,64px);align-items:center;padding:clamp(28px,5vw,56px) 0 clamp(36px,5vw,56px)}
 .cs-hero .bl-hero{padding:0}
 .cs-founder{max-width:820px}
-.cs-photo{position:relative;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);background:var(--panel);box-shadow:0 30px 80px -40px rgba(76,141,255,.45)}
-.cs-photo img{display:block;width:100%;height:auto}
+.cs-photo{position:relative;background:none}
+.cs-photo img{display:block;width:100%;height:auto;border-radius:var(--radius);background:var(--mist)}
 .cs-hero .cs-photo{max-width:420px;justify-self:end;width:100%}
-.cs-photo figcaption{position:absolute;left:0;right:0;bottom:0;padding:48px 20px 16px;background:linear-gradient(transparent,rgba(4,7,15,.92));color:var(--text);font-family:var(--font-display);font-weight:700;font-size:17px;line-height:1.25}
-.cs-photo figcaption span{display:block;font-weight:600;font-size:13px;color:var(--accent);letter-spacing:.04em;margin-top:2px}
+.cs-photo figcaption{padding-top:14px;margin-top:14px;border-top:1px solid var(--line);font-size:17px;font-weight:600;color:var(--ink);line-height:1.3}
+.cs-photo figcaption span{display:block;font-weight:400;font-size:15px;color:var(--muted);margin-top:2px}
 .cs-name{font-family:var(--font-display);font-size:clamp(30px,4vw,44px);font-weight:700;letter-spacing:-.02em;line-height:1.05;margin:6px 0 6px}
 .cs-role{color:var(--accent);font-weight:600;font-size:15px;letter-spacing:.04em;margin-bottom:22px}
 .cs-founder p.bio{color:var(--muted);font-size:17px;line-height:1.7;margin-bottom:22px}
-.cs-quote{margin:0;padding:18px 0 18px 22px;border-left:3px solid var(--violet);font-family:var(--font-display);font-size:clamp(18px,2.2vw,22px);line-height:1.4;color:var(--text)}
+.cs-quote{margin:0;padding:18px 0 18px 22px;border-left:3px solid var(--ink);font-family:var(--font-display);font-size:clamp(18px,2.2vw,22px);line-height:1.4;color:var(--text)}
 @media (max-width:860px){.cs-story,.cs-hero{grid-template-columns:1fr}.cs-hero .cs-photo{justify-self:start;max-width:340px}}
 </style>`;
 

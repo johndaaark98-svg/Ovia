@@ -1,19 +1,19 @@
 // =====================================================================
-// Versioni inglesi delle pagine scritte a mano (homepage, landing siti,
+// Versioni inglesi delle pagine scritte a mano (landing siti,
 // pagine legali), generate dagli originali italiani + dizionari in
 // data/en/pagine-statiche.mjs. Aggiunge anche il selettore IT/EN e i link
 // hreflang alle pagine italiane (in modo idempotente).
 // =====================================================================
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
-import { HOME, SITI_STUDI, SITI_LOCALI, PRIVACY, COOKIE, TERMINI } from '../data/en/pagine-statiche.mjs';
+import { SITI_STUDI, SITI_LOCALI, PRIVACY, COOKIE, TERMINI } from '../data/en/pagine-statiche.mjs';
 import { enPath } from './lib/i18n.mjs';
+import { pulisci, noFrecce } from './lib/testo.mjs';
 import { bloccoHome } from './build-faq.mjs';
 
 const ROOT = new URL('..', import.meta.url).pathname;
 const SITE = 'https://oviaitalia.it';
 
 const PAGINE = [
-  { file: 'index.html', itP: '/', dict: HOME, kind: 'home' },
   { file: 'siti-studi-professionali.html', itP: '/siti-studi-professionali.html', dict: SITI_STUDI, kind: 'lp', ld: { it: 'Siti web con assistente AI per studi professionali', en: 'AI-ready websites for professional firms', pubblico: { it: 'Studi professionali: commercialisti, avvocati, consulenti', en: 'Professional firms: accountants, lawyers, consultants' } } },
   { file: 'siti-attivita-locali.html', itP: '/siti-attivita-locali.html', dict: SITI_LOCALI, kind: 'lp', ld: { it: 'Siti web per attività locali con prenotazione e assistente AI', en: 'Websites for local businesses with booking and AI assistant', pubblico: { it: 'Attività locali: ristoranti, negozi, servizi', en: 'Local businesses: restaurants, shops, services' } } },
   { file: 'privacy.html', itP: '/privacy.html', dict: PRIVACY, kind: 'lp' },
@@ -29,22 +29,9 @@ function langMarkup(kind, lang, itP) {
   const it = itP, en = enPath(itP);
   return `<!-- LANG:INIZIO --><div class="${cls}" role="group" aria-label="${lang === 'en' ? 'Language' : 'Lingua'}"><a href="${it}" hreflang="it" lang="it"${lang === 'it' ? ' aria-current="true"' : ''}>IT</a><a href="${en}" hreflang="en" lang="en"${lang === 'en' ? ' aria-current="true"' : ''}>EN</a></div><!-- LANG:FINE -->`;
 }
-const LANG_CSS = `<style id="lang-css">
-.av-lang,.lp-lang{display:inline-flex;padding:3px;border-radius:999px;border:1px solid rgba(148,170,220,.28);background:rgba(10,16,32,.7);flex-shrink:0}
-.av-lang a,.lp-lang a{font-size:12.5px;font-weight:600;letter-spacing:.08em;padding:7px 11px;min-width:40px;min-height:36px;display:inline-flex;align-items:center;justify-content:center;border-radius:999px;color:#97a3bd;line-height:1;text-decoration:none}
-.av-lang a[aria-current="true"],.lp-lang a[aria-current="true"]{background:#4c8dff;color:#fff}
-.av-header-nav{gap:28px}
-.av-nav-cta{white-space:nowrap}
-@media (max-width:1100px){.av-nav-link{display:none}}
-@media (max-width:767px){.av-header{gap:10px}.av-header-nav{gap:8px}.av-lang a,.lp-lang a{padding:9px 10px;min-width:38px;min-height:40px}.av-nav-cta{font-size:12.5px;letter-spacing:.02em;text-transform:none;padding:11px 14px}}
-@media (max-width:420px){.av-header{left:14px!important;right:14px!important}.av-logo{font-size:20px;letter-spacing:.14em;gap:5px}.av-lang a{min-width:34px;padding:9px 8px}.av-nav-cta{padding:11px 11px;font-size:12px}}
-@media (max-width:360px){.av-nav-cta{padding:10px 9px}.av-logo::after{display:none}}
-.av-logo{min-height:40px;align-items:center}
-@media (max-width:640px){.lp-nav{gap:12px}.lp-nav a:not(.lp-btn){display:none}.lp-nav .lp-lang a{display:inline-flex}}
-.lp-nav a{min-height:40px;display:inline-flex;align-items:center}
-.lp-breadcrumb a{display:inline-block;padding:12px 4px;margin:-12px -4px}
-@media (max-width:480px){.legal-table th,.legal-table td{padding:10px 8px;font-size:14px;overflow-wrap:anywhere;hyphens:auto}}
-</style>`;
+// Lo stile del selettore lingua ora vive in landing.css: qui resta un blocco vuoto
+// (mantenuto perché le pagine già pubblicate lo contengono e il build lo sostituisce).
+const LANG_CSS = `<style id="lang-css"></style>`;
 function hreflang(itP) {
   return `<!-- HREFLANG:INIZIO --><link rel="alternate" hreflang="it" href="${SITE}${itP}" /><link rel="alternate" hreflang="en" href="${SITE}${enPath(itP)}" /><link rel="alternate" hreflang="x-default" href="${SITE}${itP}" /><!-- HREFLANG:FINE -->`;
 }
@@ -87,7 +74,8 @@ function conJsonLd(html, lang, itP, ld) {
 
 // ---- Traduzione ----
 function traduci(html, dict) {
-  const pairs = [...dict.text].sort((a, b) => b[0].length - a[0].length);
+  // le chiavi seguono le correzioni tipografiche applicate alle pagine italiane
+  const pairs = dict.text.map(([it, en]) => [pulisci(it), noFrecce(en)]).sort((a, b) => b[0].length - a[0].length);
   // separa gli script (dove si applicano solo le coppie js) dal markup
   const parts = html.split(/(<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>)/);
   for (let i = 0; i < parts.length; i += 2) {

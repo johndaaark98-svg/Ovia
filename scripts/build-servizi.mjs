@@ -13,7 +13,7 @@ const ROOT = new URL('..', import.meta.url).pathname;
 const T = {
   it: {
     services: 'Servizi', flagship: '★ ', pillars: [['Strategia', 'Da dove partiamo'], ['Sicurezza', 'Non negoziabile'], ['Intelligenza artificiale', 'Lo strumento, non il fine']],
-    how: 'Come funziona ↓', problem: 'Il problema', distinct: 'Cosa ci distingue', distinctH: 'Strategia e sicurezza fanno guadagnare.<br>L’AI è lo strumento.',
+    how: 'Come funziona', problem: 'Il problema', distinct: 'Cosa ci distingue', distinctH: 'Strategia e sicurezza fanno guadagnare.<br>L’AI è lo strumento.',
     distinctP: 'Chiunque oggi può comprare un abbonamento a un tool AI. Il valore sta nel decidere cosa automatizzare, come proteggere i dati dei tuoi clienti e come misurare il risultato. È da lì che partiamo, sempre.',
     howEy: 'Come funziona', howP: 'Clicca ogni passaggio per vedere cosa succede. Il sistema propone, tu decidi.', step: (i, n) => `Passo ${i} di ${n}`, steps: 'Passaggi',
     calcEy: 'Calcolatore', calcNote: 'Stima indicativa basata su 220 giorni lavorativi e ipotesi prudenti. Nel Process Check la sostituiamo con i numeri reali del tuo flusso.', calcBtn: 'Verifica i tuoi numeri nel Process Check',
@@ -23,12 +23,12 @@ const T = {
     pathEy: 'Il percorso', pathH: 'Dal Process Check al primo risultato misurabile.', pathP: 'Un’area alla volta, sotto il tuo controllo. Nessuna trasformazione improvvisa.',
     faqEy: 'Domande frequenti', faqH: 'Le domande che ci fanno davvero.',
     ctaH: 'Trenta minuti sul tuo flusso reale.<br>Poi decidi tu.', ctaP: n => `Ti mostriamo dove va il tempo, cosa si può automatizzare in sicurezza e da dove conviene partire con ${n}. Nessun impegno, nessun gergo tecnico.`, ctaSmall: 'Lavoriamo con pochi clienti alla volta. Rispondiamo entro 24 ore.',
-    othersEy: 'Gli altri sistemi Ovia', othersH: 'Ogni sistema ne alimenta un altro.', discover: 'Scopri →', discoverN: s => `Scopri ${s} →`, sources: 'Fonti',
+    othersEy: 'Gli altri sistemi Ovia', othersH: 'Ogni sistema ne alimenta un altro.', discover: 'Scopri', discoverN: s => `Scopri ${s}`, sources: 'Fonti',
     hub: { title: 'Servizi Ovia — sistemi AI su misura, progettati su strategia e sicurezza', desc: 'Second Brain, Inbox, Lead Generation, Chiamate, Documenti, Siti Web per le AI e CRM: sette sistemi su misura per studi professionali e PMI.', ey: 'I servizi Ovia', h1: 'Sette sistemi. Un solo principio.', lead: 'Ogni sistema Ovia nasce da una strategia scritta con te e da regole di sicurezza chiare. Poi, e solo poi, l’intelligenza artificiale lo mette al lavoro.', startEy: 'Da dove partire', startH: 'Non sai quale sistema ti serve? È normale.', startP: 'Il Process Check serve proprio a questo: capire qual è il problema che ti costa di più e se possiamo darti un risultato misurabile.', list: 'Servizi Ovia' },
   },
   en: {
     services: 'Services', flagship: '★ ', pillars: [['Strategy', 'Where we start'], ['Security', 'Non-negotiable'], ['Artificial intelligence', 'The tool, not the goal']],
-    how: 'How it works ↓', problem: 'The problem', distinct: 'What sets us apart', distinctH: 'Strategy and security make the money.<br>AI is the tool.',
+    how: 'How it works', problem: 'The problem', distinct: 'What sets us apart', distinctH: 'Strategy and security make the money.<br>AI is the tool.',
     distinctP: 'Anyone today can buy a subscription to an AI tool. The value lies in deciding what to automate, how to protect your clients’ data and how to measure the result. That’s where we always start.',
     howEy: 'How it works', howP: 'Click each step to see what happens. The system proposes, you decide.', step: (i, n) => `Step ${i} of ${n}`, steps: 'Steps',
     calcEy: 'Calculator', calcNote: 'Indicative estimate based on 220 working days and conservative assumptions. In the Process Check we replace it with your real numbers.', calcBtn: 'Check your numbers in the Process Check',
@@ -38,7 +38,7 @@ const T = {
     pathEy: 'The path', pathH: 'From Process Check to the first measurable result.', pathP: 'One area at a time, under your control. No sudden transformations.',
     faqEy: 'FAQ', faqH: 'The questions people really ask us.',
     ctaH: 'Thirty minutes on your real workflow.<br>Then you decide.', ctaP: n => `We show you where the time goes, what can be safely automated and where it’s best to start with ${n}. No obligation, no jargon.`, ctaSmall: 'We work with a few clients at a time. We reply within 24 hours.',
-    othersEy: 'The other Ovia systems', othersH: 'Each system feeds another.', discover: 'Learn more →', discoverN: s => `Discover ${s} →`, sources: 'Sources',
+    othersEy: 'The other Ovia systems', othersH: 'Each system feeds another.', discover: 'Learn more', discoverN: s => `Discover ${s}`, sources: 'Sources',
     hub: { title: 'Ovia services — tailor-made AI systems built on strategy and security', desc: 'Second Brain, Inbox, Lead Generation, Calls, Documents, AI-Ready Websites and CRM: seven tailor-made systems for professional firms and SMEs.', ey: 'Ovia services', h1: 'Seven systems. One principle.', lead: 'Every Ovia system starts from a strategy written with you and clear security rules. Then, and only then, artificial intelligence puts it to work.', startEy: 'Where to start', startH: 'Not sure which system you need? That’s normal.', startP: 'That’s exactly what the Process Check is for: finding out which problem costs you most and whether we can deliver a measurable result.', list: 'Ovia services' },
   },
 };
@@ -87,7 +87,7 @@ function page(p, s, lang) {
     <nav class="ov-breadcrumb" aria-label="${u.breadcrumb}"><a href="${P('/')}">${u.home}</a><span>/</span><a href="${P('/servizi/')}">${t.services}</a><span>/</span>${esc(p.name)}</nav>
     <section class="sv-hero">
       <div>
-        <p class="ov-eyebrow">${idx === 0 ? t.flagship : String(idx).padStart(2, '0') + ' — '}${esc(p.kicker)}</p>
+        <p class="ov-eyebrow">${esc(p.kicker)}</p>
         <h1>${esc(p.name)}</h1>
         <p class="claim">${esc(s.claim)}</p>
         <p class="sub">${esc(s.sub)}</p>
@@ -175,7 +175,7 @@ function page(p, s, lang) {
 function hub(lang) {
   const t = T[lang], h = t.hub, u = UI[lang], P = x => pathFor(lang, x), prods = prodottiIn(lang);
   const alt = { it: '/servizi/', en: pathFor('en', '/servizi/') };
-  const cards = prods.map((p, i) => `<a class="ov-card ov-svc-card rv" href="${urlIn(lang, p.id)}">${svgGlyph(p.glyph)}<span class="k">${i === 0 ? '★ ' : String(i).padStart(2, '0') + ' — '}${esc(p.kicker)}</span><h3>${esc(p.name)}</h3><p>${esc(p.pitch)}</p><span class="go">${esc(t.discoverN(p.short))}</span></a>`).join('');
+  const cards = prods.map((p, i) => `<a class="ov-card ov-svc-card rv" href="${urlIn(lang, p.id)}">${svgGlyph(p.glyph)}<span class="k">${esc(p.kicker)}</span><h3>${esc(p.name)}</h3><p>${esc(p.pitch)}</p><span class="go">${esc(t.discoverN(p.short))}</span></a>`).join('');
   const jsonld = [{ '@context': 'https://schema.org', '@type': 'ItemList', name: h.list, itemListElement: prods.map((p, i) => ({ '@type': 'ListItem', position: i + 1, url: SITE.url + urlIn(lang, p.id), name: p.name })) }];
   return head({ title: h.title, description: h.desc, path: '/servizi/', lang, alt, jsonld }) + header('servizi', lang, alt) + `
 <main><div class="ov-wrap">

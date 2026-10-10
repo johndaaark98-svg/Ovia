@@ -28,18 +28,20 @@ export const pathFor = (lang, itP) => (lang === 'en' ? enPath(itP) : itP);
 export const UI = {
   it: {
     htmlLang: 'it', locale: 'it_IT', dateLocale: 'it-IT',
-    cta: 'Prenota il tuo Process Check',
+    cta: 'Prenota il Process Check',
+    sign: 'Marketing & automation systems for business',
     positioning: 'La strategia e la sicurezza fanno guadagnare. L’AI è lo strumento.',
     nav: { services: 'Servizi', security: 'Sicurezza', method: 'Metodo', about: 'Chi siamo', blog: 'Blog', faq: 'FAQ', allServices: 'Tutti i servizi →', menu: 'Apri il menu', main: 'Principale' },
-    footer: { services: 'Servizi', ovia: 'Ovia', legal: 'Legale', aboutUs: 'Chi siamo', method: 'Il metodo', security: 'Sicurezza', blog: 'Blog', faq: 'Domande frequenti', all: 'Tutti i servizi', rss: 'Feed RSS', privacy: 'Privacy Policy', cookie: 'Cookie Policy', terms: 'Termini di servizio', about: 'Sistemi su misura per studi professionali e PMI, progettati partendo da strategia e sicurezza.' },
+    footer: { services: 'Servizi', ovia: 'Ovia', legal: 'Note legali', aboutUs: 'Chi siamo', method: 'Il metodo', security: 'Sicurezza', blog: 'Blog', faq: 'Domande frequenti', all: 'Tutti i servizi', rss: 'Feed RSS', privacy: 'Privacy Policy', cookie: 'Cookie Policy', terms: 'Termini di servizio', about: 'Sistemi su misura per imprese e studi professionali, progettati partendo da strategia e sicurezza.' },
     home: 'Home', breadcrumb: 'Percorso', switchLabel: 'Lingua',
   },
   en: {
     htmlLang: 'en', locale: 'en_GB', dateLocale: 'en-GB',
-    cta: 'Book your Process Check',
+    cta: 'Book the Process Check',
+    sign: 'Marketing & automation systems for business',
     positioning: 'Strategy and security make the money. AI is the tool.',
     nav: { services: 'Services', security: 'Security', method: 'Method', about: 'About us', blog: 'Blog', faq: 'FAQ', allServices: 'All services →', menu: 'Open menu', main: 'Main' },
-    footer: { services: 'Services', ovia: 'Ovia', legal: 'Legal', aboutUs: 'About us', method: 'Our method', security: 'Security', blog: 'Blog', faq: 'FAQ', all: 'All services', rss: 'RSS feed', privacy: 'Privacy Policy', cookie: 'Cookie Policy', terms: 'Terms of service', about: 'Tailor-made systems for professional firms and SMEs, designed around strategy and security.' },
+    footer: { services: 'Services', ovia: 'Ovia', legal: 'Legal', aboutUs: 'About us', method: 'Our method', security: 'Security', blog: 'Blog', faq: 'FAQ', all: 'All services', rss: 'RSS feed', privacy: 'Privacy Policy', cookie: 'Cookie Policy', terms: 'Terms of service', about: 'Tailor-made systems for businesses and professional firms, designed around strategy and security.' },
     home: 'Home', breadcrumb: 'Breadcrumb', switchLabel: 'Language',
   },
 };

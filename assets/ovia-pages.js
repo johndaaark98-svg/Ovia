@@ -3,34 +3,6 @@
   'use strict';
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* ---------- Sfondo a costellazione ---------- */
-  var cv = document.getElementById('ov-constellation');
-  if (cv && cv.getContext) {
-    var ctx = cv.getContext('2d'), pts = [], W = 0, H = 0, dpr = Math.min(window.devicePixelRatio || 1, 2);
-    var size = function () {
-      W = window.innerWidth; H = window.innerHeight;
-      cv.width = W * dpr; cv.height = H * dpr; cv.style.width = W + 'px'; cv.style.height = H + 'px';
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      var n = Math.round(Math.min(90, (W * H) / 16000));
-      pts = [];
-      for (var i = 0; i < n; i++) pts.push({ x: Math.random() * W, y: Math.random() * H, vx: (Math.random() - .5) * .12, vy: (Math.random() - .5) * .12, r: Math.random() * 1.3 + .5 });
-    };
-    var draw = function () {
-      ctx.clearRect(0, 0, W, H);
-      for (var i = 0; i < pts.length; i++) {
-        var p = pts[i];
-        if (!reduce) { p.x += p.vx; p.y += p.vy; if (p.x < 0 || p.x > W) p.vx *= -1; if (p.y < 0 || p.y > H) p.vy *= -1; }
-        for (var j = i + 1; j < pts.length; j++) {
-          var q = pts[j], dx = p.x - q.x, dy = p.y - q.y, d = dx * dx + dy * dy;
-          if (d < 16000) { ctx.strokeStyle = 'rgba(120,140,255,' + (0.14 * (1 - d / 16000)) + ')'; ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(p.x, p.y); ctx.lineTo(q.x, q.y); ctx.stroke(); }
-        }
-        ctx.fillStyle = 'rgba(140,160,255,0.75)'; ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, 6.283); ctx.fill();
-      }
-      if (!reduce) requestAnimationFrame(draw);
-    };
-    size(); draw(); window.addEventListener('resize', size);
-  }
-
   /* ---------- Menu mobile + dropdown ---------- */
   var burger = document.querySelector('.ov-burger'), nav = document.querySelector('.ov-nav');
   if (burger && nav) burger.addEventListener('click', function () { var o = nav.classList.toggle('open'); burger.setAttribute('aria-expanded', o); });
@@ -229,4 +201,22 @@
   };
 })(window, 'https://app.cal.com/embed/embed.js', 'init');
 Cal('init', 'ovia-check-process', { origin: 'https://cal.com' });
-Cal.ns['ovia-check-process']('ui', { theme: 'dark', hideEventTypeDetails: false, layout: 'month_view' });
+Cal.ns['ovia-check-process']('ui', { theme: 'light', cssVarsPerTheme: { light: { 'cal-brand': '#0d1b2e' } }, hideEventTypeDetails: false, layout: 'month_view' });
+
+/* ---------- Banner cookie (solo cookie tecnici; scelta ricordata nel browser) ---------- */
+(function () {
+  var KEY = 'ovia_cookie_consent';
+  try { if (localStorage.getItem(KEY)) return; } catch (e) { return; }
+  var EN = (document.documentElement.lang || 'it').slice(0, 2) === 'en';
+  var P = EN ? '/en/' : '/';
+  var box = document.createElement('div');
+  box.className = 'ov-cookie'; box.setAttribute('role', 'dialog'); box.setAttribute('aria-label', EN ? 'Cookie preferences' : 'Preferenze cookie');
+  box.innerHTML = '<p>' + (EN
+    ? 'We use technical cookies needed for the site to work. With your consent we may use statistical cookies in the future. Read the <a href="' + P + 'cookie.html">Cookie Policy</a> and the <a href="' + P + 'privacy.html">Privacy Policy</a>.'
+    : 'Utilizziamo cookie tecnici necessari al funzionamento del sito. Con il tuo consenso potremmo usare in futuro cookie statistici. Consulta la <a href="/cookie.html">Cookie Policy</a> e la <a href="/privacy.html">Privacy Policy</a>.') +
+    '</p><div><button type="button" data-v="accepted">' + (EN ? 'Accept' : 'Accetta') + '</button><button type="button" data-v="rejected">' + (EN ? 'Reject non-essential' : 'Rifiuta non necessari') + '</button></div>';
+  box.querySelectorAll('button').forEach(function (b) {
+    b.addEventListener('click', function () { try { localStorage.setItem(KEY, b.getAttribute('data-v')); } catch (e) {} box.remove(); });
+  });
+  document.body.appendChild(box);
+})();

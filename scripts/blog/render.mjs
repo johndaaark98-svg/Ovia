@@ -22,23 +22,36 @@ export function inline(text, allowed) {
   return s.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
 }
 
-// Copertina generativa: costellazione deterministica + glifo del prodotto principale.
+// Copertina generativa: tavola tecnica chiara (griglia, tracciati ortogonali, glifo del prodotto).
+// Deterministica: lo stesso articolo produce sempre la stessa copertina.
 function hash(str) { let h = 2166136261; for (const c of str) { h ^= c.charCodeAt(0); h = Math.imul(h, 16777619); } return h >>> 0; }
 export function cover(slug, prodottoId, variant = 'wide') {
   let seed = hash(slug);
   const rnd = () => ((seed = Math.imul(seed ^ (seed >>> 15), 2246822507) ^ Math.imul(seed ^ (seed >>> 13), 3266489909)) >>> 0) / 4294967296;
-  const W = 1600, H = variant === 'wide' ? 700 : 900;
-  const pts = Array.from({ length: 34 }, () => [rnd() * W, rnd() * H]);
-  let lines = '';
-  pts.forEach((p, i) => pts.slice(i + 1).forEach(q => { const d = Math.hypot(p[0] - q[0], p[1] - q[1]); if (d < 230) lines += `<line x1="${p[0] | 0}" y1="${p[1] | 0}" x2="${q[0] | 0}" y2="${q[1] | 0}" stroke="rgba(130,150,255,${(0.28 * (1 - d / 230)).toFixed(2)})" stroke-width="1.2"/>`; }));
-  const dots = pts.map(p => `<circle cx="${p[0] | 0}" cy="${p[1] | 0}" r="${(1.5 + rnd() * 2).toFixed(1)}" fill="rgba(170,190,255,.8)"/>`).join('');
+  const W = 1600, H = variant === 'wide' ? 700 : 900, S = 40;
+  const snap = v => Math.round(v / S) * S;
   let grid = '';
-  for (let x = 0; x <= W; x += 100) grid += `<line x1="${x}" y1="0" x2="${x}" y2="${H}" stroke="rgba(148,170,220,.07)"/>`;
-  for (let y = 0; y <= H; y += 100) grid += `<line x1="0" y1="${y}" x2="${W}" y2="${y}" stroke="rgba(148,170,220,.07)"/>`;
-  const hue = ['#4c8dff', '#8b5cf6', '#38bdf8'][hash(slug + 'c') % 3];
-  const g = (byId[prodottoId] || PRODOTTI[0]).glyph.replace(/class="g-line"/g, 'fill="none" stroke="#9cb8ff" stroke-width="1.4"').replace(/class="g-node"/g, 'fill="#dbe6ff"').replace(/class="g-core"/g, 'fill="#a78bfa"');
-  const id = 'g' + (hash(slug) % 100000);
-  return `<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Illustrazione" xmlns="http://www.w3.org/2000/svg"><defs><radialGradient id="${id}" cx="50%" cy="50%" r="60%"><stop offset="0" stop-color="${hue}" stop-opacity=".45"/><stop offset=".55" stop-color="#1a1f5c" stop-opacity=".35"/><stop offset="1" stop-color="#070b1c" stop-opacity="1"/></radialGradient></defs><rect width="${W}" height="${H}" fill="#070b1c"/><rect width="${W}" height="${H}" fill="url(#${id})"/>${grid}${lines}${dots}<g transform="translate(${W / 2 - 110} ${H / 2 - 110}) scale(2.5)">${g}</g></svg>`;
+  for (let x = 0; x <= W; x += S) grid += `<line x1="${x}" y1="0" x2="${x}" y2="${H}" stroke="${x % 200 ? '#e4e8ee' : '#d5dbe4'}" stroke-width="1"/>`;
+  for (let y = 0; y <= H; y += S) grid += `<line x1="0" y1="${y}" x2="${W}" y2="${y}" stroke="${y % 200 ? '#e4e8ee' : '#d5dbe4'}" stroke-width="1"/>`;
+  // glifo a destra o a sinistra, in base all'articolo
+  const right = hash(slug + 'side') % 2 === 0;
+  const gs = H / 120, gx = right ? W * .68 : W * .32, gy = H / 2;
+  const hub = [snap(gx), snap(gy)];
+  // tracciati ortogonali che portano verso il glifo
+  let traces = '', pads = '';
+  for (let i = 0; i < 9; i++) {
+    const x0 = snap(right ? rnd() * W * .5 + S * 2 : W - (rnd() * W * .5 + S * 2)), y0 = snap(S * 2 + rnd() * (H - S * 4));
+    const xm = snap(x0 + (hub[0] - x0) * (.35 + rnd() * .4));
+    const ty = snap(hub[1] + (rnd() - .5) * H * .45);
+    traces += `<path d="M${x0} ${y0}H${xm}V${ty}H${hub[0] + (right ? -1 : 1) * 44 * gs / 2}" fill="none" stroke="#9aa6b8" stroke-width="2"/>`;
+    pads += `<rect x="${x0 - 7}" y="${y0 - 7}" width="14" height="14" fill="#fff" stroke="#0d1b2e" stroke-width="2"/>`;
+  }
+  const accent = Math.floor(rnd() * 9);
+  pads = pads.split('<rect').map((r, i) => i === accent + 1 ? r.replace('fill="#fff"', 'fill="#1f47c2"').replace('stroke="#0d1b2e"', 'stroke="#1f47c2"') : r).join('<rect');
+  const g = (byId[prodottoId] || PRODOTTI[0]).glyph.replace(/class="g-line"/g, 'fill="none" stroke="#0d1b2e" stroke-width="1.6"').replace(/class="g-node"/g, 'fill="#0d1b2e"').replace(/class="g-core"/g, 'fill="#1f47c2"');
+  const plate = 120 * gs / 1.35;
+  const mark = (x, y, dx, dy) => `<path d="M${x} ${y + dy * 28}V${y}H${x + dx * 28}" fill="none" stroke="#0d1b2e" stroke-width="2"/>`;
+  return `<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Illustrazione" xmlns="http://www.w3.org/2000/svg"><rect width="${W}" height="${H}" fill="#f3f5f8"/>${grid}${traces}${pads}<rect x="${hub[0] - plate / 2}" y="${hub[1] - plate / 2}" width="${plate}" height="${plate}" fill="#fff" stroke="#0d1b2e" stroke-width="2"/><g transform="translate(${hub[0] - 44 * gs / 1.6} ${hub[1] - 44 * gs / 1.6}) scale(${gs / 1.6})">${g}</g>${mark(40, 40, 1, 1)}${mark(W - 40, 40, -1, 1)}${mark(40, H - 40, 1, -1)}${mark(W - 40, H - 40, -1, -1)}</svg>`;
 }
 
 function blocco(b, allowed, lang = 'it') {
@@ -58,11 +71,11 @@ function blocco(b, allowed, lang = 'it') {
 const slugify = s => s.toLowerCase().normalize('NFKD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 60);
 
 const T = {
-  it: { crumb: 'Blog', read: m => `${m} min di lettura`, key: 'Punti chiave', toc: 'In questo articolo', view: 'Il punto di vista Ovia', viewBox: 'Il punto di vista Ovia: strategia e sicurezza prima dello strumento', faq: 'Domande frequenti', concl: 'Conclusione', prodH: 'I sistemi Ovia per questo tema', prodP: 'Soluzioni costruite su misura che risolvono esattamente il problema di questo articolo.', discover: s => `Scopri ${s} →`, share: 'Condividi su LinkedIn', copy: 'Copia link', sources: 'Fonti',
+  it: { crumb: 'Blog', read: m => `${m} min di lettura`, key: 'Punti chiave', toc: 'In questo articolo', view: 'Il punto di vista Ovia', viewBox: 'Il punto di vista Ovia: strategia e sicurezza prima dello strumento', faq: 'Domande frequenti', concl: 'Conclusione', prodH: 'I sistemi Ovia per questo tema', prodP: 'Soluzioni costruite su misura che risolvono esattamente il problema di questo articolo.', discover: s => `Scopri ${s}`, share: 'Condividi su LinkedIn', copy: 'Copia link', sources: 'Fonti',
     disclosure: e => `Articolo della redazione Ovia, redatto con il supporto di strumenti di intelligenza artificiale a partire dalle fonti citate, che restano di proprietà dei rispettivi autori. Le informazioni hanno scopo divulgativo e non costituiscono consulenza legale o fiscale. Segnalazioni: <a href="mailto:${e}">${e}</a>.`,
     related: 'Articoli correlati', ctaH: 'Trasforma questo articolo in un risultato misurabile.', ctaP: 'Trenta minuti sul tuo flusso di lavoro reale: dove va il tempo, cosa si può automatizzare in sicurezza e da dove conviene partire.', ctaS: 'Nessun impegno. Lavoriamo con pochi clienti alla volta.',
     idxTitle: 'Blog Ovia — AI, automazione e sicurezza per studi professionali e PMI', idxDesc: 'Ogni giorno una guida pratica su intelligenza artificiale, automazione, normativa e sicurezza per studi professionali e PMI italiane. Strategia prima dello strumento.', idxEy: 'Il blog Ovia · un articolo al giorno', idxH1: 'L’AI spiegata a chi deve usarla davvero.', idxLead: 'Ogni giorno analizziamo le novità del mondo AI e le traduciamo in cosa cambia per uno studio professionale o una PMI italiana: opportunità, rischi, obblighi e passi concreti.', all: 'Tutti', filterL: 'Filtra per categoria', search: 'Cerca un argomento…', searchL: 'Cerca negli articoli', empty: 'Nessun articolo trovato. Prova con un’altra parola.', idxCtaH: 'Leggere è il primo passo. Il secondo è misurare.', idxCtaP: 'Scopri in trenta minuti dove il tuo studio perde tempo e cosa si può automatizzare in sicurezza.', feedDesc: 'AI, automazione e sicurezza per studi professionali e PMI italiane.', inLang: 'it-IT', feedLang: 'it-it', author: 'Redazione Ovia' },
-  en: { crumb: 'Blog', read: m => `${m} min read`, key: 'Key takeaways', toc: 'In this article', view: 'The Ovia view', viewBox: 'The Ovia view: strategy and security before the tool', faq: 'Frequently asked questions', concl: 'Conclusion', prodH: 'Ovia systems for this topic', prodP: 'Tailor-made solutions that solve exactly the problem discussed in this article.', discover: s => `Discover ${s} →`, share: 'Share on LinkedIn', copy: 'Copy link', sources: 'Sources',
+  en: { crumb: 'Blog', read: m => `${m} min read`, key: 'Key takeaways', toc: 'In this article', view: 'The Ovia view', viewBox: 'The Ovia view: strategy and security before the tool', faq: 'Frequently asked questions', concl: 'Conclusion', prodH: 'Ovia systems for this topic', prodP: 'Tailor-made solutions that solve exactly the problem discussed in this article.', discover: s => `Discover ${s}`, share: 'Share on LinkedIn', copy: 'Copy link', sources: 'Sources',
     disclosure: e => `An article by the Ovia editorial team, written with the support of artificial intelligence tools from the sources cited, which remain the property of their respective authors. Translated from the Italian original. This information is for general guidance and does not constitute legal or tax advice. Corrections: <a href="mailto:${e}">${e}</a>.`,
     related: 'Related articles', ctaH: 'Turn this article into a measurable result.', ctaP: 'Thirty minutes on your real workflow: where the time goes, what can be safely automated and where it’s best to start.', ctaS: 'No obligation. We work with a few clients at a time.',
     idxTitle: 'Ovia Blog — AI, automation and security for professional firms and SMEs', idxDesc: 'A practical guide every day on artificial intelligence, automation, regulation and security for professional firms and SMEs in Italy. Strategy before the tool.', idxEy: 'The Ovia blog · one article a day', idxH1: 'AI explained for people who actually have to use it.', idxLead: 'Every day we analyse what’s new in AI and translate it into what changes for a professional firm or SME in Italy: opportunities, risks, obligations and concrete steps.', all: 'All', filterL: 'Filter by category', search: 'Search a topic…', searchL: 'Search articles', empty: 'No articles found. Try another word.', idxCtaH: 'Reading is the first step. The second is measuring.', idxCtaP: 'Find out in thirty minutes where your firm loses time and what can be safely automated.', feedDesc: 'AI, automation and security for professional firms and SMEs in Italy.', inLang: 'en', feedLang: 'en', author: 'Ovia editorial team' },

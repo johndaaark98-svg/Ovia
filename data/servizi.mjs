@@ -414,8 +414,8 @@ export const SERVIZI = {
       { h: 'Contenuti a norma Google', p: 'Niente pagine generate in serie: contenuti utili e rivisti, come chiedono le linee guida di Google sui contenuti AI [[gai]].' },
     ],
     audiences: [
-      { tab: 'Studi professionali', h: 'Farsi scegliere prima della prima telefonata', p: 'Commercialisti, avvocati e consulenti che vogliono essere la risposta alle domande del loro territorio.', items: ['Pagine per ogni servizio e specializzazione', 'FAQ citabili dai motori AI', 'Prenotazione consulenze integrata'], link: { href: '/siti-studi-professionali.html', label: 'Vedi l’offerta per studi professionali →' } },
-      { tab: 'Attività locali', h: 'Tavoli, appuntamenti e prenotazioni', p: 'Ristoranti, centri e negozi che vogliono comparire quando qualcuno chiede “dove…” all’AI.', items: ['SEO locale e scheda Google curata', 'Prenotazione in 30 secondi', 'Assistente che risponde su orari, menu e disponibilità'], link: { href: '/siti-attivita-locali.html', label: 'Vedi l’offerta per attività locali →' } },
+      { tab: 'Studi professionali', h: 'Farsi scegliere prima della prima telefonata', p: 'Commercialisti, avvocati e consulenti che vogliono essere la risposta alle domande del loro territorio.', items: ['Pagine per ogni servizio e specializzazione', 'FAQ citabili dai motori AI', 'Prenotazione consulenze integrata'], link: { href: '/siti-studi-professionali.html', label: 'Vedi l’offerta per studi professionali' } },
+      { tab: 'Attività locali', h: 'Tavoli, appuntamenti e prenotazioni', p: 'Ristoranti, centri e negozi che vogliono comparire quando qualcuno chiede “dove…” all’AI.', items: ['SEO locale e scheda Google curata', 'Prenotazione in 30 secondi', 'Assistente che risponde su orari, menu e disponibilità'], link: { href: '/siti-attivita-locali.html', label: 'Vedi l’offerta per attività locali' } },
       { tab: 'PMI e B2B', h: 'Diventare la fonte del proprio settore', p: 'Aziende che vendono competenza e devono essere trovate dai buyer che fanno ricerca con l’AI.', items: ['Contenuti tecnici autorevoli', 'Schede prodotto strutturate', 'Lead qualificati dall’assistente'] },
     ],
     timeline: [
