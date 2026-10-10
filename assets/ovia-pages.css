@@ -903,132 +903,93 @@ html.oa-open { overflow: hidden; }
 @keyframes ov-film-in { from { opacity: 0; transform: translateY(14px) scale(.98); } to { opacity: 1; transform: none; } }
 
 /* =====================================================================
-   COLORI SOCIALI: IL BLU ELETTRICO PREVALE
-   Testata, aperture delle pagine, manifesto, metodo, chiusura e piè di pagina
-   sono blu #0033FF; il bianco diventa l'accento (sul blu il pallino è bianco).
-   Le aree di lettura e i pannelli "prodotto" (coda, simulatore) restano bianchi.
+   COLORE: IL BLU HA UN SIGNIFICATO
+   Criterio 60-30-10: carta bianca, inchiostro, e il blu #0033FF solo dove
+   significa qualcosa: il pallino, le approvazioni, le azioni, e un solo
+   momento "a tutto colore" per pagina (la chiusura). Sul blu il pallino è bianco.
    ===================================================================== */
-:root { --blue: #0033ff; --on-blue: #ffffff; --on-blue-2: rgba(255, 255, 255, .84); --on-blue-3: rgba(255, 255, 255, .8); --blue-line: rgba(255, 255, 255, .22); }
+:root { --blue: #0033ff; --on-blue-2: rgba(255, 255, 255, .86); --on-blue-3: rgba(255, 255, 255, .8); --blue-line: rgba(255, 255, 255, .22); }
+.ar-progress { background: var(--ink); }
+.ar-progress::after { background: var(--blue); }
 
-/* Testata blu */
-.ov-header { background: rgba(0, 51, 255, .97); border-bottom-color: var(--blue-line); }
-.ov-header .ov-logo { color: #fff; --logo-dot: #fff; }
-.ov-header .ov-sign { color: var(--on-blue-2); border-left-color: rgba(255, 255, 255, .35); }
-.ov-nav > a, .ov-dd > button { color: var(--on-blue-2); }
-.ov-nav > a:hover, .ov-dd > button:hover { color: #fff; }
-.ov-nav > a[aria-current="page"] { color: #fff; box-shadow: inset 0 -2px 0 #fff; }
-.ov-nav .ov-btn { background: #fff; border-color: #fff; color: var(--blue); }
-.ov-nav .ov-btn:hover { background: #e8edff; border-color: #e8edff; color: var(--blue); }
-.ov-lang { border-color: rgba(255, 255, 255, .45); }
-.ov-lang a { color: var(--on-blue-2); }
-.ov-lang a[aria-current="true"] { background: #fff; color: var(--blue); }
-.ov-lang a:not([aria-current="true"]):hover { color: #fff; }
-.ov-burger { border-color: rgba(255, 255, 255, .55); color: #fff; }
-.ar-progress { background: #fff; }
-.ar-progress::after { background: #fff; box-shadow: 0 0 0 3px rgba(255, 255, 255, .35); }
-@media (max-width: 1024px) {
-  .ov-nav > a, .ov-dd > button { color: var(--body); }
-  .ov-nav > a:hover, .ov-dd > button:hover { color: var(--ink); }
-  .ov-nav > a[aria-current="page"] { color: var(--blue); box-shadow: none; }
-  .ov-nav .ov-btn { background: var(--blue); border-color: var(--blue); color: #fff; }
-}
-
-/* Sezioni blu */
-.is-blue { background: var(--blue); color: var(--on-blue); --logo-dot: #fff; }
-.is-blue h1, .is-blue h2, .is-blue h3, .is-blue .ov-h2 { color: #fff; }
-.is-blue .ov-lead, .is-blue .mf-sub, .is-blue .hm-steps p { color: var(--on-blue-2); }
-.is-blue .ov-btn { background: #fff; border-color: #fff; color: var(--blue); }
-.is-blue .ov-btn:hover { background: #e8edff; border-color: #e8edff; }
-.is-blue .ov-btn-ghost { color: #fff; border-color: rgba(255, 255, 255, .55); background: transparent; }
-.is-blue .ov-btn-ghost:hover { border-color: #fff; }
-.hx.is-blue { border-bottom: 0; --field-rgb: 255, 255, 255; --wave-rgb: 255, 255, 255; }
-.hx.is-blue .hx-film { color: #fff; }
-.hx.is-blue .hx-film-i { border-color: rgba(255, 255, 255, .55); }
-.hx.is-blue .hx-film-i::after { border-left-color: #fff; }
-.hx.is-blue .hx-film:hover .hx-film-i { background: #fff; border-color: #fff; }
-.hx.is-blue .hx-film:hover .hx-film-i::after { border-left-color: var(--blue); }
-.hx.is-blue .hx-film-t { color: var(--on-blue-3); }
-/* il pannello della coda resta un oggetto bianco sopra il blu */
-.hx.is-blue .hx-stage { background-color: #fff; border-color: transparent; box-shadow: 0 30px 80px -30px rgba(0, 10, 60, .55); }
-.hx.is-blue .hx-bar { background: #fff; }
-
-/* Manifesto sul blu: le parole si accendono in bianco, "in attesa" diventa un'etichetta */
-.mf.is-blue { margin-top: 0; }
-.mf.is-blue .mf-text { color: #fff; }
-.mf.is-blue.is-live .mf-w { color: rgba(255, 255, 255, .6); }
-.mf.is-blue.is-live .mf-w.on, .mf.is-blue .mf-w { color: #fff; }
-.mf.is-blue .mf-em, .mf.is-blue.is-live .mf-em.on { color: var(--blue); background: #fff; border-radius: .14em; padding: 0 .14em; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
-.mf.is-blue.is-live .mf-em:not(.on) { background: transparent; color: rgba(255, 255, 255, .6); }
-.mf.is-blue .mf-dot { background: #fff; }
-.mf.is-blue .mf-dot::after { border-color: #fff; }
-
-/* Metodo sul blu */
-.is-blue .hm-steps li { border-top-color: #fff; }
-.is-blue .hm-steps li + li { border-left-color: var(--blue-line); }
-.is-blue .hm-steps li::before { color: var(--on-blue-3); }
-#metodo.is-blue { padding-top: clamp(64px, 8vw, 104px) !important; }
-
-/* Chiusura: banda blu, il pallino diventa bianco */
+/* Chiusura: l'unico momento blu pieno della pagina */
 .ov-cta-band { background: var(--blue); color: #fff; }
-.ov-cta-band p, .ov-cta-band .small { color: var(--on-blue-2); }
+.ov-cta-band h2 { color: #fff; }
+.ov-cta-band p { color: var(--on-blue-2); }
 .ov-cta-band .small { color: var(--on-blue-3); }
 .ov-cta-band .ov-btn { background: #fff; color: var(--blue); border-color: #fff; }
 .ov-cta-band .ov-btn:hover { background: #e8edff; border-color: #e8edff; color: var(--blue); }
 .ov-cta-band .ov-btn-ghost { color: #fff; border-color: rgba(255, 255, 255, .55); }
+.ov-cta-band .ov-btn-ghost:hover { border-color: #fff; }
 .ov-cta-band .hx-cta-tag, .ov-cta-band .hx-cta-side p { color: #fff; }
 .ov-cta-band .hx-cta-tag::before { background: #fff; }
 .hx-cta-dot { background: #fff; box-shadow: 0 0 0 calc(var(--p) * 10px) rgba(255, 255, 255, .45); }
 .hx-cta-dot::before, .hx-cta-dot::after { border-color: rgba(255, 255, 255, .7); }
 
-/* Piè di pagina blu */
-.ov-footer { background: var(--blue); color: var(--on-blue-2); }
-.ov-footer a { color: var(--on-blue-2); }
+/* Piè di pagina: inchiostro, il pallino resta blu */
+.ov-footer { background: var(--ink); color: rgba(255, 255, 255, .78); }
+.ov-footer a { color: rgba(255, 255, 255, .78); }
 .ov-footer a:hover { color: #fff; }
-.ov-footer a.ov-logo { --logo-dot: #fff; }
-.ov-footer .legal { color: var(--on-blue-3); border-top-color: var(--blue-line); }
+.ov-footer a.ov-logo { --logo-dot: #2e5bff; }
+.ov-footer .legal { color: rgba(255, 255, 255, .62); border-top-color: rgba(255, 255, 255, .14); }
 
-/* Aperture delle pagine interne: fascia blu a tutta larghezza */
-main > .ov-wrap > .ov-breadcrumb, .sv-hero, .cs-hero, main > .ov-wrap > .bl-hero, main.ar > .ov-breadcrumb {
-  background: var(--blue); box-shadow: 0 0 0 100vmax var(--blue); clip-path: inset(0 -100vmax);
+/* Apertura: a chi parliamo */
+.hx-eyebrow { display: inline-flex; align-items: center; gap: 10px; margin-bottom: 22px; font-size: 15px; font-weight: 600; color: var(--ink); }
+.hx-eyebrow::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: var(--blue); animation: ov-ping 2.4s ease-out infinite; }
+
+/* =====================================================================
+   LA MATTINA DI UNO STUDIO: racconto guidato dallo scroll.
+   La sezione resta ferma mentre si scorre; lo sfondo (canvas) mostra il lavoro
+   che arriva, viene collegato ai clienti, preparato e messo in attesa del pallino.
+   ===================================================================== */
+.st-sec { position: relative; height: 480vh; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.st-pin { position: sticky; top: 72px; height: calc(100vh - 72px); height: calc(100svh - 72px); overflow: hidden; background: #fff; }
+.st-cv { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.st-grid { position: relative; height: 100%; display: grid; grid-template-columns: minmax(0, 400px) 1fr; align-items: center; pointer-events: none; }
+.st-copy { pointer-events: auto; }
+.st-eyebrow { display: flex; align-items: center; gap: 10px; margin-bottom: 26px; font-size: 14.5px; font-weight: 600; color: var(--muted); }
+.st-eyebrow::before { content: ''; width: 18px; height: 1px; background: var(--line-strong); }
+.st-steps { list-style: none; position: relative; min-height: 270px; }
+.st-steps li { position: absolute; inset: 0 0 auto 0; opacity: 0; transform: translateY(18px); transition: opacity .5s, transform .6s cubic-bezier(.2, .7, .2, 1); pointer-events: none; }
+.st-steps li.is-on { opacity: 1; transform: none; pointer-events: auto; }
+.st-k { font-size: 15px; font-weight: 600; color: var(--blue); font-variant-numeric: tabular-nums; margin-bottom: 12px; }
+.st-steps h2 { font-size: clamp(32px, 3.6vw, 48px); line-height: 1.06; letter-spacing: -.03em; color: var(--ink); margin-bottom: 16px; }
+.st-p { font-size: 18px; line-height: 1.55; color: var(--body); max-width: 34ch; margin-bottom: 18px; }
+.st-bar { display: flex; gap: 6px; margin-top: 8px; }
+.st-bar i { flex: 1; height: 2px; background: var(--line); position: relative; overflow: hidden; }
+.st-bar i::after { content: ''; position: absolute; inset: 0; background: var(--ink); transform: scaleX(var(--f, 0)); transform-origin: left; }
+.st-legend { list-style: none; display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 22px; font-size: 13.5px; color: var(--muted); }
+.st-legend li { display: inline-flex; align-items: center; gap: 7px; }
+.st-legend li::before { content: ''; width: 7px; height: 7px; background: var(--ink); }
+.st-legend .lg-email::before { border-radius: 50%; }
+.st-legend .lg-call::before { width: 0; height: 0; background: none; border-left: 4.5px solid transparent; border-right: 4.5px solid transparent; border-bottom: 8px solid var(--ink); }
+.st-legend .lg-pec::before { transform: rotate(45deg) scale(.85); }
+@media (max-width: 860px) {
+  .st-sec { height: 520vh; }
+  .st-grid { grid-template-columns: 1fr; align-items: start; padding-top: 26px; }
+  .st-steps { min-height: 210px; }
+  .st-steps h2 { font-size: 30px; }
+  .st-p { font-size: 16.5px; }
+  .st-legend { display: none; }
 }
-main > .ov-wrap > .ov-breadcrumb, main.ar > .ov-breadcrumb { color: var(--on-blue-3); }
-main > .ov-wrap > .ov-breadcrumb a, main.ar > .ov-breadcrumb a { color: var(--on-blue-2); }
-main > .ov-wrap > .ov-breadcrumb a:hover, main.ar > .ov-breadcrumb a:hover { color: #fff; }
-main > .ov-wrap > .ov-breadcrumb span, main.ar > .ov-breadcrumb span { color: rgba(255, 255, 255, .4); }
-main.ar > .ov-breadcrumb { padding-bottom: 22px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.sv-hero, main > .ov-wrap > .bl-hero, .cs-hero { color: #fff; padding-bottom: clamp(48px, 6vw, 80px); }
-.sv-hero h1, .bl-hero h1, .cs-hero h1 { color: #fff; }
-.sv-hero .ov-eyebrow, .bl-hero .ov-eyebrow, .cs-hero .ov-eyebrow { color: var(--on-blue-3); }
-.sv-hero .claim { color: #fff; }
-.sv-hero .sub, .bl-hero .ov-lead, .cs-hero .ov-lead { color: var(--on-blue-2); }
-.sv-hero .ov-btn, .bl-hero .ov-btn { background: #fff; border-color: #fff; color: var(--blue); }
-.sv-hero .ov-btn:hover, .bl-hero .ov-btn:hover { background: #e8edff; border-color: #e8edff; }
-.sv-hero .ov-btn-ghost { color: #fff; border-color: rgba(255, 255, 255, .55); }
-.sv-hero .ov-btn-ghost:hover { border-color: #fff; }
-.sv-hero .pp { border-color: transparent; box-shadow: 0 30px 80px -30px rgba(0, 10, 60, .55); }
-.sv-stats { margin-top: 40px; }
-.cs-hero .cs-photo figcaption { color: #fff; border-top-color: var(--blue-line); }
-.cs-hero .cs-photo figcaption span { color: var(--on-blue-3); }
-.cs-hero .bl-hero { background: none; box-shadow: none; clip-path: none; padding-bottom: 0; }
+@media (max-width: 760px) { .st-pin { top: 64px; height: calc(100svh - 64px); } }
+@media (prefers-reduced-motion: reduce) {
+  .st-sec { height: auto; }
+  .st-pin { position: relative; top: 0; height: auto; padding: 64px 0; display: flex; flex-direction: column; gap: 40px; }
+  .st-cv { position: relative; height: 440px; order: 2; }
+  .st-grid { height: auto; }
+  .st-steps { min-height: 0; display: grid; gap: 28px; }
+  .st-steps li { position: static; opacity: 1; transform: none; }
+  .st-bar { display: none; }
+}
 
-/* Pagine dei siti e legali (landing.css) */
-.lp-header { background: var(--blue) !important; border-bottom-color: var(--blue-line) !important; }
-.lp-header .lp-logo { color: #fff; --logo-dot: #fff; }
-.lp-header .ov-sign { color: var(--on-blue-2); border-left-color: rgba(255, 255, 255, .35); }
-.lp-nav > a:not(.lp-btn) { color: var(--on-blue-2) !important; }
-.lp-nav > a:not(.lp-btn):hover { color: #fff !important; }
-.lp-lang { border-color: rgba(255, 255, 255, .45) !important; }
-.lp-lang a { color: var(--on-blue-2) !important; }
-.lp-lang a[aria-current="true"] { background: #fff !important; color: var(--blue) !important; }
-.lp-header .lp-btn-primary { background: #fff !important; border-color: #fff !important; color: var(--blue) !important; }
-.lp-breadcrumb, .lp-hero { background: var(--blue); box-shadow: 0 0 0 100vmax var(--blue); clip-path: inset(0 -100vmax); color: #fff; }
-.lp-breadcrumb { color: var(--on-blue-3) !important; }
-.lp-breadcrumb a { color: var(--on-blue-2) !important; }
-.lp-breadcrumb a:hover { color: #fff !important; }
-.lp-breadcrumb span { color: rgba(255, 255, 255, .4) !important; }
-.lp-hero h1 { color: #fff !important; }
-.lp-hero .sub, .lp-hero p { color: var(--on-blue-2) !important; }
-.lp-hero .lp-eyebrow { color: var(--on-blue-3) !important; }
-.lp-hero .lp-btn-primary { background: #fff !important; border-color: #fff !important; color: var(--blue) !important; }
-.lp-hero .lp-btn-primary:hover { background: #e8edff !important; }
-.lp-hero .lp-btn-ghost { color: #fff; border-color: rgba(255, 255, 255, .55); }
+/* Clienti: una riga che scorre di continuo, in ordine, piena */
+.hm-cl { flex-wrap: nowrap; overflow: hidden; }
+.hm-cl > p { flex: 0 0 auto; }
+.hm-clients .ov-wrap > * { min-width: 0; }
+.hm-marquee { position: relative; flex: 1 1 auto; min-width: 0; width: 100%; overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+.hm-marquee .hm-logos { flex-wrap: nowrap; width: max-content; gap: 0; animation: hm-marq var(--marq-d, 40s) linear infinite; }
+.hm-marquee .hm-logos li { padding: 0 clamp(24px, 3vw, 44px); flex: 0 0 auto; }
+.hm-marquee:hover .hm-logos { animation-play-state: paused; }
+@keyframes hm-marq { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@media (max-width: 760px) { .hm-cl { flex-direction: column; align-items: flex-start; gap: 16px; } .hm-marquee { width: 100%; } }

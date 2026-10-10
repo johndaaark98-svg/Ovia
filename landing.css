@@ -146,8 +146,8 @@
 .demo-success p { color: var(--body); font-size: 16px; line-height: 1.55; }
 
 /* Footer */
-.lp-footer { background: #0033ff; color: rgba(255, 255, 255, .84); margin-top: 96px; padding: 40px clamp(16px, 4vw, 40px); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; font-size: 15px; }
-.lp-footer a { color: rgba(255, 255, 255, .84); }
+.lp-footer { background: var(--ink); color: rgba(255, 255, 255, .78); margin-top: 96px; padding: 40px clamp(16px, 4vw, 40px); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; font-size: 15px; }
+.lp-footer a { color: rgba(255, 255, 255, .78); }
 .lp-footer a:hover { color: #fff; }
 .lp-footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
 

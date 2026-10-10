@@ -43,7 +43,7 @@ export function manifesto(text, sub = '', label = '') {
   const words = toks.map(({ t, em }) => t === '{dot}'
     ? '<span class="mf-dot" aria-hidden="true"></span>'
     : `<span class="mf-w${em ? ' mf-em' : ''}">${esc(t)}</span>`).join(' ');
-  return `<section class="mf is-blue" data-mf${label ? ` aria-label="${esc(label)}"` : ''}><div class="ov-wrap">
+  return `<section class="mf" data-mf${label ? ` aria-label="${esc(label)}"` : ''}><div class="ov-wrap">
     <p class="mf-text">${words}</p>
     ${sub ? `<p class="mf-sub">${esc(sub)}</p>` : ''}
   </div></section>`;

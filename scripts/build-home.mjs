@@ -7,7 +7,7 @@
 import { writeFileSync, mkdirSync } from 'node:fs';
 import { SITE, prodottiIn } from '../data/prodotti.mjs';
 import { head, header, footer, esc, calBtn, urlIn } from './lib/layout.mjs';
-import { ctaBand, manifesto, sistemi } from './lib/blocchi.mjs';
+import { ctaBand, sistemi } from './lib/blocchi.mjs';
 import { UI, pathFor } from './lib/i18n.mjs';
 import { bloccoHome } from './build-faq.mjs';
 
@@ -22,10 +22,11 @@ const LOGHI = [
 
 const T = {
   it: {
-    title: 'Ovia — Sistemi di marketing e automazione per le imprese',
-    desc: 'Ovia progetta e gestisce sistemi di marketing e automazione per imprese e studi professionali: il sistema prepara il lavoro, una persona approva ogni passo che conta. Prenota il Process Check.',
-    h1: 'Sistemi di marketing e automazione per le imprese.',
-    lead: 'Portiamo nuovi clienti alla tua azienda e togliamo il lavoro ripetitivo a chi ci lavora. I nostri sistemi preparano tutto, poi si fermano e aspettano una persona.',
+    title: 'Ovia — Sistemi di marketing e automazione per studi professionali',
+    desc: 'Ovia progetta sistemi di marketing e automazione per studi professionali: commercialisti, avvocati e consulenti del lavoro. Il sistema prepara email, documenti e scadenze, una persona dello studio approva ogni passo che conta.',
+    eyebrow: 'Per commercialisti, avvocati e consulenti del lavoro',
+    h1: 'Sistemi di marketing e automazione per studi professionali.',
+    lead: 'Nuovi clienti per lo studio, e meno ore perse tra email, documenti e scadenze. Ovia prepara il lavoro, poi si ferma: ogni passo che conta lo approvi tu.',
     talk: 'Parla con l’assistente',
     // coda di approvazione (hero)
     qTitle: 'Coda di approvazione', qWaiting: 'in attesa', qWaitingOne: 'in attesa',
@@ -48,6 +49,20 @@ const T = {
     // manifesto
     manifesto: 'Il pallino {dot} del nostro logo significa _in_ _attesa._ Ogni sistema Ovia fa il lavoro ripetitivo, poi si ferma e aspetta una persona prima di ogni passo che conta.',
     manifestoSub: 'Così l’automazione lavora per te, e non al posto tuo.',
+    tale: {
+      title: 'La mattina di uno studio, in un minuto',
+      steps: [
+        ['08:30', 'Arriva tutto, insieme.', 'Email, PEC, documenti dei clienti, chiamate. Ogni canale chiede attenzione nello stesso momento.'],
+        ['08:31', 'Ovia legge e collega.', 'Ogni messaggio viene riconosciuto e agganciato al cliente e alla pratica giusti.'],
+        ['08:33', 'Prepara il lavoro.', 'Risposte, solleciti e riepiloghi sono già scritti, nel tono dello studio.'],
+        ['08:34', 'Poi si ferma. Aspetta te.', 'Il pallino blu segna ogni passo che richiede una persona. Niente parte da solo.'],
+        ['08:40', 'Tu decidi. Il resto è fatto.', 'Approvi in pochi gesti, e la giornata riparte dal lavoro che conta davvero.'],
+      ],
+      legend: [['email', 'Email'], ['doc', 'Documenti'], ['call', 'Chiamate'], ['pec', 'PEC']],
+      clients: ['Giulia Fadda', 'Fratelli Deiana Srl', 'Pratica 214', 'Nuovo contatto'],
+      cards: ['Risposta sulla dichiarazione', 'Riepilogo della chiamata', 'Sollecito busta paga', 'Risposta al preventivo'],
+      wait: 'In attesa', ok: 'Approvato', count: '{n} di 4 approvate da te', next: 'Provalo qui sotto',
+    },
     // simulatore
     simH: 'Guarda un sistema Ovia al lavoro.',
     simP: 'Scegli cosa arriva. Ovia lo legge e prepara il lavoro, poi si ferma: la decisione è tua.',
@@ -60,9 +75,9 @@ const T = {
     again: 'Prova un altro caso', restart: 'Ricomincia', discover: 'Scopri',
     scen: [
       { id: 'lead-generation', tab: 'Nuovo contatto', src: 'Modulo del sito · 21:47',
-        input: 'Buonasera, ho un’azienda di impianti con 12 dipendenti. Vorrei capire se potete aiutarci a gestire meglio le richieste di preventivo. Grazie, Marco Serra',
-        fields: [['Contatto', 'Marco Serra'], ['Azienda', 'Impianti, 12 dipendenti'], ['Richiesta', 'Gestione dei preventivi'], ['Priorità', 'Alta, in linea con il tuo cliente ideale']],
-        draft: 'Buonasera Marco, grazie per averci scritto. Gestire bene i preventivi è proprio il tipo di lavoro che organizziamo per aziende come la sua. Le propongo trenta minuti di Process Check: qui sotto trova il link per scegliere l’orario che preferisce.',
+        input: 'Buonasera, ho aperto una srl a gennaio e cerco uno studio che segua contabilità e paghe di 4 dipendenti. Potete darmi un’idea dei costi? Grazie, Marco Serra',
+        fields: [['Contatto', 'Marco Serra'], ['Cliente', 'Srl nuova, 4 dipendenti'], ['Richiesta', 'Contabilità e paghe'], ['Priorità', 'Alta, in linea con il cliente ideale dello studio']],
+        draft: 'Buonasera Marco, grazie per averci scritto. Seguiamo diverse srl appena costituite, sia nella contabilità sia nelle paghe. Per darle un preventivo preciso le propongo una prima chiamata di quindici minuti: qui sotto trova il link per scegliere l’orario.',
         done: ['Risposta inviata alle 21:49', 'Contatto registrato nel CRM', 'Promemoria se non prenota entro 3 giorni'] },
       { id: 'inbox', tab: 'Email di un cliente', src: 'Email in arrivo · 08:12',
         input: 'Buongiorno, mi servirebbe sapere entro venerdì se avete ricevuto tutti i documenti per la dichiarazione. Cordiali saluti, Giulia Fadda',
@@ -83,7 +98,7 @@ const T = {
     facts: [['15.000+', 'pratiche gestite con i software che abbiamo costruito'], ['30 minuti', 'per il Process Check, senza impegno'], ['Olbia', 'sede, braccio operativo di L3 Innovation Srl']],
     clients: 'Hanno scelto Ovia',
     sysH: 'Due sistemi che lavorano insieme.',
-    sysP: 'Il marketing porta le richieste, l’automazione le gestisce senza perdite di tempo. In ogni servizio il pallino indica dove decide una persona.',
+    sysP: 'Il marketing porta nuovi clienti allo studio, l’automazione toglie il lavoro ripetitivo a chi ci lavora. In ogni servizio il pallino indica dove decide una persona dello studio.',
     methodH: 'Un metodo, quattro passaggi.',
     methodP: 'Nessuna trasformazione improvvisa: partiamo dal problema che ti costa di più e lo risolviamo con un risultato che si può misurare.',
     steps: [
@@ -111,10 +126,11 @@ const T = {
     ctaS: 'Senza impegno. Lavoriamo con pochi clienti alla volta.',
   },
   en: {
-    title: 'Ovia — Marketing & automation systems for business',
-    desc: 'Ovia designs and runs marketing and automation systems for businesses and professional firms: the system prepares the work, a person approves every step that matters. Book the Process Check.',
-    h1: 'Marketing and automation systems for business.',
-    lead: 'We bring new clients to your company and take repetitive work off your people. Our systems prepare everything, then stop and wait for a person.',
+    title: 'Ovia — Marketing & automation systems for professional firms',
+    desc: 'Ovia designs marketing and automation systems for professional firms: accountants, lawyers and payroll consultants. The system prepares emails, documents and deadlines; a person at the firm approves every step that matters.',
+    eyebrow: 'For accountants, lawyers and payroll consultants',
+    h1: 'Marketing and automation systems for professional firms.',
+    lead: 'New clients for the firm, and fewer hours lost to emails, documents and deadlines. Ovia prepares the work, then stops: every step that matters is yours to approve.',
     talk: 'Talk to the assistant',
     qTitle: 'Approval queue', qWaiting: 'waiting', qWaitingOne: 'waiting',
     qBy: 'Prepared by Ovia', qPending: 'Waiting', qOk: 'Approved', qSent: 'Done',
@@ -135,6 +151,20 @@ const T = {
     ],
     manifesto: 'The dot {dot} in our logo means _waiting._ Every Ovia system does the repetitive work, then stops and waits for a person before every step that matters.',
     manifestoSub: 'That is how automation works for you, not instead of you.',
+    tale: {
+      title: 'A firm’s morning, in one minute',
+      steps: [
+        ['8:30', 'Everything arrives at once.', 'Emails, certified mail, client documents, calls. Every channel wants attention at the same time.'],
+        ['8:31', 'Ovia reads and connects.', 'Every message is recognised and linked to the right client and case.'],
+        ['8:33', 'It prepares the work.', 'Replies, reminders and summaries are already written, in the firm’s tone.'],
+        ['8:34', 'Then it stops. It waits for you.', 'The blue dot marks every step that needs a person. Nothing goes out on its own.'],
+        ['8:40', 'You decide. The rest is done.', 'You approve in a few gestures, and the day restarts from the work that really matters.'],
+      ],
+      legend: [['email', 'Emails'], ['doc', 'Documents'], ['call', 'Calls'], ['pec', 'Certified mail']],
+      clients: ['Giulia Fadda', 'Deiana Brothers Ltd', 'Case 214', 'New enquiry'],
+      cards: ['Reply on the tax return', 'Call summary', 'Payslip reminder', 'Reply to the quote request'],
+      wait: 'Waiting', ok: 'Approved', count: '{n} of 4 approved by you', next: 'Try it below',
+    },
     simH: 'Watch an Ovia system at work.',
     simP: 'Choose what comes in. Ovia reads it and prepares the work, then stops: the decision is yours.',
     simNote: 'Demo example with made-up names and data.',
@@ -146,9 +176,9 @@ const T = {
     again: 'Try another case', restart: 'Start again', discover: 'Explore',
     scen: [
       { id: 'lead-generation', tab: 'New enquiry', src: 'Website form · 9:47 pm',
-        input: 'Good evening, I run a building services company with 12 employees. I’d like to know if you can help us handle quote requests better. Thanks, Marco Serra',
-        fields: [['Contact', 'Marco Serra'], ['Company', 'Building services, 12 staff'], ['Request', 'Handling quote requests'], ['Priority', 'High, matches your ideal client']],
-        draft: 'Good evening Marco, thank you for getting in touch. Handling quotes well is exactly the kind of work we organise for companies like yours. I suggest a thirty-minute Process Check: you’ll find the link below to pick a time that suits you.',
+        input: 'Good evening, I set up a limited company in January and I’m looking for a firm to handle the bookkeeping and payroll for 4 employees. Could you give me an idea of the cost? Thanks, Marco Serra',
+        fields: [['Contact', 'Marco Serra'], ['Client', 'New company, 4 staff'], ['Request', 'Bookkeeping and payroll'], ['Priority', 'High, matches the firm’s ideal client']],
+        draft: 'Good evening Marco, thank you for getting in touch. We look after several newly formed companies, for both bookkeeping and payroll. To give you an accurate quote I suggest a first fifteen-minute call: you’ll find the link below to pick a time.',
         done: ['Reply sent at 9:49 pm', 'Contact saved in the CRM', 'Reminder if no booking within 3 days'] },
       { id: 'inbox', tab: 'Client email', src: 'Incoming email · 8:12 am',
         input: 'Good morning, could you let me know by Friday whether you have received all the documents for my tax return? Kind regards, Giulia Fadda',
@@ -169,7 +199,7 @@ const T = {
     facts: [['15,000+', 'cases handled with the software we built'], ['30 minutes', 'for the Process Check, no obligation'], ['Olbia, Italy', 'home base, operating arm of L3 Innovation Srl']],
     clients: 'They chose Ovia',
     sysH: 'Two systems working together.',
-    sysP: 'Marketing brings the enquiries in, automation handles them without wasted time. In every service the dot marks where a person decides.',
+    sysP: 'Marketing brings new clients to the firm, automation takes repetitive work off your people. In every service the dot marks where someone at the firm decides.',
     methodH: 'One method, four steps.',
     methodP: 'No sudden transformation: we start from the problem that costs you most and solve it with a result you can measure.',
     steps: [
@@ -217,6 +247,7 @@ function pagina(lang) {
   // Dati per ovia-home.js (testi e scenari): nessun testo cablato nel JS.
   const data = {
     q: { by: t.qBy, pending: t.qPending, ok: t.qOk, sent: t.qSent, waiting: t.qWaiting, count1: t.count1, countN: t.countN, empty: t.empty, pool: t.pool },
+    story: t.tale,
     sim: { stages: t.stages, arrived: t.arrived, understood: t.understood, drafted: t.drafted, result: t.result,
       approve: t.approveBtn, edit: t.edit, editDone: t.editDone, reject: t.reject, rejected: t.rejected, yourPart: t.yourPart,
       again: t.again, restart: t.restart, discover: t.discover,
@@ -230,10 +261,11 @@ function pagina(lang) {
 
   return head({ title: t.title, description: t.desc, path: '/', lang, alt: ALT, jsonld, extra }) + header('home', lang, ALT) + `
 <main class="hx-home">
-  <section class="hx is-blue" aria-labelledby="hx-h1">
+  <section class="hx" aria-labelledby="hx-h1">
     <canvas class="hx-field" aria-hidden="true"></canvas>
     <div class="ov-wrap hx-grid">
       <div class="hx-copy">
+        <p class="hx-eyebrow">${esc(t.eyebrow)}</p>
         <h1 id="hx-h1">${esc(t.h1)}</h1>
         <p class="ov-lead">${esc(t.lead)}</p>
       </div>
@@ -253,7 +285,19 @@ function pagina(lang) {
     </div>
   </section>
 
-  ${manifesto(t.manifesto, t.manifestoSub, lang === 'en' ? 'The meaning of the dot' : 'Il significato del pallino')}
+  <section class="st-sec" data-story aria-labelledby="st-h">
+    <div class="st-pin">
+      <canvas class="st-cv" aria-hidden="true"></canvas>
+      <div class="ov-wrap st-grid">
+        <div class="st-copy">
+          <p class="st-eyebrow" id="st-h">${esc(t.tale.title)}</p>
+          <ol class="st-steps">${t.tale.steps.map(([k, h, p], i) => `<li${i === 0 ? ' class="is-on"' : ''}><p class="st-k">${esc(k)}</p><h2>${esc(h)}</h2><p class="st-p">${esc(p)}</p>${i === 4 ? `<a class="hm-link" href="#sistema">${esc(t.tale.next)}</a>` : ''}</li>`).join('')}</ol>
+          <div class="st-bar" aria-hidden="true">${t.tale.steps.map(() => '<i></i>').join('')}</div>
+          <ul class="st-legend">${t.tale.legend.map(([k, l]) => `<li class="lg-${k}">${esc(l)}</li>`).join('')}</ul>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <section class="ov-section sx-sec" id="sistema"><div class="ov-wrap">
     <h2 class="ov-h2">${esc(t.simH)}</h2>
@@ -282,7 +326,7 @@ function pagina(lang) {
     ${sistemi(lang)}
   </div></section>
 
-  <section class="ov-section is-blue" id="metodo"><div class="ov-wrap">
+  <section class="ov-section" id="metodo" style="padding-top:0"><div class="ov-wrap">
     <h2 class="ov-h2">${esc(t.methodH)}</h2>
     <p class="ov-lead">${esc(t.methodP)}</p>
     <ol class="hm-steps">${t.steps.map(([h, p]) => `<li><h3>${esc(h)}</h3><p>${esc(p)}</p></li>`).join('')}</ol>
@@ -317,7 +361,8 @@ ${lang === 'it' ? `<dialog class="ov-film" id="ov-film" aria-label="Video: come 
 </dialog>` : ''}
 </main>
 <script type="application/json" id="hx-data">${JSON.stringify(data).replace(/</g, '\\u003c')}</script>
-<script src="/assets/ovia-home.js" defer></script>` + footer(lang);
+<script src="/assets/ovia-home.js" defer></script>
+<script src="/assets/ovia-marquee.js" defer></script>` + footer(lang);
 }
 
 export function buildHome() {

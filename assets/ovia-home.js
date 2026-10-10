@@ -122,6 +122,154 @@ const ovHome = () => {
     v.addEventListener('ended', () => setTimeout(() => film.open && film.close(), 600));
   } else if (filmBtn) filmBtn.hidden = true;
 
+  /* ---------- La mattina di uno studio (racconto guidato dallo scroll) ----------
+     Lo sfondo mostra il lavoro reale dello studio: arriva tutto insieme (forme = canali),
+     Ovia lo collega ai clienti, lo trasforma in bozze, poi le mette in coda accanto al
+     pallino. Nell'ultimo passo le bozze vengono approvate una alla volta mentre si scorre.
+     Tutto dipende dalla posizione di scroll: avanti e indietro, il racconto si riavvolge. */
+  (() => {
+    const sec = document.querySelector('[data-story]');
+    if (!sec || !D.story) return;
+    const pin = sec.querySelector('.st-pin'), cv = sec.querySelector('.st-cv');
+    if (!cv.getContext) return;
+    const ctx = cv.getContext('2d');
+    const lis = [...sec.querySelectorAll('.st-steps li')], bars = [...sec.querySelectorAll('.st-bar i')];
+    const S = D.story, NC = 4, N = 136;
+    const INK = '11,12,16', BLUE = '0,51,255';
+    let rnd = 7;
+    const rand = () => { rnd = (rnd * 16807) % 2147483647; return (rnd - 1) / 2147483646; };
+    const P = Array.from({ length: N }, (_, i) => ({ c: i % NC, type: Math.floor(rand() * 4), seed: rand() * 6.28, j: Math.floor(i / NC) }));
+    const perC = Math.ceil(N / NC);
+    let W = 0, H = 0, R = null, T0 = [], T1 = [], T2 = [], T3 = [], cards2 = [], cards3 = [], dotP = null, mobile = false;
+    const ease = t => t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+    const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+    const lines = (box, j) => {
+      // le bozze sono "testo": righe di puntini di lunghezza decrescente
+      const pad = 14, top = box.y + 38, gap = 7.5, cols = Math.max(6, Math.min(15, Math.floor((box.w - pad * 2) / gap)));
+      const widths = [1, .86, .62, .9, .4];
+      let k = j, row = 0;
+      while (row < 8) { const n = Math.max(3, Math.floor(cols * widths[row % widths.length])); if (k < n) return [box.x + pad + k * gap + 3, top + row * 11]; k -= n; row++; }
+      return [box.x + pad, top];
+    };
+    const layout = () => {
+      const r = cv.getBoundingClientRect(), dpr = Math.min(2, window.devicePixelRatio || 1);
+      W = r.width; H = r.height; mobile = W < 861;
+      cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr); ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      const wrap = Math.min(1200, W) , left = (W - wrap) / 2 + (mobile ? 16 : 40);
+      R = RM ? { x: mobile ? 16 : left, y: H * .06, w: Math.min(W - (mobile ? 32 : left * 2), 860), h: H * .88 } : mobile ? { x: 16, y: H * .44, w: W - 32, h: H * .52 } : { x: left + 470, y: H * .1, w: Math.min(W - (left + 470) - 24, 700), h: H * .8 };
+      rnd = 11;
+      T0 = P.map(() => [R.x + rand() * R.w, R.y + rand() * R.h]);
+      const cx = [R.x + R.w * .26, R.x + R.w * .74, R.x + R.w * .26, R.x + R.w * .74], cy = [R.y + R.h * .28, R.y + R.h * .28, R.y + R.h * .74, R.y + R.h * .74];
+      T1 = P.map(p => { const a = p.j * 2.39996, rr = 5.2 * Math.sqrt(p.j + 1); return [cx[p.c] + Math.cos(a) * rr, cy[p.c] + Math.sin(a) * rr]; });
+      const cw = R.w * .44, ch = Math.min(118, R.h * .36);
+      cards2 = cx.map((x, i) => ({ x: x - cw / 2, y: cy[i] - ch / 2, w: cw, h: ch }));
+      T2 = P.map(p => lines(cards2[p.c], p.j));
+      const qw = R.w * (mobile ? .64 : .6), qh = Math.min(mobile ? 88 : 90, (R.h - 3 * 12) / 4), qx = R.x, qy = R.y + (R.h - (4 * qh + 3 * 12)) / 2;
+      cards3 = [0, 1, 2, 3].map(i => ({ x: qx, y: qy + i * (qh + 12), w: qw, h: qh }));
+      T3 = P.map(p => lines(cards3[p.c], p.j));
+      const dr = mobile ? Math.min((R.w - qw) * .26, 34) : Math.min(R.w * .13, 58);
+      dotP = { x: R.x + qw + (R.w - qw) / 2, y: R.y + R.h / 2, r: dr };
+    };
+    const progress = () => {
+      const r = sec.getBoundingClientRect(), top = pin.offsetTop === 0 ? 0 : 0;
+      const head = mobile ? 64 : 72, total = sec.offsetHeight - pin.offsetHeight;
+      return clamp((head - r.top) / Math.max(1, total), 0, 1);
+    };
+    const seg = (p, s) => ease(clamp((p - (s + .55) / 5) / (.45 / 5), 0, 1));
+    const fit = (t, mw) => { if (ctx.measureText(t).width <= mw) return t; while (t.length > 1 && ctx.measureText(t + '…').width > mw) t = t.slice(0, -1); return t.trimEnd() + '…'; };
+    const roundRect = (x, y, w, h, r) => { ctx.beginPath(); ctx.moveTo(x + r, y); ctx.arcTo(x + w, y, x + w, y + h, r); ctx.arcTo(x + w, y + h, x, y + h, r); ctx.arcTo(x, y + h, x, y, r); ctx.arcTo(x, y, x + w, y, r); ctx.closePath(); };
+    const shape = (type, x, y, s) => {
+      ctx.beginPath();
+      if (type === 0) ctx.arc(x, y, s, 0, 6.2832);
+      else if (type === 1) ctx.rect(x - s, y - s, s * 2, s * 2);
+      else if (type === 2) { ctx.moveTo(x, y - s * 1.2); ctx.lineTo(x + s * 1.1, y + s * .9); ctx.lineTo(x - s * 1.1, y + s * .9); ctx.closePath(); }
+      else { ctx.moveTo(x, y - s * 1.25); ctx.lineTo(x + s * 1.25, y); ctx.lineTo(x, y + s * 1.25); ctx.lineTo(x - s * 1.25, y); ctx.closePath(); }
+      ctx.fill();
+    };
+    let lastStep = -1;
+    const draw = now => {
+      const p = RM ? .9 : progress(), tm = now / 1000;
+      const step = Math.min(4, Math.floor(p * 5));
+      if (step !== lastStep) { lis.forEach((li, i) => li.classList.toggle('is-on', i === step)); lastStep = step; }
+      bars.forEach((b, i) => b.style.setProperty('--f', clamp(p * 5 - i, 0, 1).toFixed(3)));
+      const a1 = seg(p, 0), a2 = seg(p, 1), a3 = seg(p, 2);
+      const appr = clamp((p - .82) / .15, 0, 1) * 4; // bozze approvate (0..4)
+      ctx.clearRect(0, 0, W, H);
+      // carte (bozze), poi coda
+      const cardAlpha = a2 * (1 - 0) ;
+      if (a2 > .01) {
+        for (let i = 0; i < NC; i++) {
+          const A = cards2[i], B = cards3[i];
+          const x = A.x + (B.x - A.x) * a3, y = A.y + (B.y - A.y) * a3, w = A.w + (B.w - A.w) * a3, h = A.h + (B.h - A.h) * a3;
+          const done = appr > i + .5;
+          ctx.globalAlpha = a2;
+          roundRect(x, y, w, h, 8); ctx.fillStyle = '#fff'; ctx.fill();
+          ctx.lineWidth = 1; ctx.strokeStyle = 'rgba(' + INK + ',' + (done ? .1 : .16) + ')'; ctx.stroke();
+          ctx.fillStyle = 'rgba(' + INK + ',.92)'; ctx.font = (mobile ? '600 12px' : '600 13px') + ' "Instrument Sans", sans-serif'; ctx.textBaseline = 'alphabetic';
+          ctx.fillText(fit(S.cards[i], w - 28 - (mobile ? 78 : 96) * a3), x + 14, y + 24);
+          if (a3 > .02) {
+            const lab = done ? S.ok : S.wait; ctx.font = '600 11.5px "Instrument Sans", sans-serif';
+            const tw = ctx.measureText(lab).width + 26, px = x + w - tw - 10, py = y + 10;
+            ctx.globalAlpha = a2 * a3;
+            roundRect(px, py, tw, 20, 10); ctx.fillStyle = done ? 'rgba(' + INK + ',1)' : 'rgba(' + BLUE + ',.1)'; ctx.fill();
+            ctx.fillStyle = done ? '#fff' : 'rgba(' + BLUE + ',1)';
+            ctx.beginPath(); ctx.arc(px + 10, py + 10, 3, 0, 6.2832); ctx.fill();
+            ctx.fillText(lab, px + 18, py + 14);
+            // filo tra la bozza e il pallino
+            if (!done) { ctx.globalAlpha = a2 * a3 * .5; ctx.setLineDash([3, 4]); ctx.strokeStyle = 'rgba(' + BLUE + ',1)'; ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(x + w, y + h / 2); ctx.lineTo(dotP.x - dotP.r - 8, dotP.y); ctx.stroke(); ctx.setLineDash([]); }
+          }
+          ctx.globalAlpha = 1;
+        }
+      }
+      // nomi dei clienti mentre il lavoro si raggruppa
+      const lab1 = a1 * (1 - a2);
+      if (lab1 > .01) {
+        ctx.globalAlpha = lab1; ctx.fillStyle = 'rgba(' + INK + ',.85)'; ctx.font = '600 13px "Instrument Sans", sans-serif'; ctx.textAlign = 'center';
+        for (let i = 0; i < NC; i++) { const c = cards2[i]; ctx.fillText(S.clients[i], c.x + c.w / 2, c.y - 8); }
+        ctx.textAlign = 'left'; ctx.globalAlpha = 1;
+      }
+      // il pallino
+      if (a3 > .01) {
+        const calm = clamp(appr - 3, 0, 1), pr = dotP.r * (.6 + .4 * a3) * (1 - .45 * calm);
+        const all = appr >= 3.99;
+        ctx.globalAlpha = a3;
+        if (!RM && calm < 1) for (let k = 0; k < 2; k++) { const ph = ((tm * .31 + k * .5) % 1); ctx.beginPath(); ctx.arc(dotP.x, dotP.y, pr * (1 + ph * .5), 0, 6.2832); ctx.strokeStyle = 'rgba(' + BLUE + ',' + (.4 * (1 - ph) * (1 - calm)).toFixed(3) + ')'; ctx.lineWidth = 1; ctx.stroke(); }
+        ctx.beginPath(); ctx.arc(dotP.x, dotP.y, pr, 0, 6.2832); ctx.fillStyle = 'rgba(' + BLUE + ',1)'; ctx.fill();
+        ctx.fillStyle = 'rgba(' + INK + ',.75)'; ctx.font = (mobile ? '600 11.5px' : '600 13px') + ' "Instrument Sans", sans-serif'; ctx.textAlign = 'center';
+        const cnt = S.count.replace('{n}', Math.floor(appr + .0001)), ty = dotP.y + dotP.r * 1.5 + 18;
+        if (mobile) { const [a, b] = cnt.split(/ (?=appr)/); ctx.fillText(a, dotP.x, ty); if (b) ctx.fillText(b, dotP.x, ty + 15); } else ctx.fillText(cnt, dotP.x, ty);
+        ctx.textAlign = 'left'; ctx.globalAlpha = 1;
+        if (!all) {}
+      }
+      // il lavoro: forme = canali
+      for (let i = 0; i < N; i++) {
+        const q = P[i];
+        let x = T0[i][0], y = T0[i][1];
+        const wob = (1 - a1);
+        x += Math.sin(tm * .9 + q.seed) * 7 * wob; y += Math.cos(tm * .7 + q.seed * 1.3) * 5 * wob;
+        x += (T1[i][0] - x) * a1; y += (T1[i][1] - y) * a1;
+        x += (T2[i][0] - x) * a2; y += (T2[i][1] - y) * a2;
+        x += (T3[i][0] - x) * a3; y += (T3[i][1] - y) * a3;
+        const done = appr > q.c + .5;
+        const s = 2.6 - a2 * 0.8;
+        if (a3 > .3 && !done) ctx.fillStyle = 'rgba(' + BLUE + ',' + (.55 + .35 * a3).toFixed(3) + ')';
+        else ctx.fillStyle = 'rgba(' + INK + ',' + (done ? .28 : .78 - .25 * a2).toFixed(3) + ')';
+        if (a2 > .6) { ctx.beginPath(); ctx.arc(x, y, 1.8, 0, 6.2832); ctx.fill(); }
+        else shape(q.type, x, y, s);
+      }
+    };
+    let raf = 0, on = false;
+    const loop = now => { raf = 0; if (!on) return; draw(now); raf = requestAnimationFrame(loop); };
+    const start = () => { if (!raf && on) raf = requestAnimationFrame(loop); };
+    const go = () => { layout(); draw(performance.now()); };
+    (document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve()).then(go);
+    go();
+    addEventListener('resize', go);
+    if (RM) return;
+    if ('IntersectionObserver' in window) new IntersectionObserver(es => { on = es[0].isIntersecting; start(); }).observe(sec);
+    else { on = true; start(); }
+  })();
+
   /* ---------- 1. Coda di approvazione ---------- */
   const stage = document.querySelector('[data-hx-stage]');
   if (stage) {
