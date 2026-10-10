@@ -33,7 +33,9 @@ export function head({ title, description, path, lang = 'it', type = 'website', 
 <meta name="description" content="${esc(description)}">
 <link rel="canonical" href="${esc(SITE.url + self)}">
 ${itP && enP ? alts : ''}
+<link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/brand/ovia-app-icon-512.png">
 <meta name="theme-color" content="#ffffff">
 <meta property="og:type" content="${type}">
 <meta property="og:url" content="${esc(SITE.url + self)}">

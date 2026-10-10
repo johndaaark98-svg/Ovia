@@ -205,7 +205,7 @@ function pagina(lang) {
 
   const jsonld = [{ '@context': 'https://schema.org', '@graph': [
     { '@type': 'WebSite', '@id': SITE.url + '/#website', url: SITE.url + '/', name: 'Ovia', inLanguage: lang === 'en' ? 'en' : 'it-IT', publisher: { '@id': SITE.url + '/#organization' } },
-    { '@type': 'Organization', '@id': SITE.url + '/#organization', name: 'Ovia', url: SITE.url, email: SITE.email, logo: SITE.url + '/favicon.svg',
+    { '@type': 'Organization', '@id': SITE.url + '/#organization', name: 'Ovia', url: SITE.url, email: SITE.email, logo: SITE.url + '/assets/brand/ovia-logo.png',
       slogan: 'Marketing & automation systems for business', legalName: 'L3 Innovation Srl', vatID: 'IT02882330901',
       parentOrganization: { '@type': 'Organization', name: 'L3 Innovation Srl' },
       address: { '@type': 'PostalAddress', addressLocality: 'Olbia', addressCountry: 'IT' },
@@ -231,6 +231,7 @@ function pagina(lang) {
   return head({ title: t.title, description: t.desc, path: '/', lang, alt: ALT, jsonld, extra }) + header('home', lang, ALT) + `
 <main class="hx-home">
   <section class="hx" aria-labelledby="hx-h1">
+    <canvas class="hx-field" aria-hidden="true"></canvas>
     <div class="ov-wrap hx-grid">
       <div class="hx-copy">
         <h1 id="hx-h1">${esc(t.h1)}</h1>

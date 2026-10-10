@@ -45,14 +45,14 @@ export function cover(slug, prodottoId, variant = 'wide') {
     const xm = snap(x0 + (hub[0] - x0) * (.35 + rnd() * .4));
     const ty = snap(hub[1] + (rnd() - .5) * H * .45);
     traces += `<path d="M${x0} ${y0}H${xm}V${ty}H${hub[0] + (right ? -1 : 1) * 44 * gs / 2}" fill="none" stroke="#9aa6b8" stroke-width="2"/>`;
-    pads += `<rect x="${x0 - 7}" y="${y0 - 7}" width="14" height="14" fill="#fff" stroke="#0d1b2e" stroke-width="2"/>`;
+    pads += `<rect x="${x0 - 7}" y="${y0 - 7}" width="14" height="14" fill="#fff" stroke="#0b0c10" stroke-width="2"/>`;
   }
   const accent = Math.floor(rnd() * 9);
-  pads = pads.split('<rect').map((r, i) => i === accent + 1 ? r.replace('fill="#fff"', 'fill="#1f47c2"').replace('stroke="#0d1b2e"', 'stroke="#1f47c2"') : r).join('<rect');
-  const g = (byId[prodottoId] || PRODOTTI[0]).glyph.replace(/class="g-line"/g, 'fill="none" stroke="#0d1b2e" stroke-width="1.6"').replace(/class="g-node"/g, 'fill="#0d1b2e"').replace(/class="g-core"/g, 'fill="#1f47c2"');
+  pads = pads.split('<rect').map((r, i) => i === accent + 1 ? r.replace('fill="#fff"', 'fill="#0033ff"').replace('stroke="#0b0c10"', 'stroke="#0033ff"') : r).join('<rect');
+  const g = (byId[prodottoId] || PRODOTTI[0]).glyph.replace(/class="g-line"/g, 'fill="none" stroke="#0b0c10" stroke-width="1.6"').replace(/class="g-node"/g, 'fill="#0b0c10"').replace(/class="g-core"/g, 'fill="#0033ff"');
   const plate = 120 * gs / 1.35;
-  const mark = (x, y, dx, dy) => `<path d="M${x} ${y + dy * 28}V${y}H${x + dx * 28}" fill="none" stroke="#0d1b2e" stroke-width="2"/>`;
-  return `<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Illustrazione" xmlns="http://www.w3.org/2000/svg"><rect width="${W}" height="${H}" fill="#f3f5f8"/>${grid}${traces}${pads}<rect x="${hub[0] - plate / 2}" y="${hub[1] - plate / 2}" width="${plate}" height="${plate}" fill="#fff" stroke="#0d1b2e" stroke-width="2"/><g transform="translate(${hub[0] - 44 * gs / 1.6} ${hub[1] - 44 * gs / 1.6}) scale(${gs / 1.6})">${g}</g>${mark(40, 40, 1, 1)}${mark(W - 40, 40, -1, 1)}${mark(40, H - 40, 1, -1)}${mark(W - 40, H - 40, -1, -1)}</svg>`;
+  const mark = (x, y, dx, dy) => `<path d="M${x} ${y + dy * 28}V${y}H${x + dx * 28}" fill="none" stroke="#0b0c10" stroke-width="2"/>`;
+  return `<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Illustrazione" xmlns="http://www.w3.org/2000/svg"><rect width="${W}" height="${H}" fill="#f5f6f8"/>${grid}${traces}${pads}<rect x="${hub[0] - plate / 2}" y="${hub[1] - plate / 2}" width="${plate}" height="${plate}" fill="#fff" stroke="#0b0c10" stroke-width="2"/><g transform="translate(${hub[0] - 44 * gs / 1.6} ${hub[1] - 44 * gs / 1.6}) scale(${gs / 1.6})">${g}</g>${mark(40, 40, 1, 1)}${mark(W - 40, 40, -1, 1)}${mark(40, H - 40, 1, -1)}${mark(W - 40, H - 40, -1, -1)}</svg>`;
 }
 
 function blocco(b, allowed, lang = 'it') {

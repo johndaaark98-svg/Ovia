@@ -25,6 +25,88 @@ const ovHome = () => {
   const holdToApprove = window.ovHold;
   if (!holdToApprove) return;
 
+  /* ---------- 0. Campo di puntini dietro l'apertura ----------
+     Una griglia di puntini quasi invisibile. Il pallino "respira": ogni 3,2 secondi
+     un'onda leggera parte da lui e attraversa la griglia. Il puntatore illumina i
+     puntini vicini. Quando il visitatore approva, l'onda è blu.
+     Si ferma fuori schermo e con le animazioni ridotte resta una griglia statica. */
+  const field = (() => {
+    const sec = document.querySelector('.hx'), cv = sec && sec.querySelector('.hx-field');
+    const origin = sec && sec.querySelector('[data-hx-dot]');
+    if (!cv || !origin || !cv.getContext) return { pulse() {} };
+    const ctx = cv.getContext('2d');
+    const GAP = 26, SPEED = 300, SIGMA = 44, PERIOD = 3200, HALO = 120;
+    let W = 0, H = 0, pts = new Float32Array(0), ox = 0, oy = 0, maxR = 1;
+    let mx = -1e4, my = -1e4, mI = 0, mTarget = 0, waves = [], raf = 0, onScreen = true, lastAmbient = 0;
+    const size = () => {
+      const dpr = Math.min(2, window.devicePixelRatio || 1), r = sec.getBoundingClientRect();
+      W = r.width; H = r.height;
+      cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      const list = [], offx = (W % GAP) / 2, offy = (H % GAP) / 2;
+      for (let y = offy; y <= H; y += GAP) for (let x = offx; x <= W; x += GAP) list.push(x, y);
+      pts = new Float32Array(list);
+      const d = origin.getBoundingClientRect();
+      ox = d.left + d.width / 2 - r.left; oy = d.top + d.height / 2 - r.top;
+      maxR = Math.hypot(Math.max(ox, W - ox), Math.max(oy, H - oy)) + SIGMA * 2;
+    };
+    const draw = now => {
+      ctx.clearRect(0, 0, W, H);
+      mI += (mTarget - mI) * 0.08;
+      const live = [];
+      for (const w of waves) { const rr = (now - w.t0) / 1000 * SPEED; if (rr < maxR) live.push([rr, w.a * (1 - rr / maxR), w.blue]); }
+      waves = waves.filter(w => (now - w.t0) / 1000 * SPEED < maxR);
+      const s2 = 2 * SIGMA * SIGMA, h2 = 2 * HALO * HALO;
+      for (let i = 0; i < pts.length; i += 2) {
+        const x = pts[i], y = pts[i + 1];
+        const d = Math.hypot(x - ox, y - oy);
+        let I = 0, B = 0;
+        for (let k = 0; k < live.length; k++) {
+          const dd = d - live[k][0];
+          if (dd > 3 * SIGMA || dd < -3 * SIGMA) continue;
+          const g = Math.exp(-dd * dd / s2) * live[k][1];
+          I += g; if (live[k][2]) B += g;
+        }
+        if (mI > 0.01) { const mdx = x - mx, mdy = y - my; I += Math.exp(-(mdx * mdx + mdy * mdy) / h2) * 0.7 * mI; }
+        if (I > 1) I = 1;
+        const rad = 0.85 + 1.15 * I;
+        if (B > 0.04) {
+          ctx.fillStyle = 'rgba(0,51,255,' + Math.min(0.85, 0.15 + B).toFixed(3) + ')';
+        } else {
+          ctx.fillStyle = 'rgba(11,12,16,' + (0.08 + 0.34 * I).toFixed(3) + ')';
+        }
+        ctx.beginPath(); ctx.arc(x, y, rad, 0, 6.2832); ctx.fill();
+      }
+    };
+    const loop = now => {
+      raf = 0;
+      if (!onScreen || document.hidden) return;
+      if (now - lastAmbient > PERIOD) { waves.push({ t0: now, a: 0.55, blue: false }); lastAmbient = now; }
+      draw(now);
+      raf = requestAnimationFrame(loop);
+    };
+    const start = () => { if (!raf && !RM) raf = requestAnimationFrame(loop); };
+    size();
+    if (RM) { draw(performance.now()); }
+    addEventListener('resize', () => { size(); if (RM) draw(performance.now()); });
+    if ('ResizeObserver' in window) new ResizeObserver(() => { size(); if (RM) draw(performance.now()); }).observe(sec);
+    if (!RM) {
+      sec.addEventListener('pointermove', e => {
+        if (e.pointerType !== 'mouse') return;
+        const r = sec.getBoundingClientRect(); mx = e.clientX - r.left; my = e.clientY - r.top; mTarget = 1;
+      });
+      sec.addEventListener('pointerleave', () => { mTarget = 0; });
+      document.addEventListener('visibilitychange', start);
+      // parte quando il browser è libero, così non pesa sul caricamento
+      (window.requestIdleCallback || (f => setTimeout(f, 400)))(() => {
+        if ('IntersectionObserver' in window) new IntersectionObserver(es => { onScreen = es[0].isIntersecting; start(); }).observe(sec);
+        start();
+      }, { timeout: 1500 });
+      draw(performance.now());
+    }
+    return { pulse() { if (RM) return; waves.push({ t0: performance.now(), a: 1, blue: true }); start(); } };
+  })();
+
   /* ---------- 1. Coda di approvazione ---------- */
   const stage = document.querySelector('[data-hx-stage]');
   if (stage) {
@@ -86,9 +168,10 @@ const ovHome = () => {
         top.classList.add('is-done', 'is-ok');
         top.querySelector('.st').textContent = Q.ok;
         nEl.textContent = live().length;
-        setTimeout(() => { top.classList.add('is-out'); top.setAttribute('aria-hidden', 'true'); layout(); }, RM ? 0 : 480);
+        setTimeout(() => { top.classList.add('is-out'); top.setAttribute('aria-hidden', 'true'); setTimeout(layout, RM ? 0 : 220); }, RM ? 0 : 480);
         setTimeout(() => top.remove(), RM ? 50 : 1100);
         burst();
+        field.pulse();
         dot.classList.remove('is-go'); void dot.offsetWidth; dot.classList.add('is-go');
         approved++;
         cEl.textContent = approved === 1 ? Q.count1 : Q.countN.replace('{n}', approved);

@@ -347,7 +347,7 @@
       };
     })('init');
     C.Cal('init', NS, { origin: 'https://cal.com' });
-    C.Cal.ns[NS]('ui', { theme: 'light', cssVarsPerTheme: { light: { 'cal-brand': '#0d1b2e' } }, hideEventTypeDetails: false, layout: 'month_view' });
+    C.Cal.ns[NS]('ui', { theme: 'light', cssVarsPerTheme: { light: { 'cal-brand': '#0b0c10' } }, hideEventTypeDetails: false, layout: 'month_view' });
   }
   var near = function (e) { if (e.target.closest && e.target.closest('[data-cal-link], [data-hx-cta]')) load(); };
   document.addEventListener('pointerover', near, { passive: true });
