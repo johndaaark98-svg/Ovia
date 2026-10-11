@@ -1,0 +1,644 @@
+{
+  "title": "Nuove regole AI aziende 2026: cosa cambia dal 23 ottobre",
+  "slug": "nuove-regole-ai-aziende-2026-decreto-179-studi-pmi",
+  "meta_description": "Decreto 179/2026 in vigore dal 23 ottobre: obblighi su lavoro, sicurezza e sanzioni fino al 7% del fatturato. Cosa devono fare studi e PMI italiane subito.",
+  "lead": "Dal 23 ottobre 2026 il decreto legislativo 179/2026 porta obblighi concreti per chi usa l'AI in azienda o in studio. In parallelo, il CEO di Microsoft dichiara che ogni modello va trattato come potenzialmente compromesso. Per studi professionali e PMI, il tempo delle sperimentazioni libere è finito.",
+  "tags": [
+    "nuove regole AI aziende 2026",
+    "decreto 179/2026",
+    "AI Act Italia",
+    "intelligenza artificiale studi professionali",
+    "governance AI PMI"
+  ],
+  "intro": [
+    "Il decreto legislativo 7 ottobre 2026, n. 179 è stato pubblicato in Gazzetta Ufficiale l'8 ottobre ed entra in vigore il **23 ottobre 2026**. Non è un documento di principi: contiene articoli precisi su decisioni sul personale, valutazione dei rischi, formazione, sandbox e sanzioni. Per uno studio professionale o una PMI che già usa strumenti AI, alcune di queste disposizioni scattano immediatamente.",
+    "Nello stesso fine settimana, Satya Nadella — CEO di Microsoft — ha pubblicato un lungo intervento su X in cui ha scritto senza giri di parole: **«Dobbiamo assumere che un modello sia compromesso e tenerlo sotto controllo fin dall'inizio»**. Ha paragonato il meccanismo di controllo necessario a un \"freno d'emergenza\". Non è un allarme isolato: è la direzione che stanno prendendo i principali operatori del settore, e coincide esattamente con ciò che la normativa italiana ora richiede.",
+    "Questo articolo spiega cosa cambia davvero per chi non sviluppa AI ma la **usa** ogni giorno per gestire clienti, documenti, comunicazioni e decisioni. E cosa serve fare — concretamente — per non trovarsi esposti a sanzioni, contestazioni dei lavoratori o perdita di fiducia da parte dei clienti."
+  ],
+  "punti_chiave": [
+    "Le decisioni su assunzioni, licenziamenti e disciplina non possono essere delegate in modo esclusivo a un algoritmo: serve una persona fisica con potere decisionale reale.",
+    "I rischi legati all'AI che influenza i ritmi di lavoro o i processi decisionali devono entrare nel Documento di valutazione dei rischi (DVR).",
+    "Le sanzioni arrivano fino a 35 milioni di euro o al 7% del fatturato globale annuo.",
+    "Satya Nadella ha chiesto pubblicamente di trattare ogni modello AI come potenzialmente compromesso e di dotarsi di un \"freno d'emergenza\" per poterlo bloccare.",
+    "La sandbox normativa italiana è istituita dal decreto ma non è ancora operativa: servono ulteriori provvedimenti di AgID e ACN.",
+    "Gli ordini professionali hanno fino al 23 aprile 2027 per adeguare i percorsi formativi sull'AI."
+  ],
+  "sezioni": [
+    {
+      "h2": "Cosa prevede il decreto 179/2026 sull'intelligenza artificiale",
+      "paragrafi": [
+        "Il decreto 179/2026 non nasce dal nulla: dà attuazione alla legge italiana sull'AI, la [n. 132 del settembre 2025](/blog/legge-132-2025-ai-professionisti-informativa-clienti.html), e recepisce l'AI Act europeo adattandolo all'ordinamento nazionale. Rispetto alla legge quadro, il decreto scende nel dettaglio: chi controlla, come si controlla, cosa si rischia se non si rispettano le regole.",
+        "Le autorità di riferimento sono **AgID** (Agenzia per l'Italia Digitale) e **ACN** (Agenzia per la Cybersicurezza Nazionale). A loro spetta la vigilanza e la gestione della sandbox. Le sanzioni previste [arrivano fino a 35 milioni di euro o al 7% del fatturato globale annuo](https://www.innovationpost.it/tecnologie/industrial-it/ai-nuove-regole-per-le-imprese-dal-23-ottobre-cosa-cambia-e-cose-la-sandbox-per-le-sperimentazioni/), a seconda di quale dei due valori sia più elevato. Una soglia che anche per una PMI di medie dimensioni può risultare significativa.",
+        "Per gli studi professionali vale un elemento aggiuntivo: gli ordini e i collegi professionali hanno **sei mesi** dall'entrata in vigore del decreto — quindi fino al 23 aprile 2027 — per aggiornare i propri regolamenti di formazione e includere contenuti sull'AI, affrontandone gli aspetti tecnici, giuridici e deontologici. Chi oggi usa l'AI nel proprio studio senza averla mai studiata formalmente dovrà farlo attraverso percorsi riconosciuti dall'ordine."
+      ],
+      "blocco": {
+        "tipo": "stats",
+        "titolo": "Le cifre del decreto 179/2026",
+        "voci": [
+          {
+            "valore": "23 ott. 2026",
+            "testo": "Data di entrata in vigore del decreto legislativo n. 179"
+          },
+          {
+            "valore": "35 mln €",
+            "testo": "Sanzione massima prevista per le violazioni più gravi"
+          },
+          {
+            "valore": "7%",
+            "testo": "Percentuale massima del fatturato globale annuo applicabile come sanzione"
+          },
+          {
+            "valore": "23 apr. 2027",
+            "testo": "Scadenza per gli ordini professionali per aggiornare i regolamenti formativi sull'AI"
+          }
+        ]
+      }
+    },
+    {
+      "h2": "AI e lavoro: quando il licenziamento automatico è nullo",
+      "paragrafi": [
+        "L'articolo 41 del decreto introduce una regola chiara che riguarda chiunque usi l'AI per gestire le risorse umane: **le decisioni finali su assunzioni, modifiche del contratto, licenziamenti e provvedimenti disciplinari non possono essere adottate esclusivamente sulla base di un trattamento automatizzato**. Chi decide deve essere una persona fisica con potere effettivo e autonomo — non qualcuno che si limita a cliccare \"approva\" sul risultato dell'algoritmo.",
+        "La conseguenza più immediata è sul piano della validità degli atti: [un licenziamento adottato in violazione di questo divieto è nullo](https://www.innovationpost.it/tecnologie/industrial-it/ai-nuove-regole-per-le-imprese-dal-23-ottobre-cosa-cambia-e-cose-la-sandbox-per-le-sperimentazioni/). Non annullabile, non contestabile in sede ordinaria: **nullo**. E il consenso del lavoratore non può sanare la violazione.",
+        "Vale la pena chiarire cosa non è vietato: usare l'AI per analizzare le performance, elaborare dati, suggerire valutazioni o supportare i responsabili HR è del tutto lecito. Il problema nasce quando l'algoritmo sostituisce il giudizio umano anziché informarlo. La distinzione tra \"supporto\" e \"delega\" è il cuore della norma — e anche il punto dove molti sistemi attualmente in uso rischiano di essere fuori linea.",
+        "Un ulteriore obbligo riguarda la trasparenza: prima di avviare i trattamenti interessati dalla disciplina, il datore di lavoro deve rispettare gli obblighi informativi già previsti dalla normativa vigente. Il lavoratore può chiedere una spiegazione comprensibile della decisione che lo riguarda, inclusa l'indicazione di come i sistemi AI abbiano influenzato il processo."
+      ],
+      "blocco": {
+        "tipo": "compare",
+        "titolo": "Uso dell'AI nelle HR: lecito vs. vietato",
+        "sinistra": {
+          "badge": "✅ Consentito",
+          "titolo": "AI come supporto alla decisione",
+          "righe": [
+            {
+              "etichetta": "Analisi CV e candidature",
+              "valore": "Sì, se non esclude definitivamente"
+            },
+            {
+              "etichetta": "Valutazione performance",
+              "valore": "Sì, se la decisione finale è umana"
+            },
+            {
+              "etichetta": "Suggerimenti al manager",
+              "valore": "Sì, con giudizio autonomo del manager"
+            },
+            {
+              "etichetta": "Reportistica HR automatizzata",
+              "valore": "Sì"
+            }
+          ]
+        },
+        "destra": {
+          "badge": "🚫 Vietato",
+          "titolo": "AI come decisore esclusivo",
+          "righe": [
+            {
+              "etichetta": "Licenziamento automatizzato",
+              "valore": "Nullo per legge"
+            },
+            {
+              "etichetta": "Provvedimento disciplinare solo da algoritmo",
+              "valore": "Nullo per legge"
+            },
+            {
+              "etichetta": "Approvazione formale senza giudizio reale",
+              "valore": "Non sufficiente"
+            },
+            {
+              "etichetta": "Deroga con consenso del lavoratore",
+              "valore": "Non ammessa"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "h2": "Sicurezza sul lavoro e AI: il DVR deve aggiornarsi",
+      "paragrafi": [
+        "L'articolo 42 del decreto introduce un obbligo che tocca direttamente le aziende che usano l'AI per organizzare il lavoro: se un sistema di intelligenza artificiale **influenza i ritmi produttivi, le modalità di esecuzione delle prestazioni o i processi decisionali rilevanti per la sicurezza**, i rischi connessi devono essere valutati e inseriti nel Documento di valutazione dei rischi (DVR), previsto dall'articolo 28 del D.Lgs. 81/2008.",
+        "Non si tratta di un obbligo generico su qualsiasi software. La norma si applica ai sistemi AI che cambiano concretamente le condizioni nelle quali le persone lavorano: un algoritmo che modifica automaticamente i carichi di lavoro, assegna compiti agli operatori o prende decisioni rilevanti per la sicurezza di un impianto è esattamente il tipo di strumento che entra nell'ambito dell'articolo 42.",
+        "In parallelo, i lavoratori hanno diritto a ricevere **informazione e formazione adeguate** sui rischi specifici associati ai sistemi AI usati in azienda e sulle misure di prevenzione adottate. Questo non è un dettaglio: nelle realtà in cui si usano strumenti AI senza che i dipendenti siano stati informati, si apre un'esposizione sia normativa che reputazionale.",
+        "Per gli studi professionali che usano AI per gestire scadenze, assegnare pratiche o monitorare i carichi di lavoro dei collaboratori, è il momento di verificare se questi strumenti rientrano nell'ambito della norma — e di documentare la valutazione, nel DVR o in un documento equivalente."
+      ],
+      "blocco": {
+        "tipo": "checklist",
+        "titolo": "Il tuo studio o la tua PMI è pronta all'articolo 42?",
+        "voci": [
+          {
+            "titolo": "Mappatura dei sistemi AI in uso",
+            "testo": "Hai un elenco aggiornato di tutti gli strumenti AI che influenzano i processi lavorativi?",
+            "ok": false
+          },
+          {
+            "titolo": "Valutazione dei rischi AI nel DVR",
+            "testo": "I rischi legati a questi strumenti sono stati valutati e inseriti nel Documento di valutazione dei rischi?",
+            "ok": false
+          },
+          {
+            "titolo": "Formazione ai collaboratori",
+            "testo": "I collaboratori sono stati informati su come funzionano i sistemi AI e sui rischi connessi?",
+            "ok": false
+          },
+          {
+            "titolo": "Aggiornamento informativa lavoratori",
+            "testo": "Gli obblighi informativi verso i dipendenti che interagiscono con sistemi AI sono stati rispettati?",
+            "ok": false
+          },
+          {
+            "titolo": "Revisione periodica",
+            "testo": "Esiste una procedura per aggiornare la valutazione quando si adottano nuovi strumenti AI?",
+            "ok": false
+          }
+        ]
+      }
+    },
+    {
+      "h2": "Cosa significa che i modelli AI sono 'compromessi' secondo Nadella",
+      "paragrafi": [
+        "Il 10 ottobre 2026, Satya Nadella — CEO di Microsoft — ha pubblicato un intervento su X che ha fatto discutere. Non per i toni allarmistici, ma per la lucidità con cui ha descritto il problema. Il punto centrale, nella sua formulazione: [«Non possiamo trattare la superintelligenza come un insieme di scatole nere annidate e semplicemente accettare o rifiutare le sue raccomandazioni, risposte e azioni»](https://techcrunch.com/2026/10/10/microsofts-satya-nadella-says-ai-models-need-an-emergency-brake/).",
+        "Nadella non dice che l'AI è inutile. Dice che **va contenuta by design**: separare il modello dal sistema che ne orchestra il lavoro, esternalizzare i controlli, documentare ogni azione significativa con \"prove leggibili dall'uomo e a prova di manomissione\". E — punto che lo distingue da altri interventi simili — afferma che [«dobbiamo assumere che un modello sia compromesso e tenerlo sotto controllo fin dall'inizio. Pensateci come a un freno d'emergenza»](https://www.theverge.com/ai-artificial-intelligence/1009337/satya-nadella-says-we-should-assume-all-ai-models-are-compromised).",
+        "Per uno studio professionale o una PMI, il significato pratico è questo: usare un modello AI senza poterlo fermare, senza tracciare cosa ha fatto e senza un responsabile umano che ne validi le azioni non è una scelta \"prudente ma limitante\". È un'esposizione. Normativa, oggi, con il decreto 179/2026. Reputazionale, sempre, con i clienti che si aspettano che i tuoi strumenti siano sotto controllo.",
+        "Questa posizione non è isolata. Come abbiamo già esaminato nell'articolo sul [controllo degli agenti AI in azienda](/blog/controllo-agenti-ai-azienda-governance-studi-pmi.html), la governance degli strumenti AI non è un lusso per grandi organizzazioni: è il requisito minimo per usare l'AI in modo professionale e difendibile.",
+        "**Attenzione:** Se non puoi fermare un modello AI mentre sta lavorando, non sai cosa ha fatto e non puoi dimostrarlo a un ispettore o a un cliente, stai già violando lo spirito — e in alcuni casi la lettera — del decreto 179/2026 e dell'AI Act. La domanda non è \"usi l'AI?\" ma \"puoi dimostrare come la controlli?\""
+      ]
+    },
+    {
+      "h2": "Cos'è la sandbox AI italiana e chi può usarla",
+      "paragrafi": [
+        "Gli articoli dal 26 al 31 del decreto istituiscono lo **Spazio di sperimentazione italiano per l'AI**, una regulatory sandbox (ambiente regolamentato di test) nel quale le imprese che sviluppano soluzioni AI potranno sperimentarle sotto la supervisione di AgID e ACN, prima di immetterle sul mercato. L'obiettivo dichiarato è ridurre le incertezze regolatorie durante lo sviluppo, non dopo.",
+        "È importante chiarire subito chi può accedere e chi no. [La sandbox è riservata ai fornitori e ai potenziali fornitori di sistemi AI](https://www.innovationpost.it/tecnologie/industrial-it/ai-nuove-regole-per-le-imprese-dal-23-ottobre-cosa-cambia-e-cose-la-sandbox-per-le-sperimentazioni/) — cioè a chi sviluppa e vuole portare sul mercato tecnologie AI. Non è uno strumento per gli studi professionali o le PMI che usano software di terzi. Se usi ChatGPT, un CRM con funzioni AI o un gestionale che integra modelli di linguaggio, la sandbox non ti riguarda direttamente.",
+        "Chi invece sviluppa soluzioni proprie — o è una startup o PMI che costruisce un prodotto AI — troverà nella sandbox una corsia preferenziale: il decreto attribuisce **priorità di accesso alle PMI e alle startup**, secondo criteri che dovranno essere definiti con successivi provvedimenti.",
+        "Un avvertimento pratico: il decreto istituisce formalmente la sandbox, ma per l'apertura concreta agli operatori saranno necessari ulteriori provvedimenti di AgID e ACN. Al momento non esiste ancora uno sportello operativo. Sul piano europeo, l'AI Act aggiornato dal Digital Omnibus prevede che ogni Stato membro abbia almeno uno spazio di sperimentazione operativo entro il **2 agosto 2027**."
+      ],
+      "blocco": {
+        "tipo": "steps",
+        "titolo": "Sandbox AI italiana: lo stato attuale",
+        "voci": [
+          {
+            "titolo": "Decreto pubblicato",
+            "meta": "8 ottobre 2026",
+            "testo": "Il D.Lgs. 179/2026 è in Gazzetta Ufficiale e istituisce formalmente lo Spazio di sperimentazione italiano."
+          },
+          {
+            "titolo": "Entrata in vigore",
+            "meta": "23 ottobre 2026",
+            "testo": "Il decreto diventa pienamente efficace, ma la sandbox non è ancora operativa per le domande delle imprese."
+          },
+          {
+            "titolo": "Provvedimenti attuativi",
+            "meta": "Da definire",
+            "testo": "AgID e ACN devono emanare le regole di accesso, i criteri di ammissione e le procedure operative."
+          },
+          {
+            "titolo": "Scadenza europea",
+            "meta": "2 agosto 2027",
+            "testo": "L'AI Act aggiornato impone agli Stati membri di avere almeno uno spazio di sperimentazione operativo entro questa data."
+          }
+        ]
+      }
+    },
+    {
+      "h2": "Come dimostrare ai clienti e agli ispettori che usi l'AI in modo sicuro",
+      "paragrafi": [
+        "La domanda più concreta che un titolare di studio o un responsabile di PMI dovrebbe porsi oggi è questa: **se domani un ispettore o un cliente mi chiedesse di dimostrare come uso l'AI, cosa gli mostrerei?** Il decreto 179/2026 non chiede di non usare l'AI. Chiede che il suo uso sia controllato, documentato e spiegabile.",
+        "Tre sono gli elementi che fanno la differenza. Il primo è la **tracciabilità**: sapere cosa ha fatto ogni strumento AI, su quali dati, in quale momento e con quale output. Non basta sapere che \"l'AI ha aiutato a redigere il documento\": serve sapere quale modello, con quali istruzioni, e chi ha revisionato il risultato. Il secondo è la **supervisione umana effettiva**: non un timbro formale, ma una persona che comprende il processo e può intervenire. Il terzo è la **documentazione aggiornata**: informative ai clienti, informative ai lavoratori, procedure interne che descrivono come l'AI viene usata e controllata.",
+        "Sul fronte della privacy, la risposta alla domanda \"devo aggiornare l'informativa privacy se uso strumenti AI?\" è quasi sempre sì. Se i dati dei clienti o dei dipendenti vengono elaborati da sistemi AI — anche solo per categorizzare email o generare bozze di documenti — l'informativa deve riflettere questa realtà. È un obbligo che discende già dal GDPR, rafforzato oggi dal quadro dell'AI Act e del decreto 179/2026.",
+        "Un approccio pratico è partire da una mappatura semplice: quali strumenti AI usi, su quali dati agiscono, chi li supervisiona, come viene documentato l'output. Questo schema — che Ovia aiuta a costruire — non serve solo alla compliance: è anche il modo più diretto per comunicare ai clienti che il loro studio lavora con standard professionali. Come abbiamo spiegato nell'articolo sulla [responsabilità professionale e le allucinazioni AI](/blog/allucinazioni-ai-responsabilita-professionale-studi.html), chi firma risponde — e dimostrare il controllo è l'unica difesa reale."
+      ],
+      "blocco": {
+        "tipo": "checklist",
+        "titolo": "Sei in grado di dimostrare un uso sicuro dell'AI?",
+        "voci": [
+          {
+            "titolo": "Registro degli strumenti AI in uso",
+            "testo": "Hai un elenco di tutti i sistemi AI attivi nello studio o in azienda, con il tipo di dati che trattano?",
+            "ok": false
+          },
+          {
+            "titolo": "Informativa clienti aggiornata",
+            "testo": "L'informativa privacy menziona l'uso di strumenti AI nel trattamento dei dati dei clienti?",
+            "ok": false
+          },
+          {
+            "titolo": "Informativa dipendenti aggiornata",
+            "testo": "I collaboratori sono stati informati sull'uso dell'AI nei processi che li riguardano?",
+            "ok": false
+          },
+          {
+            "titolo": "Supervisore umano identificato",
+            "testo": "Per ogni processo AI critico c'è una persona fisica responsabile della validazione dell'output?",
+            "ok": false
+          },
+          {
+            "titolo": "Log delle attività AI",
+            "testo": "Esiste un sistema — anche semplice — per tracciare cosa ha prodotto ogni strumento AI e chi l'ha revisionato?",
+            "ok": false
+          },
+          {
+            "titolo": "Procedura di blocco",
+            "testo": "Sai come fermare o disattivare un sistema AI se si comporta in modo anomalo?",
+            "ok": false
+          }
+        ]
+      }
+    }
+  ],
+  "ovia_view": {
+    "titolo": "La posizione di Ovia: la compliance è il punto di partenza, non il traguardo",
+    "paragrafi": [
+      "Il decreto 179/2026 e le dichiarazioni di Nadella dicono la stessa cosa con linguaggi diversi: usare l'AI senza un'architettura di controllo non è più una scelta strategica accettabile. È un rischio normativo, reputazionale e — in caso di contestazione da parte di un lavoratore o di un cliente — legale.",
+      "Ovia lavora su questo livello: non si tratta di scegliere lo strumento AI più potente, ma di decidere **cosa automatizzare, come controllarlo e come dimostrarlo**. Ogni sistema che costruiamo per studi professionali e PMI viene progettato con un responsabile umano identificato, una traccia delle azioni e la possibilità di intervenire in qualsiasi momento. Non perché lo richieda una norma — anche se ora lo fa — ma perché è l'unico modo per usare l'AI in modo professionale.",
+      "Se il tuo studio o la tua azienda usa già strumenti AI ma non ha ancora una mappatura chiara di cosa fanno, su quali dati agiscono e chi li supervisiona, questo è il momento per costruirla. Non come esercizio burocratico, ma come base operativa per continuare a lavorare con sicurezza."
+    ]
+  },
+  "faq": [
+    {
+      "domanda": "Cosa cambia per la mia azienda o il mio studio dal 23 ottobre 2026?",
+      "risposta": "Dal 23 ottobre 2026 entrano in vigore le disposizioni del decreto legislativo 179/2026. Le principali novità operative riguardano tre aree: le decisioni sul personale non possono essere delegate esclusivamente a sistemi AI; i rischi dei sistemi AI che influenzano il lavoro devono essere valutati nel DVR; e sono previste sanzioni fino a 35 milioni di euro o al 7% del fatturato per le violazioni. Chi usa l'AI solo come assistente per redigere testi o cercare informazioni è meno esposto, ma deve comunque verificare le informative privacy e la trasparenza verso clienti e collaboratori."
+    },
+    {
+      "domanda": "Rischio sanzioni se uso l'AI senza controlli?",
+      "risposta": "Sì, se l'uso dell'AI rientra negli ambiti disciplinati dal decreto 179/2026 e dall'AI Act europeo. Le sanzioni arrivano fino a 35 milioni di euro o al 7% del fatturato globale annuo. Per studi e PMI il rischio più immediato non è la sanzione massima, ma le conseguenze civili: un licenziamento basato esclusivamente su un algoritmo è nullo, e un trattamento di dati non dichiarato nell'informativa privacy può aprire contenziosi con clienti e lavoratori."
+    },
+    {
+      "domanda": "Cosa significa che i modelli AI sono 'compromessi' secondo Nadella?",
+      "risposta": "Il 10 ottobre 2026, Satya Nadella — CEO di Microsoft — ha scritto che occorre assumere per principio che ogni modello AI possa essere compromesso, e costruire sistemi che permettano di fermarlo in qualsiasi momento. Non intende che i modelli siano necessariamente difettosi o malevoli, ma che la fiducia cieca nei loro output è sbagliata: servono controlli esterni, tracciabilità delle azioni e la possibilità di un intervento umano immediato. Per uno studio professionale, questo si traduce nell'avere sempre un responsabile umano che valida le decisioni rilevanti."
+    },
+    {
+      "domanda": "Cos'è la sandbox AI italiana e posso usarla come studio o PMI?",
+      "risposta": "La sandbox istituita dal decreto 179/2026 è uno spazio regolamentato in cui le imprese che sviluppano soluzioni AI possono testarle sotto la supervisione di AgID e ACN. È riservata ai fornitori di tecnologie AI, non agli utilizzatori di software di terzi. Se il tuo studio usa ChatGPT, un CRM con AI o un gestionale automatizzato, la sandbox non ti riguarda. Se invece sviluppi soluzioni AI proprie, potrai fare domanda — ma la sandbox non è ancora operativa: servono ulteriori provvedimenti delle agenzie."
+    },
+    {
+      "domanda": "Devo aggiornare l'informativa privacy se uso strumenti AI?",
+      "risposta": "In quasi tutti i casi sì. Se i dati dei tuoi clienti o dei tuoi dipendenti vengono elaborati da sistemi AI — anche solo per categorizzare email, generare bozze di documenti o analizzare scadenze — l'informativa deve descrivere questa realtà. È un obbligo che deriva già dal GDPR e viene rafforzato dal quadro dell'AI Act e del decreto 179/2026. La mancata comunicazione espone a contestazioni in caso di controllo o di reclamo da parte di clienti o lavoratori."
+    },
+    {
+      "domanda": "Come dimostro agli ispettori o ai clienti che uso l'AI in modo sicuro?",
+      "risposta": "Attraverso tre elementi: tracciabilità (sapere cosa ha fatto ogni strumento AI, su quali dati e con quale output), supervisione umana effettiva (una persona fisica che valida le decisioni rilevanti, non solo le approva formalmente) e documentazione aggiornata (informative, procedure interne, registro degli strumenti in uso). Non è necessario un sistema complesso: basta che sia coerente, verificabile e aggiornato quando cambiano gli strumenti o i processi."
+    },
+    {
+      "domanda": "Gli ordini professionali devono fare qualcosa con il decreto 179/2026?",
+      "risposta": "Sì. Il decreto stabilisce che gli ordini e i collegi professionali abbiano fino al 23 aprile 2027 — sei mesi dall'entrata in vigore — per aggiornare i propri regolamenti di formazione iniziale e continua, includendo contenuti sull'AI sotto il profilo tecnico, giuridico e deontologico. Per i professionisti iscritti, questo significa che la formazione sull'AI diventerà parte strutturata del percorso di aggiornamento professionale obbligatorio."
+    }
+  ],
+  "conclusione": [
+    "Il decreto 179/2026 non chiede agli studi professionali e alle PMI di smettere di usare l'AI. Chiede di usarla in modo controllato, documentato e trasparente. È una differenza sostanziale: non è un limite all'innovazione, è la condizione per rendere l'innovazione sostenibile nel tempo.",
+    "Le dichiarazioni di Nadella e la normativa italiana convergono sullo stesso punto: **l'AI non è un oracolo da seguire ciecamente, è uno strumento da governare**. Chi lo governa bene ha un vantaggio competitivo reale. Chi lo usa senza controllo sta accumulando un rischio che prima o poi emerge — davanti a un ispettore, a un cliente insoddisfatto o a un lavoratore che contesta una decisione.",
+    "Il punto di partenza è semplice: mappa cosa usi, chi lo supervisiona e come lo documenti. Il resto si costruisce da lì."
+  ],
+  "prodotti": [
+    {
+      "id": "crm",
+      "perche": "Ovia CRM permette di tracciare ogni attività svolta con o senza AI, associarla al cliente corretto e documentare chi ha validato l'output — esattamente la prova di supervisione umana che il decreto 179/2026 richiede."
+    },
+    {
+      "id": "documenti",
+      "perche": "Con Ovia Documenti ogni richiesta, controllo e sollecito è registrato con uno storico completo: se un ispettore o un cliente chiede come sono stati gestiti i suoi dati, hai una risposta verificabile in pochi secondi."
+    },
+    {
+      "id": "second-brain",
+      "perche": "Ovia Second Brain conserva decisioni, note e procedure collegate al cliente giusto, rendendo possibile ricostruire il ragionamento dietro ogni scelta — un requisito essenziale quando la spiegabilità delle decisioni AI diventa obbligo di legge."
+    }
+  ],
+  "categoria": "normativa-sicurezza",
+  "keyword": "nuove regole AI aziende 2026",
+  "data": "2026-10-11T11:26:05.454Z",
+  "autore": "Redazione Ovia",
+  "parole": 2199,
+  "minuti": 11,
+  "fonti": [
+    {
+      "titolo": "AI, nuove regole per le imprese dal 23 ottobre: cosa cambia e cos’è la sandbox per le sperimentazioni",
+      "fonte": "Innovation Post",
+      "url": "https://www.innovationpost.it/tecnologie/industrial-it/ai-nuove-regole-per-le-imprese-dal-23-ottobre-cosa-cambia-e-cose-la-sandbox-per-le-sperimentazioni/"
+    },
+    {
+      "titolo": "Satya Nadella says we should assume all AI models are ‘compromised’",
+      "fonte": "The Verge AI",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1009337/satya-nadella-says-we-should-assume-all-ai-models-are-compromised"
+    },
+    {
+      "titolo": "Microsoft’s Satya Nadella says AI models need an ‘emergency brake’",
+      "fonte": "TechCrunch AI",
+      "url": "https://techcrunch.com/2026/10/10/microsofts-satya-nadella-says-ai-models-need-an-emergency-brake/"
+    },
+    {
+      "titolo": "AI agent makers are promising privacy — will they deliver?",
+      "fonte": "The Verge AI",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1009051/privacy-ai-agent-promises-openai-meta-muse-dots"
+    }
+  ],
+  "generato": {
+    "da": "ai",
+    "modello": "claude-sonnet-4-6",
+    "il": "2026-10-11T11:26:05.454Z"
+  },
+  "en": {
+    "title": "New AI Rules for Businesses 2026: What Changes from 23 October",
+    "slug": "new-ai-rules-businesses-2026-decree-179-professional-firms-smes",
+    "meta_description": "Italian Legislative Decree 179/2026 in force from 23 October: obligations on employment, safety and fines up to 7% of turnover. What firms and SMEs must do now.",
+    "lead": "From 23 October 2026, Italian Legislative Decree 179/2026 introduces concrete obligations for anyone using AI in a business or professional firm. At the same time, Microsoft's CEO has declared that every AI model should be treated as potentially compromised. For professional firms and SMEs, the era of unchecked experimentation is over.",
+    "tags": [
+      "new AI rules businesses 2026",
+      "Decree 179/2026",
+      "AI Act Italy",
+      "artificial intelligence professional firms",
+      "AI governance SMEs"
+    ],
+    "intro": [
+      "Italian Legislative Decree of 7 October 2026, No. 179, was published in the Official Gazette on 8 October and comes into force on **23 October 2026**. This is not a statement of principles: it contains precise articles covering personnel decisions, risk assessment, training, sandboxing and penalties. For a professional firm or SME already using AI tools, several of these provisions take immediate effect.",
+      "Over the same weekend, Satya Nadella — CEO of Microsoft — published a lengthy post on X in which he wrote plainly: **«We must assume that a model is compromised and keep it under control from the very start»**. He compared the necessary control mechanism to an \"emergency brake\". This is not an isolated warning: it reflects the direction the industry's leading players are taking, and it aligns precisely with what Italian legislation now requires.",
+      "This article explains what really changes for those who do not develop AI but **use** it every day to manage clients, documents, communications and decisions. And what needs to be done — concretely — to avoid exposure to penalties, employee disputes or loss of client trust."
+    ],
+    "punti_chiave": [
+      "Decisions on hiring, dismissal and disciplinary matters cannot be delegated exclusively to an algorithm: a real person with genuine decision-making authority is required.",
+      "Risks associated with AI that influences working rhythms or decision-making processes must be included in the Risk Assessment Document (DVR).",
+      "Penalties can reach up to €35 million or 7% of total annual worldwide turnover.",
+      "Satya Nadella has publicly called for every AI model to be treated as potentially compromised and for an \"emergency brake\" to be built in from the start.",
+      "The Italian regulatory sandbox is formally established by the decree but is not yet operational: further measures from AgID and ACN are required.",
+      "Professional bodies have until 23 April 2027 to update their AI training programmes."
+    ],
+    "sezioni": [
+      {
+        "h2": "What Italian Decree 179/2026 provides on artificial intelligence",
+        "paragrafi": [
+          "Decree 179/2026 does not emerge from nowhere: it implements the Italian AI law, [No. 132 of September 2025](/en/blog/italian-law-132-2025-ai-professionals-client-disclosure.html), and transposes the European AI Act into the national legal framework. Compared with the framework law, the decree goes into detail: who oversees compliance, how oversight works, and what is at stake if the rules are not followed.",
+          "The relevant authorities are **AgID** (the Agency for Digital Italy) and **ACN** (the National Cybersecurity Agency). They are responsible for enforcement and for managing the sandbox. [Penalties can reach up to €35 million or 7% of total annual worldwide turnover](https://www.innovationpost.it/tecnologie/industrial-it/ai-nuove-regole-per-le-imprese-dal-23-ottobre-cosa-cambia-e-cose-la-sandbox-per-le-sperimentazioni/), whichever is higher — a threshold that can be material even for a mid-sized SME.",
+          "For professional firms, there is an additional element: professional bodies and associations have **six months** from the decree's entry into force — that is, until 23 April 2027 — to update their training regulations and include content on AI, covering its technical, legal and professional-conduct dimensions. Those who today use AI in their practice without any formal training on the subject will need to complete programmes recognised by their professional body."
+        ],
+        "blocco": {
+          "tipo": "stats",
+          "titolo": "Key figures from Decree 179/2026",
+          "voci": [
+            {
+              "valore": "23 Oct 2026",
+              "testo": "Date of entry into force of Legislative Decree No. 179"
+            },
+            {
+              "valore": "€35 million",
+              "testo": "Maximum penalty for the most serious infringements"
+            },
+            {
+              "valore": "7%",
+              "testo": "Maximum percentage of total annual worldwide turnover applicable as a penalty"
+            },
+            {
+              "valore": "23 Apr 2027",
+              "testo": "Deadline for professional bodies to update their AI training regulations"
+            }
+          ]
+        }
+      },
+      {
+        "h2": "AI and employment: when automated dismissal is void",
+        "paragrafi": [
+          "Article 41 of the decree sets out a clear rule for anyone using AI to manage human resources: **final decisions on hiring, contract changes, dismissal and disciplinary measures cannot be taken exclusively on the basis of automated processing**. The decision-maker must be a real person with genuine, autonomous authority — not someone who simply clicks \"approve\" on an algorithm's output.",
+          "The most immediate consequence concerns the validity of such acts: [a dismissal made in breach of this prohibition is null and void](https://www.innovationpost.it/tecnologie/industrial-it/ai-nuove-regole-per-le-imprese-dal-23-ottobre-cosa-cambia-e-cose-la-sandbox-per-le-sperimentazioni/). Not merely voidable, not contestable through ordinary proceedings: **null and void**. And the employee's consent cannot cure the defect.",
+          "It is worth clarifying what is not prohibited: using AI to analyse performance, process data, suggest evaluations or support HR managers is entirely lawful. The problem arises when the algorithm replaces human judgement rather than informing it. The distinction between \"support\" and \"delegation\" is the heart of the provision — and also the point at which many systems currently in use risk falling foul of it.",
+          "A further obligation concerns transparency: before initiating the processing covered by the rule, the employer must fulfil the information obligations already required by existing legislation. Employees may request an intelligible explanation of any decision concerning them, including an indication of how AI systems influenced the process."
+        ],
+        "blocco": {
+          "tipo": "compare",
+          "titolo": "Using AI in HR: permitted vs. prohibited",
+          "sinistra": {
+            "badge": "✅ Permitted",
+            "titolo": "AI as decision support",
+            "righe": [
+              {
+                "etichetta": "CV and application screening",
+                "valore": "Yes, if not conclusive"
+              },
+              {
+                "etichetta": "Performance assessment",
+                "valore": "Yes, if final decision is human"
+              },
+              {
+                "etichetta": "Recommendations to the manager",
+                "valore": "Yes, with autonomous managerial judgement"
+              },
+              {
+                "etichetta": "Automated HR reporting",
+                "valore": "Yes"
+              }
+            ]
+          },
+          "destra": {
+            "badge": "🚫 Prohibited",
+            "titolo": "AI as sole decision-maker",
+            "righe": [
+              {
+                "etichetta": "Automated dismissal",
+                "valore": "Null and void by law"
+              },
+              {
+                "etichetta": "Disciplinary measure by algorithm alone",
+                "valore": "Null and void by law"
+              },
+              {
+                "etichetta": "Formal approval without genuine judgement",
+                "valore": "Not sufficient"
+              },
+              {
+                "etichetta": "Waiver via employee consent",
+                "valore": "Not permitted"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "h2": "Workplace safety and AI: the Risk Assessment Document must be updated",
+        "paragrafi": [
+          "Article 42 of the decree introduces an obligation that directly affects businesses using AI to organise work: if an AI system **influences production rhythms, the way tasks are performed, or decision-making processes that are relevant to safety**, the associated risks must be assessed and included in the Risk Assessment Document (DVR), as required by Article 28 of Italian Legislative Decree 81/2008.",
+          "This is not a blanket obligation covering any software. The rule applies to AI systems that concretely change the conditions in which people work: an algorithm that automatically adjusts workloads, assigns tasks to operators, or takes decisions that are relevant to the safety of a facility is precisely the kind of tool that falls within the scope of Article 42.",
+          "Alongside this, employees have the right to receive **adequate information and training** on the specific risks associated with the AI systems used by the organisation, and on the preventive measures in place. This is not a minor detail: in workplaces where AI tools are in use without employees having been informed, there is exposure both on the regulatory and reputational fronts.",
+          "For professional firms using AI to manage deadlines, assign matters or monitor the workloads of their staff, now is the time to check whether these tools fall within the scope of the provision — and to document the assessment, either in the DVR or in an equivalent document."
+        ],
+        "blocco": {
+          "tipo": "checklist",
+          "titolo": "Is your firm or SME ready for Article 42?",
+          "voci": [
+            {
+              "titolo": "Mapping of AI systems in use",
+              "testo": "Do you have an up-to-date list of all AI tools that influence your work processes?",
+              "ok": false
+            },
+            {
+              "titolo": "AI risk assessment in the DVR",
+              "testo": "Have the risks associated with these tools been assessed and included in the Risk Assessment Document?",
+              "ok": false
+            },
+            {
+              "titolo": "Staff training",
+              "testo": "Have staff been informed about how the AI systems work and the associated risks?",
+              "ok": false
+            },
+            {
+              "titolo": "Updated employee information notices",
+              "testo": "Have the information obligations towards employees who interact with AI systems been fulfilled?",
+              "ok": false
+            },
+            {
+              "titolo": "Periodic review",
+              "testo": "Is there a procedure for updating the assessment whenever new AI tools are adopted?",
+              "ok": false
+            }
+          ]
+        }
+      },
+      {
+        "h2": "What Nadella means when he says AI models are 'compromised'",
+        "paragrafi": [
+          "On 10 October 2026, Satya Nadella — CEO of Microsoft — published a post on X that sparked considerable debate. Not because of alarmist rhetoric, but because of the clarity with which he described the problem. The central point, in his own words: [«We cannot treat superintelligence as a set of nested black boxes and simply accept or reject its recommendations, responses and actions»](https://techcrunch.com/2026/10/10/microsofts-satya-nadella-says-ai-models-need-an-emergency-brake/).",
+          "Nadella is not saying that AI is useless. He is saying that it **must be contained by design**: separating the model from the system that orchestrates its work, externalising controls, and documenting every significant action with \"human-readable and tamper-proof evidence\". And — the point that sets his contribution apart from similar ones — he states that [«we must assume that a model is compromised and keep it under control from the very start. Think of it as an emergency brake»](https://www.theverge.com/ai-artificial-intelligence/1009337/satya-nadella-says-we-should-assume-all-ai-models-are-compromised).",
+          "For a professional firm or SME, the practical meaning is this: using an AI model without being able to stop it, without tracking what it has done, and without a human responsible for validating its actions is not a \"cautious but limiting\" choice. It is an exposure — regulatory, today, under Decree 179/2026; reputational, always, with clients who expect your tools to be under control.",
+          "This position is not an isolated one. As we have already explored in our article on [controlling AI agents in business](/en/blog/ai-agent-control-governance-professional-firms-smes.html), AI governance is not a luxury reserved for large organisations: it is the minimum requirement for using AI in a professional and defensible way.",
+          "**Note:** If you cannot stop an AI model while it is working, do not know what it has done, and cannot demonstrate this to an inspector or a client, you are already breaching the spirit — and in some cases the letter — of Decree 179/2026 and the AI Act. The question is not «do you use AI?» but «can you show how you control it?»"
+        ]
+      },
+      {
+        "h2": "What the Italian AI sandbox is and who can use it",
+        "paragrafi": [
+          "Articles 26 to 31 of the decree establish the **Italian AI Experimentation Space**, a regulatory sandbox in which companies developing AI solutions will be able to test them under the supervision of AgID and ACN before placing them on the market. The stated aim is to reduce regulatory uncertainty during development, not after.",
+          "It is important to be clear straight away about who can access it and who cannot. [The sandbox is reserved for providers and prospective providers of AI systems](https://www.innovationpost.it/tecnologie/industrial-it/ai-nuove-regole-per-le-imprese-dal-23-ottobre-cosa-cambia-e-cose-la-sandbox-per-le-sperimentazioni/) — that is, for those who develop and intend to bring AI technologies to market. It is not a tool for professional firms or SMEs that use third-party software. If you use ChatGPT, a CRM with AI features or a management system that integrates language models, the sandbox does not directly concern you.",
+          "Those who develop their own solutions — or are a start-up or SME building an AI product — will find a fast track in the sandbox: the decree gives **priority access to SMEs and start-ups**, according to criteria to be defined by subsequent measures.",
+          "A practical caveat: the decree formally establishes the sandbox, but its actual opening to operators will require further measures from AgID and ACN. There is no operational access point yet. At the European level, the AI Act as updated by the Digital Omnibus requires each Member State to have at least one operational experimentation space by **2 August 2027**."
+        ],
+        "blocco": {
+          "tipo": "steps",
+          "titolo": "Italian AI sandbox: current status",
+          "voci": [
+            {
+              "titolo": "Decree published",
+              "meta": "8 October 2026",
+              "testo": "Legislative Decree 179/2026 is in the Official Gazette and formally establishes the Italian Experimentation Space."
+            },
+            {
+              "titolo": "Entry into force",
+              "meta": "23 October 2026",
+              "testo": "The decree becomes fully effective, but the sandbox is not yet open for applications from businesses."
+            },
+            {
+              "titolo": "Implementing measures",
+              "meta": "To be defined",
+              "testo": "AgID and ACN must issue the access rules, admission criteria and operational procedures."
+            },
+            {
+              "titolo": "European deadline",
+              "meta": "2 August 2027",
+              "testo": "The updated AI Act requires Member States to have at least one operational experimentation space by this date."
+            }
+          ]
+        }
+      },
+      {
+        "h2": "How to demonstrate to clients and inspectors that you use AI safely",
+        "paragrafi": [
+          "The most practical question a firm owner or SME manager should be asking today is: **if an inspector or a client asked me tomorrow to demonstrate how I use AI, what would I show them?** Decree 179/2026 does not ask you to stop using AI. It asks that its use be controlled, documented and explainable.",
+          "Three elements make the difference. The first is **traceability**: knowing what every AI tool has done, on which data, at what moment and with what output. It is not enough to know that \"the AI helped draft the document\": you need to know which model, with what instructions, and who reviewed the result. The second is **effective human oversight**: not a rubber stamp, but a person who understands the process and can intervene. The third is **up-to-date documentation**: client disclosures, employee notices, internal procedures describing how AI is used and controlled.",
+          "On the privacy front, the answer to the question «do I need to update my privacy notice if I use AI tools?» is almost always yes. If clients' or employees' data is processed by AI systems — even just to categorise emails or generate document drafts — the notice must reflect this reality. This obligation already flows from the GDPR and is reinforced by the AI Act and Decree 179/2026 framework.",
+          "A practical approach is to start with a simple mapping exercise: which AI tools you use, what data they process, who oversees them, and how the output is documented. This framework — which Ovia helps you build — is not just about compliance: it is also the most direct way to communicate to clients that their firm operates to professional standards. As we explained in our article on [professional liability and AI hallucinations](/en/blog/ai-hallucinations-professional-liability-who-signs.html), whoever signs is responsible — and demonstrating control is the only real defence."
+        ],
+        "blocco": {
+          "tipo": "checklist",
+          "titolo": "Can you demonstrate safe AI use?",
+          "voci": [
+            {
+              "titolo": "Register of AI tools in use",
+              "testo": "Do you have a list of all active AI systems in your firm or business, including the type of data they process?",
+              "ok": false
+            },
+            {
+              "titolo": "Updated client privacy notice",
+              "testo": "Does the privacy notice mention the use of AI tools in the processing of client data?",
+              "ok": false
+            },
+            {
+              "titolo": "Updated employee notice",
+              "testo": "Have staff been informed about the use of AI in the processes that affect them?",
+              "ok": false
+            },
+            {
+              "titolo": "Human supervisor identified",
+              "testo": "For every critical AI process, is there a named person responsible for validating the output?",
+              "ok": false
+            },
+            {
+              "titolo": "AI activity log",
+              "testo": "Is there a system — even a simple one — to track what each AI tool has produced and who has reviewed it?",
+              "ok": false
+            },
+            {
+              "titolo": "Shutdown procedure",
+              "testo": "Do you know how to stop or disable an AI system if it behaves abnormally?",
+              "ok": false
+            }
+          ]
+        }
+      }
+    ],
+    "ovia_view": {
+      "titolo": "Ovia's view: compliance is the starting point, not the finish line",
+      "paragrafi": [
+        "Decree 179/2026 and Nadella's statements say the same thing in different languages: using AI without a control architecture is no longer an acceptable strategic choice. It is a regulatory, reputational, and — in the event of a dispute raised by an employee or a client — legal risk.",
+        "Ovia works at this level: it is not about choosing the most powerful AI tool, but about deciding **what to automate, how to control it and how to demonstrate that control**. Every system we build for professional firms and SMEs is designed with an identified human responsible, a record of actions, and the ability to intervene at any moment. Not because a regulation requires it — though one now does — but because it is the only way to use AI professionally.",
+        "If your firm or business already uses AI tools but does not yet have a clear picture of what they do, what data they act on and who oversees them, now is the time to build that picture. Not as a bureaucratic exercise, but as the operational foundation for continuing to work with confidence."
+      ]
+    },
+    "faq": [
+      {
+        "domanda": "What changes for my business or firm from 23 October 2026?",
+        "risposta": "From 23 October 2026, the provisions of Italian Legislative Decree 179/2026 come into force. The main operational changes cover three areas: personnel decisions cannot be delegated exclusively to AI systems; risks from AI systems that influence working conditions must be assessed in the DVR; and penalties of up to €35 million or 7% of turnover are provided for breaches. Those who use AI purely as an assistant for drafting text or searching for information are less exposed, but must still review their privacy notices and ensure transparency towards clients and staff."
+      },
+      {
+        "domanda": "Do I risk penalties if I use AI without proper controls?",
+        "risposta": "Yes, if your use of AI falls within the scope of Italian Decree 179/2026 and the European AI Act. Penalties can reach €35 million or 7% of total annual worldwide turnover. For firms and SMEs, the most immediate risk is not the maximum penalty but the civil consequences: a dismissal based exclusively on an algorithm is null and void, and data processing not disclosed in the privacy notice can open disputes with clients and employees."
+      },
+      {
+        "domanda": "What does Nadella mean when he says AI models are 'compromised'?",
+        "risposta": "On 10 October 2026, Satya Nadella — CEO of Microsoft — wrote that one should assume by default that any AI model may be compromised, and build systems that allow it to be stopped at any moment. He does not mean that models are necessarily defective or malicious, but that blind trust in their outputs is misplaced: external controls, traceability of actions and the possibility of immediate human intervention are all essential. For a professional firm, this translates into always having a human responsible for validating material decisions."
+      },
+      {
+        "domanda": "What is the Italian AI sandbox and can I use it as a firm or SME?",
+        "risposta": "The sandbox established by Decree 179/2026 is a regulated space in which companies developing AI solutions can test them under the supervision of AgID and ACN. It is reserved for AI technology providers, not for users of third-party software. If your firm uses ChatGPT, an AI-enabled CRM or an automated management system, the sandbox does not apply to you. If, on the other hand, you are developing your own AI solutions, you will be able to apply — but the sandbox is not yet operational: further agency measures are required."
+      },
+      {
+        "domanda": "Do I need to update my privacy notice if I use AI tools?",
+        "risposta": "In almost all cases, yes. If your clients' or employees' data is processed by AI systems — even just to categorise emails, generate document drafts or analyse deadlines — the notice must describe this. The obligation already flows from the GDPR and is reinforced by the AI Act and Decree 179/2026 framework. Failing to communicate this creates exposure in the event of an inspection or a complaint from clients or employees."
+      },
+      {
+        "domanda": "How do I demonstrate to inspectors or clients that I use AI safely?",
+        "risposta": "Through three elements: traceability (knowing what each AI tool has done, on which data and with what output), effective human oversight (a real person who validates material decisions, not merely rubber-stamps them) and up-to-date documentation (privacy notices, internal procedures, a register of tools in use). No complex system is needed: it simply has to be consistent, verifiable and updated whenever tools or processes change."
+      },
+      {
+        "domanda": "Do professional bodies have obligations under Decree 179/2026?",
+        "risposta": "Yes. The decree requires professional bodies and associations to have until 23 April 2027 — six months from the date of entry into force — to update their initial and continuing training regulations to include content on AI from a technical, legal and professional-conduct perspective. For registered professionals, this means that AI training will become a structured part of compulsory continuing professional development."
+      }
+    ],
+    "conclusione": [
+      "Italian Decree 179/2026 does not ask professional firms and SMEs to stop using AI. It asks them to use it in a controlled, documented and transparent way. This is a meaningful distinction: it is not a constraint on innovation — it is the condition that makes innovation sustainable over time.",
+      "Nadella's statements and Italian legislation converge on the same point: **AI is not an oracle to be followed blindly — it is a tool to be governed**. Those who govern it well have a genuine competitive advantage. Those who use it without controls are accumulating a risk that will surface sooner or later — before an inspector, a dissatisfied client or an employee disputing a decision.",
+      "The starting point is straightforward: map what you use, who oversees it and how you document it. Everything else is built from there."
+    ],
+    "prodotti": [
+      {
+        "id": "crm",
+        "perche": "Ovia CRM lets you track every activity carried out with or without AI, associate it with the correct client, and document who validated the output — precisely the evidence of human oversight that Decree 179/2026 requires."
+      },
+      {
+        "id": "documenti",
+        "perche": "With Ovia Documents, every request, check and reminder is recorded with a complete history: if an inspector or client asks how their data was handled, you have a verifiable answer in seconds."
+      },
+      {
+        "id": "second-brain",
+        "perche": "Ovia Second Brain stores decisions, notes and procedures linked to the right client, making it possible to reconstruct the reasoning behind every choice — an essential requirement when the explainability of AI decisions becomes a legal obligation."
+      }
+    ],
+    "parole": 1808,
+    "minuti": 10,
+    "tradotto": {
+      "da": "ai",
+      "modello": "claude-sonnet-4-6",
+      "il": "2026-10-11T11:28:16.672Z"
+    }
+  }
+}
