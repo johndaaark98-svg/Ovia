@@ -26,6 +26,7 @@
 - Quanto tempo serve per vedere i primi risultati?
 
 ## Blog (ultimi articoli)
+- [Decreto AI 179/2026: cosa fare subito per studi e PMI](https://oviaitalia.it/blog/decreto-ai-179-2026-imprese-studi-pmi-controlli-sanzioni.html): Decreto AI 179/2026: cosa devono fare concretamente studi professionali e PMI per prepararsi ai controlli, evitare sanzioni e gestire i costi nascosti dell'AI.
 - [Nuove regole AI aziende 2026: cosa cambia dal 23 ottobre](https://oviaitalia.it/blog/nuove-regole-ai-aziende-2026-decreto-179-studi-pmi.html): Decreto 179/2026 in vigore dal 23 ottobre: obblighi su lavoro, sicurezza e sanzioni fino al 7% del fatturato. Cosa devono fare studi e PMI italiane subito.
 - [Allucinazioni AI e responsabilità professionale: chi firma?](https://oviaitalia.it/blog/allucinazioni-ai-responsabilita-professionale-studi.html): L'AI che genera dati falsi mette a rischio la firma del professionista. Come gestire le allucinazioni AI tra responsabilità, sanzioni e processi di verifica.
 - [Controllo agenti AI in azienda: come governarli davvero](https://oviaitalia.it/blog/controllo-agenti-ai-azienda-governance-studi-pmi.html): Il 23% delle imprese europee testa agenti AI. La vera sfida è governarli dopo: log, supervisione umana, soglie di intervento. Guida pratica per studi e PMI.
@@ -54,6 +55,7 @@
 - [Services (EN)](https://oviaitalia.it/en/services/)
 - [FAQ (EN)](https://oviaitalia.it/en/faq.html)
 - [About us (EN)](https://oviaitalia.it/en/about.html)
+- [AI Decree 179/2026: What Firms & SMEs Must Do Now](https://oviaitalia.it/en/blog/ai-decree-179-2026-professional-firms-smes-controls-penalties.html): Italian AI Decree 179/2026: what professional firms and SMEs must do to prepare for inspections, avoid sanctions, and manage the hidden costs of AI systems.
 - [New AI Rules for Businesses 2026: What Changes from 23 October](https://oviaitalia.it/en/blog/new-ai-rules-businesses-2026-decree-179-professional-firms-smes.html): Italian Legislative Decree 179/2026 in force from 23 October: obligations on employment, safety and fines up to 7% of turnover. What firms and SMEs must do now.
 - [AI Hallucinations and Professional Liability: Who Signs?](https://oviaitalia.it/en/blog/ai-hallucinations-professional-liability-who-signs.html): AI-generated false data puts the professional's signature at risk. How to manage AI hallucinations amid liability, sanctions and output verification processes.
 - [AI Agent Control in Business: How to Really Govern Them](https://oviaitalia.it/en/blog/ai-agent-control-governance-professional-firms-smes.html): 23% of European firms are piloting AI agents. The real challenge is governing them afterwards: logs, human oversight, escalation thresholds. A practical guide for firms and SMEs.
@@ -73,7 +75,6 @@
 - [AI Voice-Cloning Fraud: How to Protect Your Firm](https://oviaitalia.it/en/blog/ai-voice-cloning-fraud-professional-firms-smes.html): AI voice-cloning fraud: the Fideuram €36 m case is a wake-up call. Learn to spot fake calls and set up the procedures your firm or business needs right now.
 - [AI Agents: Security Risks for Your Firm](https://oviaitalia.it/en/blog/ai-agents-security-risks-professional-firms-smes.html): AI agent security risks: from the OpenAI–Australia case to real data breaches. What professional firms and SMEs are exposed to, and how to protect yourself. Practical guide.
 - [Verifying AI output in professional firms: who signs off?](https://oviaitalia.it/en/blog/verifying-ai-output-professional-firms.html): AI produces documents in seconds, but who checks them? The real risk for a professional firm isn’t the tool: it’s delegating judgement and responsibility.
-- [Italian Law 132/2025: AI in professional firms and client disclosure](https://oviaitalia.it/en/blog/italian-law-132-2025-ai-professionals-client-disclosure.html): Italian Law 132/2025, art. 13: what accountants, lawyers and consultants using AI must do, how to inform clients and how to stay compliant.
 
 ## Contatti
 - Email: oviaitalia@gmail.com
