@@ -26,6 +26,7 @@
 - Quanto tempo serve per vedere i primi risultati?
 
 ## Blog (ultimi articoli)
+- [Automation bias: il rischio di controllare meno l'AI](https://oviaitalia.it/blog/automation-bias-controllo-output-ai-studio-professionale.html): L'automation bias spinge a fidarsi troppo dell'AI. Ecco cos'è, perché riguarda chi firma e come organizzare il controllo output AI nel tuo studio professionale.
 - [Visibilità AI motori di ricerca: studi professionali a rischio](https://oviaitalia.it/blog/visibilita-ai-motori-ricerca-studi-professionali-geo.html): ChatGPT cita le fonti primarie, Google Discover diventa un concierge AI: ecco cosa devono fare studi professionali e PMI italiane per restare visibili nel 2026.
 - [Decreto AI 179/2026: cosa fare subito per studi e PMI](https://oviaitalia.it/blog/decreto-ai-179-2026-imprese-studi-pmi-controlli-sanzioni.html): Decreto AI 179/2026: cosa devono fare concretamente studi professionali e PMI per prepararsi ai controlli, evitare sanzioni e gestire i costi nascosti dell'AI.
 - [Nuove regole AI aziende 2026: cosa cambia dal 23 ottobre](https://oviaitalia.it/blog/nuove-regole-ai-aziende-2026-decreto-179-studi-pmi.html): Decreto 179/2026 in vigore dal 23 ottobre: obblighi su lavoro, sicurezza e sanzioni fino al 7% del fatturato. Cosa devono fare studi e PMI italiane subito.
@@ -56,6 +57,7 @@
 - [Services (EN)](https://oviaitalia.it/en/services/)
 - [FAQ (EN)](https://oviaitalia.it/en/faq.html)
 - [About us (EN)](https://oviaitalia.it/en/about.html)
+- [Automation Bias: the Risk of Checking AI Less](https://oviaitalia.it/en/blog/automation-bias-ai-output-control-professional-firms.html): Automation bias makes us trust AI too much. Learn what it is, why it matters for those who sign documents, and how to organise AI output control in your firm.
 - [AI Search Visibility: Professional Firms at Risk](https://oviaitalia.it/en/blog/ai-search-visibility-professional-firms-geo.html): ChatGPT cites primary sources; Google Discover is becoming an AI concierge. Here is what Italian professional firms and SMEs must do to stay visible in 2026.
 - [AI Decree 179/2026: What Firms & SMEs Must Do Now](https://oviaitalia.it/en/blog/ai-decree-179-2026-professional-firms-smes-controls-penalties.html): Italian AI Decree 179/2026: what professional firms and SMEs must do to prepare for inspections, avoid sanctions, and manage the hidden costs of AI systems.
 - [New AI Rules for Businesses 2026: What Changes from 23 October](https://oviaitalia.it/en/blog/new-ai-rules-businesses-2026-decree-179-professional-firms-smes.html): Italian Legislative Decree 179/2026 in force from 23 October: obligations on employment, safety and fines up to 7% of turnover. What firms and SMEs must do now.
@@ -75,7 +77,6 @@
 - [AI Agent Liability: Who Is Responsible When Things Go Wrong?](https://oviaitalia.it/en/blog/ai-agent-liability-governance-evidence-ceo-fraud.html): AI agents, CEO fraud & Italian Law 132/2025: who is liable if an agent makes a mistake? What to document before deploying one in your firm or SME.
 - [AI Agents & Data Risks: What Can Go Wrong for Your Firm](https://oviaitalia.it/en/blog/ai-agents-data-risks-professional-firms-smes.html): AI agents publishing data, accessing unauthorised systems, exposing clients: what has actually happened and what controls professional firms and SMEs need now.
 - [AI Voice-Cloning Fraud: How to Protect Your Firm](https://oviaitalia.it/en/blog/ai-voice-cloning-fraud-professional-firms-smes.html): AI voice-cloning fraud: the Fideuram €36 m case is a wake-up call. Learn to spot fake calls and set up the procedures your firm or business needs right now.
-- [AI Agents: Security Risks for Your Firm](https://oviaitalia.it/en/blog/ai-agents-security-risks-professional-firms-smes.html): AI agent security risks: from the OpenAI–Australia case to real data breaches. What professional firms and SMEs are exposed to, and how to protect yourself. Practical guide.
 
 ## Contatti
 - Email: oviaitalia@gmail.com
