@@ -27,6 +27,7 @@ const args = new Set(process.argv.slice(2));
 const log = (...m) => console.log(...m);
 const oggiRoma = () => new Intl.DateTimeFormat('en-CA', { timeZone: 'Europe/Rome' }).format(new Date());
 const summary = t => { if (process.env.GITHUB_STEP_SUMMARY) appendFileSync(process.env.GITHUB_STEP_SUMMARY, t + '\n'); };
+const avviso = m => { if (process.env.GITHUB_ACTIONS) console.log(`::warning title=Blog giornaliero::${String(m).replace(/\r?\n/g, ' ').slice(0, 900)}`); };
 
 // ---- Traduzione inglese: non blocca mai la pubblicazione italiana ----
 function mappaLink(esistenti) {
@@ -130,7 +131,7 @@ async function main() {
       }
       if (esito.ok) risultato = { articolo, esito, scelta, fonti };
       else log(`   ✗ Tema scartato: ${esito.bloccanti.join(' / ')}`);
-    } catch (e) { log(`   ✗ Errore su questo tema: ${e.message}`); }
+    } catch (e) { log(`   ✗ Errore su questo tema: ${e.message}`); avviso(`Tema ${tema}: ${e.message}`); }
   }
   if (!risultato) throw new Error('Nessun articolo pubblicabile oggi (' + CONFIG.maxTopics + ' temi tentati).');
   const { articolo, esito, scelta, fonti } = risultato;
@@ -171,6 +172,8 @@ async function main() {
 main().catch(e => {
   const ultimo = process.env.ULTIMO_TENTATIVO !== '0';
   console.error((ultimo ? '✗ ' : '⚠ ') + e.message + (ultimo ? '' : ' — riprovo alla prossima esecuzione di oggi.'));
+  // Annotazione GitHub: il motivo resta visibile nel riepilogo del run (e via API) anche quando i log scadono.
+  if (process.env.GITHUB_ACTIONS) console.log(`::${ultimo ? 'error' : 'warning'} title=Blog giornaliero::${String(e.message).replace(/\r?\n/g, ' ').slice(0, 900)}`);
   summary(`### ${ultimo ? '✗ Nessun articolo pubblicato oggi' : '⚠ Tentativo non riuscito, si riprova più tardi'}\n${e.message}`);
   process.exit(ultimo ? 1 : 0);
 });
