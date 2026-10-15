@@ -50,12 +50,14 @@ export async function buildTutto({ log = console.log } = {}) {
   writeFileSync(ROOT + 'en/blog/index.html', renderIndice(en, 'en'));
   writeFileSync(ROOT + 'en/blog/feed.xml', renderFeed(en, 'en'));
 
-  const statiche = ['/', '/servizi/', '/chi-siamo.html', '/faq.html', ...PRODOTTI.map(p => urlOf(p.id)), '/siti-studi-professionali.html', '/siti-attivita-locali.html', '/blog/']; // le pagine legali sono noindex: fuori dalla sitemap
-  const pr = p => p === '/' ? '1.0' : p.startsWith('/servizi') ? '0.9' : '0.8';
+  const LEGALI = ['/privacy.html', '/cookie.html', '/termini.html']; // indicizzate anche loro (scelta di Luca, ott 2026)
+  const statiche = ['/', '/servizi/', '/chi-siamo.html', '/faq.html', ...PRODOTTI.map(p => urlOf(p.id)), '/siti-studi-professionali.html', '/siti-attivita-locali.html', '/blog/', ...LEGALI];
+  const pr = p => p === '/' ? '1.0' : p.startsWith('/servizi') ? '0.9' : LEGALI.includes(p) ? '0.2' : '0.8';
+  const cf = p => p === '/blog/' ? 'daily' : LEGALI.includes(p) ? 'yearly' : 'monthly';
   const urls = [
     ...statiche.flatMap(p => [
-      { loc: p, pr: pr(p), cf: p === '/blog/' ? 'daily' : 'monthly', alt: { it: p, en: pathFor('en', p) } },
-      { loc: pathFor('en', p), pr: pr(p), cf: p === '/blog/' ? 'daily' : 'monthly', alt: { it: p, en: pathFor('en', p) } },
+      { loc: p, pr: pr(p), cf: cf(p), alt: { it: p, en: pathFor('en', p) } },
+      { loc: pathFor('en', p), pr: pr(p), cf: cf(p), alt: { it: p, en: pathFor('en', p) } },
     ]),
     ...it.map(a => ({ loc: `/blog/${a._it}.html`, pr: '0.6', cf: 'monthly', lm: (a.aggiornato || a.data).slice(0, 10), alt: a._en ? { it: `/blog/${a._it}.html`, en: `/en/blog/${a._en}.html` } : null })),
     ...en.map(a => ({ loc: `/en/blog/${a._en}.html`, pr: '0.6', cf: 'monthly', lm: (a.aggiornato || a.data).slice(0, 10), alt: { it: `/blog/${a._it}.html`, en: `/en/blog/${a._en}.html` } })),
