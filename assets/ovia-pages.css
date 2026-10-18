@@ -1181,3 +1181,12 @@ html.oa-open { overflow: hidden; }
   .case-founder img { width: 190px; }
   .case-founder figcaption { padding-bottom: 32px; }
 }
+
+/* Blocco pacchetti pronti in homepage */
+.hm-pk { padding: 0 0 clamp(56px, 7vw, 96px); }
+.hm-pk-in { border: 1px solid var(--ink); border-radius: var(--radius); padding: clamp(28px, 4vw, 48px); display: grid; grid-template-columns: 1.4fr .6fr; gap: 32px; align-items: center; background: var(--mist); }
+.hm-pk-in .ov-h2 { margin-top: 10px; max-width: 24ch; }
+.hm-pk-in .ov-lead { margin-bottom: 0; }
+.hm-pk-cta { display: flex; flex-direction: column; gap: 12px; }
+.hm-pk-cta .ov-btn { text-align: center; }
+@media (max-width: 860px) { .hm-pk-in { grid-template-columns: 1fr; } }

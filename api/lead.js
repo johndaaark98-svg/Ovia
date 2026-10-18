@@ -11,6 +11,10 @@ const PACKAGE_NAMES = [
   // Ordine importante: i nomi più lunghi prima, così "Ovia Siti Web per le AI"
   // non viene confuso con il vecchio "Ovia Siti Web".
   'Ovia Siti Web per le AI',
+  'Ovia Chiamata → Pratica',
+  'Ovia Documenti Crisi',
+  'Ovia Raccolta & Solleciti',
+  'Ovia Pratiche completo',
   'Ovia Second Brain',
   'Ovia Inbox',
   'Ovia Lead Generation',

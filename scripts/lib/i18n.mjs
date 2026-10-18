@@ -33,8 +33,8 @@ export const UI = {
     approve: 'Tieni premuto per approvare', pipeRun: 'in corso', pipeWait: 'in attesa di te', pipeDone: 'completato · 1 decisione tua',
     sign: 'Marketing & automation systems for business',
     positioning: 'La strategia e la sicurezza fanno guadagnare. L’AI è lo strumento.',
-    nav: { services: 'Servizi', security: 'Sicurezza', method: 'Metodo', about: 'Chi siamo', blog: 'Blog', faq: 'FAQ', allServices: 'Tutti i servizi', menu: 'Apri il menu', main: 'Principale' },
-    footer: { services: 'Servizi', ovia: 'Ovia', legal: 'Note legali', aboutUs: 'Chi siamo', method: 'Il metodo', security: 'Sicurezza', blog: 'Blog', faq: 'Domande frequenti', all: 'Tutti i servizi', rss: 'Feed RSS', privacy: 'Privacy Policy', cookie: 'Cookie Policy', terms: 'Termini di servizio', about: 'Sistemi su misura per imprese e studi professionali, progettati partendo da strategia e sicurezza.' },
+    nav: { services: 'Servizi', packages: 'Pacchetti', security: 'Sicurezza', method: 'Metodo', about: 'Chi siamo', blog: 'Blog', faq: 'FAQ', allServices: 'Tutti i servizi', menu: 'Apri il menu', main: 'Principale' },
+    footer: { services: 'Servizi', packages: 'Pacchetti pronti', ovia: 'Ovia', legal: 'Note legali', aboutUs: 'Chi siamo', method: 'Il metodo', security: 'Sicurezza', blog: 'Blog', faq: 'Domande frequenti', all: 'Tutti i servizi', rss: 'Feed RSS', privacy: 'Privacy Policy', cookie: 'Cookie Policy', terms: 'Termini di servizio', about: 'Sistemi su misura per imprese e studi professionali, progettati partendo da strategia e sicurezza.' },
     home: 'Home', breadcrumb: 'Percorso', switchLabel: 'Lingua',
   },
   en: {
@@ -44,8 +44,8 @@ export const UI = {
     approve: 'Press and hold to approve', pipeRun: 'running', pipeWait: 'waiting for you', pipeDone: 'done · 1 decision by you',
     sign: 'Marketing & automation systems for business',
     positioning: 'Strategy and security make the money. AI is the tool.',
-    nav: { services: 'Services', security: 'Security', method: 'Method', about: 'About us', blog: 'Blog', faq: 'FAQ', allServices: 'All services', menu: 'Open menu', main: 'Main' },
-    footer: { services: 'Services', ovia: 'Ovia', legal: 'Legal', aboutUs: 'About us', method: 'Our method', security: 'Security', blog: 'Blog', faq: 'FAQ', all: 'All services', rss: 'RSS feed', privacy: 'Privacy Policy', cookie: 'Cookie Policy', terms: 'Terms of service', about: 'Tailor-made systems for businesses and professional firms, designed around strategy and security.' },
+    nav: { services: 'Services', packages: 'Packages', security: 'Security', method: 'Method', about: 'About us', blog: 'Blog', faq: 'FAQ', allServices: 'All services', menu: 'Open menu', main: 'Main' },
+    footer: { services: 'Services', packages: 'Ready-made packages', ovia: 'Ovia', legal: 'Legal', aboutUs: 'About us', method: 'Our method', security: 'Security', blog: 'Blog', faq: 'FAQ', all: 'All services', rss: 'RSS feed', privacy: 'Privacy Policy', cookie: 'Cookie Policy', terms: 'Terms of service', about: 'Tailor-made systems for businesses and professional firms, designed around strategy and security.' },
     home: 'Home', breadcrumb: 'Breadcrumb', switchLabel: 'Language',
   },
 };
