@@ -50,9 +50,9 @@ export async function buildTutto({ log = console.log } = {}) {
   writeFileSync(ROOT + 'en/blog/index.html', renderIndice(en, 'en'));
   writeFileSync(ROOT + 'en/blog/feed.xml', renderFeed(en, 'en'));
 
-  const SOLO_IT = ['/pacchetti.html']; // pagine senza versione inglese
+  const SOLO_IT = ['/pacchetti.html', '/morosita.html']; // pagine senza versione inglese
   const LEGALI = ['/privacy.html', '/cookie.html', '/termini.html']; // indicizzate anche loro (scelta di Luca, ott 2026)
-  const statiche = ['/', '/servizi/', '/chi-siamo.html', '/faq.html', ...PRODOTTI.map(p => urlOf(p.id)), '/siti-studi-professionali.html', '/siti-attivita-locali.html', '/pacchetti.html', '/blog/', ...LEGALI];
+  const statiche = ['/', '/servizi/', '/chi-siamo.html', '/faq.html', ...PRODOTTI.map(p => urlOf(p.id)), '/siti-studi-professionali.html', '/siti-attivita-locali.html', '/pacchetti.html', '/morosita.html', '/blog/', ...LEGALI];
   const pr = p => p === '/' ? '1.0' : p.startsWith('/servizi') ? '0.9' : LEGALI.includes(p) ? '0.2' : '0.8';
   const cf = p => p === '/blog/' ? 'daily' : LEGALI.includes(p) ? 'yearly' : 'monthly';
   const urls = [

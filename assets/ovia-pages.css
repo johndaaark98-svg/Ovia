@@ -1184,9 +1184,16 @@ html.oa-open { overflow: hidden; }
 
 /* Blocco pacchetti pronti in homepage */
 .hm-pk { padding: 0 0 clamp(56px, 7vw, 96px); }
-.hm-pk-in { border: 1px solid var(--ink); border-radius: var(--radius); padding: clamp(28px, 4vw, 48px); display: grid; grid-template-columns: 1.4fr .6fr; gap: 32px; align-items: center; background: var(--mist); }
-.hm-pk-in .ov-h2 { margin-top: 10px; max-width: 24ch; }
+.hm-pk-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.hm-pk-in { border: 1px solid var(--ink); border-radius: var(--radius); padding: clamp(28px, 4vw, 44px); display: flex; flex-direction: column; justify-content: space-between; gap: 28px; background: var(--mist); }
+.hm-pk-mo { background: var(--night); border-color: var(--night); }
+.hm-pk-mo .case-tag { color: #8fb0ff; }
+.hm-pk-mo .ov-h2 { color: #fff; }
+.hm-pk-mo .ov-lead { color: var(--night-text); }
+.hm-pk-mo .ov-btn { background: #fff; border-color: #fff; color: var(--night); }
+.hm-pk-mo .ov-btn:hover { background: var(--night-dot); border-color: var(--night-dot); color: #fff; }
+.hm-pk-in .ov-h2 { margin-top: 10px; max-width: 24ch; font-size: clamp(24px, 2.6vw, 32px); }
 .hm-pk-in .ov-lead { margin-bottom: 0; }
-.hm-pk-cta { display: flex; flex-direction: column; gap: 12px; }
+.hm-pk-cta { display: flex; flex-wrap: wrap; gap: 12px; }
 .hm-pk-cta .ov-btn { text-align: center; }
-@media (max-width: 860px) { .hm-pk-in { grid-template-columns: 1fr; } }
+@media (max-width: 860px) { .hm-pk-grid { grid-template-columns: 1fr; } }

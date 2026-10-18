@@ -15,6 +15,7 @@ const PACKAGE_NAMES = [
   'Ovia Documenti Crisi',
   'Ovia Raccolta & Solleciti',
   'Ovia Pratiche completo',
+  'Ovia Morosità',
   'Ovia Second Brain',
   'Ovia Inbox',
   'Ovia Lead Generation',

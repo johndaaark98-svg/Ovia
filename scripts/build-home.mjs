@@ -156,7 +156,7 @@ const T = {
       ['Ogni passaggio tracciato', 'Modifiche, chiamate, approvazioni: chi ha fatto cosa e quando, sempre consultabile.'],
     ],
     caseBridge: 'Lo stesso metodo, costruito sul processo del tuo studio.',
-    pkTag: 'Pacchetti pronti', pkH: 'Lo stesso sistema, già impacchettato per chi segue pratiche di sovraindebitamento.', pkP: 'Chiamata → Pratica, Documenti Crisi, Raccolta & Solleciti: tre moduli pronti, attivi in dieci giorni, con approvazione umana su ogni passaggio. Da 1.200 € di attivazione.', pkBtn: 'Vedi i tre pacchetti', pkDemo: 'Prova la demo',
+    pkTag: 'Pacchetti pronti', pkH: 'Lo stesso sistema, già impacchettato per chi segue pratiche di sovraindebitamento.', pkP: 'Chiamata → Pratica, Documenti Crisi, Raccolta & Solleciti: tre moduli pronti, attivi in dieci giorni, con approvazione umana su ogni passaggio. Da 1.200 € di attivazione.', pkBtn: 'Vedi i tre pacchetti', pkDemo: 'Prova la demo', moTag: 'Per amministratori di condominio', moH: 'La morosità condominiale gestita come una procedura.', moP: 'Sollecito, messa in mora, pagina del condomino, fascicolo per l\'avvocato: ogni moroso ha una fase, una scadenza e la lettera successiva pronta da approvare. Scadenze art. 1129 c.c. calcolate per ogni posizione. 990 € di attivazione.', moBtn: 'Scopri Ovia Morosità',
     founder: 'Luca Lorenzo', founderRole: 'Fondatore e CEO', story: 'La nostra storia',
     founderAlt: 'Luca Lorenzo, fondatore e CEO di Ovia',
     trustH: 'La responsabilità resta alle persone.',
@@ -295,7 +295,7 @@ const T = {
       ['Every step logged', 'Edits, calls, approvals: who did what and when, always available.'],
     ],
     caseBridge: 'The same method, built on your firm’s own process.',
-    pkTag: 'Ready-made packages', pkH: 'The same system, already packaged for firms handling over-indebtedness cases.', pkP: 'Call → Case, Crisis Documents, Collection & Reminders: three ready modules, live in ten days, with human approval at every step. From €1,200 activation.', pkBtn: 'See the three packages', pkDemo: 'Try the demo',
+    pkTag: 'Ready-made packages', pkH: 'The same system, already packaged for firms handling over-indebtedness cases.', pkP: 'Call → Case, Crisis Documents, Collection & Reminders: three ready modules, live in ten days, with human approval at every step. From €1,200 activation.', pkBtn: 'See the three packages', pkDemo: 'Try the demo', moTag: 'For condominium administrators', moH: 'Condominium arrears handled as a procedure.', moP: 'Reminder, formal notice, a page for the debtor, a ready file for the lawyer: every arrear has a stage, a deadline and the next letter ready for approval. Italian only for now. €990 activation.', moBtn: 'Discover Ovia Morosità',
     founder: 'Luca Lorenzo', founderRole: 'Founder and CEO', story: 'Our story',
     founderAlt: 'Luca Lorenzo, founder and CEO of Ovia',
     trustH: 'Responsibility stays with people.',
@@ -418,13 +418,23 @@ function pagina(lang) {
   </div></section>
 
   <section class="ov-wrap hm-pk" id="pacchetti" aria-labelledby="pk-h">
-    <div class="hm-pk-in">
-      <div>
-        <p class="case-tag">${esc(t.pkTag)}</p>
-        <h2 class="ov-h2" id="pk-h">${esc(t.pkH)}</h2>
-        <p class="ov-lead">${esc(t.pkP)}</p>
+    <div class="hm-pk-grid">
+      <div class="hm-pk-in">
+        <div>
+          <p class="case-tag">${esc(t.pkTag)}</p>
+          <h2 class="ov-h2" id="pk-h">${esc(t.pkH)}</h2>
+          <p class="ov-lead">${esc(t.pkP)}</p>
+        </div>
+        <div class="hm-pk-cta"><a class="ov-btn" href="/pacchetti.html">${esc(t.pkBtn)}</a><a class="ov-btn ov-btn-ghost" href="/pacchetti.html#demo">${esc(t.pkDemo)}</a></div>
       </div>
-      <div class="hm-pk-cta"><a class="ov-btn" href="/pacchetti.html">${esc(t.pkBtn)}</a><a class="ov-btn ov-btn-ghost" href="/pacchetti.html#demo">${esc(t.pkDemo)}</a></div>
+      <div class="hm-pk-in hm-pk-mo">
+        <div>
+          <p class="case-tag">${esc(t.moTag)}</p>
+          <h2 class="ov-h2">${esc(t.moH)}</h2>
+          <p class="ov-lead">${esc(t.moP)}</p>
+        </div>
+        <div class="hm-pk-cta"><a class="ov-btn" href="/morosita.html">${esc(t.moBtn)}</a></div>
+      </div>
     </div>
   </section>
 

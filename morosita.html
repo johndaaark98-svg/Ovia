@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ovia Morosità — la morosità condominiale gestita come una procedura | Ovia</title>
+  <meta name="description" content="Sollecito, messa in mora, fascicolo per l'avvocato: ogni moroso ha una fase, una scadenza e una lettera pronta da approvare. Per studi di amministrazione condominiale. Attivo in 10 giorni." />
+  <link rel="canonical" href="https://oviaitalia.it/morosita.html" />
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/assets/brand/ovia-app-icon-512.png">
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://oviaitalia.it/morosita.html" />
+  <meta property="og:title" content="Ovia Morosità — la morosità condominiale gestita come una procedura" />
+  <meta property="og:description" content="Ogni moroso ha una fase, una scadenza e una lettera pronta da approvare. Fascicolo per il decreto ingiuntivo in un clic. Per amministratori di condominio." />
+  <meta property="og:locale" content="it_IT" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Ovia Morosità — la morosità condominiale gestita come una procedura" />
+  <meta name="twitter:description" content="Sollecito, messa in mora, fascicolo per l'avvocato. Approva tu, il resto va da solo." />
+
+  <link rel="preload" href="/assets/fonts/instrument-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/ovia-pages.css" />
+  <link rel="stylesheet" href="/landing.css" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://oviaitalia.it/morosita.html#webpage","url":"https://oviaitalia.it/morosita.html","name":"Ovia Morosità — la morosità condominiale gestita come una procedura","inLanguage":"it-IT","isPartOf":{"@type":"WebSite","url":"https://oviaitalia.it","name":"Ovia"}},{"@type":"Product","name":"Ovia Morosità","description":"Applicazione per studi di amministrazione condominiale: solleciti graduali con approvazione umana, messa in mora, pagina per il condomino, fascicolo per il decreto ingiuntivo, scadenze ex art. 1129 c.c.","brand":{"@type":"Brand","name":"Ovia"},"offers":[{"@type":"Offer","name":"Ovia Morosità","price":"990","priceCurrency":"EUR","availability":"https://schema.org/InStock","url":"https://oviaitalia.it/morosita.html#prezzo"}]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://oviaitalia.it/"},{"@type":"ListItem","position":2,"name":"Pacchetti","item":"https://oviaitalia.it/pacchetti.html"},{"@type":"ListItem","position":3,"name":"Ovia Morosità","item":"https://oviaitalia.it/morosita.html"}]}]}</script>
+  <style>
+    .mo-hero-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: clamp(28px, 5vw, 64px); align-items: center; }
+    .mo-proof { border: 1px solid var(--line); border-radius: var(--radius); padding: 24px 26px; background: var(--mist); }
+    .mo-proof .big { font-size: 44px; font-weight: 600; letter-spacing: -.03em; color: var(--ink); line-height: 1; font-variant-numeric: tabular-nums; }
+    .mo-proof .lab { font-size: 15px; color: var(--muted); margin-top: 6px; }
+    .mo-proof .src { font-size: 12px; color: var(--faint); margin-top: 4px; }
+    .mo-proof + .mo-proof { margin-top: 12px; }
+    .mo-dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: var(--night-dot); vertical-align: middle; margin: 0 2px 2px; }
+
+    /* fasi */
+    .mo-fasi { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; margin-top: 8px; }
+    .mo-fase { border: 1px solid var(--line); border-radius: var(--radius); padding: 22px 20px; background: #fff; position: relative; }
+    .mo-fase .n { font-size: 12px; letter-spacing: .1em; text-transform: uppercase; font-weight: 600; color: var(--accent); }
+    .mo-fase h3 { font-size: 19px; font-weight: 600; letter-spacing: -.02em; color: var(--ink); margin: 6px 0 8px; line-height: 1.15; }
+    .mo-fase p { font-size: 14.5px; color: var(--body); line-height: 1.5; }
+    .mo-fase .g { display: inline-block; margin-top: 12px; font-size: 12.5px; font-weight: 600; color: var(--muted); background: var(--mist); border-radius: 999px; padding: 5px 10px; }
+    .mo-fase.me { background: var(--night); border-color: var(--night); }
+    .mo-fase.me .n { color: #8fb0ff; } .mo-fase.me h3 { color: #fff; } .mo-fase.me p { color: var(--night-text); } .mo-fase.me .g { background: rgba(255,255,255,.08); color: #fff; }
+    .mo-fase.me::after { content: "approva una persona"; position: absolute; top: 18px; right: 18px; width: 9px; height: 9px; border-radius: 50%; background: var(--night-dot); font-size: 0; }
+
+    /* schermata */
+    .mo-shot { border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; background: var(--mist); }
+    .mo-shot .bar { display: flex; align-items: center; gap: 8px; padding: 10px 14px; border-bottom: 1px solid var(--line); font-size: 13px; color: var(--muted); }
+    .mo-shot .bar i { width: 10px; height: 10px; border-radius: 50%; background: var(--line-strong); display: inline-block; }
+    .mo-shot .body { padding: 26px 28px; display: grid; grid-template-columns: 1.1fr .9fr; gap: 24px; }
+    .mo-shot .screen { background: #fff; border: 1px solid var(--line); border-radius: var(--radius-sm); padding: 18px 20px; }
+    .mo-shot .ey { font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+    .mo-shot .h { font-size: 22px; font-weight: 600; color: var(--ink); margin: 4px 0 12px; letter-spacing: -.02em; }
+    .mo-shot .row { display: flex; justify-content: space-between; gap: 12px; font-size: 14px; padding: 8px 0; border-top: 1px solid var(--line); color: var(--body); }
+    .mo-shot .row b { color: var(--ink); font-weight: 600; font-variant-numeric: tabular-nums; white-space: nowrap; }
+    .mo-shot .chip { display: inline-block; font-size: 12px; font-weight: 600; padding: 5px 10px; border-radius: 999px; background: var(--ok-soft); color: var(--ok); }
+    .mo-shot .chip.wait { background: var(--accent-soft); color: var(--accent-ink); }
+    .mo-shot .chip.hot { background: #fbeceb; color: #9b2c2c; }
+    .mo-shot .lett { font-size: 14px; line-height: 1.55; color: var(--body); border-left: 2px solid var(--line-strong); padding-left: 12px; margin-top: 10px; }
+    .mo-shot .lett b { color: var(--ink); }
+    .mo-shot-cta { padding: 18px 28px 24px; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+    .mo-shot-cta small { color: var(--muted); font-size: 14px; }
+
+    /* prezzo */
+    .mo-price { display: grid; grid-template-columns: 1.25fr .75fr; gap: 20px; }
+    .mo-price .card { border: 1px solid var(--line); border-radius: var(--radius); background: #fff; padding: 30px 28px; display: flex; flex-direction: column; }
+    .mo-price .card.dark { background: var(--night); border-color: var(--night); color: var(--night-text); }
+    .mo-price .tag { font-size: 16px; color: var(--body); line-height: 1.5; }
+    .mo-price h3 { font-size: 24px; font-weight: 600; letter-spacing: -.02em; color: var(--ink); margin-bottom: 8px; }
+    .mo-price .dark h3 { color: #fff; }
+    .mo-price ul { list-style: none; border-top: 1px solid var(--line); margin: 16px 0 22px; }
+    .mo-price li { font-size: 15.5px; line-height: 1.45; padding: 10px 0 10px 26px; position: relative; border-bottom: 1px solid var(--line); color: var(--ink); }
+    .mo-price li::before { content: ''; position: absolute; left: 3px; top: 17px; width: 9px; height: 5px; border-left: 2px solid var(--ok); border-bottom: 2px solid var(--ok); transform: rotate(-45deg); }
+    .mo-price li.me { color: var(--accent-ink); font-weight: 600; }
+    .mo-price li.me::before { border: 0; width: 9px; height: 9px; border-radius: 50%; background: var(--night-dot); top: 16px; transform: none; }
+    .mo-price .p { font-size: 34px; font-weight: 600; letter-spacing: -.03em; color: var(--ink); line-height: 1; font-variant-numeric: tabular-nums; margin-top: auto; }
+    .mo-price .p small { font-size: 15px; font-weight: 500; color: var(--muted); letter-spacing: 0; margin-left: 6px; }
+    .mo-price .m { font-size: 15px; color: var(--muted); margin-top: 6px; }
+    .mo-price .dark .p, .mo-price .dark .m, .mo-price .dark .p small { color: #fff; }
+    .mo-price .dark .m, .mo-price .dark .p small { color: var(--night-text); }
+    .mo-price .dark p { color: var(--night-text); font-size: 15.5px; line-height: 1.55; }
+    .mo-price .dark .lp-btn { background: #fff; border-color: #fff; color: var(--night) !important; margin-top: 18px; text-align: center; }
+    .mo-price .dark .lp-btn:hover { background: var(--night-dot); border-color: var(--night-dot); color: #fff !important; }
+    .mo-price .card .lp-btn-primary { margin-top: 18px; text-align: center; }
+    .mo-note { font-size: 14px; color: var(--muted); margin-top: 16px; max-width: 80ch; }
+
+    .mo-who { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 1px solid var(--line); }
+    .mo-who div { padding: 22px 22px 22px 0; }
+    .mo-who div + div { padding-left: 22px; border-left: 1px solid var(--line); }
+    .mo-who h3 { font-size: 17px; font-weight: 600; color: var(--ink); margin-bottom: 6px; }
+    .mo-who p { font-size: 15px; color: var(--body); line-height: 1.5; }
+    .mo-pay { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .mo-pay div { border: 1px solid var(--line); border-radius: var(--radius); padding: 24px 26px; }
+    .mo-pay h3 { font-size: 18px; font-weight: 600; color: var(--ink); margin-bottom: 8px; }
+    .mo-pay p { font-size: 15.5px; color: var(--body); line-height: 1.55; }
+    .mo-law { border-left: 3px solid var(--accent); padding: 4px 0 4px 18px; margin: 18px 0 0; font-size: 15px; color: var(--body); line-height: 1.55; }
+    .mo-law b { color: var(--ink); }
+    @media (max-width: 960px) { .mo-hero-grid, .mo-shot .body, .mo-pay, .mo-price { grid-template-columns: 1fr; } .mo-fasi { grid-template-columns: 1fr 1fr; } .mo-who { grid-template-columns: 1fr; } .mo-who div { padding-left: 0 !important; border-left: 0 !important; } }
+    @media (max-width: 560px) { .mo-fasi { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <header class="lp-header">
+    <div class="ov-brand"><a href="/" class="lp-logo" aria-label="OVIA"><svg class="ov-mark" viewBox="25 -520 2210 530" aria-hidden="true" focusable="false"><g fill="currentColor"><path d="M299 10Q218 10 156 -24Q94 -58 60 -118Q25 -179 25 -257Q25 -335 60 -394Q94 -453 156 -487Q218 -520 299 -520Q382 -520 444 -487Q505 -453 539 -394Q573 -335 573 -257Q573 -179 539 -118Q504 -58 443 -24Q381 10 299 10ZM299 -95Q339 -95 370 -115Q401 -135 419 -171Q437 -208 437 -258Q437 -332 398 -374Q359 -415 299 -415Q240 -415 201 -373Q162 -331 162 -258Q162 -208 180 -171Q198 -135 229 -115Q260 -95 299 -95Z"/><path d="M781 0 577 -510H718L880 -39H810L971 -510H1108L905 0Z"/><path d="M1159 0V-510H1291V0Z"/><path d="M1694 0V-344Q1694 -382 1672 -402Q1650 -423 1605 -423Q1561 -423 1536 -407Q1510 -391 1504 -361H1378Q1387 -432 1447 -476Q1507 -520 1609 -520Q1715 -520 1770 -472Q1825 -424 1825 -333V0Z"/><path d="M1531 10Q1454 10 1409 -28Q1363 -67 1363 -132Q1363 -202 1415 -244Q1466 -285 1560 -299L1717 -322V-241L1582 -220Q1538 -213 1516 -196Q1494 -178 1494 -147Q1494 -119 1514 -104Q1535 -89 1571 -89Q1623 -89 1658 -116Q1694 -142 1694 -180L1708 -103Q1687 -47 1642 -19Q1597 10 1531 10Z"/></g><circle cx="2095" cy="-255" r="140" fill="#2E5BFF"/></svg></a></div>
+    <nav class="lp-nav">
+      <a href="/">Home</a>
+      <a href="/pacchetti.html">Pacchetti</a>
+      <a href="#contatti" class="lp-nav-cta lp-btn lp-btn-primary" style="padding:11px 22px;font-size:15px;">Richiedi l'attivazione</a>
+    </nav>
+  </header>
+
+  <nav class="lp-breadcrumb" aria-label="breadcrumb">
+    <a href="/">Home</a><span>›</span><a href="/pacchetti.html">Pacchetti</a><span>›</span>Ovia Morosità
+  </nav>
+
+  <section class="lp-hero">
+    <div class="mo-hero-grid">
+      <div>
+        <p class="lp-eyebrow">Per studi di amministrazione condominiale</p>
+        <h1>La morosità gestita come una procedura. Non come una rincorsa.</h1>
+        <p class="sub">Ogni moroso ha una fase, una scadenza e la lettera successiva già pronta: sollecito, messa in mora, fascicolo per l'avvocato. Il condomino paga o propone un piano da una pagina sua. Ogni lettera si ferma sul pallino <span class="mo-dot" aria-hidden="true"></span> e aspetta la tua approvazione.</p>
+        <div class="lp-cta-row">
+          <a href="#come" class="lp-btn lp-btn-primary">Guarda come funziona</a>
+          <a href="#prezzo" class="lp-btn lp-btn-ghost">Prezzo e attivazione</a>
+        </div>
+      </div>
+      <div>
+        <div class="mo-proof"><div class="big">1 su 5</div><div class="lab">condomini morosi: la quota che gli amministratori del Nordest dichiarano oggi</div><div class="src">Fonte: il Nord Est, dicembre 2025</div></div>
+        <div class="mo-proof"><div class="big">6 mesi</div><div class="lab">dalla chiusura dell'esercizio per agire contro il moroso, pena la revoca (art. 1129 c.c.)</div><div class="src">Ovia conta i giorni per ogni posizione</div></div>
+        <div class="mo-proof"><div class="big">52%</div><div class="lab">dei sinistri gestiti dagli amministratori riguarda la morosità</div><div class="src">Fonte: VeryFastPeople, 1.976 casi 2023–2025</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="why-now">
+    <h2 class="why-now-title">Il recupero della morosità è già una procedura per legge. Lo studio la gestisce ancora a memoria.</h2>
+    <div class="why-now-grid">
+      <div class="why-now-story">
+        <p class="kicker">I gestionali fanno la contabilità del condominio. La rincorsa dei morosi resta a mano: lettere copiate dall'ultima volta, scadenze sui post-it, telefonate che nessuno registra.</p>
+        <p>La legge dice esattamente cosa fare e quando: sollecito, costituzione in mora, decreto ingiuntivo immediatamente esecutivo sulla base dello stato di ripartizione approvato (art. 63 disp. att. c.c.), e tutto entro sei mesi dalla chiusura dell'esercizio (art. 1129 c.c.), altrimenti l'assemblea può revocare l'amministratore. Un processo con fasi, termini e documenti fissi: il tipo di lavoro che si automatizza bene.</p>
+        <p><strong>Ovia Morosità tiene la procedura, lascia a te le decisioni.</strong> Importa i morosi dal gestionale, assegna a ciascuno la fase e la scadenza, prepara la lettera giusta nel momento giusto e la mette in attesa della tua approvazione. Quando serve l'avvocato, il fascicolo per l'ingiunzione è già pronto.</p>
+        <p>Nasce dallo stesso motore di Ovia Pratiche, usato ogni giorno da Rialziamoci Italia, 17 Organismi di Composizione della Crisi: solleciti graduali, approvazione nominativa, pagina pubblica per il debitore, registro di ogni azione.</p>
+      </div>
+      <div class="stat-cards">
+        <div class="stat-card"><div class="big">0</div><div class="desc">lettere inviate senza che una persona le abbia lette e approvate</div></div>
+        <div class="stat-card"><div class="big">3 fasi</div><div class="desc">cortese, formale, messa in mora: ognuna con i giorni che decidi tu</div></div>
+        <div class="stat-card"><div class="big">1 clic</div><div class="desc">per il fascicolo completo da consegnare al legale</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="lp-section" id="come">
+    <p class="lp-eyebrow">Come funziona</p>
+    <h2 class="lp-section-title">Cinque fasi. In due decide una persona.</h2>
+    <p class="lp-section-sub">Ogni giorno Ovia controlla chi ha superato i giorni della fase senza pagare e prepara la lettera successiva. Non la invia: la mette in "Da approvare". Tu la leggi, la correggi se serve, la approvi e la invii dall'app, oppure la segni come spedita via PEC o raccomandata con numero e data.</p>
+    <div class="mo-fasi">
+      <div class="mo-fase"><div class="n">Fase 1</div><h3>Import</h3><p>Esporti i morosi dal gestionale (Excel o CSV, qualunque intestazione). Ovia crea condomini, posizioni e rate, e calcola per ognuna la scadenza dei sei mesi.</p><span class="g">una volta</span></div>
+      <div class="mo-fase me"><div class="n">Fase 2</div><h3>Sollecito cortese</h3><p>Lettera con estratto conto, IBAN del condominio e termine per pagare. Pronta in bozza: approvi, invii.</p><span class="g">dopo 15 giorni</span></div>
+      <div class="mo-fase me"><div class="n">Fase 3</div><h3>Sollecito formale e messa in mora</h3><p>Richiami agli artt. 63 disp. att. e 1129 c.c., termine perentorio, avviso che si procederà per decreto ingiuntivo. PEC o raccomandata, con prova registrata.</p><span class="g">dopo 15 + 20 giorni</span></div>
+      <div class="mo-fase"><div class="n">Fase 4</div><h3>Pagina del condomino</h3><p>Da ogni lettera, un link riservato: il condomino vede saldo e rate, segnala un pagamento con la ricevuta o propone un piano di rientro. Tu confermi o rifiuti.</p><span class="g">sempre attiva</span></div>
+      <div class="mo-fase"><div class="n">Fase 5</div><h3>Fascicolo per l'avvocato</h3><p>Dati del condominio, estratto conto con delibere, cronologia dei solleciti con prove, pagamenti e piani. Pronto per l'ingiunzione ex art. 63.</p><span class="g">quando il saldo supera la soglia</span></div>
+    </div>
+    <p class="mo-law"><b>Perché i sei mesi contano.</b> L'art. 1129, comma 9, c.c. impone all'amministratore di agire per la riscossione forzosa entro sei mesi dalla chiusura dell'esercizio in cui il credito è compreso, salvo dispensa dell'assemblea. Ovia mostra la data per ogni posizione e la colora di rosso quando mancano meno di 30 giorni: la revoca per inerzia smette di essere un rischio invisibile.</p>
+  </section>
+
+  <section class="lp-section" id="demo">
+    <p class="lp-eyebrow">Dentro l'app</p>
+    <h2 class="lp-section-title">Una scheda per ogni moroso. Una bozza pronta quando è il momento.</h2>
+    <div class="mo-shot">
+      <div class="bar"><i></i><i></i><i></i> Ovia Morosità · Approvazioni</div>
+      <div class="body">
+        <div class="screen">
+          <div class="ey">Posizione · Condominio Via Verdi 12</div>
+          <div class="h">Rossi Giuseppe, int. 7 <span class="chip hot">Rosso</span></div>
+          <div class="row"><span>Saldo dovuto</span><b>2.740 €</b></div>
+          <div class="row"><span>Fase</span><b>Sollecito formale · inviato il 03/10</b></div>
+          <div class="row"><span>Prossimo passo</span><b>Messa in mora · da oggi</b></div>
+          <div class="row"><span>Scadenza art. 1129</span><b>30/06/2026 · tra 24 giorni</b></div>
+          <div class="row"><span>Pagina condomino</span><span class="chip">link inviato il 03/10</span></div>
+        </div>
+        <div class="screen">
+          <div class="ey">Bozza preparata da Ovia</div>
+          <div class="h">Costituzione in mora <span class="chip wait">Da approvare</span></div>
+          <p class="lett">Gentile Sig. Rossi, con riferimento ai solleciti del 15/09 e del 03/10 rimasti senza riscontro, La invitiamo a versare entro <b>10 giorni</b> l'importo di <b>2.740 €</b> sul conto del Condominio (IBAN …). In difetto, l'amministratore procederà senza ulteriore avviso al recupero coattivo ai sensi dell'<b>art. 63 disp. att. c.c.</b>…</p>
+        </div>
+      </div>
+      <div class="mo-shot-cta">
+        <a id="demo-link" href="#contatti" class="lp-btn lp-btn-primary" target="_blank" rel="noopener">Apri la demo di Ovia Morosità</a>
+        <small>Accesso con Google o email. Tre condomini e sette morosi inventati; i tuoi dati non vengono salvati.</small>
+      </div>
+    </div>
+  </section>
+
+  <section class="vs-section">
+    <h2 class="lp-section-title">Lo stesso lunedì, due studi diversi.</h2>
+    <div class="vs-grid">
+      <div class="vs-col">
+        <h3>Senza Ovia Morosità</h3>
+        <ul>
+          <li>Si riparte dall'ultimo sollecito copiato in Word, cambiando nome e importo a mano</li>
+          <li>Chi ha ricevuto cosa e quando è nella memoria di chi l'ha spedito</li>
+          <li>La scadenza dei sei mesi si scopre in assemblea, quando qualcuno la contesta</li>
+          <li>Il condomino chiama per sapere quanto deve; la segretaria ricalcola</li>
+          <li>L'avvocato chiede i documenti e si ricostruisce tutto da capo</li>
+        </ul>
+      </div>
+      <div class="vs-col oggi">
+        <h3>Con Ovia Morosità</h3>
+        <ul>
+          <li>La lettera successiva è già in bozza, con estratto conto e riferimenti di legge</li>
+          <li>Ogni invio ha data, canale e prova; ogni azione ha un nome</li>
+          <li>Le scadenze art. 1129 sono in dashboard, in rosso quando mancano 30 giorni</li>
+          <li>Il condomino vede il saldo sulla sua pagina e propone un piano da solo</li>
+          <li>Il fascicolo per il decreto ingiuntivo si genera in un clic</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="lp-section" id="prezzo">
+    <p class="lp-eyebrow">Prezzo</p>
+    <h2 class="lp-section-title">Un sistema, un prezzo. Si ripaga con il primo moroso recuperato in tempo.</h2>
+    <p class="lp-section-sub">Prezzi IVA esclusa. Canone minimo 12 mesi, include aggiornamenti, assistenza e fino a 2 ore al mese di supporto umano.</p>
+    <div class="mo-price">
+      <div class="card">
+        <h3>Ovia Morosità</h3>
+        <div class="tag">Tutto il recupero, dal primo sollecito al fascicolo per l'avvocato, per lo studio fino a 40 condomini.</div>
+        <ul>
+          <li>Import dei morosi da Excel/CSV esportato da qualsiasi gestionale</li>
+          <li>Fasi, giorni e soglie configurabili; scadenze art. 1129 calcolate per posizione</li>
+          <li>Lettere dello studio (cortese, formale, messa in mora) con estratto conto e IBAN</li>
+          <li class="me">Bozze preparate ogni giorno da Ovia, approvazione nominativa prima di ogni invio</li>
+          <li>Invio email dall'app, oppure PEC e raccomandata registrate con prova</li>
+          <li>Pagina riservata del condomino: saldo, rate, segnalazione pagamento, proposta di piano</li>
+          <li>Fascicolo per il decreto ingiuntivo ex art. 63 disp. att. c.c., stampabile e inviabile al legale</li>
+          <li>Dashboard, registro attività, due ruoli (titolare e segreteria)</li>
+        </ul>
+        <div class="p">990 €<small>attivazione</small></div>
+        <div class="m">+ 99 € / mese fino a 40 condomini · 149 € / mese oltre</div>
+        <a href="#contatti" class="lp-btn lp-btn-primary" data-pacchetto="Ovia Morosità">Attiva Ovia Morosità</a>
+      </div>
+      <div class="card dark">
+        <h3>Cosa comprende l'attivazione</h3>
+        <p>Configurazione guidata di dieci minuti fatta dal vostro studio (dati, lettere, giorni, avvocato di riferimento), importazione dei morosi dal vostro gestionale, un'ora di formazione in videochiamata, trenta giorni di affiancamento.</p>
+        <p style="margin-top:12px">Per reti e associazioni di amministratori: prezzo per sede e dashboard di rete su richiesta.</p>
+        <a href="/#prenota" class="lp-btn">Prenota il Process Check</a>
+      </div>
+    </div>
+    <p class="mo-note">Ovia Morosità non sostituisce il legale: predispone il fascicolo e tiene traccia delle fasi stragiudiziali. Il decreto ingiuntivo e gli atti successivi restano all'avvocato incaricato. I testi delle lettere sono modelli da far verificare al vostro consulente prima del primo uso.</p>
+  </section>
+
+  <section class="lp-section">
+    <p class="lp-eyebrow">Per chi è</p>
+    <h2 class="lp-section-title">Chi amministra condomini e risponde della morosità in assemblea.</h2>
+    <div class="mo-who">
+      <div><h3>Studi di amministrazione</h3><p>Da 20 a 150 condomini, una o due persone in segreteria, decine di posizioni aperte in ogni momento.</p></div>
+      <div><h3>Reti e franchising</h3><p>Più sedi con le stesse lettere e le stesse regole; una dashboard che mostra dove la morosità sta crescendo.</p></div>
+      <div><h3>Studi legali per amministratori</h3><p>Ricevono dal cliente il fascicolo completo, con estratto conto e prove, invece di ricostruirlo a ogni incarico.</p></div>
+    </div>
+  </section>
+
+  <section class="lp-section">
+    <p class="lp-eyebrow">Sicurezza</p>
+    <h2 class="lp-section-title">Dati di persone in difficoltà. Trattati come tali.</h2>
+    <div class="mo-pay">
+      <div><h3>Approvazione umana obbligatoria</h3><p>Nessuna lettera parte senza l'approvazione nominativa di una persona dello studio. Le bozze automatiche sono proposte, non invii. Il registro attività tiene traccia di ogni passaggio, come chiede la Legge 132/2025 sull'uso dell'AI nelle professioni.</p></div>
+      <div><h3>Riservatezza</h3><p>Accesso per ruolo (titolare e segreteria), ricevute e prove archiviate in modo privato, pagina del condomino con codice riservato che mostra solo la sua posizione. Infrastruttura europea; nessun dato usato per addestrare modelli di terzi.</p></div>
+    </div>
+  </section>
+
+  <section class="lp-section">
+    <p class="lp-eyebrow">Domande frequenti</p>
+    <h2 class="lp-section-title">Le domande che ci fanno davvero.</h2>
+    <div class="lp-faq">
+      <div class="lp-faq-item">
+        <button class="lp-faq-q">Devo cambiare gestionale? <span class="plus">+</span></button>
+        <div class="lp-faq-a">No. Il gestionale resta il luogo della contabilità. Ovia Morosità riceve l'elenco dei morosi esportato in Excel o CSV (Danea, Domustudio, Arcadia, Condominio Facile e qualsiasi altro) e gestisce da lì la procedura di recupero. Si riallinea con un nuovo import quando vuoi.</div>
+      </div>
+      <div class="lp-faq-item">
+        <button class="lp-faq-q">Le lettere partono da sole? <span class="plus">+</span></button>
+        <div class="lp-faq-a">Mai. Ovia prepara la bozza quando scadono i giorni della fase e la mette in "Da approvare". Una persona la legge, la approva e la invia. Se preferite spedire via PEC o raccomandata dal vostro canale, la segnate come inviata con numero e data: resta tutto nel registro.</div>
+      </div>
+      <div class="lp-faq-item">
+        <button class="lp-faq-q">Il decreto ingiuntivo lo fa Ovia? <span class="plus">+</span></button>
+        <div class="lp-faq-a">No, lo fa il vostro avvocato. Ovia prepara il fascicolo che l'avvocato chiede: dati del condominio e dell'amministratore, estratto conto con riferimento alle delibere, cronologia dei solleciti con prove, pagamenti ricevuti. Lo stampate in PDF o lo inviate dall'app al legale di riferimento.</div>
+      </div>
+      <div class="lp-faq-item">
+        <button class="lp-faq-q">Il condomino vede i dati degli altri? <span class="plus">+</span></button>
+        <div class="lp-faq-a">No. Ogni posizione ha una pagina con un codice riservato che mostra solo il suo saldo, le sue rate e i dati bancari del condominio. Da lì può segnalare un pagamento allegando la ricevuta o proporre un piano di rientro; entrambe le richieste arrivano a voi per la conferma.</div>
+      </div>
+      <div class="lp-faq-item">
+        <button class="lp-faq-q">In quanto tempo è attivo? <span class="plus">+</span></button>
+        <div class="lp-faq-a">Dieci giorni lavorativi dalla firma, ma la configurazione la fate voi in dieci minuti rispondendo a domande guidate: dati dello studio, lettere, giorni delle fasi, avvocato di riferimento, import dei morosi. Poi un'ora di formazione e trenta giorni di affiancamento.</div>
+      </div>
+      <div class="lp-faq-item">
+        <button class="lp-faq-q">Chi c'è dietro? <span class="plus">+</span></button>
+        <div class="lp-faq-a">Ovia è il marchio software di L3 Innovation Srl. Ovia Morosità usa lo stesso motore di Ovia Pratiche, nato dal lavoro quotidiano con Rialziamoci Italia, 17 Organismi di Composizione della Crisi, su oltre 15.000 pratiche di sovraindebitamento.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="lp-final-cta" id="contatti">
+    <div class="lp-wrap">
+      <h2 class="lp-section-title">Attiva Ovia Morosità. O chiedi di vederlo sui tuoi morosi.</h2>
+      <p class="lp-section-sub">Compila il modulo: ti rispondiamo entro 24 ore con la proposta scritta e la data di attivazione. Se preferisci parlarne prima, <a href="/#prenota">prenota il Process Check</a>.</p>
+      <div class="demo-form" id="demo-form-wrap">
+        <input type="text" id="df-azienda" placeholder="Nome dello studio *" autocomplete="organization" />
+        <div class="row">
+          <input type="email" id="df-email" placeholder="Email *" autocomplete="email" />
+          <input type="tel" id="df-telefono" placeholder="Telefono *" autocomplete="tel" />
+        </div>
+        <select id="df-attivita" aria-label="Tipo di studio">
+          <option value="" disabled selected>Chi sei *</option>
+          <option value="Amministratore di condominio">Amministratore di condominio</option>
+          <option value="Rete / associazione di amministratori">Rete o associazione di amministratori</option>
+          <option value="Avvocato">Avvocato che lavora per amministratori</option>
+          <option value="Altro">Altro</option>
+        </select>
+        <select id="df-volume" aria-label="Condomini amministrati">
+          <option value="" disabled selected>Quanti condomini amministrate?</option>
+          <option value="fino a 20 condomini">Fino a 20</option>
+          <option value="21-40 condomini">21–40</option>
+          <option value="41-100 condomini">41–100</option>
+          <option value="oltre 100 condomini">Oltre 100</option>
+        </select>
+        <textarea id="df-note" placeholder="Note (facoltativo): quale gestionale usate e come gestite oggi i solleciti?"></textarea>
+        <label class="demo-consent">
+          <input type="checkbox" id="df-privacy" />
+          <span>Acconsento al trattamento dei miei dati per essere ricontattato riguardo a Ovia Morosità, secondo l'<a href="/privacy.html">informativa sulla privacy</a>.</span>
+        </label>
+        <button type="button" class="lp-btn lp-btn-primary" id="df-submit">Richiedi l'attivazione</button>
+        <div class="demo-msg" id="df-msg"></div>
+      </div>
+      <div class="demo-success" id="demo-success" style="display:none;">
+        <div class="check">✓</div>
+        <h3>Richiesta ricevuta.</h3>
+        <p>Entro 24 ore ricevi la proposta scritta con la data di attivazione. Nel frattempo puoi aprire la demo dal link qui sopra.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="lp-footer">
+    <div>© 2026 Ovia — L3 Innovation Srl · P.IVA 02882330901</div>
+    <div class="lp-footer-links">
+      <a href="/">Home</a>
+      <a href="/pacchetti.html">Pacchetti</a>
+      <a href="/chi-siamo.html">Chi siamo</a>
+      <a href="/privacy.html">Privacy</a>
+    </div>
+  </footer>
+
+  <div class="lp-sticky-cta">
+    <a href="#prezzo" class="lp-btn lp-btn-primary">Prezzo e attivazione</a>
+  </div>
+
+  <script>
+    document.querySelectorAll('.lp-faq-q').forEach(function (btn) {
+      btn.addEventListener('click', function () { btn.parentElement.classList.toggle('open'); });
+    });
+  </script>
+  <script>
+    (function(){
+      var DEMO_URL = '';
+      var dl = document.getElementById('demo-link');
+      if (DEMO_URL && DEMO_URL.indexOf('http') === 0) { dl.href = DEMO_URL; }
+      else { dl.removeAttribute('target'); dl.textContent = 'Chiedi l\'accesso alla demo'; }
+      var btn = document.getElementById('df-submit');
+      if (!btn) return;
+      var msg = document.getElementById('df-msg');
+      var LEAD_URL = 'https://ovia-ten.vercel.app/api/lead';
+      var FONTE = 'Sito — Ovia Morosità';
+      var PAC = 'Ovia Morosità';
+      btn.addEventListener('click', async function(){
+        var azienda = document.getElementById('df-azienda').value.trim();
+        var email = document.getElementById('df-email').value.trim();
+        var tel = document.getElementById('df-telefono').value.trim();
+        var att = document.getElementById('df-attivita').value;
+        var vol = document.getElementById('df-volume').value;
+        var note = document.getElementById('df-note').value.trim();
+        var privacy = document.getElementById('df-privacy').checked;
+        msg.className = 'demo-msg err';
+        if (!azienda) { msg.textContent = 'Inserisci il nome dello studio.'; return; }
+        if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) { msg.textContent = 'Inserisci una email valida.'; return; }
+        if (tel.replace(/[^0-9]/g,'').length < 6) { msg.textContent = 'Inserisci un numero di telefono valido.'; return; }
+        if (!att) { msg.textContent = 'Dicci chi sei.'; return; }
+        if (!privacy) { msg.textContent = 'Devi accettare il trattamento dei dati per procedere.'; return; }
+        btn.disabled = true; msg.className = 'demo-msg'; msg.textContent = 'Invio in corso...';
+        try {
+          var res = await fetch(LEAD_URL, {
+            method: 'POST', headers: {'Content-Type':'application/json'},
+            body: JSON.stringify({
+              azienda: azienda, nome: azienda, email: email, telefono: tel,
+              attivita: att, esigenza: 'Pacchetto: ' + PAC + (vol ? ' — ' + vol : '') + (note ? ' — ' + note : ''),
+              volume_frequenza: vol, pacchetto_suggerito: PAC, note_interne: note,
+              categoria: 'Servizi AI', fonte: FONTE, stato: 'Nuovo', priorita: 'Alta',
+              data_ricezione: new Date().toISOString()
+            })
+          });
+          if (!res.ok) throw new Error('bad status');
+          document.getElementById('demo-form-wrap').style.display = 'none';
+          document.getElementById('demo-success').style.display = 'block';
+        } catch(e) {
+          btn.disabled = false;
+          msg.className = 'demo-msg err';
+          msg.textContent = 'Invio non riuscito. Riprova o scrivici a info@oviaitalia.it';
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
