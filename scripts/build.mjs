@@ -50,10 +50,11 @@ export async function buildTutto({ log = console.log } = {}) {
   writeFileSync(ROOT + 'en/blog/index.html', renderIndice(en, 'en'));
   writeFileSync(ROOT + 'en/blog/feed.xml', renderFeed(en, 'en'));
 
-  const SOLO_IT = ['/pacchetti.html', '/morosita.html', '/circolarizzazione.html', '/piano.html', '/esecuzione.html']; // pagine senza versione inglese
+  const SOLO_IT = ['/pacchetti.html', '/morosita.html', '/sovraindebitamento.html', '/circolarizzazione.html', '/piano.html', '/esecuzione.html']; // pagine senza versione inglese
   const LEGALI = ['/privacy.html', '/cookie.html', '/termini.html']; // indicizzate anche loro (scelta di Luca, ott 2026)
-  const statiche = ['/', '/servizi/', '/chi-siamo.html', '/faq.html', ...PRODOTTI.map(p => urlOf(p.id)), '/siti-studi-professionali.html', '/siti-attivita-locali.html', '/pacchetti.html', '/morosita.html', '/circolarizzazione.html', '/piano.html', '/esecuzione.html', '/blog/', ...LEGALI];
-  const pr = p => p === '/' ? '1.0' : p.startsWith('/servizi') ? '0.9' : LEGALI.includes(p) ? '0.2' : '0.8';
+  const statiche = ['/', '/servizi/', '/chi-siamo.html', '/faq.html', ...PRODOTTI.map(p => urlOf(p.id)), '/siti-studi-professionali.html', '/siti-attivita-locali.html', '/pacchetti.html', '/morosita.html', '/sovraindebitamento.html', '/circolarizzazione.html', '/piano.html', '/esecuzione.html', '/blog/', ...LEGALI];
+  const PROD = ['/sovraindebitamento.html', '/pacchetti.html', '/morosita.html', '/circolarizzazione.html', '/piano.html', '/esecuzione.html'];
+  const pr = p => p === '/' ? '1.0' : PROD.includes(p) ? '0.9' : p.startsWith('/servizi') ? '0.9' : LEGALI.includes(p) ? '0.2' : '0.8';
   const cf = p => p === '/blog/' ? 'daily' : LEGALI.includes(p) ? 'yearly' : 'monthly';
   const urls = [
     ...statiche.flatMap(p => SOLO_IT.includes(p) ? [{ loc: p, pr: pr(p), cf: cf(p), alt: null }] : [
@@ -77,6 +78,14 @@ ${urls.map(u => `  <url><loc>${SITE.url}${u.loc}</loc>${u.lm ? `<lastmod>${u.lm}
 
 ## Servizi
 ${PRODOTTI.map(p => `- [${p.name}](${SITE.url}${urlOf(p.id)}): ${p.pitch}`).join('\n')}
+
+## Pacchetti pronti (software verticali)
+- [Suite per il sovraindebitamento](${SITE.url}/sovraindebitamento.html): quattro strumenti per OCC, gestori della crisi e consulenti del sovraindebitamento, uno per fase della pratica, con approvazione umana su ogni passaggio.
+- [Ovia Pratiche](${SITE.url}/pacchetti.html): dalla chiamata al numero verde alla pratica pronta per il gestore; documenti richiesti, solleciti, relazione iniziale.
+- [Ovia Circolarizzazione](${SITE.url}/circolarizzazione.html): circolarizzazione dei creditori (enti fiscali e creditori privati) generata dalle regole del Codice della crisi, lettere in Word, termini di 30 giorni, stato passivo.
+- [Ovia Piano](${SITE.url}/piano.html): simulatore del piano di ristrutturazione dei debiti, test di convenienza rispetto alla liquidazione controllata, preventivo compensi OCC ex DM 202/2014.
+- [Ovia Esecuzione](${SITE.url}/esecuzione.html): vigilanza sull'esecuzione del piano omologato: rate, riparti, relazioni periodiche al giudice, inadempimenti, pagina riservata del debitore.
+- [Ovia Morosità](${SITE.url}/morosita.html): per studi di amministrazione condominiale: solleciti, messa in mora, fascicolo per il decreto ingiuntivo, scadenze art. 1129 c.c.
 
 ## Chi siamo
 - [Chi siamo](${SITE.url}/chi-siamo.html): Ovia nasce a Olbia come braccio operativo di L3 Innovation Srl. Dai software per il sovraindebitamento (oltre 15.000 pratiche gestite) ai sistemi automatizzati per studi e imprese. Fondatore e CEO: Luca Lorenzo.

@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ovia Circolarizzazione — la circolarizzazione dei creditori senza errori e senza scadenze perse | Ovia</title>
+  <meta name="description" content="Enti fiscali e creditori privati generati dalle regole, lettere in Word pronte, termine di 30 giorni tracciato, solleciti in bozza, stato passivo per la relazione. Per OCC e gestori della crisi da sovraindebitamento." />
+  <link rel="canonical" href="https://oviaitalia.it/circolarizzazione.html" />
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/assets/brand/ovia-app-icon-512.png">
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://oviaitalia.it/circolarizzazione.html" />
+  <meta property="og:title" content="Ovia Circolarizzazione — i creditori circolarizzati come vuole il Codice della crisi" />
+  <meta property="og:description" content="Destinatari dalle regole, lettere pronte, 30 giorni tracciati, stato passivo per la relazione. Per OCC e gestori della crisi." />
+  <meta property="og:locale" content="it_IT" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Ovia Circolarizzazione — i creditori circolarizzati come vuole il Codice della crisi" />
+  <meta name="twitter:description" content="Enti fiscali e creditori privati senza dimenticanze. Lettere pronte, termini tracciati." />
+
+  <link rel="preload" href="/assets/fonts/instrument-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/ovia-pages.css" />
+  <link rel="stylesheet" href="/landing.css" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://oviaitalia.it/circolarizzazione.html#webpage","url":"https://oviaitalia.it/circolarizzazione.html","name":"Ovia Circolarizzazione — i creditori circolarizzati come vuole il Codice della crisi","inLanguage":"it-IT","isPartOf":{"@type":"WebSite","url":"https://oviaitalia.it","name":"Ovia"}},{"@type":"Product","name":"Ovia Circolarizzazione","description":"Applicazione per OCC e gestori della crisi da sovraindebitamento: destinatari della circolarizzazione generati dalle regole, lettere in Word, termine di risposta tracciato, solleciti con approvazione umana, stato passivo per la relazione.","brand":{"@type":"Brand","name":"Ovia"},"offers":[{"@type":"Offer","name":"Ovia Circolarizzazione","price":"990","priceCurrency":"EUR","availability":"https://schema.org/InStock","url":"https://oviaitalia.it/circolarizzazione.html#prezzo"}]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://oviaitalia.it/"},{"@type":"ListItem","position":2,"name":"Pacchetti","item":"https://oviaitalia.it/pacchetti.html"},{"@type":"ListItem","position":3,"name":"Ovia Circolarizzazione","item":"https://oviaitalia.it/circolarizzazione.html"}]}]}</script>
+  <style>
+    .mo-hero-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: clamp(28px, 5vw, 64px); align-items: center; }
+    .mo-proof { border: 1px solid var(--line); border-radius: var(--radius); padding: 24px 26px; background: var(--mist); }
+    .mo-proof .big { font-size: 44px; font-weight: 600; letter-spacing: -.03em; color: var(--ink); line-height: 1; font-variant-numeric: tabular-nums; }
+    .mo-proof .lab { font-size: 15px; color: var(--muted); margin-top: 6px; }
+    .mo-proof .src { font-size: 12px; color: var(--faint); margin-top: 4px; }
+    .mo-proof + .mo-proof { margin-top: 12px; }
+    .mo-dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: var(--night-dot); vertical-align: middle; margin: 0 2px 2px; }
+
+    /* fasi */
+    .mo-fasi { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; margin-top: 8px; }
+    .mo-fase { border: 1px solid var(--line); border-radius: var(--radius); padding: 22px 20px; background: #fff; position: relative; }
+    .mo-fase .n { font-size: 12px; letter-spacing: .1em; text-transform: uppercase; font-weight: 600; color: var(--accent); }
+    .mo-fase h3 { font-size: 19px; font-weight: 600; letter-spacing: -.02em; color: var(--ink); margin: 6px 0 8px; line-height: 1.15; }
+    .mo-fase p { font-size: 14.5px; color: var(--body); line-height: 1.5; }
+    .mo-fase .g { display: inline-block; margin-top: 12px; font-size: 12.5px; font-weight: 600; color: var(--muted); background: var(--mist); border-radius: 999px; padding: 5px 10px; }
+    .mo-fase.me { background: var(--night); border-color: var(--night); }
+    .mo-fase.me .n { color: #8fb0ff; } .mo-fase.me h3 { color: #fff; } .mo-fase.me p { color: var(--night-text); } .mo-fase.me .g { background: rgba(255,255,255,.08); color: #fff; }
+    .mo-fase.me::after { content: "approva una persona"; position: absolute; top: 18px; right: 18px; width: 9px; height: 9px; border-radius: 50%; background: var(--night-dot); font-size: 0; }
+
+    /* schermata */
+    .mo-shot { border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; background: var(--mist); }
+    .mo-shot .bar { display: flex; align-items: center; gap: 8px; padding: 10px 14px; border-bottom: 1px solid var(--line); font-size: 13px; color: var(--muted); }
+    .mo-shot .bar i { width: 10px; height: 10px; border-radius: 50%; background: var(--line-strong); display: inline-block; }
+    .mo-shot .body { padding: 26px 28px; display: grid; grid-template-columns: 1.1fr .9fr; gap: 24px; }
+    .mo-shot .screen { background: #fff; border: 1px solid var(--line); border-radius: var(--radius-sm); padding: 18px 20px; }
+    .mo-shot .ey { font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+    .mo-shot .h { font-size: 22px; font-weight: 600; color: var(--ink); margin: 4px 0 12px; letter-spacing: -.02em; }
+    .mo-shot .row { display: flex; justify-content: space-between; gap: 12px; font-size: 14px; padding: 8px 0; border-top: 1px solid var(--line); color: var(--body); }
+    .mo-shot .row b { color: var(--ink); font-weight: 600; font-variant-numeric: tabular-nums; white-space: nowrap; }
+    .mo-shot .chip { display: inline-block; font-size: 12px; font-weight: 600; padding: 5px 10px; border-radius: 999px; background: var(--ok-soft); color: var(--ok); }
+    .mo-shot .chip.wait { background: var(--accent-soft); color: var(--accent-ink); }
+    .mo-shot .chip.hot { background: #fbeceb; color: #9b2c2c; }
+    .mo-shot .lett { font-size: 14px; line-height: 1.55; color: var(--body); border-left: 2px solid var(--line-strong); padding-left: 12px; margin-top: 10px; }
+    .mo-shot .lett b { color: var(--ink); }
+    .mo-shot-cta { padding: 18px 28px 24px; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+    .mo-shot-cta small { color: var(--muted); font-size: 14px; }
+
+    /* prezzo */
+    .mo-price { display: grid; grid-template-columns: 1.25fr .75fr; gap: 20px; }
+    .mo-price .card { border: 1px solid var(--line); border-radius: var(--radius); background: #fff; padding: 30px 28px; display: flex; flex-direction: column; }
+    .mo-price .card.dark { background: var(--night); border-color: var(--night); color: var(--night-text); }
+    .mo-price .tag { font-size: 16px; color: var(--body); line-height: 1.5; }
+    .mo-price h3 { font-size: 24px; font-weight: 600; letter-spacing: -.02em; color: var(--ink); margin-bottom: 8px; }
+    .mo-price .dark h3 { color: #fff; }
+    .mo-price ul { list-style: none; border-top: 1px solid var(--line); margin: 16px 0 22px; }
+    .mo-price li { font-size: 15.5px; line-height: 1.45; padding: 10px 0 10px 26px; position: relative; border-bottom: 1px solid var(--line); color: var(--ink); }
+    .mo-price li::before { content: ''; position: absolute; left: 3px; top: 17px; width: 9px; height: 5px; border-left: 2px solid var(--ok); border-bottom: 2px solid var(--ok); transform: rotate(-45deg); }
+    .mo-price li.me { color: var(--accent-ink); font-weight: 600; }
+    .mo-price li.me::before { border: 0; width: 9px; height: 9px; border-radius: 50%; background: var(--night-dot); top: 16px; transform: none; }
+    .mo-price .p { font-size: 34px; font-weight: 600; letter-spacing: -.03em; color: var(--ink); line-height: 1; font-variant-numeric: tabular-nums; margin-top: auto; }
+    .mo-price .p small { font-size: 15px; font-weight: 500; color: var(--muted); letter-spacing: 0; margin-left: 6px; }
+    .mo-price .m { font-size: 15px; color: var(--muted); margin-top: 6px; }
+    .mo-price .dark .p, .mo-price .dark .m, .mo-price .dark .p small { color: #fff; }
+    .mo-price .dark .m, .mo-price .dark .p small { color: var(--night-text); }
+    .mo-price .dark p { color: var(--night-text); font-size: 15.5px; line-height: 1.55; }
+    .mo-price .dark .lp-btn { background: #fff; border-color: #fff; color: var(--night) !important; margin-top: 18px; text-align: center; }
+    .mo-price .dark .lp-btn:hover { background: var(--night-dot); border-color: var(--night-dot); color: #fff !important; }
+    .mo-price .card .lp-btn-primary { margin-top: 18px; text-align: center; }
+    .mo-note { font-size: 14px; color: var(--muted); margin-top: 16px; max-width: 80ch; }
+
+    .mo-who { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 1px solid var(--line); }
+    .mo-who div { padding: 22px 22px 22px 0; }
+    .mo-who div + div { padding-left: 22px; border-left: 1px solid var(--line); }
+    .mo-who h3 { font-size: 17px; font-weight: 600; color: var(--ink); margin-bottom: 6px; }
+    .mo-who p { font-size: 15px; color: var(--body); line-height: 1.5; }
+    .mo-pay { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .mo-pay div { border: 1px solid var(--line); border-radius: var(--radius); padding: 24px 26px; }
+    .mo-pay h3 { font-size: 18px; font-weight: 600; color: var(--ink); margin-bottom: 8px; }
+    .mo-pay p { font-size: 15.5px; color: var(--body); line-height: 1.55; }
+    .mo-law { border-left: 3px solid var(--accent); padding: 4px 0 4px 18px; margin: 18px 0 0; font-size: 15px; color: var(--body); line-height: 1.55; }
+    .mo-law b { color: var(--ink); }
+    @media (max-width: 960px) { .mo-hero-grid, .mo-shot .body, .mo-pay, .mo-price { grid-template-columns: 1fr; } .mo-fasi { grid-template-columns: 1fr 1fr; } .mo-who { grid-template-columns: 1fr; } .mo-who div { padding-left: 0 !important; border-left: 0 !important; } }
+    @media (max-width: 560px) { .mo-fasi { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <header class="lp-header">
+    <div class="ov-brand"><a href="/" class="lp-logo" aria-label="OVIA"><svg class="ov-mark" viewBox="25 -520 2210 530" aria-hidden="true" focusable="false"><g fill="currentColor"><path d="M299 10Q218 10 156 -24Q94 -58 60 -118Q25 -179 25 -257Q25 -335 60 -394Q94 -453 156 -487Q218 -520 299 -520Q382 -520 444 -487Q505 -453 539 -394Q573 -335 573 -257Q573 -179 539 -118Q504 -58 443 -24Q381 10 299 10ZM299 -95Q339 -95 370 -115Q401 -135 419 -171Q437 -208 437 -258Q437 -332 398 -374Q359 -415 299 -415Q240 -415 201 -373Q162 -331 162 -258Q162 -208 180 -171Q198 -135 229 -115Q260 -95 299 -95Z"/><path d="M781 0 577 -510H718L880 -39H810L971 -510H1108L905 0Z"/><path d="M1159 0V-510H1291V0Z"/><path d="M1694 0V-344Q1694 -382 1672 -402Q1650 -423 1605 -423Q1561 -423 1536 -407Q1510 -391 1504 -361H1378Q1387 -432 1447 -476Q1507 -520 1609 -520Q1715 -520 1770 -472Q1825 -424 1825 -333V0Z"/><path d="M1531 10Q1454 10 1409 -28Q1363 -67 1363 -132Q1363 -202 1415 -244Q1466 -285 1560 -299L1717 -322V-241L1582 -220Q1538 -213 1516 -196Q1494 -178 1494 -147Q1494 -119 1514 -104Q1535 -89 1571 -89Q1623 -89 1658 -116Q1694 -142 1694 -180L1708 -103Q1687 -47 1642 -19Q1597 10 1531 10Z"/></g><circle cx="2095" cy="-255" r="140" fill="#2E5BFF"/></svg></a></div>
+    <nav class="lp-nav">
+      <a href="/">Home</a>
+      <a href="/pacchetti.html">Pacchetti</a>
+      <a href="#contatti" class="lp-nav-cta lp-btn lp-btn-primary" style="padding:11px 22px;font-size:15px;">Richiedi l'attivazione</a>
+    </nav>
+  </header>
+
+  <nav class="lp-breadcrumb" aria-label="breadcrumb">
+    <a href="/">Home</a><span>›</span><a href="/pacchetti.html">Pacchetti</a><span>›</span>Ovia Circolarizzazione
+  </nav>
+
+  <section class="lp-hero">
+    <div class="mo-hero-grid">
+      <div>
+        <p class="lp-eyebrow">Per OCC, gestori della crisi e consulenti del sovraindebitamento</p>
+        <h1>La circolarizzazione dei creditori fatta come vuole il Codice. Ogni volta.</h1>
+        <p class="sub">Dopo la nomina, Ovia compone da solo l'elenco degli enti fiscali, aggiunge INPS e INAIL quando c'è la partita IVA, prende le PEC dalla rubrica, genera le lettere in Word con i riferimenti giusti per la procedura e conta i trenta giorni. Tu verifichi, invii dalla tua PEC e registri. Ogni sollecito si ferma sul pallino <span class="mo-dot" aria-hidden="true"></span> e aspetta una persona.</p>
+        <div class="lp-cta-row">
+          <a href="#come" class="lp-btn lp-btn-primary">Guarda come funziona</a>
+          <a href="#prezzo" class="lp-btn lp-btn-ghost">Prezzo e attivazione</a>
+        </div>
+      </div>
+      <div>
+        <div class="mo-proof"><div class="big">6 enti</div><div class="lab">fiscali da non dimenticare mai: Riscossione, Entrate, Regione, Comune, Camera di Commercio, raccolta rifiuti. Ovia li compone dalle regole, non dall'elenco del debitore</div><div class="src">Regole configurabili per regione e procedura</div></div>
+        <div class="mo-proof"><div class="big">30 giorni</div><div class="lab">di termine per ogni destinatario, contati dalla data di invio che registri tu. Scaduti senza risposta, il sollecito è già in bozza</div><div class="src">Nessun invio automatico</div></div>
+        <div class="mo-proof"><div class="big">1 tabella</div><div class="lab">di stato passivo: dichiarato, certificato, differenza, stato. Pronta per la relazione del gestore</div><div class="src">Esportabile in CSV e come testo</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="why-now">
+    <h2 class="why-now-title">La legge dice a chi scrivere e come. Lo studio lo rifà a memoria ogni volta.</h2>
+    <div class="why-now-grid">
+      <div class="why-now-story">
+        <p class="kicker">Dieci, venti, quaranta destinatari per pratica. Lettere copiate dall'ultima volta cambiando nome e articolo, PEC cercate su Google, il termine di trenta giorni affidato a chi ha spedito. E poi le risposte da ricostruire in una tabella per la relazione.</p>
+        <p>Gli errori sono sempre gli stessi: l'ente di raccolta rifiuti dimenticato, la Regione messa dove il bollo lo riscuote l'Agenzia delle Entrate, INPS tra gli enti fiscali, l'articolo del concordato minore in una ristrutturazione dei debiti, un'intestazione senza PEC. Ognuno costa una lettera rifatta, un'ammissione contestata o una relazione da correggere davanti al giudice.</p>
+        <p><strong>Ovia Circolarizzazione tiene le regole, lascia a te le decisioni.</strong> Crei la pratica, Ovia propone i destinatari secondo la procedura, la regione, il comune e la partita IVA; importi i creditori privati dal tuo elenco; generi tutte le lettere in un clic; invii dalla tua PEC e registri data e numero. Da lì in poi i termini li conta Ovia.</p>
+        <p>Nasce dal lavoro quotidiano con Rialziamoci Italia, 17 Organismi di Composizione della Crisi, dove le regole che trovi qui dentro sono state scritte una pratica alla volta.</p>
+      </div>
+      <div class="stat-cards">
+        <div class="stat-card"><div class="big">0</div><div class="desc">lettere inviate dall'app: generi, controlli, invii dalla tua PEC, registri</div></div>
+        <div class="stat-card"><div class="big">4</div><div class="desc">procedure coperte: ristrutturazione dei debiti, concordato minore, liquidazione controllata, esdebitazione dell'incapiente</div></div>
+        <div class="stat-card"><div class="big">1 clic</div><div class="desc">per tutte le lettere in Word, con i nomi file che usa il tuo studio</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="lp-section" id="come">
+    <p class="lp-eyebrow">Come funziona</p>
+    <h2 class="lp-section-title">Cinque passaggi. In tre decide una persona.</h2>
+    <p class="lp-section-sub">Ovia compone, genera e conta i giorni. Ogni invio è tuo, ogni sollecito aspetta la tua approvazione, ogni importo certificato lo confermi tu. Il registro tiene traccia di chi ha fatto cosa.</p>
+    <div class="mo-fasi">
+      <div class="mo-fase"><div class="n">Passo 1</div><h3>Pratica e destinatari</h3><p>Debitore, procedura, comune, partita IVA, pratica familiare. Ovia compone gli enti fiscali nell'ordine corretto e aggiunge INPS e INAIL quando servono. Le PEC arrivano dalla rubrica dello studio.</p><span class="g">in 3 minuti</span></div>
+      <div class="mo-fase"><div class="n">Passo 2</div><h3>Creditori privati</h3><p>Importi l'elenco da Excel o CSV o li aggiungi a mano. Agenzia Entrate-Riscossione viene riconosciuta e spostata tra i fiscali. Chi non ha PEC va in raccomandata.</p><span class="g">dal tuo elenco</span></div>
+      <div class="mo-fase me"><div class="n">Passo 3</div><h3>Lettere in Word</h3><p>Una lettera unica agli enti fiscali, una per ogni privato, con i riferimenti giusti per la procedura e i nomi file del tuo studio. Le controlli, le invii dalla PEC, registri data e numero.</p><span class="g">tu invii</span></div>
+      <div class="mo-fase me"><div class="n">Passo 4</div><h3>Risposte e solleciti</h3><p>Registri le precisazioni del credito con l'importo certificato e il file; la differenza con il dichiarato si evidenzia da sola. Scaduti i 30 giorni, il sollecito è in bozza, in attesa di te.</p><span class="g">30 giorni contati</span></div>
+      <div class="mo-fase me"><div class="n">Passo 5</div><h3>Stato passivo</h3><p>Tabella per creditore con dichiarato, certificato, differenza e stato; totali per natura; un testo pronto da incollare nella relazione. Esporti in CSV.</p><span class="g">per la relazione</span></div>
+    </div>
+    <p class="mo-law"><b>Le regole che Ovia applica.</b> Enti fiscali sempre presenti e in quest'ordine: Agenzia delle Entrate-Riscossione, Agenzia delle Entrate, Regione (solo dove riscuote il bollo auto: in Friuli Venezia Giulia e Sardegna lo fa l'Agenzia delle Entrate), Comune con Ufficio Tributi, Camera di Commercio se c'è partita IVA, gestore della raccolta differenziata. INPS e INAIL sempre tra i privati. Termine di 30 giorni esplicito ai privati, non citato agli enti. Procedure con i rispettivi articoli del D.lgs. 14/2019: art. 67 e ss., art. 74 e ss., art. 268 e ss., art. 283; pratiche familiari con l'art. 66, comma 1. Tutto modificabile nelle impostazioni.</p>
+  </section>
+
+  <section class="lp-section" id="demo">
+    <p class="lp-eyebrow">Dentro l'app</p>
+    <h2 class="lp-section-title">Una pratica, tutti i destinatari, nessuna dimenticanza.</h2>
+    <div class="mo-shot">
+      <div class="bar"><i></i><i></i><i></i> Ovia Circolarizzazione · Pratica</div>
+      <div class="body">
+        <div class="screen">
+          <div class="ey">Ristrutturazione dei debiti del consumatore · Treviso</div>
+          <div class="h">Bianchi Laura <span class="chip wait">In circolarizzazione</span></div>
+          <div class="row"><span>Enti fiscali (lettera unica)</span><b>AER Veneto · AdE Treviso · Regione · Comune · Contarina</b></div>
+          <div class="row"><span>Creditori privati</span><b>7 · 5 risposti · 1 in scadenza · 1 scaduto</b></div>
+          <div class="row"><span>Termine più vicino</span><b>Findomestic · tra 3 giorni</b></div>
+          <div class="row"><span>Passivo</span><b>dichiarato 48.300 € · certificato 51.120 €</b></div>
+          <div class="row"><span>Lettere</span><span class="chip">8 file Word generati</span></div>
+        </div>
+        <div class="screen">
+          <div class="ey">Bozza preparata da Ovia</div>
+          <div class="h">Sollecito precisazione credito <span class="chip wait">Da approvare</span></div>
+          <p class="lett">Spett.le <b>Agos Ducato S.p.A.</b>, facendo seguito alla nostra comunicazione del <b>12/09/2026</b> relativa alla procedura di ristrutturazione dei debiti ex art. 67 e ss. CCII in capo alla sig.ra Bianchi Laura, rimasta senza riscontro nel termine di trenta giorni, si rinnova la richiesta di precisazione del credito…</p>
+        </div>
+      </div>
+      <div class="mo-shot-cta">
+        <a id="demo-link" href="#contatti" class="lp-btn lp-btn-primary" target="_blank" rel="noopener">Apri la demo di Ovia Circolarizzazione</a>
+        <small>Tre pratiche inventate, rubrica dimostrativa; i tuoi dati non vengono salvati.</small>
+      </div>
+    </div>
+  </section>
+
+  <section class="vs-section">
+    <h2 class="lp-section-title">La stessa nomina, due studi diversi.</h2>
+    <div class="vs-grid">
+      <div class="vs-col">
+        <h3>Senza Ovia Circolarizzazione</h3>
+        <ul>
+          <li>Si apre l'ultimo Word e si cambia nome, procedura e articolo a mano</li>
+          <li>Le PEC si cercano ogni volta; la raccolta rifiuti del comune a volte si dimentica</li>
+          <li>Il termine di trenta giorni lo ricorda chi ha spedito, se se lo ricorda</li>
+          <li>Le risposte finiscono in cartelle; la tabella per la relazione si rifà da capo</li>
+          <li>Un errore formale si scopre quando un creditore contesta</li>
+        </ul>
+      </div>
+      <div class="vs-col oggi">
+        <h3>Con Ovia Circolarizzazione</h3>
+        <ul>
+          <li>I destinatari li compone la regola: procedura, regione, comune, partita IVA</li>
+          <li>Le PEC vengono dalla rubrica dello studio, che cresce con ogni pratica</li>
+          <li>Ogni invio ha data e numero; il termine lo conta Ovia e mette il sollecito in bozza</li>
+          <li>Ogni risposta ha importo certificato, file e differenza con il dichiarato</li>
+          <li>Lo stato passivo è una tabella che esporti, con il testo per la relazione</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="lp-section" id="prezzo">
+    <p class="lp-eyebrow">Prezzo</p>
+    <h2 class="lp-section-title">Un sistema, un prezzo. Si ripaga con la prima pratica senza rifacimenti.</h2>
+    <p class="lp-section-sub">Prezzi IVA esclusa. Canone minimo 12 mesi, include aggiornamenti, assistenza e fino a 2 ore al mese di supporto umano.</p>
+    <div class="mo-price">
+      <div class="card">
+        <h3>Ovia Circolarizzazione</h3>
+        <div class="tag">Tutta la circolarizzazione, dalla nomina allo stato passivo, per l'Organismo o lo studio del gestore. Pratiche illimitate.</div>
+        <ul>
+          <li>Destinatari composti dalle regole: enti fiscali per regione e comune, INPS e INAIL con partita IVA, concessionari</li>
+          <li>Rubrica PEC dello studio con import, ricerca assistita e verifica umana</li>
+          <li>Import dei creditori privati da Excel/CSV, riconoscimento degli enti fiscali</li>
+          <li>Lettere in Word per quattro procedure, pratiche familiari, con i nomi file del tuo studio</li>
+          <li class="me">Termine di 30 giorni contato per destinatario; solleciti in bozza, approvazione nominativa</li>
+          <li>Risposte con importo certificato, file privato, differenza con il dichiarato</li>
+          <li>Stato passivo per la relazione: tabella, totali, testo pronto, export CSV</li>
+          <li>Registro attività, utenti con ruoli, configurazione guidata al primo accesso</li>
+        </ul>
+        <div class="p">990 €<small>attivazione</small></div>
+        <div class="m">+ 99 € / mese per Organismo o studio · fino a 5 utenti</div>
+        <a href="#contatti" class="lp-btn lp-btn-primary" data-pacchetto="Ovia Circolarizzazione">Attiva Ovia Circolarizzazione</a>
+      </div>
+      <div class="card dark">
+        <h3>Cosa comprende l'attivazione</h3>
+        <p>Configurazione guidata fatta dal vostro studio in dieci minuti (Organismo, sedi, gestori, firma, regole per regione, rubrica PEC iniziale), un'ora di formazione in videochiamata, trenta giorni di affiancamento sulla prima pratica.</p>
+        <p style="margin-top:12px">Per associazioni con più Organismi: prezzo per sede e rubrica condivisa su richiesta.</p>
+        <a href="/#prenota" class="lp-btn">Prenota il Process Check</a>
+      </div>
+    </div>
+    <p class="mo-note">Ovia Circolarizzazione non invia PEC e non sostituisce il gestore: genera i documenti, tiene i termini e il registro. L'invio resta sul vostro canale certificato, con le vostre ricevute. I testi dei modelli sono da far verificare al vostro Organismo prima del primo uso.</p>
+  </section>
+
+  <section class="lp-section">
+    <p class="lp-eyebrow">Per chi è</p>
+    <h2 class="lp-section-title">Chi risponde davanti al giudice della completezza del passivo.</h2>
+    <div class="mo-who">
+      <div><h3>Organismi di Composizione della Crisi</h3><p>Decine di pratiche aperte, gestori diversi, le stesse regole per tutti e una rubrica che non si perde quando cambia la segreteria.</p></div>
+      <div><h3>Gestori della crisi</h3><p>Avvocati e commercialisti nominati: una pratica alla volta, ma ogni volta con tutti gli enti, gli articoli giusti e i termini contati.</p></div>
+      <div><h3>Società di consulenza</h3><p>Preparano le pratiche per i gestori: elenco creditori pulito, lettere pronte, stato passivo già impostato quando la pratica passa di mano.</p></div>
+    </div>
+  </section>
+
+  <section class="lp-section">
+    <p class="lp-eyebrow">Sicurezza</p>
+    <h2 class="lp-section-title">Dati di persone in difficoltà. Trattati come tali.</h2>
+    <div class="mo-pay">
+      <div><h3>Approvazione umana obbligatoria</h3><p>Ovia non invia nulla. Compone, genera e propone; una persona dello studio verifica, invia dalla propria PEC e registra. I solleciti nascono in bozza e aspettano un nome. Il registro attività tiene traccia di ogni passaggio, come chiede la Legge 132/2025 sull'uso dell'AI nelle professioni.</p></div>
+      <div><h3>Riservatezza</h3><p>Accesso per ruolo, lettere e risposte archiviate come file privati con link a scadenza, nessuna pagina pubblica. Infrastruttura europea; nessun dato usato per addestrare modelli di terzi.</p></div>
+    </div>
+  </section>
+
+  <section class="lp-section">
+    <p class="lp-eyebrow">Domande frequenti</p>
+    <h2 class="lp-section-title">Le domande che ci fanno davvero.</h2>
+    <div class="lp-faq">
+      <div class="lp-faq-item">
+        <button class="lp-faq-q">Le lettere partono dall'app? <span class="plus">+</span></button>
+        <div class="lp-faq-a">No, per scelta. La PEC con le sue ricevute resta il vostro canale e la vostra prova. Ovia genera i file Word, voi li inviate e registrate data e numero di invio: da lì Ovia conta il termine, prepara i solleciti in bozza e tiene il registro.</div>
+      </div>
+      <div class="lp-faq-item">
+        <button class="lp-faq-q">Le regole del mio Organismo sono diverse. <span class="plus">+</span></button>
+        <div class="lp-faq-a">Si configurano: ordine e presenza degli enti fiscali, regola del bollo auto per regione, giorni di termine, particella "ex" davanti all'articolo, testi di ogni modello per procedura. I default sono quelli maturati in anni di pratica, ma restano vostri.</div>
+      </div>
+      <div class="lp-faq-item">
+        <button class="lp-faq-q">Da dove arrivano le PEC? <span class="plus">+</span></button>
+        <div class="lp-faq-a">Dalla rubrica dello studio: la importate da un CSV al primo avvio e cresce a ogni pratica. Quando manca un indirizzo, una ricerca assistita propone PEC e indirizzo con la fonte; resta "da verificare" finché una persona non la conferma.</div>
+      </div>
+      <div class="lp-faq-item">
+        <button class="lp-faq-q">E le risposte dei creditori? <span class="plus">+</span></button>
+        <div class="lp-faq-a">Le registrate per creditore con importo certificato, natura del credito e file. Se allegate il PDF, Ovia propone l'importo letto dal documento; voi confermate. La differenza con l'importo dichiarato dal debitore si evidenzia subito e finisce nello stato passivo.</div>
+      </div>
+      <div class="lp-faq-item">
+        <button class="lp-faq-q">In quanto tempo è attivo? <span class="plus">+</span></button>
+        <div class="lp-faq-a">Dieci giorni lavorativi dalla firma, ma la configurazione la fate voi in dieci minuti rispondendo a domande guidate: Organismo e sedi, gestori e firma, regole, rubrica iniziale, persone. Poi un'ora di formazione e trenta giorni di affiancamento sulla prima pratica vera.</div>
+      </div>
+      <div class="lp-faq-item">
+        <button class="lp-faq-q">Chi c'è dietro? <span class="plus">+</span></button>
+        <div class="lp-faq-a">Ovia è il marchio software di L3 Innovation Srl. Ovia Circolarizzazione nasce dal lavoro quotidiano con Rialziamoci Italia, 17 Organismi di Composizione della Crisi, su oltre 15.000 pratiche di sovraindebitamento.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="lp-final-cta" id="contatti">
+    <div class="lp-wrap">
+      <h2 class="lp-section-title">Attiva Ovia Circolarizzazione. O chiedi di vederlo su una tua pratica.</h2>
+      <p class="lp-section-sub">Compila il modulo: ti rispondiamo entro 24 ore con la proposta scritta e la data di attivazione. Se preferisci parlarne prima, <a href="/#prenota">prenota il Process Check</a>.</p>
+      <div class="demo-form" id="demo-form-wrap">
+        <input type="text" id="df-azienda" placeholder="Nome dell'Organismo o dello studio *" autocomplete="organization" />
+        <div class="row">
+          <input type="email" id="df-email" placeholder="Email *" autocomplete="email" />
+          <input type="tel" id="df-telefono" placeholder="Telefono *" autocomplete="tel" />
+        </div>
+        <select id="df-attivita" aria-label="Chi sei">
+          <option value="" disabled selected>Chi sei *</option>
+          <option value="OCC">Organismo di Composizione della Crisi</option>
+          <option value="Gestore della crisi">Gestore della crisi (avvocato, commercialista)</option>
+          <option value="Società di consulenza sovraindebitamento">Società di consulenza sul sovraindebitamento</option>
+          <option value="Altro">Altro</option>
+        </select>
+        <select id="df-volume" aria-label="Pratiche all'anno">
+          <option value="" disabled selected>Quante pratiche seguite all'anno?</option>
+          <option value="fino a 20 pratiche/anno">Fino a 20</option>
+          <option value="21-50 pratiche/anno">21–50</option>
+          <option value="51-150 pratiche/anno">51–150</option>
+          <option value="oltre 150 pratiche/anno">Oltre 150</option>
+        </select>
+        <textarea id="df-note" placeholder="Note (facoltativo): come gestite oggi la circolarizzazione e dove perdete più tempo?"></textarea>
+        <label class="demo-consent">
+          <input type="checkbox" id="df-privacy" />
+          <span>Acconsento al trattamento dei miei dati per essere ricontattato riguardo a Ovia Circolarizzazione, secondo l'<a href="/privacy.html">informativa sulla privacy</a>.</span>
+        </label>
+        <button type="button" class="lp-btn lp-btn-primary" id="df-submit">Richiedi l'attivazione</button>
+        <div class="demo-msg" id="df-msg"></div>
+      </div>
+      <div class="demo-success" id="demo-success" style="display:none;">
+        <div class="check">✓</div>
+        <h3>Richiesta ricevuta.</h3>
+        <p>Entro 24 ore ricevi la proposta scritta con la data di attivazione.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="lp-footer">
+    <div>© 2026 Ovia — L3 Innovation Srl · P.IVA 02882330901</div>
+    <div class="lp-footer-links">
+      <a href="/">Home</a>
+      <a href="/pacchetti.html">Pacchetti</a>
+      <a href="/chi-siamo.html">Chi siamo</a>
+      <a href="/privacy.html">Privacy</a>
+    </div>
+  </footer>
+
+  <div class="lp-sticky-cta">
+    <a href="#prezzo" class="lp-btn lp-btn-primary">Prezzo e attivazione</a>
+  </div>
+
+  <script>
+    document.querySelectorAll('.lp-faq-q').forEach(function (btn) {
+      btn.addEventListener('click', function () { btn.parentElement.classList.toggle('open'); });
+    });
+  </script>
+  <script>
+    (function(){
+      var DEMO_URL = '';
+      var dl = document.getElementById('demo-link');
+      if (DEMO_URL && DEMO_URL.indexOf('http') === 0) { dl.href = DEMO_URL; }
+      else { dl.removeAttribute('target'); dl.textContent = 'Chiedi l\'accesso alla demo'; }
+      var btn = document.getElementById('df-submit');
+      if (!btn) return;
+      var msg = document.getElementById('df-msg');
+      var LEAD_URL = 'https://ovia-ten.vercel.app/api/lead';
+      var FONTE = 'Sito — Ovia Circolarizzazione';
+      var PAC = 'Ovia Circolarizzazione';
+      btn.addEventListener('click', async function(){
+        var azienda = document.getElementById('df-azienda').value.trim();
+        var email = document.getElementById('df-email').value.trim();
+        var tel = document.getElementById('df-telefono').value.trim();
+        var att = document.getElementById('df-attivita').value;
+        var vol = document.getElementById('df-volume').value;
+        var note = document.getElementById('df-note').value.trim();
+        var privacy = document.getElementById('df-privacy').checked;
+        msg.className = 'demo-msg err';
+        if (!azienda) { msg.textContent = 'Inserisci il nome dell\'Organismo o dello studio.'; return; }
+        if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) { msg.textContent = 'Inserisci una email valida.'; return; }
+        if (tel.replace(/[^0-9]/g,'').length < 6) { msg.textContent = 'Inserisci un numero di telefono valido.'; return; }
+        if (!att) { msg.textContent = 'Dicci chi sei.'; return; }
+        if (!privacy) { msg.textContent = 'Devi accettare il trattamento dei dati per procedere.'; return; }
+        btn.disabled = true; msg.className = 'demo-msg'; msg.textContent = 'Invio in corso...';
+        try {
+          var res = await fetch(LEAD_URL, {
+            method: 'POST', headers: {'Content-Type':'application/json'},
+            body: JSON.stringify({
+              azienda: azienda, nome: azienda, email: email, telefono: tel,
+              attivita: att, esigenza: 'Pacchetto: ' + PAC + (vol ? ' — ' + vol : '') + (note ? ' — ' + note : ''),
+              volume_frequenza: vol, pacchetto_suggerito: PAC, note_interne: note,
+              categoria: 'Servizi AI', fonte: FONTE, stato: 'Nuovo', priorita: 'Alta',
+              data_ricezione: new Date().toISOString()
+            })
+          });
+          if (!res.ok) throw new Error('bad status');
+          document.getElementById('demo-form-wrap').style.display = 'none';
+          document.getElementById('demo-success').style.display = 'block';
+        } catch(e) {
+          btn.disabled = false;
+          msg.className = 'demo-msg err';
+          msg.textContent = 'Invio non riuscito. Riprova o scrivici a info@oviaitalia.it';
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

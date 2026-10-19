@@ -11,6 +11,14 @@
 - [Ovia Siti Web per le AI](https://oviaitalia.it/servizi/siti-web-ai.html): Siti progettati per essere trovati e citati dai motori AI, con assistente che risponde e prenota.
 - [Ovia CRM](https://oviaitalia.it/servizi/crm.html): CRM operativo su misura: scadenze ricorrenti, solleciti automatici, email categorizzate e documenti generati.
 
+## Pacchetti pronti (software verticali)
+- [Suite per il sovraindebitamento](https://oviaitalia.it/sovraindebitamento.html): quattro strumenti per OCC, gestori della crisi e consulenti del sovraindebitamento, uno per fase della pratica, con approvazione umana su ogni passaggio.
+- [Ovia Pratiche](https://oviaitalia.it/pacchetti.html): dalla chiamata al numero verde alla pratica pronta per il gestore; documenti richiesti, solleciti, relazione iniziale.
+- [Ovia Circolarizzazione](https://oviaitalia.it/circolarizzazione.html): circolarizzazione dei creditori (enti fiscali e creditori privati) generata dalle regole del Codice della crisi, lettere in Word, termini di 30 giorni, stato passivo.
+- [Ovia Piano](https://oviaitalia.it/piano.html): simulatore del piano di ristrutturazione dei debiti, test di convenienza rispetto alla liquidazione controllata, preventivo compensi OCC ex DM 202/2014.
+- [Ovia Esecuzione](https://oviaitalia.it/esecuzione.html): vigilanza sull'esecuzione del piano omologato: rate, riparti, relazioni periodiche al giudice, inadempimenti, pagina riservata del debitore.
+- [Ovia Morosità](https://oviaitalia.it/morosita.html): per studi di amministrazione condominiale: solleciti, messa in mora, fascicolo per il decreto ingiuntivo, scadenze art. 1129 c.c.
+
 ## Chi siamo
 - [Chi siamo](https://oviaitalia.it/chi-siamo.html): Ovia nasce a Olbia come braccio operativo di L3 Innovation Srl. Dai software per il sovraindebitamento (oltre 15.000 pratiche gestite) ai sistemi automatizzati per studi e imprese. Fondatore e CEO: Luca Lorenzo.
 
