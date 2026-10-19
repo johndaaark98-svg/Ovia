@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ovia Piano — in arrivo | Ovia</title>
+  <meta name="description" content="Simulatore del piano di ristrutturazione dei debiti: disponibile mensile, classi di creditori, test di convenienza rispetto alla liquidazione controllata, preventivo compensi OCC ex DM 202/2014." />
+  <meta name="robots" content="noindex,follow" />
+  <link rel="canonical" href="https://oviaitalia.it/piano.html" />
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/assets/brand/ovia-app-icon-512.png">
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://oviaitalia.it/piano.html" />
+  <meta property="og:title" content="La suite Ovia per il sovraindebitamento — dalla prima chiamata all'esdebitazione" />
+  <meta property="og:description" content="Pratica, circolarizzazione, piano, esecuzione: quattro strumenti per OCC e gestori della crisi, ognuno vendibile da solo. Una persona approva ogni passaggio." />
+  <meta property="og:image" content="https://oviaitalia.it/assets/og/piano.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="it_IT" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="La suite Ovia per il sovraindebitamento" />
+  <meta name="twitter:description" content="Quattro strumenti per OCC e gestori della crisi: pratica, circolarizzazione, piano, esecuzione." />
+  <meta name="twitter:image" content="https://oviaitalia.it/assets/og/piano.png" />
+
+  <link rel="preload" href="/assets/fonts/instrument-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/ovia-pages.css" />
+  <link rel="stylesheet" href="/landing.css" />
+    <style>
+    .lp-hero h1 { max-width: 20ch; font-size: clamp(36px, 4.6vw, 58px); }
+    .sv-hero-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: clamp(28px, 5vw, 64px); align-items: center; }
+    .sv-proof { border: 1px solid var(--line); border-radius: var(--radius); padding: 22px 24px; background: var(--mist); }
+    .sv-proof + .sv-proof { margin-top: 12px; }
+    .sv-proof .big { font-size: 40px; font-weight: 600; letter-spacing: -.03em; color: var(--ink); line-height: 1; font-variant-numeric: tabular-nums; }
+    .sv-proof .lab { font-size: 15px; color: var(--muted); margin-top: 6px; line-height: 1.45; }
+    .sv-proof .src { font-size: 12px; color: var(--faint); margin-top: 4px; }
+    .sv-dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: var(--night-dot); vertical-align: middle; margin: 0 2px 2px; }
+
+    /* pipeline */
+    .sv-pipe { margin-top: 10px; border: 1px solid var(--line); border-radius: var(--radius); background: #fff; padding: clamp(20px, 3vw, 32px); }
+    .sv-track { position: relative; display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }
+    .sv-track::before { content: ''; position: absolute; left: 6%; right: 6%; top: 11px; height: 2px; background: var(--line-strong); }
+    .sv-step { position: relative; padding-top: 30px; }
+    .sv-step::before { content: ''; position: absolute; left: 0; top: 4px; width: 16px; height: 16px; border-radius: 50%; background: #fff; border: 2px solid var(--ink); }
+    .sv-step.me::before { background: var(--night-dot); border-color: var(--night-dot); }
+    .sv-step .k { font-size: 12px; letter-spacing: .1em; text-transform: uppercase; font-weight: 600; color: var(--muted); }
+    .sv-step h3 { font-size: 17px; font-weight: 600; letter-spacing: -.01em; color: var(--ink); margin: 4px 0 6px; }
+    .sv-step p { font-size: 14px; color: var(--body); line-height: 1.5; }
+    .sv-tools { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 12px; margin-top: 22px; padding-top: 22px; border-top: 1px dashed var(--line-strong); }
+    .sv-tool { display: block; text-decoration: none; border: 1px solid var(--line); border-radius: var(--radius-sm); padding: 16px 16px 14px; background: var(--mist); color: var(--body); transition: border-color .15s, transform .15s, background .15s; }
+    .sv-tool:hover { border-color: var(--ink); transform: translateY(-2px); background: #fff; }
+    .sv-tool .k { font-size: 11px; letter-spacing: .12em; text-transform: uppercase; font-weight: 600; color: var(--accent); }
+    .sv-tool b { display: block; font-size: 17px; color: var(--ink); margin: 4px 0 4px; letter-spacing: -.01em; }
+    .sv-tool span { font-size: 13.5px; line-height: 1.45; }
+    .sv-tool.pr { grid-column: 1; }
+
+    /* prodotti */
+    .sv-prod { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .sv-card { border: 1px solid var(--line); border-radius: var(--radius); background: #fff; padding: 30px 28px; display: flex; flex-direction: column; }
+    .sv-card .k { font-size: 12px; letter-spacing: .1em; text-transform: uppercase; font-weight: 600; color: var(--accent); }
+    .sv-card h3 { font-size: 26px; font-weight: 600; letter-spacing: -.02em; color: var(--ink); margin: 6px 0 8px; }
+    .sv-card .tag { font-size: 16px; color: var(--body); line-height: 1.5; }
+    .sv-card ul { list-style: none; border-top: 1px solid var(--line); margin: 16px 0 20px; }
+    .sv-card li { font-size: 15px; line-height: 1.45; padding: 9px 0 9px 26px; position: relative; border-bottom: 1px solid var(--line); color: var(--ink); }
+    .sv-card li::before { content: ''; position: absolute; left: 3px; top: 16px; width: 9px; height: 5px; border-left: 2px solid var(--ok); border-bottom: 2px solid var(--ok); transform: rotate(-45deg); }
+    .sv-card li.me { color: var(--accent-ink); font-weight: 600; }
+    .sv-card li.me::before { border: 0; width: 9px; height: 9px; border-radius: 50%; background: var(--night-dot); top: 15px; transform: none; }
+    .sv-card .foot { margin-top: auto; display: flex; align-items: flex-end; justify-content: space-between; gap: 14px; flex-wrap: wrap; }
+    .sv-card .p { font-size: 28px; font-weight: 600; letter-spacing: -.03em; color: var(--ink); line-height: 1; font-variant-numeric: tabular-nums; }
+    .sv-card .p small { display: block; font-size: 13.5px; font-weight: 500; color: var(--muted); letter-spacing: 0; margin-top: 6px; }
+    .sv-card.pratiche { background: var(--mist); }
+
+    /* oggi vs */
+    .sv-table { width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 15px; }
+    .sv-table th, .sv-table td { text-align: left; padding: 14px 12px; border-bottom: 1px solid var(--line); vertical-align: top; line-height: 1.45; }
+    .sv-table th { font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+    .sv-table td:first-child { color: var(--ink); font-weight: 600; width: 22%; }
+    .sv-table td.y { color: var(--ink); }
+    .sv-table td.n { color: var(--muted); }
+
+    .sv-att { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border-top: 1px solid var(--line); }
+    .sv-att div { padding: 22px 22px 22px 0; }
+    .sv-att div + div { padding-left: 22px; border-left: 1px solid var(--line); }
+    .sv-att .n { font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); font-weight: 600; }
+    .sv-att h3 { font-size: 17px; font-weight: 600; color: var(--ink); margin: 6px 0 6px; }
+    .sv-att p { font-size: 15px; color: var(--body); line-height: 1.5; }
+    .sv-pay { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .sv-pay div { border: 1px solid var(--line); border-radius: var(--radius); padding: 24px 26px; }
+    .sv-pay h3 { font-size: 18px; font-weight: 600; color: var(--ink); margin-bottom: 8px; }
+    .sv-pay p { font-size: 15.5px; color: var(--body); line-height: 1.55; }
+    .sv-law { border-left: 3px solid var(--accent); padding: 4px 0 4px 18px; margin: 18px 0 0; font-size: 15px; color: var(--body); line-height: 1.55; }
+    .sv-law b { color: var(--ink); }
+    @media (max-width: 960px) { .sv-hero-grid, .sv-prod, .sv-pay { grid-template-columns: 1fr; } .sv-track { grid-template-columns: 1fr; gap: 18px; } .sv-track::before { display: none; } .sv-step { padding-top: 0; padding-left: 28px; } .sv-step::before { left: 0; top: 2px; } .sv-tools { grid-template-columns: 1fr 1fr; } .sv-att { grid-template-columns: 1fr 1fr; } .sv-att div { padding-left: 0 !important; border-left: 0 !important; } }
+    @media (max-width: 560px) { .sv-tools, .sv-att { grid-template-columns: 1fr; } .sv-table td:first-child { width: auto; } }
+  </style>
+</head>
+<body>
+  <header class="lp-header">
+    <div class="ov-brand"><a href="/" class="lp-logo" aria-label="OVIA"><svg class="ov-mark" viewBox="25 -520 2210 530" aria-hidden="true" focusable="false"><g fill="currentColor"><path d="M299 10Q218 10 156 -24Q94 -58 60 -118Q25 -179 25 -257Q25 -335 60 -394Q94 -453 156 -487Q218 -520 299 -520Q382 -520 444 -487Q505 -453 539 -394Q573 -335 573 -257Q573 -179 539 -118Q504 -58 443 -24Q381 10 299 10ZM299 -95Q339 -95 370 -115Q401 -135 419 -171Q437 -208 437 -258Q437 -332 398 -374Q359 -415 299 -415Q240 -415 201 -373Q162 -331 162 -258Q162 -208 180 -171Q198 -135 229 -115Q260 -95 299 -95Z"/><path d="M781 0 577 -510H718L880 -39H810L971 -510H1108L905 0Z"/><path d="M1159 0V-510H1291V0Z"/><path d="M1694 0V-344Q1694 -382 1672 -402Q1650 -423 1605 -423Q1561 -423 1536 -407Q1510 -391 1504 -361H1378Q1387 -432 1447 -476Q1507 -520 1609 -520Q1715 -520 1770 -472Q1825 -424 1825 -333V0Z"/><path d="M1531 10Q1454 10 1409 -28Q1363 -67 1363 -132Q1363 -202 1415 -244Q1466 -285 1560 -299L1717 -322V-241L1582 -220Q1538 -213 1516 -196Q1494 -178 1494 -147Q1494 -119 1514 -104Q1535 -89 1571 -89Q1623 -89 1658 -116Q1694 -142 1694 -180L1708 -103Q1687 -47 1642 -19Q1597 10 1531 10Z"/></g><circle cx="2095" cy="-255" r="140" fill="#2E5BFF"/></svg></a></div>
+    <nav class="lp-nav">
+      <a href="/">Home</a>
+      <a href="/pacchetti.html">Pacchetti</a>
+      <a href="#contatti" class="lp-nav-cta lp-btn lp-btn-primary" style="padding:11px 22px;font-size:15px;">Chiedi una demo</a>
+    </nav>
+  </header>
+  <nav class="lp-breadcrumb" aria-label="breadcrumb"><a href="/">Home</a><span>›</span><a href="/sovraindebitamento.html">Sovraindebitamento</a><span>›</span>Ovia Piano</nav>
+  <section class="lp-hero">
+    <p class="lp-eyebrow">Fase 03 · Durante l'istruttoria</p>
+    <h1>Ovia Piano</h1>
+    <p class="sub">Simulatore del piano di ristrutturazione dei debiti: disponibile mensile, classi di creditori, test di convenienza rispetto alla liquidazione controllata, preventivo compensi OCC ex DM 202/2014.</p>
+    <p class="sub">La pagina completa, con prezzo, demo e domande frequenti, è in pubblicazione. Nel frattempo trovi la suite per il sovraindebitamento, fase per fase, qui sotto.</p>
+    <div class="lp-cta-row">
+      <a href="/sovraindebitamento.html#strumenti" class="lp-btn lp-btn-primary">Vedi la suite</a>
+      <a href="/sovraindebitamento.html#contatti" class="lp-btn lp-btn-ghost">Chiedi una demo</a>
+    </div>
+  </section>
+  <footer class="lp-footer">
+    <div>© 2026 Ovia — L3 Innovation Srl · P.IVA 02882330901</div>
+    <div class="lp-footer-links">
+      <a href="/">Home</a>
+      <a href="/pacchetti.html">Pacchetti</a>
+      <a href="/circolarizzazione.html">Circolarizzazione</a>
+      <a href="/piano.html">Piano</a>
+      <a href="/esecuzione.html">Esecuzione</a>
+      <a href="/chi-siamo.html">Chi siamo</a>
+      <a href="/privacy.html">Privacy</a>
+    </div>
+  </footer>
+</body>
+</html>
