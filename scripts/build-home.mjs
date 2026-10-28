@@ -325,7 +325,7 @@ function pagina(lang) {
       slogan: 'Marketing & automation systems for business', legalName: 'L3 Innovation Srl', vatID: 'IT02882330901',
       parentOrganization: { '@type': 'Organization', name: 'L3 Innovation Srl' },
       address: { '@type': 'PostalAddress', addressLocality: 'Olbia', addressCountry: 'IT' },
-      founder: { '@type': 'Person', '@id': SITE.url + '/chi-siamo.html#luca-lorenzo', name: 'Luca Lorenzo' },
+      founder: { '@type': 'Person', '@id': SITE.url + '/chi-siamo.html#luca-lorenzo', name: 'Luca Lorenzo', url: 'https://lucalorenzo.it/' },
       sameAs: ['https://www.linkedin.com/company/oviaitalia'] },
     { '@type': 'WebPage', '@id': url + '#webpage', url, name: t.title, description: t.desc, inLanguage: lang === 'en' ? 'en' : 'it-IT', isPartOf: { '@id': SITE.url + '/#website' }, about: { '@id': SITE.url + '/#organization' } },
   ] }];

@@ -53,6 +53,7 @@ const T = {
     mfSub: 'Lo abbiamo imparato con le pratiche di sovraindebitamento: dove un errore costa caro, l’ultima parola spetta a chi ha esperienza e responsabilità.',
     mfLabel: 'Il significato del pallino',
     citazione: 'Non vendiamo intelligenza artificiale. Togliamo dal lavoro delle persone tutto ciò che non richiede una persona.',
+    fondLink: 'Il percorso di Luca Lorenzo, i progetti e i contatti diretti →',
     fotoAlt: 'Luca Lorenzo, fondatore e CEO di Ovia',
     ctaH: 'Partiamo dal tuo lavoro reale.',
     ctaP: 'Trenta minuti sul tuo flusso di lavoro: dove va il tempo, cosa si può automatizzare in sicurezza e da dove conviene iniziare.',
@@ -100,12 +101,16 @@ const T = {
     mfSub: 'We learned it handling debt-relief cases: where a mistake costs dearly, the last word belongs to whoever has the experience and the responsibility.',
     mfLabel: 'The meaning of the dot',
     citazione: 'We don’t sell artificial intelligence. We take out of people’s work everything that doesn’t need a person.',
+    fondLink: 'Luca Lorenzo’s background, projects and direct contacts →',
     fotoAlt: 'Luca Lorenzo, founder and CEO of Ovia',
     ctaH: 'Let’s start from your real work.',
     ctaP: 'Thirty minutes on your workflow: where the time goes, what can be safely automated and where it makes sense to begin.',
     ctaS: 'No obligation. We work with a few clients at a time.',
   },
 };
+
+// Sito personale del fondatore: link dalla pagina e collegamento nei dati strutturati.
+const LUCA_URL = 'https://lucalorenzo.it/';
 
 const md = s => esc(s).replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
 
@@ -150,6 +155,7 @@ function pagina(lang) {
     '@type': 'Person', '@id': SITE.url + '/chi-siamo.html#luca-lorenzo', name: 'Luca Lorenzo',
     jobTitle: lang === 'en' ? 'Founder and CEO' : 'Fondatore e CEO', image: SITE.url + FOTO.jpg,
     worksFor: { '@id': SITE.url + '/#organization' },
+    url: LUCA_URL, sameAs: [LUCA_URL, 'https://www.linkedin.com/in/luca-lorenzo-9a872317b/'],
   };
   const jsonld = [{ '@context': 'https://schema.org', '@graph': [
     { '@type': 'AboutPage', '@id': url + '#webpage', url, name: t.title.replace(/\s*\|\s*Ovia$/, ''), description: t.desc, inLanguage: lang === 'en' ? 'en' : 'it-IT', about: { '@id': SITE.url + '/#organization' } },
@@ -207,6 +213,7 @@ function pagina(lang) {
         <p class="cs-role">${esc(t.fondRuolo)}</p>
         ${t.fondBio.map(p => `<p class="bio">${md(p)}</p>`).join('')}
         <blockquote class="cs-quote">“${esc(t.citazione)}”</blockquote>
+        <p style="margin-top:26px"><a class="hm-link" href="${LUCA_URL}">${esc(t.fondLink)}</a></p>
       </div>
     </div>
   </div></section>
