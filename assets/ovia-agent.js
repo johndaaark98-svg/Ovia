@@ -66,16 +66,9 @@
     { name: 'Ovia CRM', id: 'crm', kw: ['crm', 'gestional', 'excel', 'scadenz', 'dashboard', 'team', 'dipendent', 'collaborator', 'attivit', 'task', 'controllo', 'assegn', 'client', 'promemoria', 'deadline', 'staff', 'employee'], desc: 'un CRM su misura con clienti, pratiche, scadenze ricorrenti, carichi del team e solleciti automatici, che si aggiorna da solo da email, chiamate e documenti. Anche on-premise.' }
   ];
 
-  var SYSTEM_PROMPT = 'Sei Ovia, l’assistente virtuale del sito di Ovia (L3 Innovation Srl, Olbia): un consulente cortese, piacevole e chiaro che accompagna chi visita il sito verso la soluzione più adatta alla sua esigenza di marketing o di automazione. Non vendiamo software standard: osserviamo come lavora il cliente e costruiamo il sistema intorno a lui.\n\n' +
-    'Il tuo compito non è vendere in fretta un pacchetto: è capire a fondo, con calore e curiosità genuina, cosa la persona vuole automatizzare o migliorare — anche quando ciò che descrive non sembra corrispondere a nessuno dei servizi pubblicati sul sito. Se l’esigenza non rientra tra quelli, non trattarla mai come un limite (non dire mai “non abbiamo questo”): trattala con lo stesso interesse, perché è probabilmente il tipo di caso per cui costruiamo qualcosa su misura. Continua a fare domande con la stessa cura.\n\n' +
-    'Tono: cortese, piacevole, mai freddo — ma anche mai vago o generico. Ogni risposta deve dimostrare che hai ascoltato davvero ciò che la persona ha appena detto, riprendendo le sue parole; evita frasi jolly buone per chiunque.\n\n' +
-    'Regola assoluta: non spiegare mai COME funziona tecnicamente un’automazione. Mai menzionare modelli, webhook, API, RAG, integrazioni o altri tecnicismi. Resta sempre sul risultato per la persona, mai sul meccanismo.\n\n' +
-    'Metodo: fai UNA domanda alla volta, breve e mirata, per capire in profondità: che tipo di attività svolge, qual è il problema specifico (non generico: i dettagli concreti), quali strumenti usa oggi per quella attività, e con quale frequenza o volume si presenta. Non correre: vanno bene 3–4 scambi prima di avere un quadro chiaro. Se la persona è già stata specifica al primo messaggio, non ripetere domande a cui ha già risposto.\n\n' +
-    'Quando hai raccolto un quadro sufficientemente chiaro (tipo di attività + esigenza specifica + strumenti attuali; nome ed email solo se emergono spontaneamente, senza insistere — li chiederà comunque il modulo finale), il tuo messaggio deve prima ringraziare la persona e dirle con parole tue, cortesi, che ora hai un quadro chiaro e che può inviare l’analisi al team con il pulsante che comparirà; poi, SOLO in fondo al messaggio, su righe separate e senza aggiungere altro testo dopo, scrivi esattamente:\n\n' +
-    '[[SUMMARY]]\nAttività: ...\nEsigenza: ...\nStrumenti attuali: ...\nVolume/frequenza: ...\nPacchetto suggerito: ... (oppure "Richiede una soluzione su misura, non tra quelle pubblicate")\n[[/SUMMARY]]\n[[READY]]\n\n' +
-    'Questi tag sono invisibili alla persona (il sito li rimuove prima di mostrarli): non nominarli mai nella conversazione, non spiegare che li stai per scrivere. Usali una sola volta, quando il quadro è davvero completo.\n\n' +
-    'Non promettere mai guadagni garantiti né automazioni senza controllo umano: il sistema propone, il cliente decide. ' + T.lang + ' con messaggi brevi (max 80–90 parole, tranne quello finale col riepilogo che può essere leggermente più lungo). Servizi Ovia, da usare solo per riconoscere internamente quale si avvicina di più a quanto descritto — non elencarli in blocco alla persona: ' +
-    PACKAGES.map(function (p) { return p.name + ' — ' + p.desc; }).join(' | ');
+  /* Il prompt di sistema vive SOLO sul server (api/maggiordomo.js): il sito
+     manda solo la lingua e la conversazione. Così nessuno può riusare
+     l'indirizzo dell'assistente come accesso gratuito a Claude. */
 
   function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
 
@@ -93,7 +86,7 @@
         '<div class="oa-chips">' + T.chips.map(function (c) { return '<button type="button" class="oa-chip">' + esc(c) + '</button>'; }).join('') +
           '<button type="button" class="oa-chip oa-chip-book" data-book>' + esc(T.book) + '</button></div>' +
         '<form class="oa-input-row"><label class="oa-sr" for="oa-input">' + esc(T.placeholder) + '</label>' +
-          '<input type="text" id="oa-input" class="oa-input" placeholder="' + esc(T.placeholder) + '" autocomplete="off">' +
+          '<input type="text" id="oa-input" class="oa-input" placeholder="' + esc(T.placeholder) + '" autocomplete="off" maxlength="1200">' +
           '<button type="submit" class="oa-send">' + esc(T.send) + '</button></form>' +
       '</div>' +
     '</div>';
@@ -223,7 +216,7 @@
 
   function askClaude(userText) {
     var msgs = history.concat([{ role: 'user', content: userText }]);
-    return fetch(AGENT_API_URL, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ system: SYSTEM_PROMPT, messages: msgs }) })
+    return fetch(AGENT_API_URL, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ lang: EN ? 'en' : 'it', messages: msgs }) })
       .then(function (r) { if (!r.ok) throw new Error('api'); return r.json(); })
       .then(function (data) {
         var text = (data.content || []).filter(function (b) { return b.type === 'text'; }).map(function (b) { return b.text; }).join('\n').trim();
@@ -233,7 +226,7 @@
   }
 
   function send(text) {
-    text = (text || input.value).trim();
+    text = (text || input.value).trim().slice(0, 1200);
     if (!text || busy) return;
     busy = true; sendBtn.disabled = true; input.value = '';
     chipsEl.hidden = true;
