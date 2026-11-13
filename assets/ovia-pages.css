@@ -1201,7 +1201,14 @@ html.oa-open { overflow: hidden; }
 .hm-pk-list li a:hover { border-color: var(--ink); transform: translateX(2px); }
 .hm-pk-list li a strong { color: var(--ink); font-weight: 600; font-size: 15px; }
 .hm-pk-list li a span { font-size: 14px; }
-@media (max-width: 860px) { .hm-pk-grid { grid-template-columns: 1fr; } }
+.hm-pk-ra { grid-column: 1 / -1; flex-direction: row; align-items: center; gap: clamp(24px, 5vw, 64px); background: var(--accent); border-color: var(--accent); }
+.hm-pk-ra .case-tag { color: rgba(255, 255, 255, .85); }
+.hm-pk-ra .ov-h2 { color: #fff; max-width: 30ch; }
+.hm-pk-ra .ov-lead { color: rgba(255, 255, 255, .92); max-width: 68ch; }
+.hm-pk-ra .hm-pk-cta { flex-shrink: 0; }
+.hm-pk-ra .ov-btn { background: #fff; border-color: #fff; color: var(--ink); white-space: nowrap; }
+.hm-pk-ra .ov-btn:hover { background: var(--ink); border-color: var(--ink); color: #fff; }
+@media (max-width: 860px) { .hm-pk-grid { grid-template-columns: 1fr; } .hm-pk-ra { flex-direction: column; align-items: stretch; } }
 @media (max-width: 520px) { .hm-pk-list li a { grid-template-columns: 1fr; gap: 2px; } }
 .pk-suite { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 24px; }
 .pk-suite > a { display: flex; flex-direction: column; gap: 10px; padding: 24px; border: 1px solid var(--line); border-radius: var(--radius); background: #fff; color: var(--body); text-decoration: none; transition: border-color .15s, transform .15s; }

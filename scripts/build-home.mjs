@@ -157,6 +157,7 @@ const T = {
     ],
     caseBridge: 'Lo stesso metodo, costruito sul processo del tuo studio.',
     pkTag: 'Per OCC, gestori della crisi e consulenti del sovraindebitamento', pkH: 'Una suite che segue la pratica dall\'apertura all\'esdebitazione.', pkP: 'Quattro strumenti pronti, ognuno vendibile da solo, con una persona che approva ogni passaggio. Attivi in dieci giorni, configurati dallo studio senza un tecnico.', pkBtn: 'Scopri la suite', pkDemo: 'Prova la demo', pkList: [['Ovia Pratiche', 'Dalla chiamata alla pratica pronta, con documenti e solleciti.', '/pacchetti.html'], ['Ovia Circolarizzazione', 'Enti fiscali e creditori privati: lettere, PEC, scadenze, stato passivo.', '/circolarizzazione.html'], ['Ovia Piano', 'Simulatore del piano, test di convenienza, preventivo compensi OCC.', '/piano.html'], ['Ovia Esecuzione', 'Rate, riparti e relazioni al giudice per tutti gli anni del piano.', '/esecuzione.html']], moTag: 'Per amministratori di condominio', moH: 'La morosità condominiale gestita come una procedura.', moP: 'Sollecito, messa in mora, pagina del condomino, fascicolo per l\'avvocato: ogni moroso ha una fase, una scadenza e la lettera successiva pronta da approvare. Scadenze art. 1129 c.c. calcolate per ogni posizione. 990 € di attivazione.', moBtn: 'Scopri Ovia Morosità',
+    raTag: 'Lista d\'attesa aperta · per commercialisti e consulenti del lavoro', raH: 'Ovia Radar: le nuove aziende della tua zona, ogni mattina.', raP: 'Legge ogni notte il Registro Imprese e ti dice quali nuove aziende vale la pena contattare, con il perché e la bozza del primo messaggio. Non invia niente da solo. I primi 30 professionisti entrano a 29 € al mese invece di 49.', raBtn: 'Entra in lista d\'attesa',
     founder: 'Luca Lorenzo', founderRole: 'Fondatore e CEO', story: 'La nostra storia',
     founderAlt: 'Luca Lorenzo, fondatore e CEO di Ovia',
     trustH: 'La responsabilità resta alle persone.',
@@ -296,6 +297,7 @@ const T = {
     ],
     caseBridge: 'The same method, built on your firm’s own process.',
     pkTag: 'For debt-restructuring bodies, crisis managers and consultants', pkH: 'A suite that follows the case from opening to discharge.', pkP: 'Four ready tools, each sold on its own, with a person approving every step. Live in ten days, configured by the firm without a developer. Italian only for now.', pkBtn: 'Discover the suite', pkDemo: 'Try the demo', pkList: [['Ovia Pratiche', 'From the call to a ready case, with documents and reminders.', '/pacchetti.html'], ['Ovia Circolarizzazione', 'Tax bodies and private creditors: letters, PEC, deadlines, liabilities statement.', '/circolarizzazione.html'], ['Ovia Piano', 'Plan simulator, convenience test, OCC fee estimate.', '/piano.html'], ['Ovia Esecuzione', 'Instalments, distributions and reports to the judge for every year of the plan.', '/esecuzione.html']], moTag: 'For condominium administrators', moH: 'Condominium arrears handled as a procedure.', moP: 'Reminder, formal notice, a page for the debtor, a ready file for the lawyer: every arrear has a stage, a deadline and the next letter ready for approval. Italian only for now. €990 activation.', moBtn: 'Discover Ovia Morosità',
+    raTag: 'Waiting list open · for accountants and employment consultants', raH: 'Ovia Radar: the new companies in your area, every morning.', raP: 'It reads the Italian Business Register every night and tells you which new companies are worth contacting, with the reason why and a draft first message. It never sends anything on its own. The first 30 professionals join at €29 a month instead of €49. Italian only for now.', raBtn: 'Join the waiting list',
     founder: 'Luca Lorenzo', founderRole: 'Founder and CEO', story: 'Our story',
     founderAlt: 'Luca Lorenzo, founder and CEO of Ovia',
     trustH: 'Responsibility stays with people.',
@@ -435,6 +437,14 @@ function pagina(lang) {
           <p class="ov-lead">${esc(t.moP)}</p>
         </div>
         <div class="hm-pk-cta"><a class="ov-btn" href="/morosita.html">${esc(t.moBtn)}</a></div>
+      </div>
+      <div class="hm-pk-in hm-pk-ra">
+        <div>
+          <p class="case-tag">${esc(t.raTag)}</p>
+          <h2 class="ov-h2">${esc(t.raH)}</h2>
+          <p class="ov-lead">${esc(t.raP)}</p>
+        </div>
+        <div class="hm-pk-cta"><a class="ov-btn" href="/radar.html">${esc(t.raBtn)}</a></div>
       </div>
     </div>
   </section>

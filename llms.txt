@@ -19,6 +19,9 @@
 - [Ovia Esecuzione](https://oviaitalia.it/esecuzione.html): vigilanza sull'esecuzione del piano omologato: rate, riparti, relazioni periodiche al giudice, inadempimenti, pagina riservata del debitore.
 - [Ovia Morosità](https://oviaitalia.it/morosita.html): per studi di amministrazione condominiale: solleciti, messa in mora, fascicolo per il decreto ingiuntivo, scadenze art. 1129 c.c.
 
+## In lista d'attesa
+- [Ovia Radar](https://oviaitalia.it/radar.html): applicazione per commercialisti e consulenti del lavoro. Ogni notte legge il Registro Imprese, segnala le nuove aziende della zona scelta, le ordina per punteggio, spiega perché contattarle e prepara la bozza del primo messaggio; non invia nulla da sola. Non ancora aperta al pubblico: lista d'attesa attiva, i primi 30 professionisti la attivano a 29 €/mese invece di 49.
+
 ## Chi siamo
 - [Chi siamo](https://oviaitalia.it/chi-siamo.html): Ovia nasce a Olbia come braccio operativo di L3 Innovation Srl. Dai software per il sovraindebitamento (oltre 15.000 pratiche gestite) ai sistemi automatizzati per studi e imprese. Fondatore e CEO: Luca Lorenzo.
 

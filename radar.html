@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ovia Radar — le nuove aziende della tua zona, ogni mattina | Lista d'attesa</title>
+  <meta name="description" content="Ogni notte Ovia Radar legge il Registro Imprese e ti segnala le nuove aziende della tua zona, con la bozza del primo messaggio. Lista d'attesa: primi 30 a 29 €/mese." />
+  <link rel="canonical" href="https://oviaitalia.it/radar.html" />
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/assets/brand/ovia-app-icon-512.png">
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Ovia" />
+  <meta property="og:url" content="https://oviaitalia.it/radar.html" />
+  <meta property="og:title" content="Ovia Radar — le nuove aziende della tua zona, ogni mattina" />
+  <meta property="og:description" content="Lista d'attesa aperta. I primi 30 professionisti entrano a 29 €/mese, per sempre, invece di 49." />
+  <meta property="og:image" content="https://oviaitalia.it/assets/og/radar.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Ovia Radar: lista d'attesa aperta, primi 30 professionisti a 29 euro al mese" />
+  <meta property="og:locale" content="it_IT" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://oviaitalia.it/assets/og/radar.png" />
+  <meta name="twitter:title" content="Ovia Radar — le nuove aziende della tua zona, ogni mattina" />
+  <meta name="twitter:description" content="Lista d'attesa aperta. I primi 30 professionisti entrano a 29 €/mese invece di 49." />
+
+  <link rel="preload" href="/assets/fonts/instrument-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/ovia-pages.css" />
+  <link rel="stylesheet" href="/landing.css" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://oviaitalia.it/radar.html#webpage","url":"https://oviaitalia.it/radar.html","name":"Ovia Radar — le nuove aziende della tua zona, ogni mattina","inLanguage":"it-IT","isPartOf":{"@type":"WebSite","url":"https://oviaitalia.it","name":"Ovia"}},{"@type":"SoftwareApplication","name":"Ovia Radar","applicationCategory":"BusinessApplication","operatingSystem":"Web, iOS, Android","description":"Applicazione per commercialisti e consulenti del lavoro: ogni notte legge il Registro Imprese, segnala le nuove aziende della zona scelta, le ordina per punteggio, spiega perché contattarle e prepara la bozza del primo messaggio. Nessun invio automatico.","brand":{"@type":"Brand","name":"Ovia"},"offers":[{"@type":"Offer","name":"Prezzo fondatori (primi 30 iscritti alla lista d'attesa)","price":"29","priceCurrency":"EUR","availability":"https://schema.org/PreOrder","url":"https://oviaitalia.it/radar.html#prezzo"}]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://oviaitalia.it/"},{"@type":"ListItem","position":2,"name":"Ovia Radar","item":"https://oviaitalia.it/radar.html"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Che cos'è Ovia Radar?","acceptedAnswer":{"@type":"Answer","text":"Un'applicazione che ogni notte legge il Registro Imprese e al mattino mostra al professionista le nuove aziende della sua zona, ordinate per punteggio, con il motivo per cui contattarle e la bozza del primo messaggio. Non invia nulla da sola."}},{"@type":"Question","name":"Quando apre Ovia Radar?","acceptedAnswer":{"@type":"Answer","text":"Ovia Radar non è ancora aperto al pubblico. L'accesso parte dalla lista d'attesa, in ordine di iscrizione."}},{"@type":"Question","name":"Quanto costa Ovia Radar?","acceptedAnswer":{"@type":"Answer","text":"Il piano Radar costa 49 euro al mese, IVA inclusa. I primi 30 professionisti della lista d'attesa lo attivano a 29 euro al mese, bloccati finché l'abbonamento resta attivo."}}]}]}</script>
+  <style>
+    /* ---------- Hero: banda blu con il radar ---------- */
+    .ra-band { background: var(--accent); color: #fff; overflow: hidden; }
+    .ra-band .lp-breadcrumb { color: rgba(255,255,255,.72); }
+    .ra-band .lp-breadcrumb a:hover { color: #fff; }
+    .ra-band .lp-breadcrumb span { color: rgba(255,255,255,.4); }
+    .ra-hero-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: clamp(28px, 5vw, 72px); align-items: center; }
+    .ra-band .lp-hero { padding-top: clamp(36px, 5vw, 64px); }
+    .ra-band .lp-hero h1 { color: #fff; max-width: 16ch; }
+    .ra-band .lp-hero .sub { color: rgba(255,255,255,.9); }
+    .ra-badge { display: inline-flex; align-items: center; gap: 10px; font-size: 14.5px; font-weight: 600; color: #fff; border: 1px solid rgba(255,255,255,.45); border-radius: 999px; padding: 8px 16px 8px 12px; margin-bottom: 22px; }
+    .ra-badge::before { content: ''; width: 9px; height: 9px; border-radius: 50%; background: #fff; animation: ra-pulse 2.4s ease-out infinite; }
+    .ra-band .lp-btn-primary { background: #fff; border-color: #fff; color: var(--ink) !important; }
+    .ra-band .lp-btn-primary:hover { background: var(--ink); border-color: var(--ink); color: #fff !important; }
+    .ra-band .lp-btn-ghost { color: #fff; border-color: rgba(255,255,255,.55); }
+    .ra-band .lp-btn-ghost:hover { border-color: #fff; }
+    .ra-hero-note { margin-top: 18px; font-size: 14.5px; color: rgba(255,255,255,.78); }
+
+    .ra-scope { position: relative; width: 100%; max-width: 460px; margin: 0 auto; aspect-ratio: 1; }
+    .ra-scope svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+    .ra-sweep { position: absolute; inset: 0; border-radius: 50%; background: conic-gradient(from 0deg, rgba(255,255,255,0) 0deg, rgba(255,255,255,0) 285deg, rgba(255,255,255,.34) 360deg); animation: ra-spin 6s linear infinite; }
+    .ra-blip { position: absolute; width: 12px; height: 12px; margin: -6px 0 0 -6px; border-radius: 50%; background: #fff; opacity: .9; }
+    .ra-blip::after { content: ''; position: absolute; inset: -7px; border-radius: 50%; border: 1px solid rgba(255,255,255,.7); animation: ra-ring 3s ease-out infinite; animation-delay: var(--d, 0s); }
+    .ra-blip.lo { width: 8px; height: 8px; margin: -4px 0 0 -4px; opacity: .55; }
+    .ra-blip.lo::after { display: none; }
+    .ra-tag { position: absolute; transform: translate(14px, -50%); background: #fff; color: var(--ink); border-radius: 6px; padding: 7px 11px; font-size: 13px; line-height: 1.25; font-weight: 600; white-space: nowrap; box-shadow: 0 6px 22px rgba(0,10,60,.28); }
+    .ra-tag small { display: block; font-size: 11.5px; font-weight: 500; color: var(--muted); }
+    .ra-tag b { color: var(--accent); font-variant-numeric: tabular-nums; }
+    .ra-you { position: absolute; left: 50%; top: 50%; width: 16px; height: 16px; margin: -8px 0 0 -8px; border-radius: 50%; background: var(--ink); border: 3px solid #fff; }
+    @keyframes ra-spin { to { transform: rotate(360deg); } }
+    @keyframes ra-ring { 0% { transform: scale(.6); opacity: .9; } 70%, 100% { transform: scale(2.1); opacity: 0; } }
+    @keyframes ra-pulse { 0% { box-shadow: 0 0 0 0 rgba(255,255,255,.6); } 70%, 100% { box-shadow: 0 0 0 9px rgba(255,255,255,0); } }
+    @media (prefers-reduced-motion: reduce) { .ra-sweep, .ra-blip::after, .ra-badge::before { animation: none; } }
+
+    /* ---------- Passi ---------- */
+    .ra-dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: var(--night-dot); vertical-align: middle; margin: 0 2px 2px; }
+    .ra-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .ra-step { border: 1px solid var(--line); border-radius: var(--radius); padding: 22px 20px; background: #fff; position: relative; }
+    .ra-step .n { font-size: 12px; letter-spacing: .1em; text-transform: uppercase; font-weight: 600; color: var(--accent); }
+    .ra-step h3 { font-size: 19px; font-weight: 600; letter-spacing: -.02em; color: var(--ink); margin: 6px 0 8px; line-height: 1.15; }
+    .ra-step p { font-size: 14.5px; color: var(--body); line-height: 1.5; }
+    .ra-step .g { display: inline-block; margin-top: 12px; font-size: 12.5px; font-weight: 600; color: var(--muted); background: var(--mist); border-radius: 999px; padding: 5px 10px; }
+    .ra-step.me { background: var(--night); border-color: var(--night); }
+    .ra-step.me .n { color: #8fb0ff; } .ra-step.me h3 { color: #fff; } .ra-step.me p { color: var(--night-text); } .ra-step.me .g { background: rgba(255,255,255,.08); color: #fff; }
+    .ra-step.me::after { content: ''; position: absolute; top: 18px; right: 18px; width: 9px; height: 9px; border-radius: 50%; background: var(--night-dot); }
+    .ra-law { border-left: 3px solid var(--accent); padding: 4px 0 4px 18px; margin: 22px 0 0; font-size: 15px; color: var(--body); line-height: 1.55; max-width: 84ch; }
+    .ra-law b { color: var(--ink); }
+
+    /* ---------- Schermata d'esempio ---------- */
+    .ra-shot { border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; background: var(--mist); }
+    .ra-shot .bar { display: flex; align-items: center; gap: 8px; padding: 10px 14px; border-bottom: 1px solid var(--line); font-size: 13px; color: var(--muted); }
+    .ra-shot .bar i { width: 10px; height: 10px; border-radius: 50%; background: var(--line-strong); display: inline-block; }
+    .ra-shot .bar em { margin-left: auto; font-style: normal; font-weight: 600; color: var(--warn); background: var(--warn-soft); border-radius: 999px; padding: 3px 10px; font-size: 12px; }
+    .ra-shot .body { padding: 26px 28px; display: grid; grid-template-columns: 1.1fr .9fr; gap: 24px; }
+    .ra-shot .screen { background: #fff; border: 1px solid var(--line); border-radius: var(--radius-sm); padding: 18px 20px; }
+    .ra-shot .ey { font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+    .ra-shot .h { font-size: 22px; font-weight: 600; color: var(--ink); margin: 4px 0 12px; letter-spacing: -.02em; display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+    .ra-shot .row { display: flex; justify-content: space-between; gap: 16px; font-size: 14px; padding: 8px 0; border-top: 1px solid var(--line); color: var(--body); }
+    .ra-shot .row b { color: var(--ink); font-weight: 600; text-align: right; }
+    .ra-shot .row > span:first-child { white-space: nowrap; }
+    .ra-shot .chip { display: inline-block; font-size: 12px; font-weight: 600; padding: 5px 10px; border-radius: 999px; background: var(--ok-soft); color: var(--ok); letter-spacing: 0; }
+    .ra-shot .chip.wait { background: var(--accent-soft); color: var(--accent-ink); }
+    .ra-shot .lett { font-size: 14px; line-height: 1.55; color: var(--body); border-left: 2px solid var(--line-strong); padding-left: 12px; margin-top: 10px; }
+    .ra-shot .foot { padding: 0 28px 22px; font-size: 14px; color: var(--muted); }
+
+    /* ---------- Prezzo ---------- */
+    .ra-price { display: grid; grid-template-columns: 1.2fr .8fr; gap: 20px; }
+    .ra-price .card { border: 1px solid var(--line); border-radius: var(--radius); background: #fff; padding: 30px 28px; display: flex; flex-direction: column; }
+    .ra-price .card.blue { background: var(--accent); border-color: var(--accent); color: #fff; }
+    .ra-price h3 { font-size: 24px; font-weight: 600; letter-spacing: -.02em; color: var(--ink); margin-bottom: 8px; }
+    .ra-price .blue h3 { color: #fff; }
+    .ra-price .tag { font-size: 16px; color: var(--body); line-height: 1.5; }
+    .ra-price ul { list-style: none; border-top: 1px solid var(--line); margin: 16px 0 22px; }
+    .ra-price li { font-size: 15.5px; line-height: 1.45; padding: 10px 0 10px 26px; position: relative; border-bottom: 1px solid var(--line); color: var(--ink); }
+    .ra-price li::before { content: ''; position: absolute; left: 3px; top: 17px; width: 9px; height: 5px; border-left: 2px solid var(--ok); border-bottom: 2px solid var(--ok); transform: rotate(-45deg); }
+    .ra-price li.me { color: var(--accent-ink); font-weight: 600; }
+    .ra-price li.me::before { border: 0; width: 9px; height: 9px; border-radius: 50%; background: var(--night-dot); top: 16px; transform: none; }
+    .ra-price .p { font-size: 46px; font-weight: 600; letter-spacing: -.03em; color: var(--ink); line-height: 1; font-variant-numeric: tabular-nums; margin-top: auto; }
+    .ra-price .p small { font-size: 16px; font-weight: 500; color: var(--muted); letter-spacing: 0; margin-left: 6px; }
+    .ra-price .p s { font-size: 22px; font-weight: 500; color: var(--faint); margin-right: 10px; letter-spacing: -.01em; }
+    .ra-price .m { font-size: 15px; color: var(--muted); margin-top: 8px; }
+    .ra-price .card .lp-btn-primary { margin-top: 18px; text-align: center; }
+    .ra-price .blue ol { list-style: none; counter-reset: ra; margin: 10px 0 0; }
+    .ra-price .blue ol li { counter-increment: ra; border-bottom: 1px solid rgba(255,255,255,.22); color: #fff; padding: 14px 0 14px 38px; font-size: 15.5px; }
+    .ra-price .blue ol li::before { content: counter(ra); border: 1px solid rgba(255,255,255,.6); transform: none; width: 24px; height: 24px; border-radius: 50%; left: 0; top: 13px; display: grid; place-items: center; font-size: 12.5px; font-weight: 600; }
+    .ra-price .blue p { color: rgba(255,255,255,.88); font-size: 15px; line-height: 1.55; margin-top: 16px; }
+    .ra-note { font-size: 14px; color: var(--muted); margin-top: 16px; max-width: 84ch; line-height: 1.55; }
+
+    .ra-who { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 1px solid var(--line); }
+    .ra-who div { padding: 22px 22px 22px 0; }
+    .ra-who div + div { padding-left: 22px; border-left: 1px solid var(--line); }
+    .ra-who h3 { font-size: 17px; font-weight: 600; color: var(--ink); margin-bottom: 6px; }
+    .ra-who p { font-size: 15px; color: var(--body); line-height: 1.5; }
+    .ra-rules { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .ra-rules div { border: 1px solid var(--line); border-radius: var(--radius); padding: 24px 26px; }
+    .ra-rules h3 { font-size: 18px; font-weight: 600; color: var(--ink); margin-bottom: 8px; }
+    .ra-rules p { font-size: 15.5px; color: var(--body); line-height: 1.55; }
+
+    /* ---------- Modulo ---------- */
+    .ra-form label.f { display: block; font-size: 13.5px; font-weight: 600; color: var(--ink); margin: 0 0 6px; }
+    .ra-form .field { margin-bottom: 4px; }
+    .ra-hp { position: absolute !important; left: -9999px !important; width: 1px; height: 1px; overflow: hidden; }
+    .ra-perks { list-style: none; margin: 4px 0 0; border-top: 1px solid var(--line); }
+    .ra-perks li { font-size: 15.5px; color: var(--ink); padding: 11px 0 11px 22px; border-bottom: 1px solid var(--line); position: relative; line-height: 1.45; }
+    .ra-perks li::before { content: ''; position: absolute; left: 2px; top: 19px; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
+    .lp-final-cta > .ra-perks { grid-column: 1; grid-row: auto; align-self: start; }
+    #lista { row-gap: 0; grid-template-rows: auto auto auto 1fr; scroll-margin-top: 88px; }
+    #come, #prezzo, #cosa, #app { scroll-margin-top: 72px; }
+
+    @media (max-width: 960px) {
+      .ra-hero-grid, .ra-shot .body, .ra-rules, .ra-price { grid-template-columns: 1fr; }
+      .ra-steps { grid-template-columns: 1fr 1fr; }
+      .ra-who { grid-template-columns: 1fr; } .ra-who div { padding-left: 0 !important; border-left: 0 !important; }
+      .ra-scope { max-width: 340px; }
+      .ra-tag { transform: translate(calc(-100% - 14px), -50%); }
+      #lista .ra-form, #lista .demo-success { margin-top: 26px; }
+    }
+    @media (max-width: 560px) {
+      .ra-steps { grid-template-columns: 1fr; }
+      .ra-tag { font-size: 12px; padding: 6px 9px; }
+      .ra-shot .body { padding: 18px 16px; } .ra-shot .foot { padding: 0 16px 18px; }
+      .ra-price .p { font-size: 40px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="lp-header">
+    <div class="ov-brand"><a href="/" class="lp-logo" aria-label="OVIA"><svg class="ov-mark" viewBox="25 -520 2210 530" aria-hidden="true" focusable="false"><g fill="currentColor"><path d="M299 10Q218 10 156 -24Q94 -58 60 -118Q25 -179 25 -257Q25 -335 60 -394Q94 -453 156 -487Q218 -520 299 -520Q382 -520 444 -487Q505 -453 539 -394Q573 -335 573 -257Q573 -179 539 -118Q504 -58 443 -24Q381 10 299 10ZM299 -95Q339 -95 370 -115Q401 -135 419 -171Q437 -208 437 -258Q437 -332 398 -374Q359 -415 299 -415Q240 -415 201 -373Q162 -331 162 -258Q162 -208 180 -171Q198 -135 229 -115Q260 -95 299 -95Z"/><path d="M781 0 577 -510H718L880 -39H810L971 -510H1108L905 0Z"/><path d="M1159 0V-510H1291V0Z"/><path d="M1694 0V-344Q1694 -382 1672 -402Q1650 -423 1605 -423Q1561 -423 1536 -407Q1510 -391 1504 -361H1378Q1387 -432 1447 -476Q1507 -520 1609 -520Q1715 -520 1770 -472Q1825 -424 1825 -333V0Z"/><path d="M1531 10Q1454 10 1409 -28Q1363 -67 1363 -132Q1363 -202 1415 -244Q1466 -285 1560 -299L1717 -322V-241L1582 -220Q1538 -213 1516 -196Q1494 -178 1494 -147Q1494 -119 1514 -104Q1535 -89 1571 -89Q1623 -89 1658 -116Q1694 -142 1694 -180L1708 -103Q1687 -47 1642 -19Q1597 10 1531 10Z"/></g><circle cx="2095" cy="-255" r="140" fill="#2E5BFF"/></svg></a></div>
+    <nav class="lp-nav">
+      <a href="/">Home</a>
+      <a href="#come">Come funziona</a>
+      <a href="#prezzo">Prezzo fondatori</a>
+      <a href="#lista" class="lp-nav-cta lp-btn lp-btn-primary" style="padding:11px 22px;font-size:15px;">Entra in lista d'attesa</a>
+    </nav>
+  </header>
+
+  <div class="ra-band">
+    <nav class="lp-breadcrumb" aria-label="breadcrumb">
+      <a href="/">Home</a><span>›</span>Ovia Radar
+    </nav>
+
+    <section class="lp-hero">
+      <div class="ra-hero-grid">
+        <div>
+          <p class="ra-badge">Lista d'attesa aperta · 30 posti a prezzo fondatori</p>
+          <h1>Ogni mattina sai quali aziende sono appena nate nella tua zona.</h1>
+          <p class="sub">Ovia Radar legge ogni notte il Registro Imprese, sceglie le nuove aziende che fanno per il tuo studio, ti spiega perché e ti prepara la bozza del primo messaggio. Chi contattare lo decidi tu: Radar non invia niente da solo.</p>
+          <div class="lp-cta-row">
+            <a href="#lista" class="lp-btn lp-btn-primary">Entra in lista d'attesa</a>
+            <a href="#come" class="lp-btn lp-btn-ghost">Guarda come funziona</a>
+          </div>
+          <p class="ra-hero-note">Per commercialisti e consulenti del lavoro. Iscrizione gratuita, nessuna carta richiesta.</p>
+        </div>
+        <div>
+          <div class="ra-scope" role="img" aria-label="Un radar che segnala le nuove aziende intorno allo studio">
+            <svg viewBox="0 0 400 400" aria-hidden="true" focusable="false" fill="none" stroke="rgba(255,255,255,.32)" stroke-width="1">
+              <circle cx="200" cy="200" r="199"/><circle cx="200" cy="200" r="150"/><circle cx="200" cy="200" r="100"/><circle cx="200" cy="200" r="50"/>
+              <path d="M200 1V399M1 200H399"/>
+            </svg>
+            <div class="ra-sweep" aria-hidden="true"></div>
+            <span class="ra-blip" style="left:68%;top:31%;--d:.2s" aria-hidden="true"></span>
+            <span class="ra-tag" style="left:68%;top:31%" aria-hidden="true">Nuova Srl · edilizia<small>6 km · iscritta 3 giorni fa · punteggio <b>84</b></small></span>
+            <span class="ra-blip" style="left:27%;top:62%;--d:1.4s" aria-hidden="true"></span>
+            <span class="ra-blip lo" style="left:39%;top:22%" aria-hidden="true"></span>
+            <span class="ra-blip lo" style="left:74%;top:71%" aria-hidden="true"></span>
+            <span class="ra-blip lo" style="left:17%;top:38%" aria-hidden="true"></span>
+            <span class="ra-blip lo" style="left:55%;top:85%" aria-hidden="true"></span>
+            <span class="ra-you" aria-hidden="true"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <section class="why-now" id="cosa">
+    <h2 class="why-now-title">Il passaparola non si programma. Le nuove imprese sì.</h2>
+    <div class="why-now-grid">
+      <div class="why-now-story">
+        <p class="kicker">Ogni azienda che nasce viene iscritta al Registro Imprese, ed è un dato pubblico. Nelle prime settimane quella stessa azienda decide a chi affidare contabilità, paghe e adempimenti. Di solito sceglie chi conosce già, o chi si fa vivo per primo.</p>
+        <p>Oggi quel momento passa senza che lo studio lo sappia. I nuovi clienti arrivano dal passaparola, che funziona ma non si può accelerare né prevedere. L'alternativa è comprare un elenco camerale: centinaia di nomi senza ordine, senza un motivo e senza un passo successivo.</p>
+        <p><strong>Ovia Radar è uno strumento di acquisizione clienti per professionisti.</strong> Guarda al posto tuo le fonti pubbliche, tiene solo le aziende che rientrano nella tua zona e nel tuo tipo di cliente, le mette in ordine con un punteggio da 0 a 100 e per ognuna scrive tre cose: perché ti riguarda, cosa fare, quando farlo.</p>
+        <p>Poi si ferma, come ogni sistema Ovia: il pallino <span class="ra-dot" aria-hidden="true"></span> del nostro logo significa «in attesa». Radar prepara la bozza del messaggio; leggerla, cambiarla e inviarla resta una decisione tua.</p>
+      </div>
+      <div class="stat-cards">
+        <div class="stat-card"><div class="big">Ogni notte</div><div class="desc">la scansione delle fonti pubbliche per le province che hai scelto</div></div>
+        <div class="stat-card"><div class="big">0–100</div><div class="desc">il punteggio che ordina le opportunità: prima quelle recenti, vicine e nel tuo settore</div></div>
+        <div class="stat-card"><div class="big">0</div><div class="desc">messaggi inviati senza che tu li abbia letti e spediti di persona</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="lp-section" id="come">
+    <p class="lp-eyebrow">Come funziona</p>
+    <h2 class="lp-section-title">Quattro passi. L'ultimo è sempre tuo.</h2>
+    <p class="lp-section-sub">Imposti il radar una volta, in due minuti. Da quel momento lavora ogni notte e al mattino ti lascia un elenco corto: fino a 10 opportunità al giorno, non cento.</p>
+    <div class="ra-steps">
+      <div class="ra-step"><div class="n">Passo 1</div><h3>Dici dove lavori e chi cerchi</h3><p>La tua città e un raggio fino a 50 km, il tipo di azienda che cerchi e i settori che segui. Una domanda per schermata; cambi tutto quando vuoi.</p><span class="g">una volta, 2 minuti</span></div>
+      <div class="ra-step"><div class="n">Passo 2</div><h3>Il radar legge le fonti</h3><p>Ogni notte controlla il Registro Imprese per le tue province e raccoglie le aziende appena iscritte. Lavora solo su imprese iscritte al Registro, non su privati cittadini.</p><span class="g">ogni notte</span></div>
+      <div class="ra-step"><div class="n">Passo 3</div><h3>Al mattino sai chi chiamare</h3><p>Le opportunità arrivano ordinate per punteggio. Ognuna ha il perché in una frase, il primo passo consigliato, il momento giusto, i contatti aziendali pubblici e il link alla fonte per verificare.</p><span class="g">notifica sul telefono o email</span></div>
+      <div class="ra-step me"><div class="n">Passo 4</div><h3>Decidi tu</h3><p>Se un'azienda ti interessa, Radar prepara la bozza per email, LinkedIn o telefonata nel tono che hai scelto. La invii tu, dal tuo canale. Poi la segui in una pipeline con follow-up e valore stimato.</p><span class="g">approva una persona</span></div>
+    </div>
+    <p class="ra-law"><b>Come nasce il punteggio.</b> Cinque fattori, tutti leggibili: quanto è recente l'iscrizione, quanto dista dal tuo studio, se il settore è tra i tuoi, che tipo di evento è, quanti dati pubblici ci sono per contattarla. Quando scarti un'opportunità o ne vinci una, il radar ne tiene conto per le successive.</p>
+  </section>
+
+  <section class="lp-section" id="app" style="padding-top:0">
+    <p class="lp-eyebrow">Dentro l'app</p>
+    <h2 class="lp-section-title">Una scheda per ogni azienda. Una bozza pronta se decidi di scriverle.</h2>
+    <div class="ra-shot">
+      <div class="bar"><i></i><i></i><i></i> Ovia Radar · Opportunità di oggi <em>Esempio con dati inventati</em></div>
+      <div class="body">
+        <div class="screen">
+          <div class="ey">Nuova impresa · Treviso, 6 km</div>
+          <div class="h">Cantieri Aurora Srl <span class="chip">Fascia alta · 84</span></div>
+          <div class="row"><span>Perché</span><b>Srl edile iscritta 3 giorni fa, nel tuo settore e a 6 km dallo studio</b></div>
+          <div class="row"><span>Cosa fare</span><b>Presentarti con un messaggio breve e un riferimento ai primi adempimenti</b></div>
+          <div class="row"><span>Quando</span><b>Entro questa settimana</b></div>
+          <div class="row"><span>Fonte</span><b>Registro Imprese · apri l'origine del dato</b></div>
+          <div class="row"><span>Stato</span><span class="chip wait">Nuova · da valutare</span></div>
+        </div>
+        <div class="screen">
+          <div class="ey">Bozza preparata da Radar · email</div>
+          <div class="h">Primo contatto <span class="chip wait">Da approvare</span></div>
+          <p class="lett">Buongiorno, ho visto che Cantieri Aurora Srl si è costituita da pochi giorni a Treviso: complimenti per l'avvio. Seguo da anni imprese edili della zona su contabilità e adempimenti del primo esercizio. Se può esserle utile, le lascio in due righe le prime scadenze da non perdere…</p>
+        </div>
+      </div>
+      <p class="foot">La bozza resta una proposta: la leggi, la riscrivi se serve e la invii dalla tua casella. Radar non ha accesso alla tua posta e non contatta nessuno al posto tuo.</p>
+    </div>
+  </section>
+
+  <section class="vs-section">
+    <h2 class="lp-section-title">Lo stesso lunedì, due studi diversi.</h2>
+    <div class="vs-grid">
+      <div class="vs-col">
+        <h3>Senza Ovia Radar</h3>
+        <ul>
+          <li>I nuovi clienti arrivano quando qualcuno fa il tuo nome</li>
+          <li>Le aziende appena nate in zona le scopri quando hanno già scelto un altro studio</li>
+          <li>Un elenco comprato ha centinaia di righe e nessuna priorità</li>
+          <li>Il primo messaggio si scrive da zero, quando avanza tempo</li>
+          <li>Chi hai contattato e quando è in un foglio, o a memoria</li>
+        </ul>
+      </div>
+      <div class="vs-col oggi">
+        <h3>Con Ovia Radar</h3>
+        <ul>
+          <li>Ogni mattina un elenco corto di aziende nuove nella tua zona</li>
+          <li>Le vedi nei primi giorni di vita, con la data di iscrizione</li>
+          <li>Sono già in ordine: punteggio, motivo, primo passo</li>
+          <li>La bozza è pronta nel tuo tono; tu la approvi e la invii</li>
+          <li>Ogni contatto ha uno stato, un follow-up e un valore stimato</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="lp-section" id="prezzo">
+    <p class="lp-eyebrow">Prezzo fondatori</p>
+    <h2 class="lp-section-title">I primi 30 professionisti entrano a 29 € al mese. Per sempre.</h2>
+    <p class="lp-section-sub">Ovia Radar non è ancora aperto al pubblico. Apriamo a numero chiuso, partendo da chi è in lista d'attesa. Ai primi 30 riserviamo il prezzo fondatori: lo stesso piano Radar che a listino costa 49 € al mese.</p>
+    <div class="ra-price">
+      <div class="card">
+        <h3>Radar, prezzo fondatori</h3>
+        <div class="tag">Per il professionista o lo studio che lavora su una zona. Riservato ai primi 30 iscritti alla lista d'attesa.</div>
+        <ul>
+          <li>La tua città e un raggio fino a 50 km</li>
+          <li>Fino a 10 opportunità al giorno, già spiegate</li>
+          <li class="me">Bozze di messaggio per email, LinkedIn e telefono: le invii tu</li>
+          <li>Pipeline con follow-up e valore stimato</li>
+          <li>App sul telefono, con notifiche push ed email</li>
+          <li>Aggiornamento manuale quando vuoi, ogni 30 minuti</li>
+        </ul>
+        <div class="p"><s>49 €</s>29 €<small>al mese, IVA inclusa</small></div>
+        <div class="m">Prezzo bloccato finché l'abbonamento resta attivo. Disdici quando vuoi.</div>
+        <a href="#lista" class="lp-btn lp-btn-primary">Entra in lista d'attesa</a>
+      </div>
+      <div class="card blue">
+        <h3>Come funziona la lista</h3>
+        <ol>
+          <li>Ti iscrivi qui sotto. È gratis e non chiediamo la carta.</li>
+          <li>Quando apriamo ti scriviamo, in ordine di iscrizione.</li>
+          <li>I primi 30 attivano Radar a 29 € al mese invece di 49.</li>
+          <li>Dal trentunesimo in poi si entra al prezzo di listino.</li>
+        </ol>
+        <p>All'attivazione: 7 giorni di prova e garanzia di 60 giorni. Se in 60 giorni non ricevi nemmeno un'opportunità da contattare, ti rimborsiamo.</p>
+      </div>
+    </div>
+    <p class="ra-note">Essere in lista non ti impegna ad acquistare: quando ti scriviamo decidi se attivare. Il prezzo fondatori vale per il piano Radar mensile. Per studi che seguono più zone esisterà un piano Studio (raggio fino a 100 km, più province, fino a 30 opportunità al giorno) a 129 € al mese.</p>
+  </section>
+
+  <section class="lp-section" style="padding-top:0">
+    <p class="lp-eyebrow">Per chi è</p>
+    <h2 class="lp-section-title">Per chi vive di clienti che restano anni.</h2>
+    <div class="ra-who">
+      <div><h3>Commercialisti</h3><p>Ogni nuova impresa ha bisogno di qualcuno per contabilità, dichiarazioni e bilancio. Radar te la mostra nei primi giorni, quando la scelta è ancora aperta.</p></div>
+      <div><h3>Consulenti del lavoro</h3><p>Un'azienda appena costituita che assume è un incarico per paghe e contributi. Vedi le nuove iscrizioni nella tua zona prima degli altri.</p></div>
+      <div><h3>Altre professioni</h3><p>Partiamo da queste due perché il segnale è chiaro e verificabile. Se fai un altro lavoro, iscriviti indicando la professione: ti scriviamo quando Radar sarà pronto per la tua.</p></div>
+    </div>
+  </section>
+
+  <section class="lp-section" style="padding-top:0">
+    <p class="lp-eyebrow">Dati e regole</p>
+    <h2 class="lp-section-title">Solo dati pubblici di aziende. Nessun invio automatico.</h2>
+    <div class="ra-rules">
+      <div><h3>Imprese, non privati</h3><p>Radar lavora su dati pubblici del Registro Imprese, ottenuti da un fornitore di dati camerali. Riguarda imprese iscritte, non privati cittadini. Ogni opportunità riporta la fonte, così puoi verificarla prima di muoverti.</p></div>
+      <div><h3>Il contatto lo decidi tu</h3><p>Nessun messaggio parte da Radar. Se e come scrivere a un'azienda resta una tua scelta, da fare nel rispetto delle regole del tuo Ordine sulla comunicazione professionale. Un'azienda che non vuole comparire può chiedere l'esclusione: non verrà più proposta a nessuno.</p></div>
+      <div><h3>I tuoi dati restano tuoi</h3><p>Ogni studio vede solo le proprie opportunità e la propria pipeline. I dati sono in un database nell'Unione Europea; puoi esportarli o chiederne la cancellazione dall'app in qualsiasi momento.</p></div>
+      <div><h3>Niente promesse inventate</h3><p>Le spiegazioni sono scritte solo a partire dai dati del segnale. Radar non garantisce che un'azienda diventi cliente: ti dà il nome giusto al momento giusto. La trattativa resta il tuo lavoro.</p></div>
+    </div>
+  </section>
+
+  <section class="lp-section" style="padding-top:0">
+    <p class="lp-eyebrow">Domande frequenti</p>
+    <h2 class="lp-section-title">Le domande che ci fanno davvero.</h2>
+    <div class="lp-faq">
+      <div class="lp-faq-item">
+        <button class="lp-faq-q">Quando apre Ovia Radar? <span class="plus">+</span></button>
+        <div class="lp-faq-a">Non diamo una data che non siamo certi di rispettare. L'applicazione è costruita; stiamo completando il collegamento alle fonti ufficiali e le verifiche finali. Apriamo a gruppi, partendo dalla lista d'attesa e in ordine di iscrizione: chi è in lista lo sa per primo, via email.</div>
+      </div>
+      <div class="lp-faq-item">
+        <button class="lp-faq-q">Iscrivermi alla lista mi impegna a qualcosa? <span class="plus">+</span></button>
+        <div class="lp-faq-a">No. L'iscrizione è gratuita e non chiediamo dati di pagamento. Quando arriva il tuo turno ricevi un'email: decidi allora se attivare. Puoi chiedere di essere tolto dalla lista in qualsiasi momento.</div>
+      </div>
+      <div class="lp-faq-item">
+        <button class="lp-faq-q">Cosa succede dopo i primi 30? <span class="plus">+</span></button>
+        <div class="lp-faq-a">Il prezzo fondatori di 29 € al mese è riservato ai primi 30 professionisti della lista che attivano l'abbonamento. Chi arriva dopo resta in lista e viene avvisato all'apertura successiva, al prezzo di listino di 49 € al mese.</div>
+      </div>
+      <div class="lp-faq-item">
+        <button class="lp-faq-q">Radar scrive alle aziende al posto mio? <span class="plus">+</span></button>
+        <div class="lp-faq-a">Mai. Radar prepara una bozza di email, di messaggio LinkedIn o una traccia per la telefonata. Tu la leggi, la modifichi e la invii dal tuo canale. Radar non ha accesso alla tua casella di posta né ai tuoi profili.</div>
+      </div>
+      <div class="lp-faq-item">
+        <button class="lp-faq-q">Da dove arrivano i dati? <span class="plus">+</span></button>
+        <div class="lp-faq-a">Dal Registro Imprese, attraverso un fornitore di dati camerali. Si parte dalle nuove iscrizioni, che sono il segnale più chiaro. Altri tipi di segnale verranno aggiunti dopo l'apertura e li dichiareremo solo quando saranno attivi.</div>
+      </div>
+      <div class="lp-faq-item">
+        <button class="lp-faq-q">Faccio un altro mestiere: posso iscrivermi? <span class="plus">+</span></button>
+        <div class="lp-faq-a">Sì. L'apertura parte da commercialisti e consulenti del lavoro. Se sei avvocato, consulente o lavori in un altro settore, indica la professione nel modulo: ci aiuta a decidere quale aprire dopo, e ti avvisiamo quando tocca alla tua.</div>
+      </div>
+      <div class="lp-faq-item">
+        <button class="lp-faq-q">Chi c'è dietro? <span class="plus">+</span></button>
+        <div class="lp-faq-a">Ovia è il marchio software di L3 Innovation Srl. Costruiamo sistemi di marketing e automazione per studi professionali, con una regola che vale anche per Radar: il sistema prepara il lavoro, una persona approva ogni passo che conta.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="lp-wrap" style="padding-top:8px">
+    <div class="lp-final-cta" id="lista">
+      <h2 class="lp-section-title">Entra in lista d'attesa.</h2>
+      <p class="lp-section-sub">Lascia i tuoi dati: ti scriviamo quando apriamo, in ordine di iscrizione. Se sei tra i primi 30, attivi Radar a 29 € al mese invece di 49.</p>
+      <ul class="ra-perks">
+        <li>Gratis, senza carta e senza impegno</li>
+        <li>Ti scriviamo solo per Ovia Radar: niente newsletter</li>
+        <li>Prezzo fondatori per i primi 30</li>
+      </ul>
+      <div class="demo-form ra-form" id="wl-form-wrap">
+        <div class="row">
+          <div class="field"><label class="f" for="wl-nome">Nome *</label><input type="text" id="wl-nome" maxlength="60" autocomplete="given-name" /></div>
+          <div class="field"><label class="f" for="wl-cognome">Cognome *</label><input type="text" id="wl-cognome" maxlength="60" autocomplete="family-name" /></div>
+        </div>
+        <div class="field"><label class="f" for="wl-email">Email di lavoro *</label><input type="email" id="wl-email" maxlength="120" autocomplete="email" inputmode="email" /></div>
+        <div class="row">
+          <div class="field"><label class="f" for="wl-professione">Professione *</label>
+            <select id="wl-professione">
+              <option value="" disabled selected>Scegli</option>
+              <option value="Commercialista">Commercialista</option>
+              <option value="Consulente del lavoro">Consulente del lavoro</option>
+              <option value="Avvocato">Avvocato</option>
+              <option value="Altra professione">Altra professione</option>
+            </select>
+          </div>
+          <div class="field"><label class="f" for="wl-zona">Città o provincia dello studio *</label><input type="text" id="wl-zona" maxlength="60" autocomplete="address-level2" /></div>
+        </div>
+        <div class="field"><label class="f" for="wl-studio">Nome dello studio (facoltativo)</label><input type="text" id="wl-studio" maxlength="100" autocomplete="organization" /></div>
+        <div class="ra-hp" aria-hidden="true"><label for="wl-sito">Lascia vuoto questo campo</label><input type="text" id="wl-sito" tabindex="-1" autocomplete="off" /></div>
+        <label class="demo-consent">
+          <input type="checkbox" id="wl-privacy" />
+          <span>Acconsento al trattamento dei miei dati per essere avvisato dell'apertura di Ovia Radar e delle condizioni riservate alla lista d'attesa, secondo l'<a href="/privacy.html">informativa sulla privacy</a>.</span>
+        </label>
+        <button type="button" class="lp-btn lp-btn-primary" id="wl-submit">Entra in lista d'attesa</button>
+        <div class="demo-msg" id="wl-msg" role="status" aria-live="polite"></div>
+      </div>
+      <div class="demo-success" id="wl-success" style="display:none;" tabindex="-1">
+        <div class="check">✓</div>
+        <h3>Sei in lista d'attesa.</h3>
+        <p>Abbiamo registrato la tua iscrizione con data e ora. Ti scriviamo all'indirizzo che hai indicato quando apriamo, in ordine di arrivo.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="lp-footer">
+    <div>© 2026 Ovia — L3 Innovation Srl · P.IVA 02882330901</div>
+    <div class="lp-footer-links">
+      <a href="/">Home</a>
+      <a href="/servizi/">Servizi</a>
+      <a href="/chi-siamo.html">Chi siamo</a>
+      <a href="/privacy.html">Privacy</a>
+    </div>
+  </footer>
+
+  <div class="lp-sticky-cta">
+    <a href="#lista" class="lp-btn lp-btn-primary">Entra in lista d'attesa</a>
+  </div>
+
+  <script>
+    document.querySelectorAll('.lp-faq-q').forEach(function (btn) {
+      btn.setAttribute('aria-expanded', 'false');
+      btn.addEventListener('click', function () {
+        var open = btn.parentElement.classList.toggle('open');
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+    });
+  </script>
+  <script>
+    (function () {
+      var btn = document.getElementById('wl-submit');
+      if (!btn) return;
+      var msg = document.getElementById('wl-msg');
+      var LEAD_URL = 'https://ovia-ten.vercel.app/api/lead';
+
+      // Da quale contenuto arriva la persona (es. ?utm_source=linkedin&utm_content=post-3):
+      // serve a capire quali post portano iscrizioni. Non contiene dati personali.
+      function provenienza() {
+        var out = [];
+        try {
+          var q = new URLSearchParams(window.location.search);
+          ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content'].forEach(function (k) {
+            var v = (q.get(k) || '').replace(/[^\w .\-]/g, '').slice(0, 60);
+            if (v) out.push(k.replace('utm_', '') + '=' + v);
+          });
+          if (!out.length && document.referrer) {
+            var h = new URL(document.referrer).hostname.replace(/^www\./, '');
+            if (h && h !== window.location.hostname) out.push('da=' + h.slice(0, 60));
+          }
+        } catch (e) {}
+        return out.length ? out.join(', ') : 'diretto';
+      }
+      function val(id) { return document.getElementById(id).value.trim(); }
+      function errore(testo, id) {
+        msg.className = 'demo-msg err'; msg.textContent = testo;
+        if (id) document.getElementById(id).focus();
+      }
+
+      btn.addEventListener('click', async function () {
+        var nome = val('wl-nome'), cognome = val('wl-cognome'), email = val('wl-email');
+        var prof = document.getElementById('wl-professione').value, zona = val('wl-zona'), studio = val('wl-studio');
+        if (!nome) return errore('Inserisci il tuo nome.', 'wl-nome');
+        if (!cognome) return errore('Inserisci il tuo cognome.', 'wl-cognome');
+        if (!/^[^@\s]+@[^@\s]+\.[^@\s]{2,}$/.test(email)) return errore('Inserisci una email valida.', 'wl-email');
+        if (!prof) return errore('Scegli la tua professione.', 'wl-professione');
+        if (!zona) return errore('Indica la città o la provincia dello studio.', 'wl-zona');
+        if (!document.getElementById('wl-privacy').checked) return errore('Per iscriverti serve il consenso al trattamento dei dati.', 'wl-privacy');
+
+        function fatto() {
+          document.getElementById('wl-form-wrap').style.display = 'none';
+          var ok = document.getElementById('wl-success');
+          ok.style.display = 'block'; ok.focus();
+        }
+        // Campo trappola: le persone non lo vedono, i programmi automatici lo compilano.
+        if (document.getElementById('wl-sito').value) return fatto();
+
+        btn.disabled = true; msg.className = 'demo-msg'; msg.textContent = 'Invio in corso…';
+        var origine = provenienza();
+        try {
+          var res = await fetch(LEAD_URL, {
+            method: 'POST', headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              azienda: studio, nome: nome, cognome: cognome, email: email,
+              attivita: prof,
+              esigenza: 'LISTA D\'ATTESA OVIA RADAR — ' + prof + ' — ' + zona,
+              volume_frequenza: zona,
+              pacchetto_suggerito: 'Ovia Radar',
+              note_interne: 'Lista d\'attesa Ovia Radar (prezzo fondatori ai primi 30). Zona: ' + zona + '. Provenienza: ' + origine + '.',
+              categoria: 'Servizi AI', fonte: 'Altro', stato: 'Nuovo', priorita: 'Media',
+              data_ricezione: new Date().toISOString()
+            })
+          });
+          if (!res.ok) throw new Error('bad status');
+          fatto();
+        } catch (e) {
+          btn.disabled = false;
+          errore('Invio non riuscito. Riprova tra poco oppure scrivici a l.lorenzo@oviaitalia.it');
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

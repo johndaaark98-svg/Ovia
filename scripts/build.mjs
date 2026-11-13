@@ -50,10 +50,10 @@ export async function buildTutto({ log = console.log } = {}) {
   writeFileSync(ROOT + 'en/blog/index.html', renderIndice(en, 'en'));
   writeFileSync(ROOT + 'en/blog/feed.xml', renderFeed(en, 'en'));
 
-  const SOLO_IT = ['/pacchetti.html', '/morosita.html', '/sovraindebitamento.html', '/circolarizzazione.html', '/piano.html', '/esecuzione.html']; // pagine senza versione inglese
+  const SOLO_IT = ['/pacchetti.html', '/morosita.html', '/sovraindebitamento.html', '/circolarizzazione.html', '/piano.html', '/esecuzione.html', '/radar.html']; // pagine senza versione inglese
   const LEGALI = ['/privacy.html', '/cookie.html', '/termini.html']; // indicizzate anche loro (scelta di Luca, ott 2026)
-  const statiche = ['/', '/servizi/', '/chi-siamo.html', '/faq.html', ...PRODOTTI.map(p => urlOf(p.id)), '/siti-studi-professionali.html', '/siti-attivita-locali.html', '/pacchetti.html', '/morosita.html', '/sovraindebitamento.html', '/circolarizzazione.html', '/piano.html', '/esecuzione.html', '/blog/', ...LEGALI];
-  const PROD = ['/sovraindebitamento.html', '/pacchetti.html', '/morosita.html', '/circolarizzazione.html', '/piano.html', '/esecuzione.html'];
+  const statiche = ['/', '/servizi/', '/chi-siamo.html', '/faq.html', ...PRODOTTI.map(p => urlOf(p.id)), '/siti-studi-professionali.html', '/siti-attivita-locali.html', '/pacchetti.html', '/morosita.html', '/sovraindebitamento.html', '/circolarizzazione.html', '/piano.html', '/esecuzione.html', '/radar.html', '/blog/', ...LEGALI];
+  const PROD = ['/sovraindebitamento.html', '/pacchetti.html', '/morosita.html', '/circolarizzazione.html', '/piano.html', '/esecuzione.html', '/radar.html'];
   const pr = p => p === '/' ? '1.0' : PROD.includes(p) ? '0.9' : p.startsWith('/servizi') ? '0.9' : LEGALI.includes(p) ? '0.2' : '0.8';
   const cf = p => p === '/blog/' ? 'daily' : LEGALI.includes(p) ? 'yearly' : 'monthly';
   const urls = [
@@ -86,6 +86,9 @@ ${PRODOTTI.map(p => `- [${p.name}](${SITE.url}${urlOf(p.id)}): ${p.pitch}`).join
 - [Ovia Piano](${SITE.url}/piano.html): simulatore del piano di ristrutturazione dei debiti, test di convenienza rispetto alla liquidazione controllata, preventivo compensi OCC ex DM 202/2014.
 - [Ovia Esecuzione](${SITE.url}/esecuzione.html): vigilanza sull'esecuzione del piano omologato: rate, riparti, relazioni periodiche al giudice, inadempimenti, pagina riservata del debitore.
 - [Ovia Morosità](${SITE.url}/morosita.html): per studi di amministrazione condominiale: solleciti, messa in mora, fascicolo per il decreto ingiuntivo, scadenze art. 1129 c.c.
+
+## In lista d'attesa
+- [Ovia Radar](${SITE.url}/radar.html): applicazione per commercialisti e consulenti del lavoro. Ogni notte legge il Registro Imprese, segnala le nuove aziende della zona scelta, le ordina per punteggio, spiega perché contattarle e prepara la bozza del primo messaggio; non invia nulla da sola. Non ancora aperta al pubblico: lista d'attesa attiva, i primi 30 professionisti la attivano a 29 €/mese invece di 49.
 
 ## Chi siamo
 - [Chi siamo](${SITE.url}/chi-siamo.html): Ovia nasce a Olbia come braccio operativo di L3 Innovation Srl. Dai software per il sovraindebitamento (oltre 15.000 pratiche gestite) ai sistemi automatizzati per studi e imprese. Fondatore e CEO: Luca Lorenzo.
