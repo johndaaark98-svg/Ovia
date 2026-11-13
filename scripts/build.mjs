@@ -88,7 +88,7 @@ ${PRODOTTI.map(p => `- [${p.name}](${SITE.url}${urlOf(p.id)}): ${p.pitch}`).join
 - [Ovia Morosità](${SITE.url}/morosita.html): per studi di amministrazione condominiale: solleciti, messa in mora, fascicolo per il decreto ingiuntivo, scadenze art. 1129 c.c.
 
 ## In lista d'attesa
-- [Ovia Radar](${SITE.url}/radar.html): applicazione per commercialisti e consulenti del lavoro. Ogni notte legge il Registro Imprese, segnala le nuove aziende della zona scelta, le ordina per punteggio, spiega perché contattarle e prepara la bozza del primo messaggio; non invia nulla da sola. Non ancora aperta al pubblico: lista d'attesa attiva, i primi 30 professionisti la attivano a 29 €/mese invece di 49.
+- [Ovia Radar](${SITE.url}/radar.html): il radar delle nuove imprese per commercialisti e consulenti del lavoro. Ogni notte legge il Registro Imprese, segnala le imprese appena iscritte nella zona dello studio, le ordina per punteggio, spiega perché presentarsi e prepara la bozza del primo messaggio; non invia nulla da solo. Non ancora aperto al pubblico: lista d'attesa attiva, i primi 30 professionisti lo attivano a 29 €/mese invece di 49.
 
 ## Chi siamo
 - [Chi siamo](${SITE.url}/chi-siamo.html): Ovia nasce a Olbia come braccio operativo di L3 Innovation Srl. Dai software per il sovraindebitamento (oltre 15.000 pratiche gestite) ai sistemi automatizzati per studi e imprese. Fondatore e CEO: Luca Lorenzo.
