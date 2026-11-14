@@ -11,6 +11,7 @@ const PACKAGE_NAMES = [
   // Ordine importante: i nomi più lunghi prima, così "Ovia Siti Web per le AI"
   // non viene confuso con il vecchio "Ovia Siti Web".
   'Ovia Siti Web per le AI',
+  'Ovia Radar', // lista d'attesa di radar.html (valore aggiunto anche allo schema Lead)
   'Ovia Chiamata → Pratica',
   'Ovia Documenti Crisi',
   'Ovia Raccolta & Solleciti',
@@ -91,7 +92,8 @@ export default async function handler(req, res) {
     note_interne: body.note_interne || '',
   };
 
-  // Ora Base44 richiede solo l'email come campo obbligatorio.
+  // Qui controlliamo solo l'email; nome e cognome li gestisce la funzione Base44
+  // (lo schema Lead li dichiara obbligatori, la funzione li manda sempre, anche vuoti).
   if (!payload.email) {
     res.status(400).json({ error: 'Email obbligatoria' });
     return;

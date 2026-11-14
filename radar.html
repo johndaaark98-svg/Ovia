@@ -488,7 +488,10 @@
           ok.style.display = 'block'; ok.focus();
         }
         // Campo trappola: le persone non lo vedono, i programmi automatici lo compilano.
-        if (document.getElementById('wl-sito').value) return fatto();
+        // Non scartiamo l'iscrizione (un compilatore automatico del browser potrebbe averlo riempito):
+        // la inviamo con un avviso in note_interne, così nel CRM si decide a mano.
+        var trappola = document.getElementById('wl-sito').value
+          ? ' ATTENZIONE: campo nascosto anti-robot compilato, verificare che sia una persona.' : '';
 
         btn.disabled = true; msg.className = 'demo-msg'; msg.textContent = 'Invio in corso…';
         var origine = provenienza();
@@ -501,8 +504,8 @@
               esigenza: 'LISTA D\'ATTESA OVIA RADAR — ' + prof + ' — ' + zona,
               volume_frequenza: zona,
               pacchetto_suggerito: 'Ovia Radar',
-              note_interne: 'Lista d\'attesa Ovia Radar (prezzo fondatori ai primi 30). Zona: ' + zona + '. Provenienza: ' + origine + '.',
-              categoria: 'Servizi AI', fonte: 'Altro', stato: 'Nuovo', priorita: 'Media',
+              note_interne: 'Lista d\'attesa Ovia Radar (prezzo fondatori ai primi 30). Zona: ' + zona + '. Provenienza: ' + origine + '.' + trappola,
+              categoria: 'Servizi AI', fonte: 'Sito — Ovia Radar', stato: 'Nuovo', priorita: 'Media',
               data_ricezione: new Date().toISOString()
             })
           });
