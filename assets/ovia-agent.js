@@ -14,6 +14,24 @@
   var AGENT_API_URL = 'https://ovia-ten.vercel.app/api/maggiordomo';
   var LEAD_API_URL = 'https://ovia-ten.vercel.app/api/lead';
 
+  // Da quale contenuto arriva la persona (es. ?utm_source=linkedin&utm_content=post-3):
+  // serve a capire quali post portano iscrizioni. Non contiene dati personali.
+  function provenienza() {
+    var out = [];
+    try {
+      var q = new URLSearchParams(window.location.search);
+      ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content'].forEach(function (k) {
+        var v = (q.get(k) || '').replace(/[^\w .\-]/g, '').slice(0, 60);
+        if (v) out.push(k.replace('utm_', '') + '=' + v);
+      });
+      if (!out.length && document.referrer) {
+        var h = new URL(document.referrer).hostname.replace(/^www\./, '');
+        if (h && h !== window.location.hostname) out.push('da=' + h.slice(0, 60));
+      }
+    } catch (e) {}
+    return out.length ? out.join(', ') : 'diretto';
+  }
+
   var T = EN ? {
     btn: 'Ovia assistant', btnAria: 'Open the Ovia assistant', dialog: 'Ovia assistant',
     role: 'AI virtual assistant · describe what you need, I’ll suggest the solution',
@@ -182,7 +200,7 @@
       trascrizione_conversazione: d.transcript.map(function (m) { return (m.role === 'user' ? 'Cliente' : 'Ovia') + ': ' + m.content; }).join('\n'),
       fonte: 'Sito — Maggiordomo', stato: 'Nuovo', data_ricezione: new Date().toISOString()
     };
-    if (EN) payload.note_interne = 'Lingua: inglese (sito /en/)';
+    payload.note_interne = [EN ? 'Lingua: inglese (sito /en/)' : '', 'Provenienza: ' + provenienza() + '.'].filter(Boolean).join('\n');
     return fetch(LEAD_API_URL, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) })
       .then(function (r) { if (!r.ok) throw new Error('lead'); });
   }

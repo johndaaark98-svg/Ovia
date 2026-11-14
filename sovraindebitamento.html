@@ -348,6 +348,23 @@
       if (!btn) return;
       var msg = document.getElementById('df-msg');
       var LEAD_URL = 'https://ovia-ten.vercel.app/api/lead';
+      // Da quale contenuto arriva la persona (es. ?utm_source=linkedin&utm_content=post-3):
+      // serve a capire quali post portano iscrizioni. Non contiene dati personali.
+      function provenienza() {
+        var out = [];
+        try {
+          var q = new URLSearchParams(window.location.search);
+          ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content'].forEach(function (k) {
+            var v = (q.get(k) || '').replace(/[^\w .\-]/g, '').slice(0, 60);
+            if (v) out.push(k.replace('utm_', '') + '=' + v);
+          });
+          if (!out.length && document.referrer) {
+            var h = new URL(document.referrer).hostname.replace(/^www\./, '');
+            if (h && h !== window.location.hostname) out.push('da=' + h.slice(0, 60));
+          }
+        } catch (e) {}
+        return out.length ? out.join(', ') : 'diretto';
+      }
       var FONTE = 'Sito — Sovraindebitamento';
       btn.addEventListener('click', async function(){
         var azienda = document.getElementById('df-azienda').value.trim();
@@ -372,7 +389,7 @@
             body: JSON.stringify({
               azienda: azienda, nome: azienda, email: email, telefono: tel,
               attivita: att, esigenza: 'Pacchetto: ' + pac + (vol ? ' — ' + vol : '') + (note ? ' — ' + note : ''),
-              volume_frequenza: vol, pacchetto_suggerito: pac, note_interne: note,
+              volume_frequenza: vol, pacchetto_suggerito: pac, note_interne: [note, 'Provenienza: ' + provenienza() + '.'].filter(Boolean).join('\n'),
               categoria: 'Servizi AI', fonte: FONTE, stato: 'Nuovo', priorita: 'Alta',
               data_ricezione: new Date().toISOString()
             })
