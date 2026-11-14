@@ -14,23 +14,42 @@
   var AGENT_API_URL = 'https://ovia-ten.vercel.app/api/maggiordomo';
   var LEAD_API_URL = 'https://ovia-ten.vercel.app/api/lead';
 
-  // Da quale contenuto arriva la persona (es. ?utm_source=linkedin&utm_content=post-3):
-  // serve a capire quali post portano iscrizioni. Non contiene dati personali.
-  function provenienza() {
-    var out = [];
+  // Da quale contenuto arriva la persona (es. ?utm_source=linkedin&utm_content=post-3): serve a capire quali post
+  // portano contatti. Il PRIMO arrivo della sessione (solo utm_* e pagina d'ingresso, nessun dato personale, nessun
+  // identificativo) resta in sessionStorage finché la scheda è aperta: così vale anche se il modulo è su un'altra pagina.
+  var CHIAVE_ARRIVO = 'ovia.arrivo';
+  var UTM = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content'];
+  function pulisciProv(v) { return String(v || '').replace(/[^\w.\-]/g, '').slice(0, 60); }
+  function utmCorrenti() {
+    var q = new URLSearchParams(window.location.search), u = {};
+    UTM.forEach(function (k) { var v = pulisciProv(q.get(k)); if (v) u[k] = v; });
+    return u;
+  }
+  function ricordaArrivo() {
     try {
-      var q = new URLSearchParams(window.location.search);
-      ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content'].forEach(function (k) {
-        var v = (q.get(k) || '').replace(/[^\w .\-]/g, '').slice(0, 60);
-        if (v) out.push(k.replace('utm_', '') + '=' + v);
-      });
+      var u = utmCorrenti(), prima = JSON.parse(sessionStorage.getItem(CHIAVE_ARRIVO) || 'null');
+      var conUtm = function (o) { return UTM.some(function (k) { return o && o[k]; }); };
+      if (!prima || (!conUtm(prima) && conUtm(u))) {
+        u.ingresso = window.location.pathname.replace(/[^\w.\-\/]/g, '').slice(0, 80) || '/';
+        sessionStorage.setItem(CHIAVE_ARRIVO, JSON.stringify(u));
+      }
+    } catch (e) {}
+  }
+  function provenienza() {
+    var out = [], a = null;
+    try { ricordaArrivo(); a = JSON.parse(sessionStorage.getItem(CHIAVE_ARRIVO) || 'null'); } catch (e) {}
+    try {
+      if (!a) a = utmCorrenti();
+      UTM.forEach(function (k) { var v = pulisciProv(a[k]); if (v) out.push(k.replace('utm_', '') + '=' + v); });
       if (!out.length && document.referrer) {
         var h = new URL(document.referrer).hostname.replace(/^www\./, '');
-        if (h && h !== window.location.hostname) out.push('da=' + h.slice(0, 60));
+        if (h && h !== window.location.hostname.replace(/^www\./, '')) out.push('da=' + pulisciProv(h));
       }
+      if (a.ingresso && a.ingresso !== window.location.pathname) out.push('ingresso=' + a.ingresso);
     } catch (e) {}
     return out.length ? out.join(', ') : 'diretto';
   }
+  ricordaArrivo();
 
   var T = EN ? {
     btn: 'Ovia assistant', btnAria: 'Open the Ovia assistant', dialog: 'Ovia assistant',
@@ -200,7 +219,8 @@
       trascrizione_conversazione: d.transcript.map(function (m) { return (m.role === 'user' ? 'Cliente' : 'Ovia') + ': ' + m.content; }).join('\n'),
       fonte: 'Sito — Maggiordomo', stato: 'Nuovo', data_ricezione: new Date().toISOString()
     };
-    payload.note_interne = [EN ? 'Lingua: inglese (sito /en/)' : '', 'Provenienza: ' + provenienza() + '.'].filter(Boolean).join('\n');
+    payload.note_interne = EN ? 'Lingua: inglese (sito /en/)' : '';
+    payload.provenienza = provenienza(); // il proxy la mette nel blocco tecnico in fondo alle note
     return fetch(LEAD_API_URL, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) })
       .then(function (r) { if (!r.ok) throw new Error('lead'); });
   }
