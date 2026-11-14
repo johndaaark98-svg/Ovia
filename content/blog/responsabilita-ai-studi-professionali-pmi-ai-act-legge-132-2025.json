@@ -1,0 +1,595 @@
+{
+  "title": "Responsabilità AI studi professionali e PMI: cosa cambia nel 2026",
+  "slug": "responsabilita-ai-studi-professionali-pmi-ai-act-legge-132-2025",
+  "meta_description": "AI Act e Legge 132/2025: chi usa sistemi AI per decisioni su clienti o pratiche ha obblighi precisi. Guida pratica per studi professionali e PMI italiane…",
+  "lead": "Chi usa l'AI per decisioni su clienti, pratiche o personale risponde già oggi: AI Act e Legge 132/2025 non riguardano solo chi sviluppa software, ma chiunque metta in esercizio un sistema AI. Ecco cosa significa in concreto per studi professionali e PMI italiane.",
+  "tags": [
+    "responsabilità AI studi professionali PMI 2026",
+    "AI Act",
+    "Legge 132/2025",
+    "governance AI",
+    "codice di condotta AI"
+  ],
+  "intro": [
+    "La convinzione è diffusa: «L'AI Act riguarda chi costruisce algoritmi, noi usiamo solo un software». Sbagliato. La **responsabilità AI per studi professionali e PMI** nel 2026 scatta già quando si usa un sistema AI per prendere decisioni che incidono su una persona — un cliente, un dipendente, una controparte. Questo vale per il commercialista che usa uno strumento AI per analizzare la posizione fiscale di un contribuente, per lo studio legale che affida a un assistente automatizzato la sintesi di un fascicolo, per la PMI che filtra i CV con un algoritmo.",
+    "AI Act e Legge 132/2025 introducono obblighi concreti: mappare i sistemi usati, classificarne il rischio, documentare le scelte, formare il personale, garantire la supervisione umana. Non è burocrazia fine a se stessa: è la differenza tra chi riesce a dimostrare di avere il controllo — davanti al Garante, a un cliente, a un giudice — e chi non lo riesce. In questo articolo spieghiamo cosa si applica davvero, cosa va fatto entro fine 2026 e come costruire una governance che protegga il professionista, non solo sulla carta."
+  ],
+  "punti_chiave": [
+    "L'AI Act si applica anche a chi usa sistemi AI, non solo a chi li sviluppa: studi e PMI sono «deployer» con obblighi precisi.",
+    "La Legge 132/2025 introduce responsabilità specifiche per i professionisti italiani che usano AI su dati di clienti o dipendenti.",
+    "Governance AI significa: inventario dei sistemi, classificazione del rischio, procedure di supervisione umana e tracciabilità delle decisioni.",
+    "Un codice di condotta è utile, ma non basta da solo: serve una procedura interna documentata e verificabile.",
+    "Le scadenze dell'AI Act in vigore nel 2026 riguardano già i sistemi ad alto rischio e gli obblighi di literacy (formazione) del personale.",
+    "Dimostrare il controllo sui sistemi AI usati è un vantaggio competitivo, non solo un obbligo: i clienti lo chiederanno sempre di più."
+  ],
+  "sezioni": [
+    {
+      "h2": "Chi è il «deployer» AI e perché studi e PMI lo sono quasi sempre",
+      "paragrafi": [
+        "L'AI Act distingue tre figure principali: il **provider** (chi sviluppa o mette sul mercato il sistema), il **deployer** (chi lo usa in un contesto professionale o aziendale) e l'**importatore**. La maggior parte degli studi professionali e delle PMI italiane ricade nella categoria deployer: acquistano o abbonano strumenti AI già pronti — assistenti per la redazione di documenti, software di analisi fiscale con motori predittivi, piattaforme HR che valutano candidature — e li mettono in esercizio sui propri clienti o dipendenti.",
+        "Essere deployer non è una posizione di minor responsabilità. L'AI Act stabilisce che il deployer deve verificare che il sistema sia usato secondo le istruzioni del provider, garantire la supervisione umana, formare il personale che interagisce con lo strumento e, per i sistemi ad alto rischio, tenere i log delle attività per almeno sei mesi. Se qualcosa va storto — una valutazione errata, un dato sbagliato comunicato a un cliente — la responsabilità non si trasferisce automaticamente al vendor: il deployer risponde delle proprie scelte operative.",
+        "La Legge 132/2025, che adatta l'impianto europeo al contesto italiano, aggiunge un livello ulteriore: per i professionisti iscritti a ordini (avvocati, commercialisti, consulenti del lavoro), l'uso di AI su dati coperti da segreto professionale richiede misure specifiche di protezione e, in molti casi, un'informativa esplicita al cliente. Non è una novità assoluta — il GDPR già imponeva logiche simili per il trattamento automatizzato — ma ora il perimetro si estende a qualsiasi sistema che produca output usato per decisioni significative."
+      ],
+      "blocco": {
+        "tipo": "compare",
+        "titolo": "Deployer AI: la posizione dello studio o della PMI",
+        "sinistra": {
+          "badge": "Convinzione diffusa",
+          "titolo": "«Non sviluppiamo AI, non ci riguarda»",
+          "righe": [
+            {
+              "etichetta": "Ruolo assunto",
+              "valore": "Utente passivo di un software"
+            },
+            {
+              "etichetta": "Responsabilità percepita",
+              "valore": "Zero: «risponde il fornitore»"
+            },
+            {
+              "etichetta": "Documentazione interna",
+              "valore": "Nessuna procedura specifica"
+            },
+            {
+              "etichetta": "Formazione del personale",
+              "valore": "Non prevista"
+            }
+          ]
+        },
+        "destra": {
+          "badge": "Realtà normativa 2026",
+          "titolo": "Il deployer ha obblighi propri",
+          "righe": [
+            {
+              "etichetta": "Ruolo giuridico",
+              "valore": "Deployer con responsabilità operative"
+            },
+            {
+              "etichetta": "Responsabilità effettiva",
+              "valore": "Proporzionale al rischio del sistema usato"
+            },
+            {
+              "etichetta": "Documentazione interna",
+              "valore": "Obbligatoria per sistemi ad alto rischio"
+            },
+            {
+              "etichetta": "Formazione del personale",
+              "valore": "Obbligo di AI literacy (AI Act, art. 4)"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "h2": "Cosa significa avere la governance AI in ordine per uno studio o una PMI",
+      "paragrafi": [
+        "«Governance AI» non è una parola d'ordine da convegno: è l'insieme delle risposte che uno studio o un'azienda deve saper dare quando qualcosa va storto. Chi ha deciso di usare quel sistema? Per quali decisioni? Chi lo controlla? Dove sono registrati gli output? Come si corregge un errore? Senza queste risposte documentate, il titolare dello studio o il legale rappresentante della PMI si trova esposto — verso il cliente, verso il Garante, verso un eventuale giudice.",
+        "In pratica, una governance AI minimale per uno studio professionale comprende quattro elementi. Il primo è l'**inventario dei sistemi AI in uso**: un elenco aggiornato di ogni strumento che produce output usati per decisioni, con indicazione del fornitore, dei dati trattati e del tipo di decisioni supportate. Il secondo è la **classificazione del rischio**: l'AI Act distingue sistemi proibiti, ad alto rischio, a rischio limitato e minimale — conoscere la categoria del proprio strumento determina gli obblighi applicabili. Il terzo è la **procedura di supervisione umana**: chi controlla l'output prima che produca effetti? Come viene documentato il controllo? Il quarto è la **tracciabilità delle decisioni**: se un cliente contesta una valutazione, lo studio deve poter ricostruire se e come l'AI ha contribuito a quella decisione.",
+        "Come ha [analizzato AI4Business sul tema manifattura e AI Act](https://www.ai4business.it/intelligenza-artificiale/ai-act-e-manifattura-i-tre-pilastri-per-essere-conformi/), i tre pilastri della compliance per chi usa sistemi AI sono governance interna, gestione del rischio e documentazione continua. Non sono concetti riservati alle grandi imprese: si declinano in modo proporzionato, ma non si eliminano. Per uno studio con cinque persone, governance non significa un ufficio dedicato: significa una procedura scritta, applicata e verificabile."
+      ],
+      "blocco": {
+        "tipo": "checklist",
+        "titolo": "Governance AI minima: cosa deve avere uno studio o una PMI nel 2026",
+        "voci": [
+          {
+            "titolo": "Inventario dei sistemi AI in uso",
+            "testo": "Elenco aggiornato di ogni strumento AI con fornitore, dati trattati e tipo di decisioni supportate.",
+            "ok": true
+          },
+          {
+            "titolo": "Classificazione del rischio AI Act",
+            "testo": "Ogni sistema classificato (alto rischio, rischio limitato, minimale) per determinare gli obblighi applicabili.",
+            "ok": true
+          },
+          {
+            "titolo": "Procedura di supervisione umana",
+            "testo": "Chi controlla l'output prima che produca effetti, con modalità di documentazione del controllo.",
+            "ok": true
+          },
+          {
+            "titolo": "Tracciabilità delle decisioni",
+            "testo": "Registro degli output AI usati per decisioni significative su clienti, pratiche o personale.",
+            "ok": true
+          },
+          {
+            "titolo": "Formazione AI literacy del personale",
+            "testo": "Obbligo esplicito dell'AI Act (art. 4): il personale che usa sistemi AI deve conoscerne limiti e rischi.",
+            "ok": false
+          },
+          {
+            "titolo": "Informativa ai clienti (Legge 132/2025)",
+            "testo": "Per i professionisti iscritti a ordini, comunicazione esplicita dell'uso di AI su dati coperti da segreto.",
+            "ok": false
+          }
+        ]
+      }
+    },
+    {
+      "h2": "Un codice di condotta basta a proteggersi da sanzioni e responsabilità?",
+      "paragrafi": [
+        "La risposta breve è no. Un codice di condotta — come il primo promosso da [Confcommercio Milano sull'uso dell'AI](https://www.ai4business.it/sicurezza/da-confcommercio-milano-il-primo-codice-di-condotta-sulluso-dellai/) — è uno strumento utile per fissare principi condivisi, ma non sostituisce le procedure interne operative. La distinzione è importante: un codice dice «cosa non si deve fare» e «quali valori si perseguono»; una procedura dice «chi fa cosa, quando, come, e come si documenta».",
+        "Per uno studio professionale, affidarsi solo a un codice di condotta esterno crea un'illusione di conformità. Il Garante Privacy, in caso di accertamento, non chiede se lo studio ha sottoscritto un documento di principi: chiede se esiste una procedura di controllo degli output AI, se il personale è stato formato, se i log delle attività sono disponibili. Allo stesso modo, un cliente che subisce un danno a causa di un errore di un sistema AI non sarà soddisfatto dalla risposta «seguivamo un codice di condotta».",
+        "Il codice di condotta ha senso come punto di partenza: definisce il perimetro etico e normativo. Ma deve essere seguito da una **procedura operativa interna**, verificata periodicamente e aggiornata quando cambiano gli strumenti usati o le normative. La differenza tra chi è protetto e chi non lo è sta qui: nella capacità di dimostrare, con documenti datati e firmati, che il controllo esisteva prima che si verificasse il problema. Questo vale anche per i professionisti che si interrogano sulla [responsabilità quando un agente AI sbaglia](/blog/responsabilita-agenti-ai-azienda-governance-prove-ceo-fraud.html).",
+        "**Attenzione:** Un codice di condotta fissa principi, non procedure operative. Sottoscriverlo non esonera da responsabilità se mancano i registri delle decisioni AI, la formazione del personale documentata e le procedure di supervisione umana. In caso di accertamento da parte del Garante o di una contestazione in sede civile, conta ciò che è dimostrabile, non ciò che è dichiarato."
+      ]
+    },
+    {
+      "h2": "Le scadenze AI Act che studi e PMI devono rispettare entro fine 2026",
+      "paragrafi": [
+        "L'AI Act è entrato in vigore il 1° agosto 2024 con un'applicazione progressiva. Le prime scadenze hanno riguardato i sistemi proibiti (febbraio 2025) e gli obblighi di governance per i modelli di uso generale (agosto 2025). Nel 2026 il quadro si completa con l'applicazione piena delle norme sui **sistemi ad alto rischio** — quelli che incidono su diritti fondamentali, occupazione, accesso a servizi — e con l'entrata in vigore degli obblighi di AI literacy per tutto il personale che interagisce con sistemi AI.",
+        "Per uno studio professionale o una PMI italiana, i sistemi che rischiano di ricadere nella categoria «alto rischio» includono strumenti usati per valutare l'affidabilità creditizia di un cliente, per scremare candidature in processi di selezione del personale, per analizzare la posizione di un contribuente in modo da orientare decisioni fiscali significative. Non è necessario che lo strumento faccia queste cose in autonomia: basta che il suo output sia determinante per la decisione.",
+        "La Legge 132/2025 aggiunge la dimensione italiana: per i professionisti iscritti a ordini, l'uso di AI su dati coperti da segreto professionale richiede misure di protezione specifiche già operative. Chi non ha ancora fatto un [primo check sulla propria posizione rispetto all'AI Act](/blog/ai-act-studi-professionali-pmi-italiane-governance.html) ha ancora pochi mesi prima che le verifiche diventino sistematiche."
+      ],
+      "blocco": {
+        "tipo": "steps",
+        "titolo": "Scadenze AI Act: cosa si applica nel 2026 per studi e PMI",
+        "voci": [
+          {
+            "titolo": "Febbraio 2025 (già in vigore)",
+            "meta": "Sistemi proibiti",
+            "testo": "Vietato usare sistemi AI per manipolazione subliminale, social scoring, riconoscimento emotivo in luoghi di lavoro. Verificare che nessuno strumento in uso rientri in queste categorie."
+          },
+          {
+            "titolo": "Agosto 2025 (già in vigore)",
+            "meta": "Governance GPAI e literacy",
+            "testo": "Obblighi di AI literacy (art. 4 AI Act): il personale che interagisce con sistemi AI deve ricevere formazione adeguata. La documentazione della formazione è già esigibile."
+          },
+          {
+            "titolo": "Agosto 2026",
+            "meta": "Sistemi ad alto rischio",
+            "testo": "Piena applicazione degli obblighi per i deployer di sistemi ad alto rischio: registri delle attività, valutazione d'impatto sui diritti fondamentali, supervisione umana documentata, conservazione dei log per almeno 6 mesi."
+          },
+          {
+            "titolo": "Continuativo — Legge 132/2025",
+            "meta": "Professionisti italiani",
+            "testo": "Informativa ai clienti sull'uso di AI su dati coperti da segreto professionale. Procedure interne per la protezione dei dati trattati da sistemi AI. Responsabilità del professionista iscritto all'ordine non delegabile al fornitore di software."
+          }
+        ]
+      }
+    },
+    {
+      "h2": "Come dimostrare il controllo sui sistemi AI: cosa documentare davvero",
+      "paragrafi": [
+        "La domanda pratica è: se il Garante bussa domani, o se un cliente contesta una decisione presa con il supporto dell'AI, cosa mostro? La risposta parte da un principio che vale anche per la [sovranità digitale delle imprese](https://www.ai4business.it/sicurezza/lai-e-lo-stress-test-della-sovranita-digitale-molte-imprese-non-ne-hanno-il-controllo/): non si controlla ciò che non si conosce. Molte imprese e studi usano strumenti AI senza sapere esattamente quali dati elaborano, dove li archiviano, quali decisioni influenzano.",
+        "La documentazione minima che uno studio o una PMI deve essere in grado di esibire comprende: l'elenco aggiornato dei sistemi AI in uso con la loro classificazione di rischio; i contratti con i fornitori che specificano dove vengono elaborati i dati e chi ne è responsabile; i verbali o le registrazioni delle sessioni di formazione del personale; le procedure scritte di supervisione degli output AI, con l'indicazione di chi firma la validazione finale; i log o i registri delle decisioni significative in cui l'AI ha avuto un ruolo, conservati per il periodo previsto dalla normativa.",
+        "Non si tratta di un archivio burocratico fine a se stesso. È la struttura che permette di rispondere in modo credibile a tre domande: sapevamo cosa stavamo usando? Avevamo il controllo? Siamo in grado di dimostrarlo? Chi può rispondere sì a tutte e tre non ha solo meno rischi legali: ha un argomento concreto di fiducia da offrire ai clienti, in un mercato dove la responsabilità AI sta diventando un elemento di scelta del professionista o del fornitore."
+      ],
+      "blocco": {
+        "tipo": "checklist",
+        "titolo": "Documentazione da avere pronta in caso di accertamento",
+        "voci": [
+          {
+            "titolo": "Inventario sistemi AI con classificazione rischio",
+            "testo": "Elenco aggiornato, firmato dal responsabile, con data dell'ultimo aggiornamento.",
+            "ok": true
+          },
+          {
+            "titolo": "Contratti con i fornitori AI",
+            "testo": "Con clausole esplicite su: dove vengono elaborati i dati, chi ne è titolare, tempi di conservazione.",
+            "ok": true
+          },
+          {
+            "titolo": "Verbali di formazione AI literacy",
+            "testo": "Data, contenuto, partecipanti, firma. L'obbligo è già esigibile dal 2025.",
+            "ok": true
+          },
+          {
+            "titolo": "Procedure di supervisione umana scritte",
+            "testo": "Chi controlla l'output AI, con quale criterio, come si documenta la validazione finale.",
+            "ok": false
+          },
+          {
+            "titolo": "Registro delle decisioni AI-supportate",
+            "testo": "Per sistemi ad alto rischio: log delle attività conservati almeno 6 mesi.",
+            "ok": false
+          },
+          {
+            "titolo": "Informativa clienti (Legge 132/2025)",
+            "testo": "Documento firmato dal cliente che attesta di essere stato informato dell'uso di AI sui propri dati.",
+            "ok": false
+          }
+        ]
+      }
+    },
+    {
+      "h2": "Responsabilità AI negli studi professionali: chi risponde quando qualcosa va storto",
+      "paragrafi": [
+        "La domanda che più spesso sentiamo da commercialisti, avvocati e consulenti del lavoro è: «Se il sistema AI sbaglia, rispondo io o risponde il fornitore del software?». La risposta è: **dipende da cosa hai fatto prima**. Il fornitore risponde della qualità e della sicurezza del sistema che ha messo sul mercato. Il professionista deployer risponde delle scelte operative: ha usato il sistema per il tipo di decisioni per cui era indicato? Ha controllato l'output prima di comunicarlo al cliente? Ha formato il personale? Ha documentato tutto questo?",
+        "Un errore del sistema AI che produce un danno al cliente può generare responsabilità su più livelli: civile (risarcimento del danno), disciplinare (procedimento davanti all'ordine professionale), amministrativa (sanzioni del Garante per violazione del GDPR o dell'AI Act). La Legge 132/2025 ha chiarito che il segreto professionale non copre automaticamente i dati trattati da sistemi AI di terze parti: il professionista deve adottare misure specifiche per mantenere quella copertura.",
+        "Il punto centrale — e questo è l'angolo strategico che spesso manca nel dibattito sulla compliance — non è «essere a posto con la legge». È costruire procedure che funzionino come protezione reale quando qualcosa va storto, e che siano credibili davanti a un cliente, a un giudice o a un'autorità di vigilanza. Chi aspetta che sia il Garante a chiedere la documentazione sta già perdendo tempo prezioso. Come già evidenziato nel caso degli [errori silenziosi nell'uso dell'AI in studio](/blog/controllo-output-ai-studio-professionale-errori-silenziosi.html), il rischio maggiore non è l'errore macroscopico — è quello che passa inosservato fino a quando costa caro."
+      ]
+    }
+  ],
+  "ovia_view": {
+    "titolo": "Il punto di Ovia: la compliance è una conseguenza, non l'obiettivo",
+    "paragrafi": [
+      "In Ovia lavoriamo ogni giorno con studi professionali e PMI italiane che usano sistemi AI per gestire clienti, documenti, pratiche e comunicazioni. La cosa che vediamo più spesso non è la cattiva volontà: è la mancanza di una struttura. Si usa lo strumento, si ottiene un risultato, ma non si sa rispondere alla domanda «come hai deciso?».",
+      "Il nostro approccio è costruire sistemi AI che abbiano la tracciabilità incorporata: ogni decisione supportata dall'AI lascia una traccia, ogni output ha un responsabile umano che lo valida, ogni processo ha una procedura documentata. Non perché lo chieda la legge — anche se lo chiede — ma perché è l'unico modo per usare l'AI in modo che protegga davvero il professionista e il suo cliente.",
+      "Strumenti come [Ovia Second Brain](/servizi/second-brain.html) e [Ovia Documenti](/servizi/documenti.html) sono progettati per operare in ambienti dove la riservatezza e la tracciabilità non sono optional. La governance AI non è un foglio di carta aggiuntivo: è la struttura su cui si reggono automazione, efficienza e responsabilità insieme."
+    ]
+  },
+  "faq": [
+    {
+      "domanda": "La Legge 132/2025 e l'AI Act si applicano anche a chi usa l'AI, non solo a chi la sviluppa?",
+      "risposta": "Sì. L'AI Act distingue tra provider (chi sviluppa il sistema) e deployer (chi lo usa in un contesto professionale). Gli studi professionali e le PMI che usano strumenti AI per decisioni su clienti, pratiche o personale sono deployer e hanno obblighi propri: supervisione umana, formazione del personale, conservazione dei log per i sistemi ad alto rischio. La Legge 132/2025 aggiunge obblighi specifici per i professionisti italiani iscritti a ordini."
+    },
+    {
+      "domanda": "Chi è responsabile se un sistema AI sbaglia una decisione nel mio studio o nella mia azienda?",
+      "risposta": "La responsabilità si distribuisce tra il fornitore del sistema (per difetti del prodotto) e il deployer (per le scelte operative). Il professionista o l'azienda che usa il sistema risponde se non ha controllato l'output, non ha formato il personale, non ha usato il sistema per le finalità previste o non ha documentato le procedure di supervisione. Non è possibile trasferire integralmente la responsabilità al vendor di software."
+    },
+    {
+      "domanda": "Cosa significa avere la governance AI in ordine per una PMI o uno studio professionale?",
+      "risposta": "Significa saper rispondere a queste domande con documenti alla mano: quali sistemi AI usiamo e per quali decisioni? Chi controlla gli output prima che producano effetti? Il personale è stato formato? Dove sono registrati gli output usati per decisioni significative? La governance non richiede strutture complesse: richiede procedure scritte, applicate e verificabili, proporzionate alla dimensione dell'organizzazione."
+    },
+    {
+      "domanda": "Un codice di condotta sull'AI basta a proteggermi da sanzioni e responsabilità?",
+      "risposta": "No. Un codice di condotta fissa principi, non procedure operative. Per essere protetti è necessario avere procedure interne documentate che specificano chi fa cosa, quando e come si controlla l'output AI. In caso di accertamento da parte del Garante o di contestazione in sede civile, conta ciò che è dimostrabile: registri, verbali di formazione, procedure firmate, contratti con i fornitori."
+    },
+    {
+      "domanda": "Quali sono le prossime scadenze dell'AI Act che devo rispettare entro fine 2026?",
+      "risposta": "L'obbligo di AI literacy (formazione del personale) è già esigibile dall'agosto 2025. L'applicazione piena degli obblighi per i deployer di sistemi ad alto rischio — inclusi registri delle attività e valutazione d'impatto — entra in vigore nell'agosto 2026. Gli studi e le PMI devono verificare se i sistemi AI in uso ricadono nella categoria ad alto rischio e, in quel caso, adottare le misure previste entro quella scadenza."
+    },
+    {
+      "domanda": "Cosa devo documentare se uso l'AI per analisi, pratiche o decisioni sui clienti?",
+      "risposta": "Almeno: l'inventario dei sistemi AI in uso con la loro classificazione di rischio; i contratti con i fornitori che specificano dove vengono elaborati i dati; i verbali di formazione del personale; le procedure scritte di supervisione degli output; e, per i sistemi ad alto rischio, i log delle attività conservati per almeno sei mesi. Per i professionisti iscritti a ordini, aggiungere l'informativa firmata dal cliente sull'uso di AI sui suoi dati."
+    },
+    {
+      "domanda": "Come si dimostra di avere il controllo sui sistemi AI usati in azienda o nello studio?",
+      "risposta": "Il controllo si dimostra con documentazione datata e firmata: chi ha deciso di usare quel sistema, per quali decisioni, con quale procedura di supervisione, con quale formazione del personale. Non basta affermare di controllare: serve un registro delle decisioni AI-supportate, una procedura di validazione umana documentata e contratti con i fornitori che chiariscano le responsabilità di ciascuna parte."
+    }
+  ],
+  "conclusione": [
+    "L'AI Act e la Legge 132/2025 non sono una minaccia per chi usa l'AI in modo strutturato: sono una leva. Chi ha procedure documentate, personale formato e tracciabilità delle decisioni non solo è protetto — ha un argomento concreto di fiducia da offrire ai clienti in un mercato dove la responsabilità AI sta diventando un criterio di scelta.",
+    "La differenza tra uno studio o una PMI che gestisce bene questa transizione e uno che la subisce non sta nella dimensione o nel budget: sta nella volontà di rispondere oggi alle domande che il Garante, un cliente o un giudice potrebbe fare domani. Governance AI non significa burocrazia: significa costruire procedure che funzionino come protezione reale, non solo sulla carta.",
+    "Se non sai ancora da dove iniziare, il primo passo è sempre lo stesso: fai l'inventario dei sistemi AI che usi oggi, classifica il rischio di ciascuno e verifica se hai una procedura scritta di supervisione. Con quello in mano, tutto il resto diventa più semplice da costruire."
+  ],
+  "prodotti": [
+    {
+      "id": "documenti",
+      "perche": "Ovia Documenti gestisce la raccolta, il controllo e il tracciamento di ogni documento con uno storico completo di ogni invio e richiesta: esattamente la struttura di tracciabilità che serve per dimostrare il controllo sui processi AI-supportati in caso di accertamento."
+    },
+    {
+      "id": "second-brain",
+      "perche": "Ovia Second Brain cattura decisioni, note e informazioni collegandole al cliente giusto e rendendole ritrovabili: il registro delle decisioni AI-supportate richiesto dalla governance AI diventa parte del flusso di lavoro quotidiano, non un adempimento separato."
+    },
+    {
+      "id": "crm",
+      "perche": "Ovia CRM tiene traccia di scadenze, attività e comunicazioni con storico completo per cliente: la base operativa su cui costruire una governance AI verificabile, con supervisione umana documentata su ogni passaggio significativo."
+    }
+  ],
+  "categoria": "normativa-sicurezza",
+  "keyword": "responsabilità AI studi professionali PMI 2026",
+  "data": "2026-11-14T12:11:29.590Z",
+  "autore": "Redazione Ovia",
+  "parole": 2310,
+  "minuti": 12,
+  "fonti": [
+    {
+      "titolo": "Le nuove regole AgID sull’AI nella PA aprono un problema di responsabilità",
+      "fonte": "Agenda Digitale",
+      "url": "https://www.agendadigitale.eu/intelligenza-artificiale-ai/cybersecurity/le-nuove-regole-agid-sullai-nella-pa-aprono-un-problema-di-responsabilita/"
+    },
+    {
+      "titolo": "AI Act e manifattura: i tre pilastri per essere conformi",
+      "fonte": "AI4Business",
+      "url": "https://www.ai4business.it/intelligenza-artificiale/ai-act-e-manifattura-i-tre-pilastri-per-essere-conformi/"
+    },
+    {
+      "titolo": "AI, stress test della sovranità digitale: molte imprese non ne hanno il controllo",
+      "fonte": "AI4Business",
+      "url": "https://www.ai4business.it/sicurezza/lai-e-lo-stress-test-della-sovranita-digitale-molte-imprese-non-ne-hanno-il-controllo/"
+    },
+    {
+      "titolo": "Da Confcommercio Milano il primo Codice di condotta sull’uso dell’AI",
+      "fonte": "AI4Business",
+      "url": "https://www.ai4business.it/sicurezza/da-confcommercio-milano-il-primo-codice-di-condotta-sulluso-dellai/"
+    }
+  ],
+  "generato": {
+    "da": "ai",
+    "modello": "claude-sonnet-4-6",
+    "il": "2026-11-14T12:11:29.590Z"
+  },
+  "en": {
+    "title": "AI Liability for Professional Firms & SMEs: What Changes in 2026",
+    "slug": "ai-liability-professional-firms-smes-ai-act-italian-law-132-2025",
+    "meta_description": "AI Act & Italian Law 132/2025: using AI for client or staff decisions already carries legal obligations. A practical guide for professional firms and SMEs in Italy.",
+    "lead": "Anyone using AI to make decisions about clients, cases or personnel is already accountable today: the AI Act and Italian Law 132/2025 apply not only to those who build software, but to anyone who deploys an AI system. Here is what that means in practice for professional firms and SMEs operating in Italy.",
+    "tags": [
+      "AI liability professional firms SMEs 2026",
+      "AI Act",
+      "Italian Law 132/2025",
+      "AI governance",
+      "AI code of conduct"
+    ],
+    "intro": "[\"A common assumption persists: \"The AI Act only concerns people who build algorithms — we just use a software tool.\" Wrong. **AI liability for professional firms and SMEs** in 2026 is triggered the moment an AI system is used to make decisions that affect a person — a client, an employee, a counterparty. This applies to the accountant using an AI tool to analyse a taxpayer's tax position, to the law firm that relies on an automated assistant to summarise a case file, and to the SME that filters CVs with an algorithm.\", \"The AI Act and Italian Law 132/2025 introduce concrete obligations: mapping the systems in use, classifying their risk level, documenting decisions, training staff, and ensuring human oversight. This is not red tape for its own sake — it is the difference between those who can demonstrate they are in control (before the Italian Data Protection Authority, a client, or a judge) and those who cannot. In this article we explain what actually applies, what needs to be done before the end of 2026, and how to build governance that genuinely protects the professional — not just on paper.\"]",
+    "punti_chiave": [
+      "The AI Act applies to those who use AI systems, not only to those who develop them: firms and SMEs are 'deployers' with specific obligations.",
+      "Italian Law 132/2025 introduces specific liability rules for Italian professionals who use AI on client or employee data.",
+      "AI governance means: a system inventory, risk classification, human-oversight procedures, and decision traceability.",
+      "A code of conduct is useful, but not sufficient on its own: you need an internal procedure that is documented and verifiable.",
+      "AI Act deadlines already in force in 2026 cover high-risk systems and the staff AI-literacy (training) obligation.",
+      "Demonstrating control over the AI systems you use is a competitive advantage, not just a legal requirement: clients will increasingly demand it."
+    ],
+    "sezioni": [
+      {
+        "h2": "Who is an AI 'deployer' — and why firms and SMEs almost always qualify",
+        "paragrafi": [
+          "The AI Act identifies three main actors: the **provider** (who develops or places the system on the market), the **deployer** (who uses it in a professional or business context) and the **importer**. Most Italian professional firms and SMEs fall into the deployer category: they purchase or subscribe to ready-made AI tools — document-drafting assistants, tax-analysis software with predictive engines, HR platforms that screen applications — and put them to work on their clients or employees.",
+          "Being a deployer does not mean having less responsibility. The AI Act requires deployers to verify that the system is used in accordance with the provider's instructions, ensure human oversight, train the staff who interact with the tool, and — for high-risk systems — retain activity logs for at least six months. If something goes wrong — a faulty assessment, incorrect information communicated to a client — liability does not automatically shift to the vendor: the deployer is accountable for its own operational choices.",
+          "Italian Law 132/2025, which adapts the European framework to the Italian context, adds a further layer: for professionals registered with a professional body (lawyers, accountants, labour consultants), using AI on data covered by professional privilege requires specific protective measures and, in many cases, an explicit disclosure to the client. This is not entirely new — the GDPR already imposed similar logic for automated processing — but the perimeter now extends to any system whose output is used for significant decisions."
+        ],
+        "blocco": {
+          "tipo": "compare",
+          "titolo": "AI deployer: the position of the firm or SME",
+          "sinistra": {
+            "badge": "Common assumption",
+            "titolo": "\"We don't build AI — it doesn't apply to us\"",
+            "righe": [
+              {
+                "etichetta": "Assumed role",
+                "valore": "Passive user of a software tool"
+              },
+              {
+                "etichetta": "Perceived liability",
+                "valore": "Zero: \"the vendor is responsible\""
+              },
+              {
+                "etichetta": "Internal documentation",
+                "valore": "No specific procedures"
+              },
+              {
+                "etichetta": "Staff training",
+                "valore": "Not considered"
+              }
+            ]
+          },
+          "destra": {
+            "badge": "Regulatory reality 2026",
+            "titolo": "The deployer has obligations of its own",
+            "righe": [
+              {
+                "etichetta": "Legal role",
+                "valore": "Deployer with operational responsibilities"
+              },
+              {
+                "etichetta": "Actual liability",
+                "valore": "Proportionate to the risk of the system used"
+              },
+              {
+                "etichetta": "Internal documentation",
+                "valore": "Mandatory for high-risk systems"
+              },
+              {
+                "etichetta": "Staff training",
+                "valore": "AI-literacy obligation (AI Act, Art. 4)"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "h2": "What having AI governance in order actually means for a firm or SME",
+        "paragrafi": [
+          "'AI governance' is not a conference buzzword: it is the set of answers a firm or company must be able to give when something goes wrong. Who decided to use that system? For which decisions? Who oversees it? Where are outputs recorded? How are errors corrected? Without documented answers to these questions, the firm's principal or the SME's legal representative is exposed — to clients, to the Italian Data Protection Authority (Garante), and potentially to a court.",
+          "In practice, minimal AI governance for a professional firm covers four elements. The first is an **AI-system inventory**: an up-to-date list of every tool that produces outputs used for decisions, including the supplier, the data processed, and the type of decisions supported. The second is **risk classification**: the AI Act distinguishes prohibited systems, high-risk systems, limited-risk systems and minimal-risk systems — knowing which category applies determines the obligations in force. The third is a **human-oversight procedure**: who reviews the output before it has any effect, and how is that review documented? The fourth is **decision traceability**: if a client challenges an assessment, the firm must be able to reconstruct whether and how AI contributed to that decision.",
+          "As [AI4Business has analysed in the context of manufacturing and the AI Act](https://www.ai4business.it/intelligenza-artificiale/ai-act-e-manifattura-i-tre-pilastri-per-essere-conformi/), the three pillars of compliance for organisations using AI systems are internal governance, risk management, and ongoing documentation. These are not concepts reserved for large corporations: they scale proportionately, but they cannot be bypassed. For a five-person firm, governance does not mean a dedicated compliance office — it means a written procedure that is applied and verifiable."
+        ],
+        "blocco": {
+          "tipo": "checklist",
+          "titolo": "Minimum AI governance: what a firm or SME must have in place in 2026",
+          "voci": [
+            {
+              "titolo": "AI-system inventory",
+              "testo": "An up-to-date list of every AI tool, with supplier, data processed and type of decisions supported.",
+              "ok": true
+            },
+            {
+              "titolo": "AI Act risk classification",
+              "testo": "Every system classified (high-risk, limited-risk, minimal-risk) so applicable obligations are clear.",
+              "ok": true
+            },
+            {
+              "titolo": "Human-oversight procedure",
+              "testo": "Who reviews the output before it takes effect, with documented evidence of the review.",
+              "ok": true
+            },
+            {
+              "titolo": "Decision traceability",
+              "testo": "A log of AI outputs used for significant decisions affecting clients, cases or personnel.",
+              "ok": true
+            },
+            {
+              "titolo": "Staff AI-literacy training",
+              "testo": "An explicit obligation under the AI Act (Art. 4): staff who use AI systems must understand their limits and risks.",
+              "ok": false
+            },
+            {
+              "titolo": "Client disclosure (Italian Law 132/2025)",
+              "testo": "For registered professionals, explicit notification to clients that AI is being used on data covered by professional privilege.",
+              "ok": false
+            }
+          ]
+        }
+      },
+      {
+        "h2": "Does a code of conduct provide enough protection against sanctions and liability?",
+        "paragrafi": [
+          "The short answer is no. A code of conduct — such as the first one promoted by [Confcommercio Milano on AI use](https://www.ai4business.it/sicurezza/da-confcommercio-milano-il-primo-codice-di-condotta-sulluso-dellai/) — is a useful tool for establishing shared principles, but it is not a substitute for internal operational procedures. The distinction matters: a code states 'what must not be done' and 'which values are pursued'; a procedure specifies 'who does what, when, how, and how it is documented'.",
+          "For a professional firm, relying solely on an external code of conduct creates an illusion of compliance. If the Italian Data Protection Authority (Garante) carries out an audit, it will not ask whether the firm has signed a statement of principles: it will ask whether a procedure for checking AI outputs exists, whether staff have been trained, and whether activity logs are available. Equally, a client who suffers harm because of an AI system error will not be satisfied with the response 'we followed a code of conduct'.",
+          "A code of conduct makes sense as a starting point: it defines the ethical and regulatory perimeter. But it must be followed by an **internal operational procedure**, reviewed periodically and updated whenever the tools in use or the applicable rules change. The difference between those who are protected and those who are not lies precisely here: in the ability to demonstrate, with dated and signed documents, that control existed before the problem occurred. This applies equally to professionals grappling with [liability when an AI agent makes a mistake](/en/blog/ai-agent-liability-governance-evidence-ceo-fraud.html).",
+          "**Important:** A code of conduct establishes principles, not operational procedures. Signing one does not exempt a firm from liability if AI decision logs, documented staff training, and human-oversight procedures are absent. In any audit by the Garante, or in civil proceedings, what counts is what can be proved — not what has been declared."
+        ]
+      },
+      {
+        "h2": "AI Act deadlines that firms and SMEs must meet before the end of 2026",
+        "paragrafi": [
+          "The AI Act entered into force on 1 August 2024 and is being applied progressively. The first deadlines covered prohibited systems (February 2025) and governance obligations for general-purpose AI models (August 2025). In 2026 the framework is completed by full application of the rules on **high-risk systems** — those that affect fundamental rights, employment, or access to services — and by the entry into force of the AI-literacy obligations for all staff who interact with AI systems.",
+          "For an Italian professional firm or SME, systems that may fall into the 'high-risk' category include tools used to assess a client's creditworthiness, to screen candidates in recruitment processes, or to analyse a taxpayer's position in a way that shapes significant fiscal decisions. The tool does not need to do these things autonomously: it is sufficient that its output is determinative for the decision.",
+          "Italian Law 132/2025 adds the specifically Italian dimension: for professionals registered with a professional body, using AI on data covered by professional privilege already requires specific protective measures. Those who have not yet carried out a [first check on their position under the AI Act](/en/blog/ai-act-professional-firms-smes-italy-governance.html) have only a few months left before checks become systematic."
+        ],
+        "blocco": {
+          "tipo": "steps",
+          "titolo": "AI Act deadlines: what applies in 2026 for firms and SMEs",
+          "voci": [
+            {
+              "titolo": "February 2025 (already in force)",
+              "meta": "Prohibited systems",
+              "testo": "Using AI systems for subliminal manipulation, social scoring, or emotional recognition in workplaces is banned. Verify that no tool currently in use falls into these categories."
+            },
+            {
+              "titolo": "August 2025 (already in force)",
+              "meta": "GPAI governance & literacy",
+              "testo": "AI-literacy obligations (Art. 4 AI Act): staff who interact with AI systems must receive adequate training. Documentation of that training is already enforceable."
+            },
+            {
+              "titolo": "August 2026",
+              "meta": "High-risk systems",
+              "testo": "Full application of deployer obligations for high-risk systems: activity logs, fundamental-rights impact assessments, documented human oversight, and log retention for at least six months."
+            },
+            {
+              "titolo": "Ongoing — Italian Law 132/2025",
+              "meta": "Italian professionals",
+              "testo": "Client disclosure on the use of AI on data covered by professional privilege. Internal procedures for protecting data processed by AI systems. The registered professional's liability cannot be delegated to the software vendor."
+            }
+          ]
+        }
+      },
+      {
+        "h2": "How to demonstrate control over AI systems: what to actually document",
+        "paragrafi": [
+          "The practical question is: if the Garante comes knocking tomorrow, or a client challenges a decision made with AI support, what do I show? The answer rests on a principle that applies equally to [the digital sovereignty of businesses](https://www.ai4business.it/sicurezza/lai-e-lo-stress-test-della-sovranita-digitale-molte-imprese-non-ne-hanno-il-controllo/): you cannot control what you do not know. Many firms and businesses use AI tools without knowing exactly what data they process, where that data is stored, or which decisions they influence.",
+          "The minimum documentation that a firm or SME must be able to produce includes: an up-to-date list of AI systems in use with their risk classification; contracts with suppliers specifying where data is processed and who is responsible for it; minutes or records of staff training sessions; written human-oversight procedures for AI outputs, indicating who signs off the final validation; and logs or registers of significant decisions in which AI played a role, retained for the period required by law.",
+          "This is not a bureaucratic archive for its own sake. It is the structure that allows you to answer three questions convincingly: did we know what we were using? Did we have control? Can we prove it? Those who can answer yes to all three not only face lower legal risk — they have a concrete trust argument to offer clients in a market where AI accountability is becoming a criterion for choosing a professional or a supplier."
+        ],
+        "blocco": {
+          "tipo": "checklist",
+          "titolo": "Documentation to have ready in the event of an audit",
+          "voci": [
+            {
+              "titolo": "AI-system inventory with risk classification",
+              "testo": "Up-to-date list, signed by the person responsible, with the date of the most recent update.",
+              "ok": true
+            },
+            {
+              "titolo": "Contracts with AI suppliers",
+              "testo": "Including explicit clauses on: where data is processed, who is the data controller, and retention periods.",
+              "ok": true
+            },
+            {
+              "titolo": "AI-literacy training records",
+              "testo": "Date, content, participants, signature. The obligation has been enforceable since 2025.",
+              "ok": true
+            },
+            {
+              "titolo": "Written human-oversight procedures",
+              "testo": "Who reviews the AI output, on what basis, and how the final validation is documented.",
+              "ok": false
+            },
+            {
+              "titolo": "AI-assisted decision log",
+              "testo": "For high-risk systems: activity logs retained for at least six months.",
+              "ok": false
+            },
+            {
+              "titolo": "Client disclosure (Italian Law 132/2025)",
+              "testo": "A document signed by the client confirming they have been informed that AI is being used on their data.",
+              "ok": false
+            }
+          ]
+        }
+      },
+      {
+        "h2": "AI liability in professional firms: who is accountable when something goes wrong",
+        "paragrafi": [
+          "The question we hear most often from accountants, lawyers and labour consultants is: 'If the AI system makes a mistake, is it my liability or the software vendor's?' The answer is: **it depends on what you did beforehand**. The vendor is accountable for the quality and safety of the system it placed on the market. The professional deployer is accountable for its operational choices: was the system used for the type of decisions it was designed for? Was the output checked before being communicated to the client? Was staff trained? Was all of this documented?",
+          "An AI-system error that causes harm to a client can generate liability on multiple levels: civil (damages), disciplinary (proceedings before the professional body), and administrative (sanctions from the Garante for breaches of the GDPR or the AI Act). Italian Law 132/2025 has clarified that professional privilege does not automatically extend to data processed by third-party AI systems: the professional must adopt specific measures to maintain that protection.",
+          "The central point — and this is the strategic angle that is often missing from compliance debates — is not 'staying on the right side of the law'. It is building procedures that work as genuine protection when something goes wrong, and that hold up before a client, a judge or a supervisory authority. Those who wait for the Garante to request documentation are already wasting precious time. As already highlighted in the case of [silent errors in AI use at professional firms](/en/blog/ai-output-control-silent-errors-professional-firms.html), the greatest risk is not the obvious mistake — it is the one that goes unnoticed until it is costly."
+        ]
+      }
+    ],
+    "ovia_view": {
+      "titolo": "Ovia's view: compliance is a consequence, not the goal",
+      "paragrafi": [
+        "At Ovia we work every day with Italian professional firms and SMEs that use AI systems to manage clients, documents, cases and communications. The thing we see most often is not bad intentions: it is the absence of a structure. The tool is used, a result is obtained, but no one can answer the question 'how was that decision made?'.",
+        "Our approach is to build AI systems with traceability built in: every AI-assisted decision leaves a trace, every output has a human owner who validates it, every process has a documented procedure. Not only because the law requires it — although it does — but because it is the only way to use AI in a manner that genuinely protects the professional and their client.",
+        "Tools such as [Ovia Second Brain](/en/services/second-brain.html) and [Ovia Documents](/en/services/documenti.html) are designed to operate in environments where confidentiality and traceability are non-negotiable. AI governance is not an extra sheet of paper: it is the foundation on which automation, efficiency and accountability stand together."
+      ]
+    },
+    "faq": [
+      {
+        "domanda": "Do Italian Law 132/2025 and the AI Act apply to those who use AI, not only to those who develop it?",
+        "risposta": "Yes. The AI Act distinguishes between providers (who develop the system) and deployers (who use it in a professional context). Professional firms and SMEs that use AI tools for decisions about clients, cases or personnel are deployers and have obligations of their own: human oversight, staff training, and log retention for high-risk systems. Italian Law 132/2025 adds specific obligations for Italian professionals registered with a professional body."
+      },
+      {
+        "domanda": "Who is liable if an AI system gets a decision wrong in my firm or company?",
+        "risposta": "Liability is shared between the system vendor (for product defects) and the deployer (for operational choices). The professional or business using the system is accountable if they did not check the output, did not train staff, did not use the system for its intended purpose, or did not document oversight procedures. It is not possible to transfer liability entirely to the software vendor."
+      },
+      {
+        "domanda": "What does having AI governance in order mean for a SME or professional firm?",
+        "risposta": "It means being able to answer the following questions with documents to hand: which AI systems do we use and for which decisions? Who reviews outputs before they take effect? Have staff been trained? Where are the outputs used for significant decisions recorded? Governance does not require complex structures — it requires written, applied and verifiable procedures, proportionate to the size of the organisation."
+      },
+      {
+        "domanda": "Is a code of conduct on AI enough to protect me from sanctions and liability?",
+        "risposta": "No. A code of conduct establishes principles, not operational procedures. To be protected you need internal documented procedures that specify who does what, when, and how AI outputs are checked. In any audit by the Garante or in civil proceedings, what counts is what can be proved: logs, training records, signed procedures, supplier contracts."
+      },
+      {
+        "domanda": "What are the upcoming AI Act deadlines I need to meet before the end of 2026?",
+        "risposta": "The AI-literacy obligation (staff training) has been enforceable since August 2025. Full application of deployer obligations for high-risk systems — including activity logs and impact assessments — comes into force in August 2026. Firms and SMEs should verify whether the AI systems they use fall into the high-risk category and, if so, put the required measures in place before that deadline."
+      },
+      {
+        "domanda": "What do I need to document if I use AI for analysis, case management or client decisions?",
+        "risposta": "At a minimum: the inventory of AI systems in use with their risk classification; contracts with suppliers specifying where data is processed; staff training records; written output-oversight procedures; and, for high-risk systems, activity logs retained for at least six months. For professionals registered with a professional body, add a client-signed disclosure on the use of AI on their data."
+      },
+      {
+        "domanda": "How do you demonstrate that you have control over the AI systems used in your firm or company?",
+        "risposta": "Control is demonstrated with dated and signed documentation: who decided to use that system, for which decisions, with what oversight procedure, and with what staff training. Asserting that you are in control is not enough — you need a log of AI-assisted decisions, a documented human-validation procedure, and supplier contracts that clearly set out the responsibilities of each party."
+      }
+    ],
+    "conclusione": [
+      "The AI Act and Italian Law 132/2025 are not a threat to those who use AI in a structured way — they are a lever. Those with documented procedures, trained staff and decision traceability are not only protected: they have a concrete trust argument to offer clients in a market where AI accountability is becoming a selection criterion.",
+      "The difference between a firm or SME that navigates this transition well and one that is overwhelmed by it is not a matter of size or budget — it is a willingness to answer today the questions that the Garante, a client, or a judge might ask tomorrow. AI governance does not mean bureaucracy: it means building procedures that work as genuine protection, not just on paper.",
+      "If you are not yet sure where to start, the first step is always the same: take stock of the AI systems you are using today, classify the risk level of each one, and check whether you have a written oversight procedure in place. With that in hand, everything else becomes much easier to build."
+    ],
+    "prodotti": [
+      {
+        "id": "documenti",
+        "perche": "Ovia Documents manages the collection, review and tracking of every document with a complete history of every submission and request — precisely the traceability structure needed to demonstrate control over AI-assisted processes in the event of an audit."
+      },
+      {
+        "id": "second-brain",
+        "perche": "Ovia Second Brain captures decisions, notes and information by linking them to the right client and making them retrievable: the log of AI-assisted decisions required by AI governance becomes part of the daily workflow, not a separate compliance task."
+      },
+      {
+        "id": "crm",
+        "perche": "Ovia CRM tracks deadlines, activities and communications with a complete per-client history — the operational foundation on which verifiable AI governance can be built, with documented human oversight at every significant step."
+      }
+    ],
+    "parole": 2598,
+    "minuti": 14,
+    "tradotto": {
+      "da": "ai",
+      "modello": "claude-sonnet-4-6",
+      "il": "2026-11-14T12:13:38.118Z"
+    }
+  }
+}
