@@ -1,0 +1,588 @@
+{
+  "title": "Visibilità nei motori di ricerca AI: cosa fare subito",
+  "slug": "visibilita-motori-ricerca-ai-crawler-agenti-studi-pmi",
+  "meta_description": "Comparire nelle risposte di ChatGPT, Gemini e Perplexity non è automatico. Scopri come gestire crawler e agenti AI per studi professionali e PMI italiane.",
+  "lead": "Comparire nelle risposte di ChatGPT, Gemini o Perplexity non è automatico: dipende da chi lasci entrare nel tuo sito, con quali regole e con quale strategia. Senza una politica deliberata, rischi sia di sparire sia di cedere dati senza controllo.",
+  "tags": [
+    "visibilità nei motori di ricerca AI",
+    "AI search",
+    "crawler AI",
+    "agenti AI",
+    "GEO"
+  ],
+  "intro": [
+    "La ricerca online sta cambiando più velocemente di quanto molti studi professionali e PMI italiane si accorgano. Non si tratta solo di Google che aggiorna il proprio algoritmo: sta emergendo un sistema parallelo in cui ChatGPT, Gemini e Perplexity rispondono alle domande degli utenti citando siti web, senza che questi siti vengano necessariamente visitati nel senso tradizionale del termine.",
+    "Per uno studio di commercialisti, avvocati o consulenti del lavoro — o per una PMI che vuole farsi trovare dai propri potenziali clienti — questo cambia le regole del gioco. Non basta più essere indicizzati da Google: bisogna capire chi accede al proprio sito, perché lo fa e con quali conseguenze. E bisogna farlo con una strategia, non affidarsi al caso."
+  ],
+  "punti_chiave": [
+    "I crawler AI tradizionali indicizzano i siti come fa Google, ma gli agenti AI — quelli che agiscono per conto dell'utente — sono una categoria diversa e molto più delicata.",
+    "Comparire nelle risposte di ChatGPT o Gemini dipende da come il sito è strutturato e da quali bot si lasciano entrare: non è automatico e non dipende solo dalla SEO tradizionale.",
+    "Bloccare indiscriminatamente tutti i bot AI può farti sparire dalla ricerca AI; bloccare male può farti perdere il controllo sui tuoi dati.",
+    "OpenAI ha aperto il Business Hub in beta: le aziende possono ora rivendicare il proprio profilo e vedere quante volte ChatGPT le cita — ma rivendicare il profilo non garantisce visibilità.",
+    "Il traffico organico da Google sta calando per molti settori: Ziff Davis ha registrato un calo del 37% anno su anno dei referral organici, e grandi aziende come Tripadvisor stanno già rivedendo le proprie strategie.",
+    "La distinzione tra crawler (che leggono per indicizzare) e agenti (che agiscono per conto dell'utente) è la chiave per costruire una politica sensata — non una lista di blocchi."
+  ],
+  "sezioni": [
+    {
+      "h2": "Crawler e agenti AI: una distinzione che non puoi ignorare",
+      "paragrafi": [
+        "Quando parliamo di \"bot AI\" facciamo di solito di tutta l'erba un fascio, ma è un errore che può costare caro. Esistono almeno tre categorie distinte: i **crawler per l'addestramento dei modelli** (raccolgono testi per far imparare le AI), i **bot di recupero per la ricerca AI** (estraggono contenuti per comporre risposte in tempo reale) e gli **agenti autonomi** (agiscono per conto dell'utente — cercano, confrontano, comprano). Bloccare il primo tipo ha conseguenze diverse dal bloccare il secondo o il terzo.",
+        "Come spiega [Chris Green su Search Engine Journal](https://www.searchenginejournal.com/ai-bot-management-why-seos-need-more-than-block-lists/597148/), **bloccare un agente che sta confrontando prodotti o servizi potrebbe non farti perdere un posizionamento: potrebbe farti sparire direttamente dalla risposta**. E questo vale ancora di più per uno studio professionale, dove la risposta di ChatGPT alla domanda \"qual è un buon commercialista a Milano\" può valere quanto la prima posizione su Google.",
+        "Il file robots.txt — lo strumento che da anni si usa per dire ai crawler cosa possono leggere — è volontario. I bot lo rispettano solo se vogliono. L'applicazione reale avviene a livello di CDN (rete di distribuzione dei contenuti), firewall applicativo e servizi di protezione bot, che possono contraddire le regole del robots.txt senza che il team che gestisce il sito lo sappia."
+      ],
+      "blocco": {
+        "tipo": "compare",
+        "titolo": "Crawler vs. agenti AI: due mondi diversi",
+        "sinistra": {
+          "badge": "Crawler tradizionale",
+          "titolo": "Come funziona oggi",
+          "righe": [
+            {
+              "etichetta": "Scopo",
+              "valore": "Leggere e indicizzare i contenuti"
+            },
+            {
+              "etichetta": "Controllo",
+              "valore": "robots.txt (volontario)"
+            },
+            {
+              "etichetta": "Rischio se bloccato",
+              "valore": "Nessun posizionamento nei motori"
+            },
+            {
+              "etichetta": "Identità",
+              "valore": "User-agent dichiarato"
+            }
+          ]
+        },
+        "destra": {
+          "badge": "Agente AI",
+          "titolo": "Approccio consigliato",
+          "righe": [
+            {
+              "etichetta": "Scopo",
+              "valore": "Agire per conto dell'utente (cerca, prenota, compra)"
+            },
+            {
+              "etichetta": "Controllo",
+              "valore": "Termini di servizio + protezione bot attiva"
+            },
+            {
+              "etichetta": "Rischio se bloccato",
+              "valore": "Sparire dalla risposta AI dell'utente"
+            },
+            {
+              "etichetta": "Identità",
+              "valore": "Spesso non dichiarata o non verificabile"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "h2": "Cosa sta succedendo davvero alla visibilità nei motori di ricerca AI",
+      "paragrafi": [
+        "La settimana del 10 novembre 2026 ha portato una serie di segnali che, letti insieme, disegnano un quadro molto chiaro. Google ha avviato il suo terzo core update dell'anno. Ha cambiato il modello predefinito di AI Mode, passando a Gemini 4 Hydrogen, descritto come capace di collegare gli utenti a \"un'ampia gamma di link utili\". OpenAI ha aperto in beta il [Business Hub](https://www.searchenginejournal.com/seo-pulse-core-update-chatgpt-business-hub-ai-modes-new-model/597135/), che permette alle aziende di rivendicare il proprio profilo e vedere quante volte ChatGPT le cita e quanti clic genera.",
+        "Ma i dati più significativi arrivano dalle aziende quotate. Il CEO di Ziff Davis ha dichiarato che i referral organici da Google sono calati del **37% anno su anno** nel terzo trimestre 2026. Tripadvisor ha parlato apertamente di SEO come \"vento contrario alla crescita\" anche per il 2027, e ha aumentato la quota del marketing a pagamento dal 43,3% al 48,8% delle entrate. Non si tratta di settori marginali: se succede a queste aziende, può succedere anche a uno studio professionale o a una PMI che si affida al traffico organico per acquisire clienti.",
+        "Nel frattempo, OpenAI stava pagando Cloudflare per ricevere **suggerimenti prioritari su quando le pagine web cambiano**, rendendo la scansione più efficiente. Il CEO di Cloudflare Matthew Prince ha paragonato questa dinamica a \"una nuova versione della SEO\". La logica è semplice: chi vuole che i propri contenuti arrivino agli agenti AI in modo affidabile deve iniziare a pensare alla propria infrastruttura web come a una leva strategica, non a un costo di servizio.",
+        "Per uno studio professionale, questo si traduce in una domanda concreta: il tuo sito è strutturato in modo che i bot di recupero per la ricerca AI possano leggerlo, capirlo e citarlo con precisione? O è pensato solo per il visitatore umano degli anni Duemila? Qui si inserisce il lavoro che facciamo con i [siti web progettati per la ricerca AI](/servizi/siti-web-ai.html)."
+      ],
+      "blocco": {
+        "tipo": "stats",
+        "titolo": "I numeri che cambiano le priorità",
+        "voci": [
+          {
+            "valore": "−37%",
+            "testo": "Calo dei referral organici da Google per Ziff Davis nel Q3 2026 (anno su anno)"
+          },
+          {
+            "valore": "~90%",
+            "testo": "Quota delle richieste di agenti AI gestita da soli due operatori: Meta (Muse) e OpenAI"
+          },
+          {
+            "valore": "8×",
+            "testo": "Crescita delle richieste totali di agenti AI da agosto a ottobre 2026"
+          },
+          {
+            "valore": "353.356",
+            "testo": "Citazioni di Search Engine Journal su ChatGPT in 28 giorni, con 2.663 clic al sito"
+          }
+        ]
+      }
+    },
+    {
+      "h2": "Chi entra nel tuo sito senza chiederti il permesso?",
+      "paragrafi": [
+        "Secondo il report mensile di HUMAN Security, [Meta Muse e gli agenti di OpenAI hanno generato quasi il 90% delle richieste di agenti AI](https://www.searchenginejournal.com/meta-muse-ai-agent-requests-human-security/597388/) sui siti protetti dalla piattaforma a ottobre 2026. Muse da solo rappresentava il 59% del totale. E il volume complessivo delle richieste era circa **8 volte superiore** a quello di agosto.",
+        "Il problema è che questi agenti non si presentano sempre in modo riconoscibile. Meta stessa ha dichiarato apertamente che Muse naviga i siti \"come se fosse la tua attività\" — ovvero apparendo come un utente normale agli strumenti di analisi. Metà delle richieste di Muse rilevate da DataDome il 10 novembre arrivava senza firma digitale verificabile. Per un sito che usa il file robots.txt per gestire l'accesso, questo significa che le regole impostate semplicemente non si applicano a questi agenti.",
+        "Per uno studio professionale, questo pone una questione pratica e urgente: **sai chi sta accedendo al tuo sito, con quale frequenza e per fare cosa?** Se la risposta è no — o se la risposta è \"ci pensa il webmaster\" senza che tu abbia mai visto un report — è il momento di cambiarlo. Non per bloccare tutto, ma per decidere con cognizione di causa.",
+        "**Attenzione:** Il file robots.txt è uno strumento volontario: i bot lo rispettano solo se lo scelgono. Gli agenti AI personali come Muse non pubblicano un user-agent che il robots.txt può riconoscere, quindi le tue regole non si applicano a loro. La protezione reale avviene a livello di firewall, CDN e servizi di verifica dei bot — strumenti che devono essere coordinati con la tua strategia SEO e con il tuo team legale."
+      ]
+    },
+    {
+      "h2": "Il modello United Airlines: separare indicizzazione e accesso degli agenti",
+      "paragrafi": [
+        "Un esempio concreto e molto recente di come si può affrontare il problema arriva da United Airlines. L'11 novembre 2026 la compagnia ha aggiornato i propri termini di servizio introducendo una distinzione netta: i motori di ricerca possono indicizzare le pagine pubbliche del sito liberamente, ma **qualsiasi agente AI che voglia cercare, prenotare o acquistare su united.com deve chiedere il permesso scritto**. I dati del sito — tariffe, disponibilità, prezzi — non possono essere usati per addestrare o mettere a punto modelli AI.",
+        "Come riporta [Search Engine Journal](https://www.searchenginejournal.com/united-ai-agents-permission-search-indexing/597418/), il CEO Scott Kirby ha sintetizzato la logica con una frase diretta: \"Non voglio creare un altro intermediario.\" United non vuole che agenti di terze parti si mettano tra la compagnia e i suoi clienti — né che i suoi dati alimentino sistemi concorrenti senza controllo.",
+        "Per uno studio professionale, la logica è identica. Il tuo sito può — e forse deve — essere indicizzato dai motori AI per farti trovare. Ma un agente che accede ai tuoi documenti, alla tua agenda o al tuo form di contatto per conto di un utente è un'altra cosa: ha implicazioni sul segreto professionale, sulla responsabilità e sul GDPR. La distinzione tra \"lascio leggere\" e \"lascio agire\" è il cuore di una politica sensata, e va scritta esplicitamente nei termini di servizio del sito — non lasciata all'interpretazione del robots.txt.",
+        "Se stai costruendo o aggiornando il sito dello studio, l'articolo già pubblicato su [visibilità AI per studi professionali](/blog/visibilita-ai-motori-ricerca-studi-professionali-geo.html) offre un punto di partenza utile per capire da dove iniziare."
+      ],
+      "blocco": {
+        "tipo": "steps",
+        "titolo": "Come costruire una politica per crawler e agenti AI",
+        "voci": [
+          {
+            "titolo": "Mappa chi accede al tuo sito",
+            "meta": "Passo 1",
+            "testo": "Chiedi a chi gestisce il sito un report sui bot: quali crawler passano, con quale frequenza, da quali IP. Non puoi decidere cosa bloccare se non sai cosa c'è."
+          },
+          {
+            "titolo": "Distingui le categorie di accesso",
+            "meta": "Passo 2",
+            "testo": "Separa esplicitamente: crawler per indicizzazione AI (vuoi che leggano), bot di recupero per risposte AI (vuoi che citino), agenti autonomi (vuoi che chiedano permesso). Trattarli allo stesso modo è un errore."
+          },
+          {
+            "titolo": "Scrivi una policy nei termini di servizio",
+            "meta": "Passo 3",
+            "testo": "Il robots.txt non basta. I termini di servizio del sito devono dire esplicitamente cosa è permesso ai sistemi automatizzati e cosa no, con distinzione tra indicizzazione e azione."
+          },
+          {
+            "titolo": "Coordina SEO, IT e legale",
+            "meta": "Passo 4",
+            "testo": "Le decisioni sui bot toccano il posizionamento (SEO), la sicurezza dell'infrastruttura (IT) e la responsabilità professionale (legale). Non possono essere prese in silos separati."
+          },
+          {
+            "titolo": "Rivedi e aggiorna regolarmente",
+            "meta": "Passo 5",
+            "testo": "Il panorama degli agenti AI sta cambiando ogni mese. Una policy scritta a gennaio può essere obsoleta a giugno. Programma revisioni trimestrali con chi gestisce il sito."
+          }
+        ]
+      }
+    },
+    {
+      "h2": "Vale ancora la pena fare SEO tradizionale? La risposta onesta",
+      "paragrafi": [
+        "La risposta onesta è: sì, ma non basta più da sola, e il peso relativo sta cambiando rapidamente. La SEO tradizionale — titoli ottimizzati, link in entrata, velocità del sito — rimane la base su cui si costruisce la visibilità anche nella ricerca AI. I bot che compongono le risposte di Gemini o Perplexity attingono a contenuti indicizzati, e un sito mal strutturato tecnicamente non verrà citato bene nemmeno dai motori AI.",
+        "Ma la SEO tradizionale era pensata per portare click: l'utente legge il titolo su Google e visita il sito. Nella ricerca AI, l'utente riceve una risposta diretta e potrebbe non visitare mai il sito. I dati di Ziff Davis sono eloquenti: 2,7 miliardi di impressioni in AI Overview e AI Mode nel trimestre, con clic complessivi da Google che erano quasi **10 volte inferiori** rispetto a quelle impressioni. Essere presenti nell'AI Overview non porta traffic allo stesso modo in cui lo portava la prima posizione su Google.",
+        "Questo non significa smettere di fare SEO: significa aggiungere uno strato di **ottimizzazione per la ricerca AI** (spesso chiamata GEO, Generative Engine Optimization). I contenuti devono essere scritti in modo da poter essere estratti e citati con precisione: risposte dirette, dati strutturati, autorevolezza riconoscibile. E il sito deve permettere ai bot giusti di leggere quei contenuti. Per chi gestisce uno studio professionale, questo significa anche presidiare le domande che i potenziali clienti fanno alle AI — \"come funziona il regime forfettario\", \"quando conviene aprire una srl\" — con contenuti che rispondano in modo chiaro e autorevole.",
+        "Se hai già letto il nostro articolo su [AI Overviews e il calo dei click per gli studi professionali](/blog/ai-overviews-click-persi-sito-studio-professionale.html), hai già un quadro delle conseguenze pratiche. Il passaggio successivo è decidere cosa fare — e qui la strategia conta più dello strumento."
+      ],
+      "blocco": {
+        "tipo": "checklist",
+        "titolo": "Il tuo sito è pronto per la ricerca AI?",
+        "voci": [
+          {
+            "titolo": "Contenuti con risposte dirette",
+            "testo": "Ogni pagina risponde a una domanda specifica in modo chiaro nei primi due paragrafi, senza fronzoli.",
+            "ok": true
+          },
+          {
+            "titolo": "Dati strutturati (schema markup)",
+            "testo": "Le informazioni chiave — nome dello studio, servizi, contatti, orari — sono marcate in modo che i bot le riconoscano.",
+            "ok": true
+          },
+          {
+            "titolo": "Robots.txt coerente con la strategia",
+            "testo": "Il file robots.txt permette esplicitamente i bot di recupero per AI search e blocca solo quelli che non vuoi.",
+            "ok": false
+          },
+          {
+            "titolo": "Termini di servizio aggiornati",
+            "testo": "I termini del sito distinguono tra indicizzazione permessa e accesso degli agenti AI, che richiede autorizzazione esplicita.",
+            "ok": false
+          },
+          {
+            "titolo": "Monitoraggio del traffico bot",
+            "testo": "Hai una visibilità regolare su quali bot accedono al sito, con quale frequenza e su quali pagine.",
+            "ok": false
+          },
+          {
+            "titolo": "Business Hub di ChatGPT rivendicato",
+            "testo": "Hai reclamato il profilo su ChatGPT Business Hub e stai monitorando citazioni e clic generati.",
+            "ok": false
+          }
+        ]
+      }
+    },
+    {
+      "h2": "Visibilità AI e sicurezza dei dati: il doppio rischio da gestire insieme",
+      "paragrafi": [
+        "Per uno studio professionale, la questione della visibilità nei motori di ricerca AI si intreccia inevitabilmente con quella della protezione dei dati. Un agente AI che accede al sito per raccogliere informazioni non sa distinguere tra una pagina pubblica di presentazione dei servizi e un'area riservata con documenti dei clienti. Se il sito non è configurato correttamente, il rischio non è solo di visibilità: è di violazione del segreto professionale e del GDPR.",
+        "Il tema della responsabilità professionale nell'uso dell'AI è già stato affrontato in modo approfondito nell'articolo su [responsabilità AI per studi professionali e PMI](/blog/responsabilita-ai-studi-professionali-pmi-ai-act-legge-132-2025.html). Qui il punto è complementare: non si tratta solo di come usi l'AI all'interno dello studio, ma di come l'AI esterna interagisce con il tuo sito — e quindi con i dati che, anche indirettamente, ti sono stati affidati.",
+        "La soluzione non è bloccare tutto — sarebbe controproducente per la visibilità. È costruire una **politica deliberata**: cosa permetto, a chi, con quali condizioni e con quale documentazione. Una politica che coinvolge il legale per i termini di servizio, l'IT per l'infrastruttura tecnica, e chi gestisce il marketing per le conseguenze sulla visibilità. Non è un problema tecnico da delegare al webmaster: è una decisione strategica che spetta al titolare dello studio o al responsabile della PMI.",
+        "**Attenzione:** Un agente AI che accede al tuo sito per costruire una risposta potrebbe estrarre informazioni che non intendevi rendere pubbliche — testi nascosti, documenti scaricabili, metadati. Se il sito non ha una protezione attiva a livello di firewall e una policy esplicita, non hai modo di sapere cosa è stato letto e da chi. Per uno studio professionale, questo non è un problema tecnico secondario: tocca direttamente la responsabilità verso i clienti e gli obblighi deontologici."
+      ]
+    }
+  ],
+  "ovia_view": {
+    "titolo": "La visione di Ovia: la strategia decide chi entra, non il caso",
+    "paragrafi": [
+      "In Ovia lavoriamo con studi professionali e PMI italiane che vogliono essere trovati dai motori AI, ma senza cedere il controllo su chi accede ai propri contenuti e con quali finalità. La nostra convinzione è che la strategia — decidere cosa permettere, a chi e con quali condizioni — vale molto più dell'aggiornamento tecnico dell'ultimo minuto.",
+      "Per questo i siti che costruiamo per i nostri clienti sono progettati dall'inizio per essere leggibili e citabili dai bot di recupero AI, con dati strutturati, contenuti chiari e una configurazione tecnica coerente con la policy di accesso. Non si tratta di \"fare SEO per l'AI\": si tratta di costruire un sito che sappia chi lascia entrare e perché.",
+      "Con [Ovia Siti Web per le AI](/servizi/siti-web-ai.html) affianchiamo il cliente nella definizione della politica di accesso, nella struttura dei contenuti e nel monitoraggio delle citazioni — compreso il Business Hub di ChatGPT. Il risultato è un sito che non solo compare nelle risposte AI, ma lo fa in modo controllato e sicuro."
+    ]
+  },
+  "faq": [
+    {
+      "domanda": "Come faccio a comparire nelle risposte di ChatGPT o Gemini quando qualcuno cerca il mio studio?",
+      "risposta": "Per essere citato dai motori di ricerca AI, il tuo sito deve essere leggibile dai bot di recupero AI e deve contenere risposte chiare e autorevoli alle domande che i tuoi potenziali clienti fanno. Questo richiede dati strutturati, contenuti scritti in modo diretto e una configurazione tecnica che non blocchi i bot giusti. OpenAI ha anche aperto il Business Hub in beta, che permette di rivendicare il proprio profilo e monitorare le citazioni su ChatGPT."
+    },
+    {
+      "domanda": "I bot di AI come ChatGPT scansionano il mio sito senza chiedermi il permesso?",
+      "risposta": "Dipende dal tipo di bot. I crawler per l'indicizzazione AI dichiarano in genere il proprio user-agent e rispettano il robots.txt, anche se in modo volontario. Gli agenti AI autonomi — come Meta Muse — possono navigare il sito apparendo come utenti normali, senza seguire le regole del robots.txt. Secondo i dati di HUMAN Security, a ottobre 2026 le richieste totali di agenti AI erano circa 8 volte superiori ad agosto, e quasi il 90% proveniva da soli due operatori: Meta e OpenAI."
+    },
+    {
+      "domanda": "Devo bloccare i crawler AI o lasciarli passare?",
+      "risposta": "Non c'è una risposta unica: dipende dal tipo di bot. Bloccare i crawler che alimentano la ricerca AI riduce la tua visibilità nelle risposte di ChatGPT, Gemini e Perplexity. Bloccare gli agenti autonomi che agiscono per conto degli utenti è invece spesso prudente, soprattutto per uno studio professionale dove ci sono obblighi di riservatezza. La chiave è distinguere le categorie e costruire una policy esplicita, non bloccare o lasciare passare tutto indiscriminatamente."
+    },
+    {
+      "domanda": "Cosa devo fare per essere citato da Perplexity o Google AI Mode?",
+      "risposta": "Devi avere contenuti che rispondano in modo diretto e autorevole alle domande degli utenti, un sito tecnicamente accessibile ai bot di recupero AI e dati strutturati che aiutino i sistemi AI a identificare chi sei e cosa fai. Google ha introdotto Gemini 4 Hydrogen come modello predefinito in AI Mode, descritto come capace di collegare gli utenti a un'ampia gamma di link: questo rende ancora più importante avere un sito ben strutturato."
+    },
+    {
+      "domanda": "Vale ancora la pena fare SEO tradizionale?",
+      "risposta": "Sì, ma non basta più da sola. La SEO tradizionale rimane la base tecnica su cui si costruisce anche la visibilità AI. Ma nella ricerca AI l'utente spesso riceve una risposta senza cliccare sul sito: Ziff Davis ha registrato quasi 10 volte più impressioni in AI Overview rispetto ai clic totali da Google Search. Questo significa che bisogna aggiungere un'ottimizzazione specifica per la ricerca AI — struttura dei contenuti, dati strutturati, policy di accesso ai bot — senza abbandonare le basi SEO."
+    },
+    {
+      "domanda": "Come faccio a controllare chi accede ai contenuti del mio sito?",
+      "risposta": "Il robots.txt è il punto di partenza, ma non è sufficiente perché è volontario e non si applica agli agenti che non dichiarano il proprio user-agent. La protezione reale avviene a livello di firewall applicativo, CDN e servizi di verifica dei bot. In parallelo, i termini di servizio del sito devono indicare esplicitamente cosa è permesso ai sistemi automatizzati — sul modello di quanto ha fatto United Airlines nel novembre 2026. Queste decisioni vanno coordinate tra chi gestisce il sito, il team IT e il legale."
+    },
+    {
+      "domanda": "Il calo del traffico da Google riguarda anche gli studi professionali italiani?",
+      "risposta": "Il fenomeno è globale e strutturale, non limitato a specifici settori. Se grandi operatori come Ziff Davis e Tripadvisor registrano cali del 37% nei referral organici e pianificano strategie senza aspettarsi una ripresa del traffico da ricerca, anche uno studio professionale o una PMI italiana deve iniziare a ragionare in termini di visibilità AI, non solo di posizionamento Google. La buona notizia è che chi costruisce oggi una presenza solida nella ricerca AI parte avvantaggiato."
+    }
+  ],
+  "conclusione": [
+    "Il panorama della ricerca online si è trasformato in modo definitivo. Comparire nelle risposte di ChatGPT, Gemini o Perplexity non è un regalo automatico dell'algoritmo: è il risultato di scelte deliberate su come è strutturato il sito, chi si lascia entrare e con quali condizioni. Per uno studio professionale o una PMI italiana, queste scelte hanno anche una dimensione di responsabilità — verso i clienti, verso i dati affidati, verso gli obblighi deontologici e normativi.",
+    "Il modello United Airlines — lascia indicizzare, ma agli agenti chiedi permesso scritto — è un esempio concreto di come si può affrontare il problema senza rinunciare né alla visibilità né al controllo. Non serve essere una grande compagnia aerea: serve una politica chiara, scritta nei termini di servizio, applicata a livello tecnico e rivista regolarmente.",
+    "La strategia è lo strumento che fa guadagnare. L'AI — sia quella che costruisci tu, sia quella che bussa alla porta del tuo sito — è lo strumento. Decidere chi entra, perché e con quali regole: questo è il lavoro che vale la pena fare adesso."
+  ],
+  "prodotti": [
+    {
+      "id": "siti-web-ai",
+      "perche": "Ovia progetta siti strutturati per essere trovati e citati dai motori AI — con dati strutturati, contenuti ottimizzati per la ricerca generativa e una configurazione tecnica che permette ai bot giusti di leggere senza lasciare passare quelli che non vuoi."
+    },
+    {
+      "id": "lead-generation",
+      "perche": "Essere citati da ChatGPT o Gemini genera un nuovo tipo di contatto: chi arriva dal motore AI ha già ricevuto una risposta e vuole agire. Ovia Lead Generation cattura questi contatti, li qualifica e avvia il follow-up automatico prima che vadano da un concorrente."
+    },
+    {
+      "id": "second-brain",
+      "perche": "La visibilità AI si costruisce anche sui contenuti: sapere cosa chiedono i clienti, quali argomenti trattano le chiamate e quali procedure sono più richieste è la materia prima per i contenuti che i motori AI citano. Ovia Second Brain collega queste informazioni e le rende disponibili quando servono."
+    }
+  ],
+  "categoria": "ai-search-marketing",
+  "keyword": "visibilità nei motori di ricerca AI",
+  "data": "2026-11-15T12:45:19.281Z",
+  "autore": "Redazione Ovia",
+  "parole": 2353,
+  "minuti": 12,
+  "fonti": [
+    {
+      "titolo": "Core Update, ChatGPT Business Hub AI Mode’s New Model SEO Pulse via @sejournal, @MattGSouthern",
+      "fonte": "Search Engine Journal",
+      "url": "https://www.searchenginejournal.com/seo-pulse-core-update-chatgpt-business-hub-ai-modes-new-model/597135/"
+    },
+    {
+      "titolo": "United Lets Search Engines Index Its Site, Makes AI Agents Ask First via @sejournal, @MattGSouthern",
+      "fonte": "Search Engine Journal",
+      "url": "https://www.searchenginejournal.com/united-ai-agents-permission-search-indexing/597418/"
+    },
+    {
+      "titolo": "Meta OpenAI Agents Made Nearly 90% Of Agent Requests In Bot Data via @sejournal, @MattGSouthern",
+      "fonte": "Search Engine Journal",
+      "url": "https://www.searchenginejournal.com/meta-muse-ai-agent-requests-human-security/597388/"
+    },
+    {
+      "titolo": "AI Bot Management: Why SEOs Need More Than Block Lists via @sejournal, @chrisgreenseo",
+      "fonte": "Search Engine Journal",
+      "url": "https://www.searchenginejournal.com/ai-bot-management-why-seos-need-more-than-block-lists/597148/"
+    }
+  ],
+  "generato": {
+    "da": "ai",
+    "modello": "claude-sonnet-4-6",
+    "il": "2026-11-15T12:45:19.281Z"
+  },
+  "en": {
+    "title": "AI Search Visibility: What to Do Right Now",
+    "slug": "ai-search-visibility-crawlers-agents-professional-firms-smes",
+    "meta_description": "Appearing in ChatGPT, Gemini and Perplexity answers is not automatic. Learn how to manage AI crawlers and agents for Italian professional firms and SMEs.",
+    "lead": "Appearing in ChatGPT, Gemini or Perplexity answers is not automatic: it depends on who you let into your website, under what rules and with what strategy. Without a deliberate policy, you risk both disappearing from AI search and giving away data without any control.",
+    "tags": [
+      "AI search visibility",
+      "AI search",
+      "AI crawlers",
+      "AI agents",
+      "GEO"
+    ],
+    "intro": [
+      "Online search is changing faster than most Italian professional firms and SMEs realise. This is not simply about Google tweaking its algorithm: a parallel system is emerging in which ChatGPT, Gemini and Perplexity answer users' questions by citing websites — without those websites necessarily being visited in the traditional sense.",
+      "For an accountancy practice, law firm, employment consultancy — or an SME that wants to be found by prospective clients — this changes the rules of the game. Ranking on Google is no longer enough: you need to understand who is accessing your website, why they are doing so and what the consequences are. And you need to do it with a strategy, not by leaving things to chance."
+    ],
+    "punti_chiave": [
+      "Traditional AI crawlers index websites much as Google does, but AI agents — those that act on behalf of a user — are a distinct and far more sensitive category.",
+      "Appearing in ChatGPT or Gemini answers depends on how your website is structured and which bots you allow in: it is not automatic and does not depend solely on traditional SEO.",
+      "Blanket-blocking all AI bots can make you disappear from AI search; blocking them poorly can cost you control over your own data.",
+      "OpenAI has launched the Business Hub in beta: companies can now claim their profile and see how often ChatGPT cites them — but claiming a profile does not guarantee visibility.",
+      "Organic traffic from Google is falling across many sectors: Ziff Davis reported a 37% year-on-year drop in organic referrals, and major players such as Tripadvisor are already rethinking their strategies.",
+      "The distinction between crawlers (which read to index) and agents (which act on behalf of the user) is the key to building a sensible policy — not a blanket block list."
+    ],
+    "sezioni": [
+      {
+        "h2": "Crawlers and AI agents: a distinction you cannot afford to ignore",
+        "paragrafi": [
+          "When we talk about \"AI bots\" we tend to lump them all together — and that is a mistake that can prove costly. There are at least three distinct categories: **training crawlers** (which collect text to help AI models learn), **retrieval bots for AI search** (which extract content to compose real-time answers) and **autonomous agents** (which act on behalf of the user — searching, comparing, purchasing). Blocking the first type has very different consequences from blocking the second or third.",
+          "As [Chris Green explains on Search Engine Journal](https://www.searchenginejournal.com/ai-bot-management-why-seos-need-more-than-block-lists/597148/), **blocking an agent that is comparing products or services may not cost you a ranking position — it may cause you to vanish from the answer entirely**. This matters even more for a professional firm, where a ChatGPT response to the query \"who is a good accountant in Milan\" can be worth as much as the top Google result.",
+          "The robots.txt file — the tool long used to tell crawlers what they can read — is voluntary. Bots comply only if they choose to. Real enforcement happens at the level of the CDN (content delivery network), the web application firewall and bot-protection services, all of which can override robots.txt rules without the team managing the site even knowing."
+        ],
+        "blocco": {
+          "tipo": "compare",
+          "titolo": "Crawlers vs. AI agents: two very different worlds",
+          "sinistra": {
+            "badge": "Traditional crawler",
+            "titolo": "How it works today",
+            "righe": [
+              {
+                "etichetta": "Purpose",
+                "valore": "Read and index content"
+              },
+              {
+                "etichetta": "Control",
+                "valore": "robots.txt (voluntary)"
+              },
+              {
+                "etichetta": "Risk if blocked",
+                "valore": "No ranking in search engines"
+              },
+              {
+                "etichetta": "Identity",
+                "valore": "Declared user-agent"
+              }
+            ]
+          },
+          "destra": {
+            "badge": "AI agent",
+            "titolo": "Recommended approach",
+            "righe": [
+              {
+                "etichetta": "Purpose",
+                "valore": "Act on behalf of the user (search, book, buy)"
+              },
+              {
+                "etichetta": "Control",
+                "valore": "Terms of service + active bot protection"
+              },
+              {
+                "etichetta": "Risk if blocked",
+                "valore": "Disappear from the user's AI answer"
+              },
+              {
+                "etichetta": "Identity",
+                "valore": "Often undeclared or unverifiable"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "h2": "What is really happening to AI search visibility",
+        "paragrafi": [
+          "The week of 10 November 2026 brought a cluster of signals that, taken together, paint a very clear picture. Google launched its third core update of the year. It changed the default model in AI Mode, switching to Gemini 4 Hydrogen — described as capable of connecting users to \"a wide range of helpful links\". OpenAI opened the [Business Hub](https://www.searchenginejournal.com/seo-pulse-core-update-chatgpt-business-hub-ai-modes-new-model/597135/) in beta, allowing businesses to claim their profile and see how often ChatGPT cites them and how many clicks it drives.",
+          "The most significant data, however, came from publicly listed companies. The CEO of Ziff Davis stated that organic referrals from Google fell **37% year-on-year** in Q3 2026. Tripadvisor spoke openly of SEO as a \"headwind to growth\" extending into 2027, and increased its share of paid marketing from 43.3% to 48.8% of revenue. These are not niche players: if it is happening to them, it can happen to a professional firm or an SME that relies on organic traffic to win new clients.",
+          "Meanwhile, OpenAI was paying Cloudflare to receive **priority signals about when web pages change**, making crawling more efficient. Cloudflare CEO Matthew Prince compared this dynamic to \"a new version of SEO\". The logic is straightforward: anyone who wants their content to reach AI agents reliably needs to start thinking of their web infrastructure as a strategic asset, not a service overhead.",
+          "For a professional firm, this translates into a concrete question: is your website structured so that AI retrieval bots can read it, understand it and cite it accurately? Or is it designed only for the human visitor of the early 2000s? This is precisely where the work we do with [websites designed for AI search](/en/services/siti-web-ai.html) comes in."
+        ],
+        "blocco": {
+          "tipo": "stats",
+          "titolo": "The numbers that are reshaping priorities",
+          "voci": [
+            {
+              "valore": "−37%",
+              "testo": "Drop in organic referrals from Google for Ziff Davis in Q3 2026 (year-on-year)"
+            },
+            {
+              "valore": "~90%",
+              "testo": "Share of AI agent requests handled by just two operators: Meta (Muse) and OpenAI"
+            },
+            {
+              "valore": "8×",
+              "testo": "Growth in total AI agent requests from August to October 2026"
+            },
+            {
+              "valore": "353,356",
+              "testo": "Citations of Search Engine Journal on ChatGPT over 28 days, generating 2,663 clicks to the site"
+            }
+          ]
+        }
+      },
+      {
+        "h2": "Who is entering your website without asking?",
+        "paragrafi": [
+          "According to HUMAN Security's monthly report, [Meta Muse and OpenAI agents generated almost 90% of AI agent requests](https://www.searchenginejournal.com/meta-muse-ai-agent-requests-human-security/597388/) on the sites protected by their platform in October 2026. Muse alone accounted for 59% of the total. And the overall volume of requests was approximately **eight times higher** than in August.",
+          "The problem is that these agents do not always identify themselves clearly. Meta itself has stated openly that Muse browses sites \"as if it were your business\" — meaning it appears as a normal user to analytics tools. Half of the Muse requests detected by DataDome on 10 November arrived without a verifiable digital signature. For a site that uses robots.txt to manage access, this means the rules you have set simply do not apply to these agents.",
+          "For a professional firm, this raises a practical and urgent question: **do you know who is accessing your website, how often and for what purpose?** If the answer is no — or if the answer is \"the webmaster handles that\" without you ever having seen a report — it is time to change that. Not to block everything, but to make informed decisions.",
+          "**Please note:** The robots.txt file is a voluntary tool — bots comply only if they choose to. Personal AI agents such as Muse do not publish a user-agent that robots.txt can recognise, so your rules do not apply to them. Real protection happens at the level of the firewall, CDN and bot-verification services — tools that must be coordinated with your SEO strategy and your legal team."
+        ]
+      },
+      {
+        "h2": "The United Airlines model: separating indexing from agent access",
+        "paragrafi": [
+          "A concrete and very recent example of how to tackle this issue comes from United Airlines. On 11 November 2026, the company updated its terms of service to draw a clear distinction: search engines may freely index the site's public pages, but **any AI agent wishing to search, book or purchase on united.com must first obtain written permission**. The site's data — fares, availability, prices — cannot be used to train or fine-tune AI models.",
+          "As [Search Engine Journal reports](https://www.searchenginejournal.com/united-ai-agents-permission-search-indexing/597418/), CEO Scott Kirby summed up the rationale plainly: \"I don't want to create another intermediary.\" United does not want third-party agents inserting themselves between the company and its customers — nor does it want its data feeding competing systems without oversight.",
+          "For a professional firm, the logic is identical. Your website can — and perhaps should — be indexed by AI search engines so that clients can find you. But an agent that accesses your documents, your diary or your contact form on behalf of a user is an entirely different matter: it has implications for professional secrecy, liability and the GDPR. The distinction between \"I allow reading\" and \"I allow acting\" is at the heart of a sensible policy, and it must be written explicitly into the site's terms of service — not left to robots.txt interpretation.",
+          "If you are building or updating your firm's website, the article already published on [AI visibility for professional firms](/en/blog/ai-search-visibility-professional-firms-geo.html) offers a useful starting point for understanding where to begin."
+        ],
+        "blocco": {
+          "tipo": "steps",
+          "titolo": "How to build a policy for AI crawlers and agents",
+          "voci": [
+            {
+              "titolo": "Map who is accessing your website",
+              "meta": "Step 1",
+              "testo": "Ask whoever manages your site for a bot report: which crawlers are coming through, how often, from which IPs. You cannot decide what to block if you do not know what is there."
+            },
+            {
+              "titolo": "Distinguish between access categories",
+              "meta": "Step 2",
+              "testo": "Draw a clear line between: crawlers for AI indexing (you want them to read), retrieval bots for AI answers (you want them to cite you), autonomous agents (you want them to ask permission). Treating them all the same is a mistake."
+            },
+            {
+              "titolo": "Write a policy into the terms of service",
+              "meta": "Step 3",
+              "testo": "robots.txt is not enough. The site's terms of service must explicitly state what automated systems are and are not permitted to do, with a clear distinction between indexing and acting."
+            },
+            {
+              "titolo": "Coordinate SEO, IT and legal",
+              "meta": "Step 4",
+              "testo": "Decisions about bots touch ranking (SEO), infrastructure security (IT) and professional liability (legal). They cannot be made in isolation from one another."
+            },
+            {
+              "titolo": "Review and update regularly",
+              "meta": "Step 5",
+              "testo": "The AI agent landscape is changing every month. A policy written in January may be out of date by June. Schedule quarterly reviews with whoever manages the site."
+            }
+          ]
+        }
+      },
+      {
+        "h2": "Is traditional SEO still worth doing? The honest answer",
+        "paragrafi": [
+          "The honest answer is: yes, but it is no longer sufficient on its own, and its relative weight is shifting rapidly. Traditional SEO — optimised titles, inbound links, site speed — remains the foundation on which visibility in AI search is also built. The bots that compose Gemini or Perplexity answers draw on indexed content, and a technically poorly structured site will not be cited well by AI search engines either.",
+          "But traditional SEO was designed to drive clicks: the user reads the title on Google and visits the site. In AI search, the user receives a direct answer and may never visit the site at all. The Ziff Davis data is telling: 2.7 billion impressions in AI Overview and AI Mode in the quarter, with total clicks from Google coming in at almost **ten times fewer** than those impressions. Being featured in AI Overview does not drive traffic in the same way that the top Google result used to.",
+          "This does not mean abandoning SEO: it means adding a layer of **AI search optimisation** (often called GEO, Generative Engine Optimization). Content must be written so that it can be extracted and cited accurately: direct answers, structured data, recognisable authority. And the site must allow the right bots to read that content. For a professional firm, this also means covering the questions that prospective clients ask AI systems — \"how does the forfettario flat-rate scheme work\", \"when is it worth setting up an SRL\" — with content that answers clearly and authoritatively.",
+          "If you have already read our article on [AI Overviews and the drop in clicks for professional firm websites](/en/blog/ai-overviews-lost-clicks-professional-firm-website.html), you already have a picture of the practical consequences. The next step is deciding what to do — and here strategy matters more than any individual tool."
+        ],
+        "blocco": {
+          "tipo": "checklist",
+          "titolo": "Is your website ready for AI search?",
+          "voci": [
+            {
+              "titolo": "Content with direct answers",
+              "testo": "Every page answers a specific question clearly within the first two paragraphs, with no padding.",
+              "ok": true
+            },
+            {
+              "titolo": "Structured data (schema markup)",
+              "testo": "Key information — firm name, services, contacts, opening hours — is marked up so that bots can recognise it.",
+              "ok": true
+            },
+            {
+              "titolo": "robots.txt aligned with strategy",
+              "testo": "The robots.txt file explicitly allows AI search retrieval bots and blocks only those you do not want.",
+              "ok": false
+            },
+            {
+              "titolo": "Up-to-date terms of service",
+              "testo": "The site's terms distinguish between permitted indexing and AI agent access, which requires explicit authorisation.",
+              "ok": false
+            },
+            {
+              "titolo": "Bot traffic monitoring",
+              "testo": "You have regular visibility into which bots are accessing the site, how often and on which pages.",
+              "ok": false
+            },
+            {
+              "titolo": "ChatGPT Business Hub claimed",
+              "testo": "You have claimed your profile on the ChatGPT Business Hub and are monitoring citations and clicks generated.",
+              "ok": false
+            }
+          ]
+        }
+      },
+      {
+        "h2": "AI visibility and data security: two risks to manage together",
+        "paragrafi": [
+          "For a professional firm, the question of AI search visibility is inextricably linked to data protection. An AI agent accessing your site to gather information cannot distinguish between a public service page and a restricted area containing client documents. If the site is not configured correctly, the risk is not only one of visibility: it is a risk of breaching professional secrecy and the GDPR.",
+          "The question of professional liability in the use of AI has already been addressed in depth in the article on [AI liability for professional firms and SMEs](/en/blog/ai-liability-professional-firms-smes-ai-act-italian-law-132-2025.html). The point here is complementary: it is not only about how you use AI within the firm, but about how external AI interacts with your website — and therefore with the data that, even indirectly, has been entrusted to you.",
+          "The answer is not to block everything — that would be counterproductive for visibility. It is to build a **deliberate policy**: what you permit, to whom, under what conditions and with what documentation. A policy that involves legal counsel for the terms of service, IT for the technical infrastructure, and whoever manages marketing for the implications on visibility. This is not a technical problem to delegate to the webmaster: it is a strategic decision that falls to the firm's principal or the SME's responsible manager.",
+          "**Please note:** An AI agent accessing your site to construct an answer may extract information you did not intend to make public — hidden text, downloadable documents, metadata. Without active firewall-level protection and an explicit policy, you have no way of knowing what has been read and by whom. For a professional firm, this is not a minor technical issue: it directly touches your duty of care to clients and your professional ethical obligations."
+        ]
+      }
+    ],
+    "ovia_view": {
+      "titolo": "Ovia's view: strategy decides who gets in — not chance",
+      "paragrafi": [
+        "At Ovia we work with Italian professional firms and SMEs that want to be found by AI search engines, without surrendering control over who accesses their content and for what purpose. Our conviction is that strategy — deciding what to permit, to whom and under what conditions — is worth far more than last-minute technical fixes.",
+        "That is why the websites we build for our clients are designed from the outset to be readable and citable by AI retrieval bots, with structured data, clear content and a technical configuration that is consistent with the access policy. This is not about \"doing SEO for AI\": it is about building a site that knows who it is letting in and why.",
+        "With [Ovia AI-Ready Websites](/en/services/siti-web-ai.html) we support the client in defining the access policy, structuring content and monitoring citations — including the ChatGPT Business Hub. The result is a website that not only appears in AI answers, but does so in a controlled and secure manner."
+      ]
+    },
+    "faq": [
+      {
+        "domanda": "How do I appear in ChatGPT or Gemini answers when someone searches for my firm?",
+        "risposta": "To be cited by AI search engines, your website must be readable by AI retrieval bots and must contain clear, authoritative answers to the questions your prospective clients are asking. This requires structured data, directly written content and a technical configuration that does not block the right bots. OpenAI has also launched the Business Hub in beta, which allows you to claim your profile and monitor citations on ChatGPT."
+      },
+      {
+        "domanda": "Do AI bots like ChatGPT crawl my website without asking permission?",
+        "risposta": "It depends on the type of bot. AI indexing crawlers generally declare their user-agent and comply with robots.txt, albeit on a voluntary basis. Autonomous AI agents — such as Meta Muse — can browse the site appearing as ordinary users, without following robots.txt rules. According to HUMAN Security data, in October 2026 total AI agent requests were approximately eight times higher than in August, with almost 90% coming from just two operators: Meta and OpenAI."
+      },
+      {
+        "domanda": "Should I block AI crawlers or let them through?",
+        "risposta": "There is no single answer: it depends on the type of bot. Blocking crawlers that feed AI search reduces your visibility in ChatGPT, Gemini and Perplexity answers. Blocking autonomous agents that act on behalf of users is often the prudent choice, especially for a professional firm with confidentiality obligations. The key is to distinguish between categories and build an explicit policy — not to block or allow everything indiscriminately."
+      },
+      {
+        "domanda": "What do I need to do to be cited by Perplexity or Google AI Mode?",
+        "risposta": "You need content that answers user questions directly and authoritatively, a website technically accessible to AI retrieval bots and structured data that helps AI systems identify who you are and what you do. Google has introduced Gemini 4 Hydrogen as the default model in AI Mode, described as capable of connecting users to a wide range of useful links — making a well-structured website more important than ever."
+      },
+      {
+        "domanda": "Is traditional SEO still worth doing?",
+        "risposta": "Yes, but it is no longer sufficient on its own. Traditional SEO remains the technical foundation on which AI visibility is also built. But in AI search users often receive an answer without clicking through to the site: Ziff Davis recorded nearly ten times more impressions in AI Overview than total clicks from Google Search. This means you need to add AI-specific optimisation — content structure, structured data, bot access policy — without abandoning SEO fundamentals."
+      },
+      {
+        "domanda": "How do I control who accesses the content on my website?",
+        "risposta": "robots.txt is the starting point, but it is not enough: it is voluntary and does not apply to agents that do not declare their user-agent. Real protection happens at the level of the web application firewall, CDN and bot-verification services. In parallel, the site's terms of service must explicitly state what automated systems are permitted to do — along the lines of what United Airlines did in November 2026. These decisions must be coordinated between whoever manages the site, the IT team and legal counsel."
+      },
+      {
+        "domanda": "Does the decline in Google traffic affect Italian professional firms too?",
+        "risposta": "The phenomenon is global and structural, not limited to specific sectors. If major operators such as Ziff Davis and Tripadvisor are recording 37% drops in organic referrals and planning strategies without expecting a recovery in search traffic, Italian professional firms and SMEs must also start thinking in terms of AI visibility, not just Google rankings. The good news is that those who build a solid presence in AI search today are starting from a position of advantage."
+      }
+    ],
+    "conclusione": [
+      "The online search landscape has changed in a fundamental and irreversible way. Appearing in ChatGPT, Gemini or Perplexity answers is not an automatic gift from the algorithm: it is the result of deliberate choices about how the website is structured, who is let in and under what conditions. For an Italian professional firm or SME, those choices also carry a dimension of responsibility — towards clients, towards the data entrusted to you, and towards professional and regulatory obligations.",
+      "The United Airlines model — allow indexing freely, but require written permission from agents — is a concrete example of how to address the problem without sacrificing either visibility or control. You do not need to be a major airline to adopt it: you need a clear policy, written into the terms of service, applied at the technical level and reviewed regularly.",
+      "Strategy is the tool that generates value. AI — both the kind you build and the kind knocking at your website's door — is simply the instrument. Deciding who gets in, why and under what rules: that is the work worth doing right now."
+    ],
+    "prodotti": [
+      {
+        "id": "siti-web-ai",
+        "perche": "Ovia designs websites structured to be found and cited by AI search engines — with structured data, content optimised for generative search and a technical configuration that lets the right bots read without admitting those you do not want."
+      },
+      {
+        "id": "lead-generation",
+        "perche": "Being cited by ChatGPT or Gemini generates a new kind of contact: someone who arrives via AI search has already received an answer and is ready to act. Ovia Lead Generation captures these contacts, qualifies them and starts automated follow-up before they go to a competitor."
+      },
+      {
+        "id": "second-brain",
+        "perche": "AI visibility is also built on content: knowing what clients ask, which topics come up in calls and which procedures are most in demand is the raw material for the content that AI search engines cite. Ovia Second Brain connects this information and makes it available when you need it."
+      }
+    ],
+    "parole": 1885,
+    "minuti": 10,
+    "tradotto": {
+      "da": "ai",
+      "modello": "claude-sonnet-4-6",
+      "il": "2026-11-15T12:47:42.390Z"
+    }
+  }
+}
