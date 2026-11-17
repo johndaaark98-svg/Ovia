@@ -1,0 +1,606 @@
+{
+  "title": "Governance AI aziendale: obblighi 2025 tra AI Act e GDPR",
+  "slug": "governance-ai-aziendale-obblighi-2025-ai-act-gdpr-cybersecurity",
+  "meta_description": "Governance AI aziendale 2025: obblighi di log, GDPR, Direttiva Piattaforme, shadow AI e cyber risk. Guida pratica per studi e PMI italiane.",
+  "lead": "AI Act, GDPR, Direttiva Piattaforme, Legge 132/2025: studi professionali e PMI italiane si trovano stretti tra obblighi che si sovrappongono. Non basta \"usare l'AI\" — serve una strategia di governance che dica cosa si monitora, per quanto, chi ne risponde e come si mette in sicurezza.",
+  "tags": [
+    "governance AI aziendale obblighi 2025",
+    "AI Act PMI",
+    "GDPR log AI",
+    "shadow AI",
+    "cybersecurity AI"
+  ],
+  "intro": [
+    "Se usi l'AI nel tuo studio o nella tua azienda — anche solo ChatGPT per redigere un'email o uno strumento per analizzare documenti — sei già dentro un sistema di obblighi che si incrociano tra loro. L'AI Act europeo impone log e monitoraggio per i sistemi ad alto rischio. Il GDPR limita la conservazione di quei log. La Direttiva Piattaforme, operativa dal 2 dicembre, obbliga chi usa algoritmi nelle decisioni sul lavoro a spiegare come funzionano. E nel frattempo i tuoi collaboratori usano strumenti AI che non hai autorizzato, caricando dati che non dovresti condividere con nessun server esterno.",
+    "Il problema non è la singola norma: è che queste norme **non parlano la stessa lingua** e nessuna di esse ti dice esattamente cosa fare lunedì mattina. Questo articolo lo fa. Prende ogni obbligo, lo traduce in termini operativi per uno studio professionale o una PMI italiana, e indica da dove si inizia senza diventare un esperto di diritto digitale."
+  ],
+  "punti_chiave": [
+    "L'AI Act richiede log e monitoraggio continuo per i sistemi AI ad alto rischio: chi li gestisce deve conservare i registri e dimostrare la conformità.",
+    "Il GDPR impone il principio di minimizzazione anche sui log: conservarli troppo a lungo espone a sanzioni del Garante Privacy.",
+    "Dal 2 dicembre la Direttiva Piattaforme obbliga chi usa algoritmi nelle decisioni lavorative a garantire trasparenza e spiegabilità.",
+    "La shadow AI — l'uso non autorizzato di strumenti AI da parte dei collaboratori — è il rischio più sottovalutato negli studi italiani.",
+    "Gli attacchi informatici abilitati dall'AI rappresentano un rischio economico rilevante anche per le PMI: una quota significativa delle organizzazioni colpite in Italia subisce danni gravi e duraturi.",
+    "Una policy interna sull'uso dell'AI non è burocrazia: è lo strumento che separa chi risponde da chi subisce sanzioni sovrapposte."
+  ],
+  "sezioni": [
+    {
+      "h2": "Quali obblighi hai se usi l'AI in azienda o nello studio",
+      "paragrafi": [
+        "La risposta onesta è: **dipende da cosa usi e come lo usi**. L'AI Act europeo classifica i sistemi AI per livello di rischio. I sistemi ad alto rischio — tra cui rientrano strumenti usati in ambito legale, fiscale, gestione del personale e accesso a servizi essenziali — devono soddisfare requisiti precisi: documentazione tecnica, registro delle attività (log), sorveglianza umana, test di robustezza. Chi li mette in opera è il «deployer», cioè tu, anche se il sistema è stato costruito da un fornitore terzo.",
+        "Accanto all'AI Act, il **GDPR** continua ad applicarsi ogni volta che un sistema AI tratta dati personali — il che accade quasi sempre, dal momento che i dati dei clienti, dei collaboratori o dei fornitori sono quasi sempre dati personali. E poi c'è la **Legge 132/2025**, che in Italia ha introdotto l'obbligo di informare i clienti quando un professionista usa l'AI in modo significativo nell'erogazione del servizio. Se vuoi approfondire questo punto specifico, leggi il nostro articolo sulla [responsabilità AI per studi professionali e PMI](/blog/responsabilita-ai-studi-professionali-pmi-ai-act-legge-132-2025.html).",
+        "In sintesi: non esiste uno studio o una PMI che usa l'AI e non ricade in almeno uno di questi quadri normativi. La domanda non è «sono obbligato?» ma «quali obblighi mi riguardano davvero e in quale ordine li affronto?»."
+      ],
+      "blocco": {
+        "tipo": "checklist",
+        "titolo": "Obblighi minimi da verificare subito",
+        "voci": [
+          {
+            "titolo": "Mappa dei sistemi AI in uso",
+            "testo": "Sai quali strumenti AI usano tu e i tuoi collaboratori, anche informalmente?",
+            "ok": false
+          },
+          {
+            "titolo": "Classificazione del rischio AI Act",
+            "testo": "Hai verificato se qualcuno dei tuoi sistemi rientra nelle categorie ad alto rischio?",
+            "ok": false
+          },
+          {
+            "titolo": "Informativa clienti (Legge 132/2025)",
+            "testo": "I clienti sanno quando e come usi l'AI nel loro fascicolo?",
+            "ok": false
+          },
+          {
+            "titolo": "Policy interna sull'uso dell'AI",
+            "testo": "Esiste un documento che dica ai collaboratori cosa possono e non possono fare con gli strumenti AI?",
+            "ok": false
+          },
+          {
+            "titolo": "Accordo con i fornitori AI (DPA)",
+            "testo": "Hai un Data Processing Agreement aggiornato con ogni fornitore che tratta dati per tuo conto?",
+            "ok": false
+          }
+        ]
+      }
+    },
+    {
+      "h2": "Log e conservazione dei dati: il nodo tra AI Act e GDPR",
+      "paragrafi": [
+        "Uno dei punti più delicati — e meno discussi in modo pratico — riguarda i **log dei sistemi AI**. L'AI Act impone che i sistemi ad alto rischio mantengano registri automatici delle operazioni eseguite, sufficienti a ricostruire cosa ha fatto il sistema e quando. Questi log servono a dimostrare la conformità in caso di ispezione o di incidente.",
+        "Il problema è che [conservare quei log troppo a lungo può violare il GDPR](https://www.agendadigitale.eu/sicurezza/dati-di-monitoraggio-dellai-quanto-conservarli-senza-violare-il-gdpr/), che impone il principio di **minimizzazione** e di **limitazione della conservazione**: i dati personali non possono essere tenuti più a lungo di quanto necessario allo scopo per cui sono stati raccolti. Se i tuoi log contengono — anche indirettamente — dati identificativi di clienti o dipendenti, ogni giorno in più di conservazione non giustificato è un'esposizione al rischio di sanzione del Garante Privacy.",
+        "La soluzione non è scegliere tra i due obblighi, ma progettare una **politica di conservazione differenziata**: log tecnici anonimi o pseudonimizzati conservati per il periodo richiesto dall'AI Act, log contenenti dati personali sottoposti a retention limitata con cancellazione automatica. Questo richiede una scelta consapevole, non una configurazione predefinita lasciata al fornitore del software."
+      ],
+      "blocco": {
+        "tipo": "compare",
+        "titolo": "Log AI: cosa chiedono le due normative",
+        "sinistra": {
+          "badge": "AI Act",
+          "titolo": "Obbligo di conservazione",
+          "righe": [
+            {
+              "etichetta": "Scopo",
+              "valore": "Dimostrare conformità e tracciabilità del sistema"
+            },
+            {
+              "etichetta": "Durata minima",
+              "valore": "Per tutta la vita operativa del sistema (indicazione generale)"
+            },
+            {
+              "etichetta": "Contenuto",
+              "valore": "Operazioni, decisioni, interventi umani, anomalie"
+            },
+            {
+              "etichetta": "Chi è responsabile",
+              "valore": "Il deployer (chi mette in opera il sistema)"
+            }
+          ]
+        },
+        "destra": {
+          "badge": "GDPR",
+          "titolo": "Obbligo di minimizzazione",
+          "righe": [
+            {
+              "etichetta": "Scopo",
+              "valore": "Proteggere i dati personali contenuti nei log"
+            },
+            {
+              "etichetta": "Durata massima",
+              "valore": "Solo quanto necessario allo scopo dichiarato"
+            },
+            {
+              "etichetta": "Contenuto",
+              "valore": "Vietata la conservazione di dati identificativi non necessari"
+            },
+            {
+              "etichetta": "Chi è responsabile",
+              "valore": "Il titolare del trattamento (quasi sempre lo studio o la PMI)"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "h2": "Dal 2 dicembre: cosa cambia con la Direttiva Piattaforme",
+      "paragrafi": [
+        "Dal 2 dicembre è pienamente applicabile la Direttiva europea sul lavoro tramite piattaforme, recepita in Italia. La norma [obbliga chi usa algoritmi nelle decisioni che riguardano i lavoratori a garantire trasparenza e spiegabilità](https://www.agendadigitale.eu/mercati-digitali/algoritmi-nel-lavoro-perche-le-piattaforme-avranno-piu-obblighi/): non solo le grandi piattaforme di gig economy, ma qualsiasi azienda che utilizzi sistemi automatizzati per valutare le prestazioni, assegnare compiti, stabilire turni o prendere decisioni disciplinari.",
+        "In pratica: se usi un software HR con componenti AI per la gestione delle ferie, la valutazione delle performance o il monitoraggio delle presenze, devi essere in grado di spiegare ai lavoratori **come funziona il sistema** e quali variabili influenzano le decisioni che li riguardano. Devi anche garantire che ci sia sempre un intervento umano possibile prima che una decisione automatizzata produca effetti significativi.",
+        "Per uno studio professionale con dipendenti o collaboratori, questo significa rivedere i contratti integrativi, aggiornare le informative sul trattamento dei dati e — se usi strumenti di project management con AI integrata — verificare se rientrano nell'ambito della direttiva. L'Ispettorato Nazionale del Lavoro ha già annunciato controlli mirati: il rischio di sanzioni sovrapposte (Garante Privacy + Ispettorato) è concreto.",
+        "**Attenzione:** Chi usa algoritmi per decisioni lavorative senza adeguata trasparenza rischia sanzioni sia dal Garante Privacy (GDPR) sia dall'Ispettorato Nazionale del Lavoro (Direttiva Piattaforme). Le due procedure sono indipendenti e cumulabili."
+      ]
+    },
+    {
+      "h2": "Shadow AI: il rischio che non vedi ma che ti riguarda",
+      "paragrafi": [
+        "La **shadow AI** è l'insieme degli strumenti AI usati dai tuoi collaboratori senza che tu lo sappia o lo abbia autorizzato. Un praticante che carica un contratto su ChatGPT per farne un riassunto. Una segretaria che usa un traduttore AI per rispondere a un cliente straniero. Un contabile che interroga un assistente AI con i dati di bilancio di un cliente.",
+        "Nessuno di questi comportamenti è necessariamente malevolo. Ma tutti comportano la **trasmissione di dati a server di terzi** — spesso fuori dall'UE — senza una base giuridica adeguata, senza un DPA, senza che il cliente sia stato informato. Per uno studio con obbligo di segreto professionale, è una violazione doppia: del GDPR e del codice deontologico.",
+        "Il tema è approfondito bene nel contesto delle [policy AI per le aziende](https://www.ai4business.it/intelligenza-artificiale/ai-e-lavoro-la-rivoluzione-ha-bisogno-di-regole/): senza regole scritte e comunicate, ogni dipendente fa una scelta individuale. Il risultato è che la governance AI dello studio dipende dal buon senso del singolo collaboratore — che è esattamente l'opposto di una governance. Una policy interna non deve essere un documento di 40 pagine: deve dire chiaramente quali strumenti sono approvati, quali dati non si caricano mai su sistemi esterni, e cosa succede se si viola la regola."
+      ],
+      "blocco": {
+        "tipo": "steps",
+        "titolo": "Come costruire una policy anti-shadow AI in 4 passi",
+        "voci": [
+          {
+            "titolo": "Mappa cosa usano davvero i collaboratori",
+            "meta": "Passo 1",
+            "testo": "Chiedi, non assumere. Un questionario anonimo spesso rivela strumenti che non sapevi esistessero nello studio."
+          },
+          {
+            "titolo": "Definisci la lista degli strumenti approvati",
+            "meta": "Passo 2",
+            "testo": "Non vietare tutto: seleziona gli strumenti sicuri, verifica che abbiano un DPA e comunicalo come la norma, non come una punizione."
+          },
+          {
+            "titolo": "Stabilisci le categorie di dati non condivisibili",
+            "meta": "Passo 3",
+            "testo": "Dati fiscali, fascicoli clienti, dati dei dipendenti: definisci per iscritto cosa non entra mai in un sistema AI esterno non approvato."
+          },
+          {
+            "titolo": "Forma e ricevi conferma scritta",
+            "meta": "Passo 4",
+            "testo": "Una comunicazione via email con conferma di lettura vale molto in caso di contestazione. La formazione non deve essere un corso: bastano 30 minuti di briefing documentato."
+          }
+        ]
+      }
+    },
+    {
+      "h2": "Cybersecurity abilitata dall'AI: il rischio concreto per una PMI italiana",
+      "paragrafi": [
+        "Gli attacchi informatici non sono più solo un problema delle grandi aziende. Gli [attacchi abilitati dall'AI](https://www.agendadigitale.eu/sicurezza/ai-e-cybersecurity-gli-attacchi-abilitati-dallai-costano-6-milioni/) colpiscono con crescente frequenza anche studi professionali e PMI italiane, con costi che per molte organizzazioni risultano difficili da assorbire: phishing generato automaticamente con toni e contesti personalizzati, deepfake vocali per impersonare il titolare, attacchi ransomware che analizzano i sistemi prima di colpire il momento più vulnerabile.",
+        "Per uno studio professionale, il vettore più frequente resta la **email compromessa** — un tema che abbiamo già trattato analizzando le [frodi BEC e il phishing avanzato](/blog/frodi-email-ai-bec-phishing-studi-professionali-pmi.html). Ma la governance AI aggiunge un vettore nuovo: i sistemi AI interni mal configurati, con accessi troppo ampi, possono diventare un punto di ingresso per chi vuole esfiltrare dati sensibili o bloccare l'operatività dello studio.",
+        "La risposta non è rinunciare all'AI. È costruire una **architettura di accesso minimale**: ogni strumento AI deve avere accesso solo ai dati che gli servono per il compito specifico, non all'intero archivio dello studio. Questo principio — chiamato «least privilege» — è già richiesto implicitamente dall'AI Act per i sistemi ad alto rischio e dal GDPR per qualsiasi trattamento automatizzato."
+      ],
+      "blocco": {
+        "tipo": "stats",
+        "titolo": "Il costo reale del rischio cyber AI in Italia",
+        "voci": [
+          {
+            "valore": "2 dic.",
+            "testo": "Data di piena applicabilità della Direttiva Piattaforme sugli algoritmi nel lavoro"
+          },
+          {
+            "valore": "2 norme",
+            "testo": "Regimi sanzionatori cumulabili (Garante Privacy + Ispettorato del Lavoro) in caso di non conformità"
+          }
+        ]
+      }
+    },
+    {
+      "h2": "Da dove si inizia: governance AI senza diventare un esperto di normativa",
+      "paragrafi": [
+        "La governance AI non si costruisce partendo dalla norma. Si costruisce partendo da **tre domande operative**: quali sistemi AI uso (o usano i miei collaboratori)? Quali dati trattano? Chi è responsabile se qualcosa va storto? Le risposte a queste tre domande valgono più di qualsiasi corso di formazione sull'AI Act.",
+        "Il passo successivo è scegliere cosa automatizzare con criterio, non per inseguire la novità. Uno studio professionale che automatizza la [gestione documentale e i solleciti](/servizi/documenti.html) su un sistema controllato, con log interni e accessi limitati, è già molto più in regola — e molto più al sicuro — di uno studio che usa dieci strumenti AI diversi senza sapere dove vanno i dati.",
+        "Infine, la governance richiede un **punto di responsabilità chiaro**: una persona (non necessariamente un tecnico) che sa quali sistemi AI sono in uso, può aggiornarli o disattivarli, e risponde delle scelte fatte. Nelle PMI e negli studi professionali, questa persona è quasi sempre il titolare. Delegare questa responsabilità senza presidi è il modo più rapido per ritrovarsi esposti a sanzioni che nessun revisore ti aveva anticipato."
+      ],
+      "blocco": {
+        "tipo": "checklist",
+        "titolo": "Le 5 domande del responsabile AI interno",
+        "voci": [
+          {
+            "titolo": "Quali sistemi AI sono attivi?",
+            "testo": "Includi quelli usati informalmente dai collaboratori, non solo quelli acquistati ufficialmente.",
+            "ok": false
+          },
+          {
+            "titolo": "Quali dati personali trattano?",
+            "testo": "Dati di clienti, dipendenti, fornitori: ogni categoria ha una base giuridica diversa.",
+            "ok": false
+          },
+          {
+            "titolo": "I fornitori hanno un DPA aggiornato?",
+            "testo": "Senza accordo scritto, sei tu il titolare di un trattamento irregolare.",
+            "ok": false
+          },
+          {
+            "titolo": "I log vengono conservati nel rispetto sia dell'AI Act sia del GDPR?",
+            "testo": "Troppo poco: rischi di non poter dimostrare la conformità. Troppo: rischi una sanzione privacy.",
+            "ok": false
+          },
+          {
+            "titolo": "C'è una policy scritta comunicata ai collaboratori?",
+            "testo": "In assenza di regole, ogni comportamento individuale diventa una tua responsabilità.",
+            "ok": false
+          }
+        ]
+      }
+    }
+  ],
+  "ovia_view": {
+    "titolo": "La governance AI è una scelta strategica, non un adempimento",
+    "paragrafi": [
+      "In Ovia lavoriamo con studi professionali e PMI italiane che vogliono usare l'AI in modo sostenibile: non l'ultimo strumento di moda, ma sistemi che sappiano cosa fanno, perché lo fanno e chi ne risponde. Questo significa progettare l'automazione partendo dalla mappa dei rischi, non dalla lista delle funzionalità.",
+      "Quando costruiamo un sistema per uno studio, la prima conversazione riguarda sempre i dati: dove stanno, chi ci accede, per quanto vengono conservati, e se il cliente sa che esistono. Solo dopo si sceglie lo strumento. È l'inverso di come funziona la maggior parte dei fornitori di software AI.",
+      "Se stai cercando un punto di partenza concreto, non un consulente normativo ma un partner che ti aiuti a capire cosa automatizzare e come farlo in sicurezza, siamo qui per questo."
+    ]
+  },
+  "faq": [
+    {
+      "domanda": "Quali obblighi ho se uso l'AI in azienda o nello studio professionale?",
+      "risposta": "Dipende dal tipo di sistema AI e dai dati che tratta. In linea generale: l'AI Act impone log, sorveglianza umana e documentazione per i sistemi ad alto rischio (inclusi molti strumenti usati in ambito legale, fiscale e HR); il GDPR si applica ogni volta che vengono trattati dati personali; la Legge 132/2025 richiede di informare i clienti sull'uso dell'AI. Nella maggior parte dei casi, uno studio professionale o una PMI ricade in almeno due di questi regimi contemporaneamente."
+    },
+    {
+      "domanda": "Per quanto tempo devo conservare i log dei sistemi AI secondo il GDPR e l'AI Act?",
+      "risposta": "L'AI Act richiede la conservazione dei log per tutta la durata operativa del sistema, per garantire la tracciabilità. Il GDPR, al contrario, impone che i dati personali contenuti nei log non vengano conservati più a lungo del necessario. La soluzione è una politica differenziata: log tecnici anonimi o pseudonimizzati conservati a lungo termine, log con dati personali sottoposti a retention limitata e cancellazione automatica."
+    },
+    {
+      "domanda": "Cosa rischio se non ho una policy sull'uso dell'AI da parte dei miei collaboratori?",
+      "risposta": "Rischi che i tuoi collaboratori usino strumenti AI non approvati caricando dati sensibili dei clienti su server di terzi, spesso fuori dall'UE, senza base giuridica né DPA. Per uno studio con obbligo di segreto professionale, questo può configurare una violazione del GDPR e del codice deontologico. In assenza di una policy scritta, la responsabilità ricade sul titolare dello studio, non sul singolo collaboratore."
+    },
+    {
+      "domanda": "Dal 2 dicembre cosa cambia per le aziende che usano algoritmi nelle decisioni sul lavoro?",
+      "risposta": "Dal 2 dicembre è pienamente applicabile la Direttiva europea sul lavoro tramite piattaforme. Chi usa algoritmi per valutare prestazioni, assegnare compiti, stabilire turni o prendere decisioni disciplinari deve garantire trasparenza ai lavoratori su come funziona il sistema e quali variabili influenzano le decisioni. È richiesto anche un intervento umano possibile prima di ogni decisione automatizzata significativa. Mancanze in questo ambito espongono a sanzioni sia del Garante Privacy sia dell'Ispettorato del Lavoro."
+    },
+    {
+      "domanda": "Come faccio a governare la shadow AI — cioè l'AI usata dai dipendenti senza che io lo sappia?",
+      "risposta": "Il primo passo è mappare cosa usano davvero i collaboratori, con un questionario o un confronto diretto. Poi si definisce una lista di strumenti approvati (con DPA verificato), si identificano le categorie di dati che non possono mai essere caricati su sistemi esterni, e si comunica la policy per iscritto ottenendo conferma di lettura. Non è necessario vietare tutto: è necessario rendere chiaro cosa è permesso e cosa no, e documentare la comunicazione."
+    },
+    {
+      "domanda": "Gli attacchi informatici abilitati dall'AI sono davvero un rischio concreto per una PMI italiana?",
+      "risposta": "Sì. In Italia, molte organizzazioni colpite da attacchi informatici abilitati dall'AI subiscono danni economici rilevanti e difficili da assorbire. Il vettore più comune resta l'email compromessa, ma i sistemi AI interni mal configurati — con accessi troppo ampi — possono diventare punti di ingresso per la sottrazione di dati. Il principio di accesso minimale (ogni strumento AI accede solo ai dati che gli servono) è la misura tecnica più efficace e meno costosa da implementare."
+    },
+    {
+      "domanda": "Da dove si inizia per costruire una governance AI senza diventare un esperto di normativa?",
+      "risposta": "Si parte da tre domande: quali sistemi AI sono in uso (inclusa la shadow AI), quali dati personali trattano, e chi risponde se qualcosa va storto. Le risposte costruiscono una mappa del rischio reale. Da lì si scrive una policy interna, si verificano i DPA con i fornitori e si nomina un responsabile AI interno — non necessariamente un tecnico, ma qualcuno che abbia visibilità su tutti i sistemi attivi e possa aggiornarli o disattivarli."
+    }
+  ],
+  "conclusione": [
+    "La governance AI non è un problema del futuro: è un obbligo del presente, già esigibile in Italia attraverso l'AI Act, il GDPR, la Legge 132/2025 e, dal 2 dicembre, la Direttiva Piattaforme. Studi professionali e PMI che aspettano la «circolare definitiva» stanno accumulando esposizione, non tempo.",
+    "Il punto di partenza non è la norma: è sapere cosa gira nei tuoi sistemi, chi ci accede, dove vanno i dati e chi risponde delle scelte. Questa chiarezza vale più di qualsiasi strumento AI — ed è esattamente la strategia che distingue chi guadagna dall'AI da chi ne subisce i rischi.",
+    "Se vuoi capire da dove iniziare concretamente per il tuo studio o la tua PMI, [scrivici](/contatti.html): costruire una governance AI operativa — non un documento di compliance da archiviare — è esattamente il lavoro che facciamo."
+  ],
+  "prodotti": [
+    {
+      "id": "documenti",
+      "perche": "Automatizzare la raccolta e il controllo documentale su un sistema interno, con log tracciati e accessi limitati, è uno dei modi più concreti per essere in regola con AI Act e GDPR senza rallentare l'operatività dello studio."
+    },
+    {
+      "id": "crm",
+      "perche": "Un CRM operativo su misura, con workflow documentati e tracciabilità delle attività, permette di assegnare responsabilità chiare su ogni processo AI-assistito — esattamente quello che serve per dimostrare la conformità in caso di ispezione."
+    },
+    {
+      "id": "second-brain",
+      "perche": "Centralizzare decisioni, note e procedure in un sistema interno controllato riduce il ricorso a strumenti AI esterni non approvati, contenendo alla radice il rischio shadow AI."
+    }
+  ],
+  "categoria": "normativa-sicurezza",
+  "keyword": "governance AI aziendale obblighi 2025",
+  "data": "2026-11-17T14:25:35.261Z",
+  "autore": "Redazione Ovia",
+  "parole": 1865,
+  "minuti": 9,
+  "fonti": [
+    {
+      "titolo": "Dati di monitoraggio dell’AI: quanto conservarli senza violare il GDPR",
+      "fonte": "Agenda Digitale",
+      "url": "https://www.agendadigitale.eu/sicurezza/dati-di-monitoraggio-dellai-quanto-conservarli-senza-violare-il-gdpr/"
+    },
+    {
+      "titolo": "AI e cybersecurity: gli attacchi abilitati dall’AI costano 6 milioni",
+      "fonte": "Agenda Digitale",
+      "url": "https://www.agendadigitale.eu/sicurezza/ai-e-cybersecurity-gli-attacchi-abilitati-dallai-costano-6-milioni/"
+    },
+    {
+      "titolo": "Algoritmi nel lavoro, perché le piattaforme avranno più obblighi",
+      "fonte": "Agenda Digitale",
+      "url": "https://www.agendadigitale.eu/mercati-digitali/algoritmi-nel-lavoro-perche-le-piattaforme-avranno-piu-obblighi/"
+    },
+    {
+      "titolo": "AI e lavoro: la governance che serve alle aziende",
+      "fonte": "AI4Business",
+      "url": "https://www.ai4business.it/intelligenza-artificiale/ai-e-lavoro-la-rivoluzione-che-ha-bisogno-di-regole/"
+    }
+  ],
+  "generato": {
+    "da": "ai",
+    "modello": "claude-sonnet-4-6",
+    "il": "2026-11-17T14:25:35.261Z"
+  },
+  "en": {
+    "title": "AI Governance for Businesses: 2025 Obligations",
+    "slug": "ai-governance-business-obligations-2025-ai-act-gdpr-cybersecurity",
+    "meta_description": "AI governance for businesses in 2025: log obligations, GDPR, Platform Directive, shadow AI and cyber risk. A practical guide for Italian firms and SMEs.",
+    "lead": "AI Act, GDPR, Platform Directive, Italian Law 132/2025: professional firms and SMEs in Italy are caught between overlapping obligations. Simply \"using AI\" is not enough — you need a governance strategy that sets out what is monitored, for how long, who is accountable, and how everything is kept secure.",
+    "tags": [
+      "AI governance business obligations 2025",
+      "AI Act SMEs",
+      "GDPR AI logs",
+      "shadow AI",
+      "AI cybersecurity"
+    ],
+    "intro": [
+      "If you use AI in your firm or company — even just ChatGPT to draft an email or a tool to analyse documents — you are already inside a web of overlapping obligations. The European AI Act requires logs and monitoring for high-risk systems. The GDPR restricts how long those logs can be kept. The Platform Directive, in force from 2 December, compels anyone using algorithms in employment decisions to explain how they work. And in the meantime your staff are using AI tools you have not approved, uploading data you should not be sharing with any external server.",
+      "The problem is not any single regulation: it is that these rules **do not speak the same language**, and none of them tells you exactly what to do on Monday morning. This article does. It takes each obligation, translates it into operational terms for an Italian professional firm or SME, and shows where to start — without requiring you to become an expert in digital law."
+    ],
+    "punti_chiave": [
+      "The AI Act requires logs and continuous monitoring for high-risk AI systems: whoever operates them must retain the records and demonstrate compliance.",
+      "The GDPR imposes the data-minimisation principle even on logs: retaining them for too long exposes you to sanctions from the Italian Data Protection Authority (Garante).",
+      "From 2 December, the Platform Directive obliges anyone using algorithms in employment decisions to guarantee transparency and explainability.",
+      "Shadow AI — the unauthorised use of AI tools by staff — is the most underestimated risk in Italian professional firms.",
+      "AI-enabled cyber attacks represent a significant financial risk even for SMEs: a substantial share of organisations hit in Italy suffer severe and lasting damage.",
+      "An internal AI-use policy is not red tape: it is the instrument that separates those who are accountable from those who face stacked penalties."
+    ],
+    "sezioni": [
+      {
+        "h2": "What obligations apply if you use AI in your firm or company",
+        "paragrafi": [
+          "The honest answer is: **it depends on what you use and how you use it**. The European AI Act classifies AI systems by risk level. High-risk systems — which include tools used in legal, tax, HR and essential-services contexts — must meet precise requirements: technical documentation, an activity log, human oversight, and robustness testing. Whoever deploys such a system is the «deployer» — that is you, even if the system was built by a third-party supplier.",
+          "Alongside the AI Act, the **GDPR** continues to apply whenever an AI system processes personal data — which is almost always, given that client, staff and supplier data almost invariably qualifies as personal data. And then there is **Italian Law 132/2025**, which introduced a duty to inform clients when a professional uses AI in a significant way in the delivery of a service. For a deeper look at this specific point, read our article on [AI liability for professional firms and SMEs](/en/blog/ai-liability-professional-firms-smes-ai-act-italian-law-132-2025.html).",
+          "In short: there is no professional firm or SME that uses AI and does not fall under at least one of these regulatory frameworks. The question is not «am I obliged?» but «which obligations genuinely apply to me and in what order should I address them?»."
+        ],
+        "blocco": {
+          "tipo": "checklist",
+          "titolo": "Minimum obligations to check immediately",
+          "voci": [
+            {
+              "titolo": "Map of AI systems in use",
+              "testo": "Do you know which AI tools you and your colleagues are using, even informally?",
+              "ok": false
+            },
+            {
+              "titolo": "AI Act risk classification",
+              "testo": "Have you checked whether any of your systems fall into the high-risk categories?",
+              "ok": false
+            },
+            {
+              "titolo": "Client disclosure (Italian Law 132/2025)",
+              "testo": "Do clients know when and how you use AI on their files?",
+              "ok": false
+            },
+            {
+              "titolo": "Internal AI-use policy",
+              "testo": "Is there a document telling staff what they can and cannot do with AI tools?",
+              "ok": false
+            },
+            {
+              "titolo": "AI supplier agreement (DPA)",
+              "testo": "Do you have an up-to-date Data Processing Agreement with every supplier that processes data on your behalf?",
+              "ok": false
+            }
+          ]
+        }
+      },
+      {
+        "h2": "Logs and data retention: the tension between the AI Act and the GDPR",
+        "paragrafi": [
+          "One of the most delicate — and least practically discussed — issues concerns **AI system logs**. The AI Act requires that high-risk systems maintain automatic records of the operations performed, sufficient to reconstruct what the system did and when. These logs exist to demonstrate compliance during an inspection or following an incident.",
+          "The problem is that [retaining those logs for too long can breach the GDPR](https://www.agendadigitale.eu/sicurezza/dati-di-monitoraggio-dellai-quanto-conservarli-senza-violare-il-gdpr/), which imposes the principles of **data minimisation** and **storage limitation**: personal data may not be kept longer than necessary for the purpose for which it was collected. If your logs contain — even indirectly — identifying data relating to clients or employees, every unjustified extra day of retention is an exposure to the risk of a sanction from the Italian Data Protection Authority (Garante).",
+          "The solution is not to choose between the two obligations but to design a **differentiated retention policy**: anonymous or pseudonymised technical logs kept for the period required by the AI Act; logs containing personal data subject to limited retention with automatic deletion. This calls for a deliberate decision, not a default configuration left to your software supplier."
+        ],
+        "blocco": {
+          "tipo": "compare",
+          "titolo": "AI logs: what the two sets of rules require",
+          "sinistra": {
+            "badge": "AI Act",
+            "titolo": "Retention obligation",
+            "righe": [
+              {
+                "etichetta": "Purpose",
+                "valore": "Demonstrate compliance and system traceability"
+              },
+              {
+                "etichetta": "Minimum duration",
+                "valore": "For the entire operational lifetime of the system (general guidance)"
+              },
+              {
+                "etichetta": "Content",
+                "valore": "Operations, decisions, human interventions, anomalies"
+              },
+              {
+                "etichetta": "Who is responsible",
+                "valore": "The deployer (whoever puts the system into operation)"
+              }
+            ]
+          },
+          "destra": {
+            "badge": "GDPR",
+            "titolo": "Minimisation obligation",
+            "righe": [
+              {
+                "etichetta": "Purpose",
+                "valore": "Protect personal data contained in the logs"
+              },
+              {
+                "etichetta": "Maximum duration",
+                "valore": "Only as long as necessary for the declared purpose"
+              },
+              {
+                "etichetta": "Content",
+                "valore": "Retention of unnecessary identifying data is prohibited"
+              },
+              {
+                "etichetta": "Who is responsible",
+                "valore": "The data controller (almost always the firm or SME)"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "h2": "From 2 December: what changes with the Platform Directive",
+        "paragrafi": [
+          "From 2 December the European Directive on platform work is fully applicable, having been transposed into Italian law. The legislation [obliges anyone using algorithms in decisions affecting workers to guarantee transparency and explainability](https://www.agendadigitale.eu/mercati-digitali/algoritmi-nel-lavoro-perche-le-piattaforme-avranno-piu-obblighi/): not just large gig-economy platforms, but any company that uses automated systems to assess performance, assign tasks, set schedules or take disciplinary decisions.",
+          "In practice: if you use HR software with AI components to manage leave, evaluate performance or monitor attendance, you must be able to explain to workers **how the system works** and what variables influence the decisions that affect them. You must also ensure that human intervention is always possible before an automated decision produces significant effects.",
+          "For a professional firm with employees or collaborators, this means reviewing supplementary contracts, updating data-processing notices and — if you use project-management tools with built-in AI — checking whether they fall within the scope of the Directive. The Italian National Labour Inspectorate (Ispettorato Nazionale del Lavoro) has already announced targeted inspections: the risk of stacked penalties (Garante + Inspectorate) is real.",
+          "**Important:** Anyone using algorithms in employment decisions without adequate transparency risks sanctions from both the Italian Data Protection Authority (Garante, under the GDPR) and the National Labour Inspectorate (under the Platform Directive). The two sets of proceedings are independent and can be imposed simultaneously."
+        ]
+      },
+      {
+        "h2": "Shadow AI: the risk you cannot see but that affects you",
+        "paragrafi": [
+          "**Shadow AI** refers to all the AI tools your staff use without your knowledge or authorisation. A trainee who uploads a contract to ChatGPT for a summary. A secretary who uses an AI translation tool to reply to a foreign client. An accountant who queries an AI assistant using a client's balance-sheet data.",
+          "None of these behaviours is necessarily malicious. But all of them involve **transmitting data to third-party servers** — often outside the EU — without an adequate legal basis, without a DPA, and without the client having been informed. For a firm with a professional secrecy obligation, this is a double breach: of the GDPR and of the professional code of conduct.",
+          "The subject is well covered in the context of [AI policies for businesses](https://www.ai4business.it/intelligenza-artificiale/ai-e-lavoro-la-rivoluzione-ha-bisogno-di-regole/): without written and communicated rules, every employee makes an individual choice. The result is that your firm's AI governance depends on the common sense of each individual colleague — which is precisely the opposite of governance. An internal policy does not need to be a 40-page document: it needs to state clearly which tools are approved, which data must never be uploaded to external systems, and what happens if the rule is broken."
+        ],
+        "blocco": {
+          "tipo": "steps",
+          "titolo": "How to build an anti-shadow-AI policy in 4 steps",
+          "voci": [
+            {
+              "titolo": "Map what your colleagues actually use",
+              "meta": "Step 1",
+              "testo": "Ask, don't assume. An anonymous questionnaire often reveals tools you had no idea were being used in the firm."
+            },
+            {
+              "titolo": "Define the list of approved tools",
+              "meta": "Step 2",
+              "testo": "Don't ban everything: select the secure tools, verify they have a DPA, and present the list as the norm — not as a punishment."
+            },
+            {
+              "titolo": "Establish the categories of data that must not be shared",
+              "meta": "Step 3",
+              "testo": "Tax data, client files, employee data: set out in writing what must never enter an unapproved external AI system."
+            },
+            {
+              "titolo": "Train staff and obtain written acknowledgement",
+              "meta": "Step 4",
+              "testo": "An email with a read-receipt confirmation carries real weight in a dispute. Training need not be a formal course: a documented 30-minute briefing is enough."
+            }
+          ]
+        }
+      },
+      {
+        "h2": "AI-enabled cybersecurity threats: the real risk for an Italian SME",
+        "paragrafi": [
+          "Cyber attacks are no longer exclusively a large-company problem. [AI-enabled attacks](https://www.agendadigitale.eu/sicurezza/ai-e-cybersecurity-gli-attacchi-abilitati-dallai-costano-6-milioni/) are hitting Italian professional firms and SMEs with increasing frequency, at costs that many organisations find difficult to absorb: automatically generated phishing with personalised tone and context, voice deepfakes impersonating the owner, ransomware that analyses systems before striking at the most vulnerable moment.",
+          "For a professional firm, the most common vector remains **compromised email** — a subject we have already examined when analysing [BEC fraud and advanced phishing](/en/blog/ai-email-fraud-bec-phishing-professional-firms-smes.html). But AI governance introduces a new vector: poorly configured internal AI systems, with excessively broad access rights, can become an entry point for anyone seeking to exfiltrate sensitive data or disrupt the firm's operations.",
+          "The answer is not to give up on AI. It is to build a **minimal-access architecture**: every AI tool should have access only to the data it needs for its specific task, not to the firm's entire archive. This principle — known as «least privilege» — is already implicitly required by the AI Act for high-risk systems and by the GDPR for any automated processing."
+        ],
+        "blocco": {
+          "tipo": "stats",
+          "titolo": "The real cost of AI cyber risk in Italy",
+          "voci": [
+            {
+              "valore": "2 Dec",
+              "testo": "Date of full applicability of the Platform Directive on algorithmic management in the workplace"
+            },
+            {
+              "valore": "2 regimes",
+              "testo": "Penalty regimes that can be applied simultaneously (Garante + National Labour Inspectorate) in the event of non-compliance"
+            }
+          ]
+        }
+      },
+      {
+        "h2": "Where to start: AI governance without becoming a regulatory expert",
+        "paragrafi": [
+          "AI governance is not built by starting from the regulation. It is built by starting from **three operational questions**: which AI systems am I (or are my colleagues) using? What data do they process? Who is responsible if something goes wrong? The answers to these three questions are worth more than any AI Act training course.",
+          "The next step is to choose what to automate deliberately, not to chase the latest trend. A professional firm that automates [document management and follow-up reminders](/en/services/documenti.html) on a controlled system, with internal logs and restricted access, is already far more compliant — and far more secure — than a firm running ten different AI tools without knowing where the data goes.",
+          "Finally, governance requires a **clear point of accountability**: one person (not necessarily a technical expert) who knows which AI systems are in use, can update or deactivate them, and is answerable for the decisions made. In SMEs and professional firms, that person is almost always the principal. Delegating this responsibility without any safeguards is the fastest way to find yourself exposed to penalties that no adviser had flagged in advance."
+        ],
+        "blocco": {
+          "tipo": "checklist",
+          "titolo": "The 5 questions for your internal AI lead",
+          "voci": [
+            {
+              "titolo": "Which AI systems are active?",
+              "testo": "Include those used informally by colleagues, not only those purchased through official channels.",
+              "ok": false
+            },
+            {
+              "titolo": "What personal data do they process?",
+              "testo": "Client, employee and supplier data: each category has a different legal basis.",
+              "ok": false
+            },
+            {
+              "titolo": "Do suppliers have an up-to-date DPA?",
+              "testo": "Without a written agreement, you are the controller of an unlawful processing operation.",
+              "ok": false
+            },
+            {
+              "titolo": "Are logs retained in compliance with both the AI Act and the GDPR?",
+              "testo": "Too short: you risk being unable to demonstrate compliance. Too long: you risk a data-protection sanction.",
+              "ok": false
+            },
+            {
+              "titolo": "Is there a written policy communicated to colleagues?",
+              "testo": "Without rules, every individual behaviour becomes your responsibility.",
+              "ok": false
+            }
+          ]
+        }
+      }
+    ],
+    "ovia_view": {
+      "titolo": "AI governance is a strategic choice, not a compliance exercise",
+      "paragrafi": [
+        "At Ovia we work with Italian professional firms and SMEs that want to use AI sustainably: not the latest trendy tool, but systems that know what they do, why they do it, and who is accountable. That means designing automation starting from a risk map, not from a feature list.",
+        "When we build a system for a firm, the first conversation is always about data: where it lives, who can access it, how long it is retained, and whether the client knows it exists. Only then do we choose the tool. That is the reverse of how most AI software suppliers work.",
+        "If you are looking for a concrete starting point — not a regulatory consultant, but a partner to help you understand what to automate and how to do it safely — this is exactly what we are here for."
+      ]
+    },
+    "faq": [
+      {
+        "domanda": "What obligations apply if I use AI in my firm or company?",
+        "risposta": "It depends on the type of AI system and the data it processes. As a general rule: the AI Act imposes logs, human oversight and documentation for high-risk systems (including many tools used in legal, tax and HR contexts); the GDPR applies whenever personal data is processed; Italian Law 132/2025 requires you to inform clients about your use of AI. In most cases, a professional firm or SME will fall under at least two of these regimes simultaneously."
+      },
+      {
+        "domanda": "How long must I retain AI system logs under the GDPR and the AI Act?",
+        "risposta": "The AI Act requires logs to be kept for the entire operational lifetime of the system in order to guarantee traceability. The GDPR, by contrast, requires that personal data contained in logs is not retained for longer than necessary. The solution is a differentiated policy: anonymous or pseudonymised technical logs retained long-term; logs containing personal data subject to limited retention and automatic deletion."
+      },
+      {
+        "domanda": "What are the risks if I have no policy on AI use by my colleagues?",
+        "risposta": "The risk is that your colleagues will use unapproved AI tools and upload sensitive client data to third-party servers — often outside the EU — without a legal basis or a DPA. For a firm with a professional secrecy obligation, this can constitute a breach of both the GDPR and the professional code of conduct. Without a written policy, liability falls on the firm's principal, not the individual colleague."
+      },
+      {
+        "domanda": "What changes from 2 December for companies using algorithms in employment decisions?",
+        "risposta": "From 2 December the European Platform Directive is fully applicable. Anyone using algorithms to assess performance, assign tasks, set schedules or take disciplinary decisions must provide workers with transparency about how the system works and what variables influence the decisions. Human intervention before any significant automated decision is also required. Shortcomings in this area expose you to sanctions from both the Italian Data Protection Authority (Garante) and the National Labour Inspectorate."
+      },
+      {
+        "domanda": "How do I manage shadow AI — AI tools used by employees without my knowledge?",
+        "risposta": "The first step is to map what your colleagues actually use, via a questionnaire or a direct conversation. Then define a list of approved tools (with verified DPAs), identify the categories of data that must never be uploaded to external systems, and communicate the policy in writing, obtaining a read-receipt confirmation. You do not need to ban everything: you need to make clear what is and is not permitted, and to document that communication."
+      },
+      {
+        "domanda": "Are AI-enabled cyber attacks a genuine risk for an Italian SME?",
+        "risposta": "Yes. In Italy, many organisations hit by AI-enabled cyber attacks suffer significant financial damage that is difficult to absorb. The most common vector remains compromised email, but poorly configured internal AI systems — with excessively broad access rights — can become entry points for data exfiltration. The least-privilege principle (each AI tool accesses only the data it needs) is the most effective and least costly technical measure to implement."
+      },
+      {
+        "domanda": "Where do I start to build AI governance without becoming a regulatory expert?",
+        "risposta": "Start with three questions: which AI systems are in use (including shadow AI), what personal data do they process, and who is responsible if something goes wrong? The answers build a map of real risk. From there, write an internal policy, verify DPAs with suppliers, and appoint an internal AI lead — not necessarily a technical expert, but someone who has visibility over all active systems and can update or deactivate them."
+      }
+    ],
+    "conclusione": [
+      "AI governance is not a future problem: it is a present obligation, already enforceable in Italy through the AI Act, the GDPR, Italian Law 132/2025 and, from 2 December, the Platform Directive. Professional firms and SMEs waiting for the «definitive guidance note» are accumulating exposure, not time.",
+      "The starting point is not the regulation: it is knowing what is running in your systems, who has access, where the data goes and who is accountable for the decisions made. That clarity is worth more than any AI tool — and it is exactly the strategy that separates those who benefit from AI from those who bear its risks.",
+      "If you would like to understand where to start concretely for your firm or SME, [get in touch](/contatti.html): building an operational AI governance framework — not a compliance document to file away — is exactly the work we do."
+    ],
+    "prodotti": [
+      {
+        "id": "documenti",
+        "perche": "Automating document collection and control on an internal system, with tracked logs and restricted access, is one of the most practical ways to comply with both the AI Act and the GDPR without slowing down your firm's operations."
+      },
+      {
+        "id": "crm",
+        "perche": "A bespoke operational CRM, with documented workflows and activity traceability, enables you to assign clear accountability for every AI-assisted process — precisely what is needed to demonstrate compliance during an inspection."
+      },
+      {
+        "id": "second-brain",
+        "perche": "Centralising decisions, notes and procedures in a controlled internal system reduces reliance on unapproved external AI tools, addressing the shadow AI risk at its root."
+      }
+    ],
+    "parole": 1484,
+    "minuti": 8,
+    "tradotto": {
+      "da": "ai",
+      "modello": "claude-sonnet-4-6",
+      "il": "2026-11-17T14:27:29.875Z"
+    }
+  }
+}
