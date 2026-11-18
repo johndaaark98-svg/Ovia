@@ -1,0 +1,624 @@
+{
+  "title": "Google Ads AI Max per studi e PMI: controllare o perdere",
+  "slug": "google-ads-ai-max-studi-professionali-pmi-controllo-visibilita",
+  "meta_description": "Google Ads AI Max decide annunci, testi e URL al posto tuo. Per uno studio o PMI italiana ecco cosa verificare subito per non sprecare budget e restare…",
+  "lead": "Google Ads AI Max sta ridisegnando automaticamente chi vede i tuoi annunci, cosa ci sta scritto e dove atterrano i clic. Per uno studio professionale o una PMI italiana, lasciare tutto nelle mani dell'algoritmo è una scelta rischiosa — spesso silenziosa.",
+  "tags": [
+    "Google Ads AI Max studi professionali PMI",
+    "AI search marketing",
+    "GEO visibilità AI",
+    "automazione pubblicitaria",
+    "controllo campagne Google Ads"
+  ],
+  "intro": [
+    "Da settembre 2026 Google ha avviato la migrazione automatica di molte campagne Search verso AI Max, il nuovo sistema che affida all'algoritmo la corrispondenza delle parole chiave, la scrittura dei testi pubblicitari e persino la scelta della pagina di destinazione. A febbraio 2027 toccherà anche agli annunci dinamici. Non è una novità opzionale: se non hai fatto nulla, alcune di queste automazioni potrebbero già essere attive nel tuo account.",
+    "Per uno studio di commercialisti, avvocati o consulenti del lavoro, e per una PMI italiana, questo cambiamento ha tre conseguenze pratiche: il budget pubblicitario può finire su ricerche irrilevanti o di concorrenti, i testi degli annunci possono contenere promesse non conformi alla deontologia professionale, e il sito potrebbe ricevere traffico su pagine sbagliate. Nel frattempo, sui motori AI — da ChatGPT a Perplexity a Google AI Mode — la partita della visibilità segue regole ancora diverse, dove essere menzionati non basta: conta essere **raccomandati**."
+  ],
+  "punti_chiave": [
+    "Google Ads AI Max è già attivo in molti account da settembre 2026: verifica subito quali funzioni sono abilitate nelle tue campagne.",
+    "L'automazione può espandere il traffico a ricerche di competitor o non pertinenti: in un caso analizzato, le ricerche di concorrenti rappresentavano il 69% delle impression totali.",
+    "I testi pubblicitari generati automaticamente possono non rispettare obblighi deontologici o normativi: il titolare è responsabile di ciò che appare a nome dello studio.",
+    "Sui motori AI (ChatGPT, Gemini, Perplexity) solo il 6,9% delle conversazioni ha un'intenzione d'acquisto: Google AI Overviews e AI Mode restano il canale più rilevante per la visibilità commerciale.",
+    "La metrica chiave nell'AI search non è essere citati, ma essere raccomandati: una menzione negativa o neutra vale meno di niente.",
+    "Strategia e misurazione vengono prima di qualsiasi impostazione predefinita: senza sapere cosa stai automatizzando e come lo misuri, i risultati non si controllano."
+  ],
+  "sezioni": [
+    {
+      "h2": "Cosa ha già cambiato Google Ads AI Max nel tuo account",
+      "paragrafi": [
+        "Google Ads AI Max non è un prodotto nuovo da attivare: è una transizione in corso che ha già interessato, da settembre 2026, le campagne Search che usavano asset creati automaticamente e le impostazioni di corrispondenza generica a livello di campagna. A febbraio 2027 arriveranno anche gli annunci dinamici (DSA). Lo ha documentato in dettaglio [Search Engine Journal](https://www.searchenginejournal.com/google-ads-ai-max-is-making-more-decisions-for-you-heres-what-to-audit-now/596972/), spiegando che la migrazione non abilita le stesse funzioni in ogni campagna: due campagne che risultano «AI Max attivo» possono avere livelli di automazione molto diversi.",
+        "Le tre leve principali di AI Max sono la **corrispondenza dei termini di ricerca** (search term matching), la **personalizzazione dei testi** (text customization) e l'**espansione dell'URL finale** (Final URL expansion). La prima può operare a livello di gruppo di annunci, le altre due a livello di campagna. Prima di toccare qualsiasi impostazione, è indispensabile capire quali di queste leve sono già accese nel tuo account — altrimenti è impossibile valutare cosa sta influenzando le performance.",
+        "Per uno studio professionale, l'impatto più immediato riguarda i testi: se la personalizzazione automatica è attiva, Google può generare titoli e descrizioni attingendo alle parole chiave, agli annunci esistenti e al contenuto del sito. Il risultato può essere un annuncio corretto dal punto di vista grammaticale ma impreciso su servizi, prezzi o ambiti di competenza — e il titolare dello studio è comunque responsabile di ciò che appare a suo nome."
+      ],
+      "blocco": {
+        "tipo": "steps",
+        "titolo": "Tre cose da verificare subito nel tuo account Google Ads",
+        "voci": [
+          {
+            "titolo": "Controlla quali funzioni AI Max sono attive",
+            "meta": "Prima azione",
+            "testo": "Apri ogni campagna Search e verifica se search term matching, text customization e Final URL expansion sono abilitate. Non dare per scontato che due campagne migrate abbiano le stesse impostazioni."
+          },
+          {
+            "titolo": "Scarica il report dei termini di ricerca",
+            "meta": "Seconda azione",
+            "testo": "Filtra le ricerche generate da AI Max e cerca termini di competitor, ricerche informative lontane dalla conversione e parole chiave di brand che non vuoi intercettare in campagne non-brand."
+          },
+          {
+            "titolo": "Leggi ogni annuncio generato automaticamente",
+            "meta": "Terza azione",
+            "testo": "Nella sezione asset ottimizzati controlla accuratezza, messaggi in linea con il tuo posizionamento e assenza di affermazioni non conformi a obblighi normativi o deontologici."
+          }
+        ]
+      }
+    },
+    {
+      "h2": "Il rischio invisibile: dove finiscono i tuoi soldi con AI Max",
+      "paragrafi": [
+        "La corrispondenza automatica dei termini di ricerca è il punto dove il budget può evaporare più rapidamente. AI Max usa tecnologie di broad match e corrispondenza senza parole chiave (keywordless matching) per intercettare ricerche che l'algoritmo ritiene rilevanti, anche se non rientravano nella tua strategia originale. Una ricerca di Mike Ryan di Smarter Ecommerce su 383 milioni di impression ha mostrato che [oltre il 25% delle impression attribuite a parole chiave exact match](https://www.searchenginejournal.com/google-ads-ai-max-is-making-more-decisions-for-you-heres-what-to-audit-now/596972/) proveniva in realtà dalla corrispondenza AI Max — non dalla parola chiave che avevi scelto tu.",
+        "In un singolo account analizzato nella stessa ricerca, le ricerche di competitor rappresentavano il **69% del totale delle impression Search**. Per uno studio professionale con un budget limitato, questo significa che quasi tutti i soldi potrebbero andare a intercettare persone che cercano un competitor — un costo senza ritorno diretto.",
+        "L'espansione dell'URL finale aggiunge un altro livello di rischio: se abilitata, Google sceglie autonomamente quale pagina del tuo sito mostrare come destinazione, anche se quella pagina non ha un form di contatto, non è pensata per la conversione o riguarda un servizio che non stai promuovendo in quella campagna. Per uno studio con un sito che contiene anche articoli del blog, news o pagine di servizi non attivi, il rischio di sprecare budget su traffico non qualificato è concreto. Le esclusioni URL a livello di campagna e le inclusioni a livello di gruppo di annunci sono gli strumenti per limitare questo problema — ma vanno configurati attivamente.",
+        "La nota positiva: Google riporta che gli inserzionisti che usano l'insieme completo di funzioni AI Max ottengono in media il **7% di conversioni in più** a CPA simile rispetto al solo search term matching. Ma lo stesso dato viene da Google stessa e si riferisce alla media — la ricerca indipendente di Smarter Ecommerce su oltre 250 campagne ha trovato un CPA mediano superiore del 16% rispetto alla baseline, con risultati che variavano da +42% a −35% di ROAS. Per uno studio o una PMI italiana, affidarsi alla media di Google senza misurare il proprio account è una scommessa, non una strategia."
+      ],
+      "blocco": {
+        "tipo": "stats",
+        "titolo": "Dati da tenere a mente su Google Ads AI Max",
+        "voci": [
+          {
+            "valore": ">25%",
+            "testo": "delle impression su parole chiave exact match proveniva dalla corrispondenza AI Max in uno studio su 383 milioni di impression (Smarter Ecommerce, 2026)"
+          },
+          {
+            "valore": "69%",
+            "testo": "delle impression totali era su ricerche di competitor in un singolo account analizzato nella stessa ricerca"
+          },
+          {
+            "valore": "+7%",
+            "testo": "conversioni in più dichiarate da Google per chi usa il set completo di AI Max, rispetto al solo search term matching (dati interni Google, 2026, non-retail)"
+          },
+          {
+            "valore": "+16%",
+            "testo": "CPA mediano più alto rispetto alla baseline nelle campagne AI Max, secondo la ricerca indipendente di Smarter Ecommerce su oltre 250 campagne (marzo 2026)"
+          }
+        ]
+      }
+    },
+    {
+      "h2": "Testi pubblicitari generati dall'AI: chi è responsabile?",
+      "paragrafi": [
+        "La personalizzazione automatica dei testi (text customization) consente a Google di generare nuovi titoli e descrizioni attingendo agli annunci esistenti, alle parole chiave e al contenuto delle pagine di destinazione. Per chi gestisce campagne di lead generation per uno studio professionale, questo crea un problema che va oltre la qualità del copy: un annuncio generato automaticamente potrebbe contenere affermazioni su tariffe, garanzie di risultato o aree di competenza che non corrispondono alla realtà — o che violano le norme deontologiche dell'ordine professionale di appartenenza.",
+        "Google consente di revisionare e rimuovere gli asset generati automaticamente. Ha anche introdotto strumenti come AI Brief e i disclaimer testuali per dare agli inserzionisti più controllo sui messaggi generati. Ma questi strumenti funzionano solo se vengono usati attivamente: il default dell'algoritmo non conosce il Codice Deontologico Forense né le regole sulla pubblicità dei commercialisti.",
+        "C'è un ulteriore elemento di attenzione per chi usa il **pinning** degli asset negli annunci adattativi — cioè la funzione che fissa un titolo o una descrizione specifica in una posizione determinata. Secondo la documentazione di Google, il pinning non viene rispettato quando Final URL expansion è attiva o quando sono presenti URL inclusions: in quei casi, Google può generare copy adatto alla nuova pagina di destinazione, ignorando gli asset che hai bloccato. Per campagne che richiedono disclaimer obbligatori, messaggi approvati da partner o testi con precisi vincoli normativi, è necessario disabilitare Final URL expansion. Questa non è una raccomandazione opzionale: è una gestione del rischio.",
+        "**Attenzione:** Se la text customization è attiva, Google può pubblicare annunci a nome del tuo studio con testi che non hai approvato. Verifica gli asset generati nell'apposita sezione di Google Ads e rimuovi quelli non conformi. Se la tua attività ha obblighi deontologici o normativi sui messaggi pubblicitari (studi legali, commercialisti, consulenti del lavoro), considera di disabilitare la text customization o di configurare un AI Brief preciso che escluda le affermazioni non consentite."
+      ]
+    },
+    {
+      "h2": "Come fai a sapere se il tuo studio viene citato dai motori AI",
+      "paragrafi": [
+        "Google Ads AI Max riguarda la pubblicità a pagamento. Ma la visibilità nei motori AI — ChatGPT, Perplexity, Google AI Mode, Gemini — è un terreno separato, sempre più rilevante per chi cerca un professionista o un fornitore di servizi. Capire come funziona questo secondo canale è essenziale per non sprecare risorse nel posto sbagliato.",
+        "Un'analisi di SparkToro e Verso su 41.961 conversazioni ChatGPT di 12.321 utenti statunitensi (gennaio-ottobre 2026) ha mostrato che [solo il 6,9% delle conversazioni conteneva un'intenzione d'acquisto](https://www.searchenginejournal.com/chatgpt-purchase-intent-us-panel/597857/). Di tutte le risposte di ChatGPT nel campione ponderato, l'87,9% non citava alcun brand, prodotto o azienda. Rand Fishkin di SparkToro ha concluso che il canale AI davvero rilevante per la visibilità commerciale è **Google AI Overviews e AI Mode** — non ChatGPT in sé, almeno per ora.",
+        "Questo non significa ignorare ChatGPT o Perplexity: significa impostare le priorità correttamente. Patrick Reinhart di Conductor, ospite del [podcast di Search Engine Journal](https://www.searchenginejournal.com/patrick-reinhart-on-the-golden-metric-in-ai-search-brand-recommendations/597056/), descrive la metrica d'oro dell'AI search non come il numero di volte in cui il tuo studio viene menzionato, ma come la **qualità della raccomandazione**: ChatGPT ti cita come prima scelta, ti menziona di passaggio insieme ad altri, o — peggio — ti descrive in modo impreciso o negativo? Le tre situazioni richiedono azioni molto diverse.",
+        "Reinhart segnala anche un problema pratico frequente: i motori AI possono attingere a informazioni obsolete presenti su siti di terze parti — thread di forum, directory aggiornate anni fa, articoli che riportano dati errati su servizi o prezzi. Se il tuo studio è descritto in modo sbagliato da una fonte che l'AI continua a citare, la correzione non passa dall'aggiornamento del tuo sito: richiede di identificare quella fonte e creare contenuti più autorevoli che la scalzino. Puoi approfondire come strutturare questa strategia nell'articolo [Visibilità AI motori di ricerca: studi professionali a rischio](/blog/visibilita-ai-motori-ricerca-studi-professionali-geo.html)."
+      ],
+      "blocco": {
+        "tipo": "compare",
+        "titolo": "Come i motori AI trattano il tuo studio: due scenari",
+        "sinistra": {
+          "badge": "Scenario da evitare",
+          "titolo": "Studio invisibile o citato male",
+          "righe": [
+            {
+              "etichetta": "Menzione AI",
+              "valore": "Assente o generica"
+            },
+            {
+              "etichetta": "Fonte usata dall'AI",
+              "valore": "Directory obsoleta o forum del 2022"
+            },
+            {
+              "etichetta": "Raccomandazione",
+              "valore": "Competitor citato al posto tuo"
+            },
+            {
+              "etichetta": "Informazioni",
+              "valore": "Servizi o tariffe non aggiornate"
+            },
+            {
+              "etichetta": "Risultato",
+              "valore": "Potenziali clienti dirottati altrove"
+            }
+          ]
+        },
+        "destra": {
+          "badge": "Approccio consigliato",
+          "titolo": "Studio presente e raccomandato",
+          "righe": [
+            {
+              "etichetta": "Menzione AI",
+              "valore": "Prima scelta per la query pertinente"
+            },
+            {
+              "etichetta": "Fonte usata dall'AI",
+              "valore": "Sito strutturato, dati aggiornati, citazioni terze parti autorevoli"
+            },
+            {
+              "etichetta": "Raccomandazione",
+              "valore": "Studio citato con specializzazione specifica"
+            },
+            {
+              "etichetta": "Informazioni",
+              "valore": "Servizi, aree geografiche e contatti corretti"
+            },
+            {
+              "etichetta": "Risultato",
+              "valore": "Lead qualificati che arrivano già informati"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "h2": "Cosa misurare per capire se la visibilità AI porta davvero clienti",
+      "paragrafi": [
+        "La trappola più comune nell'AI search marketing è misurare tutto ciò che è misurabile invece di misurare ciò che conta. Un framework utile, descritto nell'analisi di [TransPerfect Digital su Search Engine Journal](https://www.searchenginejournal.com/ai-visibility-data-traps-transperfectdigital-spa/597627/), distingue quattro livelli di misurazione che è bene tenere separati anche per uno studio professionale o una PMI.",
+        "Il primo livello è la **visibilità monitorata**: le menzioni e citazioni che riesci a tracciare con prompt definiti. Il secondo è il **traffico referral registrato**: le visite che il tuo sistema di analytics attribuisce ai motori AI quando il referral è disponibile. Il terzo sono i **segnali direzionali**: variazioni nelle ricerche branded o nei contatti che segnalano un possibile effetto AI, senza poterne dimostrare la causa. Il quarto è l'**impatto stimato**: le proiezioni che dipendono da assunzioni, non da osservazioni dirette.",
+        "Per Google Ads AI Max, la misurazione deve andare oltre il numero di conversioni. Se stai raccogliendo lead, la domanda è: quei lead si qualificano? Diventano clienti? Se stai misurando solo il costo per form compilato, potresti star pagando per contatti che non portano mai a un incarico. Per l'e-commerce o per le PMI che vendono prodotti, revenue e margine per prodotto sono più rilevanti del volume di conversioni. Reinhart lo sintetizza bene: i leader d'impresa non chiedono «dove apparo?», chiedono «come mi descrivono e quelle descrizioni sono accurate?»",
+        "Prima di modificare budget, campagne o contenuti, è utile rispondere a quattro domande: stiamo misurando le ricerche che i nostri clienti effettivamente fanno? Stiamo interpretando i dati nel contesto del nostro posizionamento? Quali risultanze meritano un'azione concreta? Quale impatto possiamo dimostrare con dati osservati — non stimati? Questo vale tanto per la gestione di Google Ads AI Max quanto per la strategia di visibilità nei motori AI."
+      ],
+      "blocco": {
+        "tipo": "checklist",
+        "titolo": "Checklist di misurazione: Google Ads AI Max e visibilità AI",
+        "voci": [
+          {
+            "titolo": "Campagne Google Ads",
+            "testo": "Hai separato le conversioni generate da AI Max da quelle delle campagne standard?",
+            "ok": false
+          },
+          {
+            "titolo": "Qualità dei lead",
+            "testo": "Stai confrontando il tasso di qualificazione dei lead AI Max rispetto ai lead delle campagne con corrispondenza controllata?",
+            "ok": false
+          },
+          {
+            "titolo": "Termini di ricerca",
+            "testo": "Hai esaminato il report dei termini per identificare ricerche di competitor, ricerche informative e parole chiave di brand non intenzionali?",
+            "ok": false
+          },
+          {
+            "titolo": "Testi degli annunci",
+            "testo": "Hai revisionato e approvato ogni asset generato automaticamente nelle ultime 4 settimane?",
+            "ok": false
+          },
+          {
+            "titolo": "Visibilità AI",
+            "testo": "Stai misurando le menzioni nei motori AI con un set di prompt che rispecchia le domande reali dei tuoi clienti — non solo domande branded?",
+            "ok": false
+          },
+          {
+            "titolo": "Fonti terze parti",
+            "testo": "Hai verificato come directory, forum e siti di terze parti descrivono i servizi del tuo studio ai motori AI?",
+            "ok": false
+          }
+        ]
+      }
+    },
+    {
+      "h2": "Il sito del tuo studio è pronto per essere trovato e citato dall'AI?",
+      "paragrafi": [
+        "Google Ads AI Max e la visibilità nei motori AI condividono una radice comune: entrambi dipendono dalla qualità dei contenuti presenti sul tuo sito. Final URL expansion usa le pagine del sito per scegliere la destinazione degli annunci. I motori AI usano le stesse pagine — insieme a fonti terze — per costruire le loro risposte. Un sito mal strutturato, con pagine generiche, senza dati strutturati e senza una distinzione chiara tra i servizi offerti, è uno svantaggio su entrambi i fronti.",
+        "Per la visibilità AI, il problema non è solo tecnico. L'analisi di TransPerfect Digital identifica una trappola frequente: molti studi misurano la loro visibilità AI con prompt di tipo branded (\"studio XYZ a Milano\"), ottenendo punteggi rassicuranti, ma non misurano mai le domande che i clienti fanno quando **non** conoscono ancora lo studio — comparazioni tra professionisti, ricerche per specializzazione, domande su costi e procedure. Queste sono le domande che portano nuovi clienti, e spesso uno studio non appare affatto in quelle risposte.",
+        "Per Google Ads AI Max, il consiglio pratico è di configurare le esclusioni URL per proteggere le pagine del sito che non vuoi usare come destinazione di campagne a pagamento: articoli del blog, pagine di servizi non attivi, pagine istituzionali senza call-to-action. Per la visibilità AI, il lavoro è diverso ma complementare: strutturare le pagine dei servizi con risposte dirette alle domande più frequenti, aggiornare le informazioni di contatto su tutte le directory rilevanti, e costruire citazioni di terze parti coerenti e aggiornate. Puoi trovare indicazioni operative nell'articolo [Visibilità nei motori di ricerca AI: cosa fare subito](/blog/visibilita-motori-ricerca-ai-crawler-agenti-studi-pmi.html) e nel nostro servizio [Ovia Siti Web per le AI](/servizi/siti-web-ai.html), progettato esattamente per rendere il sito di uno studio professionale citabile e raccomandabile dai motori AI."
+      ],
+      "blocco": {
+        "tipo": "steps",
+        "titolo": "Come rendere il sito adatto a Google Ads AI Max e ai motori AI",
+        "voci": [
+          {
+            "titolo": "Mappa le pagine del sito per destinazione",
+            "meta": "Struttura",
+            "testo": "Identifica quali pagine hanno una call-to-action chiara (form, numero di telefono, prenotazione) e quali no. Usa le esclusioni URL di AI Max per evitare che le seconde ricevano traffico a pagamento."
+          },
+          {
+            "titolo": "Scrivi risposte dirette alle domande dei clienti",
+            "meta": "Contenuto",
+            "testo": "Ogni pagina di servizio dovrebbe rispondere in apertura alla domanda principale del cliente: cosa fai, per chi, in quale area geografica. Questo aiuta sia il posizionamento AI che la qualità degli annunci generati automaticamente."
+          },
+          {
+            "titolo": "Verifica le fonti terze parti che parlano di te",
+            "meta": "Reputazione",
+            "testo": "Controlla come sei descritto su Pagine Gialle, directory di categoria, Camere di Commercio, e sui principali motori AI con prompt non branded. Correggi le informazioni errate o obsolete prima che i motori AI le usino come fonte."
+          }
+        ]
+      }
+    }
+  ],
+  "ovia_view": {
+    "titolo": "La strategia viene prima delle impostazioni predefinite",
+    "paragrafi": [
+      "In Ovia lavoriamo con studi professionali e PMI italiane che si trovano esattamente in questa situazione: hanno attivato Google Ads — o qualche piattaforma di automazione — senza una strategia di misurazione, e si accorgono tardi che il budget è andato su traffico irrilevante o che il sito viene trovato in modo sbagliato dai motori AI. Il problema quasi mai è lo strumento: è l'assenza di una decisione consapevole su cosa automatizzare, cosa escludere e come misurare.",
+      "Per questo il nostro punto di partenza non è mai 'quale funzione di AI Max attivare', ma 'qual è l'obiettivo della campagna, chi deve trovare lo studio, e cosa deve succedere dopo il clic'. Lo stesso vale per la visibilità AI: prima definiamo i prompt che rispecchiano le domande reali dei clienti dello studio, poi misuriamo il gap, poi interveniamo — sul sito, sui contenuti, sulle fonti terze parti.",
+      "La sicurezza è l'altra metà del lavoro. Chi ha accesso all'account Google Ads dello studio? Chi approva i testi generati automaticamente prima che vengano pubblicati? Se i dati di conversione passano attraverso Google Tag Manager, chi controlla che non vengano raccolte informazioni sui clienti in modo non conforme al GDPR? Queste non sono domande tecniche: sono domande di governance che spettano al titolare dello studio, non all'algoritmo."
+    ]
+  },
+  "faq": [
+    {
+      "domanda": "Google Ads AI Max conviene per uno studio professionale o una PMI?",
+      "risposta": "Dipende dalla configurazione e dalla misurazione. Google dichiara in media il 7% di conversioni in più per chi usa il set completo di funzioni, ma la ricerca indipendente di Smarter Ecommerce su oltre 250 campagne ha trovato un CPA mediano superiore del 16% rispetto alla baseline, con variazioni molto ampie tra account. Per studi con budget limitati e requisiti deontologici precisi sui messaggi pubblicitari, è prudente abilitare AI Max gradualmente, con esperimenti controllati, e misurare la qualità dei lead — non solo il volume."
+    },
+    {
+      "domanda": "Come faccio a controllare cosa decide Google Ads AI Max al posto mio?",
+      "risposta": "Accedi a ogni campagna Search in Google Ads e verifica lo stato di tre funzioni: search term matching, text customization e Final URL expansion. Poi scarica il report dei termini di ricerca filtrato per fonte AI Max e controlla quali ricerche stai intercettando. Infine, nella sezione asset ottimizzati, leggi ogni testo generato automaticamente e rimuovi quelli non conformi al tuo posizionamento o ai tuoi obblighi normativi."
+    },
+    {
+      "domanda": "Quali impostazioni di Google Ads AI Max devo verificare subito?",
+      "risposta": "Le tre priorità sono: Final URL expansion (disabilitala se hai pagine del sito non adatte alla conversione o se usi disclaimer obbligatori nel copy), text customization (revisiona gli asset generati e usa AI Brief per guidare i messaggi), e le esclusioni di parole chiave negative (aggiungi competitor, termini informativi lontani dalla conversione e parole chiave di brand nelle campagne non-brand). Verifica anche se il pinning dei tuoi asset viene rispettato: non lo è se Final URL expansion o le URL inclusions sono attive."
+    },
+    {
+      "domanda": "Come faccio a sapere se il mio studio viene citato dai motori AI come ChatGPT o Perplexity?",
+      "risposta": "Il metodo base è testare manualmente un set di prompt che rispecchiano le domande reali dei tuoi potenziali clienti — non solo il nome dello studio, ma anche domande per specializzazione, area geografica e tipo di problema. Verifica su ChatGPT, Gemini e Perplexity separatamente, perché ogni modello si comporta diversamente. Annota se sei citato, in che posizione, con quale descrizione e se sei raccomandato come prima scelta o menzionato di passaggio."
+    },
+    {
+      "domanda": "Cosa misurare per capire se la visibilità AI porta davvero clienti?",
+      "risposta": "Tieni separati quattro livelli: visibilità monitorata (menzioni nei prompt tracciati), traffico referral registrato (visite attribuite ai motori AI in analytics), segnali direzionali (variazioni nelle ricerche branded) e impatto stimato (proiezioni basate su assunzioni). Solo il primo e il secondo sono dati osservati. Per valutare l'effettivo impatto commerciale, confronta i lead o i contatti provenienti da canali AI con quelli di altri canali in termini di tasso di qualificazione e conversione in clienti."
+    },
+    {
+      "domanda": "Il sito del mio studio è ottimizzato per essere trovato e citato dall'AI?",
+      "risposta": "Un sito adatto ai motori AI ha pagine di servizio con risposte dirette alle domande più frequenti dei clienti, dati strutturati aggiornati, informazioni di contatto coerenti su tutte le directory rilevanti, e contenuti che distinguono chiaramente specializzazioni e aree geografiche. Non basta aggiornare il sito: occorre anche verificare che le fonti terze parti (directory, forum, siti di settore) descrivano lo studio in modo corretto, perché i motori AI le usano come fonte insieme al sito ufficiale."
+    },
+    {
+      "domanda": "Come evitare che l'AI generi testi pubblicitari sbagliati o non conformi a nome del mio studio?",
+      "risposta": "Ci sono tre leve: primo, disabilitare la text customization se i vincoli normativi o deontologici sono stringenti; secondo, configurare un AI Brief preciso che escluda le categorie di affermazioni non consentite (garanzie di risultato, confronti con competitor, tariffe non verificate); terzo, istituire una revisione periodica degli asset generati — almeno ogni due settimane — con la responsabilità assegnata a una persona specifica dello studio. Il default dell'algoritmo non conosce le regole della tua professione: deve farlo chi gestisce l'account."
+    }
+  ],
+  "conclusione": [
+    "Google Ads AI Max e i motori AI search stanno ridisegnando come uno studio professionale o una PMI italiana viene trovato, valutato e scelto dai nuovi clienti. L'automazione non è sbagliata in sé: il problema è affidarsi alle impostazioni predefinite senza una strategia, senza misurare la qualità dei risultati e senza verificare che i messaggi generati automaticamente rispettino obblighi normativi e deontologici.",
+    "La buona notizia è che le leve di controllo esistono — esclusioni URL, negative keywords, revisione degli asset, AI Brief — e che la misurazione della visibilità AI, pur imperfetta, è accessibile anche senza strumenti enterprise. Ciò che fa la differenza è decidere cosa controllare attivamente e cosa lasciare all'algoritmo, invece di scoprirlo a posteriori guardando un budget esaurito.",
+    "Se vuoi capire come si applica tutto questo al tuo studio o alla tua PMI — dalla configurazione delle campagne alla struttura del sito, fino alla governance degli accessi all'account pubblicitario — [contatta Ovia](https://oviaitalia.it/contatti.html): partiamo sempre da una mappatura di cosa è già attivo e cosa sta succedendo davvero, non da un foglio bianco."
+  ],
+  "prodotti": [
+    {
+      "id": "siti-web-ai",
+      "perche": "Un sito progettato per i motori AI è il presupposto perché Google Ads AI Max scelga le pagine giuste come destinazione degli annunci e perché ChatGPT, Perplexity e Google AI Mode citino lo studio con informazioni accurate e aggiornate."
+    },
+    {
+      "id": "lead-generation",
+      "perche": "Quando AI Max espande il traffico a ricerche più generiche o informative, il follow-up immediato e la qualifica dei nuovi contatti diventano ancora più critici per non disperdere il budget investito in advertising."
+    },
+    {
+      "id": "crm",
+      "perche": "Misurare la qualità delle conversioni AI Max — non solo il volume — richiede tracciare cosa succede dopo il primo contatto: se il lead si qualifica, diventa cliente e quanto vale. Un CRM operativo su misura rende possibile questa misurazione senza fogli Excel separati."
+    }
+  ],
+  "categoria": "ai-search-marketing",
+  "keyword": "Google Ads AI Max studi professionali PMI",
+  "data": "2026-11-18T13:58:06.805Z",
+  "autore": "Redazione Ovia",
+  "parole": 2626,
+  "minuti": 13,
+  "fonti": [
+    {
+      "titolo": "Google Ads AI Max Is Making More Decisions For You – Here’s What To Audit Now via @sejournal, @brookeosmundson",
+      "fonte": "Search Engine Journal",
+      "url": "https://www.searchenginejournal.com/google-ads-ai-max-is-making-more-decisions-for-you-heres-what-to-audit-now/596972/"
+    },
+    {
+      "titolo": "6.9% Of ChatGPT Conversations Showed Purchase Intent In U.S. Panel via @sejournal, @MattGSouthern",
+      "fonte": "Search Engine Journal",
+      "url": "https://www.searchenginejournal.com/chatgpt-purchase-intent-us-panel/597857/"
+    },
+    {
+      "titolo": "AI Visibility Data: Avoid 4 Traps Prioritize The Right Work",
+      "fonte": "Search Engine Journal",
+      "url": "https://www.searchenginejournal.com/ai-visibility-data-traps-transperfectdigital-spa/597627/"
+    },
+    {
+      "titolo": "Patrick Reinhart On The Golden Metric In AI Search: Brand Recommendations via @sejournal, @lorenbaker",
+      "fonte": "Search Engine Journal",
+      "url": "https://www.searchenginejournal.com/patrick-reinhart-on-the-golden-metric-in-ai-search-brand-recommendations/597056/"
+    }
+  ],
+  "generato": {
+    "da": "ai",
+    "modello": "claude-sonnet-4-6",
+    "il": "2026-11-18T13:58:06.805Z"
+  },
+  "en": {
+    "title": "Google Ads AI Max for Firms & SMEs: Control It or Lose",
+    "slug": "google-ads-ai-max-professional-firms-smes-control-visibility",
+    "meta_description": "Google Ads AI Max rewrites your ads, copy and URLs automatically. For Italian professional firms and SMEs, here's what to audit now to protect your budget.",
+    "lead": "Google Ads AI Max is quietly redrawing who sees your ads, what they say and where the clicks land. For Italian professional firms and SMEs, handing full control to the algorithm is a risky move — and it often happens in silence.",
+    "tags": [
+      "Google Ads AI Max professional firms SMEs",
+      "AI search marketing",
+      "GEO AI visibility",
+      "advertising automation",
+      "Google Ads campaign control"
+    ],
+    "intro": [
+      "From September 2026 Google began automatically migrating many Search campaigns to AI Max — the new system that delegates keyword matching, ad copy generation and even landing-page selection to the algorithm. Dynamic Search Ads (DSA) will follow in February 2027. This is not an optional update: if you have not taken any action, some of these automations may already be live in your account.",
+      "For a firm of accountants, solicitors or employment consultants, and for an Italian SME, this change has three immediate practical consequences: advertising budget can be spent on irrelevant searches or searches for competitors; ad copy may contain claims that breach professional ethical codes; and your website may receive traffic on the wrong pages. Meanwhile, on AI search engines — from ChatGPT to Perplexity to Google AI Mode — the visibility game follows different rules entirely, where simply being mentioned is not enough: what counts is being **recommended**."
+    ],
+    "punti_chiave": [
+      "Google Ads AI Max has been live in many accounts since September 2026: check right now which features are enabled in your campaigns.",
+      "The automation can expand traffic to competitor searches or irrelevant queries: in one analysed account, competitor searches accounted for 69% of total impressions.",
+      "Automatically generated ad copy may not comply with professional ethical or regulatory obligations: the account holder is responsible for everything that appears in the firm's name.",
+      "On AI search engines (ChatGPT, Gemini, Perplexity) only 6.9% of conversations carry purchase intent: Google AI Overviews and AI Mode remain the most commercially relevant channel for visibility.",
+      "The key metric in AI search is not being cited — it is being recommended: a neutral or negative mention is worth less than nothing.",
+      "Strategy and measurement come before any default setting: without knowing what you are automating and how you are measuring it, you cannot control the results."
+    ],
+    "sezioni": [
+      {
+        "h2": "What Google Ads AI Max has already changed in your account",
+        "paragrafi": [
+          "Google Ads AI Max is not a new product you choose to activate: it is an ongoing transition that has already affected, since September 2026, Search campaigns using automatically created assets and campaign-level broad match settings. Dynamic Search Ads will be brought into scope in February 2027. [Search Engine Journal](https://www.searchenginejournal.com/google-ads-ai-max-is-making-more-decisions-for-you-heres-what-to-audit-now/596972/) has documented this in detail, noting that the migration does not enable the same features in every campaign: two campaigns both showing 'AI Max active' can have very different levels of automation.",
+          "The three main levers of AI Max are **search term matching**, **text customisation** and **Final URL expansion**. The first can operate at ad-group level; the other two at campaign level. Before touching any setting, it is essential to understand which of these levers are already switched on in your account — otherwise it is impossible to assess what is actually driving performance.",
+          "For a professional firm, the most immediate impact involves ad copy: if automatic text customisation is enabled, Google can generate headlines and descriptions by drawing on existing keywords, existing ads and website content. The result can be an ad that is grammatically correct but inaccurate about services, pricing or areas of expertise — and the firm's principal remains responsible for everything that appears in the firm's name."
+        ],
+        "blocco": {
+          "tipo": "steps",
+          "titolo": "Three things to audit in your Google Ads account right now",
+          "voci": [
+            {
+              "titolo": "Check which AI Max features are active",
+              "meta": "First action",
+              "testo": "Open every Search campaign and verify whether search term matching, text customisation and Final URL expansion are enabled. Do not assume that two migrated campaigns share the same settings."
+            },
+            {
+              "titolo": "Download the search terms report",
+              "meta": "Second action",
+              "testo": "Filter for AI Max-generated searches and look for competitor terms, informational queries far from conversion, and brand keywords you do not want captured in non-brand campaigns."
+            },
+            {
+              "titolo": "Read every automatically generated ad",
+              "meta": "Third action",
+              "testo": "In the optimised assets section, check for accuracy, messaging consistent with your positioning, and the absence of claims that breach regulatory or professional ethical obligations."
+            }
+          ]
+        }
+      },
+      {
+        "h2": "The invisible risk: where your money goes with AI Max",
+        "paragrafi": [
+          "Automatic search term matching is where budget can evaporate fastest. AI Max uses broad match and keywordless matching technologies to intercept searches the algorithm deems relevant, even when they were never part of your original strategy. Research by Mike Ryan of Smarter Ecommerce across 383 million impressions showed that [more than 25% of impressions attributed to exact-match keywords](https://www.searchenginejournal.com/google-ads-ai-max-is-making-more-decisions-for-you-heres-what-to-audit-now/596972/) actually came from AI Max matching — not from the keyword you had selected.",
+          "In a single account analysed in the same study, competitor searches accounted for **69% of total Search impressions**. For a professional firm working with a limited budget, this means almost all spend could be going on intercepting people who are actively searching for a competitor — a cost with no direct return.",
+          "Final URL expansion adds another layer of risk: when enabled, Google autonomously selects which page of your site to serve as the destination, even if that page has no contact form, is not designed for conversion, or relates to a service you are not promoting in that campaign. For a firm whose website also contains blog posts, news items or inactive service pages, the risk of wasting budget on unqualified traffic is very real. Campaign-level URL exclusions and ad-group-level URL inclusions are the tools to limit this — but they must be configured actively.",
+          "The positive note: Google reports that advertisers using the full AI Max feature set achieve on average **7% more conversions** at a similar CPA compared with search term matching alone. However, that figure comes from Google itself and reflects the average. Independent research by Smarter Ecommerce across more than 250 campaigns found a median CPA 16% higher than the baseline, with results ranging from +42% to −35% ROAS. For an Italian firm or SME, relying on Google's average without measuring your own account is a gamble, not a strategy."
+        ],
+        "blocco": {
+          "tipo": "stats",
+          "titolo": "Key figures to keep in mind on Google Ads AI Max",
+          "voci": [
+            {
+              "valore": ">25%",
+              "testo": "of impressions on exact-match keywords came from AI Max matching in a study of 383 million impressions (Smarter Ecommerce, 2026)"
+            },
+            {
+              "valore": "69%",
+              "testo": "of total impressions were on competitor searches in a single account analysed in the same study"
+            },
+            {
+              "valore": "+7%",
+              "testo": "more conversions claimed by Google for advertisers using the full AI Max feature set, versus search term matching alone (Google internal data, 2026, non-retail)"
+            },
+            {
+              "valore": "+16%",
+              "testo": "higher median CPA versus baseline in AI Max campaigns, according to independent research by Smarter Ecommerce across more than 250 campaigns (March 2026)"
+            }
+          ]
+        }
+      },
+      {
+        "h2": "AI-generated ad copy: who is responsible?",
+        "paragrafi": [
+          "Automatic text customisation allows Google to generate new headlines and descriptions by drawing on existing ads, keywords and landing-page content. For anyone running lead-generation campaigns for a professional firm, this creates a problem that goes beyond copy quality: an automatically generated ad could contain claims about fees, guaranteed outcomes or areas of expertise that do not reflect reality — or that breach the ethical code of the relevant professional body.",
+          "Google does allow advertisers to review and remove automatically generated assets. It has also introduced tools such as AI Brief and text disclaimers to give advertisers greater control over generated messages. But these tools only work if they are actively used: the algorithm's default settings know nothing about the Italian Bar Association's Code of Professional Conduct or the advertising rules applicable to chartered accountants.",
+          "There is a further point of attention for those using **asset pinning** in responsive search ads — the feature that locks a specific headline or description into a fixed position. According to Google's own documentation, pinning is not respected when Final URL expansion is active or when URL inclusions are in place: in those cases, Google may generate copy suited to the new landing page, overriding the assets you pinned. For campaigns that require mandatory disclaimers, partner-approved messaging or copy subject to strict regulatory constraints, Final URL expansion must be disabled. This is not an optional recommendation: it is risk management.",
+          "**Important:** If text customisation is active, Google may publish ads in your firm's name containing copy you have never approved. Check the generated assets in the dedicated section of Google Ads and remove any that are non-compliant. If your practice has ethical or regulatory obligations regarding advertising messages (law firms, accountants, employment consultants), consider disabling text customisation or setting up a precise AI Brief that explicitly excludes non-permitted claims."
+        ]
+      },
+      {
+        "h2": "How to find out whether AI search engines mention your firm",
+        "paragrafi": [
+          "Google Ads AI Max concerns paid advertising. But visibility on AI search engines — ChatGPT, Perplexity, Google AI Mode, Gemini — is a separate arena, increasingly relevant for anyone searching for a professional service provider. Understanding how this second channel works is essential to avoid investing resources in the wrong place.",
+          "An analysis by SparkToro and Verso across 41,961 ChatGPT conversations from 12,321 US users (January–October 2026) found that [only 6.9% of conversations contained purchase intent](https://www.searchenginejournal.com/chatgpt-purchase-intent-us-panel/597857/). Of all ChatGPT responses in the weighted sample, 87.9% cited no brand, product or company at all. SparkToro's Rand Fishkin concluded that the AI channel truly relevant to commercial visibility is **Google AI Overviews and AI Mode** — not ChatGPT itself, at least for now.",
+          "This does not mean ignoring ChatGPT or Perplexity: it means setting priorities correctly. Patrick Reinhart of Conductor, a guest on the [Search Engine Journal podcast](https://www.searchenginejournal.com/patrick-reinhart-on-the-golden-metric-in-ai-search-brand-recommendations/597056/), describes the golden metric in AI search not as the number of times your firm is mentioned, but as the **quality of the recommendation**: does ChatGPT cite you as the first choice, mention you in passing alongside others, or — worse — describe you inaccurately or negatively? Each situation calls for a very different response.",
+          "Reinhart also flags a common practical problem: AI search engines may draw on outdated information held on third-party sites — forum threads, directories last updated years ago, articles containing incorrect data about services or pricing. If your firm is described inaccurately by a source that AI engines keep citing, the fix does not lie in updating your own website: it requires identifying that source and creating more authoritative content to displace it. You can explore how to structure this strategy in the article [AI Search Visibility for Professional Firms: What to Do](/en/blog/ai-search-visibility-professional-firms-geo.html)."
+        ],
+        "blocco": {
+          "tipo": "compare",
+          "titolo": "How AI search engines treat your firm: two scenarios",
+          "sinistra": {
+            "badge": "Scenario to avoid",
+            "titolo": "Firm invisible or described poorly",
+            "righe": [
+              {
+                "etichetta": "AI mention",
+                "valore": "Absent or generic"
+              },
+              {
+                "etichetta": "Source used by AI",
+                "valore": "Outdated directory or 2022 forum thread"
+              },
+              {
+                "etichetta": "Recommendation",
+                "valore": "Competitor cited instead"
+              },
+              {
+                "etichetta": "Information",
+                "valore": "Outdated services or fees"
+              },
+              {
+                "etichetta": "Result",
+                "valore": "Potential clients redirected elsewhere"
+              }
+            ]
+          },
+          "destra": {
+            "badge": "Recommended approach",
+            "titolo": "Firm present and recommended",
+            "righe": [
+              {
+                "etichetta": "AI mention",
+                "valore": "First choice for the relevant query"
+              },
+              {
+                "etichetta": "Source used by AI",
+                "valore": "Structured site, current data, authoritative third-party citations"
+              },
+              {
+                "etichetta": "Recommendation",
+                "valore": "Firm cited with specific area of expertise"
+              },
+              {
+                "etichetta": "Information",
+                "valore": "Correct services, locations and contact details"
+              },
+              {
+                "etichetta": "Result",
+                "valore": "Qualified leads who arrive already informed"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "h2": "What to measure to know whether AI visibility actually brings clients",
+        "paragrafi": [
+          "The most common trap in AI search marketing is measuring everything that can be measured rather than measuring what matters. A useful framework, described in [TransPerfect Digital's analysis on Search Engine Journal](https://www.searchenginejournal.com/ai-visibility-data-traps-transperfectdigital-spa/597627/), distinguishes four levels of measurement that are worth keeping separate for a professional firm or SME.",
+          "The first level is **monitored visibility**: the mentions and citations you can track using defined prompts. The second is **recorded referral traffic**: the visits your analytics system attributes to AI search engines when the referral is available. The third consists of **directional signals**: shifts in branded searches or enquiries that suggest a possible AI-driven effect, without the ability to prove causation. The fourth is **estimated impact**: projections that depend on assumptions rather than direct observation.",
+          "For Google Ads AI Max, measurement must go beyond conversion volume. If you are collecting leads, the key question is: are those leads qualifying? Are they becoming clients? If you are only measuring cost per completed form, you may be paying for contacts that never result in a mandate. For e-commerce businesses or SMEs selling products, revenue and margin per product are more relevant than conversion volume. Reinhart puts it well: business leaders do not ask 'where do I appear?'; they ask 'how am I described, and are those descriptions accurate?'",
+          "Before changing budgets, campaigns or content, it is worth answering four questions: are we measuring the searches our clients actually make? Are we interpreting data in the context of our own positioning? Which findings warrant concrete action? What impact can we demonstrate with observed data — not estimates? This applies equally to managing Google Ads AI Max and to building an AI search visibility strategy."
+        ],
+        "blocco": {
+          "tipo": "checklist",
+          "titolo": "Measurement checklist: Google Ads AI Max and AI visibility",
+          "voci": [
+            {
+              "titolo": "Google Ads campaigns",
+              "testo": "Have you separated conversions generated by AI Max from those in standard campaigns?",
+              "ok": false
+            },
+            {
+              "titolo": "Lead quality",
+              "testo": "Are you comparing the lead qualification rate of AI Max leads against leads from campaigns with controlled matching?",
+              "ok": false
+            },
+            {
+              "titolo": "Search terms",
+              "testo": "Have you reviewed the search terms report to identify competitor queries, informational searches and unintentional brand keywords?",
+              "ok": false
+            },
+            {
+              "titolo": "Ad copy",
+              "testo": "Have you reviewed and approved every automatically generated asset in the past four weeks?",
+              "ok": false
+            },
+            {
+              "titolo": "AI visibility",
+              "testo": "Are you tracking AI search engine mentions using a set of prompts that reflects the real questions your clients ask — not just branded queries?",
+              "ok": false
+            },
+            {
+              "titolo": "Third-party sources",
+              "testo": "Have you checked how directories, forums and third-party sites describe your firm's services to AI search engines?",
+              "ok": false
+            }
+          ]
+        }
+      },
+      {
+        "h2": "Is your firm's website ready to be found and cited by AI?",
+        "paragrafi": [
+          "Google Ads AI Max and AI search engine visibility share a common root: both depend on the quality of the content on your website. Final URL expansion uses your site's pages to select ad destinations. AI search engines use those same pages — alongside third-party sources — to build their responses. A poorly structured site with generic pages, no structured data and no clear distinction between services on offer is a liability on both fronts.",
+          "For AI visibility, the problem is not purely technical. The TransPerfect Digital analysis identifies a frequent trap: many firms measure their AI visibility using branded prompts ('XYZ firm in London'), obtain reassuring scores, but never measure the questions clients ask when they do **not** yet know the firm — comparisons between professionals, searches by specialisation, questions about costs and procedures. These are the queries that bring in new clients, and a firm often does not appear in those answers at all.",
+          "For Google Ads AI Max, the practical advice is to configure URL exclusions to protect the pages on your site you do not want used as paid campaign destinations: blog articles, inactive service pages, institutional pages with no call-to-action. For AI visibility, the work is different but complementary: structure service pages with direct answers to the most frequently asked questions, update contact information across all relevant directories, and build consistent, up-to-date third-party citations. You can find practical guidance in the article [AI Search Visibility: What to Do Right Now](/en/blog/ai-search-visibility-crawlers-agents-professional-firms-smes.html) and in our [Ovia AI-Ready Websites](/en/services/siti-web-ai.html) service, designed precisely to make a professional firm's website citable and recommendable by AI search engines."
+        ],
+        "blocco": {
+          "tipo": "steps",
+          "titolo": "How to make your site ready for Google Ads AI Max and AI search engines",
+          "voci": [
+            {
+              "titolo": "Map your site pages by destination purpose",
+              "meta": "Structure",
+              "testo": "Identify which pages have a clear call-to-action (contact form, phone number, booking) and which do not. Use AI Max URL exclusions to prevent the latter from receiving paid traffic."
+            },
+            {
+              "titolo": "Write direct answers to client questions",
+              "meta": "Content",
+              "testo": "Every service page should open by answering the client's core question: what you do, for whom, and in which geographic area. This helps both AI positioning and the quality of automatically generated ads."
+            },
+            {
+              "titolo": "Audit the third-party sources that mention you",
+              "meta": "Reputation",
+              "testo": "Check how you are described on directories, sector associations, Chambers of Commerce, and on the main AI search engines using non-branded prompts. Correct inaccurate or outdated information before AI engines adopt it as a source."
+            }
+          ]
+        }
+      }
+    ],
+    "ovia_view": {
+      "titolo": "Strategy comes before default settings",
+      "paragrafi": [
+        "At Ovia we work with Italian professional firms and SMEs who find themselves in exactly this position: they have activated Google Ads — or some automation platform — without a measurement strategy, and realise too late that budget has been spent on irrelevant traffic or that AI search engines are finding the site in the wrong way. The problem is almost never the tool itself: it is the absence of a conscious decision about what to automate, what to exclude and how to measure.",
+        "That is why our starting point is never 'which AI Max feature should we enable', but rather 'what is the campaign objective, who needs to find this firm, and what should happen after the click'. The same applies to AI visibility: we first define the prompts that reflect the real questions the firm's clients ask, then we measure the gap, then we act — on the website, the content and the third-party sources.",
+        "Security is the other half of the work. Who has access to the firm's Google Ads account? Who approves automatically generated copy before it goes live? If conversion data flows through Google Tag Manager, who ensures that client information is not being collected in a way that is non-compliant with the UK GDPR or Italian data protection rules? These are not technical questions: they are governance questions, and they fall to the firm's principal — not the algorithm."
+      ]
+    },
+    "faq": [
+      {
+        "domanda": "Is Google Ads AI Max worthwhile for a professional firm or SME?",
+        "risposta": "It depends on configuration and measurement. Google reports an average of 7% more conversions for advertisers using the full feature set, but independent research by Smarter Ecommerce across more than 250 campaigns found a median CPA 16% higher than the baseline, with very wide variation between accounts. For firms with limited budgets and strict ethical obligations regarding advertising messages, the prudent approach is to enable AI Max gradually, using controlled experiments, and to measure lead quality — not just volume."
+      },
+      {
+        "domanda": "How can I control what Google Ads AI Max decides on my behalf?",
+        "risposta": "Go into each Search campaign in Google Ads and check the status of three features: search term matching, text customisation and Final URL expansion. Then download the search terms report filtered by AI Max source and review which queries you are intercepting. Finally, in the optimised assets section, read every automatically generated piece of copy and remove anything that does not comply with your positioning or regulatory obligations."
+      },
+      {
+        "domanda": "Which Google Ads AI Max settings should I audit right now?",
+        "risposta": "The three priorities are: Final URL expansion (disable it if your site has pages unsuitable for conversion, or if you use mandatory disclaimers in your copy); text customisation (review generated assets and use AI Brief to guide messaging); and negative keyword exclusions (add competitors, informational terms far from conversion, and brand keywords to non-brand campaigns). Also check whether your asset pinning is being respected: it will not be if Final URL expansion or URL inclusions are active."
+      },
+      {
+        "domanda": "How do I find out whether my firm is being cited by AI search engines such as ChatGPT or Perplexity?",
+        "risposta": "The basic method is to manually test a set of prompts that reflect the real questions your potential clients ask — not just the firm's name, but also queries by specialisation, geographic area and type of problem. Test on ChatGPT, Gemini and Perplexity separately, as each model behaves differently. Note whether you are cited, in what position, with what description, and whether you are recommended as the first choice or merely mentioned in passing."
+      },
+      {
+        "domanda": "What should I measure to know whether AI visibility is actually bringing in clients?",
+        "risposta": "Keep four levels separate: monitored visibility (mentions in tracked prompts), recorded referral traffic (visits attributed to AI search engines in analytics), directional signals (shifts in branded searches) and estimated impact (assumption-based projections). Only the first two are observed data. To assess real commercial impact, compare leads or enquiries from AI channels against those from other channels in terms of qualification rate and conversion to clients."
+      },
+      {
+        "domanda": "Is my firm's website optimised to be found and cited by AI?",
+        "risposta": "A site suited to AI search engines has service pages with direct answers to the most common client questions, up-to-date structured data, consistent contact information across all relevant directories, and content that clearly distinguishes specialisations and geographic areas. Updating the site alone is not enough: you also need to verify that third-party sources (directories, forums, sector websites) describe the firm accurately, because AI search engines use them as sources alongside the official website."
+      },
+      {
+        "domanda": "How do I prevent AI from generating incorrect or non-compliant ad copy in my firm's name?",
+        "risposta": "There are three levers: first, disable text customisation if regulatory or ethical constraints are strict; second, set up a precise AI Brief that explicitly excludes non-permitted categories of claim (guaranteed outcomes, competitor comparisons, unverified fees); third, establish a periodic review of generated assets — at least every two weeks — with responsibility assigned to a named individual within the firm. The algorithm's defaults do not know the rules of your profession: whoever manages the account must."
+      }
+    ],
+    "conclusione": [
+      "Google Ads AI Max and AI search engines are reshaping how an Italian professional firm or SME is found, evaluated and chosen by new clients. Automation is not wrong in itself: the problem is relying on default settings without a strategy, without measuring the quality of results, and without verifying that automatically generated messages comply with regulatory and professional ethical obligations.",
+      "The good news is that the control levers exist — URL exclusions, negative keywords, asset reviews, AI Brief — and that measuring AI visibility, though imperfect, is achievable without enterprise-level tools. What makes the difference is deciding consciously what to control actively and what to leave to the algorithm, rather than discovering the answer after the budget has run out.",
+      "If you would like to understand how all of this applies to your firm or SME — from campaign configuration to website structure and advertising account access governance — [contact Ovia](https://oviaitalia.it/contatti.html): we always start with a mapping of what is already active and what is actually happening, not from a blank sheet."
+    ],
+    "prodotti": [
+      {
+        "id": "siti-web-ai",
+        "perche": "A website built for AI search engines is the prerequisite for Google Ads AI Max to select the right pages as ad destinations, and for ChatGPT, Perplexity and Google AI Mode to cite the firm with accurate, up-to-date information."
+      },
+      {
+        "id": "lead-generation",
+        "perche": "When AI Max expands traffic to more generic or informational searches, immediate follow-up and qualification of new enquiries become even more critical to avoid wasting the advertising budget."
+      },
+      {
+        "id": "crm",
+        "perche": "Measuring the quality of AI Max conversions — not just volume — requires tracking what happens after the first contact: whether the lead qualifies, becomes a client and what they are worth. A tailored operational CRM makes this measurement possible without separate spreadsheets."
+      }
+    ],
+    "parole": 1985,
+    "minuti": 11,
+    "tradotto": {
+      "da": "ai",
+      "modello": "claude-sonnet-4-6",
+      "il": "2026-11-18T14:00:42.181Z"
+    }
+  }
+}
