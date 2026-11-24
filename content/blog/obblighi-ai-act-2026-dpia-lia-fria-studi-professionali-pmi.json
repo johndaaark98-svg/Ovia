@@ -1,0 +1,636 @@
+{
+  "title": "Obblighi AI Act 2026: DPIA, LIA e FRIA per studi e PMI",
+  "slug": "obblighi-ai-act-2026-dpia-lia-fria-studi-professionali-pmi",
+  "meta_description": "DPIA, LIA e FRIA: cosa sono, chi le deve fare e come evitare duplicati. Dal 9 dicembre 2026 il software AI è un prodotto difettoso. Guida per studi e PMI.",
+  "lead": "Dal 9 dicembre 2026 il software AI diventa legalmente un \"prodotto\" e le valutazioni preventive si moltiplicano. Ecco cosa devono fare studi professionali e PMI italiane, in quale ordine e senza sprecare risorse.",
+  "tags": [
+    "obblighi AI Act 2026 studi professionali PMI",
+    "DPIA FRIA LIA intelligenza artificiale",
+    "responsabilità software AI prodotto difettoso",
+    "AI Act compliance studi",
+    "normativa AI 2026 Italia"
+  ],
+  "intro": [
+    "Se stai adottando un sistema di intelligenza artificiale nel tuo studio o nella tua azienda, entro fine 2026 ti troverai davanti a tre sigla che si accavallano: **DPIA**, **LIA** e **FRIA**. Ognuna nasce da un quadro normativo diverso — GDPR la prima, AI Act la terza — e nessuna cancella le altre. Il rischio reale non è solo di non farle: è di farle tre volte male, sprecando tempo e denaro su adempimenti sovrapposti che non si parlano.",
+    "A complicare il quadro, dal **9 dicembre 2026** entra in vigore la nuova disciplina europea sulla responsabilità per danni da prodotti difettosi: il software — inclusi i sistemi AI — viene equiparato a un bene materiale. Chi usa uno strumento AI che causa un danno a un cliente, a un dipendente o a un terzo, può trovarsi esposto a richieste di risarcimento con regole molto più severe di prima. Non è fantascienza normativa: è il testo già approvato, già in vigore tra due settimane."
+  ],
+  "punti_chiave": [
+    "DPIA, LIA e FRIA sono tre valutazioni distinte: hanno scopi, fonti normative e destinatari diversi, ma si sovrappongono parzialmente e vanno coordinate.",
+    "Dal 9 dicembre 2026 il software AI è equiparato a un prodotto fisico: chi subisce un danno può agire contro il fornitore o contro chi ha modificato il sistema.",
+    "La FRIA (Fundamental Rights Impact Assessment) è obbligatoria solo per i sistemi AI ad alto rischio e spetta al deployer, cioè a chi mette in uso il sistema.",
+    "Il Legittimo Interesse come base giuridica GDPR richiede una LIA specifica ogni volta che si introduce un sistema AI che tratta dati personali senza consenso.",
+    "Non fare queste valutazioni non significa semplicemente 'essere fuori norma': significa non avere difese documentali se qualcosa va storto.",
+    "L'ordine corretto è: prima classificare il sistema AI, poi capire quali valutazioni scattano, poi integrarle in un unico documento coordinato."
+  ],
+  "sezioni": [
+    {
+      "h2": "DPIA, LIA e FRIA: tre documenti diversi, uno stesso problema",
+      "paragrafi": [
+        "Quando si parla di compliance AI, la prima confusione nasce già dai nomi. **DPIA** (Data Protection Impact Assessment), **LIA** (Legitimate Interest Assessment) e **FRIA** (Fundamental Rights Impact Assessment) sono tre strumenti che esistono in parallelo, rispondono a norme diverse e non si sostituiscono a vicenda. Come spiega [Cybersecurity360](https://www.cybersecurity360.it/legal/dpia-lia-e-fria-perche-lai-moltiplica-i-documenti-e-come-rimetterli-in-ordine/), l'AI moltiplica i documenti perché moltiplica i rischi su piani diversi — privacy, diritti fondamentali, liceità del trattamento — che il legislatore ha affrontato con strumenti separati.",
+        "La **DPIA** viene dal GDPR (art. 35): è obbligatoria ogni volta che un trattamento di dati personali presenta rischi elevati per i diritti degli interessati. Con l'AI quasi ogni sistema che elabora dati di persone fisiche può farla scattare. La **LIA** è invece la valutazione che un titolare del trattamento deve condurre quando vuole fondare il trattamento sul legittimo interesse (art. 6, par. 1, lett. f GDPR): si tratta di dimostrare che il proprio interesse è reale, necessario e non sopravanzato dai diritti dell'interessato. La **FRIA** è la novità dell'AI Act: è una valutazione d'impatto sui diritti fondamentali richiesta per i sistemi AI classificati ad **alto rischio**, e ricade sul deployer — cioè su chi usa il sistema, non su chi lo ha costruito.",
+        "Il punto pratico: per uno studio commercialista che adotta un software AI per l'analisi automatica delle buste paga dei clienti, potrebbero scattare tutte e tre. Il problema non è la quantità, ma la duplicazione: se fatte separatamente da consulenti diversi, le tre valutazioni si contraddicono o ripetono le stesse analisi con costi triplicati. La soluzione è **un framework integrato**, non tre pratiche parallele."
+      ],
+      "blocco": {
+        "tipo": "compare",
+        "titolo": "Le tre valutazioni a confronto",
+        "sinistra": {
+          "badge": "Approccio frammentato",
+          "titolo": "Tre pratiche separate",
+          "righe": [
+            {
+              "etichetta": "DPIA",
+              "valore": "Affidata al DPO, isolata"
+            },
+            {
+              "etichetta": "LIA",
+              "valore": "Gestita dal legale, non coordinata"
+            },
+            {
+              "etichetta": "FRIA",
+              "valore": "Ignorata o delegata al fornitore AI"
+            },
+            {
+              "etichetta": "Risultato",
+              "valore": "Costi triplicati, contraddizioni, nessuna difesa reale"
+            }
+          ]
+        },
+        "destra": {
+          "badge": "Approccio consigliato",
+          "titolo": "Framework integrato",
+          "righe": [
+            {
+              "etichetta": "Punto di partenza",
+              "valore": "Classificazione del sistema AI"
+            },
+            {
+              "etichetta": "Base comune",
+              "valore": "Un'analisi dei rischi condivisa"
+            },
+            {
+              "etichetta": "Modulare",
+              "valore": "DPIA, LIA, FRIA costruite sullo stesso impianto"
+            },
+            {
+              "etichetta": "Risultato",
+              "valore": "Un unico dossier coerente, aggiornabile"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "h2": "Chi deve redigere la FRIA e quando è obbligatoria",
+      "paragrafi": [
+        "La FRIA è forse il documento meno conosciuto dei tre, ma è quello più direttamente collegato all'AI Act e alle sue sanzioni. È richiesta dall'art. 27 dell'AI Act per i sistemi AI classificati ad **alto rischio** ai sensi dell'Allegato III del Regolamento. Questo elenco include, tra gli altri, sistemi usati in ambito di gestione del personale, accesso a servizi essenziali, istruzione, e — attenzione — sistemi usati da autorità pubbliche o privati che svolgono funzioni di interesse pubblico.",
+        "Chi la deve fare? Il **deployer**: cioè il professionista, lo studio o la PMI che acquista o adotta il sistema AI e lo mette concretamente in uso. Non è responsabilità del fornitore (provider), anche se il fornitore deve fornire la documentazione tecnica necessaria. Questo è un punto che molti ignorano: comprare un software AI 'compliant' non esaurisce l'obbligo. L'adozione genera un obbligo autonomo in capo a chi usa il sistema.",
+        "Per gli studi professionali, la soglia da verificare è: il sistema AI che sto adottando rientra nell'Allegato III? Se sì, prima di metterlo in produzione serve la FRIA, e il risultato va notificato all'autorità di vigilanza competente. Se la risposta è no — sistema non ad alto rischio — la FRIA non è obbligatoria, ma può comunque essere utile come documentazione difensiva, specie alla luce delle nuove regole sulla responsabilità del prodotto."
+      ],
+      "blocco": {
+        "tipo": "checklist",
+        "titolo": "Il sistema AI che stai adottando: check rapido",
+        "voci": [
+          {
+            "titolo": "Tratta dati personali di persone fisiche?",
+            "testo": "Se sì, valuta la necessità di DPIA e LIA.",
+            "ok": true
+          },
+          {
+            "titolo": "Rientra nell'Allegato III dell'AI Act (alto rischio)?",
+            "testo": "Se sì, la FRIA è obbligatoria prima del go-live.",
+            "ok": true
+          },
+          {
+            "titolo": "Hai il contratto con il fornitore AI che include la documentazione tecnica?",
+            "testo": "Senza di essa non puoi completare la FRIA.",
+            "ok": false
+          },
+          {
+            "titolo": "Hai nominato un responsabile interno per l'adozione AI?",
+            "testo": "La FRIA richiede una firma: qualcuno deve rispondere.",
+            "ok": false
+          },
+          {
+            "titolo": "Hai un registro dei sistemi AI in uso nello studio o in azienda?",
+            "testo": "È il punto di partenza per qualsiasi valutazione.",
+            "ok": false
+          }
+        ]
+      }
+    },
+    {
+      "h2": "Dal 9 dicembre 2026 il software AI è un prodotto: cosa cambia davvero",
+      "paragrafi": [
+        "Questa è la novità che molti stanno sottovalutando. Come riporta [Innovation Post](https://www.innovationpost.it/tecnologie/prodotti-difettosi-ecco-come-cambiano-le-regole-sulla-responsabilita-dei-fabbricanti-e-anche-il-software-diventa-prodotto/), dal **9 dicembre 2026** si applicano le nuove norme europee sulla responsabilità per danni da prodotti difettosi. La riforma aggiorna un impianto normativo che risaliva al **1985**: la novità più rilevante è che il **software è ora equiparato a un bene materiale**.",
+        "Cosa significa in concreto? Significa che se un sistema AI causa un danno — a un cliente dello studio, a un dipendente, a un soggetto terzo — il danneggiato può agire non solo contro il produttore originale ma anche contro chi ha **modificato** il sistema o lo ha **messo in uso in modo non conforme** alla sua destinazione. Per studi e PMI che personalizzano tool AI, integrano API o configurano agenti automatizzati, questo è un rischio diretto. Anche gli aggiornamenti del software assumono rilevanza: un update che introduce un malfunzionamento può far scattare la responsabilità del distributore o del deployer che lo ha applicato senza verificarne l'impatto.",
+        "Un caso concreto: uno studio legale che adotta un sistema AI per l'analisi automatica dei contratti, lo personalizza con istruzioni proprie e poi lo usa per produrre pareri. Se il sistema genera un'analisi errata che causa un danno al cliente, dal 9 dicembre 2026 la catena di responsabilità si estende in modo molto più ampio rispetto a oggi. La documentazione preventiva — DPIA, FRIA, contratti con il fornitore, log di utilizzo — diventa la **principale difesa** in caso di contenzioso. Puoi approfondire il tema della responsabilità nel nostro articolo su [responsabilità AI per studi e PMI](/blog/responsabilita-ai-studi-professionali-pmi-ai-act-legge-132-2025.html)."
+      ],
+      "blocco": {
+        "tipo": "warning",
+        "titolo": "Attenzione: il 9 dicembre 2026 non è una scadenza burocratica",
+        "voci": [
+          {
+            "testo": "Dal 9 dicembre 2026, chiunque subisca un danno da un sistema AI può agire in giudizio contro il fornitore, il distributore o chi ha modificato il sistema — inclusi studi e PMI che hanno personalizzato tool AI o integrato API senza documentare le scelte."
+          },
+          {
+            "testo": "La nuova disciplina si applica anche agli aggiornamenti software: un patch che introduce un bug può far scattare la responsabilità di chi lo ha installato senza verificarne l'impatto. Tenere un log delle modifiche e degli aggiornamenti non è paranoia: è una difesa concreta."
+          },
+          {
+            "testo": "Il sistema di intelligenza artificiale che si 'automodifica' nel tempo (machine learning continuativo) è esplicitamente citato tra i casi che il legislatore europeo ha voluto coprire con le nuove norme. Se usi sistemi che apprendono dai dati dei tuoi clienti, verifica subito cosa succede in caso di deriva del modello."
+          }
+        ]
+      }
+    },
+    {
+      "h2": "Le scadenze AI Act che studi e PMI non possono ignorare nel 2026",
+      "paragrafi": [
+        "L'AI Act è entrato in vigore il 1° agosto 2024 ma le sue disposizioni si applicano per fasi. Per studi professionali e PMI le scadenze più rilevanti nel biennio 2025-2026 riguardano: i sistemi AI vietati (già dal 2 febbraio 2025), gli obblighi di trasparenza per i sistemi AI a interazione diretta con persone (agosto 2025), e — la più impattante — gli obblighi completi per i sistemi ad **alto rischio** che entrano in applicazione con il pieno regime del Regolamento.",
+        "Sul fronte della trasparenza, [Agenda Digitale segnala](https://www.agendadigitale.eu/intelligenza-artificiale-ai/etica-regole-societa/trasparenza-ai-act-la-commissione-pubblica-latto-ufficiale-cosa-cambia/) che la Commissione europea ha pubblicato l'atto delegato ufficiale che definisce nel dettaglio gli obblighi di trasparenza per i sistemi AI generativi, incluse le regole su come comunicare agli utenti che stanno interagendo con un'AI. Per uno studio che usa un chatbot sul sito o un assistente AI per rispondere ai clienti, questo obbligo è già attivo.",
+        "Sul fronte del legittimo interesse come base giuridica, [Agenda Digitale ricorda](https://www.agendadigitale.eu/cultura-digitale/il-legittimo-interesse-torna-al-centro-cosa-cambia-con-lai/) che con l'AI il Legittimo Interesse torna al centro del dibattito GDPR: molte organizzazioni lo usano come base per trattamenti AI senza condurre la LIA richiesta, esponendosi a sanzioni del Garante. La LIA non è un documento facoltativo: è la prova che hai bilanciato i tuoi interessi con quelli degli interessati."
+      ],
+      "blocco": {
+        "tipo": "steps",
+        "titolo": "Le scadenze da tenere in agenda",
+        "voci": [
+          {
+            "titolo": "2 febbraio 2025",
+            "meta": "Già in vigore",
+            "testo": "Divieto assoluto per i sistemi AI vietati dall'AI Act (social scoring, manipolazione subliminale, riconoscimento biometrico in tempo reale in spazi pubblici per forze dell'ordine). Se usi sistemi di questo tipo, devi averli già dismessi."
+          },
+          {
+            "titolo": "Agosto 2025",
+            "meta": "Già in vigore",
+            "testo": "Obblighi di trasparenza per sistemi AI che interagiscono con persone (chatbot, assistenti virtuali, generatori di contenuti). Gli utenti devono sapere che parlano con un'AI."
+          },
+          {
+            "titolo": "9 dicembre 2026",
+            "meta": "Meno di due settimane",
+            "testo": "Entra in vigore la nuova responsabilità per danni da prodotti difettosi: il software AI è equiparato a un bene materiale. Da questa data, ogni sistema AI in uso genera un'esposizione legale concreta."
+          },
+          {
+            "titolo": "Agosto 2026",
+            "meta": "Già passato",
+            "testo": "Piena applicazione degli obblighi per i sistemi AI ad alto rischio inseriti nell'Allegato III: FRIA obbligatoria, registrazione nei database europei, obblighi di monitoraggio post-commercializzazione."
+          }
+        ]
+      }
+    },
+    {
+      "h2": "Come evitare la duplicazione tra DPIA e FRIA: l'ordine corretto",
+      "paragrafi": [
+        "Il problema più comune che incontriamo negli studi professionali non è la totale assenza di documentazione: è la **documentazione disorganizzata**. DPO, consulente legale e responsabile IT producono documenti separati che non si parlano, con analisi dei rischi diverse, basi giuridiche contraddittorie e conclusioni incompatibili. In caso di ispezione o contenzioso, questo è peggio di non avere nulla.",
+        "L'ordine corretto per non duplicare il lavoro è il seguente. **Prima**: classificare il sistema AI (vietato, ad alto rischio, rischio limitato, rischio minimo). Questa classificazione determina quali obblighi scattano. **Seconda**: condurre l'analisi dei rischi su privacy e diritti fondamentali come un'unica ricognizione condivisa — questo è il nucleo comune a DPIA e FRIA. **Terza**: completare i documenti specifici attingendo all'analisi comune: la DPIA si concentra sui rischi per i dati personali, la FRIA sui diritti fondamentali in senso ampio. **Quarta**: se si usa il Legittimo Interesse come base giuridica, aggiungere la LIA come sezione separata ma collegata alla stessa analisi.",
+        "Un elemento spesso trascurato: la [governance interna dei sistemi AI](/blog/governance-ai-aziendale-obblighi-2025-ai-act-gdpr-cybersecurity.html) — chi ha deciso di adottare il sistema, con quali criteri, con quale documentazione del fornitore — è parte integrante di ogni valutazione. Senza un registro dei sistemi AI in uso, non puoi nemmeno sapere da dove partire. Questo registro non è un adempimento formale: è lo strumento operativo che permette di rispondere in cinque minuti alla domanda 'quali sistemi AI usiamo e quali obblighi generano'."
+      ],
+      "blocco": {
+        "tipo": "steps",
+        "titolo": "L'ordine corretto per non duplicare il lavoro",
+        "voci": [
+          {
+            "titolo": "Passo 1 — Classifica il sistema AI",
+            "meta": "Prima di tutto",
+            "testo": "Verifica se il sistema rientra nelle categorie vietate, ad alto rischio (Allegato III) o a rischio limitato/minimo dell'AI Act. Questa classificazione determina tutto il resto."
+          },
+          {
+            "titolo": "Passo 2 — Costruisci l'analisi dei rischi condivisa",
+            "meta": "Il nucleo comune",
+            "testo": "Conduci un'unica ricognizione su dati trattati, soggetti coinvolti, rischi per privacy e diritti fondamentali. DPIA e FRIA attingeranno entrambe da qui."
+          },
+          {
+            "titolo": "Passo 3 — Redigi i documenti specifici",
+            "meta": "Modular, non parallelo",
+            "testo": "DPIA: focalizzata sui rischi per i dati personali (GDPR). FRIA: focalizzata sui diritti fondamentali (AI Act). LIA: aggiunta se la base giuridica è il Legittimo Interesse."
+          },
+          {
+            "titolo": "Passo 4 — Gestisci il contratto con il fornitore AI",
+            "meta": "Spesso dimenticato",
+            "testo": "Il fornitore deve fornire documentazione tecnica per completare la FRIA. Inseriscilo nel contratto come obbligo esplicito, prima della firma."
+          },
+          {
+            "titolo": "Passo 5 — Aggiorna al cambiamento",
+            "meta": "Non è un documento fisso",
+            "testo": "Ogni modifica rilevante al sistema (aggiornamento, cambio di funzione, nuovi dati in input) richiede di riaprire le valutazioni. Programma una revisione periodica almeno annuale."
+          }
+        ]
+      }
+    },
+    {
+      "h2": "Cosa rischi se usi sistemi AI senza queste valutazioni",
+      "paragrafi": [
+        "La risposta breve: molto più di una multa. Le sanzioni dell'AI Act per la mancata FRIA su sistemi ad alto rischio possono arrivare fino al **3% del fatturato mondiale annuo** o 15 milioni di euro (il maggiore dei due importi). Le sanzioni del GDPR per l'assenza di DPIA o per l'uso del Legittimo Interesse senza LIA rientrano nel regime ordinario e possono essere molto significative. Ma il rischio più concreto per uno studio o una PMI non è la sanzione amministrativa: è il **contenzioso civile**.",
+        "Dal 9 dicembre 2026, un cliente danneggiato da un'analisi AI errata, da una decisione automatizzata non documentata, da un sistema che ha trattato i suoi dati senza base giuridica valida, ha strumenti legali molto più potenti di prima. La mancanza di DPIA, FRIA o LIA sarà la prova che non hai fatto la due diligence richiesta. Non è una questione teorica: è la logica con cui funzionano i procedimenti per responsabilità da prodotto difettoso.",
+        "Per gli studi professionali c'è un rischio aggiuntivo: la **responsabilità deontologica**. Un commercialista o un avvocato che usa sistemi AI non documentati e causa un danno al cliente risponde non solo civilmente ma anche davanti al proprio ordine. La Legge 132/2025 ha già introdotto obblighi informativi verso i clienti sull'uso dell'AI: puoi approfondire nel nostro articolo su [Legge 132/2025 e informativa clienti](/blog/legge-132-2025-ai-professionisti-informativa-clienti.html). Fare le valutazioni preventive non è burocrazia: è la documentazione che ti protegge quando qualcosa va storto."
+      ],
+      "blocco": {
+        "tipo": "warning",
+        "titolo": "I rischi concreti per chi non documenta l'adozione AI",
+        "voci": [
+          {
+            "testo": "Sanzioni AI Act fino al 3% del fatturato mondiale per mancata FRIA su sistemi ad alto rischio; sanzioni GDPR per assenza di DPIA o LIA non condotta possono essere molto rilevanti."
+          },
+          {
+            "testo": "Dal 9 dicembre 2026: responsabilità civile diretta per danni causati da sistemi AI, con l'assenza di documentazione preventiva usata come prova di negligenza nel procedimento."
+          },
+          {
+            "testo": "Per studi professionali: responsabilità deontologica davanti all'ordine in caso di danni al cliente causati da sistemi AI non documentati, in violazione degli obblighi informativi della Legge 132/2025."
+          }
+        ]
+      }
+    }
+  ],
+  "ovia_view": {
+    "titolo": "La compliance AI non è una gara a chi produce più carta",
+    "paragrafi": [
+      "In Ovia lavoriamo ogni giorno con studi professionali e PMI italiane che si trovano a dover rispondere a una domanda concreta: 'Ho appena adottato questo strumento AI — cosa devo fare adesso?' La risposta giusta non è 'fai la DPIA, poi la FRIA, poi la LIA': è 'prima classifica il sistema, poi capisce quali obblighi scattano, poi costruisci un framework che li gestisca tutti senza duplicare il lavoro'.",
+      "Il nostro approccio alla compliance AI parte sempre dalla strategia: cosa stai cercando di automatizzare, quali dati tocca, chi ne risponde e come misuri che funziona. Solo dopo si costruisce la documentazione — che deve essere vera, coerente e aggiornabile, non una pila di PDF che nessuno sa dove trovare quando serve.",
+      "Per questo il [nostro sistema di gestione documentale](/servizi/documenti.html) non riguarda solo i documenti dei clienti, ma anche la documentazione interna: chi ha deciso cosa, quando, con quali evidenze. Quando arriva un'ispezione o — peggio — un contenzioso, quella traccia è la differenza tra essere protetti e essere esposti."
+    ]
+  },
+  "faq": [
+    {
+      "domanda": "Devo fare DPIA, LIA e FRIA per ogni sistema AI che adotto?",
+      "risposta": "Non necessariamente tutte e tre. La DPIA scatta quando il sistema tratta dati personali con rischi elevati (GDPR). La LIA è necessaria solo se usi il Legittimo Interesse come base giuridica del trattamento. La FRIA è obbligatoria solo per sistemi AI classificati ad alto rischio secondo l'Allegato III dell'AI Act. Il primo passo è sempre classificare il sistema: da lì capisci quali obblighi scattano."
+    },
+    {
+      "domanda": "Dal 9 dicembre 2026 il software AI è equiparato a un prodotto difettoso: cosa cambia per me?",
+      "risposta": "Cambia la tua esposizione legale in caso di danni. Dal 9 dicembre 2026 la nuova normativa europea equipara il software — inclusi i sistemi AI — ai beni materiali ai fini della responsabilità per danni da prodotti difettosi. Se un sistema AI che usi causa un danno a un cliente o a un terzo, puoi essere chiamato a rispondere come 'modificatore' del prodotto, specialmente se hai personalizzato il sistema o integrato API. La documentazione preventiva (DPIA, FRIA, contratti con il fornitore) diventa la tua principale difesa."
+    },
+    {
+      "domanda": "Chi deve redigere la FRIA nel mio studio o nella mia azienda?",
+      "risposta": "La FRIA è a carico del deployer: cioè chi adotta e usa il sistema AI, non chi lo ha sviluppato. Nello studio professionale o in PMI, questo significa che la responsabilità ricade sul titolare o sul responsabile che ha deciso di mettere in uso il sistema. Il fornitore AI deve però fornire la documentazione tecnica necessaria per completarla: questo va inserito esplicitamente nel contratto di fornitura."
+    },
+    {
+      "domanda": "Come evito di duplicare il lavoro tra DPIA e FRIA?",
+      "risposta": "Costruendo un'unica analisi dei rischi condivisa come nucleo comune. DPIA e FRIA condividono gran parte dell'analisi: dati trattati, soggetti coinvolti, rischi potenziali. Se questa ricognizione viene fatta una sola volta in modo completo, i due documenti specifici si compilano attingendo alla stessa base, senza ripetizioni. L'errore più comune è affidarli a consulenti diversi che lavorano in silos."
+    },
+    {
+      "domanda": "Quali scadenze devo rispettare per essere in regola con l'AI Act nel 2026?",
+      "risposta": "Le principali scadenze già passate o imminenti sono: divieto per sistemi AI vietati (febbraio 2025), obblighi di trasparenza per chatbot e sistemi interattivi (agosto 2025), piena applicazione per sistemi ad alto rischio Allegato III (agosto 2026), e nuova responsabilità per danni da prodotti difettosi che include il software AI (9 dicembre 2026). Se non hai ancora classificato i sistemi AI in uso, parti da lì oggi."
+    },
+    {
+      "domanda": "Cosa rischio se uso strumenti AI senza le valutazioni richieste?",
+      "risposta": "Le sanzioni AI Act per mancata FRIA su sistemi ad alto rischio arrivano fino al 3% del fatturato mondiale o 15 milioni di euro. Le sanzioni GDPR per assenza di DPIA o LIA possono essere molto rilevanti. Ma il rischio più immediato è il contenzioso civile: dal 9 dicembre 2026 la mancanza di documentazione preventiva sarà usata come prova di negligenza in sede giudiziaria. Per gli studi professionali si aggiunge la responsabilità deontologica davanti all'ordine."
+    },
+    {
+      "domanda": "Da dove parto per mettere in ordine la compliance AI senza impazzire?",
+      "risposta": "Dal registro dei sistemi AI in uso: fai un inventario di ogni strumento AI adottato nello studio o in azienda, con funzione, dati trattati e fornitore. Poi classifica ogni sistema secondo l'AI Act (vietato, alto rischio, rischio limitato, minimo). Solo dopo si capisce quali obblighi scattano e si costruisce la documentazione nel giusto ordine. Senza questo inventario di partenza, qualsiasi effort di compliance naviga a vista."
+    }
+  ],
+  "conclusione": [
+    "La compliance AI nel 2026 non è una questione di quanti documenti produci: è una questione di **quale ordine segui** e di quanto quella documentazione regge davvero sotto pressione — un'ispezione, un contenzioso, una richiesta del cliente. DPIA, LIA e FRIA sono strumenti utili se costruiti su un'analisi seria; sono carta inutile se redatti in fretta per 'coprire' un adempimento formale.",
+    "La scadenza del 9 dicembre 2026 non è un campanello d'allarme lontano: è dopodomani. Se stai usando sistemi AI che trattano dati di clienti, dipendenti o terzi e non hai ancora un registro dei sistemi in uso e una classificazione del rischio, questo è il momento per partire. Non perché lo chiede il regolatore, ma perché la documentazione che costruisci oggi è la tua difesa concreta domani.",
+    "La strategia prima degli strumenti: capire cosa automatizzare, con quali rischi, con quale governance. L'AI è lo strumento — la sicurezza e la responsabilità sono la differenza tra uno studio che guadagna dall'AI e uno che ne risponde davanti a un giudice."
+  ],
+  "prodotti": [
+    {
+      "id": "documenti",
+      "perche": "Gestire la raccolta e il tracciamento della documentazione AI — contratti con i fornitori, valutazioni d'impatto, log di utilizzo — richiede un sistema che tenga traccia di cosa è arrivato, cosa manca e chi ha fatto cosa: esattamente ciò che serve per costruire un dossier di compliance AI difendibile."
+    },
+    {
+      "id": "second-brain",
+      "perche": "Un framework DPIA-FRIA-LIA coordinato genera decisioni, aggiornamenti e procedure che devono essere ritrovabili in un attimo: Ovia Second Brain collega ogni nota, decisione e procedura al contesto giusto, così la governance AI dello studio non vive solo nella testa del responsabile."
+    },
+    {
+      "id": "crm",
+      "perche": "Il registro dei sistemi AI in uso, le scadenze di revisione periodica delle valutazioni e il monitoraggio dei contratti con i fornitori AI sono esattamente il tipo di workflow ricorrente che Ovia CRM gestisce con scadenze automatiche e solleciti mirati."
+    }
+  ],
+  "categoria": "normativa-sicurezza",
+  "keyword": "obblighi AI Act 2026 studi professionali PMI",
+  "data": "2026-11-24T15:56:27.274Z",
+  "autore": "Redazione Ovia",
+  "parole": 2428,
+  "minuti": 12,
+  "fonti": [
+    {
+      "titolo": "Trasparenza AI Act, la Commissione pubblica l’atto ufficiale: cosa cambia",
+      "fonte": "Agenda Digitale",
+      "url": "https://www.agendadigitale.eu/intelligenza-artificiale-ai/etica-regole-societa/trasparenza-ai-act-la-commissione-pubblica-latto-ufficiale-cosa-cambia/"
+    },
+    {
+      "titolo": "Il legittimo interesse torna al centro: cosa cambia con l’AI",
+      "fonte": "Agenda Digitale",
+      "url": "https://www.agendadigitale.eu/cultura-digitale/il-legittimo-interesse-torna-al-centro-cosa-cambia-con-lai/"
+    },
+    {
+      "titolo": "DPIA, LIA e FRIA: perché l’AI moltiplica i documenti e come rimetterli in ordine",
+      "fonte": "Cybersecurity360",
+      "url": "https://www.cybersecurity360.it/legal/dpia-lia-e-fria-perche-lai-moltiplica-i-documenti-e-come-rimetterli-in-ordine/"
+    },
+    {
+      "titolo": "Prodotti difettosi, ecco come cambiano le regole sulla responsabilità dei fabbricanti (e anche il software diventa prodotto)",
+      "fonte": "Innovation Post",
+      "url": "https://www.innovationpost.it/tecnologie/prodotti-difettosi-ecco-come-cambiano-le-regole-sulla-responsabilita-dei-fabbricanti-e-anche-il-software-diventa-prodotto/"
+    }
+  ],
+  "generato": {
+    "da": "ai",
+    "modello": "claude-sonnet-4-6",
+    "il": "2026-11-24T15:56:27.274Z"
+  },
+  "en": {
+    "title": "AI Act 2026 Obligations: DPIA, LIA and FRIA Explained",
+    "slug": "ai-act-2026-obligations-dpia-lia-fria-professional-firms-smes",
+    "meta_description": "DPIA, LIA and FRIA: what they are, who must carry them out and how to avoid duplication. From 9 December 2026, AI software becomes a defective product. Guide for firms and SMEs.",
+    "lead": "From 9 December 2026, AI software becomes legally a \"product\" and mandatory impact assessments multiply. Here is what Italian professional firms and SMEs must do, in the right order and without wasting resources.",
+    "tags": [
+      "AI Act 2026 obligations professional firms SMEs",
+      "DPIA FRIA LIA artificial intelligence",
+      "AI software liability defective product",
+      "AI Act compliance professional firms",
+      "AI regulation 2026 Italy"
+    ],
+    "intro": [
+      "If you are adopting an artificial intelligence system in your firm or business, by the end of 2026 you will be confronted with three overlapping acronyms: **DPIA**, **LIA** and **FRIA**. Each comes from a different regulatory framework — the GDPR for the first, the AI Act for the third — and none of them cancels the others out. The real risk is not simply failing to produce them: it is producing all three badly, wasting time and money on overlapping compliance exercises that bear no relation to one another.",
+      "To make matters more complex, from **9 December 2026** the new European rules on liability for damage caused by defective products come into force: software — including AI systems — is placed on the same footing as physical goods. Anyone using an AI tool that causes harm to a client, an employee or a third party may face compensation claims under rules that are far stricter than before. This is not regulatory speculation: it is text that has already been adopted and will be in force in a matter of weeks."
+    ],
+    "punti_chiave": [
+      "DPIA, LIA and FRIA are three distinct assessments: they have different purposes, different legal bases and different addressees, but they partially overlap and must be coordinated.",
+      "From 9 December 2026, AI software is treated as a physical product: anyone who suffers harm may bring a claim against the supplier or against whoever modified the system.",
+      "The FRIA (Fundamental Rights Impact Assessment) is mandatory only for high-risk AI systems and falls on the deployer — that is, the person or organisation that puts the system into use.",
+      "Using Legitimate Interest as a GDPR legal basis requires a specific LIA every time an AI system that processes personal data without consent is introduced.",
+      "Failing to carry out these assessments does not simply mean being 'non-compliant': it means having no documentary defences if something goes wrong.",
+      "The correct sequence is: first classify the AI system, then determine which assessments are triggered, then integrate them into a single coordinated document."
+    ],
+    "sezioni": [
+      {
+        "h2": "DPIA, LIA and FRIA: three different documents, one shared problem",
+        "paragrafi": [
+          "When discussing AI compliance, the first source of confusion is the terminology itself. **DPIA** (Data Protection Impact Assessment), **LIA** (Legitimate Interest Assessment) and **FRIA** (Fundamental Rights Impact Assessment) are three instruments that exist in parallel, respond to different rules and do not replace one another. As [Cybersecurity360](https://www.cybersecurity360.it/legal/dpia-lia-e-fria-perche-lai-moltiplica-i-documenti-e-come-rimetterli-in-ordine/) explains, AI multiplies the documents because it multiplies risks across different dimensions — privacy, fundamental rights, lawfulness of processing — which the legislature has addressed with separate instruments.",
+          "The **DPIA** derives from the GDPR (Art. 35): it is mandatory whenever a personal data processing operation presents high risks to the rights of data subjects. With AI, almost any system that processes data relating to natural persons is capable of triggering it. The **LIA** is the assessment that a data controller must carry out when it wishes to rely on legitimate interest as the legal basis for processing (Art. 6(1)(f) GDPR): it requires demonstrating that the interest is real, necessary and not overridden by the rights of the data subject. The **FRIA** is the AI Act's new addition: it is an impact assessment on fundamental rights required for AI systems classified as **high-risk** under Annex III of the Regulation, and it falls on the deployer — that is, on whoever uses the system, not on whoever built it.",
+          "The practical point: a firm of chartered accountants adopting AI software for the automated analysis of its clients' payslips could trigger all three. The problem is not the number of assessments but the duplication: if each is carried out separately by different consultants, the three assessments will contradict one another or repeat the same analysis at three times the cost. The solution is **an integrated framework**, not three parallel exercises."
+        ],
+        "blocco": {
+          "tipo": "compare",
+          "titolo": "The three assessments compared",
+          "sinistra": {
+            "badge": "Fragmented approach",
+            "titolo": "Three separate exercises",
+            "righe": [
+              {
+                "etichetta": "DPIA",
+                "valore": "Delegated to the DPO, handled in isolation"
+              },
+              {
+                "etichetta": "LIA",
+                "valore": "Managed by legal counsel, uncoordinated"
+              },
+              {
+                "etichetta": "FRIA",
+                "valore": "Ignored or delegated to the AI supplier"
+              },
+              {
+                "etichetta": "Outcome",
+                "valore": "Triple costs, contradictions, no real defence"
+              }
+            ]
+          },
+          "destra": {
+            "badge": "Recommended approach",
+            "titolo": "Integrated framework",
+            "righe": [
+              {
+                "etichetta": "Starting point",
+                "valore": "Classification of the AI system"
+              },
+              {
+                "etichetta": "Shared foundation",
+                "valore": "A single shared risk analysis"
+              },
+              {
+                "etichetta": "Modular",
+                "valore": "DPIA, LIA and FRIA built on the same structure"
+              },
+              {
+                "etichetta": "Outcome",
+                "valore": "One coherent, updatable compliance dossier"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "h2": "Who must produce the FRIA and when is it mandatory",
+        "paragrafi": [
+          "The FRIA is perhaps the least well-known of the three documents, yet it is the one most directly tied to the AI Act and its penalties. It is required by Art. 27 of the AI Act for AI systems classified as **high-risk** under Annex III of the Regulation. That list includes, among others, systems used in personnel management, access to essential services, education, and — importantly — systems used by public authorities or private bodies carrying out functions in the public interest.",
+          "Who must produce it? The **deployer**: that is, the professional, the firm or the SME that purchases or adopts the AI system and puts it into actual use. This is not the responsibility of the supplier (provider), even though the supplier must provide the necessary technical documentation. This is a point that many overlook: buying 'compliant' AI software does not exhaust the obligation. Adoption creates a standalone obligation on the part of whoever uses the system.",
+          "For professional firms, the threshold to check is: does the AI system I am adopting fall within Annex III? If yes, the FRIA is required before go-live, and the result must be notified to the competent supervisory authority. If the answer is no — a non-high-risk system — the FRIA is not mandatory, but it may still be useful as documentary protection, particularly in light of the new product liability rules."
+        ],
+        "blocco": {
+          "tipo": "checklist",
+          "titolo": "Quick check: the AI system you are adopting",
+          "voci": [
+            {
+              "titolo": "Does it process personal data relating to natural persons?",
+              "testo": "If yes, assess whether a DPIA and LIA are required.",
+              "ok": true
+            },
+            {
+              "titolo": "Does it fall within Annex III of the AI Act (high-risk)?",
+              "testo": "If yes, the FRIA is mandatory before go-live.",
+              "ok": true
+            },
+            {
+              "titolo": "Do you have a contract with the AI supplier that includes technical documentation?",
+              "testo": "Without it you cannot complete the FRIA.",
+              "ok": false
+            },
+            {
+              "titolo": "Have you appointed an internal lead for AI adoption?",
+              "testo": "The FRIA requires a named signatory: someone must be accountable.",
+              "ok": false
+            },
+            {
+              "titolo": "Do you maintain a register of AI systems in use at your firm or business?",
+              "testo": "This is the starting point for any assessment.",
+              "ok": false
+            }
+          ]
+        }
+      },
+      {
+        "h2": "From 9 December 2026, AI software is a product: what really changes",
+        "paragrafi": [
+          "This is the development that many are underestimating. As [Innovation Post](https://www.innovationpost.it/tecnologie/prodotti-difettosi-ecco-come-cambiano-le-regole-sulla-responsabilita-dei-fabbricanti-e-anche-il-software-diventa-prodotto/) reports, from **9 December 2026** the new European rules on liability for damage caused by defective products apply. The reform updates a framework dating back to **1985**: the most significant change is that **software is now treated on a par with physical goods**.",
+          "What does this mean in practice? It means that if an AI system causes harm — to a client of the firm, to an employee, or to a third party — the injured party may bring a claim not only against the original manufacturer but also against anyone who **modified** the system or **deployed it in a way that did not conform** to its intended purpose. For firms and SMEs that customise AI tools, integrate APIs or configure automated agents, this is a direct risk. Software updates also become legally significant: an update that introduces a malfunction may trigger the liability of the distributor or the deployer who applied it without checking its impact.",
+          "A concrete example: a law firm adopts an AI system for the automated analysis of contracts, customises it with its own instructions and then uses it to produce legal opinions. If the system generates an incorrect analysis that causes harm to the client, from 9 December 2026 the chain of liability extends far more broadly than it does today. Preventive documentation — DPIA, FRIA, supplier contracts, usage logs — becomes the **primary line of defence** in the event of litigation. You can explore the topic of liability further in our article on [AI liability for professional firms and SMEs](/en/blog/ai-liability-professional-firms-smes-ai-act-italian-law-132-2025.html)."
+        ],
+        "blocco": {
+          "tipo": "warning",
+          "titolo": "Important: 9 December 2026 is not a bureaucratic deadline",
+          "voci": [
+            {
+              "testo": "From 9 December 2026, anyone who suffers harm from an AI system may bring a legal claim against the supplier, the distributor or whoever modified the system — including firms and SMEs that customised AI tools or integrated APIs without documenting their choices."
+            },
+            {
+              "testo": "The new rules also apply to software updates: a patch that introduces a bug may trigger the liability of whoever installed it without checking its impact. Keeping a log of changes and updates is not excessive caution: it is a concrete line of defence."
+            },
+            {
+              "testo": "AI systems that 'self-modify' over time (continuous machine learning) are explicitly cited among the cases that the European legislature intended to cover under the new rules. If you use systems that learn from your clients' data, check immediately what happens in the event of model drift."
+            }
+          ]
+        }
+      },
+      {
+        "h2": "AI Act deadlines that professional firms and SMEs cannot ignore in 2026",
+        "paragrafi": [
+          "The AI Act entered into force on 1 August 2024, but its provisions apply in phases. For professional firms and SMEs, the most significant deadlines in 2025–2026 concern: prohibited AI systems (already from 2 February 2025), transparency obligations for AI systems that interact directly with people (August 2025), and — the most impactful — full obligations for **high-risk** systems, which apply under the Regulation's full regime.",
+          "On the transparency front, [Agenda Digitale reports](https://www.agendadigitale.eu/intelligenza-artificiale-ai/etica-regole-societa/trasparenza-ai-act-la-commissione-pubblica-latto-ufficiale-cosa-cambia/) that the European Commission has published the official delegated act setting out in detail the transparency obligations for generative AI systems, including rules on how to inform users that they are interacting with an AI. For a firm that uses a chatbot on its website or an AI assistant to respond to clients, this obligation is already in force.",
+          "On the legitimate interest front as a legal basis, [Agenda Digitale notes](https://www.agendadigitale.eu/cultura-digitale/il-legittimo-interesse-torna-al-centro-cosa-cambia-con-lai/) that with AI, Legitimate Interest has moved back to the centre of the GDPR debate: many organisations rely on it as the basis for AI-related processing without carrying out the required LIA, exposing themselves to sanctions from the Italian Data Protection Authority (Garante). The LIA is not an optional document: it is the evidence that you have balanced your interests against those of the data subjects."
+        ],
+        "blocco": {
+          "tipo": "steps",
+          "titolo": "Key deadlines to keep in your calendar",
+          "voci": [
+            {
+              "titolo": "2 February 2025",
+              "meta": "Already in force",
+              "testo": "Absolute prohibition on AI systems banned by the AI Act (social scoring, subliminal manipulation, real-time biometric recognition in public spaces for law enforcement). If you use systems of this type, you should have already discontinued them."
+            },
+            {
+              "titolo": "August 2025",
+              "meta": "Already in force",
+              "testo": "Transparency obligations for AI systems that interact with people (chatbots, virtual assistants, content generators). Users must be informed that they are interacting with an AI."
+            },
+            {
+              "titolo": "9 December 2026",
+              "meta": "Less than two weeks away",
+              "testo": "New liability rules for damage caused by defective products enter into force: AI software is treated on a par with physical goods. From this date, every AI system in use generates concrete legal exposure."
+            },
+            {
+              "titolo": "August 2026",
+              "meta": "Already passed",
+              "testo": "Full application of obligations for high-risk AI systems listed in Annex III: mandatory FRIA, registration in European databases, post-market monitoring obligations."
+            }
+          ]
+        }
+      },
+      {
+        "h2": "How to avoid duplication between the DPIA and FRIA: the correct sequence",
+        "paragrafi": [
+          "The most common problem we encounter in professional firms is not a complete absence of documentation: it is **disorganised documentation**. The DPO, the legal adviser and the IT manager each produce separate documents that bear no relation to one another, with different risk analyses, contradictory legal bases and incompatible conclusions. In the event of an inspection or litigation, this is worse than having nothing at all.",
+          "The correct sequence to avoid duplicating effort is as follows. **First**: classify the AI system (prohibited, high-risk, limited risk, minimal risk). This classification determines which obligations are triggered. **Second**: conduct the risk analysis on privacy and fundamental rights as a single shared exercise — this is the common core of both the DPIA and the FRIA. **Third**: complete the specific documents drawing on the shared analysis: the DPIA focuses on risks to personal data; the FRIA focuses on fundamental rights in the broader sense. **Fourth**: if Legitimate Interest is used as the legal basis, add the LIA as a separate but connected section built on the same analysis.",
+          "One frequently overlooked element: the [internal governance of AI systems](/en/blog/ai-governance-business-obligations-2025-ai-act-gdpr-cybersecurity.html) — who decided to adopt the system, on what criteria, with what documentation from the supplier — is an integral part of every assessment. Without a register of AI systems in use, you cannot even know where to begin. This register is not a formal compliance tick-box: it is the operational tool that enables you to answer in five minutes the question 'which AI systems do we use and what obligations do they generate?'."
+        ],
+        "blocco": {
+          "tipo": "steps",
+          "titolo": "The correct sequence to avoid duplicating effort",
+          "voci": [
+            {
+              "titolo": "Step 1 — Classify the AI system",
+              "meta": "Before anything else",
+              "testo": "Check whether the system falls within the prohibited categories, high-risk (Annex III) or limited/minimal risk under the AI Act. This classification determines everything that follows."
+            },
+            {
+              "titolo": "Step 2 — Build the shared risk analysis",
+              "meta": "The common core",
+              "testo": "Conduct a single review of the data processed, the individuals involved, and the risks to privacy and fundamental rights. Both the DPIA and the FRIA will draw from this."
+            },
+            {
+              "titolo": "Step 3 — Produce the specific documents",
+              "meta": "Modular, not parallel",
+              "testo": "DPIA: focused on risks to personal data (GDPR). FRIA: focused on fundamental rights (AI Act). LIA: added if the legal basis is Legitimate Interest."
+            },
+            {
+              "titolo": "Step 4 — Manage the contract with the AI supplier",
+              "meta": "Often forgotten",
+              "testo": "The supplier must provide technical documentation to enable completion of the FRIA. Include this as an explicit contractual obligation before signing."
+            },
+            {
+              "titolo": "Step 5 — Update when things change",
+              "meta": "This is not a static document",
+              "testo": "Any material change to the system (update, change of function, new data inputs) requires reopening the assessments. Schedule a periodic review at least annually."
+            }
+          ]
+        }
+      },
+      {
+        "h2": "What you risk by using AI systems without these assessments",
+        "paragrafi": [
+          "The short answer: considerably more than a fine. AI Act penalties for failure to carry out the FRIA on high-risk systems can reach **3% of global annual turnover** or €15 million (whichever is higher). GDPR penalties for the absence of a DPIA or for use of Legitimate Interest without a LIA fall under the standard regime and can be very substantial. But the most immediate risk for a professional firm or SME is not the administrative sanction: it is **civil litigation**.",
+          "From 9 December 2026, a client harmed by an erroneous AI analysis, an undocumented automated decision, or a system that processed their data without a valid legal basis will have far more powerful legal tools than before. The absence of a DPIA, FRIA or LIA will serve as evidence that you failed to carry out the required due diligence. This is not a theoretical concern: it is the logic that underpins product liability proceedings.",
+          "For professional firms there is an additional risk: **disciplinary liability**. A chartered accountant or a solicitor who uses undocumented AI systems and causes harm to a client is answerable not only in civil proceedings but also before their professional body. Italian Law 132/2025 has already introduced disclosure obligations towards clients regarding the use of AI: you can read more in our article on [Italian Law 132/2025 and client disclosure](/en/blog/italian-law-132-2025-ai-professionals-client-disclosure.html). Carrying out preventive assessments is not bureaucracy: it is the documentation that protects you when something goes wrong."
+        ],
+        "blocco": {
+          "tipo": "warning",
+          "titolo": "The concrete risks for those who do not document AI adoption",
+          "voci": [
+            {
+              "testo": "AI Act penalties of up to 3% of global turnover for failure to carry out the FRIA on high-risk systems; GDPR penalties for the absence of a DPIA or an unperformed LIA can be very significant."
+            },
+            {
+              "testo": "From 9 December 2026: direct civil liability for harm caused by AI systems, with the absence of preventive documentation used as evidence of negligence in legal proceedings."
+            },
+            {
+              "testo": "For professional firms: disciplinary liability before the relevant professional body in the event of harm to a client caused by undocumented AI systems, in breach of the disclosure obligations under Italian Law 132/2025."
+            }
+          ]
+        }
+      }
+    ],
+    "ovia_view": {
+      "titolo": "AI compliance is not a race to produce the most paperwork",
+      "paragrafi": [
+        "At Ovia we work every day with Italian professional firms and SMEs facing a concrete question: 'I have just adopted this AI tool — what do I need to do now?' The right answer is not 'produce a DPIA, then a FRIA, then a LIA': it is 'first classify the system, then determine which obligations are triggered, then build a framework that handles all of them without duplicating the effort'.",
+        "Our approach to AI compliance always starts with strategy: what are you trying to automate, what data does it touch, who is accountable for it and how do you measure that it works? Only then is the documentation built — and it must be genuine, coherent and updatable, not a pile of PDFs that nobody can find when they are needed.",
+        "This is why our [document management system](/en/services/documenti.html) covers not only client-facing documents but also internal documentation: who decided what, when, and on what evidence. When an inspection arrives — or, worse, litigation — that audit trail is the difference between being protected and being exposed."
+      ]
+    },
+    "faq": [
+      {
+        "domanda": "Do I need to carry out a DPIA, a LIA and a FRIA for every AI system I adopt?",
+        "risposta": "Not necessarily all three. The DPIA is triggered when the system processes personal data with high risks (GDPR). The LIA is only required if you rely on Legitimate Interest as the legal basis for processing. The FRIA is mandatory only for AI systems classified as high-risk under Annex III of the AI Act. The first step is always to classify the system: that determines which obligations apply."
+      },
+      {
+        "domanda": "From 9 December 2026, AI software is treated as a defective product: what changes for me?",
+        "risposta": "Your legal exposure in the event of harm changes significantly. From 9 December 2026, new European rules place software — including AI systems — on the same footing as physical goods for the purposes of liability for damage caused by defective products. If an AI system you use causes harm to a client or a third party, you may be held liable as a 'modifier' of the product, particularly if you customised the system or integrated APIs. Preventive documentation (DPIA, FRIA, supplier contracts) becomes your primary line of defence."
+      },
+      {
+        "domanda": "Who is responsible for producing the FRIA in my firm or business?",
+        "risposta": "The FRIA falls on the deployer: that is, whoever adopts and uses the AI system, not whoever developed it. In a professional firm or SME, this means the responsibility rests with the principal or the manager who decided to put the system into use. However, the AI supplier must provide the technical documentation needed to complete it: this should be included as an explicit obligation in the supply contract."
+      },
+      {
+        "domanda": "How do I avoid duplicating work between the DPIA and the FRIA?",
+        "risposta": "By building a single shared risk analysis as the common core. The DPIA and the FRIA share a large part of the same analysis: data processed, individuals involved, potential risks. If this review is conducted once, thoroughly, both specific documents can be completed by drawing on the same foundation without repetition. The most common mistake is to assign them to different consultants working in silos."
+      },
+      {
+        "domanda": "What deadlines must I meet to be compliant with the AI Act in 2026?",
+        "risposta": "The main deadlines that have already passed or are imminent are: prohibition on banned AI systems (February 2025), transparency obligations for chatbots and interactive systems (August 2025), full application for high-risk Annex III systems (August 2026), and new liability rules for damage from defective products that include AI software (9 December 2026). If you have not yet classified the AI systems you use, start there today."
+      },
+      {
+        "domanda": "What do I risk if I use AI tools without the required assessments?",
+        "risposta": "AI Act penalties for failure to carry out the FRIA on high-risk systems can reach 3% of global turnover or €15 million. GDPR penalties for the absence of a DPIA or LIA can be very significant. But the most immediate risk is civil litigation: from 9 December 2026 the absence of preventive documentation will be used as evidence of negligence in legal proceedings. For professional firms, disciplinary liability before the relevant professional body is an additional exposure."
+      },
+      {
+        "domanda": "Where do I start to bring my AI compliance into order without losing my mind?",
+        "risposta": "With a register of AI systems in use: compile an inventory of every AI tool adopted in the firm or business, noting its function, the data it processes and the supplier. Then classify each system under the AI Act (prohibited, high-risk, limited risk, minimal risk). Only then will you understand which obligations are triggered and be able to build the documentation in the correct order. Without this starting inventory, any compliance effort is flying blind."
+      }
+    ],
+    "conclusione": [
+      "AI compliance in 2026 is not a question of how many documents you produce: it is a question of **the order in which you proceed** and of how well that documentation holds up under pressure — an inspection, a legal dispute, a client's request. DPIA, LIA and FRIA are useful instruments when built on a rigorous analysis; they are worthless paper when drafted in haste to tick a formal compliance box.",
+      "The 9 December 2026 deadline is not a distant warning: it is the day after tomorrow. If you are using AI systems that process data belonging to clients, employees or third parties and you have not yet compiled a register of systems in use and carried out a risk classification, now is the time to start. Not because the regulator demands it, but because the documentation you build today is your concrete defence tomorrow.",
+      "Strategy before tools: understand what to automate, with what risks and with what governance. AI is the instrument — security and accountability are the difference between a firm that gains from AI and one that answers for it in court."
+    ],
+    "prodotti": [
+      {
+        "id": "documenti",
+        "perche": "Managing the collection and tracking of AI compliance documentation — supplier contracts, impact assessments, usage logs — requires a system that keeps track of what has been received, what is missing and who has done what: precisely what you need to build a defensible AI compliance dossier."
+      },
+      {
+        "id": "second-brain",
+        "perche": "A coordinated DPIA–FRIA–LIA framework generates decisions, updates and procedures that must be instantly retrievable: Ovia Second Brain connects every note, decision and procedure to the right context, so that your firm's AI governance does not live solely in one person's head."
+      },
+      {
+        "id": "crm",
+        "perche": "The register of AI systems in use, the periodic review deadlines for impact assessments and the monitoring of AI supplier contracts are exactly the kind of recurring workflow that Ovia CRM handles with automatic deadlines and targeted reminders."
+      }
+    ],
+    "parole": 1855,
+    "minuti": 10,
+    "tradotto": {
+      "da": "ai",
+      "modello": "claude-sonnet-4-6",
+      "il": "2026-11-24T15:58:54.817Z"
+    }
+  }
+}
