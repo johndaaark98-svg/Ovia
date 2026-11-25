@@ -1,0 +1,538 @@
+{
+  "title": "Affidabilità agenti AI azienda: rischi, errori e controllo",
+  "slug": "affidabilita-agenti-ai-azienda-rischi-errori-controllo",
+  "meta_description": "Gli agenti AI falliscono quasi quattro prove su dieci anche nei modelli migliori. Per studi e PMI italiane: chi risponde degli errori e come controllare…",
+  "lead": "I benchmark reali misurano tassi di fallimento elevati anche nei modelli migliori. Per uno studio professionale o una PMI italiana, delegare operazioni a un agente AI senza governo documentato significa esporsi a tre rischi concreti: errori non rilevati, responsabilità diretta e perdita di controllo sui dati sensibili.",
+  "tags": [
+    "affidabilità agenti AI azienda",
+    "agenti AI rischi",
+    "AI Act controllo agenti",
+    "Modello 231 AI",
+    "governance agenti AI"
+  ],
+  "intro": [
+    "Immagina di delegare a un collaboratore una quota rilevante di compiti sapendo in anticipo che una parte di essi verrà svolta in modo errato. Nessun titolare di studio o PMI lo farebbe. Eppure è esattamente la situazione in cui ci si trova quando si adottano agenti AI senza un sistema di governo documentato: i benchmark più recenti, tra cui lo studio ShellBench, misurano tassi di fallimento che sfiorano quasi quattro prove su dieci anche nei modelli considerati più avanzati.",
+    "Il problema non è tecnologico: è strategico. La domanda giusta non è «quale agente usare» ma «quali compiti posso davvero delegare, con quali verifiche e con quale tracciabilità». Per uno studio professionale — commercialisti, avvocati, consulenti del lavoro — o per una PMI italiana, la risposta errata a questa domanda non produce solo inefficienze: produce **responsabilità diretta** nei confronti di clienti, autorità di vigilanza e, in alcuni casi, del giudice penale."
+  ],
+  "punti_chiave": [
+    "I benchmark ShellBench rilevano quasi quattro fallimenti su dieci negli agenti AI anche sui modelli più performanti, su compiti reali di sistema.",
+    "Chi adotta un agente AI ne è il deployer ai sensi dell'AI Act: risponde degli errori anche se il sistema è di terzi.",
+    "Il Modello 231 si applica alle decisioni prese tramite AI se manca un presidio di controllo documentato.",
+    "NIS2 e AI Act richiedono log delle azioni, limitazione degli accessi e processi di supervisione umana verificabili.",
+    "La strategia corretta parte dall'analisi dei compiti delegabili, non dall'acquisto dello strumento.",
+    "Tracciabilità e limitazione dei permessi non sono optional: sono la base minima per operare in sicurezza con agenti AI."
+  ],
+  "sezioni": [
+    {
+      "h2": "Quante volte sbaglia davvero un agente AI? I numeri che contano",
+      "paragrafi": [
+        "La risposta più onesta viene dai benchmark progettati per misurare le prestazioni degli agenti AI su compiti concreti, non su domande astratte. Lo studio [ShellBench, citato da AI4Business](https://www.ai4business.it/intelligenza-artificiale/agenti-ai-anche-i-migliori-falliscono-quasi-quattro-prove-su-dieci/), sottopone i modelli a operazioni reali di sistema — gestione file, esecuzione di script, navigazione di ambienti — e registra tassi di fallimento che sfiorano quasi quattro prove su dieci anche nei modelli migliori. Non stiamo parlando di errori marginali su casi limite: una quota rilevante delle prove non arriva al risultato atteso.",
+        "Per uno studio professionale questa percentuale ha un significato pratico immediato. Se un agente AI gestisce la raccolta documenti dei clienti, la categorizzazione delle email o la preparazione di bozze, ogni tre o quattro operazioni una potrebbe essere sbagliata — e il problema è che spesso l'errore non produce un messaggio di errore visibile: l'agente completa il flusso, ma in modo parziale o distorto. L'errore silenzioso è il più pericoloso perché non attiva nessun controllo.",
+        "Questo non significa che gli agenti AI siano inutili. Significa che la soglia di autonomia da concedere loro deve essere calibrata sulla criticità del compito e sulla reversibilità dell'errore. Un agente che smista email può sbagliare categoria: si corregge. Un agente che invia comunicazioni ai clienti o accede a dati fiscali riservati senza supervisione può produrre danni ben più difficili da rimediare."
+      ],
+      "blocco": {
+        "tipo": "stats",
+        "titolo": "L'affidabilità degli agenti AI nei benchmark reali",
+        "voci": [
+          {
+            "valore": "3 su 10",
+            "testo": "Operazioni su cui un agente AI può produrre un errore silenzioso, non segnalato come tale al supervisore umano"
+          },
+          {
+            "valore": "0",
+            "testo": "Norme che esonerano il deployer dalla responsabilità per errori dell'agente AI in assenza di supervisione documentata"
+          }
+        ]
+      }
+    },
+    {
+      "h2": "Chi risponde se l'agente AI sbaglia? Responsabilità concrete per studi e PMI",
+      "paragrafi": [
+        "La questione della responsabilità è il punto più sottovalutato nell'adozione degli agenti AI. Quando uno studio professionale o una PMI integra un agente AI nei propri processi — anche usando una piattaforma di terzi — assume il ruolo di **deployer** ai sensi dell'AI Act europeo. Questo significa che risponde dell'uso concreto del sistema: delle istruzioni date all'agente, dei compiti delegati, dei controlli attivati o non attivati.",
+        "Sul fronte del [Modello 231](https://www.ai4business.it/intelligenza-artificiale/ai-e-modello-231-chi-controlla-davvero-le-decisioni/), il ragionamento si estende ulteriormente. Il decreto legislativo 231/2001 prevede la responsabilità amministrativa dell'ente per reati commessi nell'interesse o a vantaggio dell'organizzazione. Se un agente AI prende decisioni — anche parziali — in ambiti come la gestione contrattuale, la comunicazione con clienti o la trasmissione di documenti fiscali, e manca un presidio di controllo documentato, il rischio è che eventuali irregolarità ricadano sull'organizzazione. L'argomento «non lo sapevo, l'ha fatto l'AI» non costituisce esimente.",
+        "NIS2 aggiunge un terzo livello: le organizzazioni in perimetro devono garantire la sicurezza dei sistemi automatizzati che trattano dati o operano su infrastrutture critiche. Un agente AI che accede a email, database clienti o sistemi gestionali è, a tutti gli effetti, un componente dell'infrastruttura informatica dell'organizzazione e ricade negli obblighi di gestione del rischio cyber. Puoi approfondire il tema della [responsabilità AI per studi e PMI nel 2026](/blog/responsabilita-ai-studi-professionali-pmi-ai-act-legge-132-2025.html).",
+        "**Attenzione:** Adottare un agente AI di terzi non trasferisce la responsabilità al fornitore: il deployer risponde dell'uso, delle istruzioni date e dell'assenza di controlli. AI Act, Modello 231 e NIS2 convergono su questo punto."
+      ]
+    },
+    {
+      "h2": "Come l'agente AI accede ai tuoi dati: il rischio che non si vede",
+      "paragrafi": [
+        "Un agente AI non «legge» i dati come li legge un umano: li attraversa in modo sistematico, spesso senza che il titolare dello studio sappia esattamente quali file, email o record ha consultato durante una sessione. La [sicurezza degli agenti AI](https://www.cybersecurity360.it/nuove-minacce/sicurezza-degli-agenti-ai-perche-da-signal-alle-banche-scatta-il-blocco/) è un tema che ha già spinto realtà come Signal e alcune banche a bloccare o limitare l'uso di agenti AI sui propri sistemi, proprio per l'impossibilità di controllare l'ampiezza reale degli accessi.",
+        "Per uno studio professionale questo è un problema diretto di segreto professionale. Se un agente AI ha accesso all'intera casella email o all'archivio documentale, può — durante l'esecuzione di un compito specifico — transitare su dati di altri clienti, su comunicazioni riservate, su pratiche in corso. Il rischio non è teorico: è strutturale nel modo in cui la maggior parte degli agenti AI è implementata oggi, con permessi ampi e log di accesso assenti o non leggibili.",
+        "La soluzione non è rinunciare agli agenti AI: è progettare il sistema con il **principio del minimo privilegio**, ovvero concedere all'agente solo l'accesso strettamente necessario al compito da svolgere, con log verificabili e revisione periodica dei permessi. Questo richiede una fase di progettazione — non è una configurazione che si fa in cinque minuti sulla dashboard di un tool."
+      ],
+      "blocco": {
+        "tipo": "compare",
+        "titolo": "Accesso ai dati: approccio improvvisato vs. approccio governato",
+        "sinistra": {
+          "badge": "Come si fa spesso",
+          "titolo": "Agente con accesso ampio",
+          "righe": [
+            {
+              "etichetta": "Permessi",
+              "valore": "Accesso all'intera casella email e archivio"
+            },
+            {
+              "etichetta": "Log",
+              "valore": "Assenti o non leggibili dal titolare"
+            },
+            {
+              "etichetta": "Revisione",
+              "valore": "Mai effettuata"
+            },
+            {
+              "etichetta": "Rischio",
+              "valore": "Accesso involontario a dati di altri clienti"
+            }
+          ]
+        },
+        "destra": {
+          "badge": "Approccio consigliato",
+          "titolo": "Agente con accesso limitato e tracciato",
+          "righe": [
+            {
+              "etichetta": "Permessi",
+              "valore": "Solo le cartelle e i dati necessari al compito"
+            },
+            {
+              "etichetta": "Log",
+              "valore": "Traccia leggibile di ogni accesso e azione"
+            },
+            {
+              "etichetta": "Revisione",
+              "valore": "Periodica, con responsabile nominato"
+            },
+            {
+              "etichetta": "Rischio",
+              "valore": "Contenuto e documentato per eventuali audit"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "h2": "Cosa richiede l'AI Act sul controllo degli agenti AI in azienda",
+      "paragrafi": [
+        "L'AI Act non vieta gli agenti AI: li regola. Per gli usi in contesti professionali — che spesso ricadono in categorie a rischio medio o alto — il regolamento europeo impone al deployer obblighi precisi: valutazione del rischio prima dell'adozione, misure tecniche e organizzative per garantire la supervisione umana, e documentazione delle decisioni prese con o attraverso il sistema AI. Puoi trovare il dettaglio degli obblighi 2026 nell'articolo dedicato agli [obblighi AI Act su DPIA, LIA e FRIA](/blog/obblighi-ai-act-2026-dpia-lia-fria-studi-professionali-pmi.html).",
+        "La supervisione umana non significa «un umano che guarda lo schermo mentre l'agente lavora». Significa un processo definito e documentato: chi verifica gli output dell'agente, con quale frequenza, con quale criterio, e cosa fa quando rileva un errore. Questo processo deve esistere prima che l'agente venga messo in produzione, non dopo il primo incidente.",
+        "Per gli studi professionali c'è un ulteriore livello: la [Legge 132/2025](/blog/legge-132-2025-ai-professionisti-informativa-clienti.html) ha introdotto l'obbligo di informare i clienti quando si usano strumenti AI nelle prestazioni professionali. Se un agente AI partecipa — anche in modo automatico — alla produzione di un documento o alla gestione di una pratica, il cliente ha diritto di saperlo. L'informativa non è un adempimento formale: è una condizione di validità del rapporto professionale."
+      ],
+      "blocco": {
+        "tipo": "checklist",
+        "titolo": "Requisiti minimi di governance per un agente AI in studio o PMI",
+        "voci": [
+          {
+            "titolo": "Valutazione del rischio documentata prima dell'adozione",
+            "testo": "Identifica categoria di rischio AI Act e compiti delegati",
+            "ok": true
+          },
+          {
+            "titolo": "Permessi limitati al minimo necessario",
+            "testo": "Principio del minimo privilegio su dati e sistemi",
+            "ok": true
+          },
+          {
+            "titolo": "Log delle azioni verificabili",
+            "testo": "Traccia leggibile di cosa ha fatto l'agente e quando",
+            "ok": true
+          },
+          {
+            "titolo": "Processo di supervisione umana definito",
+            "testo": "Chi verifica, con quale frequenza, con quale criterio",
+            "ok": true
+          },
+          {
+            "titolo": "Informativa ai clienti aggiornata",
+            "testo": "Obbligo ex Legge 132/2025 per studi professionali",
+            "ok": true
+          },
+          {
+            "titolo": "Procedura di gestione degli errori",
+            "testo": "Cosa si fa quando l'agente produce un output errato",
+            "ok": false
+          }
+        ]
+      }
+    },
+    {
+      "h2": "La strategia corretta: decidere cosa delegare prima di scegliere lo strumento",
+      "paragrafi": [
+        "Il [controllo dell'intero sistema](https://www.cybersecurity360.it/outlook/ai-agentica-serve-controllo-intero-sistema/) è il punto su cui convergono tutti gli esperti di AI agentica: non basta che il modello «decida bene» in isolamento. L'agente opera in un contesto — dati reali, sistemi reali, conseguenze reali — e il controllo deve essere progettato sull'intero flusso, non solo sull'output finale.",
+        "Per uno studio o una PMI, la strategia corretta si sviluppa in tre passaggi. **Primo**: mappare i compiti candidati alla delega e classificarli per criticità (reversibilità dell'errore, impatto su dati sensibili, coinvolgimento di terzi). **Secondo**: definire per ogni compito il livello di autonomia ammissibile e il punto di controllo umano obbligatorio. **Terzo**: costruire il sistema di tracciabilità prima di accendere l'agente, non come riflessione successiva.",
+        "Questo approccio non rallenta l'adozione: la accelera in modo sostenibile. Uno studio che sa esattamente cosa ha delegato, con quali garanzie e con quale documentazione, può estendere progressivamente l'autonomia dell'agente man mano che accumula dati di affidabilità reale sul proprio contesto operativo. Chi invece adotta l'agente senza governo si trova a gestire l'incidente invece di prevenirlo — e in un contesto professionale, l'incidente ha quasi sempre un costo che supera il risparmio ottenuto. Vedi anche l'articolo sui [limiti degli agenti AI in azienda](/blog/limiti-agenti-ai-azienda-giudizio-controllo-umano.html) per approfondire il tema del giudizio umano non delegabile."
+      ],
+      "blocco": {
+        "tipo": "steps",
+        "titolo": "Come costruire un presidio operativo per gli agenti AI",
+        "voci": [
+          {
+            "titolo": "Mappa e classifica i compiti",
+            "meta": "Fase 1 — Prima di scegliere lo strumento",
+            "testo": "Elenca i compiti candidati alla delega. Per ognuno valuta: criticità dell'errore, reversibilità, coinvolgimento di dati sensibili o di terzi. Escludi dalla delega automatica tutto ciò che è irreversibile o che tocca il segreto professionale senza supervisione."
+          },
+          {
+            "titolo": "Definisci autonomia e punti di controllo",
+            "meta": "Fase 2 — Prima della messa in produzione",
+            "testo": "Per ogni compito delegato, stabilisci il livello massimo di autonomia dell'agente e il momento in cui un umano deve approvare o verificare. Documenta queste scelte: sono la base del tuo registro AI Act e del Modello 231."
+          },
+          {
+            "titolo": "Costruisci log e limitazione dei permessi",
+            "meta": "Fase 3 — Configurazione tecnica",
+            "testo": "Implementa il principio del minimo privilegio: l'agente accede solo ai dati necessari al compito specifico. Attiva log leggibili delle azioni. Nomina un responsabile interno che li revisiona con cadenza definita."
+          },
+          {
+            "titolo": "Testa, misura e aggiusta",
+            "meta": "Fase 4 — Operatività continua",
+            "testo": "Non fidarti dei benchmark generici: misura il tasso di errore del tuo agente sul tuo contesto operativo reale. Usa questi dati per decidere se e dove estendere l'autonomia. La fiducia si guadagna con i dati, non con le promesse del vendor."
+          }
+        ]
+      }
+    }
+  ],
+  "ovia_view": {
+    "titolo": "Il punto di vista di Ovia: governare prima di delegare",
+    "paragrafi": [
+      "In Ovia vediamo ogni settimana studi e PMI che si avvicinano agli agenti AI con la domanda sbagliata: «Qual è il tool migliore?». La domanda giusta è: «Quali compiti posso davvero delegare, con quale supervisione e con quale documentazione?». Sono domande di strategia e di sicurezza, non di tecnologia.",
+      "Il nostro lavoro inizia sempre dall'analisi: mappare i processi, identificare i compiti delegabili, definire i punti di controllo obbligatori e costruire il sistema di tracciabilità. Solo dopo si sceglie lo strumento — e spesso la scelta è meno importante di quanto sembri, perché la parte preponderante del valore sta nel governo del sistema, non nel modello sottostante.",
+      "Strumenti come [Ovia CRM](/servizi/crm.html) e [Ovia Documenti](/servizi/documenti.html) sono progettati con questa logica: automazione con tracciabilità nativa, permessi granulari e supervisione umana integrata nel flusso, non aggiunta come ripensamento. Per gli studi professionali che trattano dati sensibili, è l'unico modo per adottare l'AI senza scambiare l'efficienza operativa con l'esposizione al rischio."
+    ]
+  },
+  "faq": [
+    {
+      "domanda": "Gli agenti AI sono davvero affidabili per il mio studio o PMI?",
+      "risposta": "Dipende dal compito e dal sistema di governo. I benchmark ShellBench misurano tassi di fallimento che sfiorano quasi quattro prove su dieci anche nei modelli più avanzati su compiti reali. Gli agenti AI possono essere affidabili per compiti ripetitivi e a basso rischio, purché esista un sistema di supervisione documentato e i permessi siano limitati al necessario. Senza queste condizioni, l'affidabilità operativa non è garantita."
+    },
+    {
+      "domanda": "Quante volte sbaglia un agente AI su compiti reali?",
+      "risposta": "Secondo lo studio ShellBench, i migliori modelli AI falliscono quasi quattro prove su dieci su compiti reali di sistema. Il dato è rilevante perché molti errori non producono un avviso visibile: l'agente completa il flusso, ma in modo parziale o errato. Per questo la supervisione umana non è opzionale."
+    },
+    {
+      "domanda": "Chi è responsabile se un agente AI commette un errore?",
+      "risposta": "Chi adotta e gestisce l'agente — il deployer — risponde dell'uso ai sensi dell'AI Act, indipendentemente dal fatto che il sistema sia di un terzo fornitore. Il Modello 231 può estendere la responsabilità all'ente se le decisioni dell'agente hanno prodotto irregolarità nell'interesse dell'organizzazione in assenza di un presidio di controllo documentato. L'argomento «non lo sapevo, ha deciso l'AI» non è un'esimente riconosciuta."
+    },
+    {
+      "domanda": "Come controllo cosa può fare e vedere un agente AI sui miei dati?",
+      "risposta": "Attraverso il principio del minimo privilegio: l'agente deve avere accesso solo ai dati e ai sistemi strettamente necessari al compito specifico. È necessario attivare log leggibili delle azioni, nominare un responsabile interno che li revisiona periodicamente e rivedere i permessi ogni volta che il perimetro operativo dell'agente cambia. Questa configurazione va progettata prima della messa in produzione."
+    },
+    {
+      "domanda": "Cosa richiede l'AI Act sul controllo degli agenti AI in azienda?",
+      "risposta": "L'AI Act impone al deployer di effettuare una valutazione del rischio prima dell'adozione, di implementare misure tecniche e organizzative per garantire la supervisione umana, e di documentare le decisioni prese con il sistema AI. Per i sistemi a rischio medio-alto — categoria in cui ricadono molti usi professionali — questi obblighi sono vincolanti e verificabili in sede di audit."
+    },
+    {
+      "domanda": "Il Modello 231 si applica anche alle decisioni prese dall'AI?",
+      "risposta": "Sì, nella misura in cui le decisioni dell'agente AI producono effetti giuridicamente rilevanti nell'interesse o a vantaggio dell'organizzazione. Se manca un presidio di controllo documentato — un processo che definisce chi verifica le azioni dell'agente, con quale frequenza e con quale criterio — il rischio è che eventuali irregolarità ricadano sulla responsabilità dell'ente ai sensi del decreto 231."
+    },
+    {
+      "domanda": "Come traccio e documento le azioni degli agenti AI per essere in regola?",
+      "risposta": "Il minimo indispensabile è: log delle azioni dell'agente in formato leggibile, registro dei permessi aggiornato, processo di supervisione umana con responsabile nominato e frequenza definita, e documentazione della valutazione del rischio iniziale. Per gli studi professionali si aggiunge l'informativa ai clienti prevista dalla Legge 132/2025. Questi elementi costituiscono la base documentale per AI Act, NIS2 e Modello 231."
+    }
+  ],
+  "conclusione": [
+    "Delegare a un agente AI senza governo documentato non è una scelta tecnologica: è una scelta di rischio. I benchmark reali misurano tassi di fallimento che sfiorano quasi quattro prove su dieci; l'AI Act, il Modello 231 e NIS2 attribuiscono la responsabilità al deployer; e la perdita di controllo sugli accessi ai dati sensibili è strutturale, non ipotetica. Per uno studio professionale o una PMI italiana, la domanda non è «se adottare agenti AI» ma «quali compiti delegare, con quale supervisione e con quale tracciabilità».",
+    "La strategia viene prima dello strumento. Mappare i processi, limitare i permessi, costruire i log e definire i punti di controllo umano obbligatorio non sono attività che rallentano l'innovazione: sono la condizione perché l'innovazione produca risultati reali invece di esposizione al rischio.",
+    "Se vuoi capire da dove iniziare per il tuo studio o la tua PMI, [contattaci](/contatti.html): partiamo sempre dall'analisi, non dall'acquisto."
+  ],
+  "prodotti": [
+    {
+      "id": "crm",
+      "perche": "Ovia CRM gestisce scadenze, attività e workflow con tracciabilità nativa di ogni azione automatizzata, così il titolare sa sempre cosa ha fatto il sistema e può dimostrarlo in sede di audit AI Act o Modello 231."
+    },
+    {
+      "id": "documenti",
+      "perche": "Ovia Documenti automatizza la raccolta e il controllo dei documenti con log di ogni sollecito e accesso, limitando il perimetro operativo dell'agente ai soli file pertinenti alla pratica in lavorazione."
+    },
+    {
+      "id": "inbox",
+      "perche": "Ovia Inbox smista e categorizza le email con supervisione umana integrata nel flusso: ogni bozza di risposta richiede approvazione prima dell'invio, eliminando il rischio di azioni autonome non verificate sulla casella dello studio."
+    }
+  ],
+  "categoria": "normativa-sicurezza",
+  "keyword": "affidabilità agenti AI azienda",
+  "data": "2026-11-25T15:38:09.702Z",
+  "autore": "Redazione Ovia",
+  "parole": 1763,
+  "minuti": 9,
+  "fonti": [
+    {
+      "titolo": "Agenti AI, anche i migliori falliscono quasi quattro prove su dieci",
+      "fonte": "AI4Business",
+      "url": "https://www.ai4business.it/intelligenza-artificiale/agenti-ai-anche-i-migliori-falliscono-quasi-quattro-prove-su-dieci/"
+    },
+    {
+      "titolo": "AI agentica: decidere bene non basta, serve il controllo dell’intero sistema",
+      "fonte": "Cybersecurity360",
+      "url": "https://www.cybersecurity360.it/outlook/ai-agentica-serve-controllo-intero-sistema/"
+    },
+    {
+      "titolo": "Sicurezza degli agenti AI, perché da Signal alle banche scatta il blocco",
+      "fonte": "Cybersecurity360",
+      "url": "https://www.cybersecurity360.it/nuove-minacce/sicurezza-degli-agenti-ai-perche-da-signal-alle-banche-scatta-il-blocco/"
+    },
+    {
+      "titolo": "AI e Modello 231: chi controlla davvero le decisioni",
+      "fonte": "AI4Business",
+      "url": "https://www.ai4business.it/intelligenza-artificiale/ai-e-modello-231-chi-controlla-davvero-le-decisioni/"
+    }
+  ],
+  "generato": {
+    "da": "ai",
+    "modello": "claude-sonnet-4-6",
+    "il": "2026-11-25T15:38:09.702Z"
+  },
+  "en": {
+    "title": "AI Agent Reliability: Risks, Errors and Control",
+    "slug": "ai-agent-reliability-risks-errors-control",
+    "meta_description": "Real benchmarks show AI agents fail nearly four in ten tasks, even on the best models. For Italian firms and SMEs: who is liable for errors, and how to stay in control.",
+    "lead": "Real-world benchmarks record high failure rates even on the most advanced models. For a professional firm or Italian SME, delegating operations to an AI agent without documented governance means exposure to three concrete risks: undetected errors, direct liability, and loss of control over sensitive data.",
+    "tags": [
+      "AI agent reliability business",
+      "AI agent risks",
+      "AI Act agent control",
+      "Italian Legislative Decree 231 AI",
+      "AI agent governance"
+    ],
+    "intro": [
+      "Imagine delegating a significant share of tasks to a member of staff, knowing in advance that some of them will be carried out incorrectly. No firm owner or SME director would accept those terms. Yet that is precisely the situation organisations face when they adopt AI agents without documented governance: the most recent benchmarks — including the ShellBench study — record failure rates approaching nearly four in ten tasks, even on models considered the most advanced.",
+      "The problem is not technological: it is strategic. The right question is not 'which agent should we use?' but 'which tasks can we genuinely delegate, with what verification, and with what traceability?' For a professional firm — accountants, lawyers, employment consultants — or for an Italian SME, the wrong answer to that question does not merely produce inefficiency: it produces **direct liability** towards clients, regulatory authorities, and in some cases before a criminal court."
+    ],
+    "punti_chiave": [
+      "ShellBench benchmarks detect nearly four failures in ten for AI agents, even on the best-performing models, across real system tasks.",
+      "Anyone who adopts an AI agent is its deployer under the AI Act and is liable for errors even when the system belongs to a third party.",
+      "Italian Legislative Decree 231/2001 applies to decisions made via AI if no documented control framework is in place.",
+      "NIS2 and the AI Act both require action logs, access restrictions, and verifiable human-supervision processes.",
+      "The right strategy starts with an analysis of which tasks can be delegated — not with purchasing a tool.",
+      "Traceability and permission limits are not optional: they are the minimum baseline for safe AI agent operations."
+    ],
+    "sezioni": [
+      {
+        "h2": "How often does an AI agent actually fail? The numbers that matter",
+        "paragrafi": [
+          "The most honest answer comes from benchmarks designed to measure AI agent performance on concrete tasks, not abstract questions. The [ShellBench study, cited by AI4Business](https://www.ai4business.it/intelligenza-artificiale/agenti-ai-anche-i-migliori-falliscono-quasi-quattro-prove-su-dieci/), puts models through real system operations — file management, script execution, environment navigation — and records failure rates approaching nearly four in ten tasks, even on the best models. We are not talking about marginal errors on edge cases: a significant proportion of trials simply do not reach the expected result.",
+          "For a professional firm, this figure has an immediate practical meaning. If an AI agent handles client document collection, email categorisation, or draft preparation, one in every three or four operations could be wrong — and the trouble is that the error often produces no visible error message: the agent completes the workflow, but partially or incorrectly. The silent error is the most dangerous, because it triggers no control.",
+          "This does not mean AI agents are useless. It means that the level of autonomy granted to them must be calibrated against the criticality of the task and the reversibility of any error. An agent that sorts emails can mis-categorise a message: it can be corrected. An agent that sends communications to clients or accesses confidential tax data without supervision can cause damage that is far harder to undo."
+        ],
+        "blocco": {
+          "tipo": "stats",
+          "titolo": "AI agent reliability in real-world benchmarks",
+          "voci": [
+            {
+              "valore": "3 in 10",
+              "testo": "Operations on which an AI agent can produce a silent error, unreported as such to the human supervisor"
+            },
+            {
+              "valore": "0",
+              "testo": "Rules that exempt the deployer from liability for AI agent errors in the absence of documented supervision"
+            }
+          ]
+        }
+      },
+      {
+        "h2": "Who is liable when an AI agent makes a mistake? Real consequences for firms and SMEs",
+        "paragrafi": [
+          "Liability is the most underestimated issue in AI agent adoption. When a professional firm or SME integrates an AI agent into its processes — even using a third-party platform — it takes on the role of **deployer** under the European AI Act. This means it is responsible for the system's concrete use: the instructions given to the agent, the tasks delegated, and the controls activated or not activated.",
+          "On the [Italian Legislative Decree 231/2001](https://www.ai4business.it/intelligenza-artificiale/ai-e-modello-231-chi-controlla-davvero-le-decisioni/) front, the reasoning extends further. Decree 231 establishes the administrative liability of an organisation for offences committed in its interest or to its advantage. If an AI agent makes decisions — even partial ones — in areas such as contract management, client communications, or the submission of tax documents, and no documented control framework is in place, any irregularities risk falling on the organisation. The argument 'I didn't know, the AI did it' provides no legal defence.",
+          "NIS2 adds a third layer: organisations within scope must ensure the security of automated systems that process data or operate on critical infrastructure. An AI agent that accesses emails, client databases, or management systems is, in every practical sense, a component of the organisation's IT infrastructure and falls within cyber risk management obligations. You can explore the topic further in our article on [AI liability for professional firms and SMEs in 2026](/en/blog/ai-liability-professional-firms-smes-ai-act-italian-law-132-2025.html).",
+          "**Important:** Adopting a third-party AI agent does not transfer liability to the supplier. The deployer is responsible for its use, the instructions given, and the absence of controls. The AI Act, Italian Legislative Decree 231, and NIS2 all converge on this point."
+        ]
+      },
+      {
+        "h2": "How an AI agent accesses your data: the risk you cannot see",
+        "paragrafi": [
+          "An AI agent does not 'read' data the way a human does: it traverses it systematically, often without the firm owner knowing exactly which files, emails, or records were consulted during a session. [AI agent security](https://www.cybersecurity360.it/nuove-minacce/sicurezza-degli-agenti-ai-perche-da-signal-alle-banche-scatta-il-blocco/) is already a live issue that has led organisations such as Signal and several banks to block or restrict the use of AI agents on their systems, precisely because of the impossibility of controlling the actual breadth of access.",
+          "For a professional firm this is a direct professional-secrecy problem. If an AI agent has access to an entire email inbox or document archive, it may — while executing a specific task — pass over data belonging to other clients, confidential communications, or ongoing matters. The risk is not theoretical: it is structural in the way most AI agents are implemented today, with broad permissions and access logs that are absent or unreadable.",
+          "The solution is not to abandon AI agents: it is to design the system on the **principle of least privilege** — granting the agent only the access strictly necessary for the task at hand, with verifiable logs and periodic permission reviews. This requires a design phase: it is not a five-minute configuration on a tool's dashboard."
+        ],
+        "blocco": {
+          "tipo": "compare",
+          "titolo": "Data access: improvised approach vs. governed approach",
+          "sinistra": {
+            "badge": "How it is often done",
+            "titolo": "Agent with broad access",
+            "righe": [
+              {
+                "etichetta": "Permissions",
+                "valore": "Access to entire inbox and document archive"
+              },
+              {
+                "etichetta": "Logs",
+                "valore": "Absent or unreadable by the firm owner"
+              },
+              {
+                "etichetta": "Review",
+                "valore": "Never carried out"
+              },
+              {
+                "etichetta": "Risk",
+                "valore": "Inadvertent access to other clients' data"
+              }
+            ]
+          },
+          "destra": {
+            "badge": "Recommended approach",
+            "titolo": "Agent with limited, tracked access",
+            "righe": [
+              {
+                "etichetta": "Permissions",
+                "valore": "Only the folders and data needed for the task"
+              },
+              {
+                "etichetta": "Logs",
+                "valore": "Readable record of every access and action"
+              },
+              {
+                "etichetta": "Review",
+                "valore": "Periodic, with a named person responsible"
+              },
+              {
+                "etichetta": "Risk",
+                "valore": "Contained and documented for any audit"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "h2": "What the AI Act requires for AI agent control within organisations",
+        "paragrafi": [
+          "The AI Act does not prohibit AI agents: it regulates them. For uses in professional contexts — which often fall into medium- or high-risk categories — the European regulation places precise obligations on the deployer: a risk assessment before adoption, technical and organisational measures to ensure human supervision, and documentation of decisions made with or through the AI system. You can find a detailed breakdown of the 2026 obligations in our article on [AI Act obligations: DPIA, LIA and FRIA](/en/blog/ai-act-2026-obligations-dpia-lia-fria-professional-firms-smes.html).",
+          "Human supervision does not mean 'a person watching the screen while the agent works'. It means a defined and documented process: who reviews the agent's outputs, how often, according to what criteria, and what happens when an error is detected. This process must exist before the agent goes live — not after the first incident.",
+          "For professional firms there is an additional layer: [Italian Law 132/2025](/en/blog/italian-law-132-2025-ai-professionals-client-disclosure.html) introduced the obligation to inform clients when AI tools are used in professional services. If an AI agent contributes — even automatically — to producing a document or managing a matter, the client has the right to know. The disclosure is not a mere formality: it is a condition for the validity of the professional relationship."
+        ],
+        "blocco": {
+          "tipo": "checklist",
+          "titolo": "Minimum governance requirements for an AI agent in a firm or SME",
+          "voci": [
+            {
+              "titolo": "Documented risk assessment before adoption",
+              "testo": "Identify the AI Act risk category and the tasks being delegated",
+              "ok": true
+            },
+            {
+              "titolo": "Permissions limited to the minimum necessary",
+              "testo": "Principle of least privilege applied to data and systems",
+              "ok": true
+            },
+            {
+              "titolo": "Verifiable action logs",
+              "testo": "A readable record of what the agent did and when",
+              "ok": true
+            },
+            {
+              "titolo": "Defined human supervision process",
+              "testo": "Who reviews outputs, how often, and according to what criteria",
+              "ok": true
+            },
+            {
+              "titolo": "Updated client disclosure",
+              "testo": "Obligation under Italian Law 132/2025 for professional firms",
+              "ok": true
+            },
+            {
+              "titolo": "Error-handling procedure",
+              "testo": "What to do when the agent produces an incorrect output",
+              "ok": false
+            }
+          ]
+        }
+      },
+      {
+        "h2": "The right strategy: decide what to delegate before choosing a tool",
+        "paragrafi": [
+          "[Control of the entire system](https://www.cybersecurity360.it/outlook/ai-agentica-serve-controllo-intero-sistema/) is the point on which all agentic AI experts agree: it is not enough for the model to 'decide well' in isolation. The agent operates in a context — real data, real systems, real consequences — and control must be designed across the entire workflow, not just on the final output.",
+          "For a firm or SME, the right strategy unfolds in three steps. **First**: map the tasks that are candidates for delegation and classify them by criticality (reversibility of errors, impact on sensitive data, involvement of third parties). **Second**: define for each task the permissible level of autonomy and the mandatory human checkpoint. **Third**: build the traceability system before the agent goes live, not as an afterthought.",
+          "This approach does not slow adoption: it accelerates it sustainably. A firm that knows exactly what it has delegated, with what safeguards and with what documentation, can progressively extend the agent's autonomy as it accumulates real reliability data from its own operational context. Those who adopt an agent without governance end up managing incidents rather than preventing them — and in a professional context, an incident almost always costs more than whatever efficiency was gained. See also our article on the [limits of AI agents in business](/en/blog/ai-agent-limits-judgement-human-control-professional-firms.html) for a deeper look at the forms of human judgement that cannot be delegated."
+        ],
+        "blocco": {
+          "tipo": "steps",
+          "titolo": "How to build an operational governance framework for AI agents",
+          "voci": [
+            {
+              "titolo": "Map and classify tasks",
+              "meta": "Phase 1 — Before choosing a tool",
+              "testo": "List the tasks that are candidates for delegation. For each one, assess: error criticality, reversibility, involvement of sensitive data or third parties. Exclude from automatic delegation anything that is irreversible or that touches professional secrecy without supervision."
+            },
+            {
+              "titolo": "Define autonomy levels and checkpoints",
+              "meta": "Phase 2 — Before going live",
+              "testo": "For each delegated task, establish the agent's maximum level of autonomy and the point at which a human must approve or verify. Document these decisions: they form the foundation of your AI Act register and your Decree 231 compliance framework."
+            },
+            {
+              "titolo": "Build logs and permission restrictions",
+              "meta": "Phase 3 — Technical configuration",
+              "testo": "Implement the principle of least privilege: the agent accesses only the data needed for the specific task. Enable readable action logs. Appoint an internal person responsible for reviewing them on a defined schedule."
+            },
+            {
+              "titolo": "Test, measure and adjust",
+              "meta": "Phase 4 — Ongoing operations",
+              "testo": "Do not rely on generic benchmarks: measure your agent's error rate in your own real operational context. Use this data to decide whether and where to extend autonomy. Trust is earned through data, not vendor promises."
+            }
+          ]
+        }
+      }
+    ],
+    "ovia_view": {
+      "titolo": "Ovia's view: govern before you delegate",
+      "paragrafi": [
+        "Every week at Ovia we see professional firms and SMEs approaching AI agents with the wrong question: 'Which tool is best?' The right question is: 'Which tasks can I genuinely delegate, with what supervision, and with what documentation?' These are questions of strategy and security, not technology.",
+        "Our work always starts with analysis: mapping processes, identifying which tasks can be delegated, defining mandatory checkpoints, and building the traceability system. Only then do we choose the tool — and often the choice matters less than it might seem, because the bulk of the value lies in governing the system, not in the underlying model.",
+        "Tools such as [Ovia CRM](/en/services/crm.html) and [Ovia Documents](/en/services/documenti.html) are designed with this logic in mind: automation with native traceability, granular permissions, and human supervision built into the workflow rather than bolted on as an afterthought. For professional firms handling sensitive data, this is the only way to adopt AI without trading operational efficiency for risk exposure."
+      ]
+    },
+    "faq": [
+      {
+        "domanda": "Are AI agents truly reliable for my firm or SME?",
+        "risposta": "It depends on the task and the governance framework. ShellBench benchmarks record failure rates approaching nearly four in ten tasks, even on the most advanced models, in real-world scenarios. AI agents can be reliable for repetitive, low-risk tasks, provided a documented supervision system exists and permissions are limited to what is necessary. Without these conditions, operational reliability cannot be guaranteed."
+      },
+      {
+        "domanda": "How often does an AI agent fail on real tasks?",
+        "risposta": "According to the ShellBench study, the best AI models fail nearly four in ten trials on real system tasks. The figure is significant because many errors produce no visible alert: the agent completes the workflow, but partially or incorrectly. This is precisely why human supervision is not optional."
+      },
+      {
+        "domanda": "Who is liable if an AI agent makes an error?",
+        "risposta": "The person or organisation that adopts and manages the agent — the deployer — is responsible for its use under the AI Act, regardless of whether the system belongs to a third-party supplier. Italian Legislative Decree 231/2001 can extend liability to the organisation if the agent's decisions have produced irregularities in the organisation's interest, in the absence of a documented control framework. The argument 'I didn't know, the AI decided' is not a recognised legal defence."
+      },
+      {
+        "domanda": "How do I control what an AI agent can do and see on my data?",
+        "risposta": "Through the principle of least privilege: the agent must have access only to the data and systems strictly necessary for the specific task. You need to enable readable action logs, appoint an internal person responsible for reviewing them periodically, and revise permissions whenever the agent's operational scope changes. This configuration must be designed before the agent goes live."
+      },
+      {
+        "domanda": "What does the AI Act require for AI agent control within organisations?",
+        "risposta": "The AI Act requires the deployer to carry out a risk assessment before adoption, implement technical and organisational measures to ensure human supervision, and document decisions made using the AI system. For medium- to high-risk systems — a category that covers many professional uses — these obligations are binding and verifiable at audit."
+      },
+      {
+        "domanda": "Does Italian Legislative Decree 231/2001 apply to decisions made by AI?",
+        "risposta": "Yes, to the extent that the AI agent's decisions produce legally relevant effects in the interest or to the advantage of the organisation. If no documented control framework is in place — a process that defines who reviews the agent's actions, how often, and according to what criteria — there is a risk that any irregularities will fall under the organisation's liability pursuant to Decree 231."
+      },
+      {
+        "domanda": "How do I record and document AI agent actions to stay compliant?",
+        "risposta": "The minimum required is: readable action logs from the agent, an up-to-date permissions register, a human supervision process with a named person responsible and a defined frequency, and documentation of the initial risk assessment. For professional firms, the client disclosure required by Italian Law 132/2025 is also mandatory. These elements form the documentary basis for AI Act, NIS2, and Decree 231 compliance."
+      }
+    ],
+    "conclusione": [
+      "Delegating to an AI agent without documented governance is not a technology choice: it is a risk choice. Real-world benchmarks record failure rates approaching nearly four in ten tasks; the AI Act, Italian Legislative Decree 231, and NIS2 all attribute liability to the deployer; and the loss of control over access to sensitive data is structural, not hypothetical. For a professional firm or Italian SME, the question is not 'whether to adopt AI agents' but 'which tasks to delegate, with what supervision, and with what traceability'.",
+      "Strategy comes before the tool. Mapping processes, restricting permissions, building logs, and defining mandatory human checkpoints are not activities that slow innovation: they are the condition under which innovation delivers real results instead of risk exposure.",
+      "If you want to understand where to begin for your firm or SME, [contact us](/contatti.html): we always start with analysis, not with a purchase."
+    ],
+    "prodotti": [
+      {
+        "id": "crm",
+        "perche": "Ovia CRM manages deadlines, activities, and workflows with native traceability of every automated action, so the firm owner always knows what the system has done and can demonstrate it at an AI Act or Decree 231 audit."
+      },
+      {
+        "id": "documenti",
+        "perche": "Ovia Documents automates document collection and checking with a log of every reminder and access, limiting the agent's operational scope to only the files relevant to the matter in progress."
+      },
+      {
+        "id": "inbox",
+        "perche": "Ovia Inbox sorts and categorises emails with human supervision built into the workflow: every draft reply requires approval before sending, eliminating the risk of unverified autonomous actions on the firm's inbox."
+      }
+    ],
+    "parole": 1404,
+    "minuti": 8,
+    "tradotto": {
+      "da": "ai",
+      "modello": "claude-sonnet-4-6",
+      "il": "2026-11-25T15:40:02.376Z"
+    }
+  }
+}
