@@ -1,0 +1,660 @@
+{
+  "title": "Sicurezza dati AI studi professionali: guida pratica 2026",
+  "slug": "sicurezza-dati-ai-studi-professionali-confidential-computing-gdpr",
+  "meta_description": "Sicurezza dati AI studi professionali: confidential computing, Agent Data Injection, GDPR e AI Act. Cosa fare prima di usare l'AI su documenti riservati.",
+  "lead": "OpenAI Private Inference, attacchi Agent Data Injection e il progetto Shirudo convergono su un'unica domanda urgente: quando si usa l'AI su documenti riservati, chi può davvero vedere i dati — e chi risponde se qualcosa va storto?",
+  "tags": [
+    "sicurezza dati AI studi professionali",
+    "confidential computing",
+    "Agent Data Injection",
+    "GDPR AI",
+    "segreto professionale AI"
+  ],
+  "intro": [
+    "Ogni settimana uno studio professionale carica su un sistema AI decine di documenti riservati: contratti, bilanci, fascicoli di causa, buste paga, visure. Lo fa perché l'AI fa risparmiare tempo. Ma raramente si ferma a rispondere a una domanda semplice: **chi può vedere questi dati, oltre al modello che li elabora?**",
+    "Questa settimana quattro notizie distinte — il test di [OpenAI Private Inference sui dati aziendali riservati](https://www.ai4business.it/intelligenza-artificiale/openai-avvia-private-inference-il-test-sui-dati-aziendali-riservati/), i benchmark sugli [strumenti AI per l'ufficio legale](https://www.agendadigitale.eu/intelligenza-artificiale-ai/soluzioni/ai-per-lufficio-legale-benchmark-2027-sui-principali-tool-per-corporate-governance-e-contratti/), la scoperta degli [attacchi Agent Data Injection](https://www.cybersecurity360.it/nuove-minacce/agent-data-injection-la-classe-di-attacchi-che-aggira-le-difese-contro-la-prompt-injection/) e il progetto [Shirudo di OpenAI e Cisco](https://www.ai4business.it/intelligenza-artificiale/shirudo-di-openai-e-cisco-lo-scudo-di-protezione-scritto-da-un-agente/) — convergono tutte su questo punto. Non si tratta di allarmismo: si tratta di capire quale architettura scegliere e quali garanzie pretendere, prima di attivare qualsiasi agente sul proprio studio.",
+    "L'angolo di questo articolo è quello della strategia: l'AI è uno strumento potente, ma la sicurezza dei dati dei clienti non è una variabile da ottimizzare dopo. È il presupposto da cui partire."
+  ],
+  "punti_chiave": [
+    "OpenAI ha avviato il test di Private Inference, una tecnologia di confidential computing che promette di elaborare dati sensibili senza che nemmeno i server del fornitore possano leggerli in chiaro.",
+    "Gli attacchi Agent Data Injection sono una nuova classe di minacce che aggirano le difese tradizionali contro la prompt injection, manipolando i dati che un agente AI legge prima ancora che arrivi la richiesta dell'utente.",
+    "Il progetto Shirudo, sviluppato da OpenAI e Cisco, punta a costruire difese adattive scritte da agenti AI stessi, ma è ancora in fase sperimentale.",
+    "Per uno studio professionale italiano, il quadro normativo è triplice: GDPR, AI Act e Legge 132/2025 sul segreto professionale. Nessuno strumento AI è conforme per default.",
+    "La scelta dell'architettura — cloud standard, cloud con garanzie contrattuali, confidential computing o on-premise — è una decisione strategica che precede la scelta dello strumento.",
+    "Pretendere garanzie contrattuali scritte dal fornitore AI non è un eccesso di cautela: è un obbligo di diligenza professionale."
+  ],
+  "sezioni": [
+    {
+      "h2": "OpenAI Private Inference: cosa promette e cosa ancora non garantisce",
+      "paragrafi": [
+        "OpenAI ha avviato il test di **Private Inference**, una modalità basata sul cosiddetto confidential computing. L'idea di fondo è semplice da spiegare: i dati vengono elaborati all'interno di un ambiente hardware isolato — tecnicamente chiamato \"enclave sicura\" o TEE, Trusted Execution Environment — in modo che nemmeno i tecnici del fornitore possano leggerli in chiaro durante l'elaborazione. È una promessa ambiziosa, che risponde a una delle preoccupazioni più diffuse tra chi usa l'AI su dati riservati.",
+        "Per uno studio commercialistico o legale, la distinzione è rilevante. Oggi, quando si carica un documento su un'API cloud standard, il testo passa attraverso i server del fornitore in chiaro: chi gestisce l'infrastruttura può tecnicamente accedervi. Con il confidential computing, anche questo accesso dovrebbe essere impedito a livello hardware. Il condizionale è d'obbligo: **la tecnologia è in fase di test**, non è ancora disponibile su larga scala e le garanzie contrattuali che la accompagnano non sono ancora definite nella forma che uno studio professionale italiano richiederebbe per soddisfare GDPR e AI Act.",
+        "La notizia è importante non perché cambia tutto oggi, ma perché segnala la direzione del mercato. I grandi fornitori AI stanno riconoscendo che il cloud standard non basta per i dati sensibili. Per chi deve scegliere un'architettura adesso, tuttavia, affidarsi a una funzionalità in beta con garanzie ancora non scritte sarebbe una scelta avventata."
+      ],
+      "blocco": {
+        "tipo": "compare",
+        "titolo": "Cloud standard vs. Confidential computing: cosa cambia per i dati dello studio",
+        "sinistra": {
+          "badge": "Cloud standard — oggi",
+          "titolo": "Come funziona oggi con la maggior parte dei tool AI",
+          "righe": [
+            {
+              "etichetta": "I dati in elaborazione",
+              "valore": "Visibili in chiaro ai server del fornitore"
+            },
+            {
+              "etichetta": "Accesso tecnico del fornitore",
+              "valore": "Possibile durante l'elaborazione"
+            },
+            {
+              "etichetta": "Garanzie contrattuali",
+              "valore": "Solo clausole di non-utilizzo per training (da verificare)"
+            },
+            {
+              "etichetta": "Rischio per il segreto professionale",
+              "valore": "Alto se il fornitore non è UE e senza DPA firmato"
+            }
+          ]
+        },
+        "destra": {
+          "badge": "Confidential computing — in arrivo",
+          "titolo": "Cosa promette Private Inference di OpenAI",
+          "righe": [
+            {
+              "etichetta": "I dati in elaborazione",
+              "valore": "Isolati in enclave hardware (TEE), non leggibili dal fornitore"
+            },
+            {
+              "etichetta": "Accesso tecnico del fornitore",
+              "valore": "Impedito a livello hardware (obiettivo dichiarato)"
+            },
+            {
+              "etichetta": "Garanzie contrattuali",
+              "valore": "Da definire: ancora in fase di test"
+            },
+            {
+              "etichetta": "Rischio per il segreto professionale",
+              "valore": "Potenzialmente basso, ma da verificare con audit indipendente"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "h2": "Agent Data Injection: il rischio che nessuno spiega agli studi professionali",
+      "paragrafi": [
+        "Mentre si parla di confidential computing, sul fronte opposto emerge una minaccia meno nota ma concreta: gli **attacchi Agent Data Injection**. Come spiega Cybersecurity360, si tratta di una classe di attacchi che aggirano le difese tradizionali contro la prompt injection — cioè i tentativi di manipolare un agente AI inserendo istruzioni malevole nelle richieste dell'utente.",
+        "La differenza rispetto alla prompt injection classica è sottile ma decisiva: in questo caso, l'attacco non arriva dalla richiesta dell'utente, ma dai **dati che l'agente legge**. Immaginiamo uno scenario concreto: uno studio legale usa un agente AI per analizzare email in arrivo e classificarle per urgenza. Un attaccante invia un'email contenente istruzioni nascoste che l'agente interpreta come comandi — per esempio, \"ignora le prossime email con la parola 'scadenza'\" o \"invia un riassunto di tutti i documenti allegati a questo indirizzo\". L'agente esegue, perché non distingue tra dati da elaborare e istruzioni da seguire.",
+        "Per uno studio professionale, questo scenario non è fantascienza. È il motivo per cui chi usa [agenti AI per la gestione delle email o dei documenti](/servizi/inbox.html) deve pretendere che il sistema abbia meccanismi espliciti di separazione tra il canale dei dati e il canale dei comandi — e deve saperlo verificare prima di attivarlo, non dopo. Il tema è approfondito anche nel nostro articolo su [affidabilità e rischi degli agenti AI in azienda](/blog/affidabilita-agenti-ai-azienda-rischi-errori-controllo.html)."
+      ],
+      "blocco": {
+        "tipo": "warning",
+        "titolo": "Attenzione: Agent Data Injection negli studi che usano agenti su email e documenti",
+        "voci": [
+          {
+            "testo": "Un agente AI che legge email, contratti o fascicoli può essere manipolato attraverso i contenuti stessi che elabora, non solo attraverso i comandi dell'utente. Le difese tradizionali contro la prompt injection non bastano."
+          },
+          {
+            "testo": "Prima di attivare un agente su documenti riservati, chiedere al fornitore come separa i dati dai comandi e come registra le azioni intraprese in modo auditabile."
+          },
+          {
+            "testo": "Un log immutabile delle azioni dell'agente non è un optional tecnico: è una necessità di compliance per GDPR e AI Act, oltre che uno strumento di difesa in caso di contestazione professionale."
+          }
+        ]
+      }
+    },
+    {
+      "h2": "Shirudo: difese adattive scritte dagli agenti stessi — opportunità o rischio?",
+      "paragrafi": [
+        "Il progetto **Shirudo**, sviluppato da OpenAI in collaborazione con Cisco, porta il ragionamento sulla sicurezza un passo più avanti: invece di regole di sicurezza scritte una volta per tutte da un team di esperti, Shirudo usa agenti AI per generare e aggiornare dinamicamente le proprie politiche di difesa. L'agente analizza i tentativi di attacco, ne ricava pattern e riscrive le regole di protezione in tempo reale.",
+        "È un approccio interessante dal punto di vista tecnico, ma per uno studio professionale solleva una domanda pratica immediata: **chi supervisiona le regole che l'agente ha scritto per proteggersi?** Se una politica di sicurezza generata automaticamente contiene un errore o un'eccezione non voluta, il responsabile dello studio non ha modo di accorgersene senza un processo di revisione umana esplicito. È esattamente il tipo di automation bias di cui abbiamo già scritto — delegare il controllo a un sistema che nessuno ha il tempo di verificare.",
+        "Shirudo è ancora in fase sperimentale. Ma il suo principio — difese adattive generate da AI — è destinato a diffondersi. La domanda che ogni studio dovrebbe porre a qualsiasi fornitore di sicurezza AI è: chi firma le politiche di accesso ai miei dati? Se la risposta è \"un agente\", serve almeno un processo di approvazione umana documentato."
+      ],
+      "blocco": {
+        "tipo": "steps",
+        "titolo": "Come valutare un fornitore AI che promette sicurezza adattiva",
+        "voci": [
+          {
+            "titolo": "Chiedi chi approva le regole di sicurezza",
+            "meta": "Passo 1",
+            "testo": "Le politiche di accesso ai tuoi dati devono essere firmate da una persona responsabile, non generate e applicate automaticamente senza revisione umana."
+          },
+          {
+            "titolo": "Pretendi un log auditabile",
+            "meta": "Passo 2",
+            "testo": "Ogni azione dell'agente sui tuoi dati deve essere registrata in modo immutabile: chi ha letto cosa, quando, con quale esito. Questo vale sia per GDPR sia per AI Act."
+          },
+          {
+            "titolo": "Verifica la possibilità di rollback",
+            "meta": "Passo 3",
+            "testo": "Se una regola di sicurezza generata automaticamente produce un comportamento anomalo, devi poter tornare alla versione precedente senza dipendere dal fornitore."
+          },
+          {
+            "titolo": "Chiedi i risultati di un audit indipendente",
+            "meta": "Passo 4",
+            "testo": "Dichiarazioni di sicurezza non verificate da terzi non hanno valore contrattuale né probatorio in caso di violazione. Pretendi certificazioni o report di penetration test."
+          }
+        ]
+      }
+    },
+    {
+      "h2": "Segreto professionale, GDPR e AI Act: il quadro normativo che gli studi non possono ignorare",
+      "paragrafi": [
+        "Per uno studio professionale italiano, la sicurezza dei dati nell'uso dell'AI non è una questione tecnica opzionale: è un **obbligo normativo con conseguenze disciplinari e penali**. Il quadro è composto da tre livelli sovrapposti.",
+        "Il **GDPR** impone che qualsiasi trattamento di dati personali dei clienti avvenga con una base giuridica valida, con un Data Processing Agreement firmato dal fornitore (anche cloud, anche AI) e con misure tecniche adeguate. Usare un tool AI senza DPA firmato espone lo studio a sanzioni del Garante. L'**AI Act** aggiunge obblighi specifici per i sistemi AI ad alto rischio — che includono applicazioni in ambito legale e fiscale — tra cui la trasparenza delle decisioni automatizzate e la supervisione umana. La **Legge 132/2025** rafforza il presidio sul segreto professionale, rendendo ancora più delicato il trasferimento di dati coperti da segreto a sistemi cloud gestiti da soggetti terzi.",
+        "La combinazione di questi tre livelli significa che scegliere uno strumento AI per lo studio non è una decisione IT: è una decisione legale e strategica. I benchmark sugli [strumenti AI per l'ufficio legale](https://www.agendadigitale.eu/intelligenza-artificiale-ai/soluzioni/ai-per-lufficio-legale-benchmark-2027-sui-principali-tool-per-corporate-governance-e-contratti/) valutano la qualità delle risposte, ma raramente valutano la conformità contrattuale del fornitore. Uno strumento che produce ottime analisi contrattuali ma non offre DPA, non indica la giurisdizione dei server o non permette la cancellazione dei dati è, dal punto di vista professionale, inutilizzabile su dati reali dei clienti. Puoi approfondire gli obblighi specifici nel nostro articolo sugli [obblighi AI Act 2026 per studi e PMI](/blog/obblighi-ai-act-2026-dpia-lia-fria-studi-professionali-pmi.html)."
+      ],
+      "blocco": {
+        "tipo": "checklist",
+        "titolo": "Checklist contrattuale: cosa pretendere da un fornitore AI prima di usarlo sui dati dei clienti",
+        "voci": [
+          {
+            "titolo": "Data Processing Agreement (DPA) firmato",
+            "testo": "Il fornitore deve essere nominato responsabile del trattamento ai sensi dell'art. 28 GDPR. Senza DPA, il trattamento è irregolare.",
+            "ok": true
+          },
+          {
+            "titolo": "Localizzazione dei server in UE o garanzie equivalenti",
+            "testo": "I trasferimenti extra-UE richiedono meccanismi aggiuntivi (SCC, BCR). Verificare contrattualmente, non solo sulla base del sito marketing.",
+            "ok": true
+          },
+          {
+            "titolo": "Esclusione dell'uso dei dati per training",
+            "testo": "Il fornitore non deve poter usare i documenti dello studio per addestrare i propri modelli. Deve essere scritto nel contratto, non solo nelle FAQ.",
+            "ok": true
+          },
+          {
+            "titolo": "Procedura di cancellazione dei dati certificata",
+            "testo": "Deve esistere una procedura documentata per la cancellazione completa dei dati a fine rapporto, con certificazione scritta.",
+            "ok": true
+          },
+          {
+            "titolo": "Log auditabile delle elaborazioni",
+            "testo": "Lo studio deve poter sapere quali dati sono stati elaborati, quando e con quale esito, per rispondere a eventuali richieste del Garante o dei clienti.",
+            "ok": true
+          },
+          {
+            "titolo": "Clausole di responsabilità in caso di violazione",
+            "testo": "Il contratto deve prevedere chi risponde in caso di data breach e con quali tempi di notifica, compatibili con le 72 ore previste dal GDPR.",
+            "ok": true
+          }
+        ]
+      }
+    },
+    {
+      "h2": "Come scegliere l'architettura giusta: on-premise, confidential computing o cloud con garanzie?",
+      "paragrafi": [
+        "La domanda pratica che ogni studio o PMI italiana deve porsi non è \"quale AI usare\" ma **\"quale architettura posso sostenere, dati i miei obblighi professionali e la tipologia di dati che tratto?\"**. Non esiste una risposta universale: dipende dalla sensibilità dei dati, dal volume di elaborazioni, dalle risorse IT disponibili e dal livello di rischio che il titolare è disposto ad assumersi.",
+        "L'**on-premise** — cioè un modello AI installato sui propri server o su infrastruttura controllata — è la soluzione che offre il massimo controllo: i dati non escono mai dall'ambiente dello studio. Il costo è più alto in termini di setup e manutenzione, e i modelli disponibili on-premise sono generalmente meno potenti di quelli cloud. Ma per uno studio legale con fascicoli penali o per un commercialista con dati fiscali altamente sensibili, può essere l'unica scelta compatibile con il segreto professionale. Il **confidential computing**, come proposto da Private Inference, è una via di mezzo promettente: mantiene la potenza del cloud ma aggiunge isolamento hardware. È però ancora in fase sperimentale e richiede, prima dell'adozione, una verifica indipendente delle garanzie effettive. Il **cloud standard con garanzie contrattuali solide** — DPA firmato, server UE, esclusione del training, log auditabili — è la soluzione più accessibile oggi, a condizione di applicare la checklist contrattuale senza eccezioni e di limitare i dati trasferiti al minimo necessario (principio di minimizzazione del GDPR).",
+        "Un [sistema CRM o di gestione documentale progettato con architettura on-premise o ibrida](/servizi/crm.html) consente di separare il layer di elaborazione AI dai dati grezzi, riducendo la superficie di esposizione senza rinunciare all'automazione."
+      ],
+      "blocco": {
+        "tipo": "steps",
+        "titolo": "Le tre domande da rispondere prima di scegliere l'architettura AI per lo studio",
+        "voci": [
+          {
+            "titolo": "Quanto sono sensibili i dati che elaborerò?",
+            "meta": "Domanda 1",
+            "testo": "Dati coperti da segreto professionale, dati fiscali di persone fisiche o dati sanitari richiedono architetture con garanzie più alte rispetto a documenti amministrativi generici."
+          },
+          {
+            "titolo": "Quali obblighi normativi si applicano al mio studio?",
+            "meta": "Domanda 2",
+            "testo": "Avvocati, commercialisti e consulenti del lavoro hanno obblighi deontologici e di legge (Legge 132/2025, GDPR, AI Act) che limitano le architetture ammissibili. La valutazione deve essere fatta prima, non dopo."
+          },
+          {
+            "titolo": "Ho le risorse per verificare e mantenere la conformità?",
+            "meta": "Domanda 3",
+            "testo": "Una soluzione on-premise non controllata è più rischiosa di un cloud con DPA solido. L'architettura giusta è quella che si riesce effettivamente a governare, non quella teoricamente più sicura."
+          }
+        ]
+      }
+    },
+    {
+      "h2": "Rischi residui e misura: cosa resta in capo allo studio anche con le migliori garanzie",
+      "paragrafi": [
+        "Anche scegliendo l'architettura più sicura disponibile, **alcuni rischi restano in capo allo studio** e non possono essere trasferiti contrattualmente al fornitore. Il primo è il rischio di configurazione errata: un agente AI mal configurato che ha accesso a più dati del necessario è una vulnerabilità indipendente dal fornitore. Il secondo è il rischio di Agent Data Injection via documenti esterni: se lo studio accetta file da controparti o clienti e li fa elaborare da un agente, ogni documento è un potenziale vettore di attacco. Il terzo è il rischio di supervisione insufficiente: un output dell'agente non verificato da un professionista che firma il documento finale è una violazione dell'AI Act, oltre che un rischio deontologico.",
+        "Misurare questi rischi residui richiede un processo semplice ma sistematico: definire quali categorie di dati l'agente può toccare, registrare ogni elaborazione, prevedere una revisione umana per ogni output che produce effetti giuridici o fiscali. Non è burocrazia: è la differenza tra un'adozione AI che protegge lo studio e una che lo espone. Per chi gestisce grandi volumi di documenti in arrivo, un sistema come [Ovia Documenti](/servizi/documenti.html) può aiutare a strutturare questo controllo senza aggiungere lavoro manuale.",
+        "La notizia di questa settimana — dall'architettura di Private Inference agli attacchi Agent Data Injection — conferma che il panorama della sicurezza AI evolve rapidamente. Chi adotta oggi uno strumento senza una governance definita si trova tra sei mesi a gestire un rischio che non aveva pianificato. Chi invece parte dalla strategia — architettura, contratti, processi di supervisione — può adottare anche strumenti nuovi senza ricominciare da capo ogni volta."
+      ],
+      "blocco": {
+        "tipo": "checklist",
+        "titolo": "Rischi residui da gestire internamente, indipendente dal fornitore scelto",
+        "voci": [
+          {
+            "titolo": "Principio del minimo privilegio",
+            "testo": "Ogni agente AI deve avere accesso solo ai dati strettamente necessari al compito assegnato. Non all'intero archivio dello studio.",
+            "ok": true
+          },
+          {
+            "titolo": "Supervisione umana obbligatoria sugli output con effetti legali o fiscali",
+            "testo": "Un professionista deve leggere, valutare e firmare ogni documento prodotto o analizzato dall'AI prima che produca effetti verso terzi.",
+            "ok": true
+          },
+          {
+            "titolo": "Procedura di incident response per data breach AI",
+            "testo": "Se un agente elabora dati in modo anomalo o viene manipolato, deve esistere una procedura scritta per bloccare, notificare e documentare l'incidente entro 72 ore.",
+            "ok": true
+          },
+          {
+            "titolo": "Formazione del personale sui vettori di attacco via documento",
+            "testo": "Chi carica documenti nell'agente deve sapere che ogni file esterno è un potenziale vettore di Agent Data Injection. Non è paranoia: è igiene operativa.",
+            "ok": false
+          },
+          {
+            "titolo": "Revisione periodica delle configurazioni dell'agente",
+            "testo": "Le configurazioni degli agenti AI devono essere riviste almeno ogni sei mesi o a ogni aggiornamento significativo del sistema, non solo al momento dell'installazione.",
+            "ok": false
+          }
+        ]
+      }
+    }
+  ],
+  "ovia_view": {
+    "titolo": "La posizione di Ovia: l'architettura prima dello strumento",
+    "paragrafi": [
+      "In Ovia progettiamo sistemi AI per studi professionali e PMI italiane partendo sempre da una domanda che precede qualsiasi scelta tecnologica: **quali dati tratti, con quale base giuridica, e quali conseguenze hai se qualcosa va storto?** La risposta a queste tre domande determina l'architettura, non il contrario.",
+      "Questo significa che non proponiamo lo strumento più nuovo o più potente per default. Proponiamo l'architettura che consente allo studio di lavorare con l'AI senza mettere a rischio il segreto professionale, la compliance GDPR e gli obblighi dell'AI Act. A volte questa architettura è on-premise. A volte è un cloud con garanzie contrattuali verificate. Sempre include un processo di supervisione umana sugli output che contano.",
+      "Le notizie di questa settimana — Private Inference, Agent Data Injection, Shirudo — confermano che il mercato sta maturando nella direzione giusta. Ma la maturazione del mercato non sostituisce la responsabilità dello studio. Chi aspetta che tutti i problemi siano risolti dal fornitore è già in ritardo. Chi costruisce oggi una governance interna solida sarà in grado di adottare le nuove architetture — compreso il confidential computing quando sarà stabile — senza dover ricominciare da capo."
+    ]
+  },
+  "faq": [
+    {
+      "domanda": "I dati che invio a ChatGPT o ad altri AI sono al sicuro?",
+      "risposta": "Dipende da come si usa il servizio e da quali accordi contrattuali sono in vigore. Con le API standard, i dati passano in chiaro attraverso i server del fornitore. OpenAI offre la possibilità di firmare un Data Processing Agreement e di disattivare l'uso dei dati per il training, ma questo deve essere configurato esplicitamente. Senza queste garanzie scritte, uno studio professionale non dovrebbe caricare dati coperti da segreto professionale o dati personali dei clienti."
+    },
+    {
+      "domanda": "Cos'è il confidential computing e serve davvero a proteggere i miei dati?",
+      "risposta": "Il confidential computing è una tecnologia che elabora i dati all'interno di ambienti hardware isolati (chiamati TEE, Trusted Execution Environment), in modo che nemmeno i tecnici del fornitore possano leggerli in chiaro durante l'elaborazione. OpenAI sta testando questa tecnologia con il progetto Private Inference. È una direzione promettente, ma è ancora in fase sperimentale: le garanzie contrattuali che accompagnano queste soluzioni non sono ancora definite nella forma richiesta da GDPR e AI Act per uno studio professionale italiano."
+    },
+    {
+      "domanda": "Posso usare l'AI su documenti riservati senza violare il segreto professionale?",
+      "risposta": "Sì, ma a precise condizioni: il fornitore AI deve essere nominato responsabile del trattamento con un DPA firmato, i server devono essere in UE o con garanzie equivalenti, e il fornitore non deve poter usare i dati per addestrare i propri modelli. Inoltre, la Legge 132/2025 rafforza gli obblighi sul segreto professionale: i dati coperti da segreto non devono essere accessibili a soggetti terzi non autorizzati, inclusi i fornitori cloud. La valutazione va fatta caso per caso, con il supporto di un consulente legale."
+    },
+    {
+      "domanda": "Cosa sono gli attacchi Agent Data Injection e come mi difendo?",
+      "risposta": "Gli attacchi Agent Data Injection sono una classe di minacce in cui istruzioni malevole vengono nascoste nei dati che un agente AI elabora — per esempio in un'email o in un documento caricato — invece che nelle richieste dell'utente. L'agente le interpreta come comandi e le esegue. Per difendersi, bisogna pretendere che il sistema AI separi chiaramente il canale dei dati dal canale dei comandi, mantenga un log auditabile di ogni azione e preveda limiti espliciti sulle operazioni che l'agente può compiere autonomamente."
+    },
+    {
+      "domanda": "Come scelgo uno strumento AI per il mio studio legale o commercialistico senza rischiare violazioni del GDPR?",
+      "risposta": "Prima di valutare la qualità delle risposte dello strumento, verifica la conformità contrattuale del fornitore: DPA firmato, localizzazione dei server, esclusione dell'uso dei dati per training, procedura di cancellazione certificata e log delle elaborazioni. Solo dopo aver verificato questi punti ha senso valutare le funzionalità. Uno strumento eccellente sul piano tecnico ma privo di garanzie contrattuali è inutilizzabile su dati reali dei clienti."
+    },
+    {
+      "domanda": "OpenAI Private Inference è adatto a uno studio professionale italiano?",
+      "risposta": "Non ancora, nella sua forma attuale. Il progetto è in fase di test e le garanzie contrattuali che accompagnano la tecnologia non sono ancora definite nella forma richiesta da GDPR, AI Act e Legge 132/2025. Vale la pena monitorare l'evoluzione, ma adottarlo oggi su dati sensibili dei clienti sarebbe prematuro. Chi vuole architetture con garanzie più solide oggi ha a disposizione soluzioni on-premise o cloud UE con DPA verificato."
+    },
+    {
+      "domanda": "Quali garanzie contrattuali devo chiedere a un fornitore AI prima di usarlo sui dati dei clienti?",
+      "risposta": "Le garanzie minime sono sei: Data Processing Agreement firmato (art. 28 GDPR), localizzazione dei server in UE o meccanismi equivalenti per i trasferimenti extra-UE, esclusione contrattuale dell'uso dei dati per training, procedura documentata di cancellazione a fine rapporto, log auditabile delle elaborazioni, e clausole di responsabilità in caso di data breach con tempi di notifica compatibili con le 72 ore del GDPR. Senza questi elementi, il fornitore non è utilizzabile in conformità per uno studio professionale italiano."
+    }
+  ],
+  "conclusione": [
+    "Le notizie di questa settimana — Private Inference, Agent Data Injection, Shirudo — non sono segnali di allarme da ignorare né promesse di soluzioni imminenti da attendere passivamente. Sono la conferma che il problema della sicurezza dei dati nell'AI è reale, in evoluzione, e richiede una risposta strategica da parte di chi gestisce dati riservati ogni giorno.",
+    "La buona notizia è che chi costruisce oggi una governance solida — architettura corretta, contratti verificati, processi di supervisione umana, formazione del personale — non dovrà ricominciare da capo ogni volta che il mercato introduce una nuova tecnologia. Il framework rimane lo stesso: cambiano gli strumenti, non la strategia.",
+    "Il passo successivo non è aspettare che il confidential computing sia maturo o che tutti i fornitori diventino conformi per default. È fare oggi l'inventario dei dati che si elaborano con l'AI, verificare i contratti in vigore e identificare i gap. È un lavoro di poche ore che può evitare conseguenze ben più costose."
+  ],
+  "prodotti": [
+    {
+      "id": "documenti",
+      "perche": "Gestisce la raccolta, il controllo e il sollecito di documenti con un'architettura che limita l'accesso ai dati al minimo necessario, riducendo la superficie di esposizione per gli attacchi Agent Data Injection e semplificando il log auditabile richiesto da GDPR e AI Act."
+    },
+    {
+      "id": "crm",
+      "perche": "Progettato con architettura on-premise o ibrida su misura per studi professionali, consente di separare il layer di elaborazione AI dai dati grezzi dei clienti, mantenendo il controllo completo sulla localizzazione e sull'accesso ai dati sensibili."
+    },
+    {
+      "id": "inbox",
+      "perche": "Gestisce lo smistamento e le risposte alle email con meccanismi espliciti di separazione tra dati e comandi, riducendo il rischio di Agent Data Injection via email malevole e mantenendo la supervisione umana sulle bozze prima dell'invio."
+    }
+  ],
+  "categoria": "normativa-sicurezza",
+  "keyword": "sicurezza dati AI studi professionali",
+  "data": "2026-11-26T15:11:30.059Z",
+  "autore": "Redazione Ovia",
+  "parole": 2465,
+  "minuti": 12,
+  "fonti": [
+    {
+      "titolo": "AI per l’ufficio legale: benchmark 2027 sui principali tool per corporate governance e contratti",
+      "fonte": "Agenda Digitale",
+      "url": "https://www.agendadigitale.eu/intelligenza-artificiale-ai/soluzioni/ai-per-lufficio-legale-benchmark-2027-sui-principali-tool-per-corporate-governance-e-contratti/"
+    },
+    {
+      "titolo": "OpenAI avvia Private Inference: il test sui dati aziendali riservati",
+      "fonte": "AI4Business",
+      "url": "https://www.ai4business.it/intelligenza-artificiale/openai-avvia-private-inference-il-test-sui-dati-aziendali-riservati/"
+    },
+    {
+      "titolo": "Agent Data Injection: la classe di attacchi che aggira le difese contro la prompt injection",
+      "fonte": "Cybersecurity360",
+      "url": "https://www.cybersecurity360.it/nuove-minacce/agent-data-injection-la-classe-di-attacchi-che-aggira-le-difese-contro-la-prompt-injection/"
+    },
+    {
+      "titolo": "Shirudo di OpenAI e Cisco: lo scudo di protezione scritto da un agente",
+      "fonte": "AI4Business",
+      "url": "https://www.ai4business.it/intelligenza-artificiale/shirudo-di-openai-e-cisco-lo-scudo-di-protezione-scritto-da-un-agente/"
+    }
+  ],
+  "generato": {
+    "da": "ai",
+    "modello": "claude-sonnet-4-6",
+    "il": "2026-11-26T15:11:30.059Z"
+  },
+  "en": {
+    "title": "AI Data Security for Professional Firms: 2026 Guide",
+    "slug": "ai-data-security-professional-firms-confidential-computing-gdpr",
+    "meta_description": "AI data security for professional firms: confidential computing, Agent Data Injection, GDPR and the AI Act. What to do before using AI on confidential documents.",
+    "lead": "OpenAI Private Inference, Agent Data Injection attacks and the Shirudo project all converge on a single pressing question: when you use AI on confidential documents, who can actually see the data — and who is liable if something goes wrong?",
+    "tags": [
+      "AI data security professional firms",
+      "confidential computing",
+      "Agent Data Injection",
+      "GDPR AI",
+      "professional secrecy AI"
+    ],
+    "intro": [
+      "Every week a professional firm uploads dozens of confidential documents to an AI system: contracts, financial statements, case files, payslips, company registry records. It does so because AI saves time. But it rarely stops to answer a simple question: **who can see these data, beyond the model that processes them?**",
+      "This week four separate news stories — the [OpenAI Private Inference test on confidential business data](https://www.ai4business.it/intelligenza-artificiale/openai-avvia-private-inference-il-test-sui-dati-aziendali-riservati/), the [benchmarks on AI tools for legal departments](https://www.agendadigitale.eu/intelligenza-artificiale-ai/soluzioni/ai-per-lufficio-legale-benchmark-2027-sui-principali-tool-per-corporate-governance-e-contratti/), the discovery of [Agent Data Injection attacks](https://www.cybersecurity360.it/nuove-minacce/agent-data-injection-la-classe-di-attacchi-che-aggira-le-difese-contro-la-prompt-injection/), and the [Shirudo project by OpenAI and Cisco](https://www.ai4business.it/intelligenza-artificiale/shirudo-di-openai-e-cisco-lo-scudo-di-protezione-scritto-da-un-agente/) — all converge on this same point. This is not scaremongering: it is about understanding which architecture to choose and which guarantees to demand, before activating any AI agent in your firm.",
+      "The angle of this article is strategic: AI is a powerful tool, but the security of client data is not a variable to be optimised later. It is the starting point."
+    ],
+    "punti_chiave": [
+      "OpenAI has launched a test of Private Inference, a confidential computing technology that promises to process sensitive data without even the provider's servers being able to read it in plain text.",
+      "Agent Data Injection attacks are a new class of threats that bypass traditional defences against prompt injection by manipulating the data an AI agent reads before any user request is made.",
+      "The Shirudo project, developed by OpenAI and Cisco, aims to build adaptive defences written by AI agents themselves, but it is still at an experimental stage.",
+      "For an Italian professional firm, the regulatory framework has three layers: the GDPR, the AI Act, and Italian Law 132/2025 on professional secrecy. No AI tool is compliant by default.",
+      "The choice of architecture — standard cloud, cloud with contractual guarantees, confidential computing or on-premise — is a strategic decision that must precede the choice of tool.",
+      "Demanding written contractual guarantees from your AI provider is not excessive caution: it is a professional duty of care."
+    ],
+    "sezioni": [
+      {
+        "h2": "OpenAI Private Inference: what it promises and what it still does not guarantee",
+        "paragrafi": [
+          "OpenAI has launched a test of **Private Inference**, a mode based on so-called confidential computing. The underlying idea is straightforward: data is processed within an isolated hardware environment — technically known as a 'secure enclave' or TEE, Trusted Execution Environment — in such a way that not even the provider's own engineers can read it in plain text during processing. It is an ambitious promise, and one that speaks directly to one of the most widespread concerns among those using AI on confidential data.",
+          "For an accountancy or law firm, the distinction matters. Today, when you upload a document to a standard cloud API, the text passes through the provider's servers in plain text: whoever manages the infrastructure can technically access it. With confidential computing, even that access is meant to be blocked at the hardware level. The conditional is necessary: **the technology is in a testing phase**, is not yet available at scale, and the contractual guarantees accompanying it have not yet been defined in the form that an Italian professional firm would require to satisfy the GDPR and the AI Act.",
+          "This news matters not because it changes everything today, but because it signals the direction of the market. The major AI providers are acknowledging that standard cloud is not sufficient for sensitive data. For those who need to choose an architecture right now, however, relying on a beta feature with guarantees still unwritten would be a rash decision."
+        ],
+        "blocco": {
+          "tipo": "compare",
+          "titolo": "Standard cloud vs. Confidential computing: what changes for firm data",
+          "sinistra": {
+            "badge": "Standard cloud — today",
+            "titolo": "How it works today with most AI tools",
+            "righe": [
+              {
+                "etichetta": "Data during processing",
+                "valore": "Visible in plain text to the provider's servers"
+              },
+              {
+                "etichetta": "Provider's technical access",
+                "valore": "Possible during processing"
+              },
+              {
+                "etichetta": "Contractual guarantees",
+                "valore": "Only no-training clauses (to be verified)"
+              },
+              {
+                "etichetta": "Risk to professional secrecy",
+                "valore": "High if provider is non-EU and no DPA is signed"
+              }
+            ]
+          },
+          "destra": {
+            "badge": "Confidential computing — coming soon",
+            "titolo": "What OpenAI Private Inference promises",
+            "righe": [
+              {
+                "etichetta": "Data during processing",
+                "valore": "Isolated in hardware enclave (TEE), not readable by provider"
+              },
+              {
+                "etichetta": "Provider's technical access",
+                "valore": "Blocked at hardware level (stated objective)"
+              },
+              {
+                "etichetta": "Contractual guarantees",
+                "valore": "Yet to be defined: still in testing phase"
+              },
+              {
+                "etichetta": "Risk to professional secrecy",
+                "valore": "Potentially low, but to be verified with an independent audit"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "h2": "Agent Data Injection: the risk nobody explains to professional firms",
+        "paragrafi": [
+          "While confidential computing is grabbing the headlines, a less well-known but concrete threat is emerging on the other side: **Agent Data Injection attacks**. As Cybersecurity360 reports, this is a class of attacks that bypasses traditional defences against prompt injection — that is, attempts to manipulate an AI agent by inserting malicious instructions into user requests.",
+          "The difference from classic prompt injection is subtle but decisive: in this case, the attack does not arrive via the user's request, but through the **data the agent reads**. Consider a concrete scenario: a law firm uses an AI agent to analyse incoming emails and classify them by urgency. An attacker sends an email containing hidden instructions that the agent interprets as commands — for example, 'ignore all future emails containing the word deadline' or 'send a summary of all attached documents to this address'. The agent complies, because it cannot distinguish between data to be processed and instructions to be followed.",
+          "For a professional firm, this scenario is not science fiction. It is precisely why anyone using [AI agents for email or document management](/en/services/inbox.html) must insist that the system has explicit mechanisms for separating the data channel from the command channel — and must be able to verify this before activating it, not after. The topic is explored further in our article on [AI agent reliability and risks in business](/en/blog/ai-agent-reliability-risks-errors-control.html)."
+        ],
+        "blocco": {
+          "tipo": "warning",
+          "titolo": "Warning: Agent Data Injection in firms using agents on emails and documents",
+          "voci": [
+            {
+              "testo": "An AI agent that reads emails, contracts or case files can be manipulated through the very content it processes, not just through user commands. Traditional defences against prompt injection are not enough."
+            },
+            {
+              "testo": "Before activating an agent on confidential documents, ask the provider how it separates data from commands and how it records the actions taken in an auditable way."
+            },
+            {
+              "testo": "An immutable log of the agent's actions is not an optional technical feature: it is a compliance requirement under the GDPR and the AI Act, and a line of defence in the event of a professional dispute."
+            }
+          ]
+        }
+      },
+      {
+        "h2": "Shirudo: adaptive defences written by agents themselves — opportunity or risk?",
+        "paragrafi": [
+          "The **Shirudo** project, developed by OpenAI in collaboration with Cisco, takes the security argument a step further: rather than security rules written once and for all by a team of experts, Shirudo uses AI agents to dynamically generate and update their own defence policies. The agent analyses attack attempts, identifies patterns, and rewrites protective rules in real time.",
+          "It is a technically interesting approach, but for a professional firm it raises an immediate practical question: **who supervises the rules the agent has written to protect itself?** If a automatically generated security policy contains an error or an unintended exception, the firm's responsible partner has no way of spotting it without an explicit human review process. This is precisely the kind of automation bias we have written about before — delegating control to a system that nobody has time to verify.",
+          "Shirudo is still at an experimental stage. But its principle — AI-generated adaptive defences — is destined to spread. The question every firm should put to any AI security provider is: who signs off on the access policies for my data? If the answer is 'an agent', there needs to be at least a documented human approval process."
+        ],
+        "blocco": {
+          "tipo": "steps",
+          "titolo": "How to evaluate an AI provider that promises adaptive security",
+          "voci": [
+            {
+              "titolo": "Ask who approves the security rules",
+              "meta": "Step 1",
+              "testo": "Access policies for your data must be signed off by an accountable person, not generated and applied automatically without human review."
+            },
+            {
+              "titolo": "Demand an auditable log",
+              "meta": "Step 2",
+              "testo": "Every action the agent takes on your data must be recorded immutably: who read what, when, and with what outcome. This applies under both the GDPR and the AI Act."
+            },
+            {
+              "titolo": "Verify the ability to roll back",
+              "meta": "Step 3",
+              "testo": "If an automatically generated security rule produces anomalous behaviour, you must be able to revert to the previous version without depending on the provider."
+            },
+            {
+              "titolo": "Ask for the results of an independent audit",
+              "meta": "Step 4",
+              "testo": "Security claims not verified by a third party carry no contractual or evidential weight in the event of a breach. Demand certifications or penetration test reports."
+            }
+          ]
+        }
+      },
+      {
+        "h2": "Professional secrecy, GDPR and the AI Act: the legal framework firms cannot ignore",
+        "paragrafi": [
+          "For an Italian professional firm, data security in AI use is not an optional technical matter: it is a **legal obligation with disciplinary and criminal consequences**. The framework consists of three overlapping layers.",
+          "The **GDPR** requires that any processing of clients' personal data has a valid legal basis, a Data Processing Agreement signed by the provider (including cloud and AI providers), and adequate technical measures. Using an AI tool without a signed DPA exposes the firm to sanctions from the Italian Data Protection Authority (Garante). The **AI Act** adds specific obligations for high-risk AI systems — which include applications in legal and tax contexts — including transparency of automated decisions and human oversight. **Italian Law 132/2025** strengthens the protection of professional secrecy, making the transfer of data covered by that secrecy to cloud systems managed by third parties even more sensitive.",
+          "The combined effect of these three layers means that choosing an AI tool for the firm is not an IT decision: it is a legal and strategic one. The [benchmarks on AI tools for legal departments](https://www.agendadigitale.eu/intelligenza-artificiale-ai/soluzioni/ai-per-lufficio-legale-benchmark-2027-sui-principali-tool-per-corporate-governance-e-contratti/) assess the quality of responses, but rarely assess the provider's contractual compliance. A tool that produces excellent contract analysis but offers no DPA, does not disclose server jurisdiction, or does not allow data deletion is, from a professional standpoint, unusable on real client data. You can explore the specific obligations in our article on [AI Act 2026 obligations for professional firms and SMEs](/en/blog/ai-act-2026-obligations-dpia-lia-fria-professional-firms-smes.html)."
+        ],
+        "blocco": {
+          "tipo": "checklist",
+          "titolo": "Contractual checklist: what to demand from an AI provider before using it on client data",
+          "voci": [
+            {
+              "titolo": "Signed Data Processing Agreement (DPA)",
+              "testo": "The provider must be appointed as data processor under Art. 28 GDPR. Without a DPA, the processing is unlawful.",
+              "ok": true
+            },
+            {
+              "titolo": "Server location in the EU or equivalent guarantees",
+              "testo": "Transfers outside the EU require additional mechanisms (SCCs, BCRs). Verify this contractually, not just on the basis of marketing materials.",
+              "ok": true
+            },
+            {
+              "titolo": "Exclusion of data use for training",
+              "testo": "The provider must not be permitted to use the firm's documents to train its own models. This must be written into the contract, not just stated in the FAQs.",
+              "ok": true
+            },
+            {
+              "titolo": "Certified data deletion procedure",
+              "testo": "A documented procedure for the complete deletion of data at the end of the relationship must exist, with written certification.",
+              "ok": true
+            },
+            {
+              "titolo": "Auditable log of processing activities",
+              "testo": "The firm must be able to establish which data were processed, when, and with what outcome, in order to respond to any requests from the Garante or from clients.",
+              "ok": true
+            },
+            {
+              "titolo": "Liability clauses in the event of a breach",
+              "testo": "The contract must specify who is responsible in the event of a data breach and within what timescales, compatible with the 72-hour requirement under the GDPR.",
+              "ok": true
+            }
+          ]
+        }
+      },
+      {
+        "h2": "Choosing the right architecture: on-premise, confidential computing or cloud with guarantees?",
+        "paragrafi": [
+          "The practical question every Italian firm or SME must ask is not 'which AI to use' but **'which architecture can I sustain, given my professional obligations and the type of data I process?'** There is no universal answer: it depends on the sensitivity of the data, the volume of processing, the IT resources available, and the level of risk the data controller is prepared to accept.",
+          "**On-premise** — that is, an AI model installed on the firm's own servers or on infrastructure it controls — offers the highest level of control: data never leaves the firm's environment. The cost is higher in terms of setup and maintenance, and the models available on-premise are generally less powerful than cloud-based ones. But for a criminal law practice or an accountant handling highly sensitive tax data, it may be the only option compatible with professional secrecy. **Confidential computing**, as proposed by Private Inference, is a promising middle ground: it retains the power of the cloud while adding hardware-level isolation. However, it is still at an experimental stage and requires, before adoption, an independent verification of the actual guarantees. **Standard cloud with solid contractual guarantees** — signed DPA, EU servers, training exclusion, auditable logs — is the most accessible solution today, provided the contractual checklist is applied without exception and the data transferred is kept to the minimum necessary (the GDPR's data minimisation principle).",
+          "A [CRM or document management system designed with an on-premise or hybrid architecture](/en/services/crm.html) makes it possible to separate the AI processing layer from raw client data, reducing the exposure surface without sacrificing automation."
+        ],
+        "blocco": {
+          "tipo": "steps",
+          "titolo": "The three questions to answer before choosing an AI architecture for your firm",
+          "voci": [
+            {
+              "titolo": "How sensitive is the data I will be processing?",
+              "meta": "Question 1",
+              "testo": "Data covered by professional secrecy, personal tax data or health data require architectures with stronger guarantees than generic administrative documents."
+            },
+            {
+              "titolo": "Which regulatory obligations apply to my firm?",
+              "meta": "Question 2",
+              "testo": "Solicitors, accountants and employment consultants have deontological and statutory obligations (Italian Law 132/2025, GDPR, AI Act) that limit the permissible architectures. The assessment must be made in advance, not retrospectively."
+            },
+            {
+              "titolo": "Do I have the resources to verify and maintain compliance?",
+              "meta": "Question 3",
+              "testo": "An unmonitored on-premise solution is riskier than a cloud setup with a solid DPA. The right architecture is the one you can actually govern, not the one that is theoretically most secure."
+            }
+          ]
+        }
+      },
+      {
+        "h2": "Residual risks and their management: what stays with the firm even with the best guarantees",
+        "paragrafi": [
+          "Even with the most secure architecture available, **certain risks remain with the firm** and cannot be contractually transferred to the provider. The first is the risk of misconfiguration: an AI agent that is poorly configured and has access to more data than necessary is a vulnerability that is independent of the provider. The second is the risk of Agent Data Injection via external documents: if the firm accepts files from counterparties or clients and has them processed by an agent, every document is a potential attack vector. The third is the risk of insufficient oversight: an agent output that has not been reviewed by a professional who then signs the final document is a breach of the AI Act, as well as a deontological risk.",
+          "Measuring these residual risks requires a simple but systematic process: define which categories of data the agent may access, record every processing operation, and build in human review for every output that produces legal or fiscal effects. This is not bureaucracy: it is the difference between an AI adoption that protects the firm and one that exposes it. For those managing large volumes of incoming documents, a system such as [Ovia Documents](/en/services/documenti.html) can help structure this control without adding manual work.",
+          "The news this week — from the Private Inference architecture to Agent Data Injection attacks — confirms that the AI security landscape is evolving rapidly. Those who adopt a tool today without a defined governance framework will find themselves, six months down the line, managing a risk they never planned for. Those who start from strategy — architecture, contracts, supervision processes — can adopt new tools without having to start from scratch each time."
+        ],
+        "blocco": {
+          "tipo": "checklist",
+          "titolo": "Residual risks to manage internally, regardless of the provider chosen",
+          "voci": [
+            {
+              "titolo": "Principle of least privilege",
+              "testo": "Every AI agent must have access only to the data strictly necessary for the task assigned — not to the firm's entire archive.",
+              "ok": true
+            },
+            {
+              "titolo": "Mandatory human oversight of outputs with legal or fiscal effects",
+              "testo": "A professional must read, assess and sign every document produced or analysed by AI before it takes effect with respect to third parties.",
+              "ok": true
+            },
+            {
+              "titolo": "Incident response procedure for AI data breaches",
+              "testo": "If an agent processes data anomalously or is manipulated, a written procedure must exist for blocking, notifying and documenting the incident within 72 hours.",
+              "ok": true
+            },
+            {
+              "titolo": "Staff training on document-based attack vectors",
+              "testo": "Anyone who uploads documents to the agent must know that every external file is a potential Agent Data Injection vector. This is not paranoia: it is operational hygiene.",
+              "ok": false
+            },
+            {
+              "titolo": "Periodic review of agent configurations",
+              "testo": "AI agent configurations must be reviewed at least every six months, or following any significant system update, not only at the point of installation.",
+              "ok": false
+            }
+          ]
+        }
+      }
+    ],
+    "ovia_view": {
+      "titolo": "Ovia's view: architecture before tool selection",
+      "paragrafi": [
+        "At Ovia, we design AI systems for Italian professional firms and SMEs starting from a question that precedes any technology choice: **what data do you process, on what legal basis, and what are the consequences if something goes wrong?** The answer to these three questions determines the architecture — not the other way round.",
+        "This means we do not default to recommending the newest or most powerful tool. We propose the architecture that allows the firm to work with AI without putting professional secrecy, GDPR compliance and AI Act obligations at risk. Sometimes that architecture is on-premise. Sometimes it is a cloud with verified contractual guarantees. It always includes a process of human oversight over the outputs that matter.",
+        "This week's news — Private Inference, Agent Data Injection, Shirudo — confirms that the market is maturing in the right direction. But market maturation does not replace the firm's own responsibility. Those who wait for all problems to be solved by the provider are already behind. Those who build a solid internal governance framework today will be able to adopt new architectures — including confidential computing once it is stable — without having to start from scratch."
+      ]
+    },
+    "faq": [
+      {
+        "domanda": "Is the data I send to ChatGPT or other AI tools safe?",
+        "risposta": "It depends on how the service is used and what contractual agreements are in place. With standard APIs, data passes through the provider's servers in plain text. OpenAI does offer the option to sign a Data Processing Agreement and to disable the use of data for training, but these must be configured explicitly. Without these written guarantees, a professional firm should not upload data covered by professional secrecy or clients' personal data."
+      },
+      {
+        "domanda": "What is confidential computing and does it really protect my data?",
+        "risposta": "Confidential computing is a technology that processes data within isolated hardware environments (known as TEEs, Trusted Execution Environments), so that not even the provider's own engineers can read it in plain text during processing. OpenAI is testing this technology with the Private Inference project. It is a promising direction, but it is still at an experimental stage: the contractual guarantees accompanying these solutions have not yet been defined in the form required by the GDPR and the AI Act for an Italian professional firm."
+      },
+      {
+        "domanda": "Can I use AI on confidential documents without breaching professional secrecy?",
+        "risposta": "Yes, but only under specific conditions: the AI provider must be appointed as data processor with a signed DPA, the servers must be in the EU or equivalent guarantees must be in place, and the provider must not be permitted to use the data to train its own models. In addition, Italian Law 132/2025 strengthens obligations on professional secrecy: data covered by that secrecy must not be accessible to unauthorised third parties, including cloud providers. This assessment must be made on a case-by-case basis, with the support of a legal adviser."
+      },
+      {
+        "domanda": "What are Agent Data Injection attacks and how do I defend against them?",
+        "risposta": "Agent Data Injection attacks are a class of threats in which malicious instructions are hidden within the data an AI agent processes — for example in an email or an uploaded document — rather than in user requests. The agent interprets them as commands and acts on them. To defend against this, you must insist that the AI system clearly separates the data channel from the command channel, maintains an auditable log of every action, and enforces explicit limits on the operations the agent can perform autonomously."
+      },
+      {
+        "domanda": "How do I choose an AI tool for my law or accountancy firm without risking GDPR violations?",
+        "risposta": "Before assessing the quality of the tool's outputs, verify the provider's contractual compliance: signed DPA, server location, exclusion of data use for training, certified deletion procedure, and a log of processing activities. Only once these points have been verified does it make sense to evaluate the features. A tool that is excellent technically but lacks contractual guarantees is unusable on real client data."
+      },
+      {
+        "domanda": "Is OpenAI Private Inference suitable for an Italian professional firm?",
+        "risposta": "Not yet, in its current form. The project is in a testing phase and the contractual guarantees accompanying the technology have not yet been defined in the form required by the GDPR, the AI Act and Italian Law 132/2025. It is worth monitoring its development, but adopting it today on sensitive client data would be premature. Those seeking architectures with stronger guarantees today have on-premise solutions or EU cloud with a verified DPA available to them."
+      },
+      {
+        "domanda": "What contractual guarantees should I request from an AI provider before using it on client data?",
+        "risposta": "The minimum guarantees are six: a signed Data Processing Agreement (Art. 28 GDPR), server location in the EU or equivalent mechanisms for transfers outside the EU, contractual exclusion of data use for training, a documented deletion procedure at the end of the relationship, an auditable log of processing activities, and liability clauses in the event of a data breach with notification timescales compatible with the GDPR's 72-hour requirement. Without these elements, the provider cannot be used in a compliant manner by an Italian professional firm."
+      }
+    ],
+    "conclusione": [
+      "This week's news — Private Inference, Agent Data Injection, Shirudo — are neither alarm signals to be ignored nor promises of imminent solutions to be awaited passively. They are confirmation that the problem of data security in AI is real, evolving, and demands a strategic response from those who handle confidential data every day.",
+      "The good news is that those who build a solid governance framework today — the right architecture, verified contracts, human supervision processes, staff training — will not have to start from scratch every time the market introduces a new technology. The framework remains the same: the tools change, not the strategy.",
+      "The next step is not to wait for confidential computing to mature or for all providers to become compliant by default. It is to take stock today of which data you are processing with AI, verify the contracts currently in place, and identify the gaps. This is a matter of a few hours' work that can prevent far more costly consequences."
+    ],
+    "prodotti": [
+      {
+        "id": "documenti",
+        "perche": "Manages the collection, review and chasing of documents with an architecture that limits data access to the minimum necessary, reducing the exposure surface to Agent Data Injection attacks and simplifying the auditable log required under the GDPR and the AI Act."
+      },
+      {
+        "id": "crm",
+        "perche": "Designed with an on-premise or hybrid architecture tailored to professional firms, it allows the AI processing layer to be separated from raw client data, maintaining full control over the location and access of sensitive data."
+      },
+      {
+        "id": "inbox",
+        "perche": "Manages email triage and responses with explicit mechanisms for separating data from commands, reducing the risk of Agent Data Injection via malicious emails and maintaining human oversight over drafts before they are sent."
+      }
+    ],
+    "parole": 1766,
+    "minuti": 10,
+    "tradotto": {
+      "da": "ai",
+      "modello": "claude-sonnet-4-6",
+      "il": "2026-11-26T15:13:55.812Z"
+    }
+  }
+}
